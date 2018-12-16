@@ -15,8 +15,8 @@ import tera.gameserver.network.clientpackets.*;
  */
 public enum ClientPacketType
 {
-	C_HARDWARE_INFO(0x97B2, new C_Hardware_Info()),
-
+	C_HARDWARE_INFO(0xB54D, new C_Hardware_Info()),
+	C_LOGIN_ARBITER(0xB43D, new C_Login_Arbiter()),
 	C_CHECK_VERSION(0x4DBC, new C_Check_Version()),
 	C_GET_USER_LIST(0xFC33, new C_Get_User_List()),
 	C_CAN_CREATE_USER(0xE025, new C_Can_Create_User()),

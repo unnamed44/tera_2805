@@ -1,6 +1,7 @@
 package tera.gameserver.network.clientpackets;
 
 import tera.gameserver.manager.AccountManager;
+import tera.gameserver.network.serverpackets.S_Check_Version;
 
 /**
  * Клиентский пакет для авторизации на сервере
@@ -46,9 +47,6 @@ public class C_Check_Version extends ClientPacket
 	@Override
 	public void runImpl()
 	{
-		// получаем менеджера аккаунтов
-		AccountManager accountManager = AccountManager.getInstance();
-
-		accountManager.login(accountName, password, owner);
+		getOwner().sendPacket(S_Check_Version.getInstance(S_Check_Version.SUCCESSFUL));
 	}
 }

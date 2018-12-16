@@ -3,7 +3,7 @@
 	<!-- вывод дебаг инфы о пересылке клиент пакетов -->
 	<set name="DEVELOPER_DEBUG_CLIENT_PACKETS" value="true" />
 	<!-- вывод дебаг инфы о пересылке серверных пакетов -->
-	<set name="DEVELOPER_DEBUG_SERVER_PACKETS" value="true" />
+	<set name="DEVELOPER_DEBUG_SERVER_PACKETS" value="false" />
 	<!-- вывод общей дебаг инфы -->
 	<set name="DEVELOPER_MAIN_DEBUG" value="false" />
 	<!-- вывод дебаг инфы связанной с таргетами скилов -->

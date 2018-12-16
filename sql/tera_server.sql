@@ -1,34 +1,12 @@
-use tera_server;
+-- Adminer 4.6.3 MySQL dump
 
--- phpMyAdmin SQL Dump
--- version 4.1.14
--- http://www.phpmyadmin.net
---
--- Client :  127.0.0.1
--- Généré le :  Sam 21 Octobre 2017 à 11:24
--- Version du serveur :  5.6.17
--- Version de PHP :  5.5.12
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
---
--- Base de données :  `tera_server`
---
-
--- --------------------------------------------------------
-
---
--- Structure de la table `accounts`
---
-
-CREATE TABLE IF NOT EXISTS `accounts` (
+DROP TABLE IF EXISTS `accounts`;
+CREATE TABLE `accounts` (
   `AccountId` int(11) NOT NULL AUTO_INCREMENT,
   `login` varchar(32) NOT NULL DEFAULT '',
   `password` varchar(256) CHARACTER SET latin1 DEFAULT '',
@@ -48,49 +26,29 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   `isGM` int(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`AccountId`),
   KEY `access_level` (`access_level`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Contenu de la table `accounts`
---
 
--- --------------------------------------------------------
-
---
--- Structure de la table `account_bank`
---
-
-CREATE TABLE IF NOT EXISTS `account_bank` (
+DROP TABLE IF EXISTS `account_bank`;
+CREATE TABLE `account_bank` (
   `account_name` varchar(45) NOT NULL,
   `bank_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`bank_id`),
   UNIQUE KEY `account_name_UNIQUE` (`account_name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='ðóð░ð▒ð╗ð©Ðåð░ ð©ð┤ ð▒ð░ð¢ð║ð¥ð▓, ðÀð░ð║ÐÇðÁð┐ð╗ðÁð¢ð¢ÐïÐà ðÀð░ ð░ð║ð║ð░Ðâð¢Ðéð░ð╝ð©.' AUTO_INCREMENT=124693 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='ðóð░ð▒ð╗ð©Ðåð░ ð©ð┤ ð▒ð░ð¢ð║ð¥ð▓, ðÀð░ð║ÐÇðÁð┐ð╗ðÁð¢ð¢ÐïÐà ðÀð░ ð░ð║ð║ð░Ðâð¢Ðéð░ð╝ð©.';
 
---
--- Contenu de la table `account_bank`
---
 
--- --------------------------------------------------------
-
---
--- Structure de la table `boss_spawn`
---
-
-CREATE TABLE IF NOT EXISTS `boss_spawn` (
+DROP TABLE IF EXISTS `boss_spawn`;
+CREATE TABLE `boss_spawn` (
   `npc_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'ðÿð┤ ÐéðÁð╝ð┐ð╗ðÁð╣Ðéð░ ð¢ð┐Ðü.',
   `npc_type` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'ðóð©ð┐ ÐéðÁð╝ð┐ð╗ðÁð╣Ðéð░ ð¢ð┐Ðü.',
   `spawn` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT 'ðÆÐÇðÁð╝ÐÅ ðÀð░ð▓ðÁÐÇÐêðÁð¢ð©ÐÅ Ðüð┐ð░ð▓ð¢ð░.',
   PRIMARY KEY (`npc_id`,`npc_type`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='ðóð░ð▒ð╗ð©Ðåð░ ÐÇðÁÐüð┐ð░ð▓ð¢ð¥ð▓ ðáðæ.';
 
--- --------------------------------------------------------
 
---
--- Structure de la table `characters`
---
-
-CREATE TABLE IF NOT EXISTS `characters` (
+DROP TABLE IF EXISTS `characters`;
+CREATE TABLE `characters` (
   `account_name` varchar(45) NOT NULL DEFAULT '',
   `object_id` int(11) NOT NULL DEFAULT '0',
   `class_id` tinyint(3) NOT NULL DEFAULT '0',
@@ -132,13 +90,8 @@ CREATE TABLE IF NOT EXISTS `characters` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
--- --------------------------------------------------------
-
---
--- Structure de la table `character_appearances`
---
-
-CREATE TABLE IF NOT EXISTS `character_appearances` (
+DROP TABLE IF EXISTS `character_appearances`;
+CREATE TABLE `character_appearances` (
   `object_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'ðáðêðáðàðáÐæðáÐöðá┬░ðá┬╗ðíðèðáðàðíÔÇ╣ðáÔäû ðáÐæðáÊæ ðáÐæðáÐûðíðéðáÐòðáÐöðá┬░.',
   `face_color` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `face_skin` tinyint(3) unsigned NOT NULL DEFAULT '0',
@@ -180,13 +133,8 @@ CREATE TABLE IF NOT EXISTS `character_appearances` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='ðóð░ð▒ð╗ð©Ðåð░ ð▓ð¢ðÁÐêð¢ð¥ÐüÐéð© ð©ð│ÐÇð¥ð║ð¥ð▓.';
 
 
--- --------------------------------------------------------
-
---
--- Structure de la table `character_faces`
---
-
-CREATE TABLE IF NOT EXISTS `character_faces` (
+DROP TABLE IF EXISTS `character_faces`;
+CREATE TABLE `character_faces` (
   `objectId` int(11) NOT NULL DEFAULT '0',
   `faceColor` int(10) NOT NULL DEFAULT '0',
   `hairColor` int(10) NOT NULL DEFAULT '0',
@@ -242,13 +190,9 @@ CREATE TABLE IF NOT EXISTS `character_faces` (
   PRIMARY KEY (`objectId`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
 
---
--- Structure de la table `character_friends`
---
-
-CREATE TABLE IF NOT EXISTS `character_friends` (
+DROP TABLE IF EXISTS `character_friends`;
+CREATE TABLE `character_friends` (
   `object_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'ðúð¢ð©ð║ð░ð╗Ðîð¢Ðïð╣ ð©ð┤ ð©ð│ÐÇð¥ð║ð░.',
   `friend_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'ðúð¢ð©ð║ð░ð╗Ðîð¢Ðïð╣ ð©ð┤ ð┤ÐÇÐâð│ð░.',
   `friend_note` varchar(45) NOT NULL COMMENT 'ðƒð¥ð╝ðÁÐéð║ð░ ð¥ð▒ ð┤ÐÇÐâð│ðÁ.',
@@ -256,72 +200,118 @@ CREATE TABLE IF NOT EXISTS `character_friends` (
   KEY `select` (`object_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='ðóð░ð▒ð╗ð©Ðåð░ ð┤ÐÇÐâðÀðÁð╣ ð©ð│ÐÇð¥ð║ð¥ð▓.';
 
--- --------------------------------------------------------
 
---
--- Structure de la table `character_hotkey`
---
-
-CREATE TABLE IF NOT EXISTS `character_hotkey` (
+DROP TABLE IF EXISTS `character_hotkey`;
+CREATE TABLE `character_hotkey` (
   `object_id` int(11) NOT NULL DEFAULT '0' COMMENT 'ðáðêðáðàðáÐæðáÐöðá┬░ðá┬╗ðíðèðáðàðíÔÇ╣ðáÔäû ðáÐæðáÊæ ðáÐæðáÐûðíðéðáÐòðáÐöðá┬░.',
   `data` blob COMMENT 'ðôð¥ÐÇÐÅÐçð©ðÁ ð║ð╗ð░ð▓ð©ÐêÐï',
   PRIMARY KEY (`object_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='ðáÐûðáÐòðíðéðíðÅðíÔÇíðáÐæðá┬Á ðáÐöðáðàðáÐòðáÐùðáÐöðáÐæ.';
--- --------------------------------------------------------
 
---
--- Structure de la table `character_inventors`
---
 
-CREATE TABLE IF NOT EXISTS `character_inventors` (
+DROP TABLE IF EXISTS `character_inventors`;
+CREATE TABLE `character_inventors` (
   `owner_id` int(11) unsigned NOT NULL DEFAULT '0',
   `id` int(11) unsigned NOT NULL DEFAULT '0',
   `level` smallint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`owner_id`,`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
 
---
--- Structure de la table `character_quests`
---
+DROP TABLE IF EXISTS `character_presets_2`;
+CREATE TABLE `character_presets_2` (
+  `objectId` int(10) unsigned NOT NULL DEFAULT '0',
+  `temp1` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp2` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp3` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp4` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp5` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp6` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp7` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp8` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp9` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp10` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp11` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp12` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp13` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp14` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp15` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp16` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp17` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp18` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp19` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp20` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp21` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp22` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp23` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp24` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp25` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp26` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp27` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp28` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp29` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp30` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp31` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp32` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp33` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp34` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp35` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp36` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp37` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp38` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp39` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp40` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp41` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp42` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp43` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp44` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp45` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp46` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp47` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp48` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp49` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp50` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp51` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp52` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp53` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp54` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp55` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp56` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp57` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp58` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp59` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp60` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp61` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp62` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp63` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `temp64` tinyint(3) unsigned NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
-CREATE TABLE IF NOT EXISTS `character_quests` (
+
+DROP TABLE IF EXISTS `character_quests`;
+CREATE TABLE `character_quests` (
   `object_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ðáÐøðá┬▒ðáÊæðá┬Âðá┬ÁðáÐöðíÔÇÜ ðáÐæðáÊæ ðáÐæðáÐûðíðéðáÐòðáÐöðá┬░.',
   `quest_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'ðá┬ÿðáÊæ ðáÐöðáðåðá┬ÁðíðâðíÔÇÜðá┬░.',
   `state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'ðáðÄðíÔÇÜðá┬░ðáÊæðáÐæðíðÅ ðáÐöðáðåðá┬ÁðíðâðíÔÇÜðá┬░.',
   `date` bigint(20) unsigned NOT NULL DEFAULT '0' COMMENT 'ðáÔÇØðá┬░ðíÔÇÜðá┬░ ðá┬Àðá┬░ðáðåðá┬ÁðíðéðíÔé¼ðá┬ÁðáðàðáÐæðíðÅ ðáÐöðáðåðá┬ÁðíðâðíÔÇÜðá┬░.',
   `panel_state` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'ð×Ðéð¥ð▒ÐÇð░ðÂð░ÐéÐî ð╗ð© ð¢ð░ ð┐ð░ð¢ðÁð╗ð©.',
   PRIMARY KEY (`object_id`,`quest_id`) USING BTREE
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='ðáÐ×ðá┬░ðá┬▒ðá┬╗ðáÐæðíÔÇáðá┬░ ðáÐöðáðåðá┬ÁðíðâðíÔÇÜðáÐòðáðå ðáÐæðáÐûðíðéðáÐòðáÐöðáÐòðáðå.' AUTO_INCREMENT=270401657 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='ðáÐ×ðá┬░ðá┬▒ðá┬╗ðáÐæðíÔÇáðá┬░ ðáÐöðáðåðá┬ÁðíðâðíÔÇÜðáÐòðáðå ðáÐæðáÐûðíðéðáÐòðáÐöðáÐòðáðå.';
 
---
--- Contenu de la table `character_quests`
---
 
--- --------------------------------------------------------
-
---
--- Structure de la table `character_quest_vars`
---
-
-CREATE TABLE IF NOT EXISTS `character_quest_vars` (
+DROP TABLE IF EXISTS `character_quest_vars`;
+CREATE TABLE `character_quest_vars` (
   `object_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ðáÐøðá┬▒ðáÊæðá┬ÁðáÐöðíÔÇÜ ðáÐæðáÊæ ðáÐæðáÐûðíðéðáÐòðáÐöðá┬░.',
   `quest_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'ðá┬ÿðáÊæ ðáÐöðáðåðá┬ÁðíðâðíÔÇÜðá┬░.',
   `name` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL DEFAULT '0' COMMENT 'ðáÐ£ðá┬░ðá┬Àðáðåðá┬░ðáðàðáÐæðá┬Á ðáÐùðá┬Áðíðéðá┬ÁðáÐÿðá┬ÁðáðàðáðàðáÐòðáÔäû.',
   `value` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'ðáÔÇöðáðàðá┬░ðíÔÇíðá┬ÁðáðàðáÐæðá┬Á ðáÐùðá┬Áðíðéðá┬ÁðáÐÿðá┬ÁðáðàðáðàðáÐòðáÔäû.',
   PRIMARY KEY (`object_id`,`quest_id`,`name`),
   KEY `key_id` (`quest_id`,`object_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='ðáÐ×ðá┬░ðá┬▒ðá┬╗ðáÐæðíÔÇáðá┬░ ðáÐùðá┬Áðíðéðá┬ÁðáÐÿðá┬ÁðáðàðáðàðíÔÇ╣ðíÔÇª ðáÐöðáðåðá┬ÁðíðâðíÔÇÜðáÐòðáðå.' AUTO_INCREMENT=270336036 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='ðáÐ×ðá┬░ðá┬▒ðá┬╗ðáÐæðíÔÇáðá┬░ ðáÐùðá┬Áðíðéðá┬ÁðáÐÿðá┬ÁðáðàðáðàðíÔÇ╣ðíÔÇª ðáÐöðáðåðá┬ÁðíðâðíÔÇÜðáÐòðáðå.';
 
 
--- --------------------------------------------------------
-
---
--- Structure de la table `character_save_effects`
---
-
-CREATE TABLE IF NOT EXISTS `character_save_effects` (
+DROP TABLE IF EXISTS `character_save_effects`;
+CREATE TABLE `character_save_effects` (
   `object_id` int(11) NOT NULL DEFAULT '0',
   `class_id` tinyint(3) NOT NULL DEFAULT '0',
   `skill_id` int(11) NOT NULL DEFAULT '0',
@@ -332,42 +322,25 @@ CREATE TABLE IF NOT EXISTS `character_save_effects` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
--- --------------------------------------------------------
-
---
--- Structure de la table `character_settings`
---
-
-CREATE TABLE IF NOT EXISTS `character_settings` (
+DROP TABLE IF EXISTS `character_settings`;
+CREATE TABLE `character_settings` (
   `object_id` int(11) NOT NULL DEFAULT '0' COMMENT 'ðúð¢ð©ð║ð░ð╗Ðîð¢Ðïð╣ ð©ð┤ ð©ð│ÐÇð¥ð║ð░.',
   `data` blob COMMENT 'ðÿð¢Ðäð¥ÐÇð╝ð░Ðåð©ÐÅ ð¥ ð¢ð░ÐüÐéÐÇð¥ð╣ð║ð░Ðà.',
   PRIMARY KEY (`object_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COMMENT='ðØð░ÐüÐéÐÇð¥ð╣ð║ð© ð║ð╗ð©ðÁð¢Ðéð░ ð©ð│ÐÇð¥ð║ð¥ð▓.';
 
--- --------------------------------------------------------
 
---
--- Structure de la table `character_skills`
---
-
-CREATE TABLE IF NOT EXISTS `character_skills` (
+DROP TABLE IF EXISTS `character_skills`;
+CREATE TABLE `character_skills` (
   `object_id` int(11) NOT NULL DEFAULT '0',
   `class_id` tinyint(3) NOT NULL DEFAULT '0',
   `skill_id` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`object_id`,`class_id`,`skill_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Contenu de la table `character_skills`
---
 
--- --------------------------------------------------------
-
---
--- Structure de la table `character_skill_reuses`
---
-
-CREATE TABLE IF NOT EXISTS `character_skill_reuses` (
+DROP TABLE IF EXISTS `character_skill_reuses`;
+CREATE TABLE `character_skill_reuses` (
   `object_id` int(11) NOT NULL DEFAULT '0',
   `skill_id` int(11) NOT NULL DEFAULT '0',
   `item_id` int(11) NOT NULL DEFAULT '0',
@@ -375,13 +348,9 @@ CREATE TABLE IF NOT EXISTS `character_skill_reuses` (
   PRIMARY KEY (`object_id`,`skill_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
 
---
--- Structure de la table `character_territories`
---
-
-CREATE TABLE IF NOT EXISTS `character_territories` (
+DROP TABLE IF EXISTS `character_territories`;
+CREATE TABLE `character_territories` (
   `object_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'ðúð¢ð©ð║ð░ð╗Ðîð¢Ðïð╣ ð©ð┤ ð©ð│ÐÇð¥ð║ð░.',
   `territory_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'ðÿð┤ ÐéðÁÐÇÐÇð©Ðéð¥ÐÇð©ð©, ð▓ ð║ð¥Ðéð¥ÐÇð¥ð╣ ð¥ð¢ ð┐ð¥ð▒Ðïð▓ð░ð╗',
   UNIQUE KEY `key_territory` (`territory_id`,`object_id`),
@@ -389,26 +358,17 @@ CREATE TABLE IF NOT EXISTS `character_territories` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='ðóð░ð▒ð╗ð©Ðåð░ ÐéðÁÐÇÐÇð©Ðéð¥ÐÇð©ð╣, ð▓ ð║ð¥Ðéð¥ÐÇÐïÐà ð┐ð¥ð▒Ðïð▓ð░ð╗ ð©ð│ÐÇð¥ð║.';
 
 
--- --------------------------------------------------------
-
---
--- Structure de la table `character_variables`
---
-
-CREATE TABLE IF NOT EXISTS `character_variables` (
+DROP TABLE IF EXISTS `character_variables`;
+CREATE TABLE `character_variables` (
   `object_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'ðúð¢ð©ð║ð░ð╗Ðîð¢Ðïð╣ ð©ð┤ ð©ð│ÐÇð¥ð║ð░.',
   `var_name` varchar(45) NOT NULL DEFAULT '' COMMENT 'ðØð░ðÀð▓ð░ð¢ð©ðÁ ð┐ðÁÐÇðÁð╝ðÁð¢ð¢ð¥ð╣.',
   `var_value` varchar(45) NOT NULL DEFAULT '' COMMENT 'ðùð¢ð░ÐçðÁð¢ð©ðÁ ð┐ðÁÐÇðÁð╝ðÁð¢ð¢ð¥ð╣.',
   PRIMARY KEY (`object_id`,`var_name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='ðóð░ð▒ð╗ð©Ðåð░ ð┐ðÁÐÇðÁð╝ðÁð¢ð¢ÐïÐà ð©ð│ÐÇð¥ð║ð¥ð▓.';
 
--- --------------------------------------------------------
 
---
--- Structure de la table `guilds`
---
-
-CREATE TABLE IF NOT EXISTS `guilds` (
+DROP TABLE IF EXISTS `guilds`;
+CREATE TABLE `guilds` (
   `id` int(11) NOT NULL DEFAULT '0' COMMENT 'ðúð¢ð©ð║ð░ð╗Ðîð¢Ðïð╣ ð©ð┤ ð║ð╗ð░ð¢ð░.',
   `name` varchar(45) NOT NULL COMMENT 'ðØð░ðÀð▓ð░ð¢ð©ðÁ ð║ð╗ð░ð¢ð░.',
   `title` varchar(45) NOT NULL COMMENT 'ðóð©ÐéÐâð╗ ð│ð©ð╗Ðîð┤ð©ð©.',
@@ -419,27 +379,19 @@ CREATE TABLE IF NOT EXISTS `guilds` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='ðóð░ð▒ð╗ð©Ðåð░ ð║ð╗ð░ð¢ð¥ð▓';
 
--- --------------------------------------------------------
 
---
--- Structure de la table `guild_ranks`
---
-
-CREATE TABLE IF NOT EXISTS `guild_ranks` (
+DROP TABLE IF EXISTS `guild_ranks`;
+CREATE TABLE `guild_ranks` (
   `guild_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ðÿð┤ ð│ð©ð╗Ðîð┤ð©ð©.',
   `rank_name` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL COMMENT 'ðØð░ðÀð▓ð░ð¢ð©ðÁ ÐÇð░ð¢ð│ð░.',
   `order` tinyint(3) unsigned NOT NULL COMMENT 'ðÿð¢ð┤ðÁð║Ðü ÐÇð░ð¢ð│ð░.',
   `law` tinyint(3) unsigned NOT NULL COMMENT 'ðØð░ð▒ð¥ÐÇ ð┐ÐÇð░ð▓.',
   KEY `guild_id` (`guild_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='ðóð░ð▒ð╗ÐéÐåð░ ÐÇð░ð¢ð│ð¥ð▓ ð│ð©ð╗Ðîð┤ð©ð╣.' AUTO_INCREMENT=268436103 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='ðóð░ð▒ð╗ÐéÐåð░ ÐÇð░ð¢ð│ð¥ð▓ ð│ð©ð╗Ðîð┤ð©ð╣.';
 
--- --------------------------------------------------------
 
---
--- Structure de la table `items`
---
-
-CREATE TABLE IF NOT EXISTS `items` (
+DROP TABLE IF EXISTS `items`;
+CREATE TABLE `items` (
   `object_id` int(10) unsigned NOT NULL DEFAULT '0',
   `owner_id` int(10) unsigned NOT NULL DEFAULT '0',
   `owner_name` varchar(45) NOT NULL DEFAULT '',
@@ -456,63 +408,39 @@ CREATE TABLE IF NOT EXISTS `items` (
   KEY `key_owner_id` (`owner_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 PACK_KEYS=1;
 
---
--- Contenu de la table `items`
---
 
-
---
--- Structure de la table `region_status`
---
-
-CREATE TABLE IF NOT EXISTS `region_status` (
+DROP TABLE IF EXISTS `region_status`;
+CREATE TABLE `region_status` (
   `region_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'ðÿð┤ ÐÇðÁð│ð©ð¥ð¢ð░.',
   `owner_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'ðÿð┤ ð▓ð╗ð░ð┤ðÁÐÄÐëðÁð╣ ð│ð©ð╗Ðîð┤ð©ð©.',
   `state` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'ðíð¥ÐüÐéð¥ÐÅð¢ð©ðÁ ÐÇðÁð│ð©ð¥ð¢ð░.',
   PRIMARY KEY (`region_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='ðóð░ð▒ð╗ð©Ðåð░ ÐüÐéð░ÐéÐâÐüð¥ð▓ ÐÇðÁð│ð©ð¥ð¢ð¥ð▓.';
 
---
--- Contenu de la table `region_status`
---
-
 INSERT INTO `region_status` (`region_id`, `owner_id`, `state`) VALUES
-(400, 0, 0),
-(401, 0, 0),
-(402, 0, 0),
-(403, 0, 0);
+(400,	0,	0),
+(401,	0,	0),
+(402,	0,	2),
+(403,	0,	2);
 
--- --------------------------------------------------------
-
---
--- Structure de la table `region_war_register`
---
-
-CREATE TABLE IF NOT EXISTS `region_war_register` (
+DROP TABLE IF EXISTS `region_war_register`;
+CREATE TABLE `region_war_register` (
   `region_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'ðÿð┤ ÐÇðÁð│ð©ð¥ð¢ð░.',
   `guild_id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'ðÿð┤ ð│ð©ð╗Ðîð┤ð©ð©.',
   PRIMARY KEY (`region_id`,`guild_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='ðóð░ð▒ð╗ð©Ðåð░ ÐÇðÁð│ð©ÐüÐéÐÇð░Ðåð©ð© ð¢ð░ ð▒ð©Ðéð▓Ðï ðÀð░ ÐÇðÁð│ð©ð¥ð¢Ðï.';
 
--- --------------------------------------------------------
 
---
--- Structure de la table `server_variables`
---
-
-CREATE TABLE IF NOT EXISTS `server_variables` (
+DROP TABLE IF EXISTS `server_variables`;
+CREATE TABLE `server_variables` (
   `var_name` varchar(45) NOT NULL DEFAULT '' COMMENT 'ðØð░ðÀð▓ð░ð¢ð©ðÁ ð┐ðÁÐÇðÁð╝ðÁð¢ð¢ð¥ð╣.',
   `var_value` varchar(45) NOT NULL DEFAULT '' COMMENT 'ðùð¢ð░ÐçðÁð¢ð©ðÁ ð┐ðÁÐÇðÁð╝ðÁð¢ð¢ð¥ð╣.',
   PRIMARY KEY (`var_name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='ðóð░ð▒ð╗ð©Ðåð░ ÐüðÁÐÇð▓ðÁÐÇð¢ÐïÐà ð┐ðÁÐÇðÁð╝ðÁð¢ð¢ÐïÐà.';
 
--- --------------------------------------------------------
 
---
--- Structure de la table `skill_learns`
---
-
-CREATE TABLE IF NOT EXISTS `skill_learns` (
+DROP TABLE IF EXISTS `skill_learns`;
+CREATE TABLE `skill_learns` (
   `classId` tinyint(3) NOT NULL DEFAULT '0',
   `skillId` int(11) NOT NULL DEFAULT '0',
   `minLevel` smallint(6) NOT NULL DEFAULT '0',
@@ -521,13 +449,9 @@ CREATE TABLE IF NOT EXISTS `skill_learns` (
   PRIMARY KEY (`classId`,`skillId`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
 
---
--- Structure de la table `wait_items`
---
-
-CREATE TABLE IF NOT EXISTS `wait_items` (
+DROP TABLE IF EXISTS `wait_items`;
+CREATE TABLE `wait_items` (
   `order` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ðá┬áðíÐÜðá┬áðíÔÇóðá┬áðí┬ÿðá┬áðÆ┬ÁðáðÄðáÔÇÜ ðá┬áðáÔÇáðáðÄð▓ðéÔäûðá┬áðóÔÇÿðá┬áðÆ┬░ðáðÄð▓ðéðÄðá┬áðíÔÇÿ.',
   `emptor` varchar(45) CHARACTER SET utf8 NOT NULL COMMENT 'ðáÔÇ║ðáÐòðáÐûðáÐæðáðà ðáÐùðáÐòðáÐöðíÐôðáÐùðá┬░ðíÔÇÜðá┬Áðá┬╗ðíðÅ.',
   `char_name` varchar(45) COLLATE utf8_unicode_ci NOT NULL COMMENT 'ðá┬áðÆ┬ÿðá┬áðí┬ÿðáðÄðáðÅ ðá┬áðíÔÇÿðá┬áðíÔÇôðáðÄðáÔÇÜðá┬áðíÔÇóðá┬áðíÔÇØðá┬áðÆ┬░.',
@@ -537,23 +461,18 @@ CREATE TABLE IF NOT EXISTS `wait_items` (
   PRIMARY KEY (`order`,`char_name`,`item_id`,`item_count`) USING BTREE,
   KEY `name_key` (`char_name`),
   KEY `order_key` (`order`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='ðá┬áðÆ┬ÿðáðÄð▓ðéÐÖðá┬áðÆ┬Áðá┬áðí┬ÿðáðÄð▓ðéÔäû ðá┬áðáÔÇáðá┬áðíÔÇóðá┬áðÆ┬Âðá┬áðíÔÇÿðá┬áðóÔÇÿðá┬áðÆ┬░ðáðÄðáÔÇ╣ðáðÄð▓ðé┬░ðá┬áðíÔÇÿ' AUTO_INCREMENT=3217 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='ðá┬áðÆ┬ÿðáðÄð▓ðéÐÖðá┬áðÆ┬Áðá┬áðí┬ÿðáðÄð▓ðéÔäû ðá┬áðáÔÇáðá┬áðíÔÇóðá┬áðÆ┬Âðá┬áðíÔÇÿðá┬áðóÔÇÿðá┬áðÆ┬░ðáðÄðáÔÇ╣ðáðÄð▓ðé┬░ðá┬áðíÔÇÿ';
 
--- --------------------------------------------------------
 
---
--- Structure de la table `wait_skills`
---
-
-CREATE TABLE IF NOT EXISTS `wait_skills` (
+DROP TABLE IF EXISTS `wait_skills`;
+CREATE TABLE `wait_skills` (
   `order` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ðÿð┤ ðÀð░ð┐ð©Ðüð©.',
   `char_name` varchar(45) NOT NULL COMMENT 'ðÿð╝ÐÅ ð┐ðÁÐÇÐüð¥ð¢ð░ðÂð░.',
   `skill_id` int(10) unsigned NOT NULL COMMENT 'ðÿð┤ Ðüð║ð©ð╗ð░.',
   `skill_class` int(10) NOT NULL COMMENT 'ðÜð╗ð░ÐüÐü Ðüð║ð©ð╗ð░.',
   PRIMARY KEY (`order`),
   KEY `name_key` (`char_name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='ðóð░ð▒ð╗ð©Ðåð░ ð¥ðÂð©ð┤ð░ÐÄÐëð©Ðà ð▓Ðïð┤ð░Ðçð© Ðüð║ð©ð╗ð¥ð▓.' AUTO_INCREMENT=289 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='ðóð░ð▒ð╗ð©Ðåð░ ð¥ðÂð©ð┤ð░ÐÄÐëð©Ðà ð▓Ðïð┤ð░Ðçð© Ðüð║ð©ð╗ð¥ð▓.';
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- 2018-12-16 12:58:09
