@@ -1,0 +1,44 @@
+INFO 23:52:21:317 ServerControl: open server socket on 2101 port.
+INFO 23:52:21:411 ExecutorManager: initialized.
+INFO 23:52:22:078 CleaningManager: delete 0 reuses from a character_skill_reuses.
+INFO 23:52:22:078 CleaningManager: delete 0 spawns from a boss_spawn.
+INFO 23:52:22:079 CleaningManager: delete 0 appearances from a character_appearances.
+INFO 23:52:22:080 CleaningManager: delete 0 effects from a character_save_effects.
+INFO 23:52:22:081 CleaningManager: delete 0 inventors from a character_inventors.
+INFO 23:52:22:083 CleaningManager: delete 0 skills from a character_skills.
+INFO 23:52:22:084 CleaningManager: delete 0 hotkeys from a character_hotkey.
+INFO 23:52:22:085 CleaningManager: delete 0 chars from a character_friends.
+INFO 23:52:22:086 CleaningManager: delete 0 friends from a character_friends.
+INFO 23:52:22:086 CleaningManager: delete 0 settings from a character_settings.
+INFO 23:52:22:088 CleaningManager: delete 0 empty items from a items.
+INFO 23:52:22:089 CleaningManager: delete 0 no owner items from a items.
+INFO 23:52:22:089 CleaningManager: delete 0 no owner guild items from a items.
+INFO 23:52:22:124 CleaningManager: create buffer table items.
+INFO 23:52:22:127 CleaningManager: copy 118 items to buffer_items.
+INFO 23:52:22:128 CleaningManager: delete 0 no owner items from a buffer_items.
+INFO 23:52:22:149 CleaningManager: drop buffer table items.
+INFO 23:52:22:150 CleaningManager: delete 0 from a quests.
+INFO 23:52:22:150 CleaningManager: delete 0 from a quest variables.
+INFO 23:52:22:151 CleaningManager: delete 0 from a guild ranks.
+INFO 23:52:22:297 ClientPacketType: client packets prepared.
+INFO 23:52:22:358 EffectParser: initialized.
+INFO 23:52:22:363 RandomManager: initialized.
+INFO 23:52:22:364 IdFactory: prepare npc ids...
+INFO 23:52:22:369 BitSetIdGenerator: 102912 id's available.
+INFO 23:52:22:370 IdFactory: prepare objects ids...
+INFO 23:52:22:370 BitSetIdGenerator: 102912 id's available.
+INFO 23:52:22:370 IdFactory: prepare players ids...
+INFO 23:52:22:375 BitSetIdGenerator: extracted 5 ids.
+INFO 23:52:22:375 BitSetIdGenerator: 102912 id's available.
+INFO 23:52:22:375 IdFactory: prepare guilds ids...
+INFO 23:52:22:376 BitSetIdGenerator: extracted 1 ids.
+INFO 23:52:22:376 BitSetIdGenerator: 102912 id's available.
+INFO 23:52:22:376 IdFactory: prepare item ids...
+INFO 23:52:22:378 BitSetIdGenerator: extracted 118 ids.
+WARNING 23:52:22:378 BitSetIdGenerator: objectId 1 in DB is less than minimum ID of 268435456.
+INFO 23:52:22:378 BitSetIdGenerator: 102912 id's available.
+INFO 23:52:22:402 ServerVarManager: loaded 0 variables.
+INFO 23:52:22:407 BossSpawnManager: loaded 0 boss spawns.
+INFO 23:52:24:697 TerritoryTable: loaded 160 territories for 18803 regions.
+INFO 23:54:00:684 WorldZoneTable: loaded 1 world zones for 2 regions.
+INFO 23:54:00:688 ConditionParser: initializable.

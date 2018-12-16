@@ -1,0 +1,26 @@
+INFO 18:21:48:489 ServerControl: open server socket on 2101 port.
+INFO 18:21:48:514 ExecutorManager: initialized.
+INFO 18:21:51:900 CleaningManager: delete 0 reuses from a character_skill_reuses.
+INFO 18:21:51:903 CleaningManager: delete 0 spawns from a boss_spawn.
+INFO 18:21:51:905 CleaningManager: delete 0 appearances from a character_appearances.
+INFO 18:21:51:907 CleaningManager: delete 0 effects from a character_save_effects.
+INFO 18:21:51:909 CleaningManager: delete 0 inventors from a character_inventors.
+INFO 18:21:51:911 CleaningManager: delete 0 skills from a character_skills.
+INFO 18:21:51:913 CleaningManager: delete 0 hotkeys from a character_hotkey.
+INFO 18:21:51:914 CleaningManager: delete 0 chars from a character_friends.
+INFO 18:21:51:916 CleaningManager: delete 0 friends from a character_friends.
+INFO 18:21:51:918 CleaningManager: delete 0 settings from a character_settings.
+INFO 18:21:51:919 CleaningManager: delete 0 empty items from a items.
+INFO 18:21:51:920 CleaningManager: delete 0 no owner items from a items.
+INFO 18:21:51:922 CleaningManager: delete 0 no owner guild items from a items.
+INFO 18:21:51:961 CleaningManager: create buffer table items.
+INFO 18:21:51:964 CleaningManager: copy 6 items to buffer_items.
+INFO 18:21:51:965 CleaningManager: delete 0 no owner items from a buffer_items.
+INFO 18:21:51:990 CleaningManager: drop buffer table items.
+INFO 18:21:51:993 CleaningManager: delete 0 from a quests.
+INFO 18:21:51:996 CleaningManager: delete 0 from a quest variables.
+INFO 18:21:51:999 CleaningManager: delete 0 from a guild ranks.
+INFO 18:21:52:647 ClientPacketType: client packets prepared.
+INFO 18:21:53:025 EffectParser: initialized.
+INFO 18:21:53:037 RandomManager: initialized.
+INFO 18:21:53:040 IdFactory: prepare npc ids...

@@ -1,0 +1,2539 @@
+INFO 16:02:23:271 ServerControl: open server socket on 2101 port.
+INFO 16:02:23:277 ExecutorManager: initialized.
+INFO 16:02:23:901 CleaningManager: delete 0 reuses from a character_skill_reuses.
+INFO 16:02:23:902 CleaningManager: delete 0 spawns from a boss_spawn.
+INFO 16:02:23:902 CleaningManager: delete 0 appearances from a character_appearances.
+INFO 16:02:23:903 CleaningManager: delete 0 effects from a character_save_effects.
+INFO 16:02:23:903 CleaningManager: delete 0 inventors from a character_inventors.
+INFO 16:02:23:904 CleaningManager: delete 0 skills from a character_skills.
+INFO 16:02:23:904 CleaningManager: delete 0 hotkeys from a character_hotkey.
+INFO 16:02:23:904 CleaningManager: delete 0 chars from a character_friends.
+INFO 16:02:23:905 CleaningManager: delete 0 friends from a character_friends.
+INFO 16:02:23:905 CleaningManager: delete 0 settings from a character_settings.
+INFO 16:02:23:906 CleaningManager: delete 0 empty items from a items.
+INFO 16:02:23:906 CleaningManager: delete 0 no owner items from a items.
+INFO 16:02:23:906 CleaningManager: delete 0 no owner guild items from a items.
+INFO 16:02:23:923 CleaningManager: create buffer table items.
+INFO 16:02:23:925 CleaningManager: copy 6 items to buffer_items.
+INFO 16:02:23:926 CleaningManager: delete 0 no owner items from a buffer_items.
+INFO 16:02:23:936 CleaningManager: drop buffer table items.
+INFO 16:02:23:936 CleaningManager: delete 0 from a quests.
+INFO 16:02:23:937 CleaningManager: delete 0 from a quest variables.
+INFO 16:02:23:937 CleaningManager: delete 0 from a guild ranks.
+INFO 16:02:24:002 ClientPacketType: client packets prepared.
+INFO 16:02:24:038 EffectParser: initialized.
+INFO 16:02:24:042 RandomManager: initialized.
+INFO 16:02:24:043 IdFactory: prepare npc ids...
+INFO 16:02:24:048 BitSetIdGenerator: 102912 id's available.
+INFO 16:02:24:049 IdFactory: prepare objects ids...
+INFO 16:02:24:049 BitSetIdGenerator: 102912 id's available.
+INFO 16:02:24:049 IdFactory: prepare players ids...
+INFO 16:02:24:053 BitSetIdGenerator: extracted 1 ids.
+INFO 16:02:24:054 BitSetIdGenerator: 102912 id's available.
+INFO 16:02:24:054 IdFactory: prepare guilds ids...
+INFO 16:02:24:054 BitSetIdGenerator: extracted 0 ids.
+INFO 16:02:24:055 BitSetIdGenerator: 102912 id's available.
+INFO 16:02:24:055 IdFactory: prepare item ids...
+INFO 16:02:24:056 BitSetIdGenerator: extracted 6 ids.
+INFO 16:02:24:056 BitSetIdGenerator: 102912 id's available.
+INFO 16:02:24:080 ServerVarManager: loaded 0 variables.
+INFO 16:02:24:084 BossSpawnManager: loaded 0 boss spawns.
+INFO 16:02:25:708 TerritoryTable: loaded 160 territories for 18803 regions.
+INFO 16:02:28:215 WorldZoneTable: loaded 12 world zones for 31986 regions.
+INFO 16:02:28:217 ConditionParser: initializable.
+WARNING 16:02:28:887 SkillTable: detected once the file D:\Documents\Documents\Java\Tera Server\.\data\skills\summon_skills\deprecated.zip
+INFO 16:02:28:903 SkillTable: loaded 4613 skills for 19 classes.
+INFO 16:02:29:442 ItemTable: loaded 10138 items.
+INFO 16:02:29:458 Race: race appearances initializable.
+INFO 16:02:29:467 PlayerTable: loaded 104 player templates.
+WARNING 16:02:29:818 DropTable: not found items [50048]
+INFO 16:02:29:819 DropTable: load drop for 407 npcs and 126 for resourse.
+INFO 16:02:29:824 TownTable: initialized.
+WARNING 16:02:29:851 NpcDialogTable: detected once the file D:\Documents\Documents\Java\Tera Server\.\data\dialogs\dialogs.txt
+INFO 16:02:29:890 NpcDialogTable: loaded 88 dialogs.
+INFO 16:02:29:897 MessagePackageTable: loaded 34 message packages.
+INFO 16:02:29:948 ConfigAITable: loaded 45 npc ai configs.
+INFO 16:02:29:965 NpcAppearanceTable: initialized. Loaded 59 appearances.
+WARNING 16:02:30:118 NpcTable: detected once the file D:\Documents\Documents\Java\Tera Server\.\data\npcs\summons\playable_summons.zip
+INFO 16:02:30:128 NpcTable: loaded  816 npcs.
+INFO 16:02:30:141 ResourseTable: loaded  253 resourses.
+INFO 16:02:30:156 MinionTable: loaded 303 minions for 42 npcs.
+INFO 16:02:30:171 RegenTaskManager: initializable.
+INFO 16:02:30:179 Formulas: initialized.
+INFO 16:02:30:180 EffectTaskManager: initialized.
+INFO 16:02:30:558 ObjectEventManager: initialized.
+INFO 16:02:30:559 MoveTaskManager: initialized.
+INFO 16:02:31:230 SpawnTable: loaded 19515 spawns for 617 npcs and 2013 spawns for 60 resourses.
+INFO 16:02:31:268 GeoMap3D: start fast import geodata_1.dat
+INFO 16:02:31:573 GeoMap3D: import ended. load 1867238 quards.
+INFO 16:02:31:573 GeoMap3D: start fast import geodata_2.dat
+INFO 16:02:31:667 GeoMap3D: import ended. load 440227 quards.
+INFO 16:02:31:667 GeoMap3D: start fast import geodata_3.dat
+INFO 16:02:31:693 GeoMap3D: import ended. load 58040 quards.
+INFO 16:02:31:693 GeoManager: initialized.
+INFO 16:02:31:700 ItemExecutorManager: loaded 0 executor items.
+INFO 16:02:31:718 CommandManager: loaded 94 commands.
+INFO 16:02:31:730 SkillLearnManager: loaded 950 skill learn's for 8 clases.
+INFO 16:02:31:733 AnnounceManager: loaded 0 start announces and 0 running announces.
+INFO 16:02:31:735 AccountManager: initialized.
+INFO 16:02:31:740 GuildManager: loaded 0 guilds.
+INFO 16:02:32:100 QuestManager: loaded 455 quests.
+INFO 16:02:32:102 OnlineManager: initialized.
+INFO 16:02:32:105 GameLogManager: initialized.
+INFO 16:02:32:183 Region: next battle "Veritas District" in 2018.12.16 15:00.
+INFO 16:02:32:185 Region: next battle "Ostgarath" in 2018.12.16 15:00.
+INFO 16:02:32:188 Region: next battle "Val Palrada" in 2018.12.15 19:00.
+INFO 16:02:32:190 Region: next battle "Val Aureum" in 2018.12.15 19:00.
+INFO 16:02:32:190 EventManager: loaded 5 events.
+INFO 16:02:32:322 EventManager: the nearest event in 36 minutes.
+INFO 16:02:32:330 PlayerManager: initialized.
+INFO 16:02:32:349 Network: started.
+INFO 16:02:32:349 GameServer: started.
+WARNING 16:02:50:257 ClientConnection: not found packet for opcode B43D
+20 00 BC 4D 02 00 08 00 08 00 14 00 00 00 00 00    ..¼M............
+32 4D 04 00 14 00 00 00 01 00 00 00 C4 57 04 00    2M..........ÄW..
+3F 00 3D B4 13 00 1F 00 20 00 00 00 00 00 00 08    ?.=´............
+00 00 00 61 00 64 00 6D 00 69 00 6E 00 00 00 32    ...a.d.m.i.n...2
+31 32 33 32 66 32 39 37 61 35 37 61 35 61 37 34    1232f297a57a5a74
+33 38 39 34 61 30 65 34 61 38 30 31 66 63 33       3894a0e4a801fc3.
+
+INFO 16:02:50:261 AccountManager: authed admin
+WARNING 16:02:52:163 ClientConnection: not found packet for opcode B54D
+DD 00 4D B5 37 00 59 00 AD 00 AF 3F 00 00 80 00    Ý.Mµ7.Y.­.¯?...
+00 00 80 07 00 00 38 04 00 00 00 80 07 00 00 38    .....8.......8
+04 00 00 02 00 00 00 C0 0D 00 00 38 04 00 00 04    .......À...8....
+00 00 00 08 00 00 00 57 00 69 00 6E 00 64 00 6F    .......W.i.n.d.o
+00 77 00 73 00 20 00 38 00 20 00 28 00 78 00 36    .w.s...8...(.x.6
+00 34 00 29 00 20 00 00 00 49 00 6E 00 74 00 65    .4.).....I.n.t.e
+00 6C 00 28 00 52 00 29 00 20 00 43 00 6F 00 72    .l.(.R.)...C.o.r
+00 65 00 28 00 54 00 4D 00 29 00 20 00 69 00 37    .e.(.T.M.)...i.7
+00 2D 00 34 00 37 00 31 00 30 00 48 00 51 00 20    .-.4.7.1.0.H.Q..
+00 43 00 50 00 55 00 20 00 40 00 20 00 32 00 2E    .C.P.U...@...2..
+00 35 00 30 00 47 00 48 00 7A 00 00 00 4E 00 56    .5.0.G.H.z...N.V
+00 49 00 44 00 49 00 41 00 20 00 47 00 65 00 46    .I.D.I.A...G.e.F
+00 6F 00 72 00 63 00 65 00 20 00 47 00 54 00 58    .o.r.c.e...G.T.X
+00 20 00 38 00 37 00 30 00 4D 00 00 00             ...8.7.0.M......
+
+WARNING 16:02:59:504 ClientConnection: not found packet for opcode 5A77
+22 09 77 5A 08 00 1A 09 08 97 56 12 04 32 23 43    ".wZ.....V..2#C
+50 52 33 08 97 56 52 20 53 00 31 00 43 00 68 00    PR3.VR.S.1.C.h.
+61 00 74 00 43 00 6F 00 6E 00 74 00 72 00 6F 00    a.t.C.o.n.t.r.o.
+6C 00 6C 00 65 00 72 00 A2 01 05 08 F3 65 28 00    l.l.e.r.¢...óe(.
+F0 01 00 C0 02 05 52 63 08 97 56 52 46 53 00 31    ð..À..Rc.VRFS.1
+00 4D 00 69 00 6E 00 69 00 6D 00 61 00 70 00 43    .M.i.n.i.m.a.p.C
+00 6F 00 6E 00 74 00 72 00 6F 00 6C 00 6C 00 65    .o.n.t.r.o.l.l.e
+00 72 00 5F 00 53 00 31 00 4D 00 69 00 6E 00 69    .r._.S.1.M.i.n.i
+00 6D 00 61 00 70 00 4F 00 70 00 74 00 69 00 6F    .m.a.p.O.p.t.i.o
+00 6E 00 A2 01 0F 78 DA E3 38 9F 2A C4 C3 88 04    .n.¢..xÚã8*ÄÃ.
+00 15 5A 01 67 F0 01 01 C0 02 11 52 A2 10 08 97    ..Z.gð..À..R¢..
+56 52 1E 53 00 31 00 55 00 49 00 5F 00 47 00 46    VR.S.1.U.I._.G.F
+00 78 00 4D 00 61 00 6E 00 61 00 67 00 65 00 72    .x.M.a.n.a.g.e.r
+00 A2 01 F4 0F 78 DA 8D 59 CD 8B 5C 45 10 EF A3    .¢.ô.xÚYÍ\E.ï£
+3C 44 82 84 B8 84 18 96 90 09 21 04 09 BB 21 88    <D¸..!..»!
+48 92 F7 66 93 9D CD CE 64 27 3B 9B E4 A8 93 F9    H÷fÍÎd';ä¨ù
+C8 0E 3B 5F BC 99 89 59 BD 48 4E 22 0A 1E 24 98    È.;_¼Y½HN"..$
+80 18 D0 83 A8 7F 80 5E 24 07 D1 15 E2 D9 A3 57    .Ð¨^$.Ñ.âÙ£W
+8F 39 7A B4 EA D7 DD D3 9F 6F 92 2C FB 91 ED EA    9z´ê×ÝÓo,ûíê
+EA AA 5F 55 FD AA BA 37 59 4A 92 AA D8 12 EB 62    êª_Uýªº7YJªØ.ëb
+43 5C 17 87 C4 9B 82 FE 95 F8 4B 72 2C 79 AD 26    C\.ÄþøKr,y­&
+3A 62 42 1F 4D 71 97 7E 72 56 4F 26 47 52 71 47    :bB.Mq~rVO&GRqG
+0C C5 48 E4 62 40 12 7D D1 13 53 B1 2F A5 BE CE    .ÅHäb@.}Ñ.S±/¥¾Î
+E6 3A 32 DA 39 A4 CF 2E D6 8D 8E 07 59 72 2A 59    æ:2Ú9¤Ï.Ö.Yr*Y
+6A D0 4A 9F 3E 5B B4 C6 3F E7 E2 1E BE 3A 67 9D    jÐJ>[´Æ?çâ.¾:g
+4D 8E DB 72 65 B1 4B E7 E5 F4 C9 FF 8B 49 97 E9    MÛre±KçåôÉÿIé
+77 1D 5A E7 D5 17 48 93 1F 0D B1 47 B6 F5 E9 A3    w.ZçÕ.H..±G¶õé£
+42 DE 4C C5 26 49 29 3F DE 67 3F 2A 99 2B 75 9B    BÞLÅ&I)?Þg?*+u
+BE 0F 45 9B 64 3F 70 75 1D 4F 0E 35 E8 34 46 84    ¾.Ed?pu.O.5è4F
+AD 9C 69 7F AB AC E5 F7 8C D7 6B 64 07 EF AE 01    ­i«¬å÷×kd.ï®.
+95 19 AF 77 BB D7 B2 52 B7 FB 63 96 2C 27 AF 6F    .¯w»×²R·ûc,'¯o
+D0 6F EF 61 6D 0A 3D CA 8E 03 D8 91 32 62 37 68    Ðoïam.=Ê.Ø2b7h
+17 47 65 2A AE 91 C4 8C 64 86 40 DF B1 84 E4 A4    .Ge*®Äd@ß±ä¤
+DF 63 E5 73 05 B2 13 3F 8A C0 CA C7 C7 F3 EF 9B    ßcås.².?ÀÊÇÇóï
+1F F2 4B A5 FA E7 6F 5C 62 FB 18 D9 11 72 62 17    .òK¥úço\bû.Ù.rb.
+9E 84 68 D6 A1 8D 33 21 8E D3 72 CA A7 DE 86 54    hÖ¡3!ÓrÊ§ÞT
+07 68 49 BB 0A 51 05 F6 12 8D 05 52 94 C7 19 FD    .hI».Q.ö..RÇ.ý
+96 B5 B6 83 FD 3B F0 AF BD 68 3F C5 C6 48 55 69    µ¶ý;ð¯½h?ÅÆHUi
+FD 6E A4 1A 78 6F 0F D9 3E B6 E2 42 AB E7 92 13    ýn¤.xo.Ù>¶âB«ç.
+EB E4 07 E7 47 5B D8 D9 57 78 DE 5B C9 B2 D9 B1    ëä.çG[ØÙWxÞ[É²Ù±
+0E 54 67 A4 B5 50 1E 91 1A D1 D9 03 92 1B AA 5A    .Tg¤µP..ÑÙ..ªZ
+2B 94 A6 48 D5 61 25 C7 73 8D D6 FB 7E 86 9C 48    +¦HÕa%ÇsÖû~H
+0E CB 48 B5 50 59 75 44 75 1A F8 7C 85 F4 B7 10    .ËHµPYuDu.ø|ô·.
+EB A1 5E AD B0 CF EF 66 C9 99 E4 18 23 2E F7 F1    ë¡^­°ÏïfÉä.#.÷ñ
+39 0B 64 4F 27 47 4D FD 54 81 4E 0E 2F 86 3E CE    9.dO'GMýTN./>Î
+A4 F5 96 92 93 AC C3 F6 F7 90 E1 41 4C 48 6B 05    ¤õ¬Ãö÷áALHk.
+98 30 22 91 CA FB EB D9 B3 8B 54 59 47 52 96 34    0"ÊûëÙ³TYGR4
+75 B3 43 DA 26 64 0D D7 5A 97 F6 A0 06 FF 60 4B    u³CÚ&d.×Zö .ÿ`K
+0F 50 61 46 67 0D BE 68 3B 7C 3B 8D DC 06 3C 9F    .PaFg.¾h;|;Ü.<
+11 1F 36 55 A6 3A B2 47 93 57 65 46 6D 19 4E D0    ..6U¦:²GWeFm.NÐ
+C8 80 03 F7 15 86 03 92 E0 8A ED 91 F4 30 1A 2F    È.÷..àíô0./
+19 6D CE 53 C6 FE BE 94 59 56 2C 45 39 B2 01 EC    .mÎSÆþ¾YV,E9².ì
+3B F3 7A 96 9A 2C B6 71 2A 46 D6 FE 54 AC 44 CE    ;óz,¶q*FÖþT¬DÎ
+E2 8C 6C D3 9E 56 DC 1E F2 3F 26 53 A5 EF 41 1E    âlÓVÜ.ò?&S¥ïA.
+BD 9D 9C 89 C9 DA 75 C2 F9 37 16 37 75 5D 01 9D    ½ÉÚuÂù7.7u].
+CF B2 E4 7C 72 2A B6 53 47 CE DB A5 CF BB 90 9C    Ï²ä|r*¶SGÎÛ¥Ï»
+8E ED BA 42 78 4D 3D 64 5E C6 CE D8 BE 95 80 63    íºBxM=d^ÆÎØ¾c
+4C 36 DC 02 DA ED 30 0F 9C 9C B1 A5 B8 BB 4D 23    L6Ü.Úí0.±¥¸»M#
+4C 9A 23 6B 72 D5 85 33 54 8D C1 E7 CB 4C F6 D7    L#krÕ3TÁçËLö×
+26 AA 65 14 FA 03 4E 93 7D 73 AC 6A 23 64 56 93    &ªe.ú.N}s¬j#dV
+7B 12 CD 99 8F 26 31 55 3C AB 0A E4 09 45 96 5F    {.Í&1U<«.ä.E_
+27 D9 01 ED 31 DC 9D C2 4E CE E2 7D AC 0C 7D 7B    'Ù.í1ÜÂNÎâ}¬.}{
+28 EF 0C 07 17 68 27 9B AF 5B 33 47 81 14 E1 32    (ï...h'¯[3G.á2
+05 22 7D 58 3B 0E 70 31 6C 10 C9 83 95 E4 64 2C    ."}X;.p1l.Éäd,
+0F FC 78 60 CF 03 8E C4 27 99 46 49 7B 6D 33 C7    .üx`Ï.Ä'FI{m3Ç
+8E B2 C4 A9 55 62 24 9F E7 2A 88 55 5F 32 92 93    ²Ä©Ub$ç*U_2
+CD 8B F0 E7 EC 4F 31 7D 0D AC 9E 74 80 13 0C D3    ÍðçìO1}.¬t..Ó
+CA 99 E6 A6 3B CB 55 94 2D 64 FB 1A CE EE 11 83    Êæ¦;ËU-dû.Îî.
+C9 53 FC 4A 73 E4 A9 BB 98 8E B5 06 24 BD EE F2    ÉSüJsä©»µ.$½îò
+4E 72 36 94 90 59 3E 55 AC 1F F4 2E 68 7F 0E AE    Nr6Y>U¬.ô.h.®
+D6 BC C4 4C 7D A7 98 13 29 CA EB CA 9F 48 6D 1C    Ö¼ÄL}§.)ÊëÊHm.
+49 5E 91 88 8E 65 2F A8 5E 2C AD AE 96 32 66 63    I^e/¨^,­®2fc
+AE E8 B1 BD 07 1A 0F 30 E7 95 55 FF AA D0 89 6D    ®è±½...0çUÿªÐm
+44 72 E2 F7 1D CA 1F 7D EE B6 CA 22 AC 7F 9A 96    Drâ÷.Ê.}î¶Ê"¬
+FE FE F6 7C 6A 7A 2B F7 E8 82 A9 84 10 8A C9 B0    þþö|jz+÷è©.É°
+BE BB 8A 43 ED 38 38 08 91 7E 33 3B 70 8C EF 85    ¾»Cí88.~3;pï
+11 A0 18 DD 80 4C 8B 3A 9D C3 FF 3A 8A 4E B5 15    . .ÝL:Ãÿ:Nµ.
+CC 87 8A 5F 72 B2 49 CE AD 61 BD CA 55 8E AC 95    Ì_r²IÎ­a½ÊU¬
+2B 8F 1F FD 93 96 3E 3A FC 4E 2A E7 1C 3F 13 32    +.ý>:üN*ç.?.2
+27 13 A0 73 89 AD FA 2F 95 8C AF 71 A9 A2 72 B4    '. s­ú/¯q©¢r´
+5C 23 DC A5 11 A1 2E 9A 89 AB 24 D1 52 5C E3 A1    \#Ü¥.¡.«$ÑR\ã¡
+0E B9 8F 2F 73 7C DD 2A 1D 11 76 BD E8 DD 86 27    .¹/s|Ý*..v½èÝ'
+99 9E C2 36 CA 56 94 A7 B1 09 2A 32 3B 12 EF 57    Â6ÊV§±.*2;.ïW
+61 4F 7B EE 09 33 E0 1D B0 C2 24 38 DB C4 76 D1    aO{î.3à.°Â$8ÛÄvÑ
+7C 77 1B 9E B2 54 0D 93 DE 8A E5 E9 E5 94 F5 6C    |w.²T.Þåéåõl
+A9 BB 54 1F 8C 6B 49 AD AE BE 97 95 1E 3F FA 13    ©»T.kI­®¾.?ú.
+68 DB 78 6C A9 89 D1 E4 9D C3 5D DF A7 73 7F EC    hÛxl©ÑäÃ]ß§sì
+5D 72 0A DC C3 09 39 7D 37 76 C8 5A A9 23 6E BD    ]r.ÜÃ.9}7vÈZ©#n½
+48 2E D3 5D 00 BD 3A AC 83 1A 50 97 6C 14 E5 20    H.Ó].½:¬.Pl.å.
+CA BD 06 A2 A2 27 AE 9A 99 CA B5 6E 4C 9D B6 4C    Ê½.¢¢'®ÊµnL¶L
+1D BD B0 1D 32 A0 AA 58 77 5E 5E 09 26 70 37 8A    .½°.2 ªXw^^.&p7
+D1 7E 00 8D BF 64 F2 AE 24 B3 9E 7D B6 A6 35 AB    Ñ~.¿dò®$³}¶¦5«
+AF FA D6 8D C0 C1 2D 42 22 32 11 04 DE 70 ED DD    ¯úÖÀÁ-B"2..ÞpíÝ
+8F 49 3A FC 50 56 F6 85 DA E4 4A 1B 91 B1 F1 9E    I:üPVöÚäJ.±ñ
+04 76 86 77 C4 3A F6 CA DA B1 F9 FB 89 9A 42 E5    .vwÄ:öÊÚ±ùûBå
+44 D1 50 77 50 7D 0B 1F 86 EF 08 E8 9B BE B4 66    DÑPwP}..ï.è¾´f
+55 59 CB 8E 3C 65 AC 8B C2 CB 32 A6 3E 65 8D D0    UYË<e¬ÂË2¦>eÐ
+ED C4 6E 1E E8 6A 86 55 23 73 2C 49 30 CB 6C C3    íÄn.èjU#s,I0ËlÃ
+93 BD 02 1D E6 9E 53 87 35 BB 2F 88 3A 9F 29 73    ½..æS5»/:)s
+DE C9 73 AB FB EB 3A 2B C3 AF 29 B2 AE 8F 4C CE    ÞÉs«ûë:+Ã¯)²®LÎ
+8B 7B 23 3A 70 F1 BE E8 3B C5 43 46 EB 67 74 41    {#:pñ¾è;ÅCFëgtA
+33 1F 15 DE BE A8 37 34 90 DF CE 6C A9 6B 8F BA    3..Þ¾¨74ßÎl©kº
+EC B6 3F 77 EA 35 CA 10 9B E3 9A A8 39 7E DB 69    ì¶?wê5Ê.ã¨9~Ûi
+AA 8C F4 33 D5 97 2E C3 9E A0 5B E1 D5 43 F2 D5    ªô3Õ.Ã [áÕCòÕ
+0E E6 A1 8E 3B 19 3D 67 FE 7A 98 F1 7C B7 36 CF    .æ¡;.=gþzñ|·6Ï
+18 9E 79 66 73 0C 03 C6 3D CB 36 8F 81 89 DB 61    .yfs..Æ=Ë6Ûa
+42 56 FA 17 AC 2B 6F 0B 51 7C BF E3 77 9E 03 B0    BVú.¬+o.Q|¿ãw.°
+8D 7D 1B 95 96 AA 49 E4 27 D6 F4 15 34 6D AA 3C    }.ªIä'Öô.4mª<
+92 3C 32 B4 5F AF 20 F5 5B CA F9 B6 39 CF B6 11    <2´_¯.õ[Êù¶9Ï¶.
+6C 9F 5A 12 32 F3 D9 EE 1A F2 4D F6 B4 20 6B CF    lZ.2óÙî.òMö´.kÏ
+25 27 62 32 92 DF 5A 36 BB 8D 51 E3 A9 44 70 A6    %'b2ßZ6»Qã©Dp¦
+EA 79 A8 EA 75 86 69 3B 3E D7 9D CF 38 93 CD 1E    êy¨êui;>×Ï8Í.
+39 BF 6A DE 5F 68 DD 5A 72 E1 65 F7 2D B0 98 7C    9¿jÞ_hÝZráe÷-°|
+B4 7B 96 9C 2C FB B1 17 1A 9D A5 78 DF E8 83 F3    ´{,û±..¥xßèó
+F6 84 89 97 93 51 CE 2C A0 6F 22 3B 88 F8 08 B9    öQÎ, o";ø.¹
+35 7F 99 D3 9D 86 B4 BA DE 2C 60 13 EA 9D 86 1B    5Ó´ºÞ,`.ê.
+3B E1 2B 1F F9 14 D7 65 C7 C3 89 01 B1 A7 BB A3    ;á+.ù.×eÇÃ.±§»£
+01 5F C6 40 A2 70 17 45 CE F7 E9 8A 62 94 7D B1    ._Æ@¢p.EÎ÷éb}±
+E0 8D D8 99 E5 6C 9C B7 31 4D 7A 8C F7 24 95 B8    àØål·1Mz÷$¸
+E3 16 BE 68 97 E4 33 7E 4F 0E D9 77 13 F1 E2 3E    ã.¾hä3~O.Ùw.ñâ>
+A2 91 F3 19 C2 C4 89 67 BC D6 BC B6 9C 28 A9 09    ¢ó.ÂÄg¼Ö¼¶(©.
+5F DF 5F 9B 7A FD 57 5E 7F 9A F1 DB C9 4D BC 5F    _ß_zýW^ñÛÉM¼_
+05 BC 4B 36 98 95 90 23 C6 A9 2B B1 6E E3 F6 85    .¼K6#Æ©+±nãö
+9A DD A8 BA 8C 84 F4 56 C6 A5 A2 58 CB 7A 19 B6    Ý¨ºôVÆ¥¢XËz.¶
+FA 4A 7C 4F 1D D8 05 EF 57 38 63 4C 68 CA F7 97    úJ|O.Ø.ïW8cLhÊ÷
+EB 6A CE EE 62 FE 68 C6 67 35 E2 6D 73 86 E1 9B    ëjÎîbþhÆg5âmsá
+86 9A 0E 3A 6E CF 75 A4 6B F8 DA C1 64 E3 48 3B    .:nÏu¤køÚÁdãH;
+EF 1D 65 51 F0 FE 7D 32 93 CC 4D 77 BA B2 3D 15    ï.eQðþ}2ÌMwº²=.
+E8 57 34 F5 3A 9A AB 19 B6 E0 85 C2 9A 06 CC 8A    èW4õ:«.¶àÂ.Ì
+17 47 67 22 EC 60 32 2A 7C 03 A4 48 DE 52 B7 C4    .Gg"ì`2*|.¤HÞR·Ä
+91 3B 31 48 C4 32 FF BE D1 70 67 9A A7 A9 8C B7    ;1HÄ2ÿ¾Ñpg§©·
+F7 76 60 A4 0A EC A7 2C 4E 11 D3 09 5E 93 3A C4    ÷v`¤.ì§,N.Ó.^:Ä
+DD B9 DA EB F7 E0 06 F8 B0 17 E5 0E 39 CB C8 9A    Ý¹Úë÷à.ø°.å.9ËÈ
+CF 71 9E FD 62 E8 4E D3 15 75 37 9E A9 FC 1B 90    ÏqýbèNÓ.u7©ü.
+DC 87 C1 4D 4C 4A 19 AB E3 8C 52 F1 66 C4 7D 44    ÜÁMLJ.«ãRñfÄ}D
+7B 17 B2 AC B5 E3 DC E4 E5 1B E9 55 F8 C7 9D 6E    {.²¬µãÜäå.éUøÇn
+C1 AB 37 DE 52 F5 F4 C5 D9 BD 3E BF DF 86 6C 9D    Á«7ÞRõôÅÙ½>¿ßl
+E3 F4 1E 59 37 20 1C 66 38 3B A8 66 DC 2B 9B B8    ãô.Y7..f8;¨fÜ+¸
+75 16 33 E4 13 64 54 0A 8D 43 F5 32 1B B9 7B 22    u.3ä.dT.Cõ2.¹{"
+6A 46 A6 19 BD CB 2E 67 F6 EB 42 A6 FE D6 62 D6    jF¦.½Ë.göëB¦þÖbÖ
+EB E9 92 F8 1F 73 DB 49 41 F0 01 01 C0 02 B4 37    ëéø.sÛIAð..À.´7
+52 50 08 97 56 52 3A 53 00 31 00 47 00 61 00 6D    RP.VR:S.1.G.a.m
+00 65 00 4F 00 70 00 74 00 69 00 6F 00 6E 00 5F    .e.O.p.t.i.o.n._
+00 53 00 31 00 49 00 6E 00 74 00 65 00 72 00 66    .S.1.I.n.t.e.r.f
+00 61 00 63 00 65 00 47 00 72 00 6F 00 75 00 70    .a.c.e.G.r.o.u.p
+00 A2 01 08 08 CF 6D 1D 00 00 80 3F F0 01 00 C0    .¢...Ïm...?ð..À
+02 08                                              ................
+
+WARNING 16:03:03:778 ClientConnection: not found packet for opcode EAD8
+04 00 D8 EA                                        ..Øê............
+
+WARNING 16:03:03:781 ClientConnection: not found packet for opcode D533
+04 00 33 D5                                        ..3Õ............
+
+WARNING 16:03:04:988 ClientConnection: not found packet for opcode 93F3
+18 00 F3 93 01 00 08 00 08 00 00 00 01 00 00 00    ..ó............
+A2 05 00 00 00 00 00 00                            ¢...............
+
+WARNING 16:03:07:377 ClientConnection: not found packet for opcode E7AD
+FE 02 AD E7 08 00 F6 02 08 97 56 12 04 32 23 43    þ.­ç..ö..V..2#C
+50 52 45 08 97 56 52 2E 53 00 31 00 53 00 6B 00    PRE.VR.S.1.S.k.
+69 00 6C 00 6C 00 48 00 6F 00 74 00 4B 00 65 00    i.l.l.H.o.t.K.e.
+79 00 43 00 6F 00 6E 00 74 00 72 00 6F 00 6C 00    y.C.o.n.t.r.o.l.
+6C 00 65 00 72 00 A2 01 09 08 97 56 4A 04 33 00    l.e.r.¢...VJ.3.
+32 00 F0 01 00 C0 02 09 52 CE 01 08 97 56 52 28    2.ð..À..RÎ..VR(
+53 00 31 00 53 00 68 00 6F 00 72 00 74 00 43 00    S.1.S.h.o.r.t.C.
+75 00 74 00 43 00 6F 00 6E 00 74 00 72 00 6F 00    u.t.C.o.n.t.r.o.
+6C 00 6C 00 65 00 72 00 A2 01 96 01 78 DA 25 CC    l.l.e.r.¢..xÚ%Ì
+BD 0D C2 30 18 84 E1 CF 8E 03 76 52 10 FE 84 13    ½.Â0.áÏ.vR.þ.
+1A 57 8C C1 08 88 8A 09 58 23 1D 03 20 51 50 21    .WÁ..X#...QP!
+51 41 C3 14 16 88 05 18 84 82 01 F8 4E D7 3D AF    QAÃ.....øN×=¯
+74 3A 7F DE 6D E5 6A 24 5B EF A5 91 B8 4F 7D B6    t:Þmåj$[ï¥¸O}¶
+41 69 94 EF 75 B6 B5 DA 45 49 CF D7 CD B1 4A AD    Aiïu¶µÚEIÏ×Í±J­
+CF E9 EE B8 8B 5A BF 4D B6 95 BA 55 1F 2E 86 D1    Ïéî¸Z¿M¶ºU..Ñ
+21 BE 23 AC 82 1E 3F 6C 6A 68 03 8F 69 0B 4F E8    !¾#¬.?ljh.i.Oè
+02 9E D2 0E 9E D1 25 3C A7 07 F0 82 1E C2 91 F6    .Ò.Ñ%<§.ð.Âö
+70 4B 07 B8 A3 2B 78 49 D7 F0 EA 58 C8 1F 93 B5    pK.¸£+xI×ðêXÈ.µ
+2C 59 F0 01 01 C0 02 F4 01 52 77 08 97 56 52 36    ,Yð..À.ô.Rw.VR6
+53 00 31 00 45 00 71 00 75 00 69 00 70 00 6D 00    S.1.E.q.u.i.p.m.
+65 00 6E 00 74 00 50 00 72 00 65 00 73 00 65 00    e.n.t.P.r.e.s.e.
+74 00 43 00 6F 00 6E 00 74 00 72 00 6F 00 6C 00    t.C.o.n.t.r.o.l.
+6C 00 65 00 72 00 A2 01 32 78 DA E3 D8 1F 26 C4    l.e.r.¢.2xÚãØ.&Ä
+21 C0 20 C1 A0 C0 A0 C1 30 CA 42 62 31 8E B2 90    !À.Á À Á0ÊBb1²
+58 4C A3 2C 24 16 F3 28 0B 89 C5 32 CA D2 60 91    XL£,$.ó(.Å2ÊÒ`
+60 80 41 20 4F 1A 00 B0 05 4B CD F0 01 01 C0 02    `A.O..°.KÍð..À.
+D7 0A 52 37 08 97 56 52 26 53 00 31 00 43 00 75    ×.R7.VR&S.1.C.u
+00 73 00 74 00 6F 00 6D 00 69 00 7A 00 65 00 4B    .s.t.o.m.i.z.e.K
+00 65 00 79 00 47 00 72 00 6F 00 75 00 70 00 A2    .e.y.G.r.o.u.p.¢
+01 03 08 97 56 F0 01 00 C0 02 03 52 5B 08 97 56    ...Vð..À..R[.V
+52 32 53 00 31 00 43 00 75 00 73 00 74 00 6F 00    R2S.1.C.u.s.t.o.
+6D 00 69 00 7A 00 65 00 50 00 61 00 64 00 42 00    m.i.z.e.P.a.d.B.
+75 00 74 00 74 00 6F 00 6E 00 47 00 72 00 6F 00    u.t.t.o.n.G.r.o.
+75 00 70 00 A2 01 1B 08 97 56 1A 16 58 00 62 00    u.p.¢...V..X.b.
+6F 00 78 00 54 00 79 00 70 00 65 00 53 00 5F 00    o.x.T.y.p.e.S._.
+58 00 F0 01 00 C0 02 1B 52 3B 08 97 56 52 28 53    X.ð..À..R;.VR(S
+00 31 00 4E 00 50 00 43 00 47 00 75 00 69 00 6C    .1.N.P.C.G.u.i.l
+00 64 00 43 00 6F 00 6E 00 74 00 72 00 6F 00 6C    .d.C.o.n.t.r.o.l
+00 6C 00 65 00 72 00 A2 01 05 08 97 56 50 00 F0    .l.e.r.¢...VP.ð
+01 00 C0 02 05 52 4B 08 97 56 52 38 53 00 31 00    ..À..RK.VR8S.1.
+53 00 6B 00 69 00 6C 00 6C 00 43 00 72 00 65 00    S.k.i.l.l.C.r.e.
+73 00 74 00 50 00 72 00 65 00 73 00 65 00 74 00    s.t.P.r.e.s.e.t.
+43 00 6F 00 6E 00 74 00 72 00 6F 00 6C 00 6C 00    C.o.n.t.r.o.l.l.
+65 00 72 00 A2 01 05 08 B1 5E 20 00 F0 01 00 C0    e.r.¢...±^..ð..À
+02 05 52 3A 08 97 56 52 2A 53 00 31 00 49 00 6E    ..R:.VR*S.1.I.n
+00 76 00 65 00 6E 00 74 00 6F 00 72 00 79 00 43    .v.e.n.t.o.r.y.C
+00 6F 00 6E 00 74 00 72 00 6F 00 6C 00 6C 00 65    .o.n.t.r.o.l.l.e
+00 72 00 A2 01 02 08 00 F0 01 00 C0 02 02          .r.¢....ð..À....
+
+WARNING 16:03:07:383 ClientConnection: not found packet for opcode 5A77
+2D 0D 77 5A 08 00 25 0D 08 97 56 12 04 32 23 43    -.wZ..%..V..2#C
+50 52 A9 08 08 97 56 52 20 53 00 31 00 43 00 68    PR©..VR.S.1.C.h
+00 61 00 74 00 43 00 6F 00 6E 00 74 00 72 00 6F    .a.t.C.o.n.t.r.o
+00 6C 00 6C 00 65 00 72 00 A2 01 F9 07 78 DA BD    .l.l.e.r.¢.ù.xÚ½
+57 4D 68 13 41 14 9E D7 36 41 06 91 25 88 2C 52    WMh.A.×6A.%,R
+CA B8 A6 B5 D6 6A DB 34 49 CB 08 36 6D 92 C6 D0    Ê¸¦µÖjÛ4IË.6mÆÐ
+A4 5D D2 D4 5A 3C 14 D1 4A 4F 9E 3C 09 8A DE EC    ¤]ÒÔZ<.ÑJO<.Þì
+41 F4 24 78 93 5C 04 BD 29 82 15 44 41 F1 E4 C1    Aô$x\.½).DAñäÁ
+8B 87 8A 87 5E 3C 2A 05 0F 82 1E E2 CC E4 67 37    ^<*...âÌäg7
+CD EC EE 4C 2C B6 10 B2 9B EF BD F7 BD 9F 99 F7    ÍìîL,¶.²ï½÷½÷
+DE BE 9F 6B 91 F7 FB 6D F4 08 D0 0E 54 1B 7F F0    Þ¾k÷ûmô.Ð.T.ð
+B6 CB F9 7E BF FB 4B 68 BB FB 75 D7 B3 9E 03 29    ¶Ëù~¿ûKh»ûu×³.)
+74 09 AD A3 8B E8 1A A2 68 0C DD 0D 21 F4 7B E6    t.­£è.¢h.Ý.!ô{æ
+53 E8 64 25 4C 68 5F 1A 9D 45 D3 A8 CC FE 57 90    Sèd%Lh_.EÓ¨ÌþW
+8D B2 68 15 CD A3 05 54 42 45 F6 B6 80 2A E1 3E    ²h.Í£.TBEö¶*á>
+DA DB 0E B1 D9 73 49 3C 7B 00 72 68 09 E5 99 7C    ÚÛ.±ÙsI<{.rh.å|
+C6 0F C0 75 70 80 45 49 3B 60 46 FC 9C 63 9F 79    Æ.ÀupEI;`Fücy
+C6 A8 12 EE A5 87 DB 41 65 F6 39 CD A8 7A E8 58    Æ¨.î¥ÛAeö9Í¨zèX
+66 6F F2 68 51 3C 95 BC 74 94 84 09 CE 63 88 0E    foòhQ<¼t.Îc.
+7A FF BC CA BC E1 C6 32 75 5D 01 60 1E C4 32 FB    zÿ¼Ê¼áÆ2u].`.Ä2û
+9E 66 EF 3D D8 65 84 BE 82 F0 2F C7 40 C3 74 C8    fï=Øe¾ð/Ç@ÃtÈ
+2F D2 AB CC 91 AC 78 E2 28 05 78 2B 05 69 16 96    /Ò«Ì¬xâ(.x+.i.
+18 28 CF 60 3C C0 83 74 C0 0F 90 15 4C CB 42 97    .(Ï`<ÀtÀ..LËB
+D4 B4 03 55 F2 3E C7 3E E7 45 2C 6B 75 26 2D C5    Ô´.Uò>Ç>çE,ku&-Å
+45 A6 27 CD F4 D4 20 26 3D 24 0B B9 ED C5 88 27    E¦'ÍôÔ.&=$.¹íÅ'
+AB 28 C2 BB 9B 91 B4 10 38 70 96 C1 3C 42 B1 2C    «(Â»´.8pÁ<B±,
+8E 45 41 64 37 00 CA BD 2A 09 78 20 D4 9D B0 00    EAd7.Ê½*.x.Ô°.
+A8 73 A6 DC D0 01 1A F5 3E 17 6E 60 9C C6 E4 3E    ¨s¦ÜÐ..õ>.n`Æä>
+97 EB 59 48 8B 00 D5 12 E8 88 79 1C 2C CE 7A BE    ëYH.Õ.èy.,Îz¾
+59 BA 51 6A C9 33 5C 16 BA B8 85 A2 5F 21 94 45    YºQjÉ3\.º¸¢_!E
+D0 CE 8B 54 4A 1D 6A 80 8A F5 5A 5C F1 02 DA 8C    ÐÎTJ.jõZ\ñ.Ú
+57 1E 9D 13 6F F9 F3 98 2A 30 A6 0A 1C 57 05 C6    W..oùó*0¦..W.Æ
+55 81 09 55 60 52 15 38 A1 0A 9C 44 91 57 60 83    U.U`R.8¡.DW`
+7E 1B 89 B9 DB 48 60 8F D0 BC AB 94 4F 4A E4 1B    ~.¹ÛH`Ð¼«OJä.
+D8 5D FA E4 C7 03 C9 FF 9F 8B 31 40 33 F7 79 81    Ø]úäÇ.Éÿ1@3÷y
+DD 81 65 14 B9 6A 77 EB BB 19 77 BB A9 75 43 46    Ýe.¹jwë».w»©uCF
+5E F6 D8 3D FA 06 13 6E 83 D2 FA 2B 8A F4 D5 DE    ^öØ=ú..nÒú+ôÕÞ
+F1 1B 67 8E 45 61 92 26 BD 80 69 51 AE 35 56 BC    ñ.gEa&½iQ®5V¼
+07 EC 16 4D D2 B8 97 E8 AC 10 68 74 57 DE 6D A7    .ì.MÒ¸è¬.htWÞm§
+C5 4C 93 13 91 8F D1 51 2F 41 37 90 77 A0 62 5D    ÅL.ÑQ/A7w b]
+51 25 9C A1 33 EA 44 BD D5 F8 04 A6 95 A4 56 60    Q%¡3êD½Õø.¦¤V`
+3A F4 AF 50 1F B3 B2 FF E6 9F A3 26 B2 01 76 48    :ô¯P.³²ÿæ£&².vH
+BF 74 92 EE D2 51 1A 08 15 66 AA C8 65 3B AC 4F    ¿tîÒQ...fªÈe;¬O
+65 22 90 4A EB 5C 69 1D C7 01 53 B4 51 05 B3 0A    e"Jë\i.Ç.S´Q.³.
+A4 0A D6 00 F6 BD 29 0D 30 1F 08 5C 3F F6 1D AA    ¤.Ö.ö½).0..\?ö.ª
+8D 94 F9 07 48 CA 3A 86 7D 47 6B E3 09 98 8F 85    ù.HÊ:}Gkã.
+BE 21 1C 18 51 E3 1D 98 D7 C9 6D B0 8E 62 9F 49    ¾!..Qã.×Ém°bI
+9B BB 72 83 20 B9 C2 D6 B8 70 E8 4D 6E 3C 8A 7D    »r.¹ÂÖ¸pèMn<}
+C6 6E 8E FA 08 4C E3 18 56 9E BE 1B 24 62 58 79    Ænú.Lã.V¾.$bXy
+06 37 32 DC 0A 23 73 02 07 96 0D 57 FF 06 C8 3D    .72Ü.#s...Wÿ.È=
+B0 E2 58 63 24 6F 9A 08 94 6A 21 76 A5 5E 1A D2    °âXc$o.j!v¥^.Ò
+5C 3A CD C0 B8 05 E6 57 20 4F C1 1A C5 8A FD C8    \:ÍÀ¸.æW.OÁ.ÅýÈ
+88 98 2F 80 67 54 4A C8 AB 2D 35 A5 A4 91 6A 1D    /gTJÈ«-5¥¤j.
+DB 8D 1D 51 D8 1B 20 3F 03 EE F1 9D 07 75 13 C8    Û.QØ..?.îñ.u.È
+26 58 47 B0 C7 18 EF 40 46 B0 52 EF 30 B6 C0 DC    &XG°Ç.ï@F°Rï0¶ÀÜ
+02 B2 05 56 0A 77 D8 43 B8 CD E7 40 D6 AD 33 B8    .².V.wØC¸Íç@Ö­3¸
+A3 56 C2 E5 17 C8 1D B0 28 D6 EE 28 4D D9 39 BC    £VÂå.È.°(Öî(MÙ9¼
+07 8D C5 F8 0E E6 41 72 C1 3A 85 95 DA 4B D3 F8    .Åø.æArÁ:ÚKÓø
+14 EE B0 CB 34 0C 2A 7B EE 34 89 BD F0 DC A5 AD    .î°Ë4.*{î4½ðÜ¥­
+4E 24 81 35 46 1C A7 74 FB B1 CF 32 C8 99 FE 02    N$5F.§tû±Ï2Èþ.
+F2 10 D8 FD A4 B8 14 3A 55 39 82 15 97 43 E3 07    ò.Øý¤¸.:U9.Cã.
+98 BD 24 2A B7 21 1B 7C 03 6C C8 56 C5 46 CF 90    ½$*·!.|.lÈVÅFÏ
+9E AD F6 85 D1 B1 70 1A 77 B0 38 F2 B8 AD 91 35    ­öÑ±p.w°8ò¸­5
+76 2F 04 AE 8F 0D E7 87 B1 C2 12 C9 F5 6E 03 99    v/.®.ç±Â.Éõn.
+92 37 A0 D6 5D B2 89 95 1E 89 F6 95 B2 89 97 86    7 Ö]².ö²
+A8 7D B3 34 3E 8B 12 FA 00 6A 02 31 5D 81 71 5D    ¨}³4>.ú.j.1]q]
+81 B8 AE 40 42 57 20 A9 2B 30 A1 2B 30 E9 08 0C    ¸®@BW.©+0¡+0é..
+A2 BF A4 1C 02 23 F0 01 01 C0 02 E7 29 52 63 08    ¢¿¤..#ð..À.ç)Rc.
+97 56 52 46 53 00 31 00 4D 00 69 00 6E 00 69 00    VRFS.1.M.i.n.i.
+6D 00 61 00 70 00 43 00 6F 00 6E 00 74 00 72 00    m.a.p.C.o.n.t.r.
+6F 00 6C 00 6C 00 65 00 72 00 5F 00 53 00 31 00    o.l.l.e.r._.S.1.
+4D 00 69 00 6E 00 69 00 6D 00 61 00 70 00 4F 00    M.i.n.i.m.a.p.O.
+70 00 74 00 69 00 6F 00 6E 00 A2 01 0F 78 DA E3    p.t.i.o.n.¢..xÚã
+38 9F 2A C4 C3 88 04 00 15 5A 01 67 F0 01 01 C0    8*ÄÃ...Z.gð..À
+02 11 52 B6 10 08 97 56 52 1E 53 00 31 00 55 00    ..R¶..VR.S.1.U.
+49 00 5F 00 47 00 46 00 78 00 4D 00 61 00 6E 00    I._.G.F.x.M.a.n.
+61 00 67 00 65 00 72 00 A2 01 88 10 78 DA 8D 59    a.g.e.r.¢..xÚY
+4D 6B 94 57 14 BE AB 22 2F A5 48 10 1B C4 4A 10    MkW.¾«"/¥H..ÄJ.
+47 44 A4 D8 44 44 A4 A8 EF 3B D1 99 98 19 33 66    GD¤ØDD¤¨ï;Ñ.3f
+92 B8 6C C7 99 89 19 32 99 19 E6 C3 9A 76 53 5C    ¸lÇ.2.æÃvS\
+95 D2 42 17 45 AA 50 2A B4 8B D2 F6 07 B4 9B E2    ÒB.EªP*´Òö.´â
+A2 B4 29 D8 75 97 DD 76 E9 B2 CB 9E F3 DC 7B E7    ¢´)ØuÝvé²ËóÜ{ç
+7E BE A3 86 7C 98 7B EE B9 E7 3C E7 9C E7 9C 7B    ~¾£|{î¹ç<çç{
+93 CC 27 49 45 AC 89 92 58 11 B7 C4 61 F1 96 A0    Ì'IE¬X.·Äañ 
+7F 05 FE 92 1C 4F DE A8 8A B6 18 D1 47 43 DC A3    .þ.OÞ¨¶.ÑGCÜ£
+9F 9C D5 53 C9 D1 54 DC 15 3D D1 17 43 B1 47 12    ÕSÉÑTÜ.=Ñ.C±G.
+5D D1 11 63 B1 2F A5 BE CE A6 3A 32 DA D9 A3 CF    ]Ñ.c±/¥¾Î¦:2ÚÙ£Ï
+6D AC 1B 1D 0F B3 E4 74 32 5F A7 95 2E 7D 36 69    m¬...³ät2_§.}6i
+8D 7F 1E 8A FB F8 EA 9C 75 2E 39 61 CB 15 C5 0E    .ûøêu.9aË.Å.
+9D 37 A4 4F FE 5F 4C BA 48 BF 6B D3 3A AF BE 44    7¤Oþ_LºH¿kÓ:¯¾D
+9A FC A8 8B 5D B2 AD 4B 1F 65 F2 66 2C 56 49 4A    ü¨]²­K.eòf,VIJ
+F9 F1 3E FB 51 CE 5C A9 3B F4 BD 27 5A 24 FB 81    ùñ>ûQÎ\©;ô½'Z$û
+AB EB 44 72 B8 4E A7 31 22 6C E5 44 FB 5B 61 2D    «ëDr¸N§1"låDû[a-
+BF 67 BC 5E 25 3B 78 77 15 A8 4C 78 7D 7B FB 66    ¿g¼^%;xw.¨Lx}{ûf
+56 D8 DE FE 31 4B 16 92 B9 15 FA ED 7D AC 8D A1    VØÞþ1K.¹.úí}¬¡
+47 D9 71 00 3B 52 46 EC 36 ED E2 A8 8C C5 4D 92    GÙq.;RFì6íâ¨ÅM
+98 90 4C 0F E8 3B 96 90 9C F4 7B A0 7C 2E 43 76    L.è;ô{ |.Cv
+E4 47 11 58 F9 F8 78 FE 7D F3 C3 F0 6A A1 F6 F9    äG.Xùøxþ}óÃðj¡öù
+9B 57 D9 3E 46 B6 8F 9C D8 81 27 21 9A 35 68 E3    WÙ>F¶Ø'!5hã
+4C 88 E3 B4 90 F2 A9 77 20 D5 06 5A D2 AE 5C 54    Lã´ò©w.Õ.ZÒ®\T
+81 BD 44 63 86 14 E5 71 46 BF 65 AD AD 60 FF 06    ½Dc.åqF¿e­­`ÿ.
+FC 6B CD DA 4F B1 31 52 15 5A BF 17 A9 06 DE DB    ükÍÚO±1R.Z¿.©.ÞÛ
+41 B6 0F AC B8 D0 EA F9 E4 64 89 FC E0 FC 68 09    A¶.¬¸Ðêùädüàüh.
+3B FB 72 CF 7B 3B 59 30 3B 4A 40 75 42 5A 73 E5    ;ûrÏ{;Y0;J@uBZså
+11 A9 3E 9D BD 47 72 3D 55 6B B9 D2 14 A9 1A AC    .©>½Gr=Uk¹Ò.©.¬
+E4 78 2E D3 7A D7 CF 90 93 C9 11 19 A9 26 2A AB    äx.Óz×ÏÉ..©&*«
+86 A8 8E 03 9F AF 93 FE 26 62 DD D3 AB 65 F6 F9    ¨.¯þ&bÝÓ«eöù
+DD 2C 39 9B 1C 67 C4 E5 3E 3E 67 86 EC 99 E4 98    Ý,9.gÄå>>gìä
+A9 9F 0A D0 19 C2 8B 9E 8F 33 69 DD 52 72 92 75    ©.Ð.Â3iÝRru
+D8 FE 0E 32 3C 88 09 69 2D 03 13 46 24 52 79 7F    Øþ.2<.i-..F$Ry
+3D 7F 7E 85 2A EB 68 CA 92 A6 6E 36 48 DB 88 AC    =~*ëhÊ¦n6HÛ¬
+E1 5A DB A6 3D A8 C1 3F D8 D2 03 54 98 D1 59 85    áZÛ¦=¨Á?ØÒ.TÑY
+2F DA 0E DF 4E 23 B7 02 CF 27 C4 87 0D 95 A9 8E    /Ú.ßN#·.Ï'Ä.©
+EC B1 E4 75 99 51 6B 86 13 34 32 E0 C0 7D 85 E1    ì±äuQk.42àÀ}á
+1E 49 70 C5 76 48 BA 17 8D 97 8C 36 E7 29 63 FF    .IpÅvHº.6ç)cÿ
+40 CA 2C 28 96 A2 1C 59 01 F6 ED 69 3D 4B 4D 16    @Ê,(¢.Y.öíi=KM.
+DB 38 15 23 6B 7F 2C 16 23 67 71 46 B6 68 4F 33    Û8.#k,.#gqF¶hO3
+6E 0F F9 1F 93 A9 D0 F7 20 8F 2E 25 67 63 B2 76    n.ù.©Ð÷..%gc²v
+9D 70 FE 0D C4 A6 AE 2B A0 F3 59 96 5C 48 4E C7    pþ.Ä¦®+ óY\HNÇ
+76 EA C8 79 BB F4 79 17 93 33 B1 5D D7 09 AF B1    vêÈy»ôy.3±]×.¯±
+87 CC AB D8 19 DB B7 18 70 8C C9 86 2D A0 DD 0A    Ì«Ø.Û·.pÉ- Ý.
+F3 C0 C9 19 5B 8A BB DB 38 C2 A4 43 64 CD 50 75    óÀÉ.[»Û8Â¤CdÍPu
+E1 0C 55 63 F0 F9 32 93 FD B5 81 6A E9 87 FE 80    á.Ucðù2ýµjéþ
+D3 64 DF 1C A8 DA 08 99 D5 E4 9E 44 73 E2 A3 49    Ódß.¨Ú.ÕäDsâ£I
+4C 15 CF AA 1C 79 42 91 E5 4B 24 BB 47 7B 0C 77    L.Ïª.yBåK$»G{.w
+A7 B0 93 B3 78 1F 2B 3D DF 1E CA 3B C3 C1 39 DA    §°³x.+=ß.Ê;ÃÁ9Ú
+C9 E6 5B D6 CC 91 23 45 B8 8C 81 48 17 D6 0E 02    Éæ[ÖÌ#E¸H.Ö..
+5C 0C 1B 44 F2 60 31 39 15 CB 03 3F 1E D8 F3 90    \..Dò`19.Ë.?.Øó
+23 F1 49 A6 51 D2 5E DB CC B1 A1 2C 71 6A 95 18    #ñI¦QÒ^ÛÌ±¡,qj.
+C9 E7 B9 32 62 D5 95 8C E4 64 F3 2C FC 39 FB 53    Éç¹2bÕädó,ü9ûS
+4C 5F 7B 56 4F 3A C0 09 86 69 E5 4C B3 E9 CE 72    L_{VO:À.iåL³éÎr
+65 65 0B D9 BE 8C B3 3B C4 60 F2 14 BF D2 1C 79    ee.Ù¾³;Ä`ò.¿Ò.y
+EA 2E A6 63 2D 03 49 AF BB 5C 4E CE 85 12 32 CB    ê.¦c-.I¯»\NÎ.2Ë
+C7 8A F5 83 DE 05 ED 2F C0 D5 9A 97 98 A9 EF E6    ÇõÞ.í/ÀÕ©ïæ
+73 22 45 B9 A4 FC 89 D4 C6 D1 E4 90 44 74 20 7B    s"E¹¤üÔÆÑäDt.{
+41 E5 4A 61 69 A9 90 31 1B 73 45 0F EC 3D D0 78    AåJai©1.sE.ì=Ðx
+80 39 AF A8 FA 57 99 4E 6C 21 92 23 BF EF 50 FE    9¯¨úWNl!#¿ïPþ
+E8 73 D7 55 16 61 FD D3 B4 F0 F7 B7 17 52 D3 5B    ès×U.aýÓ´ð÷·.RÓ[
+B9 47 E7 4C 25 84 50 4C 86 F5 DD 53 1C 6A C7 C1    ¹GçL%PLõÝS.jÇÁ
+41 88 F4 9B D9 81 63 7C 3F 8C 00 C5 E8 36 64 9A    AôÙc|?.Åè6d
+D4 E9 1C FE D7 51 74 AA 2D 67 3E 54 FC 32 24 9B    Ôé.þ×Qtª-g>Tü2$
+E4 DC 1A D6 AB 5C E5 C8 5A B9 F2 E4 F1 3F 69 E1    äÜ.Ö«\åÈZ¹òäñ?iá
+A3 23 97 53 39 E7 F8 99 90 39 99 00 9D F3 6C D5    £#S9çø9.ólÕ
+7F A9 64 7C 8D 4B 05 95 A3 E5 EA E1 2E 8D 08 75    ©d|K.£åêá..u
+D1 4C DC 20 89 A6 E2 1A 0F 75 C8 7D 7C 8D E3 EB    ÑLÜ.¦â..uÈ}|ãë
+56 69 9F B0 EB 44 EF 36 3C C9 74 14 B6 51 B6 A2    Vi°ëDï6<Ét.¶Q¶¢
+3C 8D 4D 50 91 D9 91 78 BF 02 7B 5A 53 4F 98 01    <MPÙx¿.{ZSO.
+EF 82 15 46 C1 D9 26 B6 B3 E6 BB 3B F0 94 A5 AA    ï.FÁÙ&¶³æ»;ð¥ª
+98 F4 16 2D 4F AF A5 AC 67 4D DD A5 BA 60 5C 4B    ô.-O¯¥¬gMÝ¥º`\K
+6A 69 E9 BD AC F0 E4 F1 9F 40 DB C6 63 4D 4D 8C    jié½¬ðäñ@ÛÆcMM
+26 EF 1C EE FA 3E 9D FA 63 EF 92 53 E0 2E 4E 18    &ï.îú>úcïSà.N.
+D2 77 63 87 AC 95 1A E2 D6 89 E4 32 DD 05 D0 AB    Òwc¬.âÖä2Ý.Ð«
+C3 3A A8 02 75 C9 46 51 0E A2 DC AB 23 2A 7A E2    Ã:¨.uÉFQ.¢Ü«#*zâ
+AA 9A A9 5C EB C6 D4 69 CB D4 D0 0B 5B 21 03 AA    ª©\ëÆÔiËÔÐ.[!.ª
+8A 75 E7 E5 C5 60 02 77 A3 18 ED 07 D0 F8 4B 26    uçåÅ`.w£.í.ÐøK&
+EF 4A 32 EB D9 67 6B 5A B3 FA AA 6F 5D 1F 1C DC    ïJ2ëÙgkZ³úªo]..Ü
+24 24 22 13 41 E0 0D D7 DE 83 98 A4 C3 0F 45 65    $$".Aà.×Þ¤Ã.Ee
+5F A8 4D AE B4 10 19 1B EF 51 60 67 78 47 AC 61    _¨M®´...ïQ`gxG¬a
+AF AC 1D 9B BF 9F AA 29 54 4E 14 75 75 07 D5 B7    ¯¬.¿ª)TN.uu.Õ·
+F0 5E F8 8E 80 BE E9 4B 6B 56 95 B5 EC C8 53 C6    ð^ø¾éKkVµìÈSÆ
+BA 28 BC 2A 63 EA 53 96 09 DD 76 EC E6 81 AE 66    º(¼*cêS.Ývìæ®f
+58 35 32 C7 92 04 B3 CC 3A 3C D9 CD D1 61 EE 39    X52Ç.³Ì:<ÙÍÑaî9
+35 58 B3 F3 92 A8 F3 99 32 E7 9D 3C B7 BA BF AE    5X³ó¨ó2ç<·º¿®
+B3 22 FC 1A 23 EB BA C8 E4 61 7E 6F 44 07 CE DF    ³"ü.#ëºÈäa~oD.Îß
+17 7D A7 78 C4 68 FD 8C 2E 68 E6 A3 DC DB 17 F5    .}§xÄhý.hæ£ÜÛ.õ
+86 3A F2 DB 99 2D 75 ED 51 97 5D F7 E7 4E BD 46    :òÛ-uíQ]÷çN½F
+19 62 73 5C 03 35 C7 6F 3B 0D 95 91 7E A6 FA D2    .bs\.5Ço;.~¦úÒ
+45 D8 13 74 2B BC 7A 48 BE DA C0 3C D4 76 27 A3    EØ.t+¼zH¾ÚÀ<Ôv'£
+17 CC 5F 8F 32 9E EF 96 A7 19 C3 33 CF 64 8A 61    .Ì_2ï§.Ã3Ïda
+C0 B8 E7 D8 E6 01 30 71 3B 4C C8 4A FF 82 75 E5    À¸çØæ.0q;LÈJÿuå
+6D 21 8A EF 77 FC CE 73 00 B6 B1 6F A3 D2 52 35    m!ïwüÎs.¶±o£ÒR5
+89 FC C4 9A BE 82 A6 55 95 47 92 47 7A F6 EB 15    üÄ¾¦UGGzöë.
+A4 7E 4B 39 DF 56 A7 D9 D6 87 ED 63 4B 42 66 3E    ¤~K9ßV§ÙÖícKBf>
+DB 5D 45 BE C9 9E 16 64 ED F9 E4 64 4C 46 F2 5B    Û]E¾É.díùädLFò[
+D3 66 B7 01 6A 3C 95 08 4E 54 3D F7 54 BD 4E 30    Óf·.j<.NT=÷T½N0
+6D C7 E7 BA 0B 19 67 B2 D9 23 E7 57 CD FB 33 AD    mÇçº..g²Ù#çWÍû3­
+5B 4E 2E BE EA BE 19 16 93 8F 76 CF 92 93 65 37    [N.¾ê¾..vÏe7
+F6 42 A3 B3 14 EF 1B 5D 70 DE AE 30 F1 72 32 CA    öB£³.ï.]pÞ®0ñr2Ê
+99 05 F4 4D 64 03 11 EF 23 B7 A6 2F 73 BA D3 90    .ôMd..ï#·¦/sºÓ
+56 D7 9B 19 6C 42 BD D3 70 63 3B 7C E5 23 9F E2    V×.lB½Ópc;|å#â
+BA EC 78 38 31 20 F6 74 77 D4 E1 CB 00 48 E4 EE    ºìx81.ötwÔáË.Häî
+A2 C8 F9 3E 5D 57 8C B2 2F 66 BC 11 3B B3 9C 8D    ¢Èù>]W²/f¼.;³
+F3 3A A6 49 8F F1 9E A6 12 77 DC C2 67 ED 92 7C    ó:¦Iñ¦.wÜÂgí|
+C6 EF C9 21 FB AE 22 5E DC 47 34 72 3E 43 98 38    ÆïÉ!û®"^ÜG4r>C8
+F1 8C D7 9C D6 96 13 25 35 E1 EB FB 6B 43 AF FF    ñ×Ö.%5áëûkC¯ÿ
+CA EB CF 32 7E 3B D9 C4 FB 55 C0 BB 64 83 59 09    ÊëÏ2~;ÙÄûUÀ»dY.
+39 62 90 BA 12 25 1B B7 2F D4 EC 46 D5 65 24 A4    9bº.%.·/ÔìFÕe$¤
+B7 32 2E 65 C5 5A D6 CB B0 D5 57 E2 7B 6A C0 2E    ·2.eÅZÖË°ÕWâ{jÀ.
+78 BF C2 19 03 42 53 BE BF DC 52 73 F6 36 E6 8F    x¿Â..BS¾¿ÜRsö6æ
+46 7C 56 23 DE 36 67 18 BE A9 AB E9 A0 ED F6 5C    F|V#Þ6g.¾©«é íö\
+47 BA 8A AF 6D 4C 36 8E B4 F3 DE 51 14 39 EF DF    Gº¯mL6´óÞQ.9ïß
+A7 32 C9 DC 74 A7 2B DA 53 81 7E 45 53 AF A3 43    §2ÉÜt§+ÚS~ES¯£C
+35 C3 E6 BC 50 58 D3 80 59 F1 E2 E8 4C 84 6D 4C    5Ãæ¼PXÓYñâèLmL
+46 B9 6F 80 14 C9 2D 75 4B EC BB 13 83 44 2C F3    F¹o.É-uKì».D,ó
+EF 1B 75 77 A6 79 96 CA 78 7B 6F 07 46 2A C7 7E    ï.uw¦yÊx{o.F*Ç~
+CA E2 14 31 1D E1 35 A9 4D DC 3D 54 7B FD 1E 5C    Êâ.1.á5©MÜ=T{ý.\
+07 1F 76 A2 DC 21 67 19 59 F3 43 9C 67 BF 18 BA    ..v¢Ü!g.YóCg¿.º
+D3 74 59 DD 8D 27 2A FF F6 48 EE C3 E0 26 26 A5    ÓtYÝ'*ÿöHîÃà&&¥
+8C D5 71 46 29 7B 33 E2 3E A2 BD 03 59 D6 DA 76    ÕqF){3â>¢½.YÖÚv
+6E F2 F2 8D F4 06 FC E3 4E 37 E3 D5 1B 6F A9 7A    nòòô.üãN7ãÕ.o©z
+FA E2 EC 2E 4D EF B7 21 5B 0F 71 7A 87 AC DB 23    úâì.Mï·![.qz¬Û#
+1C 26 38 3B A8 66 DC 2B 1B B8 75 E6 33 E4 53 64    .&8;¨fÜ+.¸uæ3äSd
+54 0A 8D 3D F5 32 1B B9 7B 22 6A 46 A6 11 BD CB    T.=õ2.¹{"jF¦.½Ë
+2E 64 F6 EB 42 A6 FE D6 62 D6 6B E9 DC 5C 72 68    .döëB¦þÖbÖkéÜ\rh
+93 50 5B 11 5B 62 EE B5 77 C4 79 FA 98 17 FF 03    P[.[bîµwÄyú.ÿ.
+47 51 4B 67 F0 01 01 C0 02 C8 37 52 50 08 97 56    GQKgð..À.È7RP.V
+52 3A 53 00 31 00 47 00 61 00 6D 00 65 00 4F 00    R:S.1.G.a.m.e.O.
+70 00 74 00 69 00 6F 00 6E 00 5F 00 53 00 31 00    p.t.i.o.n._.S.1.
+49 00 6E 00 74 00 65 00 72 00 66 00 61 00 63 00    I.n.t.e.r.f.a.c.
+65 00 47 00 72 00 6F 00 75 00 70 00 A2 01 08 08    e.G.r.o.u.p.¢...
+CF 6D 1D 00 00 80 3F F0 01 00 C0 02 08             Ïm...?ð..À.....
+
+WARNING 16:03:07:384 ClientConnection: not found packet for opcode 6466
+29 00 66 64 80 B4 B6 47 80 47 AC C7 0A 60 8D C5    ).fd´¶GG¬Ç.`Å
+A8 7C 80 B4 B6 47 80 47 AC C7 0A 60 8D C5 07 00    ¨|´¶GG¬Ç.`Å..
+00 00 00 00 00 2C BC A0 04                         .....,¼ ........
+
+WARNING 16:03:07:841 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:03:08:111 ClientConnection: not found packet for opcode F020
+04 00 20 F0                                        ...ð............
+
+WARNING 16:03:08:112 ClientConnection: not found packet for opcode 7ADB
+10 00 DB 7A 01 00 00 00 02 00 00 00 07 00 00 00    ..Ûz............
+
+WARNING 16:03:08:116 ClientConnection: not found packet for opcode D48F
+08 00 8F D4 02 00 00 00                            ..Ô............
+
+WARNING 16:03:09:341 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:03:10:851 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:03:12:368 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:03:13:089 ClientConnection: not found packet for opcode D533
+04 00 33 D5                                        ..3Õ............
+
+WARNING 16:03:13:689 ClientConnection: not found packet for opcode 6466
+29 00 66 64 74 B2 B6 47 78 47 AC C7 0A 60 8D C5    ).fdt²¶GxG¬Ç.`Å
+66 7F 77 62 B6 47 3F 46 AC C7 0A 60 8D C5 00 00    fwb¶G?F¬Ç.`Å..
+00 00 00 00 00 C5 D4 A0 04                         .....ÅÔ ........
+
+WARNING 16:03:13:700 ClientConnection: not found packet for opcode 6466
+29 00 66 64 74 B2 B6 47 78 47 AC C7 0A 60 8D C5    ).fdt²¶GxG¬Ç.`Å
+66 7F 74 B2 B6 47 78 47 AC C7 0A 60 8D C5 07 00    ft²¶GxG¬Ç.`Å..
+00 00 00 00 00 D5 D4 A0 04                         .....ÕÔ ........
+
+WARNING 16:03:13:875 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:03:14:608 ClientConnection: not found packet for opcode 6466
+29 00 66 64 DE B0 B6 47 72 47 AC C7 0A 60 8D C5    ).fdÞ°¶GrG¬Ç.`Å
+66 7F E1 60 B6 47 43 46 AC C7 0A 60 8D C5 00 00    fá`¶GCF¬Ç.`Å..
+00 00 00 00 00 5F D8 A0 04                         ....._Ø ........
+
+WARNING 16:03:14:896 ClientConnection: not found packet for opcode 6466
+29 00 66 64 01 9A B6 47 1C 47 AC C7 0A 60 8D C5    ).fd.¶G.G¬Ç.`Å
+66 7F 01 9A B6 47 1C 47 AC C7 0A 60 8D C5 07 00    f.¶G.G¬Ç.`Å..
+00 00 00 00 00 78 D9 A0 04                         .....xÙ ........
+
+WARNING 16:03:15:382 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:03:16:893 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:03:18:406 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:03:18:735 ClientConnection: not found packet for opcode 6466
+29 00 66 64 74 98 B6 47 76 46 AC C7 0A 60 8D C5    ).fdt¶GvF¬Ç.`Å
+DC 6F A6 4E B6 47 99 27 AC C7 09 43 8D C5 00 00    Üo¦N¶G'¬Ç.CÅ..
+00 00 00 00 00 7C E8 A0 04                         .....|è ........
+
+WARNING 16:03:19:180 ClientConnection: not found packet for opcode 6466
+29 00 66 64 25 74 B6 47 2B 3C AC C7 0A 60 8D C5    ).fd%t¶G+<¬Ç.`Å
+04 78 AF 25 B6 47 8E 2C AC C7 7E 3D 8D C5 00 00    .x¯%¶G,¬Ç~=Å..
+00 00 00 00 00 32 EA A0 04                         .....2ê ........
+
+WARNING 16:03:19:612 ClientConnection: not found packet for opcode 6466
+29 00 66 64 E2 4F B6 47 E4 38 AC C7 C3 48 8D C5    ).fdâO¶Gä8¬ÇÃHÅ
+60 85 94 00 B6 47 66 43 AC C7 C3 09 8E C5 00 00    `.¶GfC¬ÇÃ.Å..
+00 00 00 00 00 E7 EB A0 04                         .....çë ........
+
+WARNING 16:03:19:655 ClientConnection: not found packet for opcode 6466
+29 00 66 64 B3 4C B6 47 55 39 AC C7 10 1E 8D C5    ).fd³L¶GU9¬Ç..Å
+96 85 D7 03 B6 47 4E 43 AC C7 C3 FB 8D C5 05 00    ×.¶GNC¬ÇÃûÅ..
+00 00 AA 00 00 16 EC A0 04                         ..ª...ì ........
+
+WARNING 16:03:19:923 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:03:20:541 ClientConnection: not found packet for opcode 6466
+29 00 66 64 0F 05 B6 47 2D 43 AC C7 D2 F5 8D C5    ).fd..¶G-C¬ÇÒõÅ
+96 85 CC B5 B5 47 07 4E AC C7 A1 4A 8E C5 07 00    ÌµµG.N¬Ç¡JÅ..
+00 00 00 00 00 91 EF A0 04                         .....ï ........
+
+INFO 16:03:30:121 AccountManager: close admin
+WARNING 16:03:58:079 ClientConnection: not found packet for opcode B43D
+20 00 BC 4D 02 00 08 00 08 00 14 00 00 00 00 00    ..¼M............
+32 4D 04 00 14 00 00 00 01 00 00 00 C4 57 04 00    2M..........ÄW..
+3F 00 3D B4 13 00 1F 00 20 00 00 00 00 00 00 08    ?.=´............
+00 00 00 61 00 64 00 6D 00 69 00 6E 00 00 00 32    ...a.d.m.i.n...2
+31 32 33 32 66 32 39 37 61 35 37 61 35 61 37 34    1232f297a57a5a74
+33 38 39 34 61 30 65 34 61 38 30 31 66 63 33       3894a0e4a801fc3.
+
+INFO 16:03:58:081 AccountManager: authed admin
+WARNING 16:03:59:916 ClientConnection: not found packet for opcode B54D
+DD 00 4D B5 37 00 59 00 AD 00 AF 3F 00 00 80 00    Ý.Mµ7.Y.­.¯?...
+00 00 80 07 00 00 38 04 00 00 00 80 07 00 00 38    .....8.......8
+04 00 00 02 00 00 00 C0 0D 00 00 38 04 00 00 04    .......À...8....
+00 00 00 08 00 00 00 57 00 69 00 6E 00 64 00 6F    .......W.i.n.d.o
+00 77 00 73 00 20 00 38 00 20 00 28 00 78 00 36    .w.s...8...(.x.6
+00 34 00 29 00 20 00 00 00 49 00 6E 00 74 00 65    .4.).....I.n.t.e
+00 6C 00 28 00 52 00 29 00 20 00 43 00 6F 00 72    .l.(.R.)...C.o.r
+00 65 00 28 00 54 00 4D 00 29 00 20 00 69 00 37    .e.(.T.M.)...i.7
+00 2D 00 34 00 37 00 31 00 30 00 48 00 51 00 20    .-.4.7.1.0.H.Q..
+00 43 00 50 00 55 00 20 00 40 00 20 00 32 00 2E    .C.P.U...@...2..
+00 35 00 30 00 47 00 48 00 7A 00 00 00 4E 00 56    .5.0.G.H.z...N.V
+00 49 00 44 00 49 00 41 00 20 00 47 00 65 00 46    .I.D.I.A...G.e.F
+00 6F 00 72 00 63 00 65 00 20 00 47 00 54 00 58    .o.r.c.e...G.T.X
+00 20 00 38 00 37 00 30 00 4D 00 00 00             ...8.7.0.M......
+
+WARNING 16:04:03:746 ClientConnection: not found packet for opcode 5A77
+22 09 77 5A 08 00 1A 09 08 97 56 12 04 32 23 43    ".wZ.....V..2#C
+50 52 33 08 97 56 52 20 53 00 31 00 43 00 68 00    PR3.VR.S.1.C.h.
+61 00 74 00 43 00 6F 00 6E 00 74 00 72 00 6F 00    a.t.C.o.n.t.r.o.
+6C 00 6C 00 65 00 72 00 A2 01 05 08 F3 65 28 00    l.l.e.r.¢...óe(.
+F0 01 00 C0 02 05 52 63 08 97 56 52 46 53 00 31    ð..À..Rc.VRFS.1
+00 4D 00 69 00 6E 00 69 00 6D 00 61 00 70 00 43    .M.i.n.i.m.a.p.C
+00 6F 00 6E 00 74 00 72 00 6F 00 6C 00 6C 00 65    .o.n.t.r.o.l.l.e
+00 72 00 5F 00 53 00 31 00 4D 00 69 00 6E 00 69    .r._.S.1.M.i.n.i
+00 6D 00 61 00 70 00 4F 00 70 00 74 00 69 00 6F    .m.a.p.O.p.t.i.o
+00 6E 00 A2 01 0F 78 DA E3 38 9F 2A C4 C3 88 04    .n.¢..xÚã8*ÄÃ.
+00 15 5A 01 67 F0 01 01 C0 02 11 52 A2 10 08 97    ..Z.gð..À..R¢..
+56 52 1E 53 00 31 00 55 00 49 00 5F 00 47 00 46    VR.S.1.U.I._.G.F
+00 78 00 4D 00 61 00 6E 00 61 00 67 00 65 00 72    .x.M.a.n.a.g.e.r
+00 A2 01 F4 0F 78 DA 8D 59 CD 8B 5C 45 10 EF A3    .¢.ô.xÚYÍ\E.ï£
+3C 44 82 84 B8 84 18 96 90 09 21 04 09 BB 21 88    <D¸..!..»!
+48 92 F7 66 93 9D CD CE 64 27 3B 9B E4 A8 93 F9    H÷fÍÎd';ä¨ù
+C8 0E 3B 5F BC 99 89 59 BD 48 4E 22 0A 1E 24 98    È.;_¼Y½HN"..$
+80 18 D0 83 A8 7F 80 5E 24 07 D1 15 E2 D9 A3 57    .Ð¨^$.Ñ.âÙ£W
+8F 39 7A B4 EA D7 DD D3 9F 6F 92 2C FB 91 ED EA    9z´ê×ÝÓo,ûíê
+EA AA 5F 55 FD AA BA 37 59 4A 92 AA D8 12 EB 62    êª_Uýªº7YJªØ.ëb
+43 5C 17 87 C4 9B 82 FE 95 F8 4B 72 2C 79 AD 26    C\.ÄþøKr,y­&
+3A 62 42 1F 4D 71 97 7E 72 56 4F 26 47 52 71 47    :bB.Mq~rVO&GRqG
+0C C5 48 E4 62 40 12 7D D1 13 53 B1 2F A5 BE CE    .ÅHäb@.}Ñ.S±/¥¾Î
+E6 3A 32 DA 39 A4 CF 2E D6 8D 8E 07 59 72 2A 59    æ:2Ú9¤Ï.Ö.Yr*Y
+6A D0 4A 9F 3E 5B B4 C6 3F E7 E2 1E BE 3A 67 9D    jÐJ>[´Æ?çâ.¾:g
+4D 8E DB 72 65 B1 4B E7 E5 F4 C9 FF 8B 49 97 E9    MÛre±KçåôÉÿIé
+77 1D 5A E7 D5 17 48 93 1F 0D B1 47 B6 F5 E9 A3    w.ZçÕ.H..±G¶õé£
+42 DE 4C C5 26 49 29 3F DE 67 3F 2A 99 2B 75 9B    BÞLÅ&I)?Þg?*+u
+BE 0F 45 9B 64 3F 70 75 1D 4F 0E 35 E8 34 46 84    ¾.Ed?pu.O.5è4F
+AD 9C 69 7F AB AC E5 F7 8C D7 6B 64 07 EF AE 01    ­i«¬å÷×kd.ï®.
+95 19 AF 77 BB D7 B2 52 B7 FB 63 96 2C 27 AF 6F    .¯w»×²R·ûc,'¯o
+D0 6F EF 61 6D 0A 3D CA 8E 03 D8 91 32 62 37 68    Ðoïam.=Ê.Ø2b7h
+17 47 65 2A AE 91 C4 8C 64 86 40 DF B1 84 E4 A4    .Ge*®Äd@ß±ä¤
+DF 63 E5 73 05 B2 13 3F 8A C0 CA C7 C7 F3 EF 9B    ßcås.².?ÀÊÇÇóï
+1F F2 4B A5 FA E7 6F 5C 62 FB 18 D9 11 72 62 17    .òK¥úço\bû.Ù.rb.
+9E 84 68 D6 A1 8D 33 21 8E D3 72 CA A7 DE 86 54    hÖ¡3!ÓrÊ§ÞT
+07 68 49 BB 0A 51 05 F6 12 8D 05 52 94 C7 19 FD    .hI».Q.ö..RÇ.ý
+96 B5 B6 83 FD 3B F0 AF BD 68 3F C5 C6 48 55 69    µ¶ý;ð¯½h?ÅÆHUi
+FD 6E A4 1A 78 6F 0F D9 3E B6 E2 42 AB E7 92 13    ýn¤.xo.Ù>¶âB«ç.
+EB E4 07 E7 47 5B D8 D9 57 78 DE 5B C9 B2 D9 B1    ëä.çG[ØÙWxÞ[É²Ù±
+0E 54 67 A4 B5 50 1E 91 1A D1 D9 03 92 1B AA 5A    .Tg¤µP..ÑÙ..ªZ
+2B 94 A6 48 D5 61 25 C7 73 8D D6 FB 7E 86 9C 48    +¦HÕa%ÇsÖû~H
+0E CB 48 B5 50 59 75 44 75 1A F8 7C 85 F4 B7 10    .ËHµPYuDu.ø|ô·.
+EB A1 5E AD B0 CF EF 66 C9 99 E4 18 23 2E F7 F1    ë¡^­°ÏïfÉä.#.÷ñ
+39 0B 64 4F 27 47 4D FD 54 81 4E 0E 2F 86 3E CE    9.dO'GMýTN./>Î
+A4 F5 96 92 93 AC C3 F6 F7 90 E1 41 4C 48 6B 05    ¤õ¬Ãö÷áALHk.
+98 30 22 91 CA FB EB D9 B3 8B 54 59 47 52 96 34    0"ÊûëÙ³TYGR4
+75 B3 43 DA 26 64 0D D7 5A 97 F6 A0 06 FF 60 4B    u³CÚ&d.×Zö .ÿ`K
+0F 50 61 46 67 0D BE 68 3B 7C 3B 8D DC 06 3C 9F    .PaFg.¾h;|;Ü.<
+11 1F 36 55 A6 3A B2 47 93 57 65 46 6D 19 4E D0    ..6U¦:²GWeFm.NÐ
+C8 80 03 F7 15 86 03 92 E0 8A ED 91 F4 30 1A 2F    È.÷..àíô0./
+19 6D CE 53 C6 FE BE 94 59 56 2C 45 39 B2 01 EC    .mÎSÆþ¾YV,E9².ì
+3B F3 7A 96 9A 2C B6 71 2A 46 D6 FE 54 AC 44 CE    ;óz,¶q*FÖþT¬DÎ
+E2 8C 6C D3 9E 56 DC 1E F2 3F 26 53 A5 EF 41 1E    âlÓVÜ.ò?&S¥ïA.
+BD 9D 9C 89 C9 DA 75 C2 F9 37 16 37 75 5D 01 9D    ½ÉÚuÂù7.7u].
+CF B2 E4 7C 72 2A B6 53 47 CE DB A5 CF BB 90 9C    Ï²ä|r*¶SGÎÛ¥Ï»
+8E ED BA 42 78 4D 3D 64 5E C6 CE D8 BE 95 80 63    íºBxM=d^ÆÎØ¾c
+4C 36 DC 02 DA ED 30 0F 9C 9C B1 A5 B8 BB 4D 23    L6Ü.Úí0.±¥¸»M#
+4C 9A 23 6B 72 D5 85 33 54 8D C1 E7 CB 4C F6 D7    L#krÕ3TÁçËLö×
+26 AA 65 14 FA 03 4E 93 7D 73 AC 6A 23 64 56 93    &ªe.ú.N}s¬j#dV
+7B 12 CD 99 8F 26 31 55 3C AB 0A E4 09 45 96 5F    {.Í&1U<«.ä.E_
+27 D9 01 ED 31 DC 9D C2 4E CE E2 7D AC 0C 7D 7B    'Ù.í1ÜÂNÎâ}¬.}{
+28 EF 0C 07 17 68 27 9B AF 5B 33 47 81 14 E1 32    (ï...h'¯[3G.á2
+05 22 7D 58 3B 0E 70 31 6C 10 C9 83 95 E4 64 2C    ."}X;.p1l.Éäd,
+0F FC 78 60 CF 03 8E C4 27 99 46 49 7B 6D 33 C7    .üx`Ï.Ä'FI{m3Ç
+8E B2 C4 A9 55 62 24 9F E7 2A 88 55 5F 32 92 93    ²Ä©Ub$ç*U_2
+CD 8B F0 E7 EC 4F 31 7D 0D AC 9E 74 80 13 0C D3    ÍðçìO1}.¬t..Ó
+CA 99 E6 A6 3B CB 55 94 2D 64 FB 1A CE EE 11 83    Êæ¦;ËU-dû.Îî.
+C9 53 FC 4A 73 E4 A9 BB 98 8E B5 06 24 BD EE F2    ÉSüJsä©»µ.$½îò
+4E 72 36 94 90 59 3E 55 AC 1F F4 2E 68 7F 0E AE    Nr6Y>U¬.ô.h.®
+D6 BC C4 4C 7D A7 98 13 29 CA EB CA 9F 48 6D 1C    Ö¼ÄL}§.)ÊëÊHm.
+49 5E 91 88 8E 65 2F A8 5E 2C AD AE 96 32 66 63    I^e/¨^,­®2fc
+AE E8 B1 BD 07 1A 0F 30 E7 95 55 FF AA D0 89 6D    ®è±½...0çUÿªÐm
+44 72 E2 F7 1D CA 1F 7D EE B6 CA 22 AC 7F 9A 96    Drâ÷.Ê.}î¶Ê"¬
+FE FE F6 7C 6A 7A 2B F7 E8 82 A9 84 10 8A C9 B0    þþö|jz+÷è©.É°
+BE BB 8A 43 ED 38 38 08 91 7E 33 3B 70 8C EF 85    ¾»Cí88.~3;pï
+11 A0 18 DD 80 4C 8B 3A 9D C3 FF 3A 8A 4E B5 15    . .ÝL:Ãÿ:Nµ.
+CC 87 8A 5F 72 B2 49 CE AD 61 BD CA 55 8E AC 95    Ì_r²IÎ­a½ÊU¬
+2B 8F 1F FD 93 96 3E 3A FC 4E 2A E7 1C 3F 13 32    +.ý>:üN*ç.?.2
+27 13 A0 73 89 AD FA 2F 95 8C AF 71 A9 A2 72 B4    '. s­ú/¯q©¢r´
+5C 23 DC A5 11 A1 2E 9A 89 AB 24 D1 52 5C E3 A1    \#Ü¥.¡.«$ÑR\ã¡
+0E B9 8F 2F 73 7C DD 2A 1D 11 76 BD E8 DD 86 27    .¹/s|Ý*..v½èÝ'
+99 9E C2 36 CA 56 94 A7 B1 09 2A 32 3B 12 EF 57    Â6ÊV§±.*2;.ïW
+61 4F 7B EE 09 33 E0 1D B0 C2 24 38 DB C4 76 D1    aO{î.3à.°Â$8ÛÄvÑ
+7C 77 1B 9E B2 54 0D 93 DE 8A E5 E9 E5 94 F5 6C    |w.²T.Þåéåõl
+A9 BB 54 1F 8C 6B 49 AD AE BE 97 95 1E 3F FA 13    ©»T.kI­®¾.?ú.
+68 DB 78 6C A9 89 D1 E4 9D C3 5D DF A7 73 7F EC    hÛxl©ÑäÃ]ß§sì
+5D 72 0A DC C3 09 39 7D 37 76 C8 5A A9 23 6E BD    ]r.ÜÃ.9}7vÈZ©#n½
+48 2E D3 5D 00 BD 3A AC 83 1A 50 97 6C 14 E5 20    H.Ó].½:¬.Pl.å.
+CA BD 06 A2 A2 27 AE 9A 99 CA B5 6E 4C 9D B6 4C    Ê½.¢¢'®ÊµnL¶L
+1D BD B0 1D 32 A0 AA 58 77 5E 5E 09 26 70 37 8A    .½°.2 ªXw^^.&p7
+D1 7E 00 8D BF 64 F2 AE 24 B3 9E 7D B6 A6 35 AB    Ñ~.¿dò®$³}¶¦5«
+AF FA D6 8D C0 C1 2D 42 22 32 11 04 DE 70 ED DD    ¯úÖÀÁ-B"2..ÞpíÝ
+8F 49 3A FC 50 56 F6 85 DA E4 4A 1B 91 B1 F1 9E    I:üPVöÚäJ.±ñ
+04 76 86 77 C4 3A F6 CA DA B1 F9 FB 89 9A 42 E5    .vwÄ:öÊÚ±ùûBå
+44 D1 50 77 50 7D 0B 1F 86 EF 08 E8 9B BE B4 66    DÑPwP}..ï.è¾´f
+55 59 CB 8E 3C 65 AC 8B C2 CB 32 A6 3E 65 8D D0    UYË<e¬ÂË2¦>eÐ
+ED C4 6E 1E E8 6A 86 55 23 73 2C 49 30 CB 6C C3    íÄn.èjU#s,I0ËlÃ
+93 BD 02 1D E6 9E 53 87 35 BB 2F 88 3A 9F 29 73    ½..æS5»/:)s
+DE C9 73 AB FB EB 3A 2B C3 AF 29 B2 AE 8F 4C CE    ÞÉs«ûë:+Ã¯)²®LÎ
+8B 7B 23 3A 70 F1 BE E8 3B C5 43 46 EB 67 74 41    {#:pñ¾è;ÅCFëgtA
+33 1F 15 DE BE A8 37 34 90 DF CE 6C A9 6B 8F BA    3..Þ¾¨74ßÎl©kº
+EC B6 3F 77 EA 35 CA 10 9B E3 9A A8 39 7E DB 69    ì¶?wê5Ê.ã¨9~Ûi
+AA 8C F4 33 D5 97 2E C3 9E A0 5B E1 D5 43 F2 D5    ªô3Õ.Ã [áÕCòÕ
+0E E6 A1 8E 3B 19 3D 67 FE 7A 98 F1 7C B7 36 CF    .æ¡;.=gþzñ|·6Ï
+18 9E 79 66 73 0C 03 C6 3D CB 36 8F 81 89 DB 61    .yfs..Æ=Ë6Ûa
+42 56 FA 17 AC 2B 6F 0B 51 7C BF E3 77 9E 03 B0    BVú.¬+o.Q|¿ãw.°
+8D 7D 1B 95 96 AA 49 E4 27 D6 F4 15 34 6D AA 3C    }.ªIä'Öô.4mª<
+92 3C 32 B4 5F AF 20 F5 5B CA F9 B6 39 CF B6 11    <2´_¯.õ[Êù¶9Ï¶.
+6C 9F 5A 12 32 F3 D9 EE 1A F2 4D F6 B4 20 6B CF    lZ.2óÙî.òMö´.kÏ
+25 27 62 32 92 DF 5A 36 BB 8D 51 E3 A9 44 70 A6    %'b2ßZ6»Qã©Dp¦
+EA 79 A8 EA 75 86 69 3B 3E D7 9D CF 38 93 CD 1E    êy¨êui;>×Ï8Í.
+39 BF 6A DE 5F 68 DD 5A 72 E1 65 F7 2D B0 98 7C    9¿jÞ_hÝZráe÷-°|
+B4 7B 96 9C 2C FB B1 17 1A 9D A5 78 DF E8 83 F3    ´{,û±..¥xßèó
+F6 84 89 97 93 51 CE 2C A0 6F 22 3B 88 F8 08 B9    öQÎ, o";ø.¹
+35 7F 99 D3 9D 86 B4 BA DE 2C 60 13 EA 9D 86 1B    5Ó´ºÞ,`.ê.
+3B E1 2B 1F F9 14 D7 65 C7 C3 89 01 B1 A7 BB A3    ;á+.ù.×eÇÃ.±§»£
+01 5F C6 40 A2 70 17 45 CE F7 E9 8A 62 94 7D B1    ._Æ@¢p.EÎ÷éb}±
+E0 8D D8 99 E5 6C 9C B7 31 4D 7A 8C F7 24 95 B8    àØål·1Mz÷$¸
+E3 16 BE 68 97 E4 33 7E 4F 0E D9 77 13 F1 E2 3E    ã.¾hä3~O.Ùw.ñâ>
+A2 91 F3 19 C2 C4 89 67 BC D6 BC B6 9C 28 A9 09    ¢ó.ÂÄg¼Ö¼¶(©.
+5F DF 5F 9B 7A FD 57 5E 7F 9A F1 DB C9 4D BC 5F    _ß_zýW^ñÛÉM¼_
+05 BC 4B 36 98 95 90 23 C6 A9 2B B1 6E E3 F6 85    .¼K6#Æ©+±nãö
+9A DD A8 BA 8C 84 F4 56 C6 A5 A2 58 CB 7A 19 B6    Ý¨ºôVÆ¥¢XËz.¶
+FA 4A 7C 4F 1D D8 05 EF 57 38 63 4C 68 CA F7 97    úJ|O.Ø.ïW8cLhÊ÷
+EB 6A CE EE 62 FE 68 C6 67 35 E2 6D 73 86 E1 9B    ëjÎîbþhÆg5âmsá
+86 9A 0E 3A 6E CF 75 A4 6B F8 DA C1 64 E3 48 3B    .:nÏu¤køÚÁdãH;
+EF 1D 65 51 F0 FE 7D 32 93 CC 4D 77 BA B2 3D 15    ï.eQðþ}2ÌMwº²=.
+E8 57 34 F5 3A 9A AB 19 B6 E0 85 C2 9A 06 CC 8A    èW4õ:«.¶àÂ.Ì
+17 47 67 22 EC 60 32 2A 7C 03 A4 48 DE 52 B7 C4    .Gg"ì`2*|.¤HÞR·Ä
+91 3B 31 48 C4 32 FF BE D1 70 67 9A A7 A9 8C B7    ;1HÄ2ÿ¾Ñpg§©·
+F7 76 60 A4 0A EC A7 2C 4E 11 D3 09 5E 93 3A C4    ÷v`¤.ì§,N.Ó.^:Ä
+DD B9 DA EB F7 E0 06 F8 B0 17 E5 0E 39 CB C8 9A    Ý¹Úë÷à.ø°.å.9ËÈ
+CF 71 9E FD 62 E8 4E D3 15 75 37 9E A9 FC 1B 90    ÏqýbèNÓ.u7©ü.
+DC 87 C1 4D 4C 4A 19 AB E3 8C 52 F1 66 C4 7D 44    ÜÁMLJ.«ãRñfÄ}D
+7B 17 B2 AC B5 E3 DC E4 E5 1B E9 55 F8 C7 9D 6E    {.²¬µãÜäå.éUøÇn
+C1 AB 37 DE 52 F5 F4 C5 D9 BD 3E BF DF 86 6C 9D    Á«7ÞRõôÅÙ½>¿ßl
+E3 F4 1E 59 37 20 1C 66 38 3B A8 66 DC 2B 9B B8    ãô.Y7..f8;¨fÜ+¸
+75 16 33 E4 13 64 54 0A 8D 43 F5 32 1B B9 7B 22    u.3ä.dT.Cõ2.¹{"
+6A 46 A6 19 BD CB 2E 67 F6 EB 42 A6 FE D6 62 D6    jF¦.½Ë.göëB¦þÖbÖ
+EB E9 92 F8 1F 73 DB 49 41 F0 01 01 C0 02 B4 37    ëéø.sÛIAð..À.´7
+52 50 08 97 56 52 3A 53 00 31 00 47 00 61 00 6D    RP.VR:S.1.G.a.m
+00 65 00 4F 00 70 00 74 00 69 00 6F 00 6E 00 5F    .e.O.p.t.i.o.n._
+00 53 00 31 00 49 00 6E 00 74 00 65 00 72 00 66    .S.1.I.n.t.e.r.f
+00 61 00 63 00 65 00 47 00 72 00 6F 00 75 00 70    .a.c.e.G.r.o.u.p
+00 A2 01 08 08 CF 6D 1D 00 00 80 3F F0 01 00 C0    .¢...Ïm...?ð..À
+02 08                                              ................
+
+WARNING 16:04:07:959 ClientConnection: not found packet for opcode EAD8
+04 00 D8 EA                                        ..Øê............
+
+WARNING 16:04:07:962 ClientConnection: not found packet for opcode D533
+04 00 33 D5                                        ..3Õ............
+
+WARNING 16:04:09:174 ClientConnection: not found packet for opcode 93F3
+18 00 F3 93 01 00 08 00 08 00 00 00 01 00 00 00    ..ó............
+A1 05 00 00 00 00 00 00                            ¡...............
+
+WARNING 16:04:11:517 ClientConnection: not found packet for opcode E7AD
+FE 02 AD E7 08 00 F6 02 08 97 56 12 04 32 23 43    þ.­ç..ö..V..2#C
+50 52 45 08 97 56 52 2E 53 00 31 00 53 00 6B 00    PRE.VR.S.1.S.k.
+69 00 6C 00 6C 00 48 00 6F 00 74 00 4B 00 65 00    i.l.l.H.o.t.K.e.
+79 00 43 00 6F 00 6E 00 74 00 72 00 6F 00 6C 00    y.C.o.n.t.r.o.l.
+6C 00 65 00 72 00 A2 01 09 08 97 56 4A 04 33 00    l.e.r.¢...VJ.3.
+32 00 F0 01 00 C0 02 09 52 CE 01 08 97 56 52 28    2.ð..À..RÎ..VR(
+53 00 31 00 53 00 68 00 6F 00 72 00 74 00 43 00    S.1.S.h.o.r.t.C.
+75 00 74 00 43 00 6F 00 6E 00 74 00 72 00 6F 00    u.t.C.o.n.t.r.o.
+6C 00 6C 00 65 00 72 00 A2 01 96 01 78 DA 25 CC    l.l.e.r.¢..xÚ%Ì
+BD 0D C2 30 18 84 E1 CF 8E 03 76 52 10 FE 84 13    ½.Â0.áÏ.vR.þ.
+1A 57 8C C1 08 88 8A 09 58 23 1D 03 20 51 50 21    .WÁ..X#...QP!
+51 41 C3 14 16 88 05 18 84 82 01 F8 4E D7 3D AF    QAÃ.....øN×=¯
+74 3A 7F DE 6D E5 6A 24 5B EF A5 91 B8 4F 7D B6    t:Þmåj$[ï¥¸O}¶
+41 69 94 EF 75 B6 B5 DA 45 49 CF D7 CD B1 4A AD    Aiïu¶µÚEIÏ×Í±J­
+CF E9 EE B8 8B 5A BF 4D B6 95 BA 55 1F 2E 86 D1    Ïéî¸Z¿M¶ºU..Ñ
+21 BE 23 AC 82 1E 3F 6C 6A 68 03 8F 69 0B 4F E8    !¾#¬.?ljh.i.Oè
+02 9E D2 0E 9E D1 25 3C A7 07 F0 82 1E C2 91 F6    .Ò.Ñ%<§.ð.Âö
+70 4B 07 B8 A3 2B 78 49 D7 F0 EA 58 C8 1F 93 B5    pK.¸£+xI×ðêXÈ.µ
+2C 59 F0 01 01 C0 02 F4 01 52 77 08 97 56 52 36    ,Yð..À.ô.Rw.VR6
+53 00 31 00 45 00 71 00 75 00 69 00 70 00 6D 00    S.1.E.q.u.i.p.m.
+65 00 6E 00 74 00 50 00 72 00 65 00 73 00 65 00    e.n.t.P.r.e.s.e.
+74 00 43 00 6F 00 6E 00 74 00 72 00 6F 00 6C 00    t.C.o.n.t.r.o.l.
+6C 00 65 00 72 00 A2 01 32 78 DA E3 D8 1F 26 C4    l.e.r.¢.2xÚãØ.&Ä
+21 C0 20 C1 A0 C0 A0 C1 30 CA 42 62 31 8E B2 90    !À.Á À Á0ÊBb1²
+58 4C A3 2C 24 16 F3 28 0B 89 C5 32 CA D2 60 91    XL£,$.ó(.Å2ÊÒ`
+60 80 41 20 4F 1A 00 B0 05 4B CD F0 01 01 C0 02    `A.O..°.KÍð..À.
+D7 0A 52 37 08 97 56 52 26 53 00 31 00 43 00 75    ×.R7.VR&S.1.C.u
+00 73 00 74 00 6F 00 6D 00 69 00 7A 00 65 00 4B    .s.t.o.m.i.z.e.K
+00 65 00 79 00 47 00 72 00 6F 00 75 00 70 00 A2    .e.y.G.r.o.u.p.¢
+01 03 08 97 56 F0 01 00 C0 02 03 52 5B 08 97 56    ...Vð..À..R[.V
+52 32 53 00 31 00 43 00 75 00 73 00 74 00 6F 00    R2S.1.C.u.s.t.o.
+6D 00 69 00 7A 00 65 00 50 00 61 00 64 00 42 00    m.i.z.e.P.a.d.B.
+75 00 74 00 74 00 6F 00 6E 00 47 00 72 00 6F 00    u.t.t.o.n.G.r.o.
+75 00 70 00 A2 01 1B 08 97 56 1A 16 58 00 62 00    u.p.¢...V..X.b.
+6F 00 78 00 54 00 79 00 70 00 65 00 53 00 5F 00    o.x.T.y.p.e.S._.
+58 00 F0 01 00 C0 02 1B 52 3B 08 97 56 52 28 53    X.ð..À..R;.VR(S
+00 31 00 4E 00 50 00 43 00 47 00 75 00 69 00 6C    .1.N.P.C.G.u.i.l
+00 64 00 43 00 6F 00 6E 00 74 00 72 00 6F 00 6C    .d.C.o.n.t.r.o.l
+00 6C 00 65 00 72 00 A2 01 05 08 97 56 50 00 F0    .l.e.r.¢...VP.ð
+01 00 C0 02 05 52 4B 08 97 56 52 38 53 00 31 00    ..À..RK.VR8S.1.
+53 00 6B 00 69 00 6C 00 6C 00 43 00 72 00 65 00    S.k.i.l.l.C.r.e.
+73 00 74 00 50 00 72 00 65 00 73 00 65 00 74 00    s.t.P.r.e.s.e.t.
+43 00 6F 00 6E 00 74 00 72 00 6F 00 6C 00 6C 00    C.o.n.t.r.o.l.l.
+65 00 72 00 A2 01 05 08 B1 5E 20 00 F0 01 00 C0    e.r.¢...±^..ð..À
+02 05 52 3A 08 97 56 52 2A 53 00 31 00 49 00 6E    ..R:.VR*S.1.I.n
+00 76 00 65 00 6E 00 74 00 6F 00 72 00 79 00 43    .v.e.n.t.o.r.y.C
+00 6F 00 6E 00 74 00 72 00 6F 00 6C 00 6C 00 65    .o.n.t.r.o.l.l.e
+00 72 00 A2 01 02 08 00 F0 01 00 C0 02 02          .r.¢....ð..À....
+
+WARNING 16:04:11:519 ClientConnection: not found packet for opcode 5A77
+2D 0D 77 5A 08 00 25 0D 08 97 56 12 04 32 23 43    -.wZ..%..V..2#C
+50 52 A9 08 08 97 56 52 20 53 00 31 00 43 00 68    PR©..VR.S.1.C.h
+00 61 00 74 00 43 00 6F 00 6E 00 74 00 72 00 6F    .a.t.C.o.n.t.r.o
+00 6C 00 6C 00 65 00 72 00 A2 01 F9 07 78 DA BD    .l.l.e.r.¢.ù.xÚ½
+57 4D 68 13 41 14 9E D7 36 41 06 91 25 88 2C 52    WMh.A.×6A.%,R
+CA B8 A6 B5 D6 6A DB 34 49 CB 08 36 6D 92 C6 D0    Ê¸¦µÖjÛ4IË.6mÆÐ
+A4 5D D2 D4 5A 3C 14 D1 4A 4F 9E 3C 09 8A DE EC    ¤]ÒÔZ<.ÑJO<.Þì
+41 F4 24 78 93 5C 04 BD 29 82 15 44 41 F1 E4 C1    Aô$x\.½).DAñäÁ
+8B 87 8A 87 5E 3C 2A 05 0F 82 1E E2 CC E4 67 37    ^<*...âÌäg7
+CD EC EE 4C 2C B6 10 B2 9B EF BD F7 BD 9F 99 F7    ÍìîL,¶.²ï½÷½÷
+DE BE 9F 6B 91 F7 FB 6D F4 08 D0 0E 54 1B 7F F0    Þ¾k÷ûmô.Ð.T.ð
+B6 CB F9 7E BF FB 4B 68 BB FB 75 D7 B3 9E 03 29    ¶Ëù~¿ûKh»ûu×³.)
+74 09 AD A3 8B E8 1A A2 68 0C DD 0D 21 F4 7B E6    t.­£è.¢h.Ý.!ô{æ
+53 E8 64 25 4C 68 5F 1A 9D 45 D3 A8 CC FE 57 90    Sèd%Lh_.EÓ¨ÌþW
+8D B2 68 15 CD A3 05 54 42 45 F6 B6 80 2A E1 3E    ²h.Í£.TBEö¶*á>
+DA DB 0E B1 D9 73 49 3C 7B 00 72 68 09 E5 99 7C    ÚÛ.±ÙsI<{.rh.å|
+C6 0F C0 75 70 80 45 49 3B 60 46 FC 9C 63 9F 79    Æ.ÀupEI;`Fücy
+C6 A8 12 EE A5 87 DB 41 65 F6 39 CD A8 7A E8 58    Æ¨.î¥ÛAeö9Í¨zèX
+66 6F F2 68 51 3C 95 BC 74 94 84 09 CE 63 88 0E    foòhQ<¼t.Îc.
+7A FF BC CA BC E1 C6 32 75 5D 01 60 1E C4 32 FB    zÿ¼Ê¼áÆ2u].`.Ä2û
+9E 66 EF 3D D8 65 84 BE 82 F0 2F C7 40 C3 74 C8    fï=Øe¾ð/Ç@ÃtÈ
+2F D2 AB CC 91 AC 78 E2 28 05 78 2B 05 69 16 96    /Ò«Ì¬xâ(.x+.i.
+18 28 CF 60 3C C0 83 74 C0 0F 90 15 4C CB 42 97    .(Ï`<ÀtÀ..LËB
+D4 B4 03 55 F2 3E C7 3E E7 45 2C 6B 75 26 2D C5    Ô´.Uò>Ç>çE,ku&-Å
+45 A6 27 CD F4 D4 20 26 3D 24 0B B9 ED C5 88 27    E¦'ÍôÔ.&=$.¹íÅ'
+AB 28 C2 BB 9B 91 B4 10 38 70 96 C1 3C 42 B1 2C    «(Â»´.8pÁ<B±,
+8E 45 41 64 37 00 CA BD 2A 09 78 20 D4 9D B0 00    EAd7.Ê½*.x.Ô°.
+A8 73 A6 DC D0 01 1A F5 3E 17 6E 60 9C C6 E4 3E    ¨s¦ÜÐ..õ>.n`Æä>
+97 EB 59 48 8B 00 D5 12 E8 88 79 1C 2C CE 7A BE    ëYH.Õ.èy.,Îz¾
+59 BA 51 6A C9 33 5C 16 BA B8 85 A2 5F 21 94 45    YºQjÉ3\.º¸¢_!E
+D0 CE 8B 54 4A 1D 6A 80 8A F5 5A 5C F1 02 DA 8C    ÐÎTJ.jõZ\ñ.Ú
+57 1E 9D 13 6F F9 F3 98 2A 30 A6 0A 1C 57 05 C6    W..oùó*0¦..W.Æ
+55 81 09 55 60 52 15 38 A1 0A 9C 44 91 57 60 83    U.U`R.8¡.DW`
+7E 1B 89 B9 DB 48 60 8F D0 BC AB 94 4F 4A E4 1B    ~.¹ÛH`Ð¼«OJä.
+D8 5D FA E4 C7 03 C9 FF 9F 8B 31 40 33 F7 79 81    Ø]úäÇ.Éÿ1@3÷y
+DD 81 65 14 B9 6A 77 EB BB 19 77 BB A9 75 43 46    Ýe.¹jwë».w»©uCF
+5E F6 D8 3D FA 06 13 6E 83 D2 FA 2B 8A F4 D5 DE    ^öØ=ú..nÒú+ôÕÞ
+F1 1B 67 8E 45 61 92 26 BD 80 69 51 AE 35 56 BC    ñ.gEa&½iQ®5V¼
+07 EC 16 4D D2 B8 97 E8 AC 10 68 74 57 DE 6D A7    .ì.MÒ¸è¬.htWÞm§
+C5 4C 93 13 91 8F D1 51 2F 41 37 90 77 A0 62 5D    ÅL.ÑQ/A7w b]
+51 25 9C A1 33 EA 44 BD D5 F8 04 A6 95 A4 56 60    Q%¡3êD½Õø.¦¤V`
+3A F4 AF 50 1F B3 B2 FF E6 9F A3 26 B2 01 76 48    :ô¯P.³²ÿæ£&².vH
+BF 74 92 EE D2 51 1A 08 15 66 AA C8 65 3B AC 4F    ¿tîÒQ...fªÈe;¬O
+65 22 90 4A EB 5C 69 1D C7 01 53 B4 51 05 B3 0A    e"Jë\i.Ç.S´Q.³.
+A4 0A D6 00 F6 BD 29 0D 30 1F 08 5C 3F F6 1D AA    ¤.Ö.ö½).0..\?ö.ª
+8D 94 F9 07 48 CA 3A 86 7D 47 6B E3 09 98 8F 85    ù.HÊ:}Gkã.
+BE 21 1C 18 51 E3 1D 98 D7 C9 6D B0 8E 62 9F 49    ¾!..Qã.×Ém°bI
+9B BB 72 83 20 B9 C2 D6 B8 70 E8 4D 6E 3C 8A 7D    »r.¹ÂÖ¸pèMn<}
+C6 6E 8E FA 08 4C E3 18 56 9E BE 1B 24 62 58 79    Ænú.Lã.V¾.$bXy
+06 37 32 DC 0A 23 73 02 07 96 0D 57 FF 06 C8 3D    .72Ü.#s...Wÿ.È=
+B0 E2 58 63 24 6F 9A 08 94 6A 21 76 A5 5E 1A D2    °âXc$o.j!v¥^.Ò
+5C 3A CD C0 B8 05 E6 57 20 4F C1 1A C5 8A FD C8    \:ÍÀ¸.æW.OÁ.ÅýÈ
+88 98 2F 80 67 54 4A C8 AB 2D 35 A5 A4 91 6A 1D    /gTJÈ«-5¥¤j.
+DB 8D 1D 51 D8 1B 20 3F 03 EE F1 9D 07 75 13 C8    Û.QØ..?.îñ.u.È
+26 58 47 B0 C7 18 EF 40 46 B0 52 EF 30 B6 C0 DC    &XG°Ç.ï@F°Rï0¶ÀÜ
+02 B2 05 56 0A 77 D8 43 B8 CD E7 40 D6 AD 33 B8    .².V.wØC¸Íç@Ö­3¸
+A3 56 C2 E5 17 C8 1D B0 28 D6 EE 28 4D D9 39 BC    £VÂå.È.°(Öî(MÙ9¼
+07 8D C5 F8 0E E6 41 72 C1 3A 85 95 DA 4B D3 F8    .Åø.æArÁ:ÚKÓø
+14 EE B0 CB 34 0C 2A 7B EE 34 89 BD F0 DC A5 AD    .î°Ë4.*{î4½ðÜ¥­
+4E 24 81 35 46 1C A7 74 FB B1 CF 32 C8 99 FE 02    N$5F.§tû±Ï2Èþ.
+F2 10 D8 FD A4 B8 14 3A 55 39 82 15 97 43 E3 07    ò.Øý¤¸.:U9.Cã.
+98 BD 24 2A B7 21 1B 7C 03 6C C8 56 C5 46 CF 90    ½$*·!.|.lÈVÅFÏ
+9E AD F6 85 D1 B1 70 1A 77 B0 38 F2 B8 AD 91 35    ­öÑ±p.w°8ò¸­5
+76 2F 04 AE 8F 0D E7 87 B1 C2 12 C9 F5 6E 03 99    v/.®.ç±Â.Éõn.
+92 37 A0 D6 5D B2 89 95 1E 89 F6 95 B2 89 97 86    7 Ö]².ö²
+A8 7D B3 34 3E 8B 12 FA 00 6A 02 31 5D 81 71 5D    ¨}³4>.ú.j.1]q]
+81 B8 AE 40 42 57 20 A9 2B 30 A1 2B 30 E9 08 0C    ¸®@BW.©+0¡+0é..
+A2 BF A4 1C 02 23 F0 01 01 C0 02 E7 29 52 63 08    ¢¿¤..#ð..À.ç)Rc.
+97 56 52 46 53 00 31 00 4D 00 69 00 6E 00 69 00    VRFS.1.M.i.n.i.
+6D 00 61 00 70 00 43 00 6F 00 6E 00 74 00 72 00    m.a.p.C.o.n.t.r.
+6F 00 6C 00 6C 00 65 00 72 00 5F 00 53 00 31 00    o.l.l.e.r._.S.1.
+4D 00 69 00 6E 00 69 00 6D 00 61 00 70 00 4F 00    M.i.n.i.m.a.p.O.
+70 00 74 00 69 00 6F 00 6E 00 A2 01 0F 78 DA E3    p.t.i.o.n.¢..xÚã
+38 9F 2A C4 C3 88 04 00 15 5A 01 67 F0 01 01 C0    8*ÄÃ...Z.gð..À
+02 11 52 B6 10 08 97 56 52 1E 53 00 31 00 55 00    ..R¶..VR.S.1.U.
+49 00 5F 00 47 00 46 00 78 00 4D 00 61 00 6E 00    I._.G.F.x.M.a.n.
+61 00 67 00 65 00 72 00 A2 01 88 10 78 DA 8D 59    a.g.e.r.¢..xÚY
+4D 6B 94 57 14 BE AB 22 2F A5 48 10 1B C4 4A 10    MkW.¾«"/¥H..ÄJ.
+47 44 A4 D8 44 44 A4 A8 EF 3B D1 99 98 19 33 66    GD¤ØDD¤¨ï;Ñ.3f
+92 B8 6C C7 99 89 19 32 99 19 E6 C3 9A 76 53 5C    ¸lÇ.2.æÃvS\
+95 D2 42 17 45 AA 50 2A B4 8B D2 F6 07 B4 9B E2    ÒB.EªP*´Òö.´â
+A2 B4 29 D8 75 97 DD 76 E9 B2 CB 9E F3 DC 7B E7    ¢´)ØuÝvé²ËóÜ{ç
+7E BE A3 86 7C 98 7B EE B9 E7 3C E7 9C E7 9C 7B    ~¾£|{î¹ç<çç{
+93 CC 27 49 45 AC 89 92 58 11 B7 C4 61 F1 96 A0    Ì'IE¬X.·Äañ 
+7F 05 FE 92 1C 4F DE A8 8A B6 18 D1 47 43 DC A3    .þ.OÞ¨¶.ÑGCÜ£
+9F 9C D5 53 C9 D1 54 DC 15 3D D1 17 43 B1 47 12    ÕSÉÑTÜ.=Ñ.C±G.
+5D D1 11 63 B1 2F A5 BE CE A6 3A 32 DA D9 A3 CF    ]Ñ.c±/¥¾Î¦:2ÚÙ£Ï
+6D AC 1B 1D 0F B3 E4 74 32 5F A7 95 2E 7D 36 69    m¬...³ät2_§.}6i
+8D 7F 1E 8A FB F8 EA 9C 75 2E 39 61 CB 15 C5 0E    .ûøêu.9aË.Å.
+9D 37 A4 4F FE 5F 4C BA 48 BF 6B D3 3A AF BE 44    7¤Oþ_LºH¿kÓ:¯¾D
+9A FC A8 8B 5D B2 AD 4B 1F 65 F2 66 2C 56 49 4A    ü¨]²­K.eòf,VIJ
+F9 F1 3E FB 51 CE 5C A9 3B F4 BD 27 5A 24 FB 81    ùñ>ûQÎ\©;ô½'Z$û
+AB EB 44 72 B8 4E A7 31 22 6C E5 44 FB 5B 61 2D    «ëDr¸N§1"låDû[a-
+BF 67 BC 5E 25 3B 78 77 15 A8 4C 78 7D 7B FB 66    ¿g¼^%;xw.¨Lx}{ûf
+56 D8 DE FE 31 4B 16 92 B9 15 FA ED 7D AC 8D A1    VØÞþ1K.¹.úí}¬¡
+47 D9 71 00 3B 52 46 EC 36 ED E2 A8 8C C5 4D 92    GÙq.;RFì6íâ¨ÅM
+98 90 4C 0F E8 3B 96 90 9C F4 7B A0 7C 2E 43 76    L.è;ô{ |.Cv
+E4 47 11 58 F9 F8 78 FE 7D F3 C3 F0 6A A1 F6 F9    äG.Xùøxþ}óÃðj¡öù
+9B 57 D9 3E 46 B6 8F 9C D8 81 27 21 9A 35 68 E3    WÙ>F¶Ø'!5hã
+4C 88 E3 B4 90 F2 A9 77 20 D5 06 5A D2 AE 5C 54    Lã´ò©w.Õ.ZÒ®\T
+81 BD 44 63 86 14 E5 71 46 BF 65 AD AD 60 FF 06    ½Dc.åqF¿e­­`ÿ.
+FC 6B CD DA 4F B1 31 52 15 5A BF 17 A9 06 DE DB    ükÍÚO±1R.Z¿.©.ÞÛ
+41 B6 0F AC B8 D0 EA F9 E4 64 89 FC E0 FC 68 09    A¶.¬¸Ðêùädüàüh.
+3B FB 72 CF 7B 3B 59 30 3B 4A 40 75 42 5A 73 E5    ;ûrÏ{;Y0;J@uBZså
+11 A9 3E 9D BD 47 72 3D 55 6B B9 D2 14 A9 1A AC    .©>½Gr=Uk¹Ò.©.¬
+E4 78 2E D3 7A D7 CF 90 93 C9 11 19 A9 26 2A AB    äx.Óz×ÏÉ..©&*«
+86 A8 8E 03 9F AF 93 FE 26 62 DD D3 AB 65 F6 F9    ¨.¯þ&bÝÓ«eöù
+DD 2C 39 9B 1C 67 C4 E5 3E 3E 67 86 EC 99 E4 98    Ý,9.gÄå>>gìä
+A9 9F 0A D0 19 C2 8B 9E 8F 33 69 DD 52 72 92 75    ©.Ð.Â3iÝRru
+D8 FE 0E 32 3C 88 09 69 2D 03 13 46 24 52 79 7F    Øþ.2<.i-..F$Ry
+3D 7F 7E 85 2A EB 68 CA 92 A6 6E 36 48 DB 88 AC    =~*ëhÊ¦n6HÛ¬
+E1 5A DB A6 3D A8 C1 3F D8 D2 03 54 98 D1 59 85    áZÛ¦=¨Á?ØÒ.TÑY
+2F DA 0E DF 4E 23 B7 02 CF 27 C4 87 0D 95 A9 8E    /Ú.ßN#·.Ï'Ä.©
+EC B1 E4 75 99 51 6B 86 13 34 32 E0 C0 7D 85 E1    ì±äuQk.42àÀ}á
+1E 49 70 C5 76 48 BA 17 8D 97 8C 36 E7 29 63 FF    .IpÅvHº.6ç)cÿ
+40 CA 2C 28 96 A2 1C 59 01 F6 ED 69 3D 4B 4D 16    @Ê,(¢.Y.öíi=KM.
+DB 38 15 23 6B 7F 2C 16 23 67 71 46 B6 68 4F 33    Û8.#k,.#gqF¶hO3
+6E 0F F9 1F 93 A9 D0 F7 20 8F 2E 25 67 63 B2 76    n.ù.©Ð÷..%gc²v
+9D 70 FE 0D C4 A6 AE 2B A0 F3 59 96 5C 48 4E C7    pþ.Ä¦®+ óY\HNÇ
+76 EA C8 79 BB F4 79 17 93 33 B1 5D D7 09 AF B1    vêÈy»ôy.3±]×.¯±
+87 CC AB D8 19 DB B7 18 70 8C C9 86 2D A0 DD 0A    Ì«Ø.Û·.pÉ- Ý.
+F3 C0 C9 19 5B 8A BB DB 38 C2 A4 43 64 CD 50 75    óÀÉ.[»Û8Â¤CdÍPu
+E1 0C 55 63 F0 F9 32 93 FD B5 81 6A E9 87 FE 80    á.Ucðù2ýµjéþ
+D3 64 DF 1C A8 DA 08 99 D5 E4 9E 44 73 E2 A3 49    Ódß.¨Ú.ÕäDsâ£I
+4C 15 CF AA 1C 79 42 91 E5 4B 24 BB 47 7B 0C 77    L.Ïª.yBåK$»G{.w
+A7 B0 93 B3 78 1F 2B 3D DF 1E CA 3B C3 C1 39 DA    §°³x.+=ß.Ê;ÃÁ9Ú
+C9 E6 5B D6 CC 91 23 45 B8 8C 81 48 17 D6 0E 02    Éæ[ÖÌ#E¸H.Ö..
+5C 0C 1B 44 F2 60 31 39 15 CB 03 3F 1E D8 F3 90    \..Dò`19.Ë.?.Øó
+23 F1 49 A6 51 D2 5E DB CC B1 A1 2C 71 6A 95 18    #ñI¦QÒ^ÛÌ±¡,qj.
+C9 E7 B9 32 62 D5 95 8C E4 64 F3 2C FC 39 FB 53    Éç¹2bÕädó,ü9ûS
+4C 5F 7B 56 4F 3A C0 09 86 69 E5 4C B3 E9 CE 72    L_{VO:À.iåL³éÎr
+65 65 0B D9 BE 8C B3 3B C4 60 F2 14 BF D2 1C 79    ee.Ù¾³;Ä`ò.¿Ò.y
+EA 2E A6 63 2D 03 49 AF BB 5C 4E CE 85 12 32 CB    ê.¦c-.I¯»\NÎ.2Ë
+C7 8A F5 83 DE 05 ED 2F C0 D5 9A 97 98 A9 EF E6    ÇõÞ.í/ÀÕ©ïæ
+73 22 45 B9 A4 FC 89 D4 C6 D1 E4 90 44 74 20 7B    s"E¹¤üÔÆÑäDt.{
+41 E5 4A 61 69 A9 90 31 1B 73 45 0F EC 3D D0 78    AåJai©1.sE.ì=Ðx
+80 39 AF A8 FA 57 99 4E 6C 21 92 23 BF EF 50 FE    9¯¨úWNl!#¿ïPþ
+E8 73 D7 55 16 61 FD D3 B4 F0 F7 B7 17 52 D3 5B    ès×U.aýÓ´ð÷·.RÓ[
+B9 47 E7 4C 25 84 50 4C 86 F5 DD 53 1C 6A C7 C1    ¹GçL%PLõÝS.jÇÁ
+41 88 F4 9B D9 81 63 7C 3F 8C 00 C5 E8 36 64 9A    AôÙc|?.Åè6d
+D4 E9 1C FE D7 51 74 AA 2D 67 3E 54 FC 32 24 9B    Ôé.þ×Qtª-g>Tü2$
+E4 DC 1A D6 AB 5C E5 C8 5A B9 F2 E4 F1 3F 69 E1    äÜ.Ö«\åÈZ¹òäñ?iá
+A3 23 97 53 39 E7 F8 99 90 39 99 00 9D F3 6C D5    £#S9çø9.ólÕ
+7F A9 64 7C 8D 4B 05 95 A3 E5 EA E1 2E 8D 08 75    ©d|K.£åêá..u
+D1 4C DC 20 89 A6 E2 1A 0F 75 C8 7D 7C 8D E3 EB    ÑLÜ.¦â..uÈ}|ãë
+56 69 9F B0 EB 44 EF 36 3C C9 74 14 B6 51 B6 A2    Vi°ëDï6<Ét.¶Q¶¢
+3C 8D 4D 50 91 D9 91 78 BF 02 7B 5A 53 4F 98 01    <MPÙx¿.{ZSO.
+EF 82 15 46 C1 D9 26 B6 B3 E6 BB 3B F0 94 A5 AA    ï.FÁÙ&¶³æ»;ð¥ª
+98 F4 16 2D 4F AF A5 AC 67 4D DD A5 BA 60 5C 4B    ô.-O¯¥¬gMÝ¥º`\K
+6A 69 E9 BD AC F0 E4 F1 9F 40 DB C6 63 4D 4D 8C    jié½¬ðäñ@ÛÆcMM
+26 EF 1C EE FA 3E 9D FA 63 EF 92 53 E0 2E 4E 18    &ï.îú>úcïSà.N.
+D2 77 63 87 AC 95 1A E2 D6 89 E4 32 DD 05 D0 AB    Òwc¬.âÖä2Ý.Ð«
+C3 3A A8 02 75 C9 46 51 0E A2 DC AB 23 2A 7A E2    Ã:¨.uÉFQ.¢Ü«#*zâ
+AA 9A A9 5C EB C6 D4 69 CB D4 D0 0B 5B 21 03 AA    ª©\ëÆÔiËÔÐ.[!.ª
+8A 75 E7 E5 C5 60 02 77 A3 18 ED 07 D0 F8 4B 26    uçåÅ`.w£.í.ÐøK&
+EF 4A 32 EB D9 67 6B 5A B3 FA AA 6F 5D 1F 1C DC    ïJ2ëÙgkZ³úªo]..Ü
+24 24 22 13 41 E0 0D D7 DE 83 98 A4 C3 0F 45 65    $$".Aà.×Þ¤Ã.Ee
+5F A8 4D AE B4 10 19 1B EF 51 60 67 78 47 AC 61    _¨M®´...ïQ`gxG¬a
+AF AC 1D 9B BF 9F AA 29 54 4E 14 75 75 07 D5 B7    ¯¬.¿ª)TN.uu.Õ·
+F0 5E F8 8E 80 BE E9 4B 6B 56 95 B5 EC C8 53 C6    ð^ø¾éKkVµìÈSÆ
+BA 28 BC 2A 63 EA 53 96 09 DD 76 EC E6 81 AE 66    º(¼*cêS.Ývìæ®f
+58 35 32 C7 92 04 B3 CC 3A 3C D9 CD D1 61 EE 39    X52Ç.³Ì:<ÙÍÑaî9
+35 58 B3 F3 92 A8 F3 99 32 E7 9D 3C B7 BA BF AE    5X³ó¨ó2ç<·º¿®
+B3 22 FC 1A 23 EB BA C8 E4 61 7E 6F 44 07 CE DF    ³"ü.#ëºÈäa~oD.Îß
+17 7D A7 78 C4 68 FD 8C 2E 68 E6 A3 DC DB 17 F5    .}§xÄhý.hæ£ÜÛ.õ
+86 3A F2 DB 99 2D 75 ED 51 97 5D F7 E7 4E BD 46    :òÛ-uíQ]÷çN½F
+19 62 73 5C 03 35 C7 6F 3B 0D 95 91 7E A6 FA D2    .bs\.5Ço;.~¦úÒ
+45 D8 13 74 2B BC 7A 48 BE DA C0 3C D4 76 27 A3    EØ.t+¼zH¾ÚÀ<Ôv'£
+17 CC 5F 8F 32 9E EF 96 A7 19 C3 33 CF 64 8A 61    .Ì_2ï§.Ã3Ïda
+C0 B8 E7 D8 E6 01 30 71 3B 4C C8 4A FF 82 75 E5    À¸çØæ.0q;LÈJÿuå
+6D 21 8A EF 77 FC CE 73 00 B6 B1 6F A3 D2 52 35    m!ïwüÎs.¶±o£ÒR5
+89 FC C4 9A BE 82 A6 55 95 47 92 47 7A F6 EB 15    üÄ¾¦UGGzöë.
+A4 7E 4B 39 DF 56 A7 D9 D6 87 ED 63 4B 42 66 3E    ¤~K9ßV§ÙÖícKBf>
+DB 5D 45 BE C9 9E 16 64 ED F9 E4 64 4C 46 F2 5B    Û]E¾É.díùädLFò[
+D3 66 B7 01 6A 3C 95 08 4E 54 3D F7 54 BD 4E 30    Óf·.j<.NT=÷T½N0
+6D C7 E7 BA 0B 19 67 B2 D9 23 E7 57 CD FB 33 AD    mÇçº..g²Ù#çWÍû3­
+5B 4E 2E BE EA BE 19 16 93 8F 76 CF 92 93 65 37    [N.¾ê¾..vÏe7
+F6 42 A3 B3 14 EF 1B 5D 70 DE AE 30 F1 72 32 CA    öB£³.ï.]pÞ®0ñr2Ê
+99 05 F4 4D 64 03 11 EF 23 B7 A6 2F 73 BA D3 90    .ôMd..ï#·¦/sºÓ
+56 D7 9B 19 6C 42 BD D3 70 63 3B 7C E5 23 9F E2    V×.lB½Ópc;|å#â
+BA EC 78 38 31 20 F6 74 77 D4 E1 CB 00 48 E4 EE    ºìx81.ötwÔáË.Häî
+A2 C8 F9 3E 5D 57 8C B2 2F 66 BC 11 3B B3 9C 8D    ¢Èù>]W²/f¼.;³
+F3 3A A6 49 8F F1 9E A6 12 77 DC C2 67 ED 92 7C    ó:¦Iñ¦.wÜÂgí|
+C6 EF C9 21 FB AE 22 5E DC 47 34 72 3E 43 98 38    ÆïÉ!û®"^ÜG4r>C8
+F1 8C D7 9C D6 96 13 25 35 E1 EB FB 6B 43 AF FF    ñ×Ö.%5áëûkC¯ÿ
+CA EB CF 32 7E 3B D9 C4 FB 55 C0 BB 64 83 59 09    ÊëÏ2~;ÙÄûUÀ»dY.
+39 62 90 BA 12 25 1B B7 2F D4 EC 46 D5 65 24 A4    9bº.%.·/ÔìFÕe$¤
+B7 32 2E 65 C5 5A D6 CB B0 D5 57 E2 7B 6A C0 2E    ·2.eÅZÖË°ÕWâ{jÀ.
+78 BF C2 19 03 42 53 BE BF DC 52 73 F6 36 E6 8F    x¿Â..BS¾¿ÜRsö6æ
+46 7C 56 23 DE 36 67 18 BE A9 AB E9 A0 ED F6 5C    F|V#Þ6g.¾©«é íö\
+47 BA 8A AF 6D 4C 36 8E B4 F3 DE 51 14 39 EF DF    Gº¯mL6´óÞQ.9ïß
+A7 32 C9 DC 74 A7 2B DA 53 81 7E 45 53 AF A3 43    §2ÉÜt§+ÚS~ES¯£C
+35 C3 E6 BC 50 58 D3 80 59 F1 E2 E8 4C 84 6D 4C    5Ãæ¼PXÓYñâèLmL
+46 B9 6F 80 14 C9 2D 75 4B EC BB 13 83 44 2C F3    F¹o.É-uKì».D,ó
+EF 1B 75 77 A6 79 96 CA 78 7B 6F 07 46 2A C7 7E    ï.uw¦yÊx{o.F*Ç~
+CA E2 14 31 1D E1 35 A9 4D DC 3D 54 7B FD 1E 5C    Êâ.1.á5©MÜ=T{ý.\
+07 1F 76 A2 DC 21 67 19 59 F3 43 9C 67 BF 18 BA    ..v¢Ü!g.YóCg¿.º
+D3 74 59 DD 8D 27 2A FF F6 48 EE C3 E0 26 26 A5    ÓtYÝ'*ÿöHîÃà&&¥
+8C D5 71 46 29 7B 33 E2 3E A2 BD 03 59 D6 DA 76    ÕqF){3â>¢½.YÖÚv
+6E F2 F2 8D F4 06 FC E3 4E 37 E3 D5 1B 6F A9 7A    nòòô.üãN7ãÕ.o©z
+FA E2 EC 2E 4D EF B7 21 5B 0F 71 7A 87 AC DB 23    úâì.Mï·![.qz¬Û#
+1C 26 38 3B A8 66 DC 2B 1B B8 75 E6 33 E4 53 64    .&8;¨fÜ+.¸uæ3äSd
+54 0A 8D 3D F5 32 1B B9 7B 22 6A 46 A6 11 BD CB    T.=õ2.¹{"jF¦.½Ë
+2E 64 F6 EB 42 A6 FE D6 62 D6 6B E9 DC 5C 72 68    .döëB¦þÖbÖkéÜ\rh
+93 50 5B 11 5B 62 EE B5 77 C4 79 FA 98 17 FF 03    P[.[bîµwÄyú.ÿ.
+47 51 4B 67 F0 01 01 C0 02 C8 37 52 50 08 97 56    GQKgð..À.È7RP.V
+52 3A 53 00 31 00 47 00 61 00 6D 00 65 00 4F 00    R:S.1.G.a.m.e.O.
+70 00 74 00 69 00 6F 00 6E 00 5F 00 53 00 31 00    p.t.i.o.n._.S.1.
+49 00 6E 00 74 00 65 00 72 00 66 00 61 00 63 00    I.n.t.e.r.f.a.c.
+65 00 47 00 72 00 6F 00 75 00 70 00 A2 01 08 08    e.G.r.o.u.p.¢...
+CF 6D 1D 00 00 80 3F F0 01 00 C0 02 08             Ïm...?ð..À.....
+
+WARNING 16:04:11:523 ClientConnection: not found packet for opcode 6466
+29 00 66 64 80 B4 B6 47 80 47 AC C7 0A 60 8D C5    ).fd´¶GG¬Ç.`Å
+A8 7C 80 B4 B6 47 80 47 AC C7 0A 60 8D C5 07 00    ¨|´¶GG¬Ç.`Å..
+00 00 00 00 00 A9 B6 A1 04                         .....©¶¡........
+
+WARNING 16:04:11:953 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:12:287 ClientConnection: not found packet for opcode F020
+04 00 20 F0                                        ...ð............
+
+WARNING 16:04:12:287 ClientConnection: not found packet for opcode 7ADB
+10 00 DB 7A 01 00 00 00 02 00 00 00 07 00 00 00    ..Ûz............
+
+WARNING 16:04:12:291 ClientConnection: not found packet for opcode D48F
+08 00 8F D4 02 00 00 00                            ..Ô............
+
+WARNING 16:04:13:455 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:14:964 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:16:465 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:17:972 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:19:747 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:20:617 ClientConnection: not found packet for opcode 6466
+29 00 66 64 80 B4 B6 47 80 47 AC C7 F8 45 8D C5    ).fd´¶GG¬ÇøEÅ
+A8 7C 80 B4 B6 47 80 47 AC C7 0A 60 8D C5 05 00    ¨|´¶GG¬Ç.`Å..
+00 00 00 00 00 2F DA A1 04                         ...../Ú¡........
+
+WARNING 16:04:21:258 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:21:409 ClientConnection: not found packet for opcode 6466
+29 00 66 64 80 B4 B6 47 80 47 AC C7 0A 60 8D C5    ).fd´¶GG¬Ç.`Å
+A8 7C 80 B4 B6 47 80 47 AC C7 0A 60 8D C5 07 00    ¨|´¶GG¬Ç.`Å..
+00 00 00 00 00 4C DD A1 04                         .....LÝ¡........
+
+WARNING 16:04:22:645 ClientConnection: not found packet for opcode D533
+04 00 33 D5                                        ..3Õ............
+
+WARNING 16:04:22:779 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:24:289 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:25:805 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:27:319 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:27:538 ClientConnection: not found packet for opcode 6466
+29 00 66 64 B9 B2 B6 47 AA 47 AC C7 0A 60 8D C5    ).fd¹²¶GªG¬Ç.`Å
+C2 83 10 63 B6 47 04 4F AC C7 0A 60 8D C5 00 00    Â.c¶G.O¬Ç.`Å..
+00 00 00 00 00 39 F5 A1 04                         .....9õ¡........
+
+WARNING 16:04:28:027 ClientConnection: not found packet for opcode 6466
+29 00 66 64 44 89 B6 47 6A 4B AC C7 0A 60 8D C5    ).fdD¶GjK¬Ç.`Å
+A2 82 6F 39 B6 47 9C 50 AC C7 7F 3D 8D C5 00 00    ¢o9¶GP¬Ç=Å..
+00 00 00 00 00 2D F7 A1 04                         .....-÷¡........
+
+WARNING 16:04:28:491 ClientConnection: not found packet for opcode 6466
+29 00 66 64 ED 61 B6 47 87 49 AC C7 0A 60 8D C5    ).fdía¶GI¬Ç.`Å
+6E 7D 15 12 B6 47 83 44 AC C7 D5 BB 8D C5 00 00    n}..¶GD¬ÇÕ»Å..
+00 00 00 00 00 F2 F8 A1 04                         .....òø¡........
+
+WARNING 16:04:28:823 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:28:968 ClientConnection: not found packet for opcode 6466
+29 00 66 64 71 39 B6 47 B3 47 AC C7 7E 3D 8D C5    ).fdq9¶G³G¬Ç~=Å
+6A 7E 82 E9 B5 47 77 44 AC C7 12 44 8E C5 00 00    j~éµGwD¬Ç.DÅ..
+00 00 00 00 00 D7 FA A1 04                         .....×ú¡........
+
+WARNING 16:04:29:483 ClientConnection: not found packet for opcode 6466
+29 00 66 64 A0 0D B6 47 F3 46 AC C7 8E CF 8D C5    ).fd .¶GóF¬ÇÏÅ
+3E 80 A0 BD B5 47 6F 47 AC C7 D2 49 8E C5 00 00    > ½µGoG¬ÇÒIÅ..
+00 00 00 00 00 DA FC A1 04                         .....Úü¡........
+
+WARNING 16:04:29:930 ClientConnection: not found packet for opcode 6466
+29 00 66 64 9E E7 B5 47 2C 47 AC C7 8C 44 8E C5    ).fdçµG,G¬ÇDÅ
+3E 80 9F 97 B5 47 9B 47 AC C7 F8 4C 8E C5 00 00    >µGG¬ÇøLÅ..
+00 00 00 00 00 90 FE A1 04                         .....þ¡........
+
+WARNING 16:04:30:327 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:30:414 ClientConnection: not found packet for opcode 6466
+29 00 66 64 8E BE B5 47 4A 47 AC C7 B8 49 8E C5    ).fd¾µGJG¬Ç¸IÅ
+78 7F 90 6E B5 47 2D 46 AC C7 1A 5F 8E C5 00 00    xnµG-F¬Ç._Å..
+00 00 00 00 00 74 00 A2 04                         .....t.¢........
+
+WARNING 16:04:30:896 ClientConnection: not found packet for opcode 6466
+29 00 66 64 8E 95 B5 47 03 46 AC C7 BE 4D 8E C5    ).fdµG.F¬Ç¾MÅ
+B2 7E 98 45 B5 47 7A 43 AC C7 14 71 8E C5 00 00    ²~EµGzC¬Ç.qÅ..
+00 00 00 00 00 58 02 A2 04                         .....X.¢........
+
+WARNING 16:04:31:380 ClientConnection: not found packet for opcode 6466
+29 00 66 64 58 6C B5 47 AC 44 AC C7 5D 5F 8E C5    ).fdXlµG¬D¬Ç]_Å
+B2 7E 63 1C B5 47 03 42 AC C7 9A 86 8E C5 00 00    ²~c.µG.B¬ÇÅ..
+00 00 00 00 00 3D 04 A2 04                         .....=.¢........
+
+WARNING 16:04:31:604 ClientConnection: not found packet for opcode 6466
+29 00 66 64 38 5A B5 47 16 44 AC C7 EF 3F 8E C5    ).fd8ZµG.D¬Çï?Å
+B2 7E 37 16 B5 47 E6 41 AC C7 AF 89 8E C5 05 00    ²~7.µGæA¬Ç¯Å..
+00 00 AA 00 00 27 05 A2 04                         ..ª..'.¢........
+
+WARNING 16:04:31:831 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:32:419 ClientConnection: not found packet for opcode 6466
+29 00 66 64 4E 16 B5 47 E5 41 AC C7 44 89 8E C5    ).fdN.µGåA¬ÇDÅ
+B2 7E 4E 16 B5 47 E5 41 AC C7 44 89 8E C5 07 00    ²~N.µGåA¬ÇDÅ..
+00 00 00 00 00 54 08 A2 04                         .....T.¢........
+
+WARNING 16:04:32:430 ClientConnection: not found packet for opcode 6466
+29 00 66 64 B6 14 B5 47 D8 41 AC C7 0E 8A 8E C5    ).fd¶.µGØA¬Ç.Å
+B2 7E C0 C4 B4 47 4B 3F AC C7 E7 A9 8E C5 00 00    ²~ÀÄ´GK?¬Çç©Å..
+00 00 00 00 00 54 08 A2 04                         .....T.¢........
+
+WARNING 16:04:32:628 ClientConnection: not found packet for opcode 6466
+29 00 66 64 85 04 B5 47 51 41 AC C7 19 70 8E C5    ).fd.µGQA¬Ç.pÅ
+B2 7E E7 C0 B4 47 24 3F AC C7 A5 AB 8E C5 05 00    ²~çÀ´G$?¬Ç¥«Å..
+00 00 AA 00 00 1F 09 A2 04                         ..ª....¢........
+
+WARNING 16:04:33:336 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:33:430 ClientConnection: not found packet for opcode 6466
+29 00 66 64 C2 C1 B4 47 2B 3F AC C7 FB AA 8E C5    ).fdÂÁ´G+?¬ÇûªÅ
+B2 7E C2 C1 B4 47 2B 3F AC C7 FB AA 8E C5 07 00    ²~ÂÁ´G+?¬ÇûªÅ..
+00 00 00 00 00 3C 0C A2 04                         .....<.¢........
+
+WARNING 16:04:33:441 ClientConnection: not found packet for opcode 6466
+29 00 66 64 3D C0 B4 47 1E 3F AC C7 73 AB 8E C5    ).fd=À´G.?¬Çs«Å
+B2 7E 48 70 B4 47 72 3C AC C7 C3 BC 8E C5 00 00    ²~Hp´Gr<¬ÇÃ¼Å..
+00 00 00 00 00 4B 0C A2 04                         .....K.¢........
+
+WARNING 16:04:33:926 ClientConnection: not found packet for opcode 6466
+29 00 66 64 13 97 B4 47 1D 3E AC C7 E3 B7 8E C5    ).fd.´G.>¬Çã·Å
+00 82 2B 47 B4 47 FE 41 AC C7 D2 C1 8E C5 00 00    .+G´GþA¬ÇÒÁÅ..
+00 00 00 00 00 30 0E A2 04                         .....0.¢........
+
+WARNING 16:04:34:068 ClientConnection: not found packet for opcode 6466
+29 00 66 64 C9 8B B4 47 C7 41 AC C7 96 BB 8E C5    ).fdÉ´GÇA¬Ç»Å
+AE 9A 5E 4C B4 47 8B 72 AC C7 16 D7 8E C5 00 00    ®^L´Gr¬Ç.×Å..
+00 00 00 00 00 BC 0E A2 04                         .....¼.¢........
+
+WARNING 16:04:34:087 ClientConnection: not found packet for opcode 6466
+29 00 66 64 C9 8B B4 47 C7 41 AC C7 96 BB 8E C5    ).fdÉ´GÇA¬Ç»Å
+AE 9A C9 8B B4 47 C7 41 AC C7 96 BB 8E C5 07 00    ®É´GÇA¬Ç»Å..
+00 00 00 00 00 CC 0E A2 04                         .....Ì.¢........
+
+WARNING 16:04:34:846 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:34:956 ClientConnection: not found packet for opcode 6466
+29 00 66 64 1B 8D B4 47 B9 41 AC C7 63 BB 8E C5    ).fd.´G¹A¬Çc»Å
+B0 01 0A DD B4 47 69 3E AC C7 77 A0 8E C5 00 00    °..Ý´Gi>¬Çw Å..
+00 00 00 00 00 37 12 A2 04                         .....7.¢........
+
+WARNING 16:04:35:424 ClientConnection: not found packet for opcode 6466
+29 00 66 64 98 B4 B4 47 E8 3B AC C7 8E AD 8E C5    ).fd´´Gè;¬Ç­Å
+18 03 5E 04 B5 47 ED 35 AC C7 89 8E 8E C5 00 00    ..^.µGí5¬ÇÅ..
+00 00 00 00 00 0C 14 A2 04                         .......¢........
+
+WARNING 16:04:35:882 ClientConnection: not found packet for opcode 6466
+29 00 66 64 7A DB B4 47 27 3D AC C7 94 A0 8E C5    ).fdzÛ´G'=¬Ç Å
+E4 FD 5D 2B B5 47 5F 41 AC C7 85 7F 8E C5 00 00    äý]+µG_A¬ÇÅ..
+00 00 00 00 00 D1 15 A2 04                         .....Ñ.¢........
+
+WARNING 16:04:36:353 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:36:370 ClientConnection: not found packet for opcode 6466
+29 00 66 64 D5 04 B5 47 4D 3F AC C7 5C 91 8E C5    ).fdÕ.µGM?¬Ç\Å
+E4 FD B9 54 B5 47 72 43 AC C7 A0 67 8E C5 00 00    äý¹TµGrC¬Ç gÅ..
+00 00 00 00 00 C5 17 A2 04                         .....Å.¢........
+
+WARNING 16:04:36:842 ClientConnection: not found packet for opcode 6466
+29 00 66 64 F7 2C B5 47 63 41 AC C7 B8 7E 8E C5    ).fd÷,µGcA¬Ç¸~Å
+E4 FD DB 7C B5 47 88 45 AC C7 75 59 8E C5 00 00    äýÛ|µGE¬ÇuYÅ..
+00 00 00 00 00 9A 19 A2 04                         ......¢........
+
+WARNING 16:04:37:317 ClientConnection: not found packet for opcode 6466
+29 00 66 64 4D 55 B5 47 BE 42 AC C7 44 67 8E C5    ).fdMUµG¾B¬ÇDgÅ
+44 01 44 A5 B5 47 56 40 AC C7 B3 4B 8E C5 00 00    D.D¥µGV@¬Ç³KÅ..
+00 00 00 00 00 6E 1B A2 04                         .....n.¢........
+
+WARNING 16:04:37:799 ClientConnection: not found packet for opcode 6466
+29 00 66 64 2D 7E B5 47 7B 40 AC C7 6D 59 8E C5    ).fd-~µG{@¬ÇmYÅ
+52 02 0D CE B5 47 0B 3C AC C7 31 49 8E C5 00 00    R..ÎµG.<¬Ç1IÅ..
+00 00 00 00 00 53 1D A2 04                         .....S.¢........
+
+WARNING 16:04:37:866 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:38:284 ClientConnection: not found packet for opcode 6466
+29 00 66 64 3E A7 B5 47 27 3E AC C7 B3 4B 8E C5    ).fd>§µG'>¬Ç³KÅ
+52 02 1C F7 B5 47 8B 39 AC C7 4C 34 8E C5 00 00    R..÷µG9¬ÇL4Å..
+00 00 00 00 00 37 1F A2 04                         .....7.¢........
+
+WARNING 16:04:38:720 ClientConnection: not found packet for opcode 6466
+29 00 66 64 3B CC B5 47 26 40 AC C7 E7 48 8E C5    ).fd;ÌµG&@¬ÇçHÅ
+F4 F9 91 11 B6 47 9A 4A AC C7 4F BF 8D C5 00 00    ôù.¶GJ¬ÇO¿Å..
+00 00 00 00 00 ED 20 A2 04                         .....í.¢........
+
+WARNING 16:04:39:198 ClientConnection: not found packet for opcode 6466
+29 00 66 64 7F F4 B5 47 3A 45 AC C7 54 41 8E C5    ).fdôµG:E¬ÇTAÅ
+80 FB 0E 23 B6 47 5B 4A AC C7 11 70 8D C5 00 00    û.#¶G[J¬Ç.pÅ..
+00 00 00 00 00 D1 22 A2 04                         .....Ñ"¢........
+
+WARNING 16:04:39:369 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:39:715 ClientConnection: not found packet for opcode 6466
+29 00 66 64 2C 20 B6 47 43 4A AC C7 E5 7C 8D C5    ).fd,.¶GCJ¬Çå|Å
+0A F9 FC 6E B6 47 FB 57 AC C7 0A 60 8D C5 00 00    .ùün¶GûW¬Ç.`Å..
+00 00 00 00 00 D5 24 A2 04                         .....Õ$¢........
+
+WARNING 16:04:39:760 ClientConnection: not found packet for opcode 6466
+29 00 66 64 C5 23 B6 47 44 4B AC C7 7E 3D 8D C5    ).fdÅ#¶GDK¬Ç~=Å
+14 F2 1F 6F B6 47 24 66 AC C7 0A 60 8D C5 00 00    .ò.o¶G$f¬Ç.`Å..
+00 00 00 00 00 F4 24 A2 04                         .....ô$¢........
+
+WARNING 16:04:39:775 ClientConnection: not found packet for opcode 6466
+29 00 66 64 E6 24 B6 47 CA 4B AC C7 7E 3D 8D C5    ).fdæ$¶GÊK¬Ç~=Å
+48 EE 7A 6D B6 47 71 6D AC C7 0A 60 8D C5 00 00    Hîzm¶Gqm¬Ç.`Å..
+00 00 00 00 00 03 25 A2 04                         ......%¢........
+
+WARNING 16:04:39:848 ClientConnection: not found packet for opcode 6466
+29 00 66 64 7A 29 B6 47 D2 4F AC C7 7E 3D 8D C5    ).fdz)¶GÒO¬Ç~=Å
+58 D8 6F 56 B6 47 FE 91 AC C7 7E 3D 8D C5 00 00    XØoV¶Gþ¬Ç~=Å..
+00 00 00 00 00 52 25 A2 04                         .....R%¢........
+
+WARNING 16:04:39:905 ClientConnection: not found packet for opcode 6466
+29 00 66 64 F2 2A B6 47 33 53 AC C7 7E 3D 8D C5    ).fdò*¶G3S¬Ç~=Å
+F8 CB F2 2A B6 47 33 53 AC C7 7E 3D 8D C5 07 00    øËò*¶G3S¬Ç~=Å..
+00 00 00 00 00 90 25 A2 04                         .....%¢........
+
+WARNING 16:04:40:876 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:41:797 ClientConnection: not found packet for opcode 6466
+29 00 66 64 2B 2C B6 47 59 53 AC C7 7E 3D 8D C5    ).fd+,¶GYS¬Ç~=Å
+12 FB 96 7B B6 47 FD 5C AC C7 0A 60 8D C5 00 00    .û{¶Gý\¬Ç.`Å..
+00 00 00 00 00 F3 2C A2 04                         .....ó,¢........
+
+WARNING 16:04:42:285 ClientConnection: not found packet for opcode 6466
+29 00 66 64 67 55 B6 47 F4 56 AC C7 0A 60 8D C5    ).fdgU¶GôV¬Ç.`Å
+E8 00 62 A5 B6 47 19 55 AC C7 0A 60 8D C5 00 00    è.b¥¶G.U¬Ç.`Å..
+00 00 00 00 00 D7 2E A2 04                         .....×.¢........
+
+WARNING 16:04:42:382 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:42:739 ClientConnection: not found packet for opcode 6466
+29 00 66 64 FC 7B B6 47 54 55 AC C7 0A 60 8D C5    ).fdü{¶GTU¬Ç.`Å
+68 05 47 CB B6 47 BD 4A AC C7 0A 60 8D C5 00 00    h.GË¶G½J¬Ç.`Å..
+00 00 00 00 00 9C 30 A2 04                         .....0¢........
+
+WARNING 16:04:42:858 ClientConnection: not found packet for opcode 6466
+29 00 66 64 F7 84 B6 47 22 51 AC C7 0A 60 8D C5    ).fd÷¶G"Q¬Ç.`Å
+04 1E 2E C0 B6 47 57 1B AC C7 0A 60 8D C5 00 00    ...À¶GW.¬Ç.`Å..
+00 00 00 00 00 19 31 A2 04                         ......1¢........
+
+WARNING 16:04:42:955 ClientConnection: not found packet for opcode 6466
+29 00 66 64 E7 88 B6 47 03 4A AC C7 0A 60 8D C5    ).fdç¶G.J¬Ç.`Å
+BA 34 D1 9E B6 47 12 FD AB C7 7F 3D 8D C5 00 00    º4Ñ¶G.ý«Ç=Å..
+00 00 00 00 00 77 31 A2 04                         .....w1¢........
+
+WARNING 16:04:43:070 ClientConnection: not found packet for opcode 6466
+29 00 66 64 4D 88 B6 47 6C 40 AC C7 0A 60 8D C5    ).fdM¶Gl@¬Ç.`Å
+00 4C 0A 71 B6 47 E1 F3 AB C7 7F 3D 8D C5 00 00    .L.q¶Gáó«Ç=Å..
+00 00 00 00 00 E4 31 A2 04                         .....ä1¢........
+
+WARNING 16:04:43:163 ClientConnection: not found packet for opcode 6466
+29 00 66 64 3B 85 B6 47 E2 3B AC C7 0A 60 8D C5    ).fd;¶Gâ;¬Ç.`Å
+16 5D 3B 85 B6 47 E2 3B AC C7 0A 60 8D C5 07 00    .];¶Gâ;¬Ç.`Å..
+00 00 00 00 00 42 32 A2 04                         .....B2¢........
+
+WARNING 16:04:43:898 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:45:410 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:46:916 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:48:621 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:49:980 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:51:488 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:53:005 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:54:518 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:55:963 ClientConnection: not found packet for opcode BBE1
+08 00 E1 BB 01 00 00 00                            ..á»............
+
+WARNING 16:04:56:025 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:57:178 ClientConnection: not found packet for opcode BB73
+04 00 73 BB                                        ..s»............
+
+WARNING 16:04:57:178 ClientConnection: not found packet for opcode 5C2E
+14 00 2E 5C 06 00 4C 00 61 00 6E 00 63 00 65 00    ...\..L.a.n.c.e.
+72 00 00 00 14 00 82 8A 06 00 4C 00 61 00 6E 00    r.......L.a.n.
+63 00 65 00 72 00 00 00 04 00 F3 8A                c.e.r.....ó....
+
+WARNING 16:04:57:179 ClientConnection: not found packet for opcode 8A82
+14 00 2E 5C 06 00 4C 00 61 00 6E 00 63 00 65 00    ...\..L.a.n.c.e.
+72 00 00 00 14 00 82 8A 06 00 4C 00 61 00 6E 00    r.......L.a.n.
+63 00 65 00 72 00 00 00 04 00 F3 8A                c.e.r.....ó....
+
+WARNING 16:04:57:179 ClientConnection: not found packet for opcode 8AF3
+14 00 2E 5C 06 00 4C 00 61 00 6E 00 63 00 65 00    ...\..L.a.n.c.e.
+72 00 00 00 14 00 82 8A 06 00 4C 00 61 00 6E 00    r.......L.a.n.
+63 00 65 00 72 00 00 00 04 00 F3 8A                c.e.r.....ó....
+
+WARNING 16:04:57:527 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:59:046 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:04:59:288 ClientConnection: not found packet for opcode 824C
+14 00 4C 82 06 00 4C 00 61 00 6E 00 63 00 65 00    ..L..L.a.n.c.e.
+72 00 00 00                                        r...............
+
+WARNING 16:05:00:562 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:02:077 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:03:580 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:05:093 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:05:704 ClientConnection: not found packet for opcode BB73
+04 00 73 BB                                        ..s»............
+
+WARNING 16:05:05:704 ClientConnection: not found packet for opcode 5C2E
+14 00 2E 5C 06 00 4C 00 61 00 6E 00 63 00 65 00    ...\..L.a.n.c.e.
+72 00 00 00 14 00 82 8A 06 00 4C 00 61 00 6E 00    r.......L.a.n.
+63 00 65 00 72 00 00 00 04 00 F3 8A                c.e.r.....ó....
+
+WARNING 16:05:05:704 ClientConnection: not found packet for opcode 8A82
+14 00 2E 5C 06 00 4C 00 61 00 6E 00 63 00 65 00    ...\..L.a.n.c.e.
+72 00 00 00 14 00 82 8A 06 00 4C 00 61 00 6E 00    r.......L.a.n.
+63 00 65 00 72 00 00 00 04 00 F3 8A                c.e.r.....ó....
+
+WARNING 16:05:05:704 ClientConnection: not found packet for opcode 8AF3
+14 00 2E 5C 06 00 4C 00 61 00 6E 00 63 00 65 00    ...\..L.a.n.c.e.
+72 00 00 00 14 00 82 8A 06 00 4C 00 61 00 6E 00    r.......L.a.n.
+63 00 65 00 72 00 00 00 04 00 F3 8A                c.e.r.....ó....
+
+WARNING 16:05:06:595 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:08:106 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:08:566 ClientConnection: not found packet for opcode 5A77
+33 0D 77 5A 08 00 2B 0D 08 97 56 12 04 32 23 43    3.wZ..+..V..2#C
+50 52 A9 08 08 97 56 52 20 53 00 31 00 43 00 68    PR©..VR.S.1.C.h
+00 61 00 74 00 43 00 6F 00 6E 00 74 00 72 00 6F    .a.t.C.o.n.t.r.o
+00 6C 00 6C 00 65 00 72 00 A2 01 F9 07 78 DA BD    .l.l.e.r.¢.ù.xÚ½
+57 4D 68 13 41 14 9E D7 36 41 06 91 25 88 2C 52    WMh.A.×6A.%,R
+CA B8 A6 B5 D6 6A DB 34 49 CB 08 36 6D 92 C6 D0    Ê¸¦µÖjÛ4IË.6mÆÐ
+A4 5D D2 D4 5A 3C 14 D1 4A 4F 9E 3C 09 8A DE EC    ¤]ÒÔZ<.ÑJO<.Þì
+41 F4 24 78 93 5C 04 BD 29 82 15 44 41 F1 E4 C1    Aô$x\.½).DAñäÁ
+8B 87 8A 87 5E 3C 2A 05 0F 82 1E E2 CC E4 67 37    ^<*...âÌäg7
+CD EC EE 4C 2C B6 10 B2 9B EF BD F7 BD 9F 99 F7    ÍìîL,¶.²ï½÷½÷
+DE BE 9F 6B 91 F7 FB 6D F4 08 D0 0E 54 1B 7F F0    Þ¾k÷ûmô.Ð.T.ð
+B6 CB F9 7E BF FB 4B 68 BB FB 75 D7 B3 9E 03 29    ¶Ëù~¿ûKh»ûu×³.)
+74 09 AD A3 8B E8 1A A2 68 0C DD 0D 21 F4 7B E6    t.­£è.¢h.Ý.!ô{æ
+53 E8 64 25 4C 68 5F 1A 9D 45 D3 A8 CC FE 57 90    Sèd%Lh_.EÓ¨ÌþW
+8D B2 68 15 CD A3 05 54 42 45 F6 B6 80 2A E1 3E    ²h.Í£.TBEö¶*á>
+DA DB 0E B1 D9 73 49 3C 7B 00 72 68 09 E5 99 7C    ÚÛ.±ÙsI<{.rh.å|
+C6 0F C0 75 70 80 45 49 3B 60 46 FC 9C 63 9F 79    Æ.ÀupEI;`Fücy
+C6 A8 12 EE A5 87 DB 41 65 F6 39 CD A8 7A E8 58    Æ¨.î¥ÛAeö9Í¨zèX
+66 6F F2 68 51 3C 95 BC 74 94 84 09 CE 63 88 0E    foòhQ<¼t.Îc.
+7A FF BC CA BC E1 C6 32 75 5D 01 60 1E C4 32 FB    zÿ¼Ê¼áÆ2u].`.Ä2û
+9E 66 EF 3D D8 65 84 BE 82 F0 2F C7 40 C3 74 C8    fï=Øe¾ð/Ç@ÃtÈ
+2F D2 AB CC 91 AC 78 E2 28 05 78 2B 05 69 16 96    /Ò«Ì¬xâ(.x+.i.
+18 28 CF 60 3C C0 83 74 C0 0F 90 15 4C CB 42 97    .(Ï`<ÀtÀ..LËB
+D4 B4 03 55 F2 3E C7 3E E7 45 2C 6B 75 26 2D C5    Ô´.Uò>Ç>çE,ku&-Å
+45 A6 27 CD F4 D4 20 26 3D 24 0B B9 ED C5 88 27    E¦'ÍôÔ.&=$.¹íÅ'
+AB 28 C2 BB 9B 91 B4 10 38 70 96 C1 3C 42 B1 2C    «(Â»´.8pÁ<B±,
+8E 45 41 64 37 00 CA BD 2A 09 78 20 D4 9D B0 00    EAd7.Ê½*.x.Ô°.
+A8 73 A6 DC D0 01 1A F5 3E 17 6E 60 9C C6 E4 3E    ¨s¦ÜÐ..õ>.n`Æä>
+97 EB 59 48 8B 00 D5 12 E8 88 79 1C 2C CE 7A BE    ëYH.Õ.èy.,Îz¾
+59 BA 51 6A C9 33 5C 16 BA B8 85 A2 5F 21 94 45    YºQjÉ3\.º¸¢_!E
+D0 CE 8B 54 4A 1D 6A 80 8A F5 5A 5C F1 02 DA 8C    ÐÎTJ.jõZ\ñ.Ú
+57 1E 9D 13 6F F9 F3 98 2A 30 A6 0A 1C 57 05 C6    W..oùó*0¦..W.Æ
+55 81 09 55 60 52 15 38 A1 0A 9C 44 91 57 60 83    U.U`R.8¡.DW`
+7E 1B 89 B9 DB 48 60 8F D0 BC AB 94 4F 4A E4 1B    ~.¹ÛH`Ð¼«OJä.
+D8 5D FA E4 C7 03 C9 FF 9F 8B 31 40 33 F7 79 81    Ø]úäÇ.Éÿ1@3÷y
+DD 81 65 14 B9 6A 77 EB BB 19 77 BB A9 75 43 46    Ýe.¹jwë».w»©uCF
+5E F6 D8 3D FA 06 13 6E 83 D2 FA 2B 8A F4 D5 DE    ^öØ=ú..nÒú+ôÕÞ
+F1 1B 67 8E 45 61 92 26 BD 80 69 51 AE 35 56 BC    ñ.gEa&½iQ®5V¼
+07 EC 16 4D D2 B8 97 E8 AC 10 68 74 57 DE 6D A7    .ì.MÒ¸è¬.htWÞm§
+C5 4C 93 13 91 8F D1 51 2F 41 37 90 77 A0 62 5D    ÅL.ÑQ/A7w b]
+51 25 9C A1 33 EA 44 BD D5 F8 04 A6 95 A4 56 60    Q%¡3êD½Õø.¦¤V`
+3A F4 AF 50 1F B3 B2 FF E6 9F A3 26 B2 01 76 48    :ô¯P.³²ÿæ£&².vH
+BF 74 92 EE D2 51 1A 08 15 66 AA C8 65 3B AC 4F    ¿tîÒQ...fªÈe;¬O
+65 22 90 4A EB 5C 69 1D C7 01 53 B4 51 05 B3 0A    e"Jë\i.Ç.S´Q.³.
+A4 0A D6 00 F6 BD 29 0D 30 1F 08 5C 3F F6 1D AA    ¤.Ö.ö½).0..\?ö.ª
+8D 94 F9 07 48 CA 3A 86 7D 47 6B E3 09 98 8F 85    ù.HÊ:}Gkã.
+BE 21 1C 18 51 E3 1D 98 D7 C9 6D B0 8E 62 9F 49    ¾!..Qã.×Ém°bI
+9B BB 72 83 20 B9 C2 D6 B8 70 E8 4D 6E 3C 8A 7D    »r.¹ÂÖ¸pèMn<}
+C6 6E 8E FA 08 4C E3 18 56 9E BE 1B 24 62 58 79    Ænú.Lã.V¾.$bXy
+06 37 32 DC 0A 23 73 02 07 96 0D 57 FF 06 C8 3D    .72Ü.#s...Wÿ.È=
+B0 E2 58 63 24 6F 9A 08 94 6A 21 76 A5 5E 1A D2    °âXc$o.j!v¥^.Ò
+5C 3A CD C0 B8 05 E6 57 20 4F C1 1A C5 8A FD C8    \:ÍÀ¸.æW.OÁ.ÅýÈ
+88 98 2F 80 67 54 4A C8 AB 2D 35 A5 A4 91 6A 1D    /gTJÈ«-5¥¤j.
+DB 8D 1D 51 D8 1B 20 3F 03 EE F1 9D 07 75 13 C8    Û.QØ..?.îñ.u.È
+26 58 47 B0 C7 18 EF 40 46 B0 52 EF 30 B6 C0 DC    &XG°Ç.ï@F°Rï0¶ÀÜ
+02 B2 05 56 0A 77 D8 43 B8 CD E7 40 D6 AD 33 B8    .².V.wØC¸Íç@Ö­3¸
+A3 56 C2 E5 17 C8 1D B0 28 D6 EE 28 4D D9 39 BC    £VÂå.È.°(Öî(MÙ9¼
+07 8D C5 F8 0E E6 41 72 C1 3A 85 95 DA 4B D3 F8    .Åø.æArÁ:ÚKÓø
+14 EE B0 CB 34 0C 2A 7B EE 34 89 BD F0 DC A5 AD    .î°Ë4.*{î4½ðÜ¥­
+4E 24 81 35 46 1C A7 74 FB B1 CF 32 C8 99 FE 02    N$5F.§tû±Ï2Èþ.
+F2 10 D8 FD A4 B8 14 3A 55 39 82 15 97 43 E3 07    ò.Øý¤¸.:U9.Cã.
+98 BD 24 2A B7 21 1B 7C 03 6C C8 56 C5 46 CF 90    ½$*·!.|.lÈVÅFÏ
+9E AD F6 85 D1 B1 70 1A 77 B0 38 F2 B8 AD 91 35    ­öÑ±p.w°8ò¸­5
+76 2F 04 AE 8F 0D E7 87 B1 C2 12 C9 F5 6E 03 99    v/.®.ç±Â.Éõn.
+92 37 A0 D6 5D B2 89 95 1E 89 F6 95 B2 89 97 86    7 Ö]².ö²
+A8 7D B3 34 3E 8B 12 FA 00 6A 02 31 5D 81 71 5D    ¨}³4>.ú.j.1]q]
+81 B8 AE 40 42 57 20 A9 2B 30 A1 2B 30 E9 08 0C    ¸®@BW.©+0¡+0é..
+A2 BF A4 1C 02 23 F0 01 01 C0 02 E7 29 52 63 08    ¢¿¤..#ð..À.ç)Rc.
+97 56 52 46 53 00 31 00 4D 00 69 00 6E 00 69 00    VRFS.1.M.i.n.i.
+6D 00 61 00 70 00 43 00 6F 00 6E 00 74 00 72 00    m.a.p.C.o.n.t.r.
+6F 00 6C 00 6C 00 65 00 72 00 5F 00 53 00 31 00    o.l.l.e.r._.S.1.
+4D 00 69 00 6E 00 69 00 6D 00 61 00 70 00 4F 00    M.i.n.i.m.a.p.O.
+70 00 74 00 69 00 6F 00 6E 00 A2 01 0F 78 DA E3    p.t.i.o.n.¢..xÚã
+38 9F 2A C4 C3 88 04 00 15 5A 01 67 F0 01 01 C0    8*ÄÃ...Z.gð..À
+02 11 52 BC 10 08 97 56 52 1E 53 00 31 00 55 00    ..R¼..VR.S.1.U.
+49 00 5F 00 47 00 46 00 78 00 4D 00 61 00 6E 00    I._.G.F.x.M.a.n.
+61 00 67 00 65 00 72 00 A2 01 8E 10 78 DA 8D 59    a.g.e.r.¢..xÚY
+CF 6B D4 57 10 7F A7 22 5F 4A 91 20 36 88 95 20    ÏkÔW.§"_J.6.
+AE 88 48 B1 89 88 48 51 BF DF 8D EE C6 EC 9A 35    ®H±HQ¿ßîÆì5
+9B C4 63 BB EE 6E CC 92 CD EE B2 3F AC 69 2F C5    Äc»înÌÍî²?¬i/Å
+53 29 2D F4 50 A4 0A A5 42 7B 28 6D FF 80 F6 52    S)-ôP¤.¥B{(mÿöR
+3C 94 36 05 7B EE B1 D7 1E 3D F6 D8 99 CF 7B 6F    <6.{î±×.=öØÏ{o
+DF CF EF AA 21 89 EE 9B 37 6F E6 33 33 9F 99 F7    ßÏïª!î7oæ33÷
+4C E6 93 A4 22 D6 44 49 AC 88 5B E2 B0 78 4B D0    Læ¤"ÖDI¬[â°xKÐ
+9F 02 FF 48 8E 27 6F 54 45 5B 8C E8 AB 21 EE D1    .ÿH'oTE[è«!îÑ
+DF 9C D5 53 C9 D1 54 DC 15 3D D1 17 43 B1 47 12    ßÕSÉÑTÜ.=Ñ.C±G.
+5D D1 11 63 B1 2F A5 BE CE A6 3A 32 DA D9 A3 EF    ]Ñ.c±/¥¾Î¦:2ÚÙ£ï
+6D AC 1B 1D 0F B3 E4 74 32 5F A7 95 2E 7D 37 69    m¬...³ät2_§.}7i
+8D FF 3E 14 F7 F1 D3 39 EB 5C 72 C2 96 2B 8A 1D    ÿ>.÷ñÓ9ë\rÂ+.
+3A 6F 48 DF FC AF 98 74 91 3E 6B D3 3A AF BE 44    :oHßü¯t>kÓ:¯¾D
+9A FC A8 8B 5D B2 AD 4B 5F 65 F2 66 2C 56 49 4A    ü¨]²­K_eòf,VIJ
+F9 F1 3E FB 51 CE 5C A9 3B F4 BB 27 5A 24 FB 81    ùñ>ûQÎ\©;ô»'Z$û
+AB EB 44 72 B8 4E A7 31 22 6C E5 44 FB 5B 61 2D    «ëDr¸N§1"låDû[a-
+BF 67 BC 5E 25 3B 78 77 15 A8 4C 78 7D 7B FB 66    ¿g¼^%;xw.¨Lx}{ûf
+56 D8 DE FE 31 4B 16 92 B9 15 FA F4 3E D6 C6 D0    VØÞþ1K.¹.úô>ÖÆÐ
+A3 EC 38 80 1D 29 23 76 9B 76 71 54 C6 E2 26 49    £ì8.)#vvqTÆâ&I
+4C 48 A6 07 F4 1D 4B 48 4E FA 3D 50 3E 97 21 3B    LH¦.ô.KHNú=P>!;
+F2 A3 08 AC 7C 7C 3C FF BE F9 61 78 B5 50 FB FC    ò£.¬||<ÿ¾ùaxµPûü
+CD AB 6C 1F 23 DB 47 4E EC C0 93 10 CD 1A B4 71    Í«l.#ÛGNìÀ.Í.´q
+26 C4 71 5A 48 F9 D4 3B 90 6A 03 2D 69 57 2E AA    &ÄqZHùÔ;j.-iW.ª
+C0 5E A2 31 43 8A F2 38 A3 4F 59 6B 2B D8 BF 01    À^¢1Cò8£OYk+Ø¿.
+FF 5A B3 F6 53 6C 8C 54 85 D6 EF 45 AA 81 F7 76    ÿZ³öSlTÖïEª÷v
+90 ED 03 2B 2E B4 7A 3E 39 59 22 3F 38 3F 5A C2    í.+.´z>9Y"?8?ZÂ
+CE BE DC F3 DE 4E 16 CC 8E 12 50 9D 90 D6 5C 79    Î¾ÜóÞN.Ì.PÖ\y
+44 AA 4F 67 EF 91 5C 4F D5 5A AE 34 45 AA 06 2B    DªOgï\OÕZ®4Eª.+
+39 9E CB B4 DE F5 33 E4 64 72 44 46 AA 89 CA AA    9Ë´Þõ3ädrDFªÊª
+21 AA E3 C0 E7 EB A4 BF 89 58 F7 F4 6A 99 7D 7E    !ªãÀçë¤¿X÷ôj}~
+37 4B CE 26 C7 19 71 B9 8F CF 99 21 7B 26 39 66    7KÎ&Ç.q¹Ï!{&9f
+EA A7 02 74 86 F0 A2 E7 E3 4C 5A B7 94 9C 64 1D    ê§.tð¢çãLZ·d.
+B6 BF 83 0C 0F 62 42 5A CB C0 84 11 89 54 DE 5F    ¶¿..bBZËÀ.TÞ_
+CF 9F 5F A1 CA 3A 9A B2 A4 A9 9B 0D D2 36 22 6B    Ï_¡Ê:²¤©.Ò6"k
+B8 D6 B6 69 0F 6A F0 0F B6 F4 00 15 66 74 56 E1    ¸Ö¶i.jð.¶ô..ftVá
+8B B6 C3 B7 D3 C8 AD C0 F3 09 F1 61 43 65 AA 23    ¶Ã·ÓÈ­Àó.ñaCeª#
+7B 2C 79 5D 66 D4 9A E1 04 8D 0C 38 70 5F 61 B8    {,y]fÔá..8p_a¸
+47 12 5C B1 1D 92 EE 45 E3 25 A3 CD 79 CA D8 3F    G.\±.îEã%£ÍyÊØ?
+90 32 0B 8A A5 28 47 56 80 7D 7B 5A CF 52 93 C5    2.¥(GV}{ZÏRÅ
+36 4E C5 C8 DA 1F 8B C5 C8 59 9C 91 2D DA D3 8C    6NÅÈÚ.ÅÈY-ÚÓ
+DB 43 FE C7 64 2A F4 3B C8 A3 4B C9 D9 98 AC 5D    ÛCþÇd*ô;È£KÉÙ¬]
+27 9C 7F 03 B1 A9 EB 0A E8 7C 96 25 17 92 D3 B1    '.±©ë.è|%.Ó±
+9D 3A 72 DE 2E 7D DE C5 E4 4C 6C D7 75 C2 6B EC    :rÞ.}ÞÅäLl×uÂkì
+21 F3 2A 76 C6 F6 2D 06 1C 63 B2 61 0B 68 B7 C2    !ó*vÆö-..c²a.h·Â
+3C 70 72 C6 96 E2 EE 36 8E 30 E9 10 59 33 54 5D    <prÆâî60é.Y3T]
+38 43 D5 18 7C BE CC 64 7F 6D A0 5A FA A1 3F E0    8CÕ.|¾Ìdm Zú¡?à
+34 D9 37 07 AA 36 42 66 35 B9 27 D1 9C F8 68 12    4Ù7.ª6Bf5¹'Ñøh.
+53 C5 B3 2A 47 9E 50 64 F9 12 C9 EE D1 1E C3 DD    SÅ³*GPdù.ÉîÑ.ÃÝ
+29 EC E4 2C DE C7 4A CF B7 87 F2 CE 70 70 8E 76    )ìä,ÞÇJÏ·òÎppv
+B2 F9 96 35 73 E4 48 11 2E 63 20 D2 85 B5 83 00    ²ù5säH..c.Òµ.
+17 C3 06 91 3C 58 4C 4E C5 F2 C0 8F 07 F6 3C E4    .Ã.<XLNÅòÀ.ö<ä
+48 7C 92 69 94 B4 D7 36 73 6C 28 4B 9C 5A 25 46    H|i´×6sl(KZ%F
+F2 79 AE 8C 58 75 25 23 39 D9 3C 0B 7F CE FE 14    òy®Xu%#9Ù<.Îþ.
+D3 D7 9E D5 93 0E 70 82 61 5A 39 D3 6C BA B3 5C    Ó×Õ.paZ9Ólº³\
+59 D9 42 B6 2F E3 EC 0E 31 98 3C C5 AF 34 47 9E    YÙB¶/ãì.1<Å¯4G
+BA 8B E9 58 CB 40 D2 EB 2E 97 93 73 A1 84 CC F2    ºéXË@Òë.s¡Ìò
+B1 62 FD A0 77 41 FB 0B 70 B5 E6 25 66 EA BB F9    ±bý wAû.pµæ%fê»ù
+9C 48 51 2E 29 7F 22 B5 71 34 39 24 11 1D C8 5E    HQ.)"µq49$..È^
+50 B9 52 58 5A 2A 64 CC C6 5C D1 03 7B 0F 34 1E    P¹RXZ*dÌÆ\Ñ.{.4.
+60 CE 2B AA FE 55 A6 13 5B 88 E4 C8 EF 3B 94 3F    `Î+ªþU¦.[äÈï;?
+FA DC 75 95 45 58 FF 34 2D FC FD ED 85 D4 F4 56    úÜuEXÿ4-üýíÔôV
+EE D1 39 53 09 21 14 93 61 7D F7 14 87 DA 71 70    îÑ9S.!.a}÷.Úqp
+10 22 FD 66 76 E0 18 DF 0F 23 40 31 BA 0D 99 26    ."ýfvà.ß.#@1º.&
+75 3A 87 FF 75 14 9D 6A CB 99 0F 15 BF 0C C9 26    u:ÿu.jË..¿.É&
+39 B7 86 F5 2A 57 39 B2 56 AE 3C 79 FC 4F 5A F8    9·õ*W9²V®<yüOZø
+E8 C8 E5 54 CE 39 7E 26 64 4E 26 40 E7 3C 5B F5    èÈåTÎ9~&dN&@ç<[õ
+5F 2A 19 5F E3 52 41 E5 68 B9 7A B8 4B 23 42 5D    _*._ãRAåh¹z¸K#B]
+34 13 37 48 A2 A9 B8 C6 43 1D 72 1F 5F E3 F8 BA    4.7H¢©¸ÆC.r._ãøº
+55 DA 27 EC 3A D1 BB 0D 4F 32 1D 85 6D 94 AD 28    UÚ'ì:Ñ».O2.m­(
+4F 63 13 54 64 76 24 DE AF C0 9E D6 D4 13 66 C0    Oc.Tdv$Þ¯ÀÖÔ.fÀ
+BB 60 85 51 70 B6 89 ED AC F9 EE 0E 3C 65 A9 2A    »`Qp¶í¬ùî.<e©*
+26 BD 45 CB D3 6B 29 EB 59 53 77 A9 2E 18 D7 92    &½EËÓk)ëYSw©..×
+5A 5A 7A 2F 2B 3C 79 FC 27 D0 B6 F1 58 53 13 A3    ZZz/+<yü'Ð¶ñXS.£
+C9 3B 87 BB BE 4F A7 FE D8 BB E4 14 B8 8B 13 86    É;»¾O§þØ»ä.¸.
+F4 DB D8 21 6B A5 86 B8 75 22 B9 4C 77 01 F4 EA    ôÛØ!k¥¸u"¹Lw.ôê
+B0 0E AA 40 5D B2 51 94 83 28 F7 EA 88 8A 9E B8    °.ª@]²Q(÷ê¸
+AA 66 2A D7 BA 31 75 DA 32 35 F4 C2 56 C8 80 AA    ªf*×º1uÚ25ôÂVÈª
+62 DD 79 79 31 98 C0 DD 28 46 FB 01 34 FE 92 C9    bÝyy1ÀÝ(Fû.4þÉ
+BB 92 CC 7A F6 D9 9A D6 AC BE EA 5B D7 07 07 37    »ÌzöÙÖ¬¾ê[×..7
+09 89 C8 44 10 78 C3 B5 F7 20 26 E9 F0 43 51 D9    .ÈD.xÃµ÷.&éðCQÙ
+17 6A 93 2B 2D 44 C6 C6 7B 14 D8 19 DE 11 6B D8    .j+-DÆÆ{.Ø.Þ.kØ
+2B 6B C7 E6 EF A7 6A 0A 95 13 45 5D DD 41 F5 2D    +kÇæï§j..E]ÝAõ-
+BC 17 BE 23 A0 6F FA D2 9A 55 65 2D 3B F2 94 B1    ¼.¾# oúÒUe-;ò±
+2E 0A AF CA 98 FA 94 65 42 B7 1D BB 79 A0 AB 19    ..¯ÊúeB·.»y «.
+56 8D CC B1 24 C1 2C B3 0E 4F 76 73 74 98 7B 4E    VÌ±$Á,³.Ovst{N
+0D D6 EC BC 24 EA 7C A6 CC 79 27 CF AD EE AF EB    .Öì¼$ê|¦Ìy'Ï­î¯ë
+AC 08 BF C6 C8 BA 2E 32 79 98 DF 1B D1 81 F3 F7    ¬.¿ÆÈº.2yß.Ñó÷
+45 DF 29 1E 31 5A 3F A3 0B 9A F9 28 F7 F6 45 BD    Eß).1Z?£.ù(÷öE½
+A1 8E FC 76 66 4B 5D 7B D4 65 D7 FD B9 53 AF 51    ¡üvfK]{Ôe×ý¹S¯Q
+86 D8 1C D7 40 CD F1 DB 4E 43 65 A4 9F A9 BE 74    Ø.×@ÍñÛNCe¤©¾t
+11 F6 04 DD 0A AF 1E 92 AF 36 30 0F B5 DD C9 E8    .ö.Ý.¯.¯60.µÝÉè
+05 F3 D7 A3 8C E7 BB E5 69 C6 F0 CC 33 99 62 18    .ó×£ç»åiÆðÌ3b.
+30 EE 39 B6 79 00 4C DC 0E 13 B2 D2 BF 60 5D 79    0î9¶y.LÜ..²Ò¿`]y
+5B 88 E2 FB 1D BF F3 1C 80 6D EC DB A8 B4 54 4D    [âû.¿ó.mìÛ¨´TM
+22 3F B1 A6 AF A0 69 55 E5 91 E4 91 9E FD 7A 05    "?±¦¯ iUåäýz.
+A9 DF 52 CE B7 D5 69 B6 F5 61 FB D8 92 90 99 CF    ©ßRÎ·Õi¶õaûØÏ
+76 57 91 6F B2 A7 05 59 7B 3E 39 19 93 91 FC D6    vWo²§.Y{>9.üÖ
+B4 D9 6D 80 1A 4F 25 82 13 55 CF 3D 55 AF 13 4C    ´Ùm.O%.UÏ=U¯.L
+DB F1 B9 EE 42 C6 99 6C F6 C8 F9 55 F3 FE 4C EB    Ûñ¹îBÆlöÈùUóþLë
+96 93 8B AF BA 6F 86 C5 E4 A3 DD B3 E4 64 D9 8D    ¯ºoÅä£Ý³ädÙ
+BD D0 E8 2C C5 FB 46 17 9C B7 2B 4C BC 9C 8C 72    ½Ðè,ÅûF.·+L¼r
+66 01 7D 13 D9 40 C4 FB C8 AD E9 CB 9C EE 34 A4    f.}.Ù@ÄûÈ­éËî4¤
+D5 F5 66 06 9B 50 EF 34 DC D8 0E 5F F9 C8 A7 B8    Õõf.Pï4ÜØ._ùÈ§¸
+2E 3B 1E 4E 0C 88 3D DD 1D 75 F8 32 00 12 B9 BB    .;.N.=Ý.uø2..¹»
+28 72 BE 4F D7 15 A3 EC 8B 19 6F C4 CE 2C 67 E3    (r¾O×.£ì.oÄÎ,gã
+BC 8E 69 D2 63 BC A7 A9 C4 1D B7 F0 59 BB 24 9F    ¼iÒc¼§©Ä.·ðY»$
+F1 7B 72 C8 BE AB 88 17 F7 11 8D 9C CF 10 26 4E    ñ{rÈ¾«.÷.Ï.&N
+3C E3 35 A7 B5 E5 44 49 4D F8 FA FE DA D0 EB BF    <ã5§µåDIMøúþÚÐë¿
+F2 FA B3 8C DF 4E 36 F1 7E 15 F0 2E D9 60 56 42    òú³ßN6ñ~.ð.Ù`VB
+8E 18 A4 AE 44 C9 C6 ED 0B 35 BB 51 75 19 09 E9    .¤®DÉÆí.5»Qu..é
+AD 8C 4B 59 B1 96 F5 32 6C F5 95 F8 9E 1A B0 0B    ­KY±õ2lõø.°.
+DE AF 70 C6 80 D0 94 EF 2F B7 D4 9C BD 8D F9 A3    Þ¯pÆÐï/·Ô½ù£
+11 9F D5 88 B7 CD 19 86 6F EA 6A 3A 68 BB 3D D7    .Õ·Í.oêj:h»=×
+91 AE E2 67 1B 93 8D 23 ED BC 77 14 45 CE FB F7    ®âg.#í¼w.EÎû÷
+A9 4C 32 37 DD E9 8A F6 54 A0 5F D1 D4 EB E8 50    ©L27ÝéöT _ÑÔëèP
+CD B0 39 2F 14 D6 34 60 56 BC 38 3A 13 61 1B 93    Í°9/.Ö4`V¼8:.a.
+51 EE 1B 20 45 72 4B DD 12 FB EE C4 20 11 CB FC    Qî..ErKÝ.ûîÄ..Ëü
+FB 46 DD 9D 69 9E A5 32 DE DE DB 81 91 CA B1 9F    ûFÝi¥2ÞÞÛÊ±
+B2 38 45 4C 47 78 4D 6A 13 77 0F D5 5E BF 07 D7    ²8ELGxMj.w.Õ^¿.×
+C1 87 9D 28 77 C8 59 46 D6 FC 10 E7 D9 2F 86 EE    Á(wÈYFÖü.çÙ/î
+34 5D 56 77 E3 89 CA BF 3D 92 FB 30 B8 89 49 29    4]VwãÊ¿=û0¸I)
+63 75 9C 51 CA DE 8C B8 8F 68 EF 40 96 B5 B6 9D    cuQÊÞ¸hï@µ¶
+9B BC 7C 23 BD 01 FF B8 D3 CD 78 F5 C6 5B AA 9E    ¼|#½.ÿ¸ÓÍxõÆ[ª
+BE 38 BB 4B D3 FB 6D C8 D6 43 9C DE 21 EB F6 08    ¾8»KÓûmÈÖCÞ!ëö.
+87 09 CE 0E AA 19 F7 CA 06 6E 9D F9 0C F9 14 19    .Î.ª.÷Ê.nù.ù..
+95 42 63 4F BD CC 46 EE 9E 88 9A 91 69 44 EF B2    BcO½ÌFîiDï²
+0B 99 FD BA 90 A9 FF 6B 31 EB B5 74 6E 2E 39 B4    .ýº©ÿk1ëµtn.9´
+49 A8 AD 88 2D 31 F7 DA 3B E2 3C 7D E9 CF 6E 8B    I¨­-1÷Ú;â<}éÏn
+9B D3 CF E6 C5 FF 45 9F 4D 89 F0 01 01 C0 02 DC    ÓÏæÅÿEMð..À.Ü
+37 52 50 08 97 56 52 3A 53 00 31 00 47 00 61 00    7RP.VR:S.1.G.a.
+6D 00 65 00 4F 00 70 00 74 00 69 00 6F 00 6E 00    m.e.O.p.t.i.o.n.
+5F 00 53 00 31 00 49 00 6E 00 74 00 65 00 72 00    _.S.1.I.n.t.e.r.
+66 00 61 00 63 00 65 00 47 00 72 00 6F 00 75 00    f.a.c.e.G.r.o.u.
+70 00 A2 01 08 08 CF 6D 1D 00 00 80 3F F0 01 00    p.¢...Ïm...?ð..
+C0 02 08                                           À...............
+
+WARNING 16:05:09:619 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:11:129 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:12:642 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:13:708 ClientConnection: not found packet for opcode D48F
+08 00 8F D4 02 00 00 00                            ..Ô............
+
+WARNING 16:05:14:142 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:14:290 ClientConnection: not found packet for opcode 5A77
+38 0D 77 5A 08 00 30 0D 08 97 56 12 04 32 23 43    8.wZ..0..V..2#C
+50 52 A9 08 08 97 56 52 20 53 00 31 00 43 00 68    PR©..VR.S.1.C.h
+00 61 00 74 00 43 00 6F 00 6E 00 74 00 72 00 6F    .a.t.C.o.n.t.r.o
+00 6C 00 6C 00 65 00 72 00 A2 01 F9 07 78 DA BD    .l.l.e.r.¢.ù.xÚ½
+57 4D 68 13 41 14 9E D7 36 41 06 91 25 88 2C 52    WMh.A.×6A.%,R
+CA B8 A6 B5 D6 6A DB 34 49 CB 08 36 6D 92 C6 D0    Ê¸¦µÖjÛ4IË.6mÆÐ
+A4 5D D2 D4 5A 3C 14 D1 4A 4F 9E 3C 09 8A DE EC    ¤]ÒÔZ<.ÑJO<.Þì
+41 F4 24 78 93 5C 04 BD 29 82 15 44 41 F1 E4 C1    Aô$x\.½).DAñäÁ
+8B 87 8A 87 5E 3C 2A 05 0F 82 1E E2 CC E4 67 37    ^<*...âÌäg7
+CD EC EE 4C 2C B6 10 B2 9B EF BD F7 BD 9F 99 F7    ÍìîL,¶.²ï½÷½÷
+DE BE 9F 6B 91 F7 FB 6D F4 08 D0 0E 54 1B 7F F0    Þ¾k÷ûmô.Ð.T.ð
+B6 CB F9 7E BF FB 4B 68 BB FB 75 D7 B3 9E 03 29    ¶Ëù~¿ûKh»ûu×³.)
+74 09 AD A3 8B E8 1A A2 68 0C DD 0D 21 F4 7B E6    t.­£è.¢h.Ý.!ô{æ
+53 E8 64 25 4C 68 5F 1A 9D 45 D3 A8 CC FE 57 90    Sèd%Lh_.EÓ¨ÌþW
+8D B2 68 15 CD A3 05 54 42 45 F6 B6 80 2A E1 3E    ²h.Í£.TBEö¶*á>
+DA DB 0E B1 D9 73 49 3C 7B 00 72 68 09 E5 99 7C    ÚÛ.±ÙsI<{.rh.å|
+C6 0F C0 75 70 80 45 49 3B 60 46 FC 9C 63 9F 79    Æ.ÀupEI;`Fücy
+C6 A8 12 EE A5 87 DB 41 65 F6 39 CD A8 7A E8 58    Æ¨.î¥ÛAeö9Í¨zèX
+66 6F F2 68 51 3C 95 BC 74 94 84 09 CE 63 88 0E    foòhQ<¼t.Îc.
+7A FF BC CA BC E1 C6 32 75 5D 01 60 1E C4 32 FB    zÿ¼Ê¼áÆ2u].`.Ä2û
+9E 66 EF 3D D8 65 84 BE 82 F0 2F C7 40 C3 74 C8    fï=Øe¾ð/Ç@ÃtÈ
+2F D2 AB CC 91 AC 78 E2 28 05 78 2B 05 69 16 96    /Ò«Ì¬xâ(.x+.i.
+18 28 CF 60 3C C0 83 74 C0 0F 90 15 4C CB 42 97    .(Ï`<ÀtÀ..LËB
+D4 B4 03 55 F2 3E C7 3E E7 45 2C 6B 75 26 2D C5    Ô´.Uò>Ç>çE,ku&-Å
+45 A6 27 CD F4 D4 20 26 3D 24 0B B9 ED C5 88 27    E¦'ÍôÔ.&=$.¹íÅ'
+AB 28 C2 BB 9B 91 B4 10 38 70 96 C1 3C 42 B1 2C    «(Â»´.8pÁ<B±,
+8E 45 41 64 37 00 CA BD 2A 09 78 20 D4 9D B0 00    EAd7.Ê½*.x.Ô°.
+A8 73 A6 DC D0 01 1A F5 3E 17 6E 60 9C C6 E4 3E    ¨s¦ÜÐ..õ>.n`Æä>
+97 EB 59 48 8B 00 D5 12 E8 88 79 1C 2C CE 7A BE    ëYH.Õ.èy.,Îz¾
+59 BA 51 6A C9 33 5C 16 BA B8 85 A2 5F 21 94 45    YºQjÉ3\.º¸¢_!E
+D0 CE 8B 54 4A 1D 6A 80 8A F5 5A 5C F1 02 DA 8C    ÐÎTJ.jõZ\ñ.Ú
+57 1E 9D 13 6F F9 F3 98 2A 30 A6 0A 1C 57 05 C6    W..oùó*0¦..W.Æ
+55 81 09 55 60 52 15 38 A1 0A 9C 44 91 57 60 83    U.U`R.8¡.DW`
+7E 1B 89 B9 DB 48 60 8F D0 BC AB 94 4F 4A E4 1B    ~.¹ÛH`Ð¼«OJä.
+D8 5D FA E4 C7 03 C9 FF 9F 8B 31 40 33 F7 79 81    Ø]úäÇ.Éÿ1@3÷y
+DD 81 65 14 B9 6A 77 EB BB 19 77 BB A9 75 43 46    Ýe.¹jwë».w»©uCF
+5E F6 D8 3D FA 06 13 6E 83 D2 FA 2B 8A F4 D5 DE    ^öØ=ú..nÒú+ôÕÞ
+F1 1B 67 8E 45 61 92 26 BD 80 69 51 AE 35 56 BC    ñ.gEa&½iQ®5V¼
+07 EC 16 4D D2 B8 97 E8 AC 10 68 74 57 DE 6D A7    .ì.MÒ¸è¬.htWÞm§
+C5 4C 93 13 91 8F D1 51 2F 41 37 90 77 A0 62 5D    ÅL.ÑQ/A7w b]
+51 25 9C A1 33 EA 44 BD D5 F8 04 A6 95 A4 56 60    Q%¡3êD½Õø.¦¤V`
+3A F4 AF 50 1F B3 B2 FF E6 9F A3 26 B2 01 76 48    :ô¯P.³²ÿæ£&².vH
+BF 74 92 EE D2 51 1A 08 15 66 AA C8 65 3B AC 4F    ¿tîÒQ...fªÈe;¬O
+65 22 90 4A EB 5C 69 1D C7 01 53 B4 51 05 B3 0A    e"Jë\i.Ç.S´Q.³.
+A4 0A D6 00 F6 BD 29 0D 30 1F 08 5C 3F F6 1D AA    ¤.Ö.ö½).0..\?ö.ª
+8D 94 F9 07 48 CA 3A 86 7D 47 6B E3 09 98 8F 85    ù.HÊ:}Gkã.
+BE 21 1C 18 51 E3 1D 98 D7 C9 6D B0 8E 62 9F 49    ¾!..Qã.×Ém°bI
+9B BB 72 83 20 B9 C2 D6 B8 70 E8 4D 6E 3C 8A 7D    »r.¹ÂÖ¸pèMn<}
+C6 6E 8E FA 08 4C E3 18 56 9E BE 1B 24 62 58 79    Ænú.Lã.V¾.$bXy
+06 37 32 DC 0A 23 73 02 07 96 0D 57 FF 06 C8 3D    .72Ü.#s...Wÿ.È=
+B0 E2 58 63 24 6F 9A 08 94 6A 21 76 A5 5E 1A D2    °âXc$o.j!v¥^.Ò
+5C 3A CD C0 B8 05 E6 57 20 4F C1 1A C5 8A FD C8    \:ÍÀ¸.æW.OÁ.ÅýÈ
+88 98 2F 80 67 54 4A C8 AB 2D 35 A5 A4 91 6A 1D    /gTJÈ«-5¥¤j.
+DB 8D 1D 51 D8 1B 20 3F 03 EE F1 9D 07 75 13 C8    Û.QØ..?.îñ.u.È
+26 58 47 B0 C7 18 EF 40 46 B0 52 EF 30 B6 C0 DC    &XG°Ç.ï@F°Rï0¶ÀÜ
+02 B2 05 56 0A 77 D8 43 B8 CD E7 40 D6 AD 33 B8    .².V.wØC¸Íç@Ö­3¸
+A3 56 C2 E5 17 C8 1D B0 28 D6 EE 28 4D D9 39 BC    £VÂå.È.°(Öî(MÙ9¼
+07 8D C5 F8 0E E6 41 72 C1 3A 85 95 DA 4B D3 F8    .Åø.æArÁ:ÚKÓø
+14 EE B0 CB 34 0C 2A 7B EE 34 89 BD F0 DC A5 AD    .î°Ë4.*{î4½ðÜ¥­
+4E 24 81 35 46 1C A7 74 FB B1 CF 32 C8 99 FE 02    N$5F.§tû±Ï2Èþ.
+F2 10 D8 FD A4 B8 14 3A 55 39 82 15 97 43 E3 07    ò.Øý¤¸.:U9.Cã.
+98 BD 24 2A B7 21 1B 7C 03 6C C8 56 C5 46 CF 90    ½$*·!.|.lÈVÅFÏ
+9E AD F6 85 D1 B1 70 1A 77 B0 38 F2 B8 AD 91 35    ­öÑ±p.w°8ò¸­5
+76 2F 04 AE 8F 0D E7 87 B1 C2 12 C9 F5 6E 03 99    v/.®.ç±Â.Éõn.
+92 37 A0 D6 5D B2 89 95 1E 89 F6 95 B2 89 97 86    7 Ö]².ö²
+A8 7D B3 34 3E 8B 12 FA 00 6A 02 31 5D 81 71 5D    ¨}³4>.ú.j.1]q]
+81 B8 AE 40 42 57 20 A9 2B 30 A1 2B 30 E9 08 0C    ¸®@BW.©+0¡+0é..
+A2 BF A4 1C 02 23 F0 01 01 C0 02 E7 29 52 63 08    ¢¿¤..#ð..À.ç)Rc.
+97 56 52 46 53 00 31 00 4D 00 69 00 6E 00 69 00    VRFS.1.M.i.n.i.
+6D 00 61 00 70 00 43 00 6F 00 6E 00 74 00 72 00    m.a.p.C.o.n.t.r.
+6F 00 6C 00 6C 00 65 00 72 00 5F 00 53 00 31 00    o.l.l.e.r._.S.1.
+4D 00 69 00 6E 00 69 00 6D 00 61 00 70 00 4F 00    M.i.n.i.m.a.p.O.
+70 00 74 00 69 00 6F 00 6E 00 A2 01 0F 78 DA E3    p.t.i.o.n.¢..xÚã
+38 9F 2A C4 C3 88 04 00 15 5A 01 67 F0 01 01 C0    8*ÄÃ...Z.gð..À
+02 11 52 C1 10 08 97 56 52 1E 53 00 31 00 55 00    ..RÁ..VR.S.1.U.
+49 00 5F 00 47 00 46 00 78 00 4D 00 61 00 6E 00    I._.G.F.x.M.a.n.
+61 00 67 00 65 00 72 00 A2 01 93 10 78 DA 8D 59    a.g.e.r.¢..xÚY
+4D 8B 9C 45 10 EE 93 C8 8B 48 58 42 5C 42 0C 4B    ME.îÈHXB\B.K
+C8 84 10 82 C4 DD 10 24 48 92 F7 9D 4D 66 36 3B    È.ÄÝ.$H÷Mf6;
+93 9D EC EC C7 51 27 33 B3 D9 61 67 67 86 F9 88    ììÇQ'3³Ùaggù
+59 BD 48 4E 22 0A 1E 24 98 80 18 D0 83 A8 3F 40    Y½HN"..$.Ð¨?@
+2F 92 83 E8 0A F1 EC D1 AB C7 1C 3D 5A F5 74 F7    /è.ñìÑ«Ç.=Zõt÷
+F4 E7 3B 49 96 DD 4D A6 AB AB AB 9E AA 7A AA BA    ôç;IÝM¦«««ªzªº
+93 CC 27 49 45 AC 89 92 58 11 B7 C4 11 F1 A6 A0    Ì'IE¬X.·Ä.ñ¦ 
+3F 05 FE 91 9C 48 5E AF 8A B6 18 D1 57 43 DC A5    ?.þH^¯¶.ÑWCÜ¥
+BF 39 AB A7 93 63 A9 B8 23 7A A2 2F 86 62 9F 24    ¿9«§c©¸#z¢/b$
+BA A2 23 C6 E2 40 4A 7D 9D 4D 75 64 B4 B3 47 DF    º¢#Æâ@J}Mud´³Gß
+3B 58 37 3A 1E 64 C9 99 64 BE 4E 2B 5D FA 6E D2    ;X7:.dÉd¾N+]únÒ
+1A FF 7D 28 EE E1 A7 73 D6 F9 E4 A4 2D 57 14 BB    .ÿ}(îá§sÖùä¤-W.»
+74 DE 90 BE F9 5F 31 E9 22 7D D6 A6 75 5E 7D 81    tÞ¾ù_1é"}Ö¦u^}
+34 F9 51 17 7B 64 5B 97 BE CA E4 CD 58 AC 92 94    4ùQ.{d[¾ÊäÍX¬
+F2 E3 7D F6 A3 9C B9 52 DB F4 BB 27 5A 24 FB 81    òã}ö£¹RÛô»'Z$û
+AB EB 64 72 A4 4E A7 31 22 6C E5 44 FB 5B 61 2D    «ëdr¤N§1"låDû[a-
+BF 67 BC 5E 25 3B 78 77 15 A8 4C 78 7D 67 E7 66    ¿g¼^%;xw.¨Lx}gçf
+56 D8 D9 F9 31 4B 16 92 B9 15 FA F4 1E D6 C6 D0    VØÙù1K.¹.úô.ÖÆÐ
+A3 EC 38 84 1D 29 23 76 9B 76 71 54 C6 E2 26 49    £ì8.)#vvqTÆâ&I
+4C 48 A6 07 F4 1D 4B 48 4E FA 3D 50 3E 97 21 3B    LH¦.ô.KHNú=P>!;
+F2 A3 08 AC 7C 7C 3C FF BE F9 61 78 B5 50 FB FC    ò£.¬||<ÿ¾ùaxµPûü
+8D AB 6C 1F 23 DB 47 4E EC C2 93 10 CD 1A B4 71    «l.#ÛGNìÂ.Í.´q
+26 C4 71 5A 48 F9 D4 6D 48 B5 81 96 B4 2B 17 55    &ÄqZHùÔmHµ´+.U
+60 2F D1 98 21 45 79 9C D1 A7 AC B5 15 EC DF 80    `/Ñ!EyÑ§¬µ.ìß
+7F AD 59 FB 29 36 46 AA 42 EB 77 23 D5 C0 7B 3B    ­Yû)6FªBëw#ÕÀ{;
+C8 F6 81 15 17 5A BD 90 9C 2A 91 1F 9C 1F 2D 61    Èö..Z½*..-a
+67 5F EE 79 6F 25 0B 66 47 09 A8 4E 48 6B AE 3C    g_îyo%.fG.¨NHk®<
+22 D5 A7 B3 F7 49 AE A7 6A 2D 57 9A 22 55 83 95    "Õ§³÷I®§j-W"U
+1C CF 65 5A EF FA 19 72 2A 39 2A 23 D5 44 65 D5    .ÏeZïú.r*9*#ÕDeÕ
+10 D5 71 E0 F3 75 D2 DF 44 AC 7B 7A B5 CC 3E BF    .ÕqàóuÒßD¬{zµÌ>¿
+9B 25 E7 92 13 8C B8 DC C7 E7 CC 90 3D 9B 1C 37    %ç.¸ÜÇçÌ=.7
+F5 53 01 3A 43 78 D1 F3 71 26 AD 5B 4A 4E B2 0E    õS.:CxÑóq&­[JN².
+DB DF 41 86 07 31 21 AD 65 60 C2 88 44 2A EF AF    ÛßA.1!­e`ÂD*ï¯
+67 CF AE 50 65 1D 4B 59 D2 D4 CD 06 69 1B 91 35    gÏ®Pe.KYÒÔÍ.i.5
+5C 6B 3B B4 07 35 F8 07 5B 7A 88 0A 33 3A AB F0    \k;´.5ø.[z.3:«ð
+45 DB E1 DB 69 E4 56 E0 F9 84 F8 B0 A1 32 D5 91    EÛáÛiäVàùø°¡2Õ
+3D 9E BC 26 33 6A CD 70 82 46 06 1C 78 A0 30 DC    =¼&3jÍpF..x 0Ü
+27 09 AE D8 0E 49 F7 A2 F1 92 D1 E6 3C 65 EC EF    '.®Ø.I÷¢ñÑæ<eìï
+4B 99 05 C5 52 94 23 2B C0 BE 3D AD 67 A9 C9 62    K.ÅR#+À¾=­g©Éb
+1B A7 62 64 ED 8F C5 62 E4 2C CE C8 16 ED 69 C6    .§bdíÅbä,ÎÈ.íiÆ
+ED 21 FF 63 32 15 FA 1D E4 D1 3B C9 B9 98 AC 5D    í!ÿc2.ú.äÑ;É¹¬]
+27 9C 7F 03 B1 A9 EB 0A E8 7C 96 25 17 93 33 B1    '.±©ë.è|%.3±
+9D 3A 72 DE 2E 7D DE A5 E4 6C 6C D7 75 C2 6B EC    :rÞ.}Þ¥äll×uÂkì
+21 F3 32 76 C6 F6 2D 06 1C 63 B2 61 0B 68 B7 C2    !ó2vÆö-..c²a.h·Â
+3C 70 72 C6 96 E2 EE 36 8E 30 E9 10 59 33 54 5D    <prÆâî60é.Y3T]
+38 43 D5 18 7C BE CC 64 7F 6D A0 5A FA A1 3F E0    8CÕ.|¾Ìdm Zú¡?à
+34 D9 37 07 AA 36 42 66 35 B9 27 D1 9C F8 68 12    4Ù7.ª6Bf5¹'Ñøh.
+53 C5 B3 2A 47 9E 50 64 F9 12 C9 EE D3 1E C3 DD    SÅ³*GPdù.ÉîÓ.ÃÝ
+29 EC E4 2C 3E C0 4A CF B7 87 F2 CE 70 70 8E 76    )ìä,>ÀJÏ·òÎppv
+B2 F9 96 35 73 E4 48 11 2E 63 20 D2 85 B5 83 00    ²ù5säH..c.Òµ.
+17 C3 06 91 3C 58 4C 4E C7 F2 C0 8F 07 F6 3C E0    .Ã.<XLNÇòÀ.ö<à
+48 7C 92 69 94 B4 D7 36 73 6C 28 4B 9C 5A 25 46    H|i´×6sl(KZ%F
+F2 79 AE 8C 58 75 25 23 39 D9 3C 0B 7F CE FE 14    òy®Xu%#9Ù<.Îþ.
+D3 D7 BE D5 93 0E 71 82 61 5A 39 D3 6C BA B3 5C    Ó×¾Õ.qaZ9Ólº³\
+59 D9 42 B6 2F E3 EC 0E 31 98 3C C5 AF 34 47 9E    YÙB¶/ãì.1<Å¯4G
+BA 8B E9 58 CB 40 D2 EB 2E 97 93 F3 A1 84 CC F2    ºéXË@Òë.ó¡Ìò
+B1 62 FD A0 77 41 FB 73 70 B5 E6 25 66 EA 3B F9    ±bý wAûspµæ%fê;ù
+9C 48 51 2E 29 7F 22 B5 71 2C 79 55 22 3A 90 BD    HQ.)"µq,yU":½
+A0 72 A5 B0 B4 54 C8 98 8D B9 A2 07 F6 1E 68 3C     r¥°´TÈ¹¢.ö.h<
+C4 9C 57 54 FD AB 4C 27 B6 10 C9 91 DF 77 28 7F    ÄWTý«L'¶.Éßw(
+F4 B9 EB 2A 8B B0 FE 69 5A F8 FB DB 8B A9 E9 AD    ô¹ë*°þiZøûÛ©é­
+DC A3 73 A6 12 42 28 26 C3 FA EE 2A 0E B5 E3 E0    Ü£s¦.B(&Ãúî*.µãà
+20 44 FA CD EC C0 31 BE 17 46 80 62 74 1B 32 4D    .DúÍìÀ1¾.Fbt.2M
+EA 74 0E FF EB 28 3A D5 96 33 1F 2A 7E 19 92 4D    êt.ÿë(:Õ3.*~.M
+72 6E 0D EB 55 AE 72 64 AD 5C 79 FC E8 9F B4 F0    rn.ëU®rd­\yüè´ð
+D1 D1 CB A9 9C 73 FC 4C C8 9C 4C 80 CE 79 B6 EA    ÑÑË©süLÈLÎy¶ê
+BF 54 32 BE C6 A5 82 CA D1 72 F5 70 97 46 84 BA    ¿T2¾Æ¥ÊÑrõpFº
+68 26 6E 90 44 53 71 8D 87 3A E4 3E BE C6 F1 75    h&nDSq:ä>¾Æñu
+AB B4 4F D8 75 A2 77 1B 9E 64 3A 0A DB 28 5B 51    «´OØu¢w.d:.Û([Q
+9E C6 26 A8 C8 EC 48 BC 5F 81 3D AD A9 27 CC 80    Æ&¨ÈìH¼_=­©'Ì
+77 C0 0A A3 E0 6C 13 DB 59 F3 DD 36 3C 65 A9 2A    wÀ.£àl.ÛYóÝ6<e©*
+26 BD 45 CB D3 6B 29 EB 59 53 77 A9 2E 18 D7 92    &½EËÓk)ëYSw©..×
+5A 5A 7A 2F 2B 3C 7E F4 27 D0 B6 F1 58 53 13 A3    ZZz/+<~ô'Ð¶ñXS.£
+C9 3B 87 BB BE 4F A7 FE D8 BB E4 14 B8 87 13 86    É;»¾O§þØ»ä.¸.
+F4 DB D8 21 6B A5 86 B8 75 22 B9 4C 77 01 F4 EA    ôÛØ!k¥¸u"¹Lw.ôê
+B0 0E AA 40 5D B2 51 94 83 28 F7 EA 88 8A 9E B8    °.ª@]²Q(÷ê¸
+AA 66 2A D7 BA 31 75 DA 32 35 F4 C2 56 C8 80 AA    ªf*×º1uÚ25ôÂVÈª
+62 DD 79 79 31 98 C0 DD 28 46 FB 01 34 FE 92 C9    bÝyy1ÀÝ(Fû.4þÉ
+BB 92 CC 7A F6 D9 9A D6 AC BE EA 5B D7 07 07 37    »ÌzöÙÖ¬¾ê[×..7
+09 89 C8 44 10 78 C3 B5 77 3F 26 E9 F0 43 51 D9    .ÈD.xÃµw?&éðCQÙ
+17 6A 93 2B 2D 44 C6 C6 7B 14 D8 19 DE 11 6B D8    .j+-DÆÆ{.Ø.Þ.kØ
+2B 6B C7 E6 EF 27 6A 0A 95 13 45 5D DD 41 F5 2D    +kÇæï'j..E]ÝAõ-
+BC 17 BE 23 A0 6F FA D2 9A 55 65 2D 3B F2 94 B1    ¼.¾# oúÒUe-;ò±
+2E 0A 2F CB 98 FA 94 65 42 B7 1D BB 79 A0 AB 19    ../ËúeB·.»y «.
+56 8D CC B1 24 C1 2C B3 0E 4F F6 72 74 98 7B 4E    VÌ±$Á,³.Oört{N
+0D D6 EC BE 20 EA 7C A6 CC 79 27 CF AD EE AF EB    .Öì¾.ê|¦Ìy'Ï­î¯ë
+AC 08 BF C6 C8 BA 2E 32 79 98 DF 1B D1 81 F3 F7    ¬.¿ÆÈº.2yß.Ñó÷
+45 DF 29 1E 32 5A 3F A3 0B 9A F9 28 F7 F6 45 BD    Eß).2Z?£.ù(÷öE½
+A1 8E FC 76 66 4B 5D 7B D4 65 D7 FD B9 53 AF 51    ¡üvfK]{Ôe×ý¹S¯Q
+86 D8 1C D7 40 CD F1 DB 4E 43 65 A4 9F A9 BE 74    Ø.×@ÍñÛNCe¤©¾t
+11 F6 04 DD 0A AF 1E 92 AF 36 30 0F B5 DD C9 E8    .ö.Ý.¯.¯60.µÝÉè
+39 F3 D7 C3 8C E7 BB E5 69 C6 F0 CC 33 99 62 18    9ó×Ãç»åiÆðÌ3b.
+30 EE 79 B6 79 00 4C DC 0E 13 B2 D2 BF 60 5D 79    0îy¶y.LÜ..²Ò¿`]y
+5B 88 E2 FB 1D BF F3 1C 82 6D EC DB A8 B4 54 4D    [âû.¿ó.mìÛ¨´TM
+22 3F B1 A6 AF A0 69 55 E5 91 E4 91 9E FD 7A 05    "?±¦¯ iUåäýz.
+A9 DF 52 CE B7 D5 69 B6 F5 61 FB D8 92 90 99 CF    ©ßRÎ·Õi¶õaûØÏ
+76 57 91 6F B2 A7 05 59 7B 21 39 15 93 91 FC D6    vWo²§.Y{!9.üÖ
+B4 D9 6D 80 1A 4F 25 82 13 55 CF 3D 55 AF 13 4C    ´Ùm.O%.UÏ=U¯.L
+DB F1 B9 EE 62 C6 99 6C F6 C8 F9 55 F3 FE 4C EB    Ûñ¹îbÆlöÈùUóþLë
+96 93 4B 2F BB 6F 86 C5 E4 A3 DD B3 E4 64 D9 8D    K/»oÅä£Ý³ädÙ
+BD D0 E8 2C C5 FB 46 17 9C B7 27 4C BC 9C 8C 72    ½Ðè,ÅûF.·'L¼r
+66 01 7D 13 D9 40 C4 FB C8 AD E9 CB 9C EE 34 A4    f.}.Ù@ÄûÈ­éËî4¤
+D5 F5 66 06 9B 50 EF 34 DC D8 0E 5F F9 C8 A7 B8    Õõf.Pï4ÜØ._ùÈ§¸
+2E 3B 1E 4E 0C 88 3D DD 1D 75 F8 32 00 12 B9 BB    .;.N.=Ý.uø2..¹»
+28 72 BE 4F D7 15 A3 1C 88 19 6F C4 CE 2C 67 E3    (r¾O×.£..oÄÎ,gã
+BC 8E 69 D2 63 BC 27 A9 C4 1D B7 F0 59 BB 24 9F    ¼iÒc¼'©Ä.·ðY»$
+F1 7B 72 C8 BE AB 88 17 F7 11 8D 9C CF 10 26 4E    ñ{rÈ¾«.÷.Ï.&N
+3C E3 35 A7 B5 E5 44 49 4D F8 FA FE DA D0 EB BF    <ã5§µåDIMøúþÚÐë¿
+F2 FA D3 8C DF 4E 36 F1 7E 15 F0 2E D9 60 56 42    òúÓßN6ñ~.ð.Ù`VB
+8E 18 A4 AE 44 C9 C6 ED 0B 35 BB 51 75 19 09 E9    .¤®DÉÆí.5»Qu..é
+AD 8C 4B 59 B1 96 F5 32 6C F5 95 F8 9E 1A B0 0B    ­KY±õ2lõø.°.
+DE AF 70 C6 80 D0 94 EF 2F B7 D4 9C BD 83 F9 A3    Þ¯pÆÐï/·Ô½ù£
+11 9F D5 88 B7 CD 19 86 6F EA 6A 3A 68 BB 3D D7    .Õ·Í.oêj:h»=×
+91 AE E2 67 1B 93 8D 23 ED BC 77 14 45 CE FB F7    ®âg.#í¼w.EÎû÷
+E9 4C 32 37 DD E9 8A F6 54 A0 5F D1 D4 EB E8 50    éL27ÝéöT _ÑÔëèP
+CD B0 39 2F 14 D6 34 60 56 BC 38 3A 13 61 1B 93    Í°9/.Ö4`V¼8:.a.
+51 EE 1B 20 45 72 4B DD 12 FB EE C4 20 11 CB FC    Qî..ErKÝ.ûîÄ..Ëü
+FB 46 DD 9D 69 9E A6 32 DE DE DB 81 91 CA B1 9F    ûFÝi¦2ÞÞÛÊ±
+B2 38 45 4C 47 78 4D 6A 13 77 0F D5 5E BF 07 D7    ²8ELGxMj.w.Õ^¿.×
+C1 87 9D 28 77 C8 59 46 D6 FC 10 E7 D9 2F 86 EE    Á(wÈYFÖü.çÙ/î
+34 5D 56 77 E3 89 CA BF 7D 92 FB 30 B8 89 49 29    4]VwãÊ¿}û0¸I)
+63 75 9C 51 CA DE 8C 78 80 68 EF 42 96 B5 B6 9D    cuQÊÞxhïBµ¶
+9B BC 7C 23 BD 01 FF B8 D3 CD 78 F5 C6 5B AA 9E    ¼|#½.ÿ¸ÓÍxõÆ[ª
+BE 38 BB 4B D3 FB 6D C8 D6 43 9C DE 21 EB F6 09    ¾8»KÓûmÈÖCÞ!ëö.
+87 09 CE 0E AA 19 F7 CA 06 6E 9D F9 0C F9 04 19    .Î.ª.÷Ê.nù.ù..
+95 42 63 4F BD CC 46 EE 9E 88 9A 91 69 44 EF B2    BcO½ÌFîiDï²
+0B 99 FD BA 90 A9 FF 6B 31 EB B5 74 6E 2E 79 75    .ýº©ÿk1ëµtn.yu
+93 50 5B 11 5B 62 EE 95 B7 C5 05 FA D2 9F DD 16    P[.[bî·Å.úÒÝ.
+37 83 CF B6 29 96 FA B3 79 F1 3F 6F 0D 4F B4 F0    7Ï¶)ú³yñ?o.O´ð
+01 01 C0 02 F0 37 52 50 08 97 56 52 3A 53 00 31    ..À.ð7RP.VR:S.1
+00 47 00 61 00 6D 00 65 00 4F 00 70 00 74 00 69    .G.a.m.e.O.p.t.i
+00 6F 00 6E 00 5F 00 53 00 31 00 49 00 6E 00 74    .o.n._.S.1.I.n.t
+00 65 00 72 00 66 00 61 00 63 00 65 00 47 00 72    .e.r.f.a.c.e.G.r
+00 6F 00 75 00 70 00 A2 01 08 08 CF 6D 1D 00 00    .o.u.p.¢...Ïm...
+80 3F F0 01 00 C0 02 08                            ?ð..À..........
+
+WARNING 16:05:15:650 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:17:165 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:18:679 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:19:138 ClientConnection: not found packet for opcode A179
+1C 00 79 A1 1A 00 1C 00 00 00 23 00 00 00 00 00    ..y¡......#.....
+00 00 00 00 00 00 00 00 00 00 00 00                ................
+
+WARNING 16:05:20:189 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:21:696 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:23:197 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:24:700 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:26:210 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:27:721 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:29:225 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:30:731 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:32:240 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:33:193 ClientConnection: not found packet for opcode 7C98
+0C 00 98 7C 87 23 00 00 00 00 00 00                ..|#..........
+
+WARNING 16:05:33:741 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:35:251 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:36:763 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:36:912 ClientConnection: not found packet for opcode 5A77
+3D 0D 77 5A 08 00 35 0D 08 97 56 12 04 32 23 43    =.wZ..5..V..2#C
+50 52 A9 08 08 97 56 52 20 53 00 31 00 43 00 68    PR©..VR.S.1.C.h
+00 61 00 74 00 43 00 6F 00 6E 00 74 00 72 00 6F    .a.t.C.o.n.t.r.o
+00 6C 00 6C 00 65 00 72 00 A2 01 F9 07 78 DA BD    .l.l.e.r.¢.ù.xÚ½
+57 4D 68 13 41 14 9E D7 36 41 06 91 25 88 2C 52    WMh.A.×6A.%,R
+CA B8 A6 B5 D6 6A DB 34 49 CB 08 36 6D 92 C6 D0    Ê¸¦µÖjÛ4IË.6mÆÐ
+A4 5D D2 D4 5A 3C 14 D1 4A 4F 9E 3C 09 8A DE EC    ¤]ÒÔZ<.ÑJO<.Þì
+41 F4 24 78 93 5C 04 BD 29 82 15 44 41 F1 E4 C1    Aô$x\.½).DAñäÁ
+8B 87 8A 87 5E 3C 2A 05 0F 82 1E E2 CC E4 67 37    ^<*...âÌäg7
+CD EC EE 4C 2C B6 10 B2 9B EF BD F7 BD 9F 99 F7    ÍìîL,¶.²ï½÷½÷
+DE BE 9F 6B 91 F7 FB 6D F4 08 D0 0E 54 1B 7F F0    Þ¾k÷ûmô.Ð.T.ð
+B6 CB F9 7E BF FB 4B 68 BB FB 75 D7 B3 9E 03 29    ¶Ëù~¿ûKh»ûu×³.)
+74 09 AD A3 8B E8 1A A2 68 0C DD 0D 21 F4 7B E6    t.­£è.¢h.Ý.!ô{æ
+53 E8 64 25 4C 68 5F 1A 9D 45 D3 A8 CC FE 57 90    Sèd%Lh_.EÓ¨ÌþW
+8D B2 68 15 CD A3 05 54 42 45 F6 B6 80 2A E1 3E    ²h.Í£.TBEö¶*á>
+DA DB 0E B1 D9 73 49 3C 7B 00 72 68 09 E5 99 7C    ÚÛ.±ÙsI<{.rh.å|
+C6 0F C0 75 70 80 45 49 3B 60 46 FC 9C 63 9F 79    Æ.ÀupEI;`Fücy
+C6 A8 12 EE A5 87 DB 41 65 F6 39 CD A8 7A E8 58    Æ¨.î¥ÛAeö9Í¨zèX
+66 6F F2 68 51 3C 95 BC 74 94 84 09 CE 63 88 0E    foòhQ<¼t.Îc.
+7A FF BC CA BC E1 C6 32 75 5D 01 60 1E C4 32 FB    zÿ¼Ê¼áÆ2u].`.Ä2û
+9E 66 EF 3D D8 65 84 BE 82 F0 2F C7 40 C3 74 C8    fï=Øe¾ð/Ç@ÃtÈ
+2F D2 AB CC 91 AC 78 E2 28 05 78 2B 05 69 16 96    /Ò«Ì¬xâ(.x+.i.
+18 28 CF 60 3C C0 83 74 C0 0F 90 15 4C CB 42 97    .(Ï`<ÀtÀ..LËB
+D4 B4 03 55 F2 3E C7 3E E7 45 2C 6B 75 26 2D C5    Ô´.Uò>Ç>çE,ku&-Å
+45 A6 27 CD F4 D4 20 26 3D 24 0B B9 ED C5 88 27    E¦'ÍôÔ.&=$.¹íÅ'
+AB 28 C2 BB 9B 91 B4 10 38 70 96 C1 3C 42 B1 2C    «(Â»´.8pÁ<B±,
+8E 45 41 64 37 00 CA BD 2A 09 78 20 D4 9D B0 00    EAd7.Ê½*.x.Ô°.
+A8 73 A6 DC D0 01 1A F5 3E 17 6E 60 9C C6 E4 3E    ¨s¦ÜÐ..õ>.n`Æä>
+97 EB 59 48 8B 00 D5 12 E8 88 79 1C 2C CE 7A BE    ëYH.Õ.èy.,Îz¾
+59 BA 51 6A C9 33 5C 16 BA B8 85 A2 5F 21 94 45    YºQjÉ3\.º¸¢_!E
+D0 CE 8B 54 4A 1D 6A 80 8A F5 5A 5C F1 02 DA 8C    ÐÎTJ.jõZ\ñ.Ú
+57 1E 9D 13 6F F9 F3 98 2A 30 A6 0A 1C 57 05 C6    W..oùó*0¦..W.Æ
+55 81 09 55 60 52 15 38 A1 0A 9C 44 91 57 60 83    U.U`R.8¡.DW`
+7E 1B 89 B9 DB 48 60 8F D0 BC AB 94 4F 4A E4 1B    ~.¹ÛH`Ð¼«OJä.
+D8 5D FA E4 C7 03 C9 FF 9F 8B 31 40 33 F7 79 81    Ø]úäÇ.Éÿ1@3÷y
+DD 81 65 14 B9 6A 77 EB BB 19 77 BB A9 75 43 46    Ýe.¹jwë».w»©uCF
+5E F6 D8 3D FA 06 13 6E 83 D2 FA 2B 8A F4 D5 DE    ^öØ=ú..nÒú+ôÕÞ
+F1 1B 67 8E 45 61 92 26 BD 80 69 51 AE 35 56 BC    ñ.gEa&½iQ®5V¼
+07 EC 16 4D D2 B8 97 E8 AC 10 68 74 57 DE 6D A7    .ì.MÒ¸è¬.htWÞm§
+C5 4C 93 13 91 8F D1 51 2F 41 37 90 77 A0 62 5D    ÅL.ÑQ/A7w b]
+51 25 9C A1 33 EA 44 BD D5 F8 04 A6 95 A4 56 60    Q%¡3êD½Õø.¦¤V`
+3A F4 AF 50 1F B3 B2 FF E6 9F A3 26 B2 01 76 48    :ô¯P.³²ÿæ£&².vH
+BF 74 92 EE D2 51 1A 08 15 66 AA C8 65 3B AC 4F    ¿tîÒQ...fªÈe;¬O
+65 22 90 4A EB 5C 69 1D C7 01 53 B4 51 05 B3 0A    e"Jë\i.Ç.S´Q.³.
+A4 0A D6 00 F6 BD 29 0D 30 1F 08 5C 3F F6 1D AA    ¤.Ö.ö½).0..\?ö.ª
+8D 94 F9 07 48 CA 3A 86 7D 47 6B E3 09 98 8F 85    ù.HÊ:}Gkã.
+BE 21 1C 18 51 E3 1D 98 D7 C9 6D B0 8E 62 9F 49    ¾!..Qã.×Ém°bI
+9B BB 72 83 20 B9 C2 D6 B8 70 E8 4D 6E 3C 8A 7D    »r.¹ÂÖ¸pèMn<}
+C6 6E 8E FA 08 4C E3 18 56 9E BE 1B 24 62 58 79    Ænú.Lã.V¾.$bXy
+06 37 32 DC 0A 23 73 02 07 96 0D 57 FF 06 C8 3D    .72Ü.#s...Wÿ.È=
+B0 E2 58 63 24 6F 9A 08 94 6A 21 76 A5 5E 1A D2    °âXc$o.j!v¥^.Ò
+5C 3A CD C0 B8 05 E6 57 20 4F C1 1A C5 8A FD C8    \:ÍÀ¸.æW.OÁ.ÅýÈ
+88 98 2F 80 67 54 4A C8 AB 2D 35 A5 A4 91 6A 1D    /gTJÈ«-5¥¤j.
+DB 8D 1D 51 D8 1B 20 3F 03 EE F1 9D 07 75 13 C8    Û.QØ..?.îñ.u.È
+26 58 47 B0 C7 18 EF 40 46 B0 52 EF 30 B6 C0 DC    &XG°Ç.ï@F°Rï0¶ÀÜ
+02 B2 05 56 0A 77 D8 43 B8 CD E7 40 D6 AD 33 B8    .².V.wØC¸Íç@Ö­3¸
+A3 56 C2 E5 17 C8 1D B0 28 D6 EE 28 4D D9 39 BC    £VÂå.È.°(Öî(MÙ9¼
+07 8D C5 F8 0E E6 41 72 C1 3A 85 95 DA 4B D3 F8    .Åø.æArÁ:ÚKÓø
+14 EE B0 CB 34 0C 2A 7B EE 34 89 BD F0 DC A5 AD    .î°Ë4.*{î4½ðÜ¥­
+4E 24 81 35 46 1C A7 74 FB B1 CF 32 C8 99 FE 02    N$5F.§tû±Ï2Èþ.
+F2 10 D8 FD A4 B8 14 3A 55 39 82 15 97 43 E3 07    ò.Øý¤¸.:U9.Cã.
+98 BD 24 2A B7 21 1B 7C 03 6C C8 56 C5 46 CF 90    ½$*·!.|.lÈVÅFÏ
+9E AD F6 85 D1 B1 70 1A 77 B0 38 F2 B8 AD 91 35    ­öÑ±p.w°8ò¸­5
+76 2F 04 AE 8F 0D E7 87 B1 C2 12 C9 F5 6E 03 99    v/.®.ç±Â.Éõn.
+92 37 A0 D6 5D B2 89 95 1E 89 F6 95 B2 89 97 86    7 Ö]².ö²
+A8 7D B3 34 3E 8B 12 FA 00 6A 02 31 5D 81 71 5D    ¨}³4>.ú.j.1]q]
+81 B8 AE 40 42 57 20 A9 2B 30 A1 2B 30 E9 08 0C    ¸®@BW.©+0¡+0é..
+A2 BF A4 1C 02 23 F0 01 01 C0 02 E7 29 52 63 08    ¢¿¤..#ð..À.ç)Rc.
+97 56 52 46 53 00 31 00 4D 00 69 00 6E 00 69 00    VRFS.1.M.i.n.i.
+6D 00 61 00 70 00 43 00 6F 00 6E 00 74 00 72 00    m.a.p.C.o.n.t.r.
+6F 00 6C 00 6C 00 65 00 72 00 5F 00 53 00 31 00    o.l.l.e.r._.S.1.
+4D 00 69 00 6E 00 69 00 6D 00 61 00 70 00 4F 00    M.i.n.i.m.a.p.O.
+70 00 74 00 69 00 6F 00 6E 00 A2 01 0F 78 DA E3    p.t.i.o.n.¢..xÚã
+38 9F 2A C4 C3 88 04 00 15 5A 01 67 F0 01 01 C0    8*ÄÃ...Z.gð..À
+02 11 52 C6 10 08 97 56 52 1E 53 00 31 00 55 00    ..RÆ..VR.S.1.U.
+49 00 5F 00 47 00 46 00 78 00 4D 00 61 00 6E 00    I._.G.F.x.M.a.n.
+61 00 67 00 65 00 72 00 A2 01 98 10 78 DA 8D 59    a.g.e.r.¢..xÚY
+4D 8B 9C 45 10 EE 93 C8 8B 48 58 42 5C 42 0C 4B    ME.îÈHXB\B.K
+C8 84 10 82 C4 DD 10 24 48 92 F7 9D 4D 66 36 3B    È.ÄÝ.$H÷Mf6;
+93 9D EC EC C7 51 27 33 B3 D9 61 67 67 86 F9 88    ììÇQ'3³Ùaggù
+59 BD 48 4E 22 0A 1E 24 98 80 18 D0 83 A8 3F 40    Y½HN"..$.Ð¨?@
+2F 92 83 E8 0A F1 EC D1 AB C7 1C 3D 5A F5 74 F7    /è.ñìÑ«Ç.=Zõt÷
+F4 E7 3B 49 96 DD 4D A6 AB AB AB 9E AA 7A AA BA    ôç;IÝM¦«««ªzªº
+93 CC 27 49 45 AC 89 92 58 11 B7 C4 11 F1 A6 A0    Ì'IE¬X.·Ä.ñ¦ 
+3F 05 FE 91 9C 48 5E AF 8A B6 18 D1 57 43 DC A5    ?.þH^¯¶.ÑWCÜ¥
+BF 39 AB A7 93 63 A9 B8 23 7A A2 2F 86 62 9F 24    ¿9«§c©¸#z¢/b$
+BA A2 23 C6 E2 40 4A 7D 9D 4D 75 64 B4 B3 47 DF    º¢#Æâ@J}Mud´³Gß
+3B 58 37 3A 1E 64 C9 99 64 BE 4E 2B 5D FA 6E D2    ;X7:.dÉd¾N+]únÒ
+1A FF 7D 28 EE E1 A7 73 D6 F9 E4 A4 2D 57 14 BB    .ÿ}(îá§sÖùä¤-W.»
+74 DE 90 BE F9 5F 31 E9 22 7D D6 A6 75 5E 7D 81    tÞ¾ù_1é"}Ö¦u^}
+34 F9 51 17 7B 64 5B 97 BE CA E4 CD 58 AC 92 94    4ùQ.{d[¾ÊäÍX¬
+F2 E3 7D F6 A3 9C B9 52 DB F4 BB 27 5A 24 FB 81    òã}ö£¹RÛô»'Z$û
+AB EB 64 72 A4 4E A7 31 22 6C E5 44 FB 5B 61 2D    «ëdr¤N§1"låDû[a-
+BF 67 BC 5E 25 3B 78 77 15 A8 4C 78 7D 67 E7 66    ¿g¼^%;xw.¨Lx}gçf
+56 D8 D9 F9 31 4B 16 92 B9 15 FA F4 1E D6 C6 D0    VØÙù1K.¹.úô.ÖÆÐ
+A3 EC 38 84 1D 29 23 76 9B 76 71 54 C6 E2 26 49    £ì8.)#vvqTÆâ&I
+4C 48 A6 07 F4 1D 4B 48 4E FA 3D 50 3E 97 21 3B    LH¦.ô.KHNú=P>!;
+F2 A3 08 AC 7C 7C 3C FF BE F9 61 78 B5 50 FB FC    ò£.¬||<ÿ¾ùaxµPûü
+8D AB 6C 1F 23 DB 47 4E EC C2 93 10 CD 1A B4 71    «l.#ÛGNìÂ.Í.´q
+26 C4 71 5A 48 F9 D4 6D 48 B5 81 96 B4 2B 17 55    &ÄqZHùÔmHµ´+.U
+60 2F D1 98 21 45 79 9C D1 A7 AC B5 15 EC DF 80    `/Ñ!EyÑ§¬µ.ìß
+7F AD 59 FB 29 36 46 AA 42 EB 77 23 D5 C0 7B 3B    ­Yû)6FªBëw#ÕÀ{;
+C8 F6 81 15 17 5A BD 90 9C 2A 91 1F 9C 1F 2D 61    Èö..Z½*..-a
+67 5F EE 79 6F 25 0B 66 47 09 A8 4E 48 6B AE 3C    g_îyo%.fG.¨NHk®<
+22 D5 A7 B3 F7 49 AE A7 6A 2D 57 9A 22 55 83 95    "Õ§³÷I®§j-W"U
+1C CF 65 5A EF FA 19 72 2A 39 2A 23 D5 44 65 D5    .ÏeZïú.r*9*#ÕDeÕ
+10 D5 71 E0 F3 75 D2 DF 44 AC 7B 7A B5 CC 3E BF    .ÕqàóuÒßD¬{zµÌ>¿
+9B 25 E7 92 13 8C B8 DC C7 E7 CC 90 3D 9B 1C 37    %ç.¸ÜÇçÌ=.7
+F5 53 01 3A 43 78 D1 F3 71 26 AD 5B 4A 4E B2 0E    õS.:CxÑóq&­[JN².
+DB DF 41 86 07 31 21 AD 65 60 C2 88 44 2A EF AF    ÛßA.1!­e`ÂD*ï¯
+67 CF AE 50 65 1D 4B 59 D2 D4 CD 06 69 1B 91 35    gÏ®Pe.KYÒÔÍ.i.5
+5C 6B 3B B4 07 35 F8 07 5B 7A 88 0A 33 3A AB F0    \k;´.5ø.[z.3:«ð
+45 DB E1 DB 69 E4 56 E0 F9 84 F8 B0 A1 32 D5 91    EÛáÛiäVàùø°¡2Õ
+3D 9E BC 26 33 6A CD 70 82 46 06 1C 78 A0 30 DC    =¼&3jÍpF..x 0Ü
+27 09 AE D8 0E 49 F7 A2 F1 92 D1 E6 3C 65 EC EF    '.®Ø.I÷¢ñÑæ<eìï
+4B 99 05 C5 52 94 23 2B C0 BE 3D AD 67 A9 C9 62    K.ÅR#+À¾=­g©Éb
+1B A7 62 64 ED 8F C5 62 E4 2C CE C8 16 ED 69 C6    .§bdíÅbä,ÎÈ.íiÆ
+ED 21 FF 63 32 15 FA 1D E4 D1 3B C9 B9 98 AC 5D    í!ÿc2.ú.äÑ;É¹¬]
+27 9C 7F 03 B1 A9 EB 0A E8 7C 96 25 17 93 33 B1    '.±©ë.è|%.3±
+9D 3A 72 DE 2E 7D DE A5 E4 6C 6C D7 75 C2 6B EC    :rÞ.}Þ¥äll×uÂkì
+21 F3 32 76 C6 F6 2D 06 1C 63 B2 61 0B 68 B7 C2    !ó2vÆö-..c²a.h·Â
+3C 70 72 C6 96 E2 EE 36 8E 30 E9 10 59 33 54 5D    <prÆâî60é.Y3T]
+38 43 D5 18 7C BE CC 64 7F 6D A0 5A FA A1 3F E0    8CÕ.|¾Ìdm Zú¡?à
+34 D9 37 07 AA 36 42 66 35 B9 27 D1 9C F8 68 12    4Ù7.ª6Bf5¹'Ñøh.
+53 C5 B3 2A 47 9E 50 64 F9 12 C9 EE D3 1E C3 DD    SÅ³*GPdù.ÉîÓ.ÃÝ
+29 EC E4 2C 3E C0 4A CF B7 87 F2 CE 70 70 8E 76    )ìä,>ÀJÏ·òÎppv
+B2 F9 96 35 73 E4 48 11 2E 63 20 D2 85 B5 83 00    ²ù5säH..c.Òµ.
+17 C3 06 91 3C 58 4C 4E C7 F2 C0 8F 07 F6 3C E0    .Ã.<XLNÇòÀ.ö<à
+48 7C 92 69 94 B4 D7 36 73 6C 28 4B 9C 5A 25 46    H|i´×6sl(KZ%F
+F2 79 AE 8C 58 75 25 23 39 D9 3C 0B 7F CE FE 14    òy®Xu%#9Ù<.Îþ.
+D3 D7 BE D5 93 0E 71 82 61 5A 39 D3 6C BA B3 5C    Ó×¾Õ.qaZ9Ólº³\
+59 D9 42 B6 2F E3 EC 0E 31 98 3C C5 AF 34 47 9E    YÙB¶/ãì.1<Å¯4G
+BA 8B E9 58 CB 40 D2 EB 2E 97 93 F3 A1 84 CC F2    ºéXË@Òë.ó¡Ìò
+B1 62 FD A0 77 41 FB 73 70 B5 E6 25 66 EA 3B F9    ±bý wAûspµæ%fê;ù
+9C 48 51 2E 29 7F 22 B5 71 2C 79 55 22 3A 90 BD    HQ.)"µq,yU":½
+A0 72 A5 B0 B4 54 C8 98 8D B9 A2 07 F6 1E 68 3C     r¥°´TÈ¹¢.ö.h<
+C4 9C 57 54 FD AB 4C 27 B6 10 C9 91 DF 77 28 7F    ÄWTý«L'¶.Éßw(
+F4 B9 EB 2A 8B B0 FE 69 5A F8 FB DB 8B A9 E9 AD    ô¹ë*°þiZøûÛ©é­
+DC A3 73 A6 12 42 28 26 C3 FA EE 2A 0E B5 E3 E0    Ü£s¦.B(&Ãúî*.µãà
+20 44 FA CD EC C0 31 BE 17 46 80 62 74 1B 32 4D    .DúÍìÀ1¾.Fbt.2M
+EA 74 0E FF EB 28 3A D5 96 33 1F 2A 7E 19 92 4D    êt.ÿë(:Õ3.*~.M
+72 6E 0D EB 55 AE 72 64 AD 5C 79 FC E8 9F B4 F0    rn.ëU®rd­\yüè´ð
+D1 D1 CB A9 9C 73 FC 4C C8 9C 4C 80 CE 79 B6 EA    ÑÑË©süLÈLÎy¶ê
+BF 54 32 BE C6 A5 82 CA D1 72 F5 70 97 46 84 BA    ¿T2¾Æ¥ÊÑrõpFº
+68 26 6E 90 44 53 71 8D 87 3A E4 3E BE C6 F1 75    h&nDSq:ä>¾Æñu
+AB B4 4F D8 75 A2 77 1B 9E 64 3A 0A DB 28 5B 51    «´OØu¢w.d:.Û([Q
+9E C6 26 A8 C8 EC 48 BC 5F 81 3D AD A9 27 CC 80    Æ&¨ÈìH¼_=­©'Ì
+77 C0 0A A3 E0 6C 13 DB 59 F3 DD 36 3C 65 A9 2A    wÀ.£àl.ÛYóÝ6<e©*
+26 BD 45 CB D3 6B 29 EB 59 53 77 A9 2E 18 D7 92    &½EËÓk)ëYSw©..×
+5A 5A 7A 2F 2B 3C 7E F4 27 D0 B6 F1 58 53 13 A3    ZZz/+<~ô'Ð¶ñXS.£
+C9 3B 87 BB BE 4F A7 FE D8 BB E4 14 B8 87 13 86    É;»¾O§þØ»ä.¸.
+F4 DB D8 21 6B A5 86 B8 75 22 B9 4C 77 01 F4 EA    ôÛØ!k¥¸u"¹Lw.ôê
+B0 0E AA 40 5D B2 51 94 83 28 F7 EA 88 8A 9E B8    °.ª@]²Q(÷ê¸
+AA 66 2A D7 BA 31 75 DA 32 35 F4 C2 56 C8 80 AA    ªf*×º1uÚ25ôÂVÈª
+62 DD 79 79 31 98 C0 DD 28 46 FB 01 34 FE 92 C9    bÝyy1ÀÝ(Fû.4þÉ
+BB 92 CC 7A F6 D9 9A D6 AC BE EA 5B D7 07 07 37    »ÌzöÙÖ¬¾ê[×..7
+09 89 C8 44 10 78 C3 B5 77 3F 26 E9 F0 43 51 D9    .ÈD.xÃµw?&éðCQÙ
+17 6A 93 2B 2D 44 C6 C6 7B 14 D8 19 DE 11 6B D8    .j+-DÆÆ{.Ø.Þ.kØ
+2B 6B C7 E6 EF 27 6A 0A 95 13 45 5D DD 41 F5 2D    +kÇæï'j..E]ÝAõ-
+BC 17 BE 23 A0 6F FA D2 9A 55 65 2D 3B F2 94 B1    ¼.¾# oúÒUe-;ò±
+2E 0A 2F CB 98 FA 94 65 42 B7 1D BB 79 A0 AB 19    ../ËúeB·.»y «.
+56 8D CC B1 24 C1 2C B3 0E 4F F6 72 74 98 7B 4E    VÌ±$Á,³.Oört{N
+0D D6 EC BE 20 EA 7C A6 CC 79 27 CF AD EE AF EB    .Öì¾.ê|¦Ìy'Ï­î¯ë
+AC 08 BF C6 C8 BA 2E 32 79 98 DF 1B D1 81 F3 F7    ¬.¿ÆÈº.2yß.Ñó÷
+45 DF 29 1E 32 5A 3F A3 0B 9A F9 28 F7 F6 45 BD    Eß).2Z?£.ù(÷öE½
+A1 8E FC 76 66 4B 5D 7B D4 65 D7 FD B9 53 AF 51    ¡üvfK]{Ôe×ý¹S¯Q
+86 D8 1C D7 40 CD F1 DB 4E 43 65 A4 9F A9 BE 74    Ø.×@ÍñÛNCe¤©¾t
+11 F6 04 DD 0A AF 1E 92 AF 36 30 0F B5 DD C9 E8    .ö.Ý.¯.¯60.µÝÉè
+39 F3 D7 C3 8C E7 BB E5 69 C6 F0 CC 33 99 62 18    9ó×Ãç»åiÆðÌ3b.
+30 EE 79 B6 79 00 4C DC 0E 13 B2 D2 BF 60 5D 79    0îy¶y.LÜ..²Ò¿`]y
+5B 88 E2 FB 1D BF F3 1C 82 6D EC DB A8 B4 54 4D    [âû.¿ó.mìÛ¨´TM
+22 3F B1 A6 AF A0 69 55 E5 91 E4 91 9E FD 7A 05    "?±¦¯ iUåäýz.
+A9 DF 52 CE B7 D5 69 B6 F5 61 FB D8 92 90 99 CF    ©ßRÎ·Õi¶õaûØÏ
+76 57 91 6F B2 A7 05 59 7B 21 39 15 93 91 FC D6    vWo²§.Y{!9.üÖ
+B4 D9 6D 80 1A 4F 25 82 13 55 CF 3D 55 AF 13 4C    ´Ùm.O%.UÏ=U¯.L
+DB F1 B9 EE 62 C6 99 6C F6 C8 F9 55 F3 FE 4C EB    Ûñ¹îbÆlöÈùUóþLë
+96 93 4B 2F BB 6F 86 C5 E4 A3 DD B3 E4 64 D9 8D    K/»oÅä£Ý³ädÙ
+BD D0 E8 2C C5 FB 46 17 9C B7 27 4C BC 9C 8C 72    ½Ðè,ÅûF.·'L¼r
+66 01 7D 13 D9 40 C4 FB C8 AD E9 CB 9C EE 34 A4    f.}.Ù@ÄûÈ­éËî4¤
+D5 F5 66 06 9B 50 EF 34 DC D8 0E 5F F9 C8 A7 B8    Õõf.Pï4ÜØ._ùÈ§¸
+2E 3B 1E 4E 0C 88 3D DD 1D 75 F8 32 00 12 B9 BB    .;.N.=Ý.uø2..¹»
+28 72 BE 4F D7 15 A3 1C 88 19 6F C4 CE 2C 67 E3    (r¾O×.£..oÄÎ,gã
+BC 8E 69 D2 63 BC 27 A9 C4 1D B7 F0 59 BB 24 9F    ¼iÒc¼'©Ä.·ðY»$
+F1 7B 72 C8 BE AB 88 17 F7 11 8D 9C CF 10 26 4E    ñ{rÈ¾«.÷.Ï.&N
+3C E3 35 A7 B5 E5 44 49 4D F8 FA FE DA D0 EB BF    <ã5§µåDIMøúþÚÐë¿
+F2 FA D3 8C DF 4E 36 F1 7E 15 F0 2E D9 60 56 42    òúÓßN6ñ~.ð.Ù`VB
+8E 18 A4 AE 44 C9 C6 ED 0B 35 BB 51 75 19 09 E9    .¤®DÉÆí.5»Qu..é
+AD 8C 4B 59 B1 96 F5 32 6C F5 95 F8 9E 1A B0 0B    ­KY±õ2lõø.°.
+DE AF 70 C6 80 D0 94 EF 2F B7 D4 9C BD 83 F9 A3    Þ¯pÆÐï/·Ô½ù£
+11 9F D5 88 B7 CD 19 86 6F EA 6A 3A 68 BB 3D D7    .Õ·Í.oêj:h»=×
+91 AE E2 67 1B 93 8D 23 ED BC 77 14 45 CE FB F7    ®âg.#í¼w.EÎû÷
+E9 4C 32 37 DD E9 8A F6 54 A0 5F D1 D4 EB E8 50    éL27ÝéöT _ÑÔëèP
+CD B0 39 2F 14 D6 34 60 56 BC 38 3A 13 61 1B 93    Í°9/.Ö4`V¼8:.a.
+51 EE 1B 20 45 72 4B DD 12 FB EE C4 20 11 CB FC    Qî..ErKÝ.ûîÄ..Ëü
+FB 46 DD 9D 69 9E A6 32 DE DE DB 81 91 CA B1 9F    ûFÝi¦2ÞÞÛÊ±
+B2 38 45 4C 47 78 4D 6A 13 77 0F D5 5E BF 07 D7    ²8ELGxMj.w.Õ^¿.×
+C1 87 9D 28 77 C8 59 46 D6 FC 10 E7 D9 2F 86 EE    Á(wÈYFÖü.çÙ/î
+34 5D 56 77 E3 89 CA BF 7D 92 FB 30 B8 89 49 29    4]VwãÊ¿}û0¸I)
+63 75 9C 51 CA DE 8C 78 80 68 EF 42 96 B5 B6 9D    cuQÊÞxhïBµ¶
+9B BC 7C 23 BD 01 FF B8 D3 CD 78 F5 C6 5B AA 9E    ¼|#½.ÿ¸ÓÍxõÆ[ª
+BE 38 BB 4B D3 FB 6D C8 D6 43 9C DE 21 EB F6 09    ¾8»KÓûmÈÖCÞ!ëö.
+87 09 CE 0E AA 19 F7 CA 06 6E 9D F9 0C F9 04 19    .Î.ª.÷Ê.nù.ù..
+95 42 63 4F BD CC 46 EE 9E 88 9A 91 69 44 EF B2    BcO½ÌFîiDï²
+0B 99 FD BA 90 A9 FF 6B 31 EB B5 74 6E 2E 79 75    .ýº©ÿk1ëµtn.yu
+93 50 5B 11 5B 62 EE 95 B7 C5 05 FA D2 9F DD 16    P[.[bî·Å.úÒÝ.
+37 83 CF B6 29 96 FE 67 35 AA 77 FD D9 BC F8 1F    7Ï¶)þg5ªwýÙ¼ø.
+C3 81 51 D9 F0 01 01 C0 02 84 38 52 50 08 97 56    ÃQÙð..À.8RP.V
+52 3A 53 00 31 00 47 00 61 00 6D 00 65 00 4F 00    R:S.1.G.a.m.e.O.
+70 00 74 00 69 00 6F 00 6E 00 5F 00 53 00 31 00    p.t.i.o.n._.S.1.
+49 00 6E 00 74 00 65 00 72 00 66 00 61 00 63 00    I.n.t.e.r.f.a.c.
+65 00 47 00 72 00 6F 00 75 00 70 00 A2 01 08 08    e.G.r.o.u.p.¢...
+CF 6D 1D 00 00 80 3F F0 01 00 C0 02 08             Ïm...?ð..À.....
+
+WARNING 16:05:38:271 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:39:449 ClientConnection: not found packet for opcode B82E
+04 00 2E B8                                        ...¸............
+
+WARNING 16:05:39:772 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:41:277 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:42:784 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:44:287 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:45:789 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:47:291 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:48:797 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:50:298 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:51:811 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:53:320 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:54:825 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:56:334 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:57:842 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:05:58:349 ClientConnection: not found packet for opcode 7E9E
+04 00 9E 7E                                        ..~............
+
+WARNING 16:05:59:350 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:06:00:856 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:06:02:372 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:06:02:501 ClientConnection: not found packet for opcode AB20
+08 00 20 AB 06 00 00 00                            ...«............
+
+WARNING 16:06:03:886 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:06:04:245 ClientConnection: not found packet for opcode 5A77
+49 0D 77 5A 08 00 41 0D 08 97 56 12 04 32 23 43    I.wZ..A..V..2#C
+50 52 A9 08 08 97 56 52 20 53 00 31 00 43 00 68    PR©..VR.S.1.C.h
+00 61 00 74 00 43 00 6F 00 6E 00 74 00 72 00 6F    .a.t.C.o.n.t.r.o
+00 6C 00 6C 00 65 00 72 00 A2 01 F9 07 78 DA BD    .l.l.e.r.¢.ù.xÚ½
+57 4D 68 13 41 14 9E D7 36 41 06 91 25 88 2C 52    WMh.A.×6A.%,R
+CA B8 A6 B5 D6 6A DB 34 49 CB 08 36 6D 92 C6 D0    Ê¸¦µÖjÛ4IË.6mÆÐ
+A4 5D D2 D4 5A 3C 14 D1 4A 4F 9E 3C 09 8A DE EC    ¤]ÒÔZ<.ÑJO<.Þì
+41 F4 24 78 93 5C 04 BD 29 82 15 44 41 F1 E4 C1    Aô$x\.½).DAñäÁ
+8B 87 8A 87 5E 3C 2A 05 0F 82 1E E2 CC E4 67 37    ^<*...âÌäg7
+CD EC EE 4C 2C B6 10 B2 9B EF BD F7 BD 9F 99 F7    ÍìîL,¶.²ï½÷½÷
+DE BE 9F 6B 91 F7 FB 6D F4 08 D0 0E 54 1B 7F F0    Þ¾k÷ûmô.Ð.T.ð
+B6 CB F9 7E BF FB 4B 68 BB FB 75 D7 B3 9E 03 29    ¶Ëù~¿ûKh»ûu×³.)
+74 09 AD A3 8B E8 1A A2 68 0C DD 0D 21 F4 7B E6    t.­£è.¢h.Ý.!ô{æ
+53 E8 64 25 4C 68 5F 1A 9D 45 D3 A8 CC FE 57 90    Sèd%Lh_.EÓ¨ÌþW
+8D B2 68 15 CD A3 05 54 42 45 F6 B6 80 2A E1 3E    ²h.Í£.TBEö¶*á>
+DA DB 0E B1 D9 73 49 3C 7B 00 72 68 09 E5 99 7C    ÚÛ.±ÙsI<{.rh.å|
+C6 0F C0 75 70 80 45 49 3B 60 46 FC 9C 63 9F 79    Æ.ÀupEI;`Fücy
+C6 A8 12 EE A5 87 DB 41 65 F6 39 CD A8 7A E8 58    Æ¨.î¥ÛAeö9Í¨zèX
+66 6F F2 68 51 3C 95 BC 74 94 84 09 CE 63 88 0E    foòhQ<¼t.Îc.
+7A FF BC CA BC E1 C6 32 75 5D 01 60 1E C4 32 FB    zÿ¼Ê¼áÆ2u].`.Ä2û
+9E 66 EF 3D D8 65 84 BE 82 F0 2F C7 40 C3 74 C8    fï=Øe¾ð/Ç@ÃtÈ
+2F D2 AB CC 91 AC 78 E2 28 05 78 2B 05 69 16 96    /Ò«Ì¬xâ(.x+.i.
+18 28 CF 60 3C C0 83 74 C0 0F 90 15 4C CB 42 97    .(Ï`<ÀtÀ..LËB
+D4 B4 03 55 F2 3E C7 3E E7 45 2C 6B 75 26 2D C5    Ô´.Uò>Ç>çE,ku&-Å
+45 A6 27 CD F4 D4 20 26 3D 24 0B B9 ED C5 88 27    E¦'ÍôÔ.&=$.¹íÅ'
+AB 28 C2 BB 9B 91 B4 10 38 70 96 C1 3C 42 B1 2C    «(Â»´.8pÁ<B±,
+8E 45 41 64 37 00 CA BD 2A 09 78 20 D4 9D B0 00    EAd7.Ê½*.x.Ô°.
+A8 73 A6 DC D0 01 1A F5 3E 17 6E 60 9C C6 E4 3E    ¨s¦ÜÐ..õ>.n`Æä>
+97 EB 59 48 8B 00 D5 12 E8 88 79 1C 2C CE 7A BE    ëYH.Õ.èy.,Îz¾
+59 BA 51 6A C9 33 5C 16 BA B8 85 A2 5F 21 94 45    YºQjÉ3\.º¸¢_!E
+D0 CE 8B 54 4A 1D 6A 80 8A F5 5A 5C F1 02 DA 8C    ÐÎTJ.jõZ\ñ.Ú
+57 1E 9D 13 6F F9 F3 98 2A 30 A6 0A 1C 57 05 C6    W..oùó*0¦..W.Æ
+55 81 09 55 60 52 15 38 A1 0A 9C 44 91 57 60 83    U.U`R.8¡.DW`
+7E 1B 89 B9 DB 48 60 8F D0 BC AB 94 4F 4A E4 1B    ~.¹ÛH`Ð¼«OJä.
+D8 5D FA E4 C7 03 C9 FF 9F 8B 31 40 33 F7 79 81    Ø]úäÇ.Éÿ1@3÷y
+DD 81 65 14 B9 6A 77 EB BB 19 77 BB A9 75 43 46    Ýe.¹jwë».w»©uCF
+5E F6 D8 3D FA 06 13 6E 83 D2 FA 2B 8A F4 D5 DE    ^öØ=ú..nÒú+ôÕÞ
+F1 1B 67 8E 45 61 92 26 BD 80 69 51 AE 35 56 BC    ñ.gEa&½iQ®5V¼
+07 EC 16 4D D2 B8 97 E8 AC 10 68 74 57 DE 6D A7    .ì.MÒ¸è¬.htWÞm§
+C5 4C 93 13 91 8F D1 51 2F 41 37 90 77 A0 62 5D    ÅL.ÑQ/A7w b]
+51 25 9C A1 33 EA 44 BD D5 F8 04 A6 95 A4 56 60    Q%¡3êD½Õø.¦¤V`
+3A F4 AF 50 1F B3 B2 FF E6 9F A3 26 B2 01 76 48    :ô¯P.³²ÿæ£&².vH
+BF 74 92 EE D2 51 1A 08 15 66 AA C8 65 3B AC 4F    ¿tîÒQ...fªÈe;¬O
+65 22 90 4A EB 5C 69 1D C7 01 53 B4 51 05 B3 0A    e"Jë\i.Ç.S´Q.³.
+A4 0A D6 00 F6 BD 29 0D 30 1F 08 5C 3F F6 1D AA    ¤.Ö.ö½).0..\?ö.ª
+8D 94 F9 07 48 CA 3A 86 7D 47 6B E3 09 98 8F 85    ù.HÊ:}Gkã.
+BE 21 1C 18 51 E3 1D 98 D7 C9 6D B0 8E 62 9F 49    ¾!..Qã.×Ém°bI
+9B BB 72 83 20 B9 C2 D6 B8 70 E8 4D 6E 3C 8A 7D    »r.¹ÂÖ¸pèMn<}
+C6 6E 8E FA 08 4C E3 18 56 9E BE 1B 24 62 58 79    Ænú.Lã.V¾.$bXy
+06 37 32 DC 0A 23 73 02 07 96 0D 57 FF 06 C8 3D    .72Ü.#s...Wÿ.È=
+B0 E2 58 63 24 6F 9A 08 94 6A 21 76 A5 5E 1A D2    °âXc$o.j!v¥^.Ò
+5C 3A CD C0 B8 05 E6 57 20 4F C1 1A C5 8A FD C8    \:ÍÀ¸.æW.OÁ.ÅýÈ
+88 98 2F 80 67 54 4A C8 AB 2D 35 A5 A4 91 6A 1D    /gTJÈ«-5¥¤j.
+DB 8D 1D 51 D8 1B 20 3F 03 EE F1 9D 07 75 13 C8    Û.QØ..?.îñ.u.È
+26 58 47 B0 C7 18 EF 40 46 B0 52 EF 30 B6 C0 DC    &XG°Ç.ï@F°Rï0¶ÀÜ
+02 B2 05 56 0A 77 D8 43 B8 CD E7 40 D6 AD 33 B8    .².V.wØC¸Íç@Ö­3¸
+A3 56 C2 E5 17 C8 1D B0 28 D6 EE 28 4D D9 39 BC    £VÂå.È.°(Öî(MÙ9¼
+07 8D C5 F8 0E E6 41 72 C1 3A 85 95 DA 4B D3 F8    .Åø.æArÁ:ÚKÓø
+14 EE B0 CB 34 0C 2A 7B EE 34 89 BD F0 DC A5 AD    .î°Ë4.*{î4½ðÜ¥­
+4E 24 81 35 46 1C A7 74 FB B1 CF 32 C8 99 FE 02    N$5F.§tû±Ï2Èþ.
+F2 10 D8 FD A4 B8 14 3A 55 39 82 15 97 43 E3 07    ò.Øý¤¸.:U9.Cã.
+98 BD 24 2A B7 21 1B 7C 03 6C C8 56 C5 46 CF 90    ½$*·!.|.lÈVÅFÏ
+9E AD F6 85 D1 B1 70 1A 77 B0 38 F2 B8 AD 91 35    ­öÑ±p.w°8ò¸­5
+76 2F 04 AE 8F 0D E7 87 B1 C2 12 C9 F5 6E 03 99    v/.®.ç±Â.Éõn.
+92 37 A0 D6 5D B2 89 95 1E 89 F6 95 B2 89 97 86    7 Ö]².ö²
+A8 7D B3 34 3E 8B 12 FA 00 6A 02 31 5D 81 71 5D    ¨}³4>.ú.j.1]q]
+81 B8 AE 40 42 57 20 A9 2B 30 A1 2B 30 E9 08 0C    ¸®@BW.©+0¡+0é..
+A2 BF A4 1C 02 23 F0 01 01 C0 02 E7 29 52 63 08    ¢¿¤..#ð..À.ç)Rc.
+97 56 52 46 53 00 31 00 4D 00 69 00 6E 00 69 00    VRFS.1.M.i.n.i.
+6D 00 61 00 70 00 43 00 6F 00 6E 00 74 00 72 00    m.a.p.C.o.n.t.r.
+6F 00 6C 00 6C 00 65 00 72 00 5F 00 53 00 31 00    o.l.l.e.r._.S.1.
+4D 00 69 00 6E 00 69 00 6D 00 61 00 70 00 4F 00    M.i.n.i.m.a.p.O.
+70 00 74 00 69 00 6F 00 6E 00 A2 01 0F 78 DA E3    p.t.i.o.n.¢..xÚã
+38 9F 2A C4 C3 88 04 00 15 5A 01 67 F0 01 01 C0    8*ÄÃ...Z.gð..À
+02 11 52 D2 10 08 97 56 52 1E 53 00 31 00 55 00    ..RÒ..VR.S.1.U.
+49 00 5F 00 47 00 46 00 78 00 4D 00 61 00 6E 00    I._.G.F.x.M.a.n.
+61 00 67 00 65 00 72 00 A2 01 A4 10 78 DA 8D 59    a.g.e.r.¢.¤.xÚY
+CF 6B DC 55 10 7F 5E A4 7C 11 29 A1 D4 50 DA 12    ÏkÜU.^¤|.)¡ÔPÚ.
+4A B7 94 52 A4 26 A5 48 91 B6 DF EF A6 CD A6 D9    J·R¤&¥H¶ßï¦Í¦Ù
+6D B6 D9 FC 38 EA 66 77 D3 2C D9 EC 2E 9B DD DA    m¶Ùü8êfwÓ,Ùì.ÝÚ
+E8 45 7A 12 51 F0 20 C5 16 C4 82 1E 44 FD 03 F4    èEz.Qð.Å.Ä.Dý.ô
+22 3D 88 46 A8 5E 3D 7A F5 22 F6 E8 D1 99 CF 7B    "=F¨^=zõ"öèÑÏ{
+6F DF CF EF B6 0D 49 DA 7D F3 E6 CD 7C 66 E6 33    oßÏï¶.IÚ}óæÍ|fæ3
+F3 5E 93 E9 24 29 8B 65 B1 20 16 C5 2D 71 58 9C    ó^é$)e±..Å-qX
+10 F4 A7 C0 3F 92 E3 C9 AB 15 D1 12 7B F4 55 17    .ô§À?ãÉ«.Ñ.{ôU.
+77 E8 6F CE EA E9 E4 68 2A 36 45 57 F4 C4 40 EC    wèoÎêéäh*6EWôÄ@ì
+92 44 47 B4 C5 50 EC 4B A9 2F B2 B1 8E 8C 76 76    DG´ÅPìK©/²±vv
+E9 7B 0B EB 46 C7 FD 2C 39 93 4C D7 68 A5 43 DF    é{.ëFÇý,9L×h¥Cß
+0D 5A E3 BF 0F C4 5D FC 74 CE 3A 9F 9C B4 E5 8A    .Zã¿.Ä]ütÎ:´å
+62 9B CE 1B D0 37 FF 2B 26 5D A4 CF 5A B4 CE AB    bÎ.Ð7ÿ+&]¤ÏZ´Î«
+CF 91 26 3F 6A 62 87 6C EB D0 57 89 BC 19 8A 25    Ï&?jblëÐW¼.%
+92 52 7E BC C3 7E 94 32 57 6A 83 7E 77 45 93 64    R~¼Ã~2Wj~wEd
+DF 75 75 9D 4C 0E D7 E8 34 46 84 AD 1C 69 7F CB    ßuuL.×è4F­.iË
+AC E5 97 8C D7 19 29 DE BD 0B 54 46 E2 F0 4B 27    ¬å×.)Þ½.TFâðK'
+FE FD E3 66 56 F8 A7 F5 5D 96 CC 24 53 8B F4 E9    þýãfVø§õ]Ì$Sôé
+5D AC 0D A1 47 D9 71 00 3B 52 46 EC 36 ED E2 A8    ]¬.¡GÙq.;RFì6íâ¨
+0C C5 4D 92 18 91 4C 17 E8 3B 96 90 9C F4 BB AF    .ÅM.L.è;ô»¯
+7C 2E 41 76 CF 8F 22 B0 F2 F1 F1 FC FB F2 DB C1    |.AvÏ"°òññüûòÛÁ
+D5 42 F5 93 D7 AE B2 7D 8C 6C 0F 39 B1 0D 4F 42    ÕBõ×®²}l.9±.OB
+34 AB D0 C6 99 10 C7 69 26 E5 53 37 20 D5 02 5A    4«ÐÆ.Çi&åS7.Õ.Z
+D2 AE 5C 54 81 BD 44 63 82 14 E5 71 46 9F B2 D6    Ò®\T½Dc.åqF²Ö
+66 B0 7F 15 FE 35 27 ED A7 D8 18 A9 32 AD DF 89    f°.þ5'í§Ø.©2­ß
+54 03 EF 6D 23 DB FB 56 5C 68 F5 42 72 6A 81 FC    T.ïm#ÛûV\hõBrjü
+E0 FC 68 0A 3B FB 72 CF 7B 3D 99 31 3B 16 80 EA    àüh.;ûrÏ{=1;.ê
+88 B4 E6 CA 23 52 3D 3A 7B 97 E4 BA AA D6 72 A5    ´æÊ#R=:{äºªÖr¥
+29 52 55 58 C9 F1 9C A7 F5 8E 9F 21 A7 92 23 32    )RUXÉñ§õ!§#2
+52 0D 54 56 15 51 1D 06 3E 5F 27 FD 0D C4 BA AB    R.TV.Q..>_'ý.Äº«
+57 4B EC F3 5B 59 72 2E 39 CE 88 CB 7D 7C CE 04    WKìó[Yr.9ÎË}|Î.
+D9 B3 C9 31 53 3F 65 A0 33 80 17 5D 1F 67 D2 BA    Ù³É1S?e 3.].gÒº
+AE E4 24 EB B0 FD 6D 64 78 10 13 D2 5A 02 26 8C    ®ä$ë°ýmdx..ÒZ.&
+48 A4 F2 7E 7F FA F4 4A 61 6B EB 68 CA 92 A6 6E    H¤ò~úôJakëhÊ¦n
+56 49 DB 1E 59 C3 B5 B6 45 7B 48 72 6B EB 57 B6    VIÛ.YÃµ¶E{HrkëW¶
+F4 00 15 66 74 56 E0 8B B6 C3 B7 D3 C8 2D C2 F3    ô..ftVà¶Ã·ÓÈ-Âó
+11 F1 61 5D 65 AA 23 7B 2C 79 45 66 D4 B2 E1 04    .ña]eª#{,yEfÔ²á.
+8D 0C 38 70 5F 61 B8 4B 12 5C B1 6D 92 EE 46 E3    .8p_a¸K.\±mîFã
+25 A3 CD 79 CA D8 DF 93 32 33 8A A5 28 47 16 81    %£ÍyÊØß23¥(G.
+7D 6B 5C CF 52 53 45 B3 8D 57 31 B2 F6 87 62 36    }k\ÏRSE³W1²öb6
+72 16 67 64 93 F6 34 E2 F6 90 FF 31 99 32 FD 0E    r.gdö4âöÿ12ý.
+F2 E8 CD E4 5C 4C D6 AE 13 CE BF BE 58 D3 75 05    òèÍä\LÖ®.Î¿¾XÓu.
+74 3E CE 92 8B C9 99 D8 4E 1D 39 6F 97 3E EF 52    t>ÎÉØN.9o>ïR
+72 36 B6 EB 3A E1 35 F4 90 79 11 3B 63 FB 66 03    r6¶ë:á5ôy.;cûf.
+8E 31 D9 B0 0E B4 9B 61 1E 38 39 63 4B 71 77 1B    1Ù°.´a.89cKqw.
+46 98 74 80 AC 19 A8 2E 9C A1 6A 0C 3E 9F 65 B2    Ft¬.¨.¡j.>e²
+BF D6 51 2D BD D0 1F 70 9A EC 9B 7D 55 1B 21 B3    ¿ÖQ-½Ð.pì}U.!³
+9A DC 93 68 8E 7C 34 89 A9 E2 59 95 23 4F 28 B2    Üh|4©âY#O(²
+FC 02 C9 72 97 33 DC 9D C2 4E CE E2 7D D5 FF 86    ü.Ér3ÜÂNÎâ}Õÿ
+41 DE 19 0E CE D1 4E 36 DF B2 66 8E 1C 29 C2 65    AÞ..ÎÑN6ß²f.)Âe
+08 44 3A B0 B6 1F E0 62 D8 20 92 07 B3 C9 E9 58    .D:°¶.àbØ..³ÉéX
+1E F8 F1 C0 9E FB 1C 89 0F 33 8D 92 F6 DA 66 8E    .øñÀû..3öÚf
+55 65 89 53 AB C4 48 3E CF 95 10 AB 8E 64 24 27    UeS«ÄH>Ï.«d$'
+9B 27 E1 CF D9 9F 62 FA DA B5 7A D2 01 4E 30 4C    'áÏÙbúÚµzÒ.N0L
+2B 67 9A 35 77 96 2B 29 5B C8 F6 79 9C DD 26 06    +g5w+)[ÈöyÝ&.
+93 A7 F8 95 E6 C8 53 77 31 1D 6B 1E 48 7A DD E5    §øæÈSw1.k.HzÝå
+72 72 3E 94 90 59 3E 54 AC 1F F4 2E 68 7F 06 AE    rr>Y>T¬.ô.h.®
+D6 BC C4 4C BD 99 CF 89 14 E5 05 E5 4F A4 36 8E    Ö¼ÄL½Ï.å.åO¤6
+26 87 24 A2 7D D9 0B CA 57 0A 73 73 85 8C D9 98    &$¢}Ù.ÊW.ssÙ
+2B BA 6F EF 81 C6 03 CC 79 45 D5 BF 4A 74 62 13    +ºoïÆ.ÌyEÕ¿Jtb.
+91 DC F3 FB 0E E5 8F 3E 77 45 65 11 D6 3F 4A 0B    Üóû.å>wEe.Ö?J.
+7F 7E 75 31 35 BD 95 7B 74 CE 54 42 08 C5 64 58    ~u15½{tÎTB.ÅdX
+DF 1D C5 A1 76 1C 1C 84 48 BF 99 1D 38 C6 77 C3    ß.Å¡v..H¿.8ÆwÃ
+08 50 8C 6E 43 A6 41 9D CE E1 7F 1D 45 A7 DA 72    .PnC¦AÎá.E§Úr
+E6 43 C5 2F 03 B2 49 CE AD 61 BD CA 55 8E AC 95    æCÅ/.²IÎ­a½ÊU¬
+2B 8F 1E FE 95 16 DE 3F 72 39 95 73 8E 9F 09 99    +.þ.Þ?r9s.
+93 09 D0 39 CD 56 FD 97 4A C6 D7 B8 94 51 39 5A    .Ð9ÍVýJÆ×¸Q9Z
+AE 16 EE D2 88 50 17 CD C4 0D 92 68 28 AE F1 50    ®.îÒP.ÍÄ.h(®ñP
+87 DC 07 D7 38 BE 6E 95 F6 08 BB 76 F4 6E C3 93    Ü.×8¾nö.»vônÃ
+4C 5B 61 1B 65 2B CA D3 D8 04 15 99 1D 89 F7 CB    L[a.e+ÊÓØ...÷Ë
+B0 A7 39 F6 84 19 70 13 AC B0 17 9C 6D 62 3B 69    °§9ö.p.¬°.mb;i
+BE DB 80 A7 2C 55 C1 A4 37 6B 79 7A 2D 65 3D CB    ¾Û§,UÁ¤7kyz-e=Ë
+EA 2E D5 01 E3 5A 52 73 73 6F 67 85 47 0F 7F 03    ê.Õ.ãZRssogG..
+DA 36 1E CB 6A 62 34 79 E7 70 D7 37 E9 D8 1F 7B    Ú6.Ëjb4yçp×7éØ.{
+97 9C 02 77 70 C2 80 7E 1B 3B 64 AD 54 11 B7 76    .wpÂ~.;d­T.·v
+24 97 E9 2E 80 5E 1D D6 41 05 A8 4B 36 8A 72 10    $é.^.ÖA.¨K6r.
+E5 5E 0D 51 D1 13 57 C5 4C E5 5A 37 A6 4E 5B A6    å^.QÑ.WÅLåZ7¦N[¦
+8A 5E D8 0C 19 50 55 AC 3B 2F CF 06 13 B8 1B C5    ^Ø..PU¬;/Ï..¸.Å
+68 3F 80 C6 1F 33 79 57 92 59 CF 3E 5B D3 9A D5    h?Æ.3yWYÏ>[ÓÕ
+57 7D EB 7A E0 E0 06 21 11 99 08 02 6F B8 F6 EE    W}ëzàà.!...o¸öî
+C5 24 1D 7E 28 2A FB 42 6D 72 A5 89 C8 D8 78 EF    Å$.~(*ûBmr¥ÈØxï
+05 76 86 77 C4 2A F6 CA DA B1 F9 FB B1 9A 42 E5    .vwÄ*öÊÚ±ùû±Bå
+44 51 53 77 50 7D 0B EF 86 EF 08 E8 9B BE B4 66    DQSwP}.ïï.è¾´f
+55 59 CB 8E 3C 65 AC 8B C2 8B 32 A6 3E 65 9E D0    UYË<e¬Â2¦>eÐ
+6D C5 6E 1E E8 6A 86 55 23 73 2C 49 30 CB AC C0    mÅn.èjU#s,I0Ë¬À
+93 9D 1C 1D E6 9E 53 85 35 DB CF 89 3A 9F 29 73    ..æS5ÛÏ:)s
+DE C9 73 AB FB EB 3A 2B C2 AF 21 B2 AE 83 4C 1E    ÞÉs«ûë:+Â¯!²®L.
+E4 F7 46 74 E0 FC 7D D1 77 8A 07 8C D6 0F E8 82    ä÷Ftàü}Ñw.Ö.è
+66 3E CA BD 7D 51 6F A8 21 BF 9D D9 52 D7 1E 75    f>Ê½}Qo¨!¿ÙR×.u
+D9 15 7F EE D4 6B 94 21 36 C7 D5 51 73 FC B6 53    Ù.îÔk!6ÇÕQsü¶S
+57 19 E9 67 AA 2F 5D 84 3D 41 B7 C2 AB 87 E4 AB    W.égª/]=A·Â«ä«
+55 CC 43 2D 77 32 7A C6 FC F5 20 E3 F9 6E 7E 9C    UÌC-w2zÆüõ.ãùn~
+31 3C F3 8C C6 18 06 8C 7B 9E 6D EE 03 13 B7 C3    1<óÆ..{mî..·Ã
+84 AC F4 37 58 57 DE 16 A2 F8 7E 9D D1 6D F4 00    ¬ô7XWÞ.¢ø~Ñmô.
+6C 63 DF 46 A5 A5 6A 12 F9 9E 35 7D 0E 4D 4B 2A    lcßF¥¥j.ù5}.MK*
+8F 24 8F 74 ED D7 2B 48 FD 9C 72 BE 2D 8D B3 AD    $tí×+Hýr¾-³­
+07 DB 87 96 84 CC 7C B6 BB 82 7C 93 3D 2D C8 DA    .ÛÌ|¶»|=-ÈÚ
+0B C9 A9 98 8C E4 B7 86 CD 6E 7D D4 78 2A 11 1C    .É©ä·Ín}Ôx*..
+A9 7A EE AA 7A 1D 61 DA 8E CF 75 17 33 CE 64 B3    ©zîªz.aÚÏu.3Îd³
+47 CE AF 9A F7 27 5A 37 9F 5C 7A D1 7D 13 2C 26    GÎ¯÷'Z7\zÑ}.,&
+1F ED 9E 25 27 CB 4E EC 85 46 67 29 DE 37 3A E0    .í%'ËNìFg)Þ7:à
+BC 1D 61 E2 E5 64 94 33 0B E8 9B C8 2A 22 DE 43    ¼.aâåd3.èÈ*"ÞC
+6E 8D 5F E6 74 A7 21 AD AE 37 13 D8 84 7A A7 E1    n_æt§!­®7.Øz§á
+C6 56 F8 CA 47 3E C5 75 D9 F1 70 62 40 EC E9 EE    ÆVøÊG>ÅuÙñpb@ìéî
+A8 C1 97 3E 90 C8 DD 45 91 F3 7D BA AE 18 65 5F    ¨Á>ÈÝEó}º®.e_
+4C 78 23 76 66 39 1B E7 15 4C 93 1E E3 3D 4E 25    Lx#vf9.ç.L.ã=N%
+EE B8 85 4F DA 25 F9 8C DF 93 43 F6 5D 42 BC B8    î¸OÚ%ùßCö]B¼¸
+8F 68 E4 7C 86 30 71 E2 19 AF 31 AE 2D 27 4A 6A    hä|0qâ.¯1®-'Jj
+C2 D7 F7 D7 BA 5E FF 89 D7 9F 64 FC 76 B2 86 F7    Â×÷×º^ÿ×düv²÷
+AB 80 77 C9 06 B3 12 72 44 3F 75 25 16 6C DC 3E    «wÉ.³.rD?u%.lÜ>
+55 B3 1B 55 97 91 90 DE CA B8 94 14 6B 59 2F C3    U³.UÞÊ¸.kY/Ã
+56 5F 89 EF A9 02 BB E0 FD 0A 67 F4 09 4D F9 FE    V_ï©.»àý.gô.Mùþ
+72 4B CD D9 5B 98 3F EA F1 59 8D 78 DB 9C 61 F8    rKÍÙ[?êñYxÛaø
+A6 A6 A6 83 96 DB 73 1D E9 0A 7E B6 30 D9 38 D2    ¦¦¦Ûs.é.~¶0Ù8Ò
+CE 7B 47 51 E4 BC 7F 9F CE 24 73 D3 9D AE 68 4F    Î{GQä¼Î$sÓ®hO
+05 FA 15 4D BD 8E 0E D4 0C 9B F3 42 61 4D 03 66    .ú.M½.Ô.óBaM.f
+C5 8B A3 33 11 B6 30 19 E5 BE 01 52 24 D7 D5 2D    Å£3.¶0.å¾.R$×Õ-
+B1 E7 4E 0C 12 B1 CC BF 6F D4 DC 99 E6 49 2A E3    ±çN..±Ì¿oÔÜæI*ã
+ED BD 1D 18 A9 1C FB 29 8B 53 C4 74 0F AF 49 2D    í½..©.û)SÄt.¯I-
+E2 EE 81 DA EB F7 E0 1A F8 B0 1D E5 0E 39 CB C8    âîÚë÷à.ø°.å.9ËÈ
+9A 1F E0 3C FB C5 D0 9D A6 4B EA 6E 3C 52 F9 B7    .à<ûÅÐ¦Kên<Rù·
+4B 72 EF 05 37 31 29 65 AC 8E 33 4A C9 9B 11 F7    Krï.71)e¬3JÉ.÷
+11 ED 6D C8 B2 D6 96 73 93 97 6F A4 37 E0 1F 77    .ímÈ²Öso¤7à.w
+BA 09 AF DE 78 4B D5 D3 17 67 F7 C2 F8 7E 1B B2    º.¯ÞxKÕÓ.g÷Âø~.²
+F5 00 A7 B7 C9 BA 5D C2 61 84 B3 83 6A C6 BD B2    õ.§·Éº]Âa³jÆ½²
+8E 5B 67 3E 43 3E 46 46 A5 D0 D8 55 2F B3 91 BB    [g>C>FF¥ÐØU/³»
+27 A2 66 64 EA D1 BB EC 4C 66 BF 2E 64 EA FF 5A    '¢fdêÑ»ìLf¿.dêÿZ
+CC 7A 35 9D 9A 4A 0E AD 11 6A 8B 62 5D 4C BD FC    Ìz5J.­.jb]L½ü
+86 B8 40 5F FA B3 DB E2 66 F0 D9 06 C5 D2 FF AC    ¸@_ú³ÛâfðÙ.ÅÒÿ¬
+4A F5 EE 7F 56 24 49 FD D9 B4 F8 1F F6 16 55 B2    JõîV$IýÙ´ø.ö.U²
+F0 01 01 C0 02 98 38 52 50 08 97 56 52 3A 53 00    ð..À.8RP.VR:S.
+31 00 47 00 61 00 6D 00 65 00 4F 00 70 00 74 00    1.G.a.m.e.O.p.t.
+69 00 6F 00 6E 00 5F 00 53 00 31 00 49 00 6E 00    i.o.n._.S.1.I.n.
+74 00 65 00 72 00 66 00 61 00 63 00 65 00 47 00    t.e.r.f.a.c.e.G.
+72 00 6F 00 75 00 70 00 A2 01 08 08 CF 6D 1D 00    r.o.u.p.¢...Ïm..
+00 80 3F F0 01 00 C0 02 08                         .?ð..À.........
+
+WARNING 16:06:05:391 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:06:06:892 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:06:07:536 ClientConnection: not found packet for opcode D533
+04 00 33 D5                                        ..3Õ............
+
+WARNING 16:06:08:401 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:06:09:903 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:06:11:405 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:06:12:906 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:06:13:139 ClientConnection: not found packet for opcode 86AB
+04 00 AB 86                                        ..«............
+
+WARNING 16:06:14:420 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:06:15:037 ClientConnection: not found packet for opcode 8412
+04 00 12 84                                        ...............
+
+WARNING 16:06:15:920 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:06:17:017 ClientConnection: not found packet for opcode 8E15
+04 00 15 8E                                        ...............
+
+WARNING 16:06:17:422 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:06:18:873 ClientConnection: not found packet for opcode 9E0D
+04 00 0D 9E                                        ...............
+
+WARNING 16:06:18:932 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:06:20:442 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:06:21:236 ClientConnection: not found packet for opcode 55F6
+08 00 F6 55 01 00 00 00                            ..öU............
+
+WARNING 16:06:21:951 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:06:23:474 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:06:24:998 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:06:26:506 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:06:27:122 ClientConnection: not found packet for opcode 73F7
+0C 00 F7 73 01 00 00 00 00 00 00 00                ..÷s............
+
+WARNING 16:06:28:031 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:06:29:369 ClientConnection: not found packet for opcode 64BE
+04 00 BE 64                                        ..¾d............
+
+WARNING 16:06:29:529 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:06:31:044 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:06:32:547 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:06:32:739 ClientConnection: not found packet for opcode ADDF
+04 00 DF AD                                        ..ß­............
+
+WARNING 16:06:34:052 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:06:35:554 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 16:06:37:067 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+

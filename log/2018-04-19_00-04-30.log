@@ -1,0 +1,57 @@
+INFO 00:04:30:017 ServerControl: open server socket on 2101 port.
+INFO 00:04:30:028 ExecutorManager: initialized.
+WARNING 00:04:32:274 BoneCPConnectFactory: SQLException : could not init DB connection:java.sql.SQLException: Unable to open a test connection to the given database. JDBC url = jdbc:mysql://localhost/tera_server, username = root. Terminating connection pool. Original Exception: ------
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:1116)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:344)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2333)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2370)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2154)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:792)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:411)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:381)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:305)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at com.jolbox.bonecp.BoneCP.obtainRawInternalConnection(BoneCP.java:254)
+	at com.jolbox.bonecp.BoneCP.<init>(BoneCP.java:305)
+	at rlib.database.BoneCPConnectFactory.init(BoneCPConnectFactory.java:56)
+	at rlib.database.ConnectFactory.newBoneCPConnectFactory(ConnectFactory.java:23)
+	at tera.gameserver.manager.DataBaseManager.<init>(DataBaseManager.java:213)
+	at tera.gameserver.manager.DataBaseManager.getInstance(DataBaseManager.java:204)
+	at tera.gameserver.GameServer.main(GameServer.java:112)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at java.net.Socket.<init>(Socket.java:434)
+	at java.net.Socket.<init>(Socket.java:244)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:257)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:294)
+	... 21 more
+------
+ : stack trace:
+rlib.database.BoneCPConnectFactory.init(BoneCPConnectFactory.java:61)
+rlib.database.ConnectFactory.newBoneCPConnectFactory(ConnectFactory.java:23)
+tera.gameserver.manager.DataBaseManager.<init>(DataBaseManager.java:213)
+tera.gameserver.manager.DataBaseManager.getInstance(DataBaseManager.java:204)
+tera.gameserver.GameServer.main(GameServer.java:112)
+

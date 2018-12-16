@@ -1,0 +1,76 @@
+INFO 15:34:48:541 ServerControl: open server socket on 2101 port.
+INFO 15:34:48:546 ExecutorManager: initialized.
+INFO 15:34:48:909 CleaningManager: delete 0 reuses from a character_skill_reuses.
+INFO 15:34:48:909 CleaningManager: delete 0 spawns from a boss_spawn.
+INFO 15:34:48:910 CleaningManager: delete 0 appearances from a character_appearances.
+INFO 15:34:48:910 CleaningManager: delete 0 effects from a character_save_effects.
+INFO 15:34:48:911 CleaningManager: delete 0 inventors from a character_inventors.
+INFO 15:34:48:911 CleaningManager: delete 0 skills from a character_skills.
+INFO 15:34:48:912 CleaningManager: delete 0 hotkeys from a character_hotkey.
+INFO 15:34:48:912 CleaningManager: delete 0 chars from a character_friends.
+INFO 15:34:48:913 CleaningManager: delete 0 friends from a character_friends.
+INFO 15:34:48:913 CleaningManager: delete 0 settings from a character_settings.
+INFO 15:34:48:914 CleaningManager: delete 0 empty items from a items.
+INFO 15:34:48:914 CleaningManager: delete 0 no owner items from a items.
+INFO 15:34:48:915 CleaningManager: delete 0 no owner guild items from a items.
+INFO 15:34:48:931 CleaningManager: create buffer table items.
+INFO 15:34:48:933 CleaningManager: copy 86 items to buffer_items.
+INFO 15:34:48:934 CleaningManager: delete 0 no owner items from a buffer_items.
+INFO 15:34:48:940 CleaningManager: drop buffer table items.
+INFO 15:34:48:941 CleaningManager: delete 0 from a quests.
+INFO 15:34:48:954 CleaningManager: delete 0 from a quest variables.
+INFO 15:34:48:955 CleaningManager: delete 0 from a guild ranks.
+INFO 15:34:49:049 ClientPacketType: client packets prepared.
+INFO 15:34:49:096 EffectParser: initialized.
+INFO 15:34:49:098 RandomManager: initialized.
+INFO 15:34:49:099 IdFactory: prepare npc ids...
+INFO 15:34:49:101 BitSetIdGenerator: 102912 id's available.
+INFO 15:34:49:101 IdFactory: prepare objects ids...
+INFO 15:34:49:101 BitSetIdGenerator: 102912 id's available.
+INFO 15:34:49:101 IdFactory: prepare players ids...
+INFO 15:34:49:104 BitSetIdGenerator: extracted 3 ids.
+INFO 15:34:49:104 BitSetIdGenerator: 102912 id's available.
+INFO 15:34:49:104 IdFactory: prepare guilds ids...
+INFO 15:34:49:105 BitSetIdGenerator: extracted 1 ids.
+INFO 15:34:49:105 BitSetIdGenerator: 102912 id's available.
+INFO 15:34:49:105 IdFactory: prepare item ids...
+INFO 15:34:49:106 BitSetIdGenerator: extracted 86 ids.
+WARNING 15:34:49:106 BitSetIdGenerator: objectId 1 in DB is less than minimum ID of 268435456.
+INFO 15:34:49:106 BitSetIdGenerator: 102912 id's available.
+INFO 15:34:49:119 ServerVarManager: loaded 0 variables.
+INFO 15:34:49:122 BossSpawnManager: loaded 0 boss spawns.
+INFO 15:34:50:680 TerritoryTable: loaded 160 territories for 18803 regions.
+INFO 15:34:52:722 WorldZoneTable: loaded 9 world zones for 31887 regions.
+INFO 15:34:52:724 ConditionParser: initializable.
+WARNING 15:34:53:277 SkillTable: detected once the file D:\Documents\Documents\Java\Tera Server\.\data\skills\summon_skills\deprecated.zip
+INFO 15:34:53:294 SkillTable: loaded 4613 skills for 19 classes.
+INFO 15:34:53:735 ItemTable: loaded 10137 items.
+INFO 15:34:53:747 Race: race appearances initializable.
+INFO 15:34:53:753 PlayerTable: loaded 104 player templates.
+WARNING 15:34:53:964 DropTable: not found items [50048]
+INFO 15:34:53:964 DropTable: load drop for 407 npcs and 126 for resourse.
+INFO 15:34:53:968 TownTable: initialized.
+WARNING 15:34:53:983 NpcDialogTable: detected once the file D:\Documents\Documents\Java\Tera Server\.\data\dialogs\dialogs.txt
+INFO 15:34:54:004 NpcDialogTable: loaded 83 dialogs.
+INFO 15:34:54:008 MessagePackageTable: loaded 34 message packages.
+INFO 15:34:54:039 ConfigAITable: loaded 45 npc ai configs.
+INFO 15:34:54:051 NpcAppearanceTable: initialized. Loaded 59 appearances.
+WARNING 15:34:54:102 NpcTable: found duplicate npc template NpcTemplate npcId = 7011, exp = 1000000, attack = 400000, defense = 3500, owerAttack = 3000, owerDefense = 30000, level = 60, aggro = 120, factionRange = 0, name = Linyphi, title = , factionId = , type = 51, isRaid = false, canDrop = false, drop = null, minions = null, dialog = null, geomRadius = 90.0, geomHeight = 160.0, npcType = RAID_BOSS in file .\data\npcs\raid_boss.xml
+WARNING 15:34:54:148 NpcTable: detected once the file D:\Documents\Documents\Java\Tera Server\.\data\npcs\summons\playable_summons.zip
+INFO 15:34:54:155 NpcTable: loaded  815 npcs.
+INFO 15:34:54:164 ResourseTable: loaded  253 resourses.
+INFO 15:34:54:175 MinionTable: loaded 303 minions for 42 npcs.
+INFO 15:34:54:176 RegenTaskManager: initializable.
+INFO 15:34:54:183 Formulas: initialized.
+INFO 15:34:54:184 EffectTaskManager: initialized.
+INFO 15:34:54:466 ObjectEventManager: initialized.
+INFO 15:34:54:467 MoveTaskManager: initialized.
+INFO 15:34:55:013 SpawnTable: loaded 19474 spawns for 616 npcs and 2013 spawns for 60 resourses.
+INFO 15:34:55:017 GeoMap3D: start fast import geodata_1.dat
+INFO 15:34:55:749 GeoMap3D: import ended. load 1867238 quards.
+WARNING 15:34:55:750 GameServer: NullPointerException : null : stack trace:
+tera.gameserver.manager.GeoManager.getQuards(GeoManager.java:137)
+tera.gameserver.manager.GeoManager.<init>(GeoManager.java:89)
+tera.gameserver.manager.GeoManager.getInstance(GeoManager.java:31)
+tera.gameserver.GameServer.run(GameServer.java:234)
+

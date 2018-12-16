@@ -1,0 +1,268 @@
+INFO 13:23:13:138 ServerControl: open server socket on 2101 port.
+INFO 13:23:13:148 ExecutorManager: initialized.
+INFO 13:23:14:416 CleaningManager: delete 0 reuses from a character_skill_reuses.
+INFO 13:23:14:417 CleaningManager: delete 0 spawns from a boss_spawn.
+INFO 13:23:14:418 CleaningManager: delete 0 appearances from a character_appearances.
+INFO 13:23:14:420 CleaningManager: delete 0 effects from a character_save_effects.
+INFO 13:23:14:421 CleaningManager: delete 0 inventors from a character_inventors.
+INFO 13:23:14:422 CleaningManager: delete 0 skills from a character_skills.
+INFO 13:23:14:423 CleaningManager: delete 0 hotkeys from a character_hotkey.
+INFO 13:23:14:424 CleaningManager: delete 0 chars from a character_friends.
+INFO 13:23:14:426 CleaningManager: delete 0 friends from a character_friends.
+INFO 13:23:14:426 CleaningManager: delete 0 settings from a character_settings.
+INFO 13:23:14:427 CleaningManager: delete 0 empty items from a items.
+INFO 13:23:14:428 CleaningManager: delete 0 no owner items from a items.
+INFO 13:23:14:430 CleaningManager: delete 0 no owner guild items from a items.
+INFO 13:23:14:461 CleaningManager: create buffer table items.
+INFO 13:23:14:464 CleaningManager: copy 6 items to buffer_items.
+INFO 13:23:14:465 CleaningManager: delete 0 no owner items from a buffer_items.
+INFO 13:23:14:484 CleaningManager: drop buffer table items.
+INFO 13:23:14:485 CleaningManager: delete 0 from a quests.
+INFO 13:23:14:486 CleaningManager: delete 0 from a quest variables.
+INFO 13:23:14:487 CleaningManager: delete 0 from a guild ranks.
+INFO 13:23:14:679 ClientPacketType: client packets prepared.
+INFO 13:23:14:750 EffectParser: initialized.
+INFO 13:23:14:762 RandomManager: initialized.
+INFO 13:23:14:763 IdFactory: prepare npc ids...
+INFO 13:23:14:772 BitSetIdGenerator: 102912 id's available.
+INFO 13:23:14:773 IdFactory: prepare objects ids...
+INFO 13:23:14:773 BitSetIdGenerator: 102912 id's available.
+INFO 13:23:14:773 IdFactory: prepare players ids...
+INFO 13:23:14:780 BitSetIdGenerator: extracted 1 ids.
+INFO 13:23:14:781 BitSetIdGenerator: 102912 id's available.
+INFO 13:23:14:781 IdFactory: prepare guilds ids...
+INFO 13:23:14:782 BitSetIdGenerator: extracted 0 ids.
+INFO 13:23:14:782 BitSetIdGenerator: 102912 id's available.
+INFO 13:23:14:783 IdFactory: prepare item ids...
+INFO 13:23:14:784 BitSetIdGenerator: extracted 6 ids.
+INFO 13:23:14:784 BitSetIdGenerator: 102912 id's available.
+INFO 13:23:14:827 ServerVarManager: loaded 0 variables.
+INFO 13:23:14:834 BossSpawnManager: loaded 0 boss spawns.
+INFO 13:23:17:693 TerritoryTable: loaded 160 territories for 18803 regions.
+INFO 13:23:21:186 WorldZoneTable: loaded 12 world zones for 31986 regions.
+INFO 13:23:21:188 ConditionParser: initializable.
+WARNING 13:23:22:044 SkillTable: detected once the file D:\Documents\Documents\Java\Tera Server\.\data\skills\summon_skills\deprecated.zip
+INFO 13:23:22:070 SkillTable: loaded 4613 skills for 19 classes.
+INFO 13:23:22:831 ItemTable: loaded 10138 items.
+INFO 13:23:22:849 Race: race appearances initializable.
+INFO 13:23:22:860 PlayerTable: loaded 104 player templates.
+WARNING 13:23:23:439 DropTable: not found items [50048]
+INFO 13:23:23:439 DropTable: load drop for 407 npcs and 126 for resourse.
+INFO 13:23:23:449 TownTable: initialized.
+WARNING 13:23:23:490 NpcDialogTable: detected once the file D:\Documents\Documents\Java\Tera Server\.\data\dialogs\dialogs.txt
+INFO 13:23:23:543 NpcDialogTable: loaded 88 dialogs.
+INFO 13:23:23:550 MessagePackageTable: loaded 34 message packages.
+INFO 13:23:23:621 ConfigAITable: loaded 45 npc ai configs.
+INFO 13:23:23:652 NpcAppearanceTable: initialized. Loaded 59 appearances.
+WARNING 13:23:23:870 NpcTable: detected once the file D:\Documents\Documents\Java\Tera Server\.\data\npcs\summons\playable_summons.zip
+INFO 13:23:23:885 NpcTable: loaded  816 npcs.
+INFO 13:23:23:909 ResourseTable: loaded  253 resourses.
+INFO 13:23:23:930 MinionTable: loaded 303 minions for 42 npcs.
+INFO 13:23:23:931 RegenTaskManager: initializable.
+INFO 13:23:23:942 Formulas: initialized.
+INFO 13:23:23:944 EffectTaskManager: initialized.
+INFO 13:23:24:495 ObjectEventManager: initialized.
+INFO 13:23:24:496 MoveTaskManager: initialized.
+INFO 13:23:25:936 SpawnTable: loaded 19515 spawns for 617 npcs and 2013 spawns for 60 resourses.
+INFO 13:23:25:950 GeoMap3D: start fast import geodata_1.dat
+INFO 13:23:26:766 GeoMap3D: import ended. load 1867238 quards.
+INFO 13:23:26:767 GeoMap3D: start fast import geodata_2.dat
+INFO 13:23:26:929 GeoMap3D: import ended. load 440227 quards.
+INFO 13:23:26:929 GeoMap3D: start fast import geodata_3.dat
+INFO 13:23:27:026 GeoMap3D: import ended. load 58040 quards.
+INFO 13:23:27:027 GeoManager: initialized.
+INFO 13:23:27:041 ItemExecutorManager: loaded 0 executor items.
+INFO 13:23:27:062 CommandManager: loaded 94 commands.
+INFO 13:23:27:082 SkillLearnManager: loaded 950 skill learn's for 8 clases.
+INFO 13:23:27:087 AnnounceManager: loaded 0 start announces and 0 running announces.
+INFO 13:23:27:091 AccountManager: initialized.
+INFO 13:23:27:097 GuildManager: loaded 0 guilds.
+INFO 13:23:27:613 QuestManager: loaded 455 quests.
+INFO 13:23:27:620 OnlineManager: initialized.
+INFO 13:23:27:626 GameLogManager: initialized.
+INFO 13:23:27:778 Region: next battle "Veritas District" in 2018.12.16 15:00.
+INFO 13:23:27:782 Region: next battle "Ostgarath" in 2018.12.16 15:00.
+INFO 13:23:27:785 Region: next battle "Val Palrada" in 2018.12.15 19:00.
+INFO 13:23:27:788 Region: next battle "Val Aureum" in 2018.12.15 19:00.
+INFO 13:23:27:789 EventManager: loaded 5 events.
+INFO 13:23:28:040 EventManager: the nearest event in 34 minutes.
+INFO 13:23:28:055 PlayerManager: initialized.
+INFO 13:23:28:087 Network: started.
+INFO 13:23:28:087 GameServer: started.
+WARNING 13:23:45:909 ClientConnection: not found packet for opcode B43D
+20 00 BC 4D 02 00 08 00 08 00 14 00 00 00 00 00    ..¼M............
+32 4D 04 00 14 00 00 00 01 00 00 00 C4 57 04 00    2M..........ÄW..
+3F 00 3D B4 13 00 1F 00 20 00 00 00 00 00 00 08    ?.=´............
+00 00 00 61 00 64 00 6D 00 69 00 6E 00 00 00 32    ...a.d.m.i.n...2
+31 32 33 32 66 32 39 37 61 35 37 61 35 61 37 34    1232f297a57a5a74
+33 38 39 34 61 30 65 34 61 38 30 31 66 63 33       3894a0e4a801fc3.
+
+INFO 13:23:45:918 AccountManager: authed admin
+WARNING 13:23:47:903 ClientConnection: not found packet for opcode B54D
+DD 00 4D B5 37 00 59 00 AD 00 AF 3F 00 00 80 00    Ý.Mµ7.Y.­.¯?...
+00 00 80 07 00 00 38 04 00 00 00 80 07 00 00 38    .....8.......8
+04 00 00 02 00 00 00 C0 0D 00 00 38 04 00 00 04    .......À...8....
+00 00 00 08 00 00 00 57 00 69 00 6E 00 64 00 6F    .......W.i.n.d.o
+00 77 00 73 00 20 00 38 00 20 00 28 00 78 00 36    .w.s...8...(.x.6
+00 34 00 29 00 20 00 00 00 49 00 6E 00 74 00 65    .4.).....I.n.t.e
+00 6C 00 28 00 52 00 29 00 20 00 43 00 6F 00 72    .l.(.R.)...C.o.r
+00 65 00 28 00 54 00 4D 00 29 00 20 00 69 00 37    .e.(.T.M.)...i.7
+00 2D 00 34 00 37 00 31 00 30 00 48 00 51 00 20    .-.4.7.1.0.H.Q..
+00 43 00 50 00 55 00 20 00 40 00 20 00 32 00 2E    .C.P.U...@...2..
+00 35 00 30 00 47 00 48 00 7A 00 00 00 4E 00 56    .5.0.G.H.z...N.V
+00 49 00 44 00 49 00 41 00 20 00 47 00 65 00 46    .I.D.I.A...G.e.F
+00 6F 00 72 00 63 00 65 00 20 00 47 00 54 00 58    .o.r.c.e...G.T.X
+00 20 00 38 00 37 00 30 00 4D 00 00 00             ...8.7.0.M......
+
+WARNING 13:23:52:172 ClientConnection: not found packet for opcode 5A77
+22 09 77 5A 08 00 1A 09 08 97 56 12 04 32 23 43    ".wZ.....V..2#C
+50 52 33 08 97 56 52 20 53 00 31 00 43 00 68 00    PR3.VR.S.1.C.h.
+61 00 74 00 43 00 6F 00 6E 00 74 00 72 00 6F 00    a.t.C.o.n.t.r.o.
+6C 00 6C 00 65 00 72 00 A2 01 05 08 F3 65 28 00    l.l.e.r.¢...óe(.
+F0 01 00 C0 02 05 52 63 08 97 56 52 46 53 00 31    ð..À..Rc.VRFS.1
+00 4D 00 69 00 6E 00 69 00 6D 00 61 00 70 00 43    .M.i.n.i.m.a.p.C
+00 6F 00 6E 00 74 00 72 00 6F 00 6C 00 6C 00 65    .o.n.t.r.o.l.l.e
+00 72 00 5F 00 53 00 31 00 4D 00 69 00 6E 00 69    .r._.S.1.M.i.n.i
+00 6D 00 61 00 70 00 4F 00 70 00 74 00 69 00 6F    .m.a.p.O.p.t.i.o
+00 6E 00 A2 01 0F 78 DA E3 38 9F 2A C4 C3 88 04    .n.¢..xÚã8*ÄÃ.
+00 15 5A 01 67 F0 01 01 C0 02 11 52 A2 10 08 97    ..Z.gð..À..R¢..
+56 52 1E 53 00 31 00 55 00 49 00 5F 00 47 00 46    VR.S.1.U.I._.G.F
+00 78 00 4D 00 61 00 6E 00 61 00 67 00 65 00 72    .x.M.a.n.a.g.e.r
+00 A2 01 F4 0F 78 DA 8D 59 CD 8B 5C 45 10 EF A3    .¢.ô.xÚYÍ\E.ï£
+3C 44 82 84 B8 84 18 96 90 09 21 04 09 BB 21 88    <D¸..!..»!
+48 92 F7 66 93 9D CD CE 64 27 3B 9B E4 A8 93 F9    H÷fÍÎd';ä¨ù
+C8 0E 3B 5F BC 99 89 59 BD 48 4E 22 0A 1E 24 98    È.;_¼Y½HN"..$
+80 18 D0 83 A8 7F 80 5E 24 07 D1 15 E2 D9 A3 57    .Ð¨^$.Ñ.âÙ£W
+8F 39 7A B4 EA D7 DD D3 9F 6F 92 2C FB 91 ED EA    9z´ê×ÝÓo,ûíê
+EA AA 5F 55 FD AA BA 37 59 4A 92 AA D8 12 EB 62    êª_Uýªº7YJªØ.ëb
+43 5C 17 87 C4 9B 82 FE 95 F8 4B 72 2C 79 AD 26    C\.ÄþøKr,y­&
+3A 62 42 1F 4D 71 97 7E 72 56 4F 26 47 52 71 47    :bB.Mq~rVO&GRqG
+0C C5 48 E4 62 40 12 7D D1 13 53 B1 2F A5 BE CE    .ÅHäb@.}Ñ.S±/¥¾Î
+E6 3A 32 DA 39 A4 CF 2E D6 8D 8E 07 59 72 2A 59    æ:2Ú9¤Ï.Ö.Yr*Y
+6A D0 4A 9F 3E 5B B4 C6 3F E7 E2 1E BE 3A 67 9D    jÐJ>[´Æ?çâ.¾:g
+4D 8E DB 72 65 B1 4B E7 E5 F4 C9 FF 8B 49 97 E9    MÛre±KçåôÉÿIé
+77 1D 5A E7 D5 17 48 93 1F 0D B1 47 B6 F5 E9 A3    w.ZçÕ.H..±G¶õé£
+42 DE 4C C5 26 49 29 3F DE 67 3F 2A 99 2B 75 9B    BÞLÅ&I)?Þg?*+u
+BE 0F 45 9B 64 3F 70 75 1D 4F 0E 35 E8 34 46 84    ¾.Ed?pu.O.5è4F
+AD 9C 69 7F AB AC E5 F7 8C D7 6B 64 07 EF AE 01    ­i«¬å÷×kd.ï®.
+95 19 AF 77 BB D7 B2 52 B7 FB 63 96 2C 27 AF 6F    .¯w»×²R·ûc,'¯o
+D0 6F EF 61 6D 0A 3D CA 8E 03 D8 91 32 62 37 68    Ðoïam.=Ê.Ø2b7h
+17 47 65 2A AE 91 C4 8C 64 86 40 DF B1 84 E4 A4    .Ge*®Äd@ß±ä¤
+DF 63 E5 73 05 B2 13 3F 8A C0 CA C7 C7 F3 EF 9B    ßcås.².?ÀÊÇÇóï
+1F F2 4B A5 FA E7 6F 5C 62 FB 18 D9 11 72 62 17    .òK¥úço\bû.Ù.rb.
+9E 84 68 D6 A1 8D 33 21 8E D3 72 CA A7 DE 86 54    hÖ¡3!ÓrÊ§ÞT
+07 68 49 BB 0A 51 05 F6 12 8D 05 52 94 C7 19 FD    .hI».Q.ö..RÇ.ý
+96 B5 B6 83 FD 3B F0 AF BD 68 3F C5 C6 48 55 69    µ¶ý;ð¯½h?ÅÆHUi
+FD 6E A4 1A 78 6F 0F D9 3E B6 E2 42 AB E7 92 13    ýn¤.xo.Ù>¶âB«ç.
+EB E4 07 E7 47 5B D8 D9 57 78 DE 5B C9 B2 D9 B1    ëä.çG[ØÙWxÞ[É²Ù±
+0E 54 67 A4 B5 50 1E 91 1A D1 D9 03 92 1B AA 5A    .Tg¤µP..ÑÙ..ªZ
+2B 94 A6 48 D5 61 25 C7 73 8D D6 FB 7E 86 9C 48    +¦HÕa%ÇsÖû~H
+0E CB 48 B5 50 59 75 44 75 1A F8 7C 85 F4 B7 10    .ËHµPYuDu.ø|ô·.
+EB A1 5E AD B0 CF EF 66 C9 99 E4 18 23 2E F7 F1    ë¡^­°ÏïfÉä.#.÷ñ
+39 0B 64 4F 27 47 4D FD 54 81 4E 0E 2F 86 3E CE    9.dO'GMýTN./>Î
+A4 F5 96 92 93 AC C3 F6 F7 90 E1 41 4C 48 6B 05    ¤õ¬Ãö÷áALHk.
+98 30 22 91 CA FB EB D9 B3 8B 54 59 47 52 96 34    0"ÊûëÙ³TYGR4
+75 B3 43 DA 26 64 0D D7 5A 97 F6 A0 06 FF 60 4B    u³CÚ&d.×Zö .ÿ`K
+0F 50 61 46 67 0D BE 68 3B 7C 3B 8D DC 06 3C 9F    .PaFg.¾h;|;Ü.<
+11 1F 36 55 A6 3A B2 47 93 57 65 46 6D 19 4E D0    ..6U¦:²GWeFm.NÐ
+C8 80 03 F7 15 86 03 92 E0 8A ED 91 F4 30 1A 2F    È.÷..àíô0./
+19 6D CE 53 C6 FE BE 94 59 56 2C 45 39 B2 01 EC    .mÎSÆþ¾YV,E9².ì
+3B F3 7A 96 9A 2C B6 71 2A 46 D6 FE 54 AC 44 CE    ;óz,¶q*FÖþT¬DÎ
+E2 8C 6C D3 9E 56 DC 1E F2 3F 26 53 A5 EF 41 1E    âlÓVÜ.ò?&S¥ïA.
+BD 9D 9C 89 C9 DA 75 C2 F9 37 16 37 75 5D 01 9D    ½ÉÚuÂù7.7u].
+CF B2 E4 7C 72 2A B6 53 47 CE DB A5 CF BB 90 9C    Ï²ä|r*¶SGÎÛ¥Ï»
+8E ED BA 42 78 4D 3D 64 5E C6 CE D8 BE 95 80 63    íºBxM=d^ÆÎØ¾c
+4C 36 DC 02 DA ED 30 0F 9C 9C B1 A5 B8 BB 4D 23    L6Ü.Úí0.±¥¸»M#
+4C 9A 23 6B 72 D5 85 33 54 8D C1 E7 CB 4C F6 D7    L#krÕ3TÁçËLö×
+26 AA 65 14 FA 03 4E 93 7D 73 AC 6A 23 64 56 93    &ªe.ú.N}s¬j#dV
+7B 12 CD 99 8F 26 31 55 3C AB 0A E4 09 45 96 5F    {.Í&1U<«.ä.E_
+27 D9 01 ED 31 DC 9D C2 4E CE E2 7D AC 0C 7D 7B    'Ù.í1ÜÂNÎâ}¬.}{
+28 EF 0C 07 17 68 27 9B AF 5B 33 47 81 14 E1 32    (ï...h'¯[3G.á2
+05 22 7D 58 3B 0E 70 31 6C 10 C9 83 95 E4 64 2C    ."}X;.p1l.Éäd,
+0F FC 78 60 CF 03 8E C4 27 99 46 49 7B 6D 33 C7    .üx`Ï.Ä'FI{m3Ç
+8E B2 C4 A9 55 62 24 9F E7 2A 88 55 5F 32 92 93    ²Ä©Ub$ç*U_2
+CD 8B F0 E7 EC 4F 31 7D 0D AC 9E 74 80 13 0C D3    ÍðçìO1}.¬t..Ó
+CA 99 E6 A6 3B CB 55 94 2D 64 FB 1A CE EE 11 83    Êæ¦;ËU-dû.Îî.
+C9 53 FC 4A 73 E4 A9 BB 98 8E B5 06 24 BD EE F2    ÉSüJsä©»µ.$½îò
+4E 72 36 94 90 59 3E 55 AC 1F F4 2E 68 7F 0E AE    Nr6Y>U¬.ô.h.®
+D6 BC C4 4C 7D A7 98 13 29 CA EB CA 9F 48 6D 1C    Ö¼ÄL}§.)ÊëÊHm.
+49 5E 91 88 8E 65 2F A8 5E 2C AD AE 96 32 66 63    I^e/¨^,­®2fc
+AE E8 B1 BD 07 1A 0F 30 E7 95 55 FF AA D0 89 6D    ®è±½...0çUÿªÐm
+44 72 E2 F7 1D CA 1F 7D EE B6 CA 22 AC 7F 9A 96    Drâ÷.Ê.}î¶Ê"¬
+FE FE F6 7C 6A 7A 2B F7 E8 82 A9 84 10 8A C9 B0    þþö|jz+÷è©.É°
+BE BB 8A 43 ED 38 38 08 91 7E 33 3B 70 8C EF 85    ¾»Cí88.~3;pï
+11 A0 18 DD 80 4C 8B 3A 9D C3 FF 3A 8A 4E B5 15    . .ÝL:Ãÿ:Nµ.
+CC 87 8A 5F 72 B2 49 CE AD 61 BD CA 55 8E AC 95    Ì_r²IÎ­a½ÊU¬
+2B 8F 1F FD 93 96 3E 3A FC 4E 2A E7 1C 3F 13 32    +.ý>:üN*ç.?.2
+27 13 A0 73 89 AD FA 2F 95 8C AF 71 A9 A2 72 B4    '. s­ú/¯q©¢r´
+5C 23 DC A5 11 A1 2E 9A 89 AB 24 D1 52 5C E3 A1    \#Ü¥.¡.«$ÑR\ã¡
+0E B9 8F 2F 73 7C DD 2A 1D 11 76 BD E8 DD 86 27    .¹/s|Ý*..v½èÝ'
+99 9E C2 36 CA 56 94 A7 B1 09 2A 32 3B 12 EF 57    Â6ÊV§±.*2;.ïW
+61 4F 7B EE 09 33 E0 1D B0 C2 24 38 DB C4 76 D1    aO{î.3à.°Â$8ÛÄvÑ
+7C 77 1B 9E B2 54 0D 93 DE 8A E5 E9 E5 94 F5 6C    |w.²T.Þåéåõl
+A9 BB 54 1F 8C 6B 49 AD AE BE 97 95 1E 3F FA 13    ©»T.kI­®¾.?ú.
+68 DB 78 6C A9 89 D1 E4 9D C3 5D DF A7 73 7F EC    hÛxl©ÑäÃ]ß§sì
+5D 72 0A DC C3 09 39 7D 37 76 C8 5A A9 23 6E BD    ]r.ÜÃ.9}7vÈZ©#n½
+48 2E D3 5D 00 BD 3A AC 83 1A 50 97 6C 14 E5 20    H.Ó].½:¬.Pl.å.
+CA BD 06 A2 A2 27 AE 9A 99 CA B5 6E 4C 9D B6 4C    Ê½.¢¢'®ÊµnL¶L
+1D BD B0 1D 32 A0 AA 58 77 5E 5E 09 26 70 37 8A    .½°.2 ªXw^^.&p7
+D1 7E 00 8D BF 64 F2 AE 24 B3 9E 7D B6 A6 35 AB    Ñ~.¿dò®$³}¶¦5«
+AF FA D6 8D C0 C1 2D 42 22 32 11 04 DE 70 ED DD    ¯úÖÀÁ-B"2..ÞpíÝ
+8F 49 3A FC 50 56 F6 85 DA E4 4A 1B 91 B1 F1 9E    I:üPVöÚäJ.±ñ
+04 76 86 77 C4 3A F6 CA DA B1 F9 FB 89 9A 42 E5    .vwÄ:öÊÚ±ùûBå
+44 D1 50 77 50 7D 0B 1F 86 EF 08 E8 9B BE B4 66    DÑPwP}..ï.è¾´f
+55 59 CB 8E 3C 65 AC 8B C2 CB 32 A6 3E 65 8D D0    UYË<e¬ÂË2¦>eÐ
+ED C4 6E 1E E8 6A 86 55 23 73 2C 49 30 CB 6C C3    íÄn.èjU#s,I0ËlÃ
+93 BD 02 1D E6 9E 53 87 35 BB 2F 88 3A 9F 29 73    ½..æS5»/:)s
+DE C9 73 AB FB EB 3A 2B C3 AF 29 B2 AE 8F 4C CE    ÞÉs«ûë:+Ã¯)²®LÎ
+8B 7B 23 3A 70 F1 BE E8 3B C5 43 46 EB 67 74 41    {#:pñ¾è;ÅCFëgtA
+33 1F 15 DE BE A8 37 34 90 DF CE 6C A9 6B 8F BA    3..Þ¾¨74ßÎl©kº
+EC B6 3F 77 EA 35 CA 10 9B E3 9A A8 39 7E DB 69    ì¶?wê5Ê.ã¨9~Ûi
+AA 8C F4 33 D5 97 2E C3 9E A0 5B E1 D5 43 F2 D5    ªô3Õ.Ã [áÕCòÕ
+0E E6 A1 8E 3B 19 3D 67 FE 7A 98 F1 7C B7 36 CF    .æ¡;.=gþzñ|·6Ï
+18 9E 79 66 73 0C 03 C6 3D CB 36 8F 81 89 DB 61    .yfs..Æ=Ë6Ûa
+42 56 FA 17 AC 2B 6F 0B 51 7C BF E3 77 9E 03 B0    BVú.¬+o.Q|¿ãw.°
+8D 7D 1B 95 96 AA 49 E4 27 D6 F4 15 34 6D AA 3C    }.ªIä'Öô.4mª<
+92 3C 32 B4 5F AF 20 F5 5B CA F9 B6 39 CF B6 11    <2´_¯.õ[Êù¶9Ï¶.
+6C 9F 5A 12 32 F3 D9 EE 1A F2 4D F6 B4 20 6B CF    lZ.2óÙî.òMö´.kÏ
+25 27 62 32 92 DF 5A 36 BB 8D 51 E3 A9 44 70 A6    %'b2ßZ6»Qã©Dp¦
+EA 79 A8 EA 75 86 69 3B 3E D7 9D CF 38 93 CD 1E    êy¨êui;>×Ï8Í.
+39 BF 6A DE 5F 68 DD 5A 72 E1 65 F7 2D B0 98 7C    9¿jÞ_hÝZráe÷-°|
+B4 7B 96 9C 2C FB B1 17 1A 9D A5 78 DF E8 83 F3    ´{,û±..¥xßèó
+F6 84 89 97 93 51 CE 2C A0 6F 22 3B 88 F8 08 B9    öQÎ, o";ø.¹
+35 7F 99 D3 9D 86 B4 BA DE 2C 60 13 EA 9D 86 1B    5Ó´ºÞ,`.ê.
+3B E1 2B 1F F9 14 D7 65 C7 C3 89 01 B1 A7 BB A3    ;á+.ù.×eÇÃ.±§»£
+01 5F C6 40 A2 70 17 45 CE F7 E9 8A 62 94 7D B1    ._Æ@¢p.EÎ÷éb}±
+E0 8D D8 99 E5 6C 9C B7 31 4D 7A 8C F7 24 95 B8    àØål·1Mz÷$¸
+E3 16 BE 68 97 E4 33 7E 4F 0E D9 77 13 F1 E2 3E    ã.¾hä3~O.Ùw.ñâ>
+A2 91 F3 19 C2 C4 89 67 BC D6 BC B6 9C 28 A9 09    ¢ó.ÂÄg¼Ö¼¶(©.
+5F DF 5F 9B 7A FD 57 5E 7F 9A F1 DB C9 4D BC 5F    _ß_zýW^ñÛÉM¼_
+05 BC 4B 36 98 95 90 23 C6 A9 2B B1 6E E3 F6 85    .¼K6#Æ©+±nãö
+9A DD A8 BA 8C 84 F4 56 C6 A5 A2 58 CB 7A 19 B6    Ý¨ºôVÆ¥¢XËz.¶
+FA 4A 7C 4F 1D D8 05 EF 57 38 63 4C 68 CA F7 97    úJ|O.Ø.ïW8cLhÊ÷
+EB 6A CE EE 62 FE 68 C6 67 35 E2 6D 73 86 E1 9B    ëjÎîbþhÆg5âmsá
+86 9A 0E 3A 6E CF 75 A4 6B F8 DA C1 64 E3 48 3B    .:nÏu¤køÚÁdãH;
+EF 1D 65 51 F0 FE 7D 32 93 CC 4D 77 BA B2 3D 15    ï.eQðþ}2ÌMwº²=.
+E8 57 34 F5 3A 9A AB 19 B6 E0 85 C2 9A 06 CC 8A    èW4õ:«.¶àÂ.Ì
+17 47 67 22 EC 60 32 2A 7C 03 A4 48 DE 52 B7 C4    .Gg"ì`2*|.¤HÞR·Ä
+91 3B 31 48 C4 32 FF BE D1 70 67 9A A7 A9 8C B7    ;1HÄ2ÿ¾Ñpg§©·
+F7 76 60 A4 0A EC A7 2C 4E 11 D3 09 5E 93 3A C4    ÷v`¤.ì§,N.Ó.^:Ä
+DD B9 DA EB F7 E0 06 F8 B0 17 E5 0E 39 CB C8 9A    Ý¹Úë÷à.ø°.å.9ËÈ
+CF 71 9E FD 62 E8 4E D3 15 75 37 9E A9 FC 1B 90    ÏqýbèNÓ.u7©ü.
+DC 87 C1 4D 4C 4A 19 AB E3 8C 52 F1 66 C4 7D 44    ÜÁMLJ.«ãRñfÄ}D
+7B 17 B2 AC B5 E3 DC E4 E5 1B E9 55 F8 C7 9D 6E    {.²¬µãÜäå.éUøÇn
+C1 AB 37 DE 52 F5 F4 C5 D9 BD 3E BF DF 86 6C 9D    Á«7ÞRõôÅÙ½>¿ßl
+E3 F4 1E 59 37 20 1C 66 38 3B A8 66 DC 2B 9B B8    ãô.Y7..f8;¨fÜ+¸
+75 16 33 E4 13 64 54 0A 8D 43 F5 32 1B B9 7B 22    u.3ä.dT.Cõ2.¹{"
+6A 46 A6 19 BD CB 2E 67 F6 EB 42 A6 FE D6 62 D6    jF¦.½Ë.göëB¦þÖbÖ
+EB E9 92 F8 1F 73 DB 49 41 F0 01 01 C0 02 B4 37    ëéø.sÛIAð..À.´7
+52 50 08 97 56 52 3A 53 00 31 00 47 00 61 00 6D    RP.VR:S.1.G.a.m
+00 65 00 4F 00 70 00 74 00 69 00 6F 00 6E 00 5F    .e.O.p.t.i.o.n._
+00 53 00 31 00 49 00 6E 00 74 00 65 00 72 00 66    .S.1.I.n.t.e.r.f
+00 61 00 63 00 65 00 47 00 72 00 6F 00 75 00 70    .a.c.e.G.r.o.u.p
+00 A2 01 08 08 CF 6D 1D 00 00 80 3F F0 01 00 C0    .¢...Ïm...?ð..À
+02 08                                              ................
+
+WARNING 13:23:52:173 ClientConnection: not found packet for opcode 68E8
+09 00 E8 68 00 00 00 10 00                         ..èh............
+

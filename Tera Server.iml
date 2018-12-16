@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="EclipseModuleManager">
+    <libelement value="jar://$USER_HOME$/Desktop/JavaSabr-stera-feb62cf123fd/JavaSabr-stera-feb62cf123fd/Tera Server/libs/bonecp-0.7.1.RELEASE.jar!/" />
+    <libelement value="jar://$USER_HOME$/Desktop/JavaSabr-stera-feb62cf123fd/JavaSabr-stera-feb62cf123fd/Tera Server/libs/gnu-crypto-2.1.0.jar!/" />
+    <libelement value="jar://$USER_HOME$/Desktop/JavaSabr-stera-feb62cf123fd/JavaSabr-stera-feb62cf123fd/Tera Server/libs/google-collect-1.0.jar!/" />
+    <libelement value="jar://$USER_HOME$/Desktop/JavaSabr-stera-feb62cf123fd/JavaSabr-stera-feb62cf123fd/Tera Server/libs/mysql-connector-java-5.1.17.jar!/" />
+    <libelement value="jar://$USER_HOME$/Desktop/JavaSabr-stera-feb62cf123fd/JavaSabr-stera-feb62cf123fd/Tera Server/libs/rlib.jar!/" />
+    <libelement value="jar://$USER_HOME$/Desktop/JavaSabr-stera-feb62cf123fd/JavaSabr-stera-feb62cf123fd/Tera Server/libs/slf4j-api-1.6.6.jar!/" />
+    <libelement value="jar://$USER_HOME$/Desktop/JavaSabr-stera-feb62cf123fd/JavaSabr-stera-feb62cf123fd/Tera Server/libs/stera.jar!/" />
+    <src_description expected_position="0">
+      <src_folder value="file://$USER_HOME$/Desktop/JavaSabr-stera-feb62cf123fd/JavaSabr-stera-feb62cf123fd/Tera Server/java/game" expected_position="0" />
+    </src_description>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="false">
+    <output url="file://$USER_HOME$/Desktop/JavaSabr-stera-feb62cf123fd/JavaSabr-stera-feb62cf123fd/Tera Server/bin" />
+    <exclude-output />
+    <content url="file://$USER_HOME$/Desktop/JavaSabr-stera-feb62cf123fd/JavaSabr-stera-feb62cf123fd/Tera Server">
+      <sourceFolder url="file://$USER_HOME$/Desktop/JavaSabr-stera-feb62cf123fd/JavaSabr-stera-feb62cf123fd/Tera Server/java/game" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="module-library">
+      <library name="bonecp-0.7.1.RELEASE.jar">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Desktop/JavaSabr-stera-feb62cf123fd/JavaSabr-stera-feb62cf123fd/Tera Server/libs/bonecp-0.7.1.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="gnu-crypto-2.1.0.jar">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Desktop/JavaSabr-stera-feb62cf123fd/JavaSabr-stera-feb62cf123fd/Tera Server/libs/gnu-crypto-2.1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="google-collect-1.0.jar">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Desktop/JavaSabr-stera-feb62cf123fd/JavaSabr-stera-feb62cf123fd/Tera Server/libs/google-collect-1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="mysql-connector-java-5.1.17.jar">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Desktop/JavaSabr-stera-feb62cf123fd/JavaSabr-stera-feb62cf123fd/Tera Server/libs/mysql-connector-java-5.1.17.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="rlib.jar">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Desktop/JavaSabr-stera-feb62cf123fd/JavaSabr-stera-feb62cf123fd/Tera Server/libs/rlib.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="slf4j-api-1.6.6.jar">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Desktop/JavaSabr-stera-feb62cf123fd/JavaSabr-stera-feb62cf123fd/Tera Server/libs/slf4j-api-1.6.6.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="stera.jar">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Desktop/JavaSabr-stera-feb62cf123fd/JavaSabr-stera-feb62cf123fd/Tera Server/libs/stera.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>

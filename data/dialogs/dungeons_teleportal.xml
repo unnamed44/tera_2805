@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<list>
+	<!-- Balder's temple -->
+	<npc id="1501" type="230" >
+		<link name="Balder's Temple" icon="GREEN" >
+			<reply name="ReplyCityTeleport" x="8468.0605" y="61782.4570" z="703.6260" heading="22532" id="1" />
+		</link>
+		<link name="Balder's Temple (Hard)" icon="GREEN" >
+			<reply name="ReplyCityTeleport" x="-5335.856" y="7572.0303" z="2175.4172" heading="16920" id="0" />
+		</link>	
+		<link name="Return to nearby town" icon="GREEN">
+			<reply name="ReplyCityTeleport" x="-14037" y="55082" z="640" heading="51016" id="1" /><!-- bastion -->
+		</link>
+	</npc>
+
+	<!-- Kelsaik's Nest -->
+	<npc id="1502" type="251" >
+		<link name="Kelsaik's Nest" icon="GREEN" >
+			<reply name="ReplyCityTeleport" x="62617" y="149195" z="-9474" heading="52918" id="2" />
+		</link>
+		<link name="Return to nearby town" icon="GREEN">
+			<reply name="ReplyCityTeleport" x="-5071.3755" y="62254.766" z="6020.389" heading="51016" id="2" /><!-- habere -->
+		</link>
+	</npc>
+
+	<!-- exit teleportal -->
+
+	<!-- Kelsaik's Nest -->
+	<npc id="5001" type="475" >
+		<link name="Kelsaik's Nest entrance" icon="GREEN" >
+			<reply name="ReplyCityTeleport" x="8810" y="33920" z="9228" heading="27416" id="2" />
+		</link>
+	</npc>
+	<npc id="5002" type="475" >
+		<link name="Kelsaik's Nest entrance" icon="GREEN" >
+			<reply name="ReplyCityTeleport" x="8810" y="33920" z="9228" heading="27416" id="2" />
+		</link>
+	</npc>
+</list>

@@ -1,0 +1,95 @@
+INFO 17:34:45:095 ServerControl: open server socket on 2101 port.
+INFO 17:34:45:101 ExecutorManager: initialized.
+INFO 17:34:45:433 CleaningManager: delete 0 reuses from a character_skill_reuses.
+INFO 17:34:45:434 CleaningManager: delete 0 spawns from a boss_spawn.
+INFO 17:34:45:434 CleaningManager: delete 0 appearances from a character_appearances.
+INFO 17:34:45:435 CleaningManager: delete 0 effects from a character_save_effects.
+INFO 17:34:45:436 CleaningManager: delete 0 inventors from a character_inventors.
+INFO 17:34:45:436 CleaningManager: delete 0 skills from a character_skills.
+INFO 17:34:45:437 CleaningManager: delete 0 hotkeys from a character_hotkey.
+INFO 17:34:45:437 CleaningManager: delete 0 chars from a character_friends.
+INFO 17:34:45:438 CleaningManager: delete 0 friends from a character_friends.
+INFO 17:34:45:439 CleaningManager: delete 0 settings from a character_settings.
+INFO 17:34:45:439 CleaningManager: delete 0 empty items from a items.
+INFO 17:34:45:440 CleaningManager: delete 0 no owner items from a items.
+INFO 17:34:45:440 CleaningManager: delete 0 no owner guild items from a items.
+INFO 17:34:45:451 CleaningManager: create buffer table items.
+INFO 17:34:45:454 CleaningManager: copy 86 items to buffer_items.
+INFO 17:34:45:455 CleaningManager: delete 0 no owner items from a buffer_items.
+INFO 17:34:45:460 CleaningManager: drop buffer table items.
+INFO 17:34:45:461 CleaningManager: delete 0 from a quests.
+INFO 17:34:45:471 CleaningManager: delete 0 from a quest variables.
+INFO 17:34:45:472 CleaningManager: delete 0 from a guild ranks.
+INFO 17:34:45:556 ClientPacketType: client packets prepared.
+INFO 17:34:45:607 EffectParser: initialized.
+INFO 17:34:45:610 RandomManager: initialized.
+INFO 17:34:45:611 IdFactory: prepare npc ids...
+INFO 17:34:45:614 BitSetIdGenerator: 102912 id's available.
+INFO 17:34:45:614 IdFactory: prepare objects ids...
+INFO 17:34:45:614 BitSetIdGenerator: 102912 id's available.
+INFO 17:34:45:614 IdFactory: prepare players ids...
+INFO 17:34:45:618 BitSetIdGenerator: extracted 3 ids.
+INFO 17:34:45:618 BitSetIdGenerator: 102912 id's available.
+INFO 17:34:45:618 IdFactory: prepare guilds ids...
+INFO 17:34:45:619 BitSetIdGenerator: extracted 1 ids.
+INFO 17:34:45:619 BitSetIdGenerator: 102912 id's available.
+INFO 17:34:45:619 IdFactory: prepare item ids...
+INFO 17:34:45:620 BitSetIdGenerator: extracted 86 ids.
+WARNING 17:34:45:620 BitSetIdGenerator: objectId 1 in DB is less than minimum ID of 268435456.
+INFO 17:34:45:621 BitSetIdGenerator: 102912 id's available.
+INFO 17:34:45:634 ServerVarManager: loaded 0 variables.
+INFO 17:34:45:637 BossSpawnManager: loaded 0 boss spawns.
+INFO 17:34:47:190 TerritoryTable: loaded 160 territories for 18803 regions.
+INFO 17:34:49:221 WorldZoneTable: loaded 9 world zones for 31887 regions.
+INFO 17:34:49:222 ConditionParser: initializable.
+WARNING 17:34:49:740 SkillTable: detected once the file D:\Documents\Documents\Java\Tera Server\.\data\skills\summon_skills\deprecated.zip
+INFO 17:34:49:755 SkillTable: loaded 4613 skills for 19 classes.
+INFO 17:34:50:111 ItemTable: loaded 10137 items.
+INFO 17:34:50:122 Race: race appearances initializable.
+INFO 17:34:50:128 PlayerTable: loaded 104 player templates.
+WARNING 17:34:50:301 DropTable: not found items [50048]
+INFO 17:34:50:301 DropTable: load drop for 407 npcs and 126 for resourse.
+INFO 17:34:50:304 TownTable: initialized.
+WARNING 17:34:50:321 NpcDialogTable: detected once the file D:\Documents\Documents\Java\Tera Server\.\data\dialogs\dialogs.txt
+INFO 17:34:50:345 NpcDialogTable: loaded 83 dialogs.
+INFO 17:34:50:352 MessagePackageTable: loaded 34 message packages.
+INFO 17:34:50:385 ConfigAITable: loaded 45 npc ai configs.
+INFO 17:34:50:398 NpcAppearanceTable: initialized. Loaded 59 appearances.
+WARNING 17:34:50:449 NpcTable: found duplicate npc template NpcTemplate npcId = 7011, exp = 1000000, attack = 400000, defense = 3500, owerAttack = 3000, owerDefense = 30000, level = 60, aggro = 120, factionRange = 0, name = Linyphi, title = , factionId = , type = 51, isRaid = false, canDrop = false, drop = null, minions = null, dialog = null, geomRadius = 90.0, geomHeight = 160.0, npcType = RAID_BOSS in file .\data\npcs\raid_boss.xml
+WARNING 17:34:50:487 NpcTable: detected once the file D:\Documents\Documents\Java\Tera Server\.\data\npcs\summons\playable_summons.zip
+INFO 17:34:50:493 NpcTable: loaded  815 npcs.
+INFO 17:34:50:502 ResourseTable: loaded  253 resourses.
+INFO 17:34:50:530 MinionTable: loaded 303 minions for 42 npcs.
+INFO 17:34:50:532 RegenTaskManager: initializable.
+INFO 17:34:50:540 Formulas: initialized.
+INFO 17:34:50:541 EffectTaskManager: initialized.
+INFO 17:34:50:787 ObjectEventManager: initialized.
+INFO 17:34:50:788 MoveTaskManager: initialized.
+INFO 17:34:51:349 SpawnTable: loaded 19474 spawns for 616 npcs and 2013 spawns for 60 resourses.
+INFO 17:34:51:354 GeoMap3D: start fast import geodata_1.dat
+INFO 17:34:52:027 GeoMap3D: import ended. load 1867238 quards.
+INFO 17:34:52:027 GeoMap3D: start fast import geodata_2.dat
+INFO 17:34:52:045 GeoMap3D: import ended. load 440227 quards.
+INFO 17:34:52:046 GeoMap3D: start fast import geodata_3.dat
+INFO 17:34:52:856 GeoMap3D: import ended. load 58041 quards.
+INFO 17:34:52:856 GeoManager: initialized.
+INFO 17:34:52:861 ItemExecutorManager: loaded 0 executor items.
+INFO 17:34:52:871 CommandManager: loaded 93 commands.
+INFO 17:34:52:877 SkillLearnManager: loaded 950 skill learn's for 8 clases.
+INFO 17:34:52:881 AnnounceManager: loaded 0 start announces and 0 running announces.
+INFO 17:34:52:882 AccountManager: initialized.
+INFO 17:34:52:893 GuildManager: loaded 1 guilds.
+INFO 17:34:53:117 QuestManager: loaded 455 quests.
+INFO 17:34:53:119 OnlineManager: initialized.
+INFO 17:34:53:120 GameLogManager: initialized.
+INFO 17:34:53:190 Region: next battle "Veritas District" in 2016.06.12 16:00.
+INFO 17:34:53:191 Region: next battle "Ostgarath" in 2016.06.12 16:00.
+INFO 17:34:53:192 Region: next battle "Val Palrada" in 2016.06.11 20:00.
+INFO 17:34:53:193 Region: next battle "Val Aureum" in 2016.06.11 20:00.
+INFO 17:34:53:193 EventManager: loaded 5 events.
+INFO 17:34:53:335 EventManager: the nearest event in 52 minutes.
+INFO 17:34:53:340 PlayerManager: initialized.
+INFO 17:34:53:350 Network: started.
+INFO 17:34:53:350 GameServer: started.
+INFO 17:34:56:581 AccountManager: authed darkza
+INFO 17:39:25:254 AccountManager: close darkza

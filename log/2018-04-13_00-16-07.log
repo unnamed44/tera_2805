@@ -1,0 +1,136 @@
+INFO 00:16:07:978 ServerControl: open server socket on 2101 port.
+INFO 00:16:08:083 ExecutorManager: initialized.
+INFO 00:16:09:082 CleaningManager: delete 0 reuses from a character_skill_reuses.
+INFO 00:16:09:083 CleaningManager: delete 0 spawns from a boss_spawn.
+INFO 00:16:09:084 CleaningManager: delete 0 appearances from a character_appearances.
+INFO 00:16:09:084 CleaningManager: delete 0 effects from a character_save_effects.
+INFO 00:16:09:085 CleaningManager: delete 0 inventors from a character_inventors.
+INFO 00:16:09:085 CleaningManager: delete 0 skills from a character_skills.
+INFO 00:16:09:086 CleaningManager: delete 0 hotkeys from a character_hotkey.
+INFO 00:16:09:086 CleaningManager: delete 0 chars from a character_friends.
+INFO 00:16:09:087 CleaningManager: delete 0 friends from a character_friends.
+INFO 00:16:09:088 CleaningManager: delete 0 settings from a character_settings.
+INFO 00:16:09:089 CleaningManager: delete 0 empty items from a items.
+INFO 00:16:09:090 CleaningManager: delete 0 no owner items from a items.
+INFO 00:16:09:090 CleaningManager: delete 0 no owner guild items from a items.
+INFO 00:16:09:117 CleaningManager: create buffer table items.
+INFO 00:16:09:120 CleaningManager: copy 118 items to buffer_items.
+INFO 00:16:09:121 CleaningManager: delete 0 no owner items from a buffer_items.
+INFO 00:16:09:135 CleaningManager: drop buffer table items.
+INFO 00:16:09:136 CleaningManager: delete 0 from a quests.
+INFO 00:16:09:136 CleaningManager: delete 0 from a quest variables.
+INFO 00:16:09:137 CleaningManager: delete 0 from a guild ranks.
+INFO 00:16:09:269 ClientPacketType: client packets prepared.
+INFO 00:16:09:311 EffectParser: initialized.
+INFO 00:16:09:317 RandomManager: initialized.
+INFO 00:16:09:318 IdFactory: prepare npc ids...
+INFO 00:16:09:323 BitSetIdGenerator: 102912 id's available.
+INFO 00:16:09:324 IdFactory: prepare objects ids...
+INFO 00:16:09:324 BitSetIdGenerator: 102912 id's available.
+INFO 00:16:09:324 IdFactory: prepare players ids...
+INFO 00:16:09:328 BitSetIdGenerator: extracted 4 ids.
+INFO 00:16:09:328 BitSetIdGenerator: 102912 id's available.
+INFO 00:16:09:329 IdFactory: prepare guilds ids...
+INFO 00:16:09:329 BitSetIdGenerator: extracted 1 ids.
+INFO 00:16:09:329 BitSetIdGenerator: 102912 id's available.
+INFO 00:16:09:329 IdFactory: prepare item ids...
+INFO 00:16:09:331 BitSetIdGenerator: extracted 118 ids.
+WARNING 00:16:09:331 BitSetIdGenerator: objectId 1 in DB is less than minimum ID of 268435456.
+INFO 00:16:09:331 BitSetIdGenerator: 102912 id's available.
+INFO 00:16:09:351 ServerVarManager: loaded 0 variables.
+INFO 00:16:09:355 BossSpawnManager: loaded 0 boss spawns.
+INFO 00:16:11:320 TerritoryTable: loaded 160 territories for 18803 regions.
+INFO 00:16:38:554 WorldZoneTable: loaded 10 world zones for 32847 regions.
+INFO 00:16:38:557 ConditionParser: initializable.
+WARNING 00:16:39:138 SkillTable: detected once the file D:\Documents\Documents\Java\Tera Server\.\data\skills\summon_skills\deprecated.zip
+INFO 00:16:39:155 SkillTable: loaded 4613 skills for 19 classes.
+INFO 00:16:39:661 ItemTable: loaded 10137 items.
+INFO 00:16:39:691 Race: race appearances initializable.
+INFO 00:16:39:701 PlayerTable: loaded 104 player templates.
+WARNING 00:16:40:027 DropTable: not found items [50048]
+INFO 00:16:40:027 DropTable: load drop for 407 npcs and 126 for resourse.
+INFO 00:16:40:035 TownTable: initialized.
+WARNING 00:16:40:071 NpcDialogTable: detected once the file D:\Documents\Documents\Java\Tera Server\.\data\dialogs\dialogs.txt
+INFO 00:16:40:109 NpcDialogTable: loaded 83 dialogs.
+INFO 00:16:40:120 MessagePackageTable: loaded 34 message packages.
+INFO 00:16:40:177 ConfigAITable: loaded 45 npc ai configs.
+INFO 00:16:40:190 NpcAppearanceTable: initialized. Loaded 59 appearances.
+WARNING 00:16:40:265 NpcTable: found duplicate npc template NpcTemplate npcId = 7011, exp = 1000000, attack = 400000, defense = 3500, owerAttack = 3000, owerDefense = 30000, level = 60, aggro = 120, factionRange = 0, name = Linyphi, title = , factionId = , type = 51, isRaid = false, canDrop = false, drop = null, minions = null, dialog = null, geomRadius = 90.0, geomHeight = 160.0, npcType = RAID_BOSS in file .\data\npcs\raid_boss.xml
+WARNING 00:16:40:315 NpcTable: detected once the file D:\Documents\Documents\Java\Tera Server\.\data\npcs\summons\playable_summons.zip
+INFO 00:16:40:322 NpcTable: loaded  815 npcs.
+INFO 00:16:40:335 ResourseTable: loaded  253 resourses.
+INFO 00:16:40:348 MinionTable: loaded 303 minions for 42 npcs.
+INFO 00:16:40:349 RegenTaskManager: initializable.
+INFO 00:16:40:356 Formulas: initialized.
+INFO 00:16:40:357 EffectTaskManager: initialized.
+INFO 00:16:40:713 ObjectEventManager: initialized.
+INFO 00:16:40:714 MoveTaskManager: initialized.
+INFO 00:16:41:370 SpawnTable: loaded 19474 spawns for 616 npcs and 2013 spawns for 60 resourses.
+INFO 00:16:41:383 GeoMap3D: start fast import geodata_1.dat
+INFO 00:16:41:654 GeoMap3D: import ended. load 1867238 quards.
+INFO 00:16:41:655 GeoMap3D: start fast import geodata_2.dat
+INFO 00:16:43:022 GeoMap3D: import ended. load 440227 quards.
+INFO 00:16:43:023 GeoMap3D: start fast import geodata_3.dat
+INFO 00:16:43:354 GeoMap3D: import ended. load 58041 quards.
+INFO 00:16:43:354 GeoManager: initialized.
+INFO 00:16:43:360 ItemExecutorManager: loaded 0 executor items.
+INFO 00:16:43:381 CommandManager: loaded 94 commands.
+INFO 00:16:43:399 SkillLearnManager: loaded 950 skill learn's for 8 clases.
+INFO 00:16:43:405 AnnounceManager: loaded 0 start announces and 0 running announces.
+INFO 00:16:43:407 AccountManager: initialized.
+INFO 00:16:43:431 GuildManager: loaded 1 guilds.
+INFO 00:16:43:769 QuestManager: loaded 455 quests.
+INFO 00:16:43:771 OnlineManager: initialized.
+INFO 00:16:43:779 GameLogManager: initialized.
+INFO 00:16:43:891 Region: next battle "Veritas District" in 2018.04.15 16:00.
+INFO 00:16:43:892 Region: next battle "Ostgarath" in 2018.04.15 16:00.
+INFO 00:16:43:894 Region: next battle "Val Palrada" in 2018.04.14 20:00.
+INFO 00:16:43:896 Region: next battle "Val Aureum" in 2018.04.14 20:00.
+INFO 00:16:43:896 EventManager: loaded 5 events.
+INFO 00:16:44:545 EventManager: the nearest event in 41 minutes.
+INFO 00:16:44:556 PlayerManager: initialized.
+INFO 00:16:44:638 Network: started.
+INFO 00:16:44:638 GameServer: started.
+WARNING 00:16:48:227 ClientConnection: not found packet for opcode 4DBC
+20 00 BC 4D 02 00 08 00 08 00 14 00 00 00 00 00    ..¼M............
+94 5F 03 00 14 00 00 00 01 00 00 00 DC 5F 03 00    _..........Ü_..
+41 00 A4 78 13 00 21 00 20 00 00 00 00 00 00 02    A.¤x..!.........
+00 00 00 44 00 61 00 72 00 6B 00 7A 00 61 00 00    ...D.a.r.k.z.a..
+00 34 66 65 37 36 37 38 61 38 31 62 61 37 63 37    .4fe7678a81ba7c7
+64 62 32 36 39 63 37 37 62 35 64 64 37 38 31 63    db269c77b5dd781c
+61                                                 a...............
+
+INFO 00:16:48:232 AccountManager: authed Darkza
+WARNING 00:16:48:243 ClientConnection: not found packet for opcode F4FE
+08 00 FE F4 E8 03 00 00                            ..þôè...........
+
+WARNING 00:16:48:244 ClientConnection: not found packet for opcode CD71
+BC 00 71 CD 12 00 38 00 8C 00 AF 3F 00 00 80 00    ¼.qÍ..8..¯?...
+00 00 57 00 69 00 6E 00 64 00 6F 00 77 00 73 00    ..W.i.n.d.o.w.s.
+20 00 37 00 20 00 28 00 78 00 36 00 34 00 29 00    ..7...(.x.6.4.).
+20 00 0D 00 0A 00 00 00 49 00 6E 00 74 00 65 00    ........I.n.t.e.
+6C 00 28 00 52 00 29 00 20 00 43 00 6F 00 72 00    l.(.R.)...C.o.r.
+65 00 28 00 54 00 4D 00 29 00 20 00 69 00 37 00    e.(.T.M.)...i.7.
+2D 00 34 00 37 00 31 00 30 00 48 00 51 00 20 00    -.4.7.1.0.H.Q...
+43 00 50 00 55 00 20 00 40 00 20 00 32 00 2E 00    C.P.U...@...2...
+35 00 30 00 47 00 48 00 7A 00 00 00 4E 00 56 00    5.0.G.H.z...N.V.
+49 00 44 00 49 00 41 00 20 00 47 00 65 00 46 00    I.D.I.A...G.e.F.
+6F 00 72 00 63 00 65 00 20 00 47 00 54 00 58 00    o.r.c.e...G.T.X.
+20 00 38 00 37 00 30 00 4D 00 00 00                ..8.7.0.M.......
+
+WARNING 00:16:59:671 ClientConnection: not found packet for opcode 9C2E
+04 00 2E 9C                                        ...............
+
+WARNING 00:17:08:959 ClientConnection: not found packet for opcode D28D
+04 00 8D D2                                        ..Ò............
+
+WARNING 00:17:08:963 ClientConnection: not found packet for opcode 8BBF
+08 00 BF 8B 0F 00 00 00                            ..¿............
+
+WARNING 00:17:20:570 ClientConnection: not found packet for opcode 52A2
+10 00 A2 52 00 00 00 00 02 00 00 00 00 00 00 00    ..¢R............
+
+WARNING 00:18:15:385 ClientConnection: not found packet for opcode 52A2
+10 00 A2 52 00 00 00 00 02 00 00 00 00 00 00 00    ..¢R............
+
+INFO 00:18:20:847 AccountManager: close Darkza

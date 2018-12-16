@@ -1,0 +1,338 @@
+INFO 18:12:50:739 ServerControl: open server socket on 2101 port.
+INFO 18:12:50:756 ExecutorManager: initialized.
+INFO 18:12:52:793 CleaningManager: delete 0 reuses from a character_skill_reuses.
+INFO 18:12:52:794 CleaningManager: delete 0 spawns from a boss_spawn.
+INFO 18:12:52:795 CleaningManager: delete 0 appearances from a character_appearances.
+INFO 18:12:52:797 CleaningManager: delete 0 effects from a character_save_effects.
+INFO 18:12:52:798 CleaningManager: delete 0 inventors from a character_inventors.
+INFO 18:12:52:799 CleaningManager: delete 0 skills from a character_skills.
+INFO 18:12:52:800 CleaningManager: delete 0 hotkeys from a character_hotkey.
+INFO 18:12:52:801 CleaningManager: delete 0 chars from a character_friends.
+INFO 18:12:52:803 CleaningManager: delete 0 friends from a character_friends.
+INFO 18:12:52:804 CleaningManager: delete 0 settings from a character_settings.
+INFO 18:12:52:805 CleaningManager: delete 0 empty items from a items.
+INFO 18:12:52:807 CleaningManager: delete 0 no owner items from a items.
+INFO 18:12:52:808 CleaningManager: delete 0 no owner guild items from a items.
+INFO 18:12:52:864 CleaningManager: create buffer table items.
+INFO 18:12:52:868 CleaningManager: copy 6 items to buffer_items.
+INFO 18:12:52:870 CleaningManager: delete 0 no owner items from a buffer_items.
+INFO 18:12:52:886 CleaningManager: drop buffer table items.
+INFO 18:12:52:887 CleaningManager: delete 0 from a quests.
+INFO 18:12:52:888 CleaningManager: delete 0 from a quest variables.
+INFO 18:12:52:889 CleaningManager: delete 0 from a guild ranks.
+INFO 18:12:53:274 ClientPacketType: client packets prepared.
+INFO 18:12:53:396 EffectParser: initialized.
+INFO 18:12:53:408 RandomManager: initialized.
+INFO 18:12:53:412 IdFactory: prepare npc ids...
+INFO 18:12:53:435 BitSetIdGenerator: 102912 id's available.
+INFO 18:12:53:438 IdFactory: prepare objects ids...
+INFO 18:12:53:439 BitSetIdGenerator: 102912 id's available.
+INFO 18:12:53:444 IdFactory: prepare players ids...
+INFO 18:12:53:468 BitSetIdGenerator: extracted 1 ids.
+INFO 18:12:53:473 BitSetIdGenerator: 102912 id's available.
+INFO 18:12:53:474 IdFactory: prepare guilds ids...
+INFO 18:12:53:490 BitSetIdGenerator: extracted 0 ids.
+INFO 18:12:53:490 BitSetIdGenerator: 102912 id's available.
+INFO 18:12:53:491 IdFactory: prepare item ids...
+INFO 18:12:53:496 BitSetIdGenerator: extracted 6 ids.
+INFO 18:12:53:497 BitSetIdGenerator: 102912 id's available.
+INFO 18:12:53:624 ServerVarManager: loaded 0 variables.
+INFO 18:12:53:638 BossSpawnManager: loaded 0 boss spawns.
+INFO 18:12:57:810 TerritoryTable: loaded 160 territories for 18803 regions.
+INFO 18:13:03:069 WorldZoneTable: loaded 12 world zones for 31986 regions.
+INFO 18:13:03:073 ConditionParser: initializable.
+WARNING 18:13:04:755 SkillTable: detected once the file D:\Documents\Documents\Java\Tera Server\.\data\skills\summon_skills\deprecated.zip
+INFO 18:13:04:790 SkillTable: loaded 4613 skills for 19 classes.
+INFO 18:13:06:201 ItemTable: loaded 10138 items.
+INFO 18:13:06:239 Race: race appearances initializable.
+INFO 18:13:06:257 PlayerTable: loaded 104 player templates.
+WARNING 18:13:07:118 DropTable: not found items [50048]
+INFO 18:13:07:119 DropTable: load drop for 407 npcs and 126 for resourse.
+INFO 18:13:07:148 TownTable: initialized.
+WARNING 18:13:07:214 NpcDialogTable: detected once the file D:\Documents\Documents\Java\Tera Server\.\data\dialogs\dialogs.txt
+INFO 18:13:07:409 NpcDialogTable: loaded 88 dialogs.
+INFO 18:13:07:427 MessagePackageTable: loaded 34 message packages.
+INFO 18:13:07:564 ConfigAITable: loaded 45 npc ai configs.
+INFO 18:13:07:612 NpcAppearanceTable: initialized. Loaded 59 appearances.
+WARNING 18:13:08:060 NpcTable: detected once the file D:\Documents\Documents\Java\Tera Server\.\data\npcs\summons\playable_summons.zip
+INFO 18:13:08:081 NpcTable: loaded  816 npcs.
+INFO 18:13:08:122 ResourseTable: loaded  253 resourses.
+INFO 18:13:08:189 MinionTable: loaded 303 minions for 42 npcs.
+INFO 18:13:08:195 RegenTaskManager: initializable.
+INFO 18:13:08:227 Formulas: initialized.
+INFO 18:13:08:233 EffectTaskManager: initialized.
+INFO 18:13:09:147 ObjectEventManager: initialized.
+INFO 18:13:09:149 MoveTaskManager: initialized.
+INFO 18:13:11:621 SpawnTable: loaded 19515 spawns for 617 npcs and 2013 spawns for 60 resourses.
+INFO 18:13:11:650 GeoMap3D: start fast import geodata_1.dat
+INFO 18:13:12:827 GeoMap3D: import ended. load 1867238 quards.
+INFO 18:13:12:828 GeoMap3D: start fast import geodata_2.dat
+INFO 18:13:13:177 GeoMap3D: import ended. load 440227 quards.
+INFO 18:13:13:177 GeoMap3D: start fast import geodata_3.dat
+INFO 18:13:13:228 GeoMap3D: import ended. load 58040 quards.
+INFO 18:13:13:229 GeoManager: initialized.
+INFO 18:13:13:261 ItemExecutorManager: loaded 0 executor items.
+INFO 18:13:13:369 CommandManager: loaded 94 commands.
+INFO 18:13:13:435 SkillLearnManager: loaded 950 skill learn's for 8 clases.
+INFO 18:13:13:461 AnnounceManager: loaded 0 start announces and 0 running announces.
+INFO 18:13:13:472 AccountManager: initialized.
+INFO 18:13:13:483 GuildManager: loaded 0 guilds.
+INFO 18:13:15:339 QuestManager: loaded 455 quests.
+INFO 18:13:15:348 OnlineManager: initialized.
+INFO 18:13:15:391 GameLogManager: initialized.
+INFO 18:13:16:402 Region: next battle "Veritas District" in 2018.12.16 15:00.
+INFO 18:13:16:415 Region: next battle "Ostgarath" in 2018.12.16 15:00.
+INFO 18:13:16:434 Region: next battle "Val Palrada" in 2018.12.15 19:00.
+INFO 18:13:16:446 Region: next battle "Val Aureum" in 2018.12.15 19:00.
+INFO 18:13:16:448 EventManager: loaded 5 events.
+INFO 18:13:16:850 EventManager: the nearest event in 55 minutes.
+INFO 18:13:16:876 PlayerManager: initialized.
+INFO 18:13:16:923 Network: started.
+INFO 18:13:16:923 GameServer: started.
+WARNING 18:13:19:968 ClientConnection: not found packet for opcode B43D
+20 00 BC 4D 02 00 08 00 08 00 14 00 00 00 00 00    ..¼M............
+32 4D 04 00 14 00 00 00 01 00 00 00 C4 57 04 00    2M..........ÄW..
+3F 00 3D B4 13 00 1F 00 20 00 00 00 00 00 00 08    ?.=´............
+00 00 00 61 00 64 00 6D 00 69 00 6E 00 00 00 32    ...a.d.m.i.n...2
+31 32 33 32 66 32 39 37 61 35 37 61 35 61 37 34    1232f297a57a5a74
+33 38 39 34 61 30 65 34 61 38 30 31 66 63 33       3894a0e4a801fc3.
+
+INFO 18:13:19:975 AccountManager: authed admin
+WARNING 18:13:30:502 ClientConnection: not found packet for opcode EAD8
+04 00 D8 EA                                        ..Øê............
+
+WARNING 18:13:30:504 ClientConnection: not found packet for opcode D533
+04 00 33 D5                                        ..3Õ............
+
+WARNING 18:13:31:825 ClientConnection: not found packet for opcode 93F3
+18 00 F3 93 01 00 08 00 08 00 00 00 01 00 00 00    ..ó............
+F3 06 00 00 00 00 00 00                            ó...............
+
+WARNING 18:13:35:732 ClientConnection: not found packet for opcode 6466
+29 00 66 64 80 B4 B6 47 80 47 AC C7 0A 60 8D C5    ).fd´¶GG¬Ç.`Å
+A8 7C 80 B4 B6 47 80 47 AC C7 0A 60 8D C5 07 00    ¨|´¶GG¬Ç.`Å..
+00 00 00 00 00 A4 2F 18 05                         .....¤/.........
+
+WARNING 18:13:36:444 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:13:36:872 ClientConnection: not found packet for opcode F020
+04 00 20 F0                                        ...ð............
+
+WARNING 18:13:36:872 ClientConnection: not found packet for opcode 7ADB
+10 00 DB 7A 01 00 00 00 02 00 00 00 07 00 00 00    ..Ûz............
+
+WARNING 18:13:36:875 ClientConnection: not found packet for opcode D48F
+08 00 8F D4 02 00 00 00                            ..Ô............
+
+WARNING 18:13:37:971 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:13:39:503 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:13:41:011 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:13:42:543 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:13:44:056 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:13:45:660 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:13:47:175 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:13:48:711 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:13:50:246 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:13:51:748 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:13:53:282 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:13:54:820 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:13:56:425 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:13:57:954 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:13:59:482 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:01:021 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:02:543 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:04:071 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:05:584 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:07:091 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:08:594 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:10:139 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:11:640 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:13:164 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:14:691 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:16:220 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:17:723 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:19:237 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:20:871 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:22:373 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:23:904 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:25:438 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:26:954 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:28:464 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:29:975 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:31:482 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:33:006 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:34:530 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:36:068 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:37:604 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:39:131 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:40:655 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:42:157 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:43:697 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:45:224 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:46:744 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:48:274 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:49:792 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:51:303 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:52:834 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:54:350 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:55:851 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:57:384 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:14:58:888 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:15:00:420 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:15:01:959 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:15:03:704 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:15:05:250 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:15:06:776 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:15:08:316 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:15:09:848 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:15:11:360 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:15:12:931 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:15:14:589 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:15:16:104 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:15:17:622 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:15:19:148 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:15:20:684 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:15:22:193 ClientConnection: not found packet for opcode 94CF
+08 00 CF 94 01 00 00 00                            ..Ï............
+
+WARNING 18:15:23:297 ClientConnection: not found packet for opcode F9B1
+10 00 B1 F9 00 00 00 00 02 00 00 00 00 00 00 00    ..±ù............
+
+INFO 18:15:42:207 AccountManager: close admin

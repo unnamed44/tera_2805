@@ -1,0 +1,101 @@
+INFO 22:06:45:560 ServerControl: open server socket on 2101 port.
+INFO 22:06:45:566 ExecutorManager: initialized.
+INFO 22:06:46:043 CleaningManager: delete 0 reuses from a character_skill_reuses.
+INFO 22:06:46:044 CleaningManager: delete 0 spawns from a boss_spawn.
+INFO 22:06:46:045 CleaningManager: delete 0 appearances from a character_appearances.
+INFO 22:06:46:046 CleaningManager: delete 0 effects from a character_save_effects.
+INFO 22:06:46:046 CleaningManager: delete 0 inventors from a character_inventors.
+INFO 22:06:46:047 CleaningManager: delete 0 skills from a character_skills.
+INFO 22:06:46:048 CleaningManager: delete 0 hotkeys from a character_hotkey.
+INFO 22:06:46:049 CleaningManager: delete 0 chars from a character_friends.
+INFO 22:06:46:049 CleaningManager: delete 0 friends from a character_friends.
+INFO 22:06:46:050 CleaningManager: delete 0 settings from a character_settings.
+INFO 22:06:46:050 CleaningManager: delete 0 empty items from a items.
+INFO 22:06:46:051 CleaningManager: delete 0 no owner items from a items.
+INFO 22:06:46:052 CleaningManager: delete 0 no owner guild items from a items.
+INFO 22:06:46:072 CleaningManager: create buffer table items.
+INFO 22:06:46:073 CleaningManager: copy 0 items to buffer_items.
+INFO 22:06:46:073 CleaningManager: delete 0 no owner items from a buffer_items.
+INFO 22:06:46:079 CleaningManager: drop buffer table items.
+INFO 22:06:46:080 CleaningManager: delete 0 from a quests.
+INFO 22:06:46:081 CleaningManager: delete 0 from a quest variables.
+INFO 22:06:46:082 CleaningManager: delete 0 from a guild ranks.
+INFO 22:06:46:145 ClientPacketType: client packets prepared.
+INFO 22:06:46:171 EffectParser: initialized.
+INFO 22:06:46:174 RandomManager: initialized.
+INFO 22:06:46:175 IdFactory: prepare npc ids...
+INFO 22:06:46:178 BitSetIdGenerator: 102912 id's available.
+INFO 22:06:46:179 IdFactory: prepare objects ids...
+INFO 22:06:46:179 BitSetIdGenerator: 102912 id's available.
+INFO 22:06:46:179 IdFactory: prepare players ids...
+INFO 22:06:46:183 BitSetIdGenerator: extracted 0 ids.
+INFO 22:06:46:183 BitSetIdGenerator: 102912 id's available.
+INFO 22:06:46:183 IdFactory: prepare guilds ids...
+INFO 22:06:46:185 BitSetIdGenerator: extracted 0 ids.
+INFO 22:06:46:185 BitSetIdGenerator: 102912 id's available.
+INFO 22:06:46:185 IdFactory: prepare item ids...
+INFO 22:06:46:196 BitSetIdGenerator: extracted 0 ids.
+INFO 22:06:46:196 BitSetIdGenerator: 102912 id's available.
+INFO 22:06:46:216 ServerVarManager: loaded 0 variables.
+INFO 22:06:46:220 BossSpawnManager: loaded 0 boss spawns.
+INFO 22:06:47:433 TerritoryTable: loaded 160 territories for 18803 regions.
+INFO 22:06:49:454 WorldZoneTable: loaded 12 world zones for 31986 regions.
+INFO 22:06:49:455 ConditionParser: initializable.
+WARNING 22:06:49:991 SkillTable: detected once the file D:\Documents\Documents\Java\Tera Server\.\data\skills\summon_skills\deprecated.zip
+INFO 22:06:50:006 SkillTable: loaded 4613 skills for 19 classes.
+INFO 22:06:50:417 ItemTable: loaded 10138 items.
+INFO 22:06:50:430 Race: race appearances initializable.
+INFO 22:06:50:437 PlayerTable: loaded 104 player templates.
+WARNING 22:06:50:661 DropTable: not found items [50048]
+INFO 22:06:50:661 DropTable: load drop for 407 npcs and 126 for resourse.
+INFO 22:06:50:668 TownTable: initialized.
+WARNING 22:06:50:693 NpcDialogTable: detected once the file D:\Documents\Documents\Java\Tera Server\.\data\dialogs\dialogs.txt
+INFO 22:06:50:725 NpcDialogTable: loaded 88 dialogs.
+INFO 22:06:50:730 MessagePackageTable: loaded 34 message packages.
+INFO 22:06:50:777 ConfigAITable: loaded 45 npc ai configs.
+INFO 22:06:50:794 NpcAppearanceTable: initialized. Loaded 59 appearances.
+WARNING 22:06:50:932 NpcTable: detected once the file D:\Documents\Documents\Java\Tera Server\.\data\npcs\summons\playable_summons.zip
+INFO 22:06:50:943 NpcTable: loaded  816 npcs.
+INFO 22:06:50:956 ResourseTable: loaded  253 resourses.
+INFO 22:06:50:970 MinionTable: loaded 303 minions for 42 npcs.
+INFO 22:06:50:971 RegenTaskManager: initializable.
+INFO 22:06:50:978 Formulas: initialized.
+INFO 22:06:50:980 EffectTaskManager: initialized.
+INFO 22:06:51:345 ObjectEventManager: initialized.
+INFO 22:06:51:346 MoveTaskManager: initialized.
+INFO 22:06:52:019 SpawnTable: loaded 19515 spawns for 617 npcs and 2013 spawns for 60 resourses.
+INFO 22:06:52:033 GeoMap3D: start fast import geodata_1.dat
+INFO 22:06:52:341 GeoMap3D: import ended. load 1867238 quards.
+INFO 22:06:52:342 GeoMap3D: start fast import geodata_2.dat
+INFO 22:06:52:439 GeoMap3D: import ended. load 440227 quards.
+INFO 22:06:52:439 GeoMap3D: start fast import geodata_3.dat
+INFO 22:06:52:445 GeoMap3D: import ended. load 58040 quards.
+INFO 22:06:52:445 GeoManager: initialized.
+INFO 22:06:52:454 ItemExecutorManager: loaded 0 executor items.
+INFO 22:06:52:468 CommandManager: loaded 94 commands.
+INFO 22:06:52:497 SkillLearnManager: loaded 950 skill learn's for 8 clases.
+INFO 22:06:52:505 AnnounceManager: loaded 0 start announces and 0 running announces.
+INFO 22:06:52:508 AccountManager: initialized.
+INFO 22:06:52:512 GuildManager: loaded 0 guilds.
+INFO 22:06:52:817 QuestManager: loaded 455 quests.
+INFO 22:06:52:819 OnlineManager: initialized.
+INFO 22:06:52:822 GameLogManager: initialized.
+INFO 22:06:52:909 Region: next battle "Veritas District" in 2018.12.16 15:00.
+INFO 22:06:52:910 Region: next battle "Ostgarath" in 2018.12.16 15:00.
+INFO 22:06:52:913 Region: next battle "Val Palrada" in 2018.12.15 19:00.
+INFO 22:06:52:915 Region: next battle "Val Aureum" in 2018.12.15 19:00.
+INFO 22:06:52:915 EventManager: loaded 5 events.
+INFO 22:06:53:048 EventManager: the nearest event in 38 minutes.
+INFO 22:06:53:055 PlayerManager: initialized.
+INFO 22:06:53:072 Network: started.
+INFO 22:06:53:073 GameServer: started.
+INFO 22:07:32:727 AccountManager: authed admin
+WARNING 22:08:25:504 C_Get_User_List: NullPointerException : null : stack trace:
+tera.gameserver.network.serverpackets.S_Get_User_List.getInstance(S_Get_User_List.java:233)
+tera.gameserver.manager.PacketManager.showPlayerList(PacketManager.java:274)
+tera.gameserver.network.clientpackets.C_Get_User_List.runImpl(C_Get_User_List.java:46)
+rlib.network.packets.AbstractReadeablePacket.run(AbstractReadeablePacket.java:175)
+java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+java.base/java.lang.Thread.run(Thread.java:834)
+
