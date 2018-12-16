@@ -230,27 +230,16 @@ public class S_Get_User_List extends ServerPacket
 		}
 		else
 		{
+			packet.writeShort(buffer, size); // кол-во персонажей
 			packet.writeShort(buffer, 0);
-			packet.writeLong(buffer, 0);
+			packet.writeLong(buffer, 1);
 			packet.writeByte(buffer, 0);
-			packet.writeInt(buffer, 8);
+			packet.writeInt(buffer, 8); // Max character Allowed
 			packet.writeInt(buffer, 1);
 			packet.writeShort(buffer, 0);
-			packet.writeInt(buffer, 5);
-			packet.writeInt(buffer, 168);
-
-			/*packet.writeShort(buffer, 0);
-			packet.writeByte(buffer, 1);
-			packet.writeInt(buffer, 8);
-			packet.writeInt(buffer, 1);
-			packet.writeByte(buffer, 0);
-			packet.writeByte(buffer, 1);
-			// если персов нету шлём это
+			packet.writeInt(buffer, 40);
 			packet.writeInt(buffer, 0);
-			packet.writeInt(buffer, 0);
-			packet.writeInt(buffer, 0);*/
-			/*.writeInt(buffer, 1);
-			packet.writeShort(buffer, 0);*/
+			packet.writeInt(buffer, 24);
 		}
 
 		return packet;
