@@ -32,7 +32,13 @@ public enum ClientPacketType
 	C_CANCEL_RETURN_TO_LOBBY(0x95CD, new C_Cancel_Return_To_Lobby()),
 	C_PLAYER_LOCATION(0x6466, new C_Player_Location()),
 	C_SIMPLE_TIP_REPEAT_CHECK(0x94CF, new C_Simple_Tip_Repeat_Check()),
-
+	C_TRADE_BROKER_HIGHEST_ITEM_LEVEL(0xEAD8, new C_Trade_Broker_Highest_Item_Level()),
+	C_UNION_SUMMARY(0xD533, new C_Union_Summary()),
+	C_UPDATE_CONTENTS_PLAYTIME(0x93F3, new C_Update_Content_Playtime()),
+	C_GUARD_PK_POLICY(0xF020, new C_Guard_Pk_Policy()),
+	C_VISIT_NEW_SECTION(0x7ADB, new C_Visit_New_Section()),
+	C_REIGN_INFO(0xD48F, new C_Reign_Info()),
+	C_DIALOG_EVENT(0xF9B1, new C_Dialog_Event()),
 
 
 	/** перемещения игрока, версия 172 */
