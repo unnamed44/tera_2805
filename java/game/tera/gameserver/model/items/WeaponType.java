@@ -25,7 +25,9 @@ public enum WeaponType
 	/** большой посох */
 	STAFF("staff", PlayerClass.PRIEST),
 	/** маленький посох */
-	SCEPTER("scepter", PlayerClass.MYSTIC);
+	SCEPTER("scepter", PlayerClass.MYSTIC),
+
+	SCYTHE("scythe", PlayerClass.REAPER);
 	
 	/**
 	 * Получение нужного армор типа по названию в xml.

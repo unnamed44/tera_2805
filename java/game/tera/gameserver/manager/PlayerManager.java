@@ -11,6 +11,7 @@ import tera.gameserver.IdFactory;
 import tera.gameserver.model.Account;
 import tera.gameserver.model.Guild;
 import tera.gameserver.model.World;
+import tera.gameserver.model.base.Experience;
 import tera.gameserver.model.base.PlayerClass;
 import tera.gameserver.model.base.Race;
 import tera.gameserver.model.base.Sex;
@@ -170,10 +171,14 @@ public final class PlayerManager
 		player.setAccessLevel(0);
 
 		// вносим уровень персонажа
-		player.setLevel(1);
-
-		// вносим опыт
-		player.setExp(0);
+		if(player.getPlayerClass() == PlayerClass.REAPER){
+			player.setLevel(40);
+			player.setExp(Experience.LEVEL[player.getLevel() + 1]);
+		}
+		else{
+			player.setLevel(1);
+			player.setExp(0);
+		}
 
 		// вносим текущее состояние хп
 		player.setCurrentHp(player.getMaxHp());

@@ -22,7 +22,10 @@ public enum PlayerClass
 	/** прист */
 	PRIEST(6, true, true, 1.0581F),
 	/** мистик */
-	MYSTIC(7, true, true, 1.0581F);
+	MYSTIC(7, true, true, 1.0581F),
+
+	REAPER(8, false, true, 1.057F);
+
 
 	/** список всех классов */
 	public static final PlayerClass[] values = values();
