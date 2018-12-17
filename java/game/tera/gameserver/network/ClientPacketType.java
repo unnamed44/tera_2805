@@ -39,6 +39,15 @@ public enum ClientPacketType
 	C_VISIT_NEW_SECTION(0x7ADB, new C_Visit_New_Section()),
 	C_REIGN_INFO(0xD48F, new C_Reign_Info()),
 	C_DIALOG_EVENT(0xF9B1, new C_Dialog_Event()),
+	C_SHOW_INVEN(0xBBE1, new C_Show_Inven()),
+	C_SAVE_CLIENT_USER_SETTING(0xE7AD, new C_Save_Client_User_Settings()),
+	C_UPDATE_FRIEND_INFO(0x7E9E, new C_Update_Friend_Info()),
+	C_ADD_FRIEND(0xEBCC, new C_Add_Friend()),
+	C_DELETE_FRIEND(0x83B8, new C_Delete_Friend()),
+	C_WHISPER(0x5BC3, new C_Whisper()),
+
+
+
 
 
 	/** перемещения игрока, версия 172 */
@@ -49,7 +58,6 @@ public enum ClientPacketType
 	/** пакет с оправкой движения, версия */
 	PLAYER_SKILL_MOVE(0x91A5, new PlayerMoveOnSkill()),
 	/** приватный месседж от игрока, версия 172 */
-	PLAYER_PRIVATE_SAY(0xCADA, new PrivateSay()),
 	/** обновление титула игрока */
 	UPDATE_TITLE(0x9CD4, new UpdateTitle()),
 
@@ -59,7 +67,6 @@ public enum ClientPacketType
 	REQUEST_STATE(0xAB5E, new RequestState()),
 
 	/** запрос содержания инвенторя, версия 172 */
-	REQUEST_INVENTORY_INFO(0xEEF6, new RequestInventoryInfo()),
 	/** запрос на одевание придмета, версия 172 */
 	REQUEST_DRESSING_ITEM(0xC7B5, new RequestDressingItem()),
 	/** запрос на снятие предмета, версия 172 */
@@ -133,7 +140,6 @@ public enum ClientPacketType
 	/** обновление параметров раскладки, версия 172 */
 	UPDATE_HOT_KEY(0xB6BA, new UpdateHotKey()),
 	/** обновление настроек клиента, версия 172 */
-	UPDATE_CLIENT_SETTING(0xCEF8, new UpdateClientSetting()),
 
 	/** запрос на воскрешение в город, версия 172 */
 	REQUEST_RESSURECT(0x50D1, new RequestRessurect()), // 0C 00 20 E0 00 00 00 00 FF FF FF FF
@@ -216,11 +222,7 @@ public enum ClientPacketType
 	REQUEST_COLLECT_RESOURSE(0x94FD, new RequestCollectResourse()),
 
 	/** запрос на список друзей */
-	REQUEST_FRIEND_LIST(0xAB9A, new RequestFriendList()),
-	/** запрос на добавление нового друга */
-	REQUEST_FRIEND_ADD(0xDE4A, new RequestFriendAdd()),
-	/** запрос на удаление друга */
-	REQUEST_FRIEND_REMOVE(0x5FA8, new RequestFriendRemove()),
+
 
 
 	/** проверка на корректность имени, версия 172 */

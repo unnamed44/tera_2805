@@ -7,7 +7,7 @@ import tera.gameserver.model.playable.Player;
  *
  * @author Ronn
  */
-public class UpdateClientSetting extends ClientPacket
+public class C_Save_Client_User_Settings extends ClientPacket
 {
 	/** игрок */
 	private Player player;

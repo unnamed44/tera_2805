@@ -294,7 +294,7 @@ public final class PlayerManager
 		//player.sendPacket(Test25.getInstance(), false);
 
 		//if(player.hasSettings())
-		//	player.sendPacket(Settings.getInstance(player), true);
+		//	player.sendPacket(S_Load_Client_User_Setting.getInstance(player), true);
 
 		//if(player.hasHotKey())
 		//	player.sendPacket(HotKey.getInstance(player), true);
@@ -481,10 +481,10 @@ public final class PlayerManager
 		player.sendPacket(S_Load_Hint.getInstance(), false);
 		player.sendPacket(S_Account_Benefit_List.getInstance(), false);
 
-		player.sendPacket(FriendListInfo.getInstance(player), true);
+		player.sendPacket(S_Update_Friend_Info.getInstance(player), true);
 
 		if(player.hasSettings())
-			player.sendPacket(Settings.getInstance(player), true);
+			player.sendPacket(S_Load_Client_User_Setting.getInstance(player), true);
 
 		if(player.hasHotKey())
 			player.sendPacket(HotKey.getInstance(player), true);

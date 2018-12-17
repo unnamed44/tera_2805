@@ -24,8 +24,6 @@ public class S_Loading_Screen_Control_Info extends ServerPacket
 	protected void writeImpl()
 	{
 		writeOpcode();
-		writeLong(0x0000000200000001L);
-		/*writeShort(0);
-		writeByte(1); */
+		writeByte(0);
 	}
 }

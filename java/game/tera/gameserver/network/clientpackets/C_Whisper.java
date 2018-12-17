@@ -11,7 +11,7 @@ import tera.gameserver.network.serverpackets.S_Chat;
  *
  * @author Ronn
  */
-public class PrivateSay extends ClientPacket
+public class C_Whisper extends ClientPacket
 {
 	/** отправитель */
 	private Player player;

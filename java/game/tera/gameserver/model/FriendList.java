@@ -9,8 +9,8 @@ import rlib.util.pools.Pools;
 import tera.gameserver.manager.DataBaseManager;
 import tera.gameserver.manager.PacketManager;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.FriendListInfo;
-import tera.gameserver.network.serverpackets.FriendListState;
+import tera.gameserver.network.serverpackets.S_Update_Friend_Info;
+import tera.gameserver.network.serverpackets.S_Friend_List;
 
 /**
  * Модель списка друзей игрока.
@@ -124,8 +124,8 @@ public final class FriendList implements Foldable
     	dbManager.insertFriend(owner.getObjectId(), player.getObjectId());
 
     	// отправляем пакет с новым списком друзей
-    	owner.sendPacket(FriendListInfo.getInstance(owner), true);
-    	owner.sendPacket(FriendListState.getInstance(owner), true);
+    	owner.sendPacket(S_Update_Friend_Info.getInstance(owner), true);
+    	owner.sendPacket(S_Friend_List.getInstance(owner), true);
 
 		return true;
 	}
@@ -209,8 +209,8 @@ public final class FriendList implements Foldable
 		dbManager.insertFriend(owner.getObjectId(), target.getObjectId());
 
 		// отправляем пакет с новым списком друзей
-		owner.sendPacket(FriendListInfo.getInstance(owner), true);
-		owner.sendPacket(FriendListState.getInstance(owner), true);
+		owner.sendPacket(S_Update_Friend_Info.getInstance(owner), true);
+		owner.sendPacket(S_Friend_List.getInstance(owner), true);
 
 		// отображаем сообщение о добавлении
 		PacketManager.addToFriend(owner, target);
@@ -416,8 +416,8 @@ public final class FriendList implements Foldable
 			friends.fastRemove(i);
 
 			// отправляем пакет с новым списком друзей
-			owner.sendPacket(FriendListInfo.getInstance(owner), true);
-			owner.sendPacket(FriendListState.getInstance(owner), true);
+			owner.sendPacket(S_Update_Friend_Info.getInstance(owner), true);
+			owner.sendPacket(S_Friend_List.getInstance(owner), true);
 
 			// получаем игрока онлаин
 			Player target = World.getPlayer(info.getName());
@@ -489,8 +489,8 @@ public final class FriendList implements Foldable
 			friends.fastRemove(i);
 
 			// отправляем пакет с новым списком друзей
-			owner.sendPacket(FriendListInfo.getInstance(owner), true);
-			owner.sendPacket(FriendListState.getInstance(owner), true);
+			owner.sendPacket(S_Update_Friend_Info.getInstance(owner), true);
+			owner.sendPacket(S_Friend_List.getInstance(owner), true);
 
 			// складируем в пул контейнер
 			infoPool.put(info);

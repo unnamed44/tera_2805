@@ -12,13 +12,13 @@ import tera.gameserver.network.ServerPacketType;
  *
  * @author Ronn
  */
-public class FriendListState extends ServerPacket
+public class S_Friend_List extends ServerPacket
 {
-	private static final ServerPacket instance = new FriendListState();
+	private static final ServerPacket instance = new S_Friend_List();
 
-	public static FriendListState getInstance(Player player)
+	public static S_Friend_List getInstance(Player player)
 	{
-		FriendListState packet = (FriendListState) instance.newInstance();
+		S_Friend_List packet = (S_Friend_List) instance.newInstance();
 
 		ByteBuffer buffer = packet.prepare;
 
@@ -64,7 +64,7 @@ public class FriendListState extends ServerPacket
 	/** подготовленный буффер для отправки данных */
 	private ByteBuffer prepare;
 
-	public FriendListState()
+	public S_Friend_List()
 	{
 		super();
 
@@ -80,7 +80,7 @@ public class FriendListState extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.FRIEND_LIST_STATE;
+		return ServerPacketType.S_FRIEND_LIST;
 	}
 
 	@Override

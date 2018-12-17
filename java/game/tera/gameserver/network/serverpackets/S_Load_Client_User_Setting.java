@@ -10,13 +10,13 @@ import tera.gameserver.network.ServerPacketType;
  *
  * @author Ronn
  */
-public class Settings extends ServerPacket
+public class S_Load_Client_User_Setting extends ServerPacket
 {
-	private static final ServerPacket instance = new Settings();
+	private static final ServerPacket instance = new S_Load_Client_User_Setting();
 
-	public static Settings getInstance(Player player)
+	public static S_Load_Client_User_Setting getInstance(Player player)
 	{
-		Settings packet = (Settings) instance.newInstance();
+		S_Load_Client_User_Setting packet = (S_Load_Client_User_Setting) instance.newInstance();
 
 		packet.setting = player.getSettings();
 
@@ -35,7 +35,7 @@ public class Settings extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.SETTINGS;
+		return ServerPacketType.S_LOAD_CLIENT_USER_SETTING;
 	}
 
 	@Override

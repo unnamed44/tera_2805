@@ -8,13 +8,13 @@ import tera.gameserver.model.playable.Player;
  *
  * @author Ronn
  */
-public class RequestFriendRemove extends ClientPacket
+public class C_Add_Friend extends ClientPacket
 {
 	/** игрок */
 	private Player player;
 
-	/** ид игрока */
-	private int objectId;
+	/** имя игрока */
+	private String name;
 
 	@Override
 	public void finalyze()
@@ -27,7 +27,9 @@ public class RequestFriendRemove extends ClientPacket
 	{
 		player = owner.getOwner();
 
-		objectId = readInt();
+		readShort();
+
+		name = readString();
     }
 
 	@Override
@@ -40,6 +42,6 @@ public class RequestFriendRemove extends ClientPacket
 		FriendList friendList = player.getFriendList();
 
 		// добавляем нового друга
-		friendList.removeFriend(objectId);
+		friendList.addFriend(name);
 	}
 }

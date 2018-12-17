@@ -1,15 +1,15 @@
 package tera.gameserver.network.clientpackets;
 
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.FriendListInfo;
-import tera.gameserver.network.serverpackets.FriendListState;
+import tera.gameserver.network.serverpackets.S_Update_Friend_Info;
+import tera.gameserver.network.serverpackets.S_Friend_List;
 
 /**
  * Клиентский пакет с запросом информации о друзьях.
  *
  * @author Ronn
  */
-public class RequestFriendList extends ClientPacket
+public class C_Update_Friend_Info extends ClientPacket
 {
 	/** игрок */
 	private Player player;
@@ -32,7 +32,7 @@ public class RequestFriendList extends ClientPacket
 		if(player == null)
 			return;
 
-		player.sendPacket(FriendListInfo.getInstance(player), true);
-		player.sendPacket(FriendListState.getInstance(player), true);
+		player.sendPacket(S_Update_Friend_Info.getInstance(player), true);
+		player.sendPacket(S_Friend_List.getInstance(player), true);
 	}
 }

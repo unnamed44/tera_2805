@@ -50,60 +50,61 @@ public class S_Inven extends ServerPacket
 				{
 					// определяем кол-во всех ячеяк
 					int total = inventory.getEngagedCells() + equipment.getEngagedSlots();
+					int equipmentSize = equipment.size();
+					int inventorySize = inventory.getMaxCells();
 
 					packet.writeShort(buffer, total);
 					packet.writeShort(buffer, 39);
 					packet.writeInt(buffer, player.getObjectId());
 					packet.writeInt(buffer, player.getSubId());
 					packet.writeLong(buffer, inventory.getMoney());
-					packet.writeByte(buffer, 1);// 0101
+					packet.writeByte(buffer, 1);// show
 					packet.writeByte(buffer, 1);
-
-					// получаем размер экиперовки
-					int equipmentSize = equipment.size();
-
-					// получаем размер инвенторя
-					int inventorySize = inventory.getMaxCells();
-
 					packet.writeByte(buffer, 0);
 					packet.writeInt(buffer, inventorySize); // equipmentSize
-					packet.writeInt(buffer, 0x7E);
-					packet.writeInt(buffer, 0x7E);
+					packet.writeInt(buffer, 0);//itemlevelInventory
+					packet.writeInt(buffer, 0);//itemLevel
 
-					// получаем все ячейки инвенторя
 					Cell[] cells = inventory.getCells();
 
-					// получаем все слоты экиперовки
 					Slot[] slots = equipment.getSlots();
 
-					int n = 0x27;
+					int last = inventory.getLastIndex();
+					int n = 39;
+					int tmp = 28;
 
-					// перебираем экиперовку
-					for(int i = 0; i < equipmentSize; i++)
+					for(int i = 0; i < equipmentSize + inventorySize; i++)
 					{
-						// получаем итем
-						ItemInstance item = slots[i].getItem();
-
-						// если его нет, пропускаем
+						ItemInstance item = (i < equipmentSize) ? slots[i].getItem() : cells[i-equipmentSize].getItem();
+//last item not showed in inventory
 						if(item == null)
 							continue;
 
 						packet.writeShort(buffer, n);
 
-						n += 154;
+						n = (i == last) ? 0 : n + 133;
 
 						packet.writeShort(buffer, n);
+
+						//passivities pos
+						packet.writeShort(buffer, 0);
+						packet.writeShort(buffer, 0);
+						packet.writeShort(buffer, 0);
 
 						packet.writeInt(buffer, item.getItemId());
 						packet.writeInt(buffer, item.getObjectId());
 						packet.writeInt(buffer, 0);
 						packet.writeInt(buffer, player.getObjectId());
-						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, i + 1);
+						packet.writeInt(buffer, player.getSubId());
+						if(i < equipmentSize)
+							packet.writeInt(buffer, i + 1);
+						else
+							packet.writeInt(buffer, i + tmp);
 						packet.writeInt(buffer, 0);
 						packet.writeLong(buffer, item.getItemCount());
 						packet.writeInt(buffer, 0);
-						packet.writeByte(buffer, 1);// !!!
+						packet.writeByte(buffer, item.getBoundType() == BindType.NONE || item.isBinded()? 1 : 0);// binded
+
 
 						// получаем кристалы итема
 						CrystalList crystals = item.getCrystals();
@@ -132,97 +133,98 @@ public class S_Inven extends ServerPacket
 								for(int g = 0; g < diff; g++)
 									packet.writeInt(buffer, 0);
 						}
-
+						packet.writeInt(buffer, 0);//passivities set
+						//packet.writeInt(buffer, 0);//extrapassivities set
 						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);//dyeSe
+						packet.writeLong(buffer, 0);
+						packet.writeLong(buffer, 0);
+						packet.writeByte(buffer, item.getMasterworked());
+						packet.writeInt(buffer, 0);//enigma
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, item.getItemLevel());
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, player.getObjectId());//crafter ?
 						packet.writeByte(buffer, 0);
-
-						packet.writeLong(buffer, 0);
-						packet.writeLong(buffer, 0);
-						packet.writeLong(buffer, 0);
-						packet.writeLong(buffer, 0);
-						packet.writeLong(buffer, 0);
-						packet.writeLong(buffer, 0);
-						packet.writeLong(buffer, 0);
-						packet.writeLong(buffer, 0);
-						packet.writeLong(buffer, 0);
-						packet.writeLong(buffer, 0);
-						packet.writeLong(buffer, item.getItemLevel());
 					}
 
 					// получаем индекс последняй занятой ячейки
-					int last = inventory.getLastIndex();
 
 					// перебираем ячейки инвенторя
-					for(int i = 0; i < inventorySize; i++)
-					{
-						// получаем итем
-						ItemInstance item = cells[i].getItem();
+                    /*for(int i = 0; i < inventorySize; i++)
+                    {
+                        // получаем итем
+                        ItemInstance item = cells[i].getItem();
 
-						// если его нет, пропускаем
-						if(item == null)
-							continue;
+                        // если его нет, пропускаем
+                        if(item == null)
+                            continue;
 
-						packet.writeShort(buffer, n);
+                        packet.writeShort(buffer, n);
 
-						n += 154;
+                        n += 154;
 
-						if(last == i)
-							n = 0;
+                        if(last == i)
+                            n = 0;
 
-						packet.writeShort(buffer, n);
+                        packet.writeShort(buffer, n);
 
-						packet.writeInt(buffer, item.getItemId());
-						packet.writeInt(buffer, item.getObjectId());
-						packet.writeInt(buffer, 0);// 0;
-						packet.writeInt(buffer, player.getObjectId());
-						packet.writeInt(buffer, player.getSubId());
-						packet.writeInt(buffer, i + 20);
-						packet.writeInt(buffer, 0);
-						packet.writeLong(buffer, item.getItemCount());
+                        packet.writeInt(buffer, item.getItemId());
+                        packet.writeInt(buffer, item.getObjectId());
+                        packet.writeInt(buffer, 0);// 0;
+                        packet.writeInt(buffer, player.getObjectId());
+                        packet.writeInt(buffer, player.getSubId());
+                        packet.writeInt(buffer, i + 20);
+                        packet.writeInt(buffer, 0);
+                        packet.writeLong(buffer, item.getItemCount());
 
-						packet.writeInt(buffer, 0);
-						packet.writeByte(buffer, item.getBoundType() == BindType.NONE || item.isBinded()? 1 : 0);// можно одевать или нет?
+                        packet.writeInt(buffer, 0);
+                        packet.writeByte(buffer, item.getBoundType() == BindType.NONE || item.isBinded()? 1 : 0);// можно одевать или нет?
 
-						// получаем кристалы итема
-						CrystalList crystals = item.getCrystals();
+                        // получаем кристалы итема
+                        CrystalList crystals = item.getCrystals();
 
-						// если их нет
-						if(crystals == null || crystals.isEmpty())
-						{
-							packet.writeInt(buffer, 0); // 1 ячейка итема
-							packet.writeInt(buffer, 0); // 2 ячейка итема
-							packet.writeInt(buffer, 0); // 3 ячейка итема
-							packet.writeInt(buffer, 0); // 4 ячейка итема
-						}
-						else
-						{
-							int diff = 4 - crystals.size();
+                        // если их нет
+                        if(crystals == null || crystals.isEmpty())
+                        {
+                            packet.writeInt(buffer, 0); // 1 ячейка итема
+                            packet.writeInt(buffer, 0); // 2 ячейка итема
+                            packet.writeInt(buffer, 0); // 3 ячейка итема
+                            packet.writeInt(buffer, 0); // 4 ячейка итема
+                        }
+                        else
+                        {
+                            int diff = 4 - crystals.size();
 
-							CrystalInstance[] array = crystals.getArray();
+                            CrystalInstance[] array = crystals.getArray();
 
-							for(int g = 0, length = crystals.size(); g < length; g++)
-								packet.writeInt(buffer, array[g].getItemId());
+                            for(int g = 0, length = crystals.size(); g < length; g++)
+                                packet.writeInt(buffer, array[g].getItemId());
 
-							if(diff > 0)
-								for(int g = 0; g < diff; g++)
-									packet.writeInt(buffer, 0);
-						}
+                            if(diff > 0)
+                                for(int g = 0; g < diff; g++)
+                                    packet.writeInt(buffer, 0);
+                        }
 
-						packet.writeInt(buffer, 0);
-						packet.writeByte(buffer, 0);
+                        packet.writeInt(buffer, 0);
+                        packet.writeByte(buffer, 0);
 
-						packet.writeLong(buffer, 0);
-						packet.writeLong(buffer, 0);
-						packet.writeLong(buffer, 0);
-						packet.writeLong(buffer, 0);
-						packet.writeLong(buffer, 0);
-						packet.writeLong(buffer, 0);
-						packet.writeLong(buffer, 0);
-						packet.writeLong(buffer, 0);
-						packet.writeLong(buffer, 0);
-						packet.writeLong(buffer, 0);
-						packet.writeLong(buffer, item.getItemLevel());
-					}
+                        packet.writeLong(buffer, 0);
+                        packet.writeLong(buffer, 0);
+                        packet.writeLong(buffer, 0);
+                        packet.writeLong(buffer, 0);
+                        packet.writeLong(buffer, 0);
+                        packet.writeLong(buffer, 0);
+                        packet.writeLong(buffer, 0);
+                        packet.writeLong(buffer, 0);
+                        packet.writeLong(buffer, 0);
+                        packet.writeLong(buffer, 0);
+                        packet.writeLong(buffer, item.getItemLevel());
+                    }*/
 				}
 				finally
 				{
