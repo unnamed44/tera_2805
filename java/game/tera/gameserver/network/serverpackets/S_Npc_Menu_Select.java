@@ -2,18 +2,18 @@ package tera.gameserver.network.serverpackets;
 
 import tera.gameserver.network.ServerPacketType;
 
-public class RequestNpcInteractionSuccess extends ServerPacket
+public class S_Npc_Menu_Select extends ServerPacket
 {
 	/** успешное начало диалога */
 	public static final byte SUCCEESS = 1;
 	/** не удачное начало диалоги */
 	public static final byte NOT_SUCCESS = 0;
 	
-	private static final ServerPacket instance = new RequestNpcInteractionSuccess();
+	private static final ServerPacket instance = new S_Npc_Menu_Select();
 	
-	public static RequestNpcInteractionSuccess getInstance(int result)
+	public static S_Npc_Menu_Select getInstance(int result)
 	{
-		RequestNpcInteractionSuccess packet = (RequestNpcInteractionSuccess) instance.newInstance();
+		S_Npc_Menu_Select packet = (S_Npc_Menu_Select) instance.newInstance();
 		
 		packet.result = result;
 		
@@ -26,7 +26,7 @@ public class RequestNpcInteractionSuccess extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.NPC_REQUEST_INTERACTION_SUCCESS;
+		return ServerPacketType.S_NPC_MENU_SELECT;
 	}
 
 	@Override

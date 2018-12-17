@@ -15,13 +15,13 @@ import tera.gameserver.templates.NpcTemplate;
  *
  * @author Ronn
  */
-public class NpcDialogWindow extends ServerPacket
+public class S_Dialog extends ServerPacket
 {
-	private static final ServerPacket instance = new NpcDialogWindow();
+	private static final ServerPacket instance = new S_Dialog();
 
-	public static NpcDialogWindow getInstance(Npc npc, Player player, Array<Link> links)
+	public static S_Dialog getInstance(Npc npc, Player player, Array<Link> links)
 	{
-		NpcDialogWindow packet = (NpcDialogWindow) instance.newInstance();
+		S_Dialog packet = (S_Dialog) instance.newInstance();
 
 		ByteBuffer buffer = packet.getPrepare();
 
@@ -107,7 +107,7 @@ public class NpcDialogWindow extends ServerPacket
 	/** промежуточный буффер */
 	private ByteBuffer prepare;
 
-	public NpcDialogWindow()
+	public S_Dialog()
 	{
 		this.prepare = ByteBuffer.allocate(4096).order(ByteOrder.LITTLE_ENDIAN);
 	}
@@ -121,7 +121,7 @@ public class NpcDialogWindow extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.NPC_DIALOG_WINDOW;
+		return ServerPacketType.S_DIALOG;
 	}
 
 	@Override

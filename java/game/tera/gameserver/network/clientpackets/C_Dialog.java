@@ -9,7 +9,7 @@ import tera.gameserver.model.playable.Player;
  *
  * @author Ronn
  */
-public class RequestNpcLink extends ClientPacket
+public class C_Dialog extends ClientPacket
 {
 	/** игрок */
 	private Player player;

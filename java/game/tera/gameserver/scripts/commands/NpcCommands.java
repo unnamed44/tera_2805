@@ -14,8 +14,8 @@ import tera.gameserver.model.npc.interaction.links.NpcLink;
 import tera.gameserver.model.npc.spawn.NpcSpawn;
 import tera.gameserver.model.playable.Player;
 import tera.gameserver.model.skillengine.Skill;
-import tera.gameserver.network.serverpackets.NpcDialogWindow;
-import tera.gameserver.network.serverpackets.NpcState;
+import tera.gameserver.network.serverpackets.S_Dialog;
+import tera.gameserver.network.serverpackets.S_Npc_Status;
 import tera.gameserver.network.serverpackets.SkillEnd;
 import tera.gameserver.network.serverpackets.SkillStart;
 import tera.gameserver.tables.ConfigAITable;
@@ -62,7 +62,7 @@ public class NpcCommands extends AbstractCommand
 				for(int i = id, length = id + 10; i < length; i++)
 					array.add(new NpcLink("@npc:" + i, LinkType.DIALOG, IconType.DIALOG, null));
 
-				player.sendPacket(NpcDialogWindow.getInstance(null, player, array), true);
+				player.sendPacket(S_Dialog.getInstance(null, player, array), true);
 
 				break;
 			}
@@ -247,7 +247,7 @@ public class NpcCommands extends AbstractCommand
 						text.append(" id = ").append(npc.getTemplateId()).append(", type = ").append(npc.getTemplateType()).append(", objectId = ").append(npc.getObjectId()).append(", ");
 						// text.append(" id = ").append(npc.getNpcId()).append(npc.getSpawnLoc());
 
-						npc.broadcastPacket(NpcState.getInstance(player, npc, 1));
+						npc.broadcastPacket(S_Npc_Status.getInstance(player, npc, 1));
 					}
 
 					if(text.length() > 5)

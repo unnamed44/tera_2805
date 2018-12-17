@@ -10,13 +10,13 @@ import tera.gameserver.network.ServerPacketType;
  *
  * @author Ronn
  */
-public class NpcState extends ServerPacket
+public class S_Npc_Status extends ServerPacket
 {
-	private static final ServerPacket instance = new NpcState();
+	private static final ServerPacket instance = new S_Npc_Status();
 
-	public static NpcState getInstance(Character character, Character target, int state)
+	public static S_Npc_Status getInstance(Character character, Character target, int state)
 	{
-		NpcState packet = (NpcState) instance.newInstance();
+		S_Npc_Status packet = (S_Npc_Status) instance.newInstance();
 
 		packet.objectId = character.getObjectId();
 		packet.subId = character.getSubId();
@@ -44,7 +44,7 @@ public class NpcState extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.NPC_STATE;
+		return ServerPacketType.S_NPC_STATUS;
 	}
 
 	@Override

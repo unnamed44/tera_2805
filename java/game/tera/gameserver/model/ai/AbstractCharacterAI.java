@@ -20,9 +20,9 @@ import tera.gameserver.model.skillengine.Skill;
 import tera.gameserver.model.skillengine.SkillType;
 import tera.gameserver.network.serverpackets.S_Chat;
 import tera.gameserver.network.serverpackets.Emotion;
-import tera.gameserver.network.serverpackets.NpcDialogWindow;
+import tera.gameserver.network.serverpackets.S_Dialog;
 import tera.gameserver.network.serverpackets.NpcSpeak;
-import tera.gameserver.network.serverpackets.RequestNpcInteractionSuccess;
+import tera.gameserver.network.serverpackets.S_Npc_Menu_Select;
 import tera.util.LocalObjects;
 
 /**
@@ -287,13 +287,13 @@ public abstract class AbstractCharacterAI<E extends Character> extends AbstractA
 		player.clearLinks();
 
 		if(!npc.checkInteraction(player))
-			player.sendPacket(RequestNpcInteractionSuccess.getInstance(RequestNpcInteractionSuccess.NOT_SUCCESS), true);
+			player.sendPacket(S_Npc_Menu_Select.getInstance(S_Npc_Menu_Select.NOT_SUCCESS), true);
 		else
 		{
 			player.setLastNpc(npc);
-			player.sendPacket(RequestNpcInteractionSuccess.getInstance(RequestNpcInteractionSuccess.SUCCEESS), true);
+			player.sendPacket(S_Npc_Menu_Select.getInstance(S_Npc_Menu_Select.SUCCEESS), true);
 			player.sendPacket(NpcSpeak.getInstance(player, npc), true);
-			player.sendPacket(NpcDialogWindow.getInstance(npc, player, npc.getLinks(player)), true);
+			player.sendPacket(S_Dialog.getInstance(npc, player, npc.getLinks(player)), true);
 		}
 	}
 

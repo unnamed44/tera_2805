@@ -48,7 +48,7 @@ public class DeleteCharacter extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.DELETE_OBJECT;
+		return ServerPacketType.S_DESPAWN_NPC;
 	}
 
 	@Override

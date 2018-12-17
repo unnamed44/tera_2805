@@ -45,6 +45,9 @@ public enum ClientPacketType
 	C_ADD_FRIEND(0xEBCC, new C_Add_Friend()),
 	C_DELETE_FRIEND(0x83B8, new C_Delete_Friend()),
 	C_WHISPER(0x5BC3, new C_Whisper()),
+	C_NPC_CONTACT(0xD2FD, new C_Npc_Contact()),
+	C_DIALOG(0xB34E, new C_Dialog()),
+
 
 
 
@@ -152,9 +155,8 @@ public enum ClientPacketType
 	REQUEST_DUEL_CANCEL(0xF0AE, new RequestDuelCancel()),
 
 	/** запрос на взаимодействие с нпс, версия 172 */
-	REQUEST_NPC_INTERACTION(0xB6AE, new RequestNpcInteraction()), // 10 00 66 C3 1D F0 D4 1E 00 00 00 00 00 00 00 00
+	 // 10 00 66 C3 1D F0 D4 1E 00 00 00 00 00 00 00 00
 	/** запрос на обработку кнопки в диалоге, версия 172 */
-	REQUEST_NPC_LINK(0xBF7B, new RequestNpcLink()), // 14 00 20 D9 40 7B D5 1E 01 00 00 00 FF FF FF FF
 	/** клиентский пакет о пожении итема в магазин покупки, версия 172 */
 	REQUEST_NPC_ADD_BUY_SHOP(0xF406, new RequestNpcAddBuyShop()), // 1C 00 CC EB F5 5F 00 00 00 00 00 00 65 B1 B6 48
 	/** клиентский пакет о удаление итема из трейд покупки, версия 172 */

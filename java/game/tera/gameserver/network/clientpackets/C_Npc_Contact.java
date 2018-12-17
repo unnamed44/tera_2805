@@ -10,7 +10,7 @@ import tera.gameserver.model.playable.Player;
  *
  * @author Ronn
  */
-public class RequestNpcInteraction extends ClientPacket
+public class C_Npc_Contact extends ClientPacket
 {
 	/** игрок */
 	private Player player;
