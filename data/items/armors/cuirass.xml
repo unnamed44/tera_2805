@@ -2834,4 +2834,9 @@
 			<add stat="maxMp" order="0x40" val="665"/> 
 		</funcs>
 	</armor>
+	<armor id="80397" type="body" kind="leather" name="Secret Order Cuirass" requiredLevel="50" rank="common" bindType="onPickUp" defence="1096" balance="2659" sockets="4" enchantable="false" extractable="0" remodelable="false" dyeable="false" tradable="false" sellable="true" bank="true" guildBank="false" buyPrice="2691038" sellPrice="269103">
+		<funcs>
+			<add stat="maxMp" order="0x40" val="628"/> 
+		</funcs>
+	</armor>
 </list>

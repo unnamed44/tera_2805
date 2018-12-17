@@ -840,4 +840,49 @@
 			</race>
 		</races>
 	</template>
+	<template class="REAPER" >
+		<stats>
+			<stat name="maxHp" val="1179" />
+			<stat name="maxMp" val="1000" />
+			<stat name="regHp" val="10" />
+			<stat name="regMp" val="30" />
+			<stat name="powerFactor" val="50" />
+			<stat name="defenseFactor" val="30" />
+			<stat name="impactFactor" val="40" />
+			<stat name="balanceFactor" val="70" />
+			<stat name="atkSpd" val="100" />
+			<stat name="runSpd" val="105" />
+			<stat name="critRate" val="50" />
+			<stat name="critRcpt" val="75" />
+		</stats>
+		<items>
+			<item id="80396" count="1" />
+			<item id="80397" count="1" />
+            <item id="80398" count="1" />
+            <item id="80399" count="1" />
+            <item id="6551" count="20" />
+            <item id="6561" count="20" />
+		</items>
+		<funcs>
+			<add stat="stunRcpt" order="0x10" val="45" />
+			<add stat="weakRcpt" order="0x10" val="45" />
+			<add stat="dmgRcpt" order="0x10" val="45" />
+		</funcs>
+		<skills>
+			<skill id="67118964" />
+			<skill id="67128964" />
+		</skills>
+		<races>
+			<race type="ELIN" male="10902" female="11002" >
+				<skills>
+					<skill id="76128964" class="-5" />
+					<skill id="76138964" class="-5" />
+					<skill id="10000" class="-1" />
+					<skill id="19500" class="-5" />
+					<skill id="19501" class="-5" />
+					<skill id="67308865" class="-1" />
+				</skills>
+			</race>
+		</races>
+	</template>
 </list>

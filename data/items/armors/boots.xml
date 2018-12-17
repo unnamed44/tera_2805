@@ -1607,5 +1607,10 @@
 			<mul stat="runSpd" order="0x30" val="1.1"/>  
 		</funcs>
 	</armor>
+	<armor id="80399" type="boots" kind="leather" name="Secret Order Boots" requiredLevel="50" rank="common" bindType="onPickUp" defence="822" balance="1994" sockets="0" enchantable="false" extractable="0" remodelable="false" dyeable="false" tradable="false" sellable="true" bank="true" guildBank="false" buyPrice="0" sellPrice="0" >
+		<funcs>
+			<mul stat="runSpd" order="0x30" val="1.1"/>  
+		</funcs>
+	</armor>
 </list>
 

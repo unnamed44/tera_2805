@@ -1604,5 +1604,10 @@
 			<add stat="rCrit" order="0x40" val="3"/> 
 		</funcs>
 	</armor>
+	<armor id="80398" type="gloves" kind="leather" name="Secret Order Gloves" requiredLevel="50" rank="common" bindType="onPickUp" defence="822" balance="1994" sockets="0" enchantable="false" extractable="0" remodelable="false" dyeable="false" tradable="false" sellable="true" bank="true" guildBank="false" buyPrice="2018278" sellPrice="201827" >
+		<funcs>
+			<add stat="rCrit" order="0x40" val="3"/> 
+		</funcs>
+	</armor>
 </list>
 

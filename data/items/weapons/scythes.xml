@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<list>
+	<weapon id="80396" type="scythe" name="Secret Order Scythes" requiredLevel="50" rank="common" bindType="onPickUp" attack="2115" impact="5621" sockets="4" enchantable="false" extractable="0" remodelable="false" tradable="false" sellable="true" bank="true" guildBank="false" buyPrice="3937500" sellPrice="375000"/>
+</list>

@@ -8,7 +8,7 @@ import tera.gameserver.network.serverpackets.S_Inven;
  *
  * @author Ronns
  */
-public class RequestInventoryInfo extends ClientPacket
+public class C_Show_Inven extends ClientPacket
 {
 	/** игрок */
 	private Player player;
