@@ -12,7 +12,7 @@ import tera.gameserver.model.quests.NpcIconType;
 import tera.gameserver.model.quests.Quest;
 import tera.gameserver.model.quests.QuestActionType;
 import tera.gameserver.model.quests.QuestEvent;
-import tera.gameserver.network.serverpackets.QuestNpcNotice;
+import tera.gameserver.network.serverpackets.S_Quest_Villager_Info;
 import tera.util.LocalObjects;
 
 /**
@@ -74,7 +74,7 @@ public class ActionSetNpcIcon extends AbstractQuestAction
 			}
 
 			// отправляем пакет
-			player.sendPacket(QuestNpcNotice.getInstance(npc, type), true);
+			player.sendPacket(S_Quest_Villager_Info.getInstance(npc, type), true);
 		}
 		// иначе мы обновляем все видимые
 		else
@@ -99,7 +99,7 @@ public class ActionSetNpcIcon extends AbstractQuestAction
 					continue;
 
 				// обновляем иконку
-				player.sendPacket(QuestNpcNotice.getInstance(npc, type), true);
+				player.sendPacket(S_Quest_Villager_Info.getInstance(npc, type), true);
 			}
 		}
 	}

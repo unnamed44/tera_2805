@@ -11,8 +11,8 @@ import tera.gameserver.model.skillengine.EffectState;
 import tera.gameserver.model.skillengine.EffectType;
 import tera.gameserver.model.skillengine.ResistType;
 import tera.gameserver.model.skillengine.funcs.Func;
-import tera.gameserver.network.serverpackets.AppledEffect;
-import tera.gameserver.network.serverpackets.CancelEffect;
+import tera.gameserver.network.serverpackets.S_Abnormality_Begin;
+import tera.gameserver.network.serverpackets.S_Abnormality_End;
 import tera.gameserver.taskmanager.EffectTaskManager;
 import tera.gameserver.templates.EffectTemplate;
 import tera.gameserver.templates.SkillTemplate;
@@ -367,7 +367,7 @@ public abstract class AbstractEffect implements Effect {
 					onStart();
 					setState(EffectState.ACTING);
 
-					effected.broadcastPacket(AppledEffect.getInstance(effector, effected, this));
+					effected.broadcastPacket(S_Abnormality_Begin.getInstance(effector, effected, this));
 
 					Party party = effected.getParty();
 
@@ -401,7 +401,7 @@ public abstract class AbstractEffect implements Effect {
 					onExit();
 
 					effected.removeEffect(this);
-					effected.broadcastPacket(CancelEffect.getInstance(effected, getEffectId()));
+					effected.broadcastPacket(S_Abnormality_End.getInstance(effected, getEffectId()));
 
 					Party party = effected.getParty();
 

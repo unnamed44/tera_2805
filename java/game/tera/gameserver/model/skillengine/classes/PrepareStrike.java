@@ -1,7 +1,7 @@
 package tera.gameserver.model.skillengine.classes;
 
 import tera.gameserver.model.Character;
-import tera.gameserver.network.serverpackets.SkillStart;
+import tera.gameserver.network.serverpackets.S_Action_Stage;
 import tera.gameserver.templates.SkillTemplate;
 
 /**
@@ -34,12 +34,12 @@ public class PrepareStrike extends Strike
 	{
 		if(state <= template.getEndState())
 		{
-			character.broadcastPacket(SkillStart.getInstance(character, getIconId(), castId, state++));
+			character.broadcastPacket(S_Action_Stage.getInstance(character, getIconId(), castId, state++));
 
 			return;
 		}
 
-		//character.broadcastPacket(SkillStart.getInstance(character, getIconId(), castId, state));
+		//character.broadcastPacket(S_Action_Stage.getInstance(character, getIconId(), castId, state));
 
 		state++;
 

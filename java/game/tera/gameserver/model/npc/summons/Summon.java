@@ -6,8 +6,8 @@ import tera.gameserver.IdFactory;
 import tera.gameserver.model.Character;
 import tera.gameserver.model.MessageType;
 import tera.gameserver.model.npc.Npc;
-import tera.gameserver.network.serverpackets.SystemMessage;
-import tera.gameserver.network.serverpackets.TargetHp;
+import tera.gameserver.network.serverpackets.S_Sytem_Message;
+import tera.gameserver.network.serverpackets.S_Show_Hp;
 import tera.gameserver.templates.NpcTemplate;
 
 /**
@@ -80,7 +80,7 @@ public class Summon extends Npc
 			if(owner == attacker)
 				owner.sendMessage(MessageType.YOUR_PET_HAS_BEEN_DESTRUYED);
 			else
-				owner.sendPacket(SystemMessage.getInstance(MessageType.ATTACKER_DESTROYED_YOUR_PET).addAttacker(attacker.getName()), true);
+				owner.sendPacket(S_Sytem_Message.getInstance(MessageType.ATTACKER_DESTROYED_YOUR_PET).addAttacker(attacker.getName()), true);
 		}
 
 		if(owner != null)
@@ -159,7 +159,7 @@ public class Summon extends Npc
 		Character owner = getOwner();
 
 		if(owner != null && owner.isPlayer())
-			owner.sendPacket(TargetHp.getInstance(this, TargetHp.BLUE), true);
+			owner.sendPacket(S_Show_Hp.getInstance(this, S_Show_Hp.BLUE), true);
 	}
 
 	@Override

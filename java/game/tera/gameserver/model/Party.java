@@ -18,7 +18,7 @@ import tera.gameserver.model.inventory.Inventory;
 import tera.gameserver.model.items.ItemInstance;
 import tera.gameserver.model.npc.Npc;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.CharPickUpItem;
+import tera.gameserver.network.serverpackets.S_Loot_Dropitem;
 import tera.gameserver.network.serverpackets.S_Chat;
 import tera.gameserver.network.serverpackets.MessageAddedItem;
 import tera.gameserver.network.serverpackets.PartyInfo;
@@ -27,7 +27,7 @@ import tera.gameserver.network.serverpackets.PartyMemberCoords;
 import tera.gameserver.network.serverpackets.PartyMemberEffectList;
 import tera.gameserver.network.serverpackets.PartyMemberInfo;
 import tera.gameserver.network.serverpackets.ServerPacket;
-import tera.gameserver.network.serverpackets.SystemMessage;
+import tera.gameserver.network.serverpackets.S_Sytem_Message;
 import tera.util.LocalObjects;
 
 /**
@@ -325,7 +325,7 @@ public final class Party implements Foldable
 
 			// пакет исключения из пати
 			ServerPacket packet = PartyLeave.getInstance();
-			ServerPacket message = SystemMessage.getInstance(MessageType.YOUR_PARTY_HAS_DISBANDED);
+			ServerPacket message = S_Sytem_Message.getInstance(MessageType.YOUR_PARTY_HAS_DISBANDED);
 
 			// получаем список членов группы
 			Player[] array = members.array();
@@ -519,7 +519,7 @@ public final class Party implements Foldable
 					setLeader(member);
 
 					// создаем пакет с сообщением
-					SystemMessage message = SystemMessage.getInstance(MessageType.PARTY_PLAYER_NAME_IS_NOW_PARTY_LEADER);
+					S_Sytem_Message message = S_Sytem_Message.getInstance(MessageType.PARTY_PLAYER_NAME_IS_NOW_PARTY_LEADER);
 
 					// добавляем имя нового лидера
 					message.add("PartyPlayerName", member.getName());
@@ -612,7 +612,7 @@ public final class Party implements Foldable
 			int money = (int) Math.max(item.getItemCount() / counter, 1);
 
 			// отображаем подъем итема
-			owner.broadcastPacket(CharPickUpItem.getInstance(owner, item));
+			owner.broadcastPacket(S_Loot_Dropitem.getInstance(owner, item));
 
 			// перебираем членов группы
 			for(int i = 0, length = members.size(); i < length; i++)
@@ -684,7 +684,7 @@ public final class Party implements Foldable
 		else
 		{
 			// отображаем подъем итема
-			owner.broadcastPacket(CharPickUpItem.getInstance(owner, item));
+			owner.broadcastPacket(S_Loot_Dropitem.getInstance(owner, item));
 
 			// получаем менеджера по игровому логированию
 			GameLogManager gameLogger = GameLogManager.getInstance();
@@ -707,7 +707,7 @@ public final class Party implements Foldable
 			owner.sendPacket(packet, true);
 
 			// создаем сообщение о поднятии итема
-			SystemMessage message = SystemMessage.getInstance(MessageType.PARTY_PLAYER_NAME_PICK_UP_ITEM_NAME_ITEM_AMOUNT);
+			S_Sytem_Message message = S_Sytem_Message.getInstance(MessageType.PARTY_PLAYER_NAME_PICK_UP_ITEM_NAME_ITEM_AMOUNT);
 
 			// добавляем имя получившего
 			message.add("PartyPlayerName", owner.getName());
@@ -817,7 +817,7 @@ public final class Party implements Foldable
 			else
 			{
 				// отображаем подъем итема
-				owner.broadcastPacket(CharPickUpItem.getInstance(owner, item));
+				owner.broadcastPacket(S_Loot_Dropitem.getInstance(owner, item));
 
 				// получаем менеджера по игровому логированию
 				GameLogManager gameLogger = GameLogManager.getInstance();
@@ -840,7 +840,7 @@ public final class Party implements Foldable
 				target.sendPacket(packet, true);
 
 				// создаем сообщение о поднятии итема
-				SystemMessage message = SystemMessage.getInstance(MessageType.PARTY_PLAYER_NAME_PICK_UP_ITEM_NAME_ITEM_AMOUNT);
+				S_Sytem_Message message = S_Sytem_Message.getInstance(MessageType.PARTY_PLAYER_NAME_PICK_UP_ITEM_NAME_ITEM_AMOUNT);
 
 				// добавляем имя получившего
 				message.add("PartyPlayerName", target.getName());

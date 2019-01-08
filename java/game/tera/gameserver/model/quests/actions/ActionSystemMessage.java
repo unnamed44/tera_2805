@@ -8,7 +8,7 @@ import tera.gameserver.model.playable.Player;
 import tera.gameserver.model.quests.Quest;
 import tera.gameserver.model.quests.QuestActionType;
 import tera.gameserver.model.quests.QuestEvent;
-import tera.gameserver.network.serverpackets.SystemMessage;
+import tera.gameserver.network.serverpackets.S_Sytem_Message;
 
 /**
  * Акшен для отображения квестового события.
@@ -54,6 +54,6 @@ public class ActionSystemMessage extends AbstractQuestAction
 		}
 
 		// отправляем ему пакет
-		player.sendPacket(SystemMessage.getInstance(message), true);
+		player.sendPacket(S_Sytem_Message.getInstance(message), true);
 	}
 }

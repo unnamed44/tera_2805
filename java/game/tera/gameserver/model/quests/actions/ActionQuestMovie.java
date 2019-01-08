@@ -8,7 +8,7 @@ import tera.gameserver.model.playable.Player;
 import tera.gameserver.model.quests.Quest;
 import tera.gameserver.model.quests.QuestActionType;
 import tera.gameserver.model.quests.QuestEvent;
-import tera.gameserver.network.serverpackets.QuestVideo;
+import tera.gameserver.network.serverpackets.S_Play_Movie;
 
 /**
  * Акшен для отправки квест видео.
@@ -50,6 +50,6 @@ public class ActionQuestMovie extends AbstractQuestAction
 		}
 
 		// отправляем ему пакет
-		player.sendPacket(QuestVideo.getInstance(id), true);
+		player.sendPacket(S_Play_Movie.getInstance(id), true);
 	}
 }

@@ -8,7 +8,7 @@ import tera.gameserver.model.inventory.Inventory;
 import tera.gameserver.model.items.ItemInstance;
 import tera.gameserver.model.playable.Player;
 import tera.gameserver.network.serverpackets.MessageAddedItem;
-import tera.gameserver.network.serverpackets.SystemMessage;
+import tera.gameserver.network.serverpackets.S_Sytem_Message;
 
 /**
  * Модель призовой бонусной коробки.
@@ -294,7 +294,7 @@ public class EventRewardBox extends AbstractItemExecutor
 		}
 
 		// отправляем пакет о использовании рецепта
-		player.sendPacket(SystemMessage.getInstance(MessageType.ITEM_USE).addItem(item.getItemId(), 1), true);
+		player.sendPacket(S_Sytem_Message.getInstance(MessageType.ITEM_USE).addItem(item.getItemId(), 1), true);
 
 		// получаем инвентарь
 		Inventory inventory = player.getInventory();

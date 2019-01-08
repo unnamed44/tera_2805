@@ -4,7 +4,7 @@ import tera.gameserver.manager.ObjectEventManager;
 import tera.gameserver.model.AttackInfo;
 import tera.gameserver.model.Character;
 import tera.gameserver.model.skillengine.shots.FastShot;
-import tera.gameserver.network.serverpackets.Damage;
+import tera.gameserver.network.serverpackets.S_Each_Skill_Result;
 import tera.gameserver.network.serverpackets.StartFastShot;
 import tera.gameserver.templates.SkillTemplate;
 import tera.util.LocalObjects;
@@ -37,7 +37,7 @@ public class ChargeRailFastManaShot extends ChargeDam
 		info.setDamage(getPower());
 
 		// отображаем высасывание маны
-		target.broadcastPacket(Damage.getInstance(attacker, target, getDamageId(), info.getDamage(), false, false, Damage.DAMAGE));
+		target.broadcastPacket(S_Each_Skill_Result.getInstance(attacker, target, getDamageId(), info.getDamage(), false, false, S_Each_Skill_Result.DAMAGE));
 
 		// добавляем высасоное мп
 		attacker.effectHealMp(info.getDamage(), target);

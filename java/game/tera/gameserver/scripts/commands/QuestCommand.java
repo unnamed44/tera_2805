@@ -13,7 +13,7 @@ import tera.gameserver.model.quests.QuestState;
 import tera.gameserver.network.serverpackets.QuestInfo;
 import tera.gameserver.network.serverpackets.QuestMoveToPanel;
 import tera.gameserver.network.serverpackets.QuestStarted;
-import tera.gameserver.network.serverpackets.QuestVideo;
+import tera.gameserver.network.serverpackets.S_Play_Movie;
 import tera.util.LocalObjects;
 
 /**
@@ -115,7 +115,7 @@ public class QuestCommand extends AbstractCommand
 			}
 			case "quest_movie":
 			{
-				player.sendPacket(QuestVideo.getInstance(Integer.parseInt(values)), true);
+				player.sendPacket(S_Play_Movie.getInstance(Integer.parseInt(values)), true);
 
 				break;
 			}

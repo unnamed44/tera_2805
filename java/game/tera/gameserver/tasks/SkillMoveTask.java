@@ -16,7 +16,7 @@ import tera.gameserver.model.World;
 import tera.gameserver.model.skillengine.Formulas;
 import tera.gameserver.model.skillengine.Skill;
 import tera.gameserver.network.serverpackets.MoveSkill;
-import tera.gameserver.network.serverpackets.SkillEnd;
+import tera.gameserver.network.serverpackets.S_Action_End;
 
 /**
  * Модель обрбаотки движения скила.
@@ -409,7 +409,7 @@ public final class SkillMoveTask extends SafeTask
 				// если кастер нпс
 				if(caster.isBroadcastEndSkillForCollision())
 					// обрываем анимацию перемещения
-					caster.broadcastPacket(SkillEnd.getInstance(caster, 0, skill.getIconId()));
+					caster.broadcastPacket(S_Action_End.getInstance(caster, 0, skill.getIconId()));
 
 				// если скил раш или кастер нпс
 				if(skill.isRush() || caster.isBroadcastEndSkillForCollision())

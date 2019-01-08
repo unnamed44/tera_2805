@@ -33,8 +33,8 @@ import tera.gameserver.model.npc.playable.EventEpicBattleNpc;
 import tera.gameserver.model.npc.spawn.NpcSpawn;
 import tera.gameserver.model.npc.spawn.Spawn;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.AppledEffect;
-import tera.gameserver.network.serverpackets.CancelEffect;
+import tera.gameserver.network.serverpackets.S_Abnormality_Begin;
+import tera.gameserver.network.serverpackets.S_Abnormality_End;
 import tera.gameserver.tables.ConfigAITable;
 import tera.gameserver.tables.NpcTable;
 import tera.gameserver.tables.WorldZoneTable;
@@ -615,7 +615,7 @@ public final class EpicBattle extends AbstractAutoEvent
 			// ставим флаг блокировки
 			player.setStuned(true);
 			// отображаем анимацию блока
-			player.broadcastPacket(AppledEffect.getInstance(player, player, 701100, 60000));
+			player.broadcastPacket(S_Abnormality_Begin.getInstance(player, player, 701100, 60000));
 			// обновляем инфу игроку
 			player.updateInfo();
 		}
@@ -654,7 +654,7 @@ public final class EpicBattle extends AbstractAutoEvent
 			// убераем блокировку
 			player.setStuned(false);
 			// убераем анимацию блока
-			player.broadcastPacket(CancelEffect.getInstance(player, 701100));
+			player.broadcastPacket(S_Abnormality_End.getInstance(player, 701100));
 			// обновляем инфу игроку
 			player.updateInfo();
 		}

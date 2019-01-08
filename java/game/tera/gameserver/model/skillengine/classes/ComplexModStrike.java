@@ -1,7 +1,7 @@
 package tera.gameserver.model.skillengine.classes;
 
 import tera.gameserver.model.Character;
-import tera.gameserver.network.serverpackets.SkillStart;
+import tera.gameserver.network.serverpackets.S_Action_Stage;
 import tera.gameserver.templates.SkillTemplate;
 
 /**
@@ -35,7 +35,7 @@ public class ComplexModStrike extends Strike
 		state++;
 		
 		if(state % template.getStateMod() == 0)
-			character.broadcastPacket(SkillStart.getInstance(character, getIconId(), castId,  state / template.getStateMod()));
+			character.broadcastPacket(S_Action_Stage.getInstance(character, getIconId(), castId,  state / template.getStateMod()));
 		
 		super.useSkill(character, targetX, targetY, targetZ);
 	}

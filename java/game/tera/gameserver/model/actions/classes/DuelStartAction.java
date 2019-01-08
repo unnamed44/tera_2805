@@ -10,7 +10,7 @@ import tera.gameserver.model.playable.Player;
 import tera.gameserver.network.serverpackets.ActionDoned;
 import tera.gameserver.network.serverpackets.AppledAction;
 import tera.gameserver.network.serverpackets.DuelStart;
-import tera.gameserver.network.serverpackets.SystemMessage;
+import tera.gameserver.network.serverpackets.S_Sytem_Message;
 
 /**
  * Модель запуска акшена дуэли.
@@ -44,7 +44,7 @@ public class DuelStartAction extends PlayerAction
 		target.sendPacket(ActionDoned.getInstance(actor.getObjectId(), actor.getSubId(), target.getObjectId(), target.getSubId(), type.ordinal(), objectId), true);
 
 		// создаем сообщение о том, что игрок согласился на дуэль
-		SystemMessage packet = SystemMessage.getInstance(MessageType.TARGET_ACCEPTED_THE_DUEL);
+		S_Sytem_Message packet = S_Sytem_Message.getInstance(MessageType.TARGET_ACCEPTED_THE_DUEL);
 
 		// добавляем имя игрока
 		packet.addTarget(target.getName());
@@ -74,13 +74,13 @@ public class DuelStartAction extends PlayerAction
 		{
 			ActionType type = getType();
 
-			SystemMessage packet;
+			S_Sytem_Message packet;
 
 			// если отменивший опонент
 			if(player == target)
 			{
 				// создаем пакет с сообщением
-				packet = SystemMessage.getInstance(MessageType.TARGET_REJERECT_THE_DUEL);
+				packet = S_Sytem_Message.getInstance(MessageType.TARGET_REJERECT_THE_DUEL);
 				// добавляем имя отменившего
 				packet.addTarget(target.getName());
 				// отправляем пакет
@@ -207,7 +207,7 @@ public class DuelStartAction extends PlayerAction
 		// если целевой игрок мертв
 		if(target.isDead())
 		{
-			actor.sendPacket(SystemMessage.getInstance(MessageType.USER_NAME_IS_DEAD).addUserName(target.getName()), true);
+			actor.sendPacket(S_Sytem_Message.getInstance(MessageType.USER_NAME_IS_DEAD).addUserName(target.getName()), true);
 			return false;
 		}
 

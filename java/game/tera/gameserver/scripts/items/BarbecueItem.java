@@ -6,7 +6,7 @@ import tera.gameserver.model.inventory.Inventory;
 import tera.gameserver.model.items.ItemInstance;
 import tera.gameserver.model.playable.Player;
 import tera.gameserver.network.serverpackets.MessageAddedItem;
-import tera.gameserver.network.serverpackets.SystemMessage;
+import tera.gameserver.network.serverpackets.S_Sytem_Message;
 
 /**
  * Обработчик жарки мяса у костра по квесту.
@@ -75,7 +75,7 @@ public class BarbecueItem extends AbstractItemExecutor
 		eventManager.notifyInventoryChanged(player);
 
 		// отправляем пакет о использовании рецепта
-		player.sendPacket(SystemMessage.getInstance(MessageType.ITEM_USE).addItem(RECEPT_ID, 1), true);
+		player.sendPacket(S_Sytem_Message.getInstance(MessageType.ITEM_USE).addItem(RECEPT_ID, 1), true);
 		// отпправляем пакет о выдачи
 		player.sendPacket(MessageAddedItem.getInstance(player.getName(), RESULT_ID, 1), true);
 	}

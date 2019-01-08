@@ -19,7 +19,7 @@ import tera.gameserver.model.skillengine.Effect;
 import tera.gameserver.model.skillengine.Skill;
 import tera.gameserver.model.skillengine.SkillType;
 import tera.gameserver.network.serverpackets.S_Chat;
-import tera.gameserver.network.serverpackets.Emotion;
+import tera.gameserver.network.serverpackets.S_SOCIAL;
 import tera.gameserver.network.serverpackets.S_Dialog;
 import tera.gameserver.network.serverpackets.NpcSpeak;
 import tera.gameserver.network.serverpackets.S_Npc_Menu_Select;
@@ -228,7 +228,7 @@ public abstract class AbstractCharacterAI<E extends Character> extends AbstractA
 			return;
 
 		// отображаем эмоцию персонажа
-		actor.broadcastPacket(Emotion.getInstance(actor, type));
+		actor.broadcastPacket(S_SOCIAL.getInstance(actor, type));
 	}
 
 	@Override

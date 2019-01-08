@@ -9,6 +9,7 @@ import tera.gameserver.model.equipment.SlotType;
 import tera.gameserver.model.items.ItemInstance;
 import tera.gameserver.model.playable.Player;
 import tera.gameserver.model.playable.PlayerAppearance;
+import tera.gameserver.model.playable.PlayerDetails2;
 import tera.gameserver.network.ServerPacketType;
 
 /**
@@ -37,36 +38,39 @@ public class PlayerInfo extends ServerPacket
 		// внешность игрока
 		PlayerAppearance appearance = newPlayer.getAppearance();
 
+		PlayerDetails2 details2 = newPlayer.getdetails2();
+
 		// экиперовка игрока
 		Equipment equipment = newPlayer.getEquipment();
 
-		packet.writeShort(buffer, n); // байт начала ника
-		packet.writeShort(buffer, n += Strings.length(name)); // байт начала описания класcа
-		packet.writeShort(buffer, n += Strings.length(guildName));// клана
-		packet.writeShort(buffer, n += Strings.length(title));// титла
+		packet.writeShort(buffer, n); // name pos
+		packet.writeShort(buffer, n += Strings.length(name)); //guild name pos
+		packet.writeShort(buffer, n += Strings.length(guildName));//title pos
+		packet.writeShort(buffer, n += Strings.length(title));// details 1 pos
 
 		packet.writeShort(buffer, 32);// number of bytes to describe appearence
 		packet.writeShort(buffer, n += 32);// Guild title description
-		packet.writeShort(buffer, n += Strings.length(guildTitle));// следом за верхним что-то пока незнаю
+		packet.writeShort(buffer, n += Strings.length(guildTitle));//details2 pos
+		packet.writeShort(buffer, 64);
 
-		packet.writeInt(buffer, 0);// айди сервера
+		packet.writeInt(buffer, 12);//server id
 		packet.writeInt(buffer, newPlayer.getObjectId());
-		packet.writeInt(buffer, newPlayer.getObjectId());// обджект ид объекта
+		packet.writeInt(buffer, newPlayer.getObjectId());// game id
 		packet.writeInt(buffer, newPlayer.getSubId());
-		packet.writeFloat(buffer, newPlayer.getX());// координаты объекта
+		packet.writeFloat(buffer, newPlayer.getX());
 		packet.writeFloat(buffer, newPlayer.getY());
 		packet.writeFloat(buffer, newPlayer.getZ());
 		packet.writeShort(buffer, newPlayer.getHeading());
 
-		packet.writeInt(buffer, player.getColor(newPlayer)); // цвет ника
-		packet.writeInt(buffer, newPlayer.getTemplateId());// индетификатор класса и расы объекта
+		packet.writeInt(buffer, player.getColor(newPlayer)); // relation
+		packet.writeInt(buffer, newPlayer.getTemplateId());// template id
 		packet.writeShort(buffer, 0);
 		packet.writeShort(buffer, 0x46);
 		packet.writeShort(buffer, 0xAA);
 		packet.writeShort(buffer, 0); // поза перса
 		packet.writeShort(buffer, 0);
-		packet.writeByte(buffer, 1);
-		packet.writeByte(buffer, newPlayer.isDead() ? 0 : 1); // смерть
+		packet.writeByte(buffer, 1);//visible
+		packet.writeByte(buffer, newPlayer.isDead() ? 0 : 1); // alive
 
 		// appearance
 		packet.writeByte(buffer, 65); // temp[9]
@@ -97,7 +101,7 @@ public class PlayerInfo extends ServerPacket
 		}
 
 		packet.writeInt(buffer, newPlayer.isSpawned() ? 1 : 0); // вспышка
-		packet.writeInt(buffer, newPlayer.getMountId()); // животное
+		packet.writeInt(buffer, newPlayer.getMountId()); // mount
 
 		packet.writeInt(0);//pose see C_PLAYER_LOCATION
 		packet.writeInt(0);//title
@@ -112,7 +116,7 @@ public class PlayerInfo extends ServerPacket
 
 		packet.writeInt(buffer, weapon == null ? 0 : weapon.getEnchantLevel()); // Weapon enchant
 
-		packet.writeByte(buffer, 1);//newbie
+		packet.writeByte(buffer, 0);//newbie
 		packet.writeByte(buffer, newPlayer.isPvPMode() ? 1 : 0); // включен ли пвп режим
 
 		packet.writeInt(buffer, newPlayer.getLevel());
@@ -120,14 +124,23 @@ public class PlayerInfo extends ServerPacket
 
 		packet.writeInt(buffer, 0);// что-то тоже нательное
 
-		packet.writeInt(buffer, 1);
+		packet.writeByte(buffer, 1);
 
 		packet.writeInt(buffer, 0);// лифчики
 		packet.writeInt(buffer, 0);
-
+		packet.writeInt(buffer, 0);
+		packet.writeInt(buffer, 0);
+		packet.writeInt(buffer, 0);
+		packet.writeInt(buffer, 0);
+		packet.writeInt(buffer, 0);
 		packet.writeInt(buffer, 0);
 
 		packet.writeByte(buffer, 0);
+		packet.writeByte(buffer, 1);
+		packet.writeInt(buffer, 0);
+		packet.writeInt(buffer, 0);
+		packet.writeInt(buffer, 0);
+		packet.writeFloat(buffer, 1);
 
 		packet.writeString(buffer, name);// имя
 		packet.writeString(buffer, guildName);// название клана
@@ -167,6 +180,11 @@ public class PlayerInfo extends ServerPacket
 		packet.writeByte(buffer, appearance.getMothGape());
 
 		packet.writeString(buffer, guildTitle);
+
+		int[] jp = details2.getDetails2();
+		for (int r = 0; r < 64; ++r) {
+			packet.writeByte(buffer, jp[r]);
+		}
 		packet.writeString(buffer, iconName);
 
 		buffer.flip();
@@ -191,7 +209,7 @@ public class PlayerInfo extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.PLAYER_INFO;
+		return ServerPacketType.S_SPAWN_USER;
 	}
 
 	@Override

@@ -323,7 +323,7 @@ public final class Player extends Playable implements Nameable, Identified {
 			}
 		}
 
-		sendPacket(AddExp.getInstance(exp, added, next, object != null ? object.getObjectId() : 0, object != null ? object.getSubId() : 0), true);
+		sendPacket(S_Player_Change_Exp.getInstance(exp, added, next, object != null ? object.getObjectId() : 0, object != null ? object.getSubId() : 0), true);
 	}
 
 	/**
@@ -357,7 +357,7 @@ public final class Player extends Playable implements Nameable, Identified {
 			super.addMe(player);
 
 			if(isPvPMode() && !isDead())
-				player.sendPacket(TargetHp.getInstance(this, TargetHp.RED), true);
+				player.sendPacket(S_Show_Hp.getInstance(this, S_Show_Hp.RED), true);
 
 		} catch(NullPointerException e) {
 			log.warning(this, e);
@@ -768,7 +768,7 @@ public final class Player extends Playable implements Nameable, Identified {
 		Party party = getParty();
 
 		if(party != null) {
-			SystemMessage message = SystemMessage.getInstance(MessageType.PARTY_PLAYER_NAME_IS_DEAD);
+			S_Sytem_Message message = S_Sytem_Message.getInstance(MessageType.PARTY_PLAYER_NAME_IS_DEAD);
 			message.add("PartyPlayerName", getName());
 			party.sendPacket(this, message);
 		}
@@ -777,8 +777,8 @@ public final class Player extends Playable implements Nameable, Identified {
 
 			Player killer = attacker.getPlayer();
 
-			attacker.sendPacket(SystemMessage.getInstance(MessageType.YOU_KILLED_PLAYER).addPlayer(getName()), true);
-			sendPacket(SystemMessage.getInstance(MessageType.PLAYER_KILLED_YOU).addPlayer(killer.getName()), true);
+			attacker.sendPacket(S_Sytem_Message.getInstance(MessageType.YOU_KILLED_PLAYER).addPlayer(getName()), true);
+			sendPacket(S_Sytem_Message.getInstance(MessageType.PLAYER_KILLED_YOU).addPlayer(killer.getName()), true);
 
 			checkPK(killer);
 
@@ -852,7 +852,7 @@ public final class Player extends Playable implements Nameable, Identified {
 
 		add = getCurrentHp() - add;
 
-		sendPacket(PlayerCurrentHp.getInstance(this, healer, add, PlayerCurrentHp.INCREASE_PLUS), true);
+		sendPacket(S_Creature_Change_Hp.getInstance(this, healer, add, S_Creature_Change_Hp.INCREASE_PLUS), true);
 	}
 
 	@Override
@@ -864,7 +864,7 @@ public final class Player extends Playable implements Nameable, Identified {
 
 		add = getCurrentMp() - add;
 
-		sendPacket(PlayerCurrentMp.getInstance(this, healer, add, PlayerCurrentMp.INCREASE_PLUS), true);
+		sendPacket(S_Player_Change_Mp.getInstance(this, healer, add, S_Player_Change_Mp.INCREASE_PLUS), true);
 	}
 
 	/**
@@ -1229,7 +1229,7 @@ public final class Player extends Playable implements Nameable, Identified {
 
 	@Override
 	public ServerPacket getMovePacket(float x, float y, float z, int heading, MoveType type, float targetX, float targetY, float targetZ) {
-		return PlayerMove.getInstance(this, type, x, y, z, heading, targetX, targetY, targetZ);
+		return S_Npc_Location.getInstance(this, type, x, y, z, heading, targetX, targetY, targetZ);
 	}
 
 	@Override
@@ -1245,7 +1245,7 @@ public final class Player extends Playable implements Nameable, Identified {
 		template.removePassiveFuncs(this);
 
 		setMountId(0);
-		broadcastPacket(MountOff.getInstance(this, skill.getIconId()));
+		broadcastPacket(S_Unmount_Vehicle.getInstance(this, skill.getIconId()));
 		setMountSkill(null);
 		updateInfo();
 	}
@@ -1649,7 +1649,7 @@ public final class Player extends Playable implements Nameable, Identified {
 			}
 		}
 
-		player.sendPacket(DeleteCharacter.getInstance(this, type), true);
+		player.sendPacket(S_Despawn_Npc.getInstance(this, type), true);
 	}
 
 	@Override
@@ -1743,7 +1743,7 @@ public final class Player extends Playable implements Nameable, Identified {
 					continue;
 				}
 
-				sendPacket(AppledEffect.getInstance(effect.getEffector(), effect.getEffected(), effect.getEffectId(), effect.getTimeEnd() * 1000), true);
+				sendPacket(S_Abnormality_Begin.getInstance(effect.getEffector(), effect.getEffected(), effect.getEffectId(), effect.getTimeEnd() * 1000), true);
 			}
 		} finally {
 			effectList.unlock();
@@ -1752,7 +1752,7 @@ public final class Player extends Playable implements Nameable, Identified {
 
 	@Override
 	public void sendMessage(MessageType type) {
-		sendPacket(SystemMessage.getInstance(type), true);
+		sendPacket(S_Sytem_Message.getInstance(type), true);
 	}
 
 	@Override
@@ -1799,7 +1799,7 @@ public final class Player extends Playable implements Nameable, Identified {
 
 		for(ReuseSkill reuse : reuses) {
 			if(!reuse.isItemReuse()) {
-				sendPacket(SkillReuse.getInstance(reuse.getSkillId(), (int) Math.max(0, reuse.getEndTime() - System.currentTimeMillis())), true);
+				sendPacket(S_Start_Cooltime_Skill.getInstance(reuse.getSkillId(), (int) Math.max(0, reuse.getEndTime() - System.currentTimeMillis())), true);
 			}
 		}
 	}
@@ -2120,7 +2120,7 @@ public final class Player extends Playable implements Nameable, Identified {
 			ServerPacket pvp = null;
 
 			if(pvpMode) {
-				hp = TargetHp.getInstance(this, TargetHp.RED);
+				hp = S_Show_Hp.getInstance(this, S_Show_Hp.RED);
 				pvp = PlayerPvPOn.getInstance(this);
 			} else {
 				hp = CancelTargetHp.getInstance(this);
@@ -2379,7 +2379,7 @@ public final class Player extends Playable implements Nameable, Identified {
 	@Override
 	public void teleToLocation(int continentId, float x, float y, float z, int heading) {
 
-		decayMe(DeleteCharacter.DISAPPEARS);
+		decayMe(S_Despawn_Npc.DISAPPEARS);
 
 		int current = getContinentId();
 
@@ -2457,7 +2457,7 @@ public final class Player extends Playable implements Nameable, Identified {
 				continue;
 			}
 
-			broadcastPacket(AppledEffect.getInstance(effect.getEffector(), effect.getEffected(), effect));
+			broadcastPacket(S_Abnormality_Begin.getInstance(effect.getEffector(), effect.getEffected(), effect));
 		}
 	}
 
@@ -2479,7 +2479,7 @@ public final class Player extends Playable implements Nameable, Identified {
 	@Override
 	public void updateHp() {
 
-		sendPacket(PlayerCurrentHp.getInstance(this, null, 0, PlayerCurrentHp.INCREASE), true);
+		sendPacket(S_Creature_Change_Hp.getInstance(this, null, 0, S_Creature_Change_Hp.INCREASE), true);
 
 		Party party = getParty();
 
@@ -2494,12 +2494,12 @@ public final class Player extends Playable implements Nameable, Identified {
 			Player enemy = duel.getEnemy(this);
 
 			if(enemy != null) {
-				enemy.sendPacket(TargetHp.getInstance(this, TargetHp.RED), true);
+				enemy.sendPacket(S_Show_Hp.getInstance(this, S_Show_Hp.RED), true);
 			}
 		}
 
 		if(pvpMode) {
-			broadcastPacketToOthers(TargetHp.getInstance(this, TargetHp.RED));
+			broadcastPacketToOthers(S_Show_Hp.getInstance(this, S_Show_Hp.RED));
 		}
 	}
 
@@ -2511,7 +2511,7 @@ public final class Player extends Playable implements Nameable, Identified {
 	@Override
 	public void updateMp() {
 
-		sendPacket(PlayerCurrentMp.getInstance(this, null, 0, PlayerCurrentMp.INCREASE), true);
+		sendPacket(S_Player_Change_Mp.getInstance(this, null, 0, S_Player_Change_Mp.INCREASE), true);
 
 		if(party != null) {
 			party.updateStat(this);
@@ -2532,9 +2532,9 @@ public final class Player extends Playable implements Nameable, Identified {
 		for(int i = 0, length = players.size(); i < length; i++) {
 
 			Player target = array[i];
-			target.removeMe(this, DeleteCharacter.DISAPPEARS);
+			target.removeMe(this, S_Despawn_Npc.DISAPPEARS);
 
-			removeMe(target, DeleteCharacter.DISAPPEARS);
+			removeMe(target, S_Despawn_Npc.DISAPPEARS);
 
 			target.addMe(this);
 
@@ -2656,7 +2656,7 @@ public final class Player extends Playable implements Nameable, Identified {
 
 	@Override
 	public void updateReuse(Skill skill, int reuseDelay) {
-		sendPacket(SkillReuse.getInstance(skill.getReuseId(), reuseDelay), true);
+		sendPacket(S_Start_Cooltime_Skill.getInstance(skill.getReuseId(), reuseDelay), true);
 	}
 
 	@Override

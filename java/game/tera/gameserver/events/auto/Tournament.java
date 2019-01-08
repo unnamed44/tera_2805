@@ -28,8 +28,8 @@ import tera.gameserver.model.npc.interaction.links.NpcLink;
 import tera.gameserver.model.npc.interaction.replyes.Reply;
 import tera.gameserver.model.npc.spawn.Spawn;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.AppledEffect;
-import tera.gameserver.network.serverpackets.CancelEffect;
+import tera.gameserver.network.serverpackets.S_Abnormality_Begin;
+import tera.gameserver.network.serverpackets.S_Abnormality_End;
 import tera.gameserver.tables.WorldZoneTable;
 import tera.util.Location;
 
@@ -393,7 +393,7 @@ public class Tournament extends AbstractAutoEvent
 			player.setStuned(true);
 
 			// отображаем анимацию блока
-			player.broadcastPacket(AppledEffect.getInstance(player, player, EventUtils.SLEEP_ID, 30000));
+			player.broadcastPacket(S_Abnormality_Begin.getInstance(player, player, EventUtils.SLEEP_ID, 30000));
 
 			// обновляем инфо
 			player.updateInfo();
@@ -861,7 +861,7 @@ public class Tournament extends AbstractAutoEvent
 			// ставим флаг неуязвимости
 			player.setInvul(true);
 			// отображаем анимацию блока
-			player.broadcastPacket(AppledEffect.getInstance(player, player, EventUtils.SLEEP_ID, 30000));
+			player.broadcastPacket(S_Abnormality_Begin.getInstance(player, player, EventUtils.SLEEP_ID, 30000));
 			// обновляем инфу игроку
 			player.updateInfo();
 
@@ -1050,7 +1050,7 @@ public class Tournament extends AbstractAutoEvent
 			// ставим флаг неуязвимости
 			player.setInvul(true);
 			// отображаем анимацию блока
-			player.broadcastPacket(AppledEffect.getInstance(player, player, EventUtils.SLEEP_ID, (Config.EVENT_TMT_BATTLE_TIME + 1) * 60000));
+			player.broadcastPacket(S_Abnormality_Begin.getInstance(player, player, EventUtils.SLEEP_ID, (Config.EVENT_TMT_BATTLE_TIME + 1) * 60000));
 			// обновляем инфу игроку
 			player.updateInfo();
 		}
@@ -1078,7 +1078,7 @@ public class Tournament extends AbstractAutoEvent
 			// убираем флаг неуязвимости
 			player.setInvul(false);
 			// снимаем иконку слипа
-			player.broadcastPacket(CancelEffect.getInstance(player, EventUtils.SLEEP_ID));
+			player.broadcastPacket(S_Abnormality_End.getInstance(player, EventUtils.SLEEP_ID));
 			// обновляем инфу игроку
 			player.updateInfo();
 		}
@@ -1111,7 +1111,7 @@ public class Tournament extends AbstractAutoEvent
 			// убераем неузвимость
 			player.setInvul(false);
 			// убераем анимацию блока
-			player.broadcastPacket(CancelEffect.getInstance(player, EventUtils.SLEEP_ID));
+			player.broadcastPacket(S_Abnormality_End.getInstance(player, EventUtils.SLEEP_ID));
 			// обновляем инфу игроку
 			player.updateInfo();
 		}

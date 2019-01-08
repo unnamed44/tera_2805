@@ -14,7 +14,7 @@ import tera.gameserver.model.quests.QuestEvent;
 import tera.gameserver.model.quests.QuestList;
 import tera.gameserver.model.quests.QuestPanelState;
 import tera.gameserver.model.quests.QuestState;
-import tera.gameserver.network.serverpackets.QuestUpdateCounter;
+import tera.gameserver.network.serverpackets.S_Update_Quest;
 
 /**
  * Акшен обновления квестового счетчика.
@@ -124,7 +124,7 @@ public class ActionUpdateCounter extends AbstractQuestAction
 		}
 
 		// отправляем пакет
-		player.sendPacket(QuestUpdateCounter.getInstance(state, counts, doned), true);
+		player.sendPacket(S_Update_Quest.getInstance(state, counts, doned), true);
 		// добавляем на панель
 		player.updateQuestInPanel(state, QuestPanelState.UPDATE);
 	}

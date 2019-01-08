@@ -6,12 +6,7 @@ import rlib.util.SafeTask;
 import tera.gameserver.manager.ExecutorManager;
 import tera.gameserver.model.World;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.AppledCharmEffect;
-import tera.gameserver.network.serverpackets.AppledEffect;
-import tera.gameserver.network.serverpackets.CancelEffect;
-import tera.gameserver.network.serverpackets.S_Skill_List;
-import tera.gameserver.network.serverpackets.SkillEnd;
-import tera.gameserver.network.serverpackets.SkillStart;
+import tera.gameserver.network.serverpackets.*;
 import tera.gameserver.tables.SkillTable;
 import tera.gameserver.templates.SkillTemplate;
 
@@ -46,14 +41,14 @@ public class SkillCommand extends AbstractCommand
 			{
 				final int id =  Integer.parseInt(values);
 
-				player.sendPacket(SkillStart.getInstance(player, id, 0, 0), true);
+				player.sendPacket(S_Action_Stage.getInstance(player, id, 0, 0), true);
 
 				SafeTask task = new SafeTask()
 				{
 					@Override
 					protected void runImpl()
 					{
-						player.sendPacket(SkillEnd.getInstance(player, 0, id), true);
+						player.sendPacket(S_Action_End.getInstance(player, 0, id), true);
 					}
 				};
 
@@ -65,14 +60,14 @@ public class SkillCommand extends AbstractCommand
 			{
 				final int id = Integer.parseInt(values);
 
-				player.sendPacket(AppledEffect.getInstance(player, player, id, 10000), true);
+				player.sendPacket(S_Abnormality_Begin.getInstance(player, player, id, 10000), true);
 
 				SafeTask task = new SafeTask()
 				{
 					@Override
 					protected void runImpl()
 					{
-						player.sendPacket(CancelEffect.getInstance(player, id), true);
+						player.sendPacket(S_Abnormality_End.getInstance(player, id), true);
 					}
 				};
 
@@ -91,7 +86,7 @@ public class SkillCommand extends AbstractCommand
 					@Override
 					protected void runImpl()
 					{
-						player.sendPacket(CancelEffect.getInstance(player, id), true);
+						player.sendPacket(S_Abnormality_End.getInstance(player, id), true);
 					}
 				};
 

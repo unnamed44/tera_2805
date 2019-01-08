@@ -6,7 +6,7 @@ import tera.gameserver.model.AttackInfo;
 import tera.gameserver.model.Character;
 import tera.gameserver.model.Guild;
 import tera.gameserver.model.skillengine.Skill;
-import tera.gameserver.network.serverpackets.TargetHp;
+import tera.gameserver.network.serverpackets.S_Show_Hp;
 import tera.gameserver.templates.NpcTemplate;
 
 /**
@@ -103,6 +103,6 @@ public class RegionWarControl extends Monster implements RegionWarNpc
 		// если он есть
 		if(owner != null)
 			// отправляем всем состояние хп
-			owner.sendPacket(null, TargetHp.getInstance(this, TargetHp.BLUE));
+			owner.sendPacket(null, S_Show_Hp.getInstance(this, S_Show_Hp.BLUE));
 	}
 }

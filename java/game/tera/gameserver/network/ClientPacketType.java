@@ -47,22 +47,27 @@ public enum ClientPacketType
 	C_WHISPER(0x5BC3, new C_Whisper()),
 	C_NPC_CONTACT(0xD2FD, new C_Npc_Contact()),
 	C_DIALOG(0xB34E, new C_Dialog()),
-
-
-
-
-
-
-	/** перемещения игрока, версия 172 */
-	/** запрос на перемещение во время лазания */
-	PLAYER_CLIMB(0xEDC9, new PlayerClimb()),
-	/** запрос на лазание */
-	REQUESTPLAYER_CLIMB(0xBB06, new RequestStartClimb()),
-	/** пакет с оправкой движения, версия */
-	PLAYER_SKILL_MOVE(0x91A5, new PlayerMoveOnSkill()),
-	/** приватный месседж от игрока, версия 172 */
-	/** обновление титула игрока */
-	UPDATE_TITLE(0x9CD4, new UpdateTitle()),
+	C_NOTIFY_LOCATION_IN_ACTION(0x68EE, new C_Notify_Player_In_Action()),
+	C_BROADCAST_CLIMBING(0x9BF4, new C_Broadcast_Climbing()),
+	C_START_CLIMBING(0xFBB0, new C_Start_Climbing()),
+	C_END_CLIMBING(0x5820, new C_End_Climbing()),
+	C_APPLY_TITLE(0x938E, new C_Apply_Title()),
+	C_SOCIAL(0xACB6, new C_Social()),
+	C_EQUIP_ITEM(0x64F2, new C_Equip_Item()),
+	C_INVENTORY_AUTO_SORT(0x9F38, new C_Inventory_Auto_Sort()),
+	C_MOVE_INVEN_POS(0x8892, new C_Move_Inven_Pos()),
+	C_DEL_ITEM(0xD058, new C_Del_Item()),
+	C_USE_ITEM(0x59BA, new C_Use_Item()),
+	C_TOGGLE_TASK_INFO_WINDOW(0xB2D0, new C_Toggle_Task_Info_Window()),
+	C_CANCEL_QUEST(0xC25F, new C_Cancel_Quest()),
+	C_STR_EVALUATE_LIST(0xD81A, new C_Str_Evaluate_List()),
+	C_SHOW_ITEM_TOOLTIP_EX(0xAA2A, new C_Show_Item_Tooltip_Ex()),
+	C_TRY_LOOT_DROPITEM(0xC016, new C_Try_Loot_Dropitem()),
+	C_SHOW_ITEM_TOOLTIP(0xBD00, new C_Show_Item_Tooltip()),
+	C_REQUEST_RET_VILLAGE_INFO(0x70c6, new C_Request_Ret_Village_Info()),
+	C_START_SKILL(0x7FC6, new C_START_SKILL()),
+	C_START_INSTANCE_SKILL(0x729C, new C_Start_Instance_Skill()),
+	C_START_COMBO_INSTANT_SKILL(0x72B9, new C_Start_Combo_Instant_Skill()),
 
 	/** запрос ид зоны клиентом, верия 172 */
 	REQUEST_WORLD_ZONE(0x5E43, new RequestWorldZone()),
@@ -71,32 +76,28 @@ public enum ClientPacketType
 
 	/** запрос содержания инвенторя, версия 172 */
 	/** запрос на одевание придмета, версия 172 */
-	REQUEST_DRESSING_ITEM(0xC7B5, new RequestDressingItem()),
 	/** запрос на снятие предмета, версия 172 */
-	REQUEST_TAKING_ITEM(0xB983, new RequestDressingItem()),
+	REQUEST_TAKING_ITEM(0xB983, new C_Equip_Item()),
 	/** запрос на перемещение итема, версия 172 */
-	REQUEST_INVENTORY_MOVING_ITEM(0x9BDA, new RequestInventoryMovingItem()),
 	/** запрос на перемещение итема, версия 172 */
 	REQUEST_BANK_MOVING_ITEM(0xEFC9, new RequestBankMovingItem()),
 	/** запрос на смену вкладки в банке */
 	REQUEST_BANK_CHANGE_TAB(0xDBB0, new RequestBankChangeTab()),
 	/** запрос на сортировку инвенторя, версия 172 */
-	REQUEST_SORT_INVENTORY(0xA92D, new RequestSortInventory()), //
 	/** запрос на удаление итема с инвенторя, версия 172 */
-	REQUEST_DELETE_ITEM(0xD9EC, new RequestDeleteItem()), // 14 00 35 F2 96 5F 00 00 00 00 00 00 04 00 00 00
+	 // 14 00 35 F2 96 5F 00 00 00 00 00 00 04 00 00 00
 	/** пакет, запрашивающий информацию о итеме, версия 172 */
 	REQUEST_INVENTORY_ITEM_INFO(0xBC87, new RequestInventoryInfoItem()), // 28 00 F4 C4 1E 00 13 00 00 00 C4 71 00 00 00 00
 	/** запрос на поднятие итема, версия 172 */
 	REQUEST_PICK_UP_ITEM(0x4E2D, new RequestPickUpItem()),
 	/** заппрос на использование итема, версия 172 */
-	REQUEST_USE_ITEM(0xE307, new RequestUseItem()), // 3A 00 F6 B0 AB 76 00 00 00 00 00 00 47 1F 00 00
+	REQUEST_USE_ITEM(0xE307, new C_Use_Item()), // 3A 00 F6 B0 AB 76 00 00 00 00 00 00 47 1F 00 00
 	/** запрос на использование свитка */
-	REQUEST_USE_SCROLL(0x8386, new RequestUseScroll()),
+	REQUEST_USE_SCROLL(0x8386, new C_Request_Ret_Village_Info()),
 	/** запрос на отображение инфы об темплейте итема, версия 172 */
-	REQUEST_ITEM_TEMPLATE_INFO(0xA9DA, new RequestItemTemplateInfo()),
+	REQUEST_ITEM_TEMPLATE_INFO(0xA9DA, new C_Show_Item_Tooltip()),
 
 	/** запрос на запуск эмоции, версия 172 */
-	REQUEST_START_EMOTION(0xA2F1, new RequestStartEmotion()),
 
 	/** запрос инфы о клане, версия 172 */
 	REQUEST_GUILD_INFO(0x81A4, new RequestGuildInfo()),
@@ -126,11 +127,10 @@ public enum ClientPacketType
 	REQUEST_GUILD_UPDATE_NOTE(0x4FE9, new RequestGuildUpdateNote()),
 
 	/** запрос на юз мили скила, версия 172 */
-	REQUEST_USE_SHORT_SKILL(0xCF34, new RequestUseShortSkill()),
 	/** запрос на юз серийного скила, версия 172 */
-	REQUEST_USE_QUEUE_SKILL(0xCED8, new RequestUseQueueSkill()),
+	REQUEST_USE_QUEUE_SKILL(0xCED8, new C_Start_Combo_Instant_Skill()),
 	/** запрос на юз рендж скила, версия 172 */
-	REQUEST_USE_RANGE_SKILL(0x7017, new RequestUseRangeSkill()),
+	REQUEST_USE_RANGE_SKILL(0x7017, new C_Start_Instance_Skill()),
 	/** запрос на юз догоняющего скила, версия 172 */
 	REQUEST_USE_RUSH_SKILL(0xBF14, new RequestUseRushSkill()),
 	/** запрос на юз деф скила, версия 172 */

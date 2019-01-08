@@ -30,7 +30,7 @@ import tera.gameserver.model.quests.QuestState;
 import tera.gameserver.model.quests.QuestType;
 import tera.gameserver.model.quests.Reward;
 import tera.gameserver.network.serverpackets.QuestCompleted;
-import tera.gameserver.network.serverpackets.SystemMessage;
+import tera.gameserver.network.serverpackets.S_Sytem_Message;
 import tera.gameserver.tables.NpcTable;
 import tera.gameserver.templates.NpcTemplate;
 import tera.util.LocalObjects;
@@ -204,7 +204,7 @@ public abstract class AbstractQuest implements Quest
 		if(!force && !cancelable)
 		{
 			// отправляем сообщени об этом
-			player.sendPacket(SystemMessage.getInstance(MessageType.QUEST_NAME_CANT_BE_ABANDONED).addQuestName(name), true);
+			player.sendPacket(S_Sytem_Message.getInstance(MessageType.QUEST_NAME_CANT_BE_ABANDONED).addQuestName(name), true);
 			return;
 		}
 
@@ -246,7 +246,7 @@ public abstract class AbstractQuest implements Quest
 			npc.updateQuestInteresting(player, true);
 
 		// отправляем сообщени об этом
-		player.sendPacket(SystemMessage.getInstance(MessageType.ABANDONED_QUEST_NAME).addQuestName(name), true);
+		player.sendPacket(S_Sytem_Message.getInstance(MessageType.ABANDONED_QUEST_NAME).addQuestName(name), true);
 
 		// получаем логера игровых событий
 		GameLogManager gameLogger = GameLogManager.getInstance();
@@ -311,7 +311,7 @@ public abstract class AbstractQuest implements Quest
 			npc.updateQuestInteresting(player, true);
 
 		// отправляем сообщени об этом
-		player.sendPacket(SystemMessage.getInstance(MessageType.CONGRATULATIONS_QUEST_NAME_COMPLETED).addQuestName(id), true);
+		player.sendPacket(S_Sytem_Message.getInstance(MessageType.CONGRATULATIONS_QUEST_NAME_COMPLETED).addQuestName(id), true);
 
 		// получаем логера игровых событий
 		GameLogManager gameLogger = GameLogManager.getInstance();

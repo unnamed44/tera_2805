@@ -8,7 +8,7 @@ import rlib.util.wraps.Wraps;
 import tera.gameserver.model.AttackInfo;
 import tera.gameserver.model.Character;
 import tera.gameserver.network.serverpackets.RequestSkillStart;
-import tera.gameserver.network.serverpackets.SkillEnd;
+import tera.gameserver.network.serverpackets.S_Action_End;
 import tera.gameserver.templates.SkillTemplate;
 
 /**
@@ -49,7 +49,7 @@ public class AbsorptionHp extends PrepareNextSkill
 		// если нет смысла в запуске восстановителя мп, просто завершаем каст
 		if(absHp < 1 || force || attacker.isAttackBlocking() || attacker.isOwerturned())
 		{
-			attacker.broadcastPacket(SkillEnd.getInstance(attacker, castId, template.getId()));
+			attacker.broadcastPacket(S_Action_End.getInstance(attacker, castId, template.getId()));
 			return;
 		}
 

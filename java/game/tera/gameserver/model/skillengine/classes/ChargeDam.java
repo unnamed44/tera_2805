@@ -1,7 +1,7 @@
 package tera.gameserver.model.skillengine.classes;
 
 import tera.gameserver.model.Character;
-import tera.gameserver.network.serverpackets.SkillStart;
+import tera.gameserver.network.serverpackets.S_Action_Stage;
 import tera.gameserver.templates.SkillTemplate;
 
 /**
@@ -33,6 +33,6 @@ public class ChargeDam extends Strike
 		castId = attacker.getCastId();
 		chargeLevel = attacker.getChargeLevel();
 		
-		attacker.broadcastPacket(SkillStart.getInstance(attacker, getIconId(), castId, 0));
+		attacker.broadcastPacket(S_Action_Stage.getInstance(attacker, getIconId(), castId, 0));
 	}
 }

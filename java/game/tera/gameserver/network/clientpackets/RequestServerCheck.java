@@ -1,6 +1,6 @@
 package tera.gameserver.network.clientpackets;
 
-import tera.gameserver.network.serverpackets.CheckServerResult;
+import tera.gameserver.network.serverpackets.S_Visit_New_Section;
 
 /**
  * Пакет клиентский, для проверки сервера
@@ -35,6 +35,6 @@ public class RequestServerCheck extends ClientPacket
 	@Override
 	public void runImpl()
 	{
-		owner.sendPacket(CheckServerResult.getInstance(vals), true);
+		owner.sendPacket(S_Visit_New_Section.getInstance(vals), true);
 	}
 }

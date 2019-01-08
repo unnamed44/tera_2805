@@ -3,7 +3,7 @@ package tera.gameserver.model.items;
 import tera.gameserver.model.Character;
 import tera.gameserver.model.TObject;
 import tera.gameserver.model.skillengine.Skill;
-import tera.gameserver.network.serverpackets.CharPickUpItem;
+import tera.gameserver.network.serverpackets.S_Loot_Dropitem;
 import tera.gameserver.templates.CommonTemplate;
 import tera.gameserver.templates.ItemTemplate;
 import tera.gameserver.templates.SkillTemplate;
@@ -77,7 +77,7 @@ public final class CommonInstance extends ItemInstance
 			if(character == null)
 				return false;
 
-			character.broadcastPacket(CharPickUpItem.getInstance(character, this));
+			character.broadcastPacket(S_Loot_Dropitem.getInstance(character, this));
 
 			deleteMe();
 

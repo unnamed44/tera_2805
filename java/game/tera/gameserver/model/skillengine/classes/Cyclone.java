@@ -2,7 +2,7 @@ package tera.gameserver.model.skillengine.classes;
 
 import tera.gameserver.model.Character;
 import tera.gameserver.network.serverpackets.MoveSkill;
-import tera.gameserver.network.serverpackets.SkillStart;
+import tera.gameserver.network.serverpackets.S_Action_Stage;
 import tera.gameserver.templates.SkillTemplate;
 
 /**
@@ -77,7 +77,7 @@ public class Cyclone extends ChargeDam
 		// рассчет стартового стейта скила
 		state = template.getStartState() + template.getEndState() - chargeLevel;
 		// отображаем начало каста
-		attacker.broadcastPacket(SkillStart.getInstance(attacker, getIconId(), castId, state));
+		attacker.broadcastPacket(S_Action_Stage.getInstance(attacker, getIconId(), castId, state));
 
 		// если раш, отображаем рывок
 		if(isRush())
@@ -101,6 +101,6 @@ public class Cyclone extends ChargeDam
 
 		super.useSkill(character, targetX, targetY, targetZ);
 
-		character.broadcastPacket(SkillStart.getInstance(character, template.getIconId(), castId, state));
+		character.broadcastPacket(S_Action_Stage.getInstance(character, template.getIconId(), castId, state));
 	}
 }

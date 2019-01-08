@@ -4,8 +4,8 @@ import tera.gameserver.manager.ObjectEventManager;
 import tera.gameserver.model.Character;
 import tera.gameserver.model.skillengine.Skill;
 import tera.gameserver.network.serverpackets.RequestSkillStart;
-import tera.gameserver.network.serverpackets.SkillEnd;
-import tera.gameserver.network.serverpackets.SkillStart;
+import tera.gameserver.network.serverpackets.S_Action_End;
+import tera.gameserver.network.serverpackets.S_Action_Stage;
 import tera.gameserver.templates.SkillTemplate;
 
 /**
@@ -35,7 +35,7 @@ public class Charge extends AbstractSkill
 		if(force || attacker.isAttackBlocking() || attacker.isOwerturned())
 		{
 			// отображаем пакет завершения каста
-			attacker.broadcastPacket(SkillEnd.getInstance(attacker, castId, template.getId()));
+			attacker.broadcastPacket(S_Action_End.getInstance(attacker, castId, template.getId()));
 			// зануляем заряжаемый скил
 			attacker.setChargeSkill(null);
 			return;
@@ -76,7 +76,7 @@ public class Charge extends AbstractSkill
 			return;
 		}
 
-		character.broadcastPacket(SkillStart.getInstance(character, template.getId(), castId, getCharge()));
+		character.broadcastPacket(S_Action_Stage.getInstance(character, template.getId(), castId, getCharge()));
 
 		// получаем менеджера событий
 		ObjectEventManager eventManager = ObjectEventManager.getInstance();

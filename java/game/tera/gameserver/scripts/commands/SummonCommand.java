@@ -1,14 +1,6 @@
 package tera.gameserver.scripts.commands;
 
-import rlib.util.array.Array;
-
-import tera.gameserver.manager.ExecutorManager;
-import tera.gameserver.model.World;
-import tera.gameserver.model.npc.summons.Summon;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.model.skillengine.Skill;
-import tera.gameserver.network.serverpackets.SkillEnd;
-import tera.gameserver.network.serverpackets.SkillStart;
 
 /**
  * @author Ronn
@@ -65,14 +57,14 @@ public class SummonCommand extends AbstractCommand
 
 				for(final NewSummon summon : summons)
 				{
-					summon.broadcastPacket(SkillStart.getInstance(summon, id, 1, 0));
+					summon.broadcastPacket(S_Action_Stage.getInstance(summon, id, 1, 0));
 
 					Runnable run = new Runnable()
 					{
 						@Override
 						public void run()
 						{
-							summon.broadcastPacket(SkillEnd.getInstance(summon, 1, id));
+							summon.broadcastPacket(S_Action_End.getInstance(summon, 1, id));
 						}
 					};
 

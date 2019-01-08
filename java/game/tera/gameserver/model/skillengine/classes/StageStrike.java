@@ -1,7 +1,7 @@
 package tera.gameserver.model.skillengine.classes;
 
 import tera.gameserver.model.Character;
-import tera.gameserver.network.serverpackets.SkillStart;
+import tera.gameserver.network.serverpackets.S_Action_Stage;
 import tera.gameserver.templates.SkillTemplate;
 
 /**
@@ -25,7 +25,7 @@ public class StageStrike extends Strike
 		int stage = getStage();
 
 		if(stage > 0)
-			character.broadcastPacket(SkillStart.getInstance(character, getIconId(), getCastId(),  stage));
+			character.broadcastPacket(S_Action_Stage.getInstance(character, getIconId(), getCastId(),  stage));
 
 		if(isApply())
 			super.useSkill(character, targetX, targetY, targetZ);

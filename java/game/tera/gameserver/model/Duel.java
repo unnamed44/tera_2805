@@ -13,7 +13,7 @@ import tera.gameserver.manager.PacketManager;
 import tera.gameserver.model.npc.summons.Summon;
 import tera.gameserver.model.playable.Player;
 import tera.gameserver.model.skillengine.Skill;
-import tera.gameserver.network.serverpackets.SystemMessage;
+import tera.gameserver.network.serverpackets.S_Sytem_Message;
 
 /**
  * Модель дуэли между игроками.
@@ -220,7 +220,7 @@ public final class Duel extends SafeTask implements Foldable
 			summon.getAI().abortAttack();
 
 		// создаем пакет с инфой кто проиграл и победил
-		SystemMessage packet = SystemMessage.getInstance(MessageType.WINNER_DEFEATED_LOSER_IN_A_DUEL);
+		S_Sytem_Message packet = S_Sytem_Message.getInstance(MessageType.WINNER_DEFEATED_LOSER_IN_A_DUEL);
 
 		// если инициатор победил
 		if(actor.getCurrentHp() > enemy.getCurrentHp())

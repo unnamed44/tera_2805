@@ -3,8 +3,8 @@ package tera.gameserver.model.worldobject;
 import tera.Config;
 import tera.gameserver.model.TObject;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.DeleteWorldObject;
-import tera.gameserver.network.serverpackets.WorldObjectInfo;
+import tera.gameserver.network.serverpackets.S_Despawn_Bonfire;
+import tera.gameserver.network.serverpackets.S_Spawn_Bonfire;
 
 /**
  * Модель объектов  которые находятся в мире со спицефическими функциями.
@@ -24,7 +24,7 @@ public abstract class WorldObject extends TObject
 	@Override
 	public void addMe(Player player)
 	{
-		player.sendPacket(WorldObjectInfo.getInstance(this), true);
+		player.sendPacket(S_Spawn_Bonfire.getInstance(this), true);
 	}
 
 	@Override
@@ -42,6 +42,6 @@ public abstract class WorldObject extends TObject
 	@Override
 	public void removeMe(Player player, int type)
 	{
-		player.sendPacket(DeleteWorldObject.getInstance(this), true);
+		player.sendPacket(S_Despawn_Bonfire.getInstance(this), true);
 	}
 }

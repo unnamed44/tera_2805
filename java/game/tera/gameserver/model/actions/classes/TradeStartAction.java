@@ -11,7 +11,7 @@ import tera.gameserver.model.actions.dialogs.TradeDialog;
 import tera.gameserver.model.playable.Player;
 import tera.gameserver.network.serverpackets.ActionDoned;
 import tera.gameserver.network.serverpackets.AppledAction;
-import tera.gameserver.network.serverpackets.SystemMessage;
+import tera.gameserver.network.serverpackets.S_Sytem_Message;
 
 /**
  * Моделт акшена приглашения на обмен вещами.
@@ -66,12 +66,12 @@ public class TradeStartAction extends PlayerAction
 			// получаем тип
 			ActionType type = getType();
 
-			SystemMessage packet = null;
+			S_Sytem_Message packet = null;
 
 			if(player == actor)
 			{
 				// создаем сообщение о том, что инициатор отменил
-				packet = SystemMessage.getInstance(MessageType.USERNAME_REJECTED_A_TRADE);
+				packet = S_Sytem_Message.getInstance(MessageType.USERNAME_REJECTED_A_TRADE);
 				// добавляем имя инициатора
 				packet.addUserName(actor.getName());
 				// отправляем пакет
@@ -80,7 +80,7 @@ public class TradeStartAction extends PlayerAction
 			else if(player == target)
 			{
 				// создаем сообщение о том, что опонент отменил
-				packet = SystemMessage.getInstance(MessageType.OPPONENT_REJECTED_A_TRADE);
+				packet = S_Sytem_Message.getInstance(MessageType.OPPONENT_REJECTED_A_TRADE);
 				// добавляем имя опонента
 				packet.addOpponent(target.getName());
 				// отправляем пакет
@@ -136,7 +136,7 @@ public class TradeStartAction extends PlayerAction
 		target.setLastAction(this);
 
 		// создаем сообщение о запросе
-		SystemMessage packet = SystemMessage.getInstance(MessageType.USERNAME_REQUESTED_A_TRADE);
+		S_Sytem_Message packet = S_Sytem_Message.getInstance(MessageType.USERNAME_REQUESTED_A_TRADE);
 		// добавляем имя инициатора
 		packet.addUserName(actor.getName());
 		// отправляем пакет
@@ -203,7 +203,7 @@ public class TradeStartAction extends PlayerAction
 		// если целевой игрок мертв
 		if(target.isDead())
 		{
-			actor.sendPacket(SystemMessage.getInstance(MessageType.USER_NAME_IS_DEAD).addUserName(target.getName()), true);
+			actor.sendPacket(S_Sytem_Message.getInstance(MessageType.USER_NAME_IS_DEAD).addUserName(target.getName()), true);
 			return false;
 		}
 

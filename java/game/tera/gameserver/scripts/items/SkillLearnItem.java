@@ -8,7 +8,7 @@ import tera.gameserver.model.MessageType;
 import tera.gameserver.model.inventory.Inventory;
 import tera.gameserver.model.items.ItemInstance;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.SystemMessage;
+import tera.gameserver.network.serverpackets.S_Sytem_Message;
 import tera.gameserver.tables.SkillTable;
 import tera.gameserver.templates.SkillTemplate;
 
@@ -65,10 +65,10 @@ public class SkillLearnItem extends AbstractItemExecutor
 			player.addSkills(template, true);
 
 			// отпровляем сообщение об изучении
-			player.sendPacket(SystemMessage.getInstance(MessageType.YOUVE_LEARNED_SKILL_NAME).addSkillName(template[0].getName()), true);
+			player.sendPacket(S_Sytem_Message.getInstance(MessageType.YOUVE_LEARNED_SKILL_NAME).addSkillName(template[0].getName()), true);
 
 			// отправляем пакет о использовании рецепта
-			player.sendPacket(SystemMessage.getInstance(MessageType.ITEM_USE).addItem(item.getItemId(), 1), true);
+			player.sendPacket(S_Sytem_Message.getInstance(MessageType.ITEM_USE).addItem(item.getItemId(), 1), true);
 
 			// получаем менеджера событий
 			ObjectEventManager eventManager = ObjectEventManager.getInstance();

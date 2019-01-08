@@ -9,7 +9,7 @@ import tera.gameserver.model.playable.Player;
 import tera.gameserver.network.serverpackets.ActionDoned;
 import tera.gameserver.network.serverpackets.ActionInvite;
 import tera.gameserver.network.serverpackets.AppledAction;
-import tera.gameserver.network.serverpackets.SystemMessage;
+import tera.gameserver.network.serverpackets.S_Sytem_Message;
 
 /**
  * Модель акшена для приглашения игрока в пати.
@@ -169,7 +169,7 @@ public class PartyInviteAction extends PlayerAction
 		// если целевой игрок мертв
     	if(target.isDead())
     	{
-    		actor.sendPacket(SystemMessage.getInstance(MessageType.USER_NAME_IS_DEAD).addUserName(target.getName()), true);
+    		actor.sendPacket(S_Sytem_Message.getInstance(MessageType.USER_NAME_IS_DEAD).addUserName(target.getName()), true);
     		return false;
     	}
 

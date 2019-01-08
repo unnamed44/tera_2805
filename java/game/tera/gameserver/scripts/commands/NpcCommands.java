@@ -14,10 +14,7 @@ import tera.gameserver.model.npc.interaction.links.NpcLink;
 import tera.gameserver.model.npc.spawn.NpcSpawn;
 import tera.gameserver.model.playable.Player;
 import tera.gameserver.model.skillengine.Skill;
-import tera.gameserver.network.serverpackets.S_Dialog;
-import tera.gameserver.network.serverpackets.S_Npc_Status;
-import tera.gameserver.network.serverpackets.SkillEnd;
-import tera.gameserver.network.serverpackets.SkillStart;
+import tera.gameserver.network.serverpackets.*;
 import tera.gameserver.tables.ConfigAITable;
 import tera.gameserver.tables.NpcTable;
 import tera.gameserver.tables.SpawnTable;
@@ -137,7 +134,7 @@ public class NpcCommands extends AbstractCommand
 
 				for(final Npc npc : npcs)
 				{
-					npc.broadcastPacket(SkillStart.getInstance(npc, id, 1, 0));
+					npc.broadcastPacket(S_Action_Stage.getInstance(npc, id, 1, 0));
 
 					player.sendMessage("cast " + id + " to " + npc);
 
@@ -146,7 +143,7 @@ public class NpcCommands extends AbstractCommand
 						@Override
 						public void run()
 						{
-							npc.broadcastPacket(SkillEnd.getInstance(npc, 1, id));
+							npc.broadcastPacket(S_Action_End.getInstance(npc, 1, id));
 						}
 					};
 
@@ -164,14 +161,14 @@ public class NpcCommands extends AbstractCommand
 
 				for(final Npc npc : npcs)
 				{
-					npc.broadcastPacket(SkillStart.getInstance(npc, id, 0, 0));
+					npc.broadcastPacket(S_Action_Stage.getInstance(npc, id, 0, 0));
 
 					Runnable run = new Runnable()
 					{
 						@Override
 						public void run()
 						{
-							npc.broadcastPacket(SkillEnd.getInstance(npc, 0, id));
+							npc.broadcastPacket(S_Action_End.getInstance(npc, 0, id));
 						}
 					};
 

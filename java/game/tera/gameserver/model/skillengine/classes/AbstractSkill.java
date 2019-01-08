@@ -17,9 +17,8 @@ import tera.gameserver.model.skillengine.SkillRangeType;
 import tera.gameserver.model.skillengine.SkillType;
 import tera.gameserver.model.skillengine.TargetType;
 import tera.gameserver.network.serverpackets.MoveSkill;
-import tera.gameserver.network.serverpackets.SkillEnd;
-import tera.gameserver.network.serverpackets.SkillStart;
-import tera.gameserver.network.serverpackets.SystemMessage;
+import tera.gameserver.network.serverpackets.S_Action_End;
+import tera.gameserver.network.serverpackets.S_Action_Stage;
 import tera.gameserver.templates.EffectTemplate;
 import tera.gameserver.templates.SkillTemplate;
 
@@ -256,7 +255,7 @@ public abstract class AbstractSkill implements Skill
 	public void endSkill(Character attacker, float targetX, float targetY, float targetZ, boolean force)
 	{
 		// отображаем анимацию завершения каста скила
-		attacker.broadcastPacket(SkillEnd.getInstance(attacker, castId, template.getIconId()));
+		attacker.broadcastPacket(S_Action_End.getInstance(attacker, castId, template.getIconId()));
 		// удаляем функции, которые добавлялись на время каста
 		template.removeCastFuncs(attacker);
 		// добавляем эффекты на кастера
@@ -887,7 +886,7 @@ public abstract class AbstractSkill implements Skill
 		castId = attacker.nextCastId();
 
 		// отображаем начало каста
-		attacker.broadcastPacket(SkillStart.getInstance(attacker, template.getIconId(), castId, 0));
+		attacker.broadcastPacket(S_Action_Stage.getInstance(attacker, template.getIconId(), castId, 0));
 
 		// если скил раш, отображаем рывок
 		if(isRush())

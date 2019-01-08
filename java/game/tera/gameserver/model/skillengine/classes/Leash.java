@@ -7,7 +7,7 @@ import tera.gameserver.model.AttackInfo;
 import tera.gameserver.model.Character;
 import tera.gameserver.model.MoveType;
 import tera.gameserver.network.serverpackets.SkillLeash;
-import tera.gameserver.network.serverpackets.SkillStart;
+import tera.gameserver.network.serverpackets.S_Action_Stage;
 import tera.gameserver.templates.SkillTemplate;
 
 /**
@@ -54,6 +54,6 @@ public class Leash extends Strike
 	{
 		super.useSkill(character, targetX, targetY, targetZ);
 
-		character.broadcastPacket(SkillStart.getInstance(character, template.getIconId(), castId, 1));
+		character.broadcastPacket(S_Action_Stage.getInstance(character, template.getIconId(), castId, 1));
 	}
 }

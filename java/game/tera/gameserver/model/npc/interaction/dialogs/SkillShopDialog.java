@@ -22,8 +22,8 @@ import tera.gameserver.network.serverpackets.DialogPanel;
 import tera.gameserver.network.serverpackets.DialogPanel.PanelType;
 import tera.gameserver.network.serverpackets.HotKeyChanger;
 import tera.gameserver.network.serverpackets.HotKeyChanger.ChangeType;
-import tera.gameserver.network.serverpackets.SkillShopList;
-import tera.gameserver.network.serverpackets.SystemMessage;
+import tera.gameserver.network.serverpackets.S_Skill_Learn_List;
+import tera.gameserver.network.serverpackets.S_Sytem_Message;
 import tera.gameserver.tables.SkillTable;
 import tera.gameserver.templates.SkillTemplate;
 
@@ -116,7 +116,7 @@ public class SkillShopDialog extends AbstractDialog {
 
 	@Override
 	public synchronized boolean apply() {
-		player.sendPacket(SkillShopList.getInstance(learns, player), true);
+		player.sendPacket(S_Skill_Learn_List.getInstance(learns, player), true);
 		return true;
 	}
 
@@ -142,7 +142,7 @@ public class SkillShopDialog extends AbstractDialog {
 		learns.sort(comparator);
 
 		player.sendPacket(DialogPanel.getInstance(player, PanelType.SKILL_LEARN), true);
-		player.sendPacket(SkillShopList.getInstance(learns, player), true);
+		player.sendPacket(S_Skill_Learn_List.getInstance(learns, player), true);
 
 		return true;
 	}
@@ -304,7 +304,7 @@ public class SkillShopDialog extends AbstractDialog {
 		}
 
 		player.addSkills(skill, true);
-		player.sendPacket(SystemMessage.getInstance(MessageType.YOUVE_LEARNED_SKILL_NAME).addSkillName(skill[0].getName()), true);
+		player.sendPacket(S_Sytem_Message.getInstance(MessageType.YOUVE_LEARNED_SKILL_NAME).addSkillName(skill[0].getName()), true);
 
 		eventManager.notifySkillLearned(player, learn);
 

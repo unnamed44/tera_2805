@@ -3,8 +3,8 @@ package tera.gameserver.scripts.commands;
 import rlib.logging.Loggers;
 import tera.gameserver.model.World;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.PlayerCurrentHp;
-import tera.gameserver.network.serverpackets.PlayerCurrentMp;
+import tera.gameserver.network.serverpackets.S_Creature_Change_Hp;
+import tera.gameserver.network.serverpackets.S_Player_Change_Mp;
 
 /**
  * Список команд для лечения.
@@ -40,7 +40,7 @@ public class HealCommand extends AbstractCommand
 						return;
 
 					target.setCurrentHp(Integer.parseInt(vals[0]));
-					target.sendPacket(PlayerCurrentHp.getInstance(target, null, 0, PlayerCurrentHp.INCREASE), true);
+					target.sendPacket(S_Creature_Change_Hp.getInstance(target, null, 0, S_Creature_Change_Hp.INCREASE), true);
 
 					break;
 				}
@@ -59,7 +59,7 @@ public class HealCommand extends AbstractCommand
 						return;
 
 					target.setCurrentMp(Integer.parseInt(vals[0]));
-					target.sendPacket(PlayerCurrentMp.getInstance(target, null, 0, PlayerCurrentMp.INCREASE), true);
+					target.sendPacket(S_Player_Change_Mp.getInstance(target, null, 0, S_Player_Change_Mp.INCREASE), true);
 
 					break;
 				}
@@ -78,8 +78,8 @@ public class HealCommand extends AbstractCommand
 					target.setCurrentHp(target.getMaxHp());
 					target.setCurrentMp(target.getMaxMp());
 
-					target.sendPacket(PlayerCurrentHp.getInstance(target, null, 0, PlayerCurrentHp.INCREASE), true);
-					target.sendPacket(PlayerCurrentMp.getInstance(player, null, 0, PlayerCurrentMp.INCREASE), true);
+					target.sendPacket(S_Creature_Change_Hp.getInstance(target, null, 0, S_Creature_Change_Hp.INCREASE), true);
+					target.sendPacket(S_Player_Change_Mp.getInstance(player, null, 0, S_Player_Change_Mp.INCREASE), true);
 				}
 			}
 		}

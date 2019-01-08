@@ -3,7 +3,7 @@ package tera.gameserver.model.skillengine.classes;
 import tera.gameserver.model.AttackInfo;
 import tera.gameserver.model.Character;
 import tera.gameserver.model.npc.Npc;
-import tera.gameserver.network.serverpackets.Damage;
+import tera.gameserver.network.serverpackets.S_Each_Skill_Result;
 import tera.gameserver.templates.SkillTemplate;
 import tera.util.LocalObjects;
 
@@ -46,7 +46,7 @@ public class LockOnEffect extends LockOnStrike
 		}
 
 		// отображаем анимацию приминения дебафа
-		target.broadcastPacket(Damage.getInstance(attacker, target, template.getDamageId(), getPower(), false, false, Damage.EFFECT));
+		target.broadcastPacket(S_Each_Skill_Result.getInstance(attacker, target, template.getDamageId(), getPower(), false, false, S_Each_Skill_Result.EFFECT));
 
 		// если цель в ПвП режиме а кастер нет
 		if(target.isPvPMode() && !attacker.isPvPMode())

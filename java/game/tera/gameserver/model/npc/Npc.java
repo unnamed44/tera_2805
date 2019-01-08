@@ -42,12 +42,12 @@ import tera.gameserver.model.skillengine.Formulas;
 import tera.gameserver.model.skillengine.Skill;
 import tera.gameserver.model.skillengine.SkillGroup;
 import tera.gameserver.model.skillengine.StatType;
-import tera.gameserver.network.serverpackets.DeleteCharacter;
+import tera.gameserver.network.serverpackets.S_Despawn_Npc;
 import tera.gameserver.network.serverpackets.NameColor;
 import tera.gameserver.network.serverpackets.S_Spawn_Npc;
 import tera.gameserver.network.serverpackets.NpcNotice;
-import tera.gameserver.network.serverpackets.QuestNpcNotice;
-import tera.gameserver.network.serverpackets.TargetHp;
+import tera.gameserver.network.serverpackets.S_Quest_Villager_Info;
+import tera.gameserver.network.serverpackets.S_Show_Hp;
 import tera.gameserver.tables.SkillTable;
 import tera.gameserver.taskmanager.RegenTaskManager;
 import tera.gameserver.tasks.EmotionTask;
@@ -442,7 +442,7 @@ public abstract class Npc extends Character implements Foldable {
 
 			super.doDie(attacker);
 
-			deleteMe(DeleteCharacter.DEAD);
+			deleteMe(S_Despawn_Npc.DEAD);
 		}
 
 		Spawn spawn = getSpawn();
@@ -926,7 +926,7 @@ public abstract class Npc extends Character implements Foldable {
 
 	@Override
 	public void removeMe(Player player, int type) {
-		player.sendPacket(DeleteCharacter.getInstance(this, type), true);
+		player.sendPacket(S_Despawn_Npc.getInstance(this, type), true);
 	}
 
 	/**
@@ -1031,7 +1031,7 @@ public abstract class Npc extends Character implements Foldable {
 
 	@Override
 	public void teleToLocation(int continentId, float x, float y, float z, int heading) {
-		decayMe(DeleteCharacter.DISAPPEARS);
+		decayMe(S_Despawn_Npc.DISAPPEARS);
 		super.teleToLocation(continentId, x, y, z, heading);
 		spawnMe(getSpawnLoc());
 	}
@@ -1044,7 +1044,7 @@ public abstract class Npc extends Character implements Foldable {
 	@Override
 	public void updateHp() {
 
-		TargetHp packet = TargetHp.getInstance(this, TargetHp.RED);
+		S_Show_Hp packet = S_Show_Hp.getInstance(this, S_Show_Hp.RED);
 
 		Array<AggroInfo> aggroList = getAggroList();
 
@@ -1094,21 +1094,21 @@ public abstract class Npc extends Character implements Foldable {
 		QuestType type = quests.hasQuests(this, player);
 
 		if(type == null && delete)
-			player.sendPacket(QuestNpcNotice.getInstance(this, NpcIconType.NONE), true);
+			player.sendPacket(S_Quest_Villager_Info.getInstance(this, NpcIconType.NONE), true);
 		else if(type != null) {
 			switch(type) {
 				case STORY_QUEST:
-					player.sendPacket(QuestNpcNotice.getInstance(this, NpcIconType.RED_NOTICE), true);
+					player.sendPacket(S_Quest_Villager_Info.getInstance(this, NpcIconType.RED_NOTICE), true);
 					break;
 				case LEVEL_UP_QUEST:
 				case ZONE_QUEST:
-					player.sendPacket(QuestNpcNotice.getInstance(this, NpcIconType.YELLOW_NOTICE), true);
+					player.sendPacket(S_Quest_Villager_Info.getInstance(this, NpcIconType.YELLOW_NOTICE), true);
 					break;
 				case GUILD_QUEST:
-					player.sendPacket(QuestNpcNotice.getInstance(this, NpcIconType.BLUE_NOTICE), true);
+					player.sendPacket(S_Quest_Villager_Info.getInstance(this, NpcIconType.BLUE_NOTICE), true);
 					break;
 				case DEALY_QUEST:
-					player.sendPacket(QuestNpcNotice.getInstance(this, NpcIconType.GREEN_NOTICE), true);
+					player.sendPacket(S_Quest_Villager_Info.getInstance(this, NpcIconType.GREEN_NOTICE), true);
 					break;
 			}
 		}

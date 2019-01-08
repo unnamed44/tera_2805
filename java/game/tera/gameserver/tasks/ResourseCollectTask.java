@@ -8,7 +8,7 @@ import tera.gameserver.manager.ExecutorManager;
 import tera.gameserver.model.EmotionType;
 import tera.gameserver.model.playable.Player;
 import tera.gameserver.model.resourse.ResourseInstance;
-import tera.gameserver.network.serverpackets.Emotion;
+import tera.gameserver.network.serverpackets.S_SOCIAL;
 import tera.gameserver.network.serverpackets.ResourseCollectProgress;
 import tera.gameserver.network.serverpackets.ResourseEndCollect;
 import tera.gameserver.network.serverpackets.ResourseStartCollect;
@@ -179,7 +179,7 @@ public final class ResourseCollectTask extends SafeTask
 			// отменяем сбор
 			cancel(false);
 			// отправляем пакет с эмоцией
-			collector.broadcastPacket(Emotion.getInstance(collector, EmotionType.FAIL));
+			collector.broadcastPacket(S_SOCIAL.getInstance(collector, EmotionType.FAIL));
 		}
 		else if(resourse != null)
 		{
@@ -190,7 +190,7 @@ public final class ResourseCollectTask extends SafeTask
 			resourse.onCollected(collector, false);
 
 			// отправляем пакет с эмоцией
-			collector.broadcastPacket(Emotion.getInstance(collector, EmotionType.BOASTING));
+			collector.broadcastPacket(S_SOCIAL.getInstance(collector, EmotionType.BOASTING));
 		}
 	}
 

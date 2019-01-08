@@ -13,13 +13,13 @@ import tera.gameserver.model.playable.Player;
 import tera.gameserver.model.skillengine.Effect;
 import tera.gameserver.model.skillengine.Skill;
 import tera.gameserver.network.model.UserClient;
-import tera.gameserver.network.serverpackets.AppledEffect;
+import tera.gameserver.network.serverpackets.S_Abnormality_Begin;
 import tera.gameserver.network.serverpackets.CancelOwerturn;
 import tera.gameserver.network.serverpackets.CancelTargetHp;
 import tera.gameserver.network.serverpackets.CharShieldBlock;
-import tera.gameserver.network.serverpackets.CharTurn;
-import tera.gameserver.network.serverpackets.Damage;
-import tera.gameserver.network.serverpackets.Emotion;
+import tera.gameserver.network.serverpackets.S_Creature_Rotate;
+import tera.gameserver.network.serverpackets.S_Each_Skill_Result;
+import tera.gameserver.network.serverpackets.S_SOCIAL;
 import tera.gameserver.network.serverpackets.GuildBank;
 import tera.gameserver.network.serverpackets.NotifyCharacter;
 import tera.gameserver.network.serverpackets.NotifyCharacter.NotifyType;
@@ -30,9 +30,9 @@ import tera.gameserver.network.serverpackets.S_Inven;
 import tera.gameserver.network.serverpackets.S_Get_User_List;
 import tera.gameserver.network.serverpackets.ShopTradePacket;
 import tera.gameserver.network.serverpackets.SkillLockTarget;
-import tera.gameserver.network.serverpackets.SystemMessage;
-import tera.gameserver.network.serverpackets.TargetHp;
-import tera.gameserver.network.serverpackets.UpdateStamina;
+import tera.gameserver.network.serverpackets.S_Sytem_Message;
+import tera.gameserver.network.serverpackets.S_Show_Hp;
+import tera.gameserver.network.serverpackets.S_My_Condition;
 
 /**
  * Класс с набором методов для отпрвки пакетов.
@@ -50,7 +50,7 @@ public final class PacketManager
 	 */
 	public static void showTurnCharacter(Character character, int newHeading, int time)
 	{
-		character.broadcastPacket(CharTurn.getInstance(character, newHeading, time));
+		character.broadcastPacket(S_Creature_Rotate.getInstance(character, newHeading, time));
 	}
 
 	/**
@@ -62,7 +62,7 @@ public final class PacketManager
 	public static void addToFriend(Player player, Player added)
 	{
 		// создаем сообщение
-		SystemMessage message = SystemMessage.getInstance(MessageType.ADDED_USER_NAME_TO_YOU_FRIEND_LIST);
+		S_Sytem_Message message = S_Sytem_Message.getInstance(MessageType.ADDED_USER_NAME_TO_YOU_FRIEND_LIST);
 
 		// вносим имя добавленного игрока
 		message.addUserName(added.getName());
@@ -71,7 +71,7 @@ public final class PacketManager
 		player.sendPacket(message, true);
 
 		// создаем сообщение
-		message = SystemMessage.getInstance(MessageType.YOU_VE_BEEN_ADDED_TO_USER_NAME_FRIENDS_LIST);
+		message = S_Sytem_Message.getInstance(MessageType.YOU_VE_BEEN_ADDED_TO_USER_NAME_FRIENDS_LIST);
 		// вносим имя добавителя
 		message.addUserName(player.getName());
 		// отправляем добавленному
@@ -99,7 +99,7 @@ public final class PacketManager
 	public static void removeToFriend(Player player, String removedName, Player removed)
 	{
 		// создаем сообщение
-		SystemMessage message = SystemMessage.getInstance(MessageType.YOU_REMOVED_USER_NAME_FROM_YOU_FRIENDS_LIST);
+		S_Sytem_Message message = S_Sytem_Message.getInstance(MessageType.YOU_REMOVED_USER_NAME_FROM_YOU_FRIENDS_LIST);
 
 		// вносим имя удаляемого игрока
 		message.addUserName(removedName);
@@ -111,7 +111,7 @@ public final class PacketManager
 		if(removed != null)
 		{
 			// создаем сообщение
-			message = SystemMessage.getInstance(MessageType.USER_NAME_REMOVED_UYOU_FROM_THEIR_FRIENDS_LIST);
+			message = S_Sytem_Message.getInstance(MessageType.USER_NAME_REMOVED_UYOU_FROM_THEIR_FRIENDS_LIST);
 			// вносим имя удалителя
 			message.addUserName(player.getName());
 			// отправляем добавленному
@@ -127,7 +127,7 @@ public final class PacketManager
 	 */
 	public static void showAddGold(Character actor, int count)
 	{
-		actor.sendPacket(SystemMessage.getInstance(MessageType.ADD_MONEY).addMoney(actor.getName(), count), true);
+		actor.sendPacket(S_Sytem_Message.getInstance(MessageType.ADD_MONEY).addMoney(actor.getName(), count), true);
 	}
 
 	/**
@@ -174,7 +174,7 @@ public final class PacketManager
 	 */
 	public static void showDamage(Character attacker, Character attacked, AttackInfo info, Skill skill, int type)
 	{
-		attacked.broadcastPacket(Damage.getInstance(attacker, attacked, info, skill, type));
+		attacked.broadcastPacket(S_Each_Skill_Result.getInstance(attacker, attacked, info, skill, type));
 	}
 
 	/**
@@ -190,7 +190,7 @@ public final class PacketManager
 	 */
 	public static void showDamage(Character attacker, Character attacked, int damageId, int damage, boolean crit, boolean owerturned, int type)
 	{
-		attacked.broadcastPacket(Damage.getInstance(attacker, attacked, damageId, damage, crit, owerturned, type));
+		attacked.broadcastPacket(S_Each_Skill_Result.getInstance(attacker, attacked, damageId, damage, crit, owerturned, type));
 	}
 
 	/**
@@ -201,7 +201,7 @@ public final class PacketManager
 	 */
 	public static void showEffect(Character actor, Effect effect)
 	{
-		actor.sendPacket(AppledEffect.getInstance(effect.getEffector(), effect.getEffected(), effect), true);
+		actor.sendPacket(S_Abnormality_Begin.getInstance(effect.getEffector(), effect.getEffected(), effect), true);
 	}
 
 	/**
@@ -212,7 +212,7 @@ public final class PacketManager
 	 */
 	public static void showEmotion(Character actor, EmotionType type)
 	{
-		actor.broadcastPacket(Emotion.getInstance(actor, type));
+		actor.broadcastPacket(S_SOCIAL.getInstance(actor, type));
 	}
 
 	/**
@@ -223,7 +223,7 @@ public final class PacketManager
 	 */
 	public static void showEnterFriend(Player player, Player friend)
 	{
-		SystemMessage message = SystemMessage.getInstance(MessageType.USER_NAME_HAS_COME_ONLINE);
+		S_Sytem_Message message = S_Sytem_Message.getInstance(MessageType.USER_NAME_HAS_COME_ONLINE);
 
 		message.addUserName(friend.getName());
 
@@ -259,7 +259,7 @@ public final class PacketManager
 	 */
 	public static void showPaidGold(Character actor, int count)
 	{
-		actor.sendPacket(SystemMessage.getInstance(MessageType.PAID_AMOUNT_MONEY).addPaidMoney(count), true);
+		actor.sendPacket(S_Sytem_Message.getInstance(MessageType.PAID_AMOUNT_MONEY).addPaidMoney(count), true);
 	}
 
 	/**
@@ -303,7 +303,7 @@ public final class PacketManager
 	 */
 	public static void showTargetHp(Character actor, Character enemy)
 	{
-		actor.sendPacket(TargetHp.getInstance(enemy, actor.checkTarget(enemy)? TargetHp.RED : TargetHp.BLUE), true);
+		actor.sendPacket(S_Show_Hp.getInstance(enemy, actor.checkTarget(enemy)? S_Show_Hp.RED : S_Show_Hp.BLUE), true);
 	}
 
 	/**
@@ -315,7 +315,7 @@ public final class PacketManager
 	 */
 	public static void showUseItem(Character actor, int id, int count)
 	{
-		actor.sendPacket(SystemMessage.getInstance(MessageType.ITEM_USE).addItem(id, count), true);
+		actor.sendPacket(S_Sytem_Message.getInstance(MessageType.ITEM_USE).addItem(id, count), true);
 	}
 
 	/**
@@ -365,7 +365,7 @@ public final class PacketManager
 	 */
 	public static void updateStamina(Player player)
 	{
-		player.sendPacket(UpdateStamina.getInstance(player), true);
+		player.sendPacket(S_My_Condition.getInstance(player), true);
 	}
 
 	/**
@@ -376,7 +376,7 @@ public final class PacketManager
 	 */
 	public static void showDeleteItem(Character character, ItemInstance item)
 	{
-		character.sendPacket(SystemMessage.getInstance(MessageType.ITEM_NAME_DESTROYED).addItemName(item.getItemId()), true);
+		character.sendPacket(S_Sytem_Message.getInstance(MessageType.ITEM_NAME_DESTROYED).addItemName(item.getItemId()), true);
 	}
 
 	private PacketManager()

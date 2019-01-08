@@ -9,7 +9,7 @@ import tera.gameserver.model.inventory.Cell;
 import tera.gameserver.model.inventory.Inventory;
 import tera.gameserver.model.items.ItemInstance;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.InventoryItemInfo;
+import tera.gameserver.network.serverpackets.S_Show_Item_Tooltip;
 
 /**
  * Клиенсткий пакет для запроса информации о итеме.
@@ -101,7 +101,7 @@ public class RequestInventoryInfoItem extends ClientPacket
 			if(slot != null)
 			{
 				// отправляем пакет и выходимм
-				player.sendPacket(InventoryItemInfo.getInstance(slot.getIndex(), slot.getItem()), true);
+				player.sendPacket(S_Show_Item_Tooltip.getInstance(slot.getIndex(), slot.getItem()), true);
 				return;
 			}
 		}
@@ -126,7 +126,7 @@ public class RequestInventoryInfoItem extends ClientPacket
 			if(cell != null)
 			{
 				// отправляем пакет и выходим
-				player.sendPacket(InventoryItemInfo.getInstance(cell.getIndex(), cell.getItem()), true);
+				player.sendPacket(S_Show_Item_Tooltip.getInstance(cell.getIndex(), cell.getItem()), true);
 				return;
 			}
 		}
@@ -148,7 +148,7 @@ public class RequestInventoryInfoItem extends ClientPacket
 			if(item != null)
 			{
 				// отправляем пакет и выходим
-				player.sendPacket(InventoryItemInfo.getInstance(0, item), true);
+				player.sendPacket(S_Show_Item_Tooltip.getInstance(0, item), true);
 				return;
 			}
 		}
@@ -175,7 +175,7 @@ public class RequestInventoryInfoItem extends ClientPacket
 			if(item != null)
 			{
 				// отправляем пакет и выходим
-				player.sendPacket(InventoryItemInfo.getInstance(0, item), true);
+				player.sendPacket(S_Show_Item_Tooltip.getInstance(0, item), true);
 				return;
 			}
 		}

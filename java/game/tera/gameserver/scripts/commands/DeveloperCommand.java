@@ -144,7 +144,7 @@ public class DeveloperCommand extends AbstractCommand {
 				break;
 			}
 			case "send_system": {
-				player.sendPacket(SystemMessage.getInstance(values.replace('&', (char) 0x0B)), true);
+				player.sendPacket(S_Sytem_Message.getInstance(values.replace('&', (char) 0x0B)), true);
 				break;
 			}
 			case "send_event": {

@@ -4,8 +4,8 @@ import tera.gameserver.model.Character;
 import tera.gameserver.model.EffectList;
 import tera.gameserver.model.Party;
 import tera.gameserver.model.skillengine.EffectState;
-import tera.gameserver.network.serverpackets.AppledEffect;
-import tera.gameserver.network.serverpackets.CancelEffect;
+import tera.gameserver.network.serverpackets.S_Abnormality_Begin;
+import tera.gameserver.network.serverpackets.S_Abnormality_End;
 import tera.gameserver.taskmanager.EffectTaskManager;
 import tera.gameserver.templates.EffectTemplate;
 import tera.gameserver.templates.SkillTemplate;
@@ -87,7 +87,7 @@ public abstract class AbstractAura extends AbstractEffect
 					setState(EffectState.ACTING);
 
 					// отправляем пакет отображения бафа
-					effected.broadcastPacket(AppledEffect.getInstance(effector, effected, this));
+					effected.broadcastPacket(S_Abnormality_Begin.getInstance(effector, effected, this));
 
 					// получаем пати эффектеда
 					Party party = effected.getParty();
@@ -132,7 +132,7 @@ public abstract class AbstractAura extends AbstractEffect
 					effected.removeEffect(this);
 
 					// отправляем пакет
-					effected.broadcastPacket(CancelEffect.getInstance(effected, getEffectId()));
+					effected.broadcastPacket(S_Abnormality_End.getInstance(effected, getEffectId()));
 
 					// получаем пати эффектеда
 					Party party = effected.getParty();

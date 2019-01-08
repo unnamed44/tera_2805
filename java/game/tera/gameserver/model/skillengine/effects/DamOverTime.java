@@ -3,7 +3,7 @@ package tera.gameserver.model.skillengine.effects;
 import tera.gameserver.manager.ObjectEventManager;
 import tera.gameserver.model.Character;
 import tera.gameserver.model.Duel;
-import tera.gameserver.network.serverpackets.Damage;
+import tera.gameserver.network.serverpackets.S_Each_Skill_Result;
 import tera.gameserver.templates.EffectTemplate;
 import tera.gameserver.templates.SkillTemplate;
 
@@ -81,7 +81,7 @@ public class DamOverTime extends AbstractEffect
 		eventManager.notifyHpChanged(effected);
 
 		// отправляем пакет с уроном
-		effected.broadcastPacket(Damage.getInstance(effector, effected, getSkillId(), damage, false, false, Damage.DAMAGE));
+		effected.broadcastPacket(S_Each_Skill_Result.getInstance(effector, effected, getSkillId(), damage, false, false, S_Each_Skill_Result.DAMAGE));
 
 		/*// если цель мертва
 		if(effected.isDead())

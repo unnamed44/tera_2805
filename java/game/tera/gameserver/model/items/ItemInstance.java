@@ -20,13 +20,13 @@ import tera.gameserver.model.equipment.SlotType;
 import tera.gameserver.model.inventory.Inventory;
 import tera.gameserver.model.playable.Player;
 import tera.gameserver.model.skillengine.Skill;
-import tera.gameserver.network.serverpackets.CharPickUpItem;
-import tera.gameserver.network.serverpackets.DeleteCharacter;
+import tera.gameserver.network.serverpackets.S_Loot_Dropitem;
+import tera.gameserver.network.serverpackets.S_Despawn_Npc;
 import tera.gameserver.network.serverpackets.DeleteItem;
-import tera.gameserver.network.serverpackets.ItemInfo;
+import tera.gameserver.network.serverpackets.S_Spawn_Dropitem;
 import tera.gameserver.network.serverpackets.MessageAddedItem;
 import tera.gameserver.network.serverpackets.ServerPacket;
-import tera.gameserver.network.serverpackets.SystemMessage;
+import tera.gameserver.network.serverpackets.S_Sytem_Message;
 import tera.gameserver.templates.ItemTemplate;
 import tera.gameserver.templates.SkillTemplate;
 
@@ -171,7 +171,7 @@ public abstract class ItemInstance extends TObject implements Foldable
 	@Override
 	public void addMe(Player player)
 	{
-		player.sendPacket(ItemInfo.getInstance(this), true);
+		player.sendPacket(S_Spawn_Dropitem.getInstance(this), true);
 	}
 
 	/**
@@ -791,7 +791,7 @@ public abstract class ItemInstance extends TObject implements Foldable
 							packet = MessageAddedItem.getInstance(character.getName(), template.getItemId(), (int) itemCount);
 						else
 						{
-							packet = SystemMessage.getInstance(MessageType.ADD_MONEY).addMoney(character.getName(), (int) itemCount);
+							packet = S_Sytem_Message.getInstance(MessageType.ADD_MONEY).addMoney(character.getName(), (int) itemCount);
 						}
 
 						// отправляем сообщение
@@ -819,12 +819,12 @@ public abstract class ItemInstance extends TObject implements Foldable
 					eventManager.notifyPickUpItem(character, this);
 
 					// отображаем подъем итема
-					character.broadcastPacket(CharPickUpItem.getInstance(character, this));
+					character.broadcastPacket(S_Loot_Dropitem.getInstance(character, this));
 
 					// если итем сам добавился в инвентарь
 					if (hasOwner())
 						// удаляем отображение итема в мире
-						decayMe(DeleteCharacter.DISAPPEARS);
+						decayMe(S_Despawn_Npc.DISAPPEARS);
 					else
 						// иначе удаляем итем из мира
 						deleteMe();

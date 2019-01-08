@@ -3,7 +3,7 @@ package tera.gameserver.model.skillengine.classes;
 import tera.gameserver.model.Character;
 import tera.gameserver.model.playable.Player;
 import tera.gameserver.model.skillengine.Skill;
-import tera.gameserver.network.serverpackets.MountOn;
+import tera.gameserver.network.serverpackets.S_Mount_Vehicle;
 import tera.gameserver.templates.SkillTemplate;
 
 /**
@@ -77,7 +77,7 @@ public class Mount extends AbstractSkill
 			// запоминаем маунт скил
 			player.setMountSkill(this);
 			// отправляем пакет посадки на маунта
-			player.broadcastPacket(MountOn.getInstance(player, getIconId()));
+			player.broadcastPacket(S_Mount_Vehicle.getInstance(player, getIconId()));
 			// обновляем статы
 			player.updateInfo();
 		}

@@ -52,9 +52,9 @@ import tera.gameserver.model.skillengine.funcs.StatFunc;
 import tera.gameserver.model.skillengine.funcs.chance.ChanceFunc;
 import tera.gameserver.network.serverpackets.S_User_Location;
 import tera.gameserver.network.serverpackets.S_Chat;
-import tera.gameserver.network.serverpackets.Damage;
+import tera.gameserver.network.serverpackets.S_Each_Skill_Result;
 import tera.gameserver.network.serverpackets.ServerPacket;
-import tera.gameserver.network.serverpackets.SystemMessage;
+import tera.gameserver.network.serverpackets.S_Sytem_Message;
 import tera.gameserver.tables.ItemTable;
 import tera.gameserver.tasks.EmotionTask;
 import tera.gameserver.tasks.MoveNextTask;
@@ -889,7 +889,7 @@ public abstract class Character extends TObject implements Synchronized {
 		}
 
 		// тип урона
-		int type = Damage.DAMAGE;
+		int type = S_Each_Skill_Result.DAMAGE;
 
 		// кол-во урона
 		int damage = info.getDamage();
@@ -924,7 +924,7 @@ public abstract class Character extends TObject implements Synchronized {
 			}
 
 			if(info.isBlocked() || damage < 1)
-				type = Damage.BLOCK;
+				type = S_Each_Skill_Result.BLOCK;
 		} finally {
 			charLock.unlock();
 		}
@@ -985,8 +985,8 @@ public abstract class Character extends TObject implements Synchronized {
 		 * charLock.lock(); try { int type = 0; int damage =
 		 * Math.min(info.getDamage(), currentMp);
 		 * 
-		 * if(info.isBlocked()) type = Damage.BLOCK; else if(damage > 0) { type
-		 * = Damage.DAMAGE;
+		 * if(info.isBlocked()) type = S_Each_Skill_Result.BLOCK; else if(damage > 0) { type
+		 * = S_Each_Skill_Result.DAMAGE;
 		 * 
 		 * setCurrentMp(getCurrentMp() - damage);
 		 * attacker.setCurrentMp(attacker.getCurrentMp() + damage);
@@ -994,7 +994,7 @@ public abstract class Character extends TObject implements Synchronized {
 		 * ObjectEventManager.notifyMpChanged(this);
 		 * ObjectEventManager.notifyMpChanged(attacker); }
 		 * 
-		 * //broadcastPacket(new Damage(attacker, this, info, skill, type));
+		 * //broadcastPacket(new S_Each_Skill_Result(attacker, this, info, skill, type));
 		 * 
 		 * ObjectEventManager.notifyAttacked(this, attacker, skill, damage,
 		 * info.isCrit()); ObjectEventManager.notifyAttack(attacker, this,
@@ -1626,7 +1626,7 @@ public abstract class Character extends TObject implements Synchronized {
 					eventManager.notifyInventoryChanged(this);
 
 					// создаем пакет сообщение
-					SystemMessage packet = SystemMessage.getInstance(MessageType.ITEM_USE).addItem(skill.getItemIdConsume(), (int) skill.getItemCountConsume());
+					S_Sytem_Message packet = S_Sytem_Message.getInstance(MessageType.ITEM_USE).addItem(skill.getItemIdConsume(), (int) skill.getItemCountConsume());
 
 					// отправляем
 					sendPacket(packet, true);
@@ -1745,7 +1745,7 @@ public abstract class Character extends TObject implements Synchronized {
 			eventManager.notifyInventoryChanged(this);
 
 			// создаем пакет сообщение
-			SystemMessage packet = SystemMessage.getInstance(MessageType.ITEM_USE).addItem(skill.getItemIdConsume(), (int) skill.getItemCountConsume());
+			S_Sytem_Message packet = S_Sytem_Message.getInstance(MessageType.ITEM_USE).addItem(skill.getItemIdConsume(), (int) skill.getItemCountConsume());
 
 			// отправляем
 			sendPacket(packet, true);
@@ -3715,7 +3715,7 @@ public abstract class Character extends TObject implements Synchronized {
 		}
 
 		// отрбажаем анимацию хила
-		PacketManager.showDamage(healer, this, damageId, heal, false, false, Damage.HEAL);
+		PacketManager.showDamage(healer, this, damageId, heal, false, false, S_Each_Skill_Result.HEAL);
 
 		// получаем менеджера событий
 		ObjectEventManager eventManager = ObjectEventManager.getInstance();
@@ -3745,7 +3745,7 @@ public abstract class Character extends TObject implements Synchronized {
 		}
 
 		// отборжаем анимацию хила
-		PacketManager.showDamage(healer, this, damageId, heal, false, false, Damage.MANAHEAL);
+		PacketManager.showDamage(healer, this, damageId, heal, false, false, S_Each_Skill_Result.MANAHEAL);
 
 		// получаем менеджера событий
 		ObjectEventManager eventManager = ObjectEventManager.getInstance();

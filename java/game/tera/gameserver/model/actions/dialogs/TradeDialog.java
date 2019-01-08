@@ -14,7 +14,7 @@ import tera.gameserver.model.items.ItemInstance;
 import tera.gameserver.model.playable.Player;
 import tera.gameserver.network.serverpackets.ServerPacket;
 import tera.gameserver.network.serverpackets.ShowTrade;
-import tera.gameserver.network.serverpackets.SystemMessage;
+import tera.gameserver.network.serverpackets.S_Sytem_Message;
 
 /**
  * Модель диалога трейда.
@@ -113,7 +113,7 @@ public class TradeDialog extends AbstractActionDialog
 			if(!item.isTradable())
 			{
 				// создаем сообщение
-				SystemMessage packet = SystemMessage.getInstance(MessageType.YOU_CANT_TRADE);
+				S_Sytem_Message packet = S_Sytem_Message.getInstance(MessageType.YOU_CANT_TRADE);
 				// добавляем указание о итеме
 				packet.addItemName(item.getItemId());
 				// отправляем пакет
@@ -395,12 +395,12 @@ public class TradeDialog extends AbstractActionDialog
 			if(player == actor)
 			{
 				actor.sendMessage(MessageType.TRADE_CANCELED);
-				enemy.sendPacket(SystemMessage.getInstance(MessageType.OPPONENT_CANCELED_THE_TRADE).addOpponent(actor.getName()), true);
+				enemy.sendPacket(S_Sytem_Message.getInstance(MessageType.OPPONENT_CANCELED_THE_TRADE).addOpponent(actor.getName()), true);
 			}
 			else if(player == enemy)
 			{
 				enemy.sendMessage(MessageType.TRADE_CANCELED);
-				actor.sendPacket(SystemMessage.getInstance(MessageType.OPPONENT_CANCELED_THE_TRADE).addOpponent(enemy.getName()), true);
+				actor.sendPacket(S_Sytem_Message.getInstance(MessageType.OPPONENT_CANCELED_THE_TRADE).addOpponent(enemy.getName()), true);
 			}
 		}
 

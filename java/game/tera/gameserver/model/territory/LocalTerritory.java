@@ -6,7 +6,7 @@ import rlib.util.VarTable;
 import tera.gameserver.model.MessageType;
 import tera.gameserver.model.TObject;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.SystemMessage;
+import tera.gameserver.network.serverpackets.S_Sytem_Message;
 import tera.util.Location;
 
 /**
@@ -61,7 +61,7 @@ public final class LocalTerritory extends AbstractTerritory
 						// заносим ее в обнаруженные с сохранением в БД
 						player.storeTerritory(this, true);
 						// уведомляем об этом
-						player.sendPacket(SystemMessage.getInstance(MessageType.DISCOVERED_SECTION_NAME).add("sectionName",  name), true);
+						player.sendPacket(S_Sytem_Message.getInstance(MessageType.DISCOVERED_SECTION_NAME).add("sectionName",  name), true);
 					}
 				}
 			}
