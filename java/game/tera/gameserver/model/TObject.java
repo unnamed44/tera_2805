@@ -14,7 +14,7 @@ import tera.gameserver.model.playable.Player;
 import tera.gameserver.model.resourse.ResourseInstance;
 import tera.gameserver.model.territory.Territory;
 import tera.gameserver.model.traps.Trap;
-import tera.gameserver.network.serverpackets.DeleteCharacter;
+import tera.gameserver.network.serverpackets.S_Despawn_Npc;
 import tera.gameserver.tables.ItemTable;
 import tera.util.Location;
 
@@ -109,7 +109,7 @@ public abstract class TObject implements GameObject
 			return;
 
 		// удаляем из мира
-		deleteMe(DeleteCharacter.DISAPPEARS);
+		deleteMe(S_Despawn_Npc.DISAPPEARS);
 
 		// ставим флаг удаленности
 		setDeleted(true);

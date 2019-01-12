@@ -2,7 +2,7 @@ package tera.gameserver.network.clientpackets;
 
 import tera.gameserver.manager.ObjectEventManager;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.DeleteCharacter;
+import tera.gameserver.network.serverpackets.S_Despawn_Npc;
 import tera.gameserver.network.serverpackets.Tp1;
 import tera.gameserver.network.serverpackets.S_Load_Topo;
 
@@ -58,7 +58,7 @@ public class RequestWorldZone extends ClientPacket
 		player.stopMove();
 
 		// убираем из мира
-		player.decayMe(DeleteCharacter.DISAPPEARS);
+		player.decayMe(S_Despawn_Npc.DISAPPEARS);
 
 		// отправляем пакет телепорта
 		player.broadcastPacket(Tp1.getInstance(player));

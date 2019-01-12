@@ -4,7 +4,7 @@ import tera.gameserver.manager.ObjectEventManager;
 import tera.gameserver.model.World;
 import tera.gameserver.model.npc.summons.Summon;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.DeleteCharacter;
+import tera.gameserver.network.serverpackets.S_Despawn_Npc;
 import tera.gameserver.network.serverpackets.Tp1;
 import tera.gameserver.network.serverpackets.S_Load_Topo;
 import tera.gameserver.tables.WorldZoneTable;
@@ -43,7 +43,7 @@ public class RequestPlayerUnstuck extends ClientPacket
         if(summon != null)
             summon.remove();
 
-        player.decayMe(DeleteCharacter.DISAPPEARS);
+        player.decayMe(S_Despawn_Npc.DISAPPEARS);
         WorldZoneTable zoneTable = WorldZoneTable.getInstance();
         Location point = zoneTable.getRespawn(player);
 

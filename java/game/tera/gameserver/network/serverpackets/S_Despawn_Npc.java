@@ -8,7 +8,7 @@ import tera.gameserver.network.ServerPacketType;
  * 
  * @author Ronn
  */
-public class DeleteCharacter extends ServerPacket
+public class S_Despawn_Npc extends ServerPacket
 {
 	/** гибель */
 	public static final int DEAD = 5;
@@ -17,11 +17,11 @@ public class DeleteCharacter extends ServerPacket
 	/** просто исчезает */
 	public static final int DISAPPEARS = 1;
 	
-	private static final ServerPacket instance = new DeleteCharacter();
+	private static final ServerPacket instance = new S_Despawn_Npc();
 	
-	public static DeleteCharacter getInstance(Character character, int type)
+	public static S_Despawn_Npc getInstance(Character character, int type)
 	{
-		DeleteCharacter packet = (DeleteCharacter) instance.newInstance();
+		S_Despawn_Npc packet = (S_Despawn_Npc) instance.newInstance();
 		
 		packet.type = type;
 		packet.objectId = character.getObjectId();

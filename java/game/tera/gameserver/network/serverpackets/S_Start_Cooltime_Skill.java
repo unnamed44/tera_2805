@@ -7,13 +7,13 @@ import tera.gameserver.network.ServerPacketType;
  * 
  * @author Ronn
  */
-public class SkillReuse extends ServerPacket
+public class S_Start_Cooltime_Skill extends ServerPacket
 {
-	private static final ServerPacket instance = new SkillReuse();
+	private static final ServerPacket instance = new S_Start_Cooltime_Skill();
 	
-	public static SkillReuse getInstance(int skillId, int reuseDelay)
+	public static S_Start_Cooltime_Skill getInstance(int skillId, int reuseDelay)
 	{
-		SkillReuse packet = (SkillReuse) instance.newInstance();
+		S_Start_Cooltime_Skill packet = (S_Start_Cooltime_Skill) instance.newInstance();
 		
 		packet.skillId = skillId;
 		packet.reuseDelay = reuseDelay;
@@ -29,7 +29,7 @@ public class SkillReuse extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.SKILL_REUSE;
+		return ServerPacketType.S_START_COOLTIME_SKILL;
 	}
 
 	@Override

@@ -14,7 +14,7 @@ import rlib.util.table.Tables;
 import tera.Config;
 import tera.gameserver.model.playable.Player;
 import tera.gameserver.network.serverpackets.S_Chat;
-import tera.gameserver.network.serverpackets.DeleteCharacter;
+import tera.gameserver.network.serverpackets.S_Despawn_Npc;
 import tera.util.Location;
 
 /**
@@ -205,7 +205,7 @@ public abstract class World
 				WorldRegion neighbor = oldNeighbors[i];
 
 				if(!Arrays.contains(newNeighbors, neighbor))
-					neighbor.removeFromPlayers(object, DeleteCharacter.DISAPPEARS);
+					neighbor.removeFromPlayers(object, S_Despawn_Npc.DISAPPEARS);
 			}
 
 			for(int i = 0, length = newNeighbors.length; i < length; i++)

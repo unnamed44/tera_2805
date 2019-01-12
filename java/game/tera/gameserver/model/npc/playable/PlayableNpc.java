@@ -9,7 +9,7 @@ import tera.gameserver.model.Character;
 import tera.gameserver.model.npc.Npc;
 import tera.gameserver.model.playable.Player;
 import tera.gameserver.network.serverpackets.CharDead;
-import tera.gameserver.network.serverpackets.DeleteCharacter;
+import tera.gameserver.network.serverpackets.S_Despawn_Npc;
 import tera.gameserver.network.serverpackets.NpcPlayableInfo;
 import tera.gameserver.network.serverpackets.PlayerBattleStance;
 import tera.gameserver.tables.NpcAppearanceTable;
@@ -44,7 +44,7 @@ public class PlayableNpc extends Npc
 			@Override
 			protected void runImpl()
 			{
-				deleteMe(DeleteCharacter.DISAPPEARS);
+				deleteMe(S_Despawn_Npc.DISAPPEARS);
 			}
 		};
 	}
@@ -125,7 +125,7 @@ public class PlayableNpc extends Npc
 	@Override
 	public void deleteMe(int type)
 	{
-		if(type == DeleteCharacter.DEAD)
+		if(type == S_Despawn_Npc.DEAD)
 			return;
 
 		super.deleteMe(type);
