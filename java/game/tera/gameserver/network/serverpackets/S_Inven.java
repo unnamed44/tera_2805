@@ -1,3 +1,4 @@
+//new
 package tera.gameserver.network.serverpackets;
 
 import java.nio.ByteBuffer;
@@ -69,42 +70,36 @@ public class S_Inven extends ServerPacket
 
 					Slot[] slots = equipment.getSlots();
 
-					int last = inventory.getLastIndex();
 					int n = 39;
-					int tmp = 28;
 
-					for(int i = 0; i < equipmentSize + inventorySize; i++)
+					for(int i = 0; i < equipmentSize; i++)
 					{
-						ItemInstance item = (i < equipmentSize) ? slots[i].getItem() : cells[i-equipmentSize].getItem();
-//last item not showed in inventory
+						// получаем итем
+						ItemInstance item = slots[i].getItem();
+
+						// если его нет, пропускаем
 						if(item == null)
 							continue;
 
 						packet.writeShort(buffer, n);
 
-						n = (i == last) ? 0 : n + 133;
+						n += 155;
 
 						packet.writeShort(buffer, n);
 
-						//passivities pos
-						packet.writeShort(buffer, 0);
-						packet.writeShort(buffer, 0);
-						packet.writeShort(buffer, 0);
+						packet.writeInt(buffer, 0);
+						packet.writeShort(buffer, n - 2);
 
 						packet.writeInt(buffer, item.getItemId());
 						packet.writeInt(buffer, item.getObjectId());
 						packet.writeInt(buffer, 0);
 						packet.writeInt(buffer, player.getObjectId());
 						packet.writeInt(buffer, player.getSubId());
-						if(i < equipmentSize)
-							packet.writeInt(buffer, i + 1);
-						else
-							packet.writeInt(buffer, i + tmp);
+						packet.writeInt(buffer, i + 1);
 						packet.writeInt(buffer, 0);
 						packet.writeLong(buffer, item.getItemCount());
 						packet.writeInt(buffer, 0);
-						packet.writeByte(buffer, item.getBoundType() == BindType.NONE || item.isBinded()? 1 : 0);// binded
-
+						packet.writeByte(buffer, 0x1E);// !!!
 
 						// получаем кристалы итема
 						CrystalList crystals = item.getCrystals();
@@ -133,11 +128,11 @@ public class S_Inven extends ServerPacket
 								for(int g = 0; g < diff; g++)
 									packet.writeInt(buffer, 0);
 						}
-						packet.writeInt(buffer, 0);//passivities set
-						//packet.writeInt(buffer, 0);//extrapassivities set
+
 						packet.writeInt(buffer, 0);
 						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, 0);//dyeSe
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);
 						packet.writeLong(buffer, 0);
 						packet.writeLong(buffer, 0);
 						packet.writeByte(buffer, item.getMasterworked());
@@ -148,83 +143,110 @@ public class S_Inven extends ServerPacket
 						packet.writeInt(buffer, 0);
 						packet.writeInt(buffer, 0);
 						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, player.getObjectId());//crafter ?
+						packet.writeInt(buffer, player.getObjectId());
 						packet.writeByte(buffer, 0);
+
+						packet.writeShort(buffer, 0);
+						packet.writeShort(buffer, 0);
+						packet.writeShort(buffer, 0); // need to have Combat item type added like 3 etc...
+						packet.writeInt(buffer, 0);
+						packet.writeShort(buffer, 0);
+						packet.writeInt(buffer, 0xFFFFFFFF);
+						packet.writeInt(buffer, 0);
+						packet.writeShort(buffer, 0);
+
 					}
 
 					// получаем индекс последняй занятой ячейки
+					int last = inventory.getLastIndex();
 
 					// перебираем ячейки инвенторя
-                    /*for(int i = 0; i < inventorySize; i++)
-                    {
-                        // получаем итем
-                        ItemInstance item = cells[i].getItem();
+					for(int i = 0; i < inventorySize; i++)
+					{
+						// получаем итем
+						ItemInstance item = cells[i].getItem();
 
-                        // если его нет, пропускаем
-                        if(item == null)
-                            continue;
+						// если его нет, пропускаем
+						if(item == null)
+							continue;
 
-                        packet.writeShort(buffer, n);
+						packet.writeShort(buffer, n);
 
-                        n += 154;
+						n += 155;
 
-                        if(last == i)
-                            n = 0;
+						if(last == i)
+							n = 0;
 
-                        packet.writeShort(buffer, n);
+						packet.writeShort(buffer, n);
+						packet.writeInt(buffer, 0);
+						if(n !=0)
+							packet.writeShort(buffer, n - 2);
+						else
+							packet.writeShort(buffer,0);
+						packet.writeInt(buffer, item.getItemId());
+						packet.writeInt(buffer, item.getObjectId());
+						packet.writeInt(buffer, 0);// 0;
+						packet.writeInt(buffer, player.getObjectId());
+						packet.writeInt(buffer, player.getSubId());
+						packet.writeInt(buffer, i + 39);
+						packet.writeInt(buffer, 0);
+						packet.writeLong(buffer, item.getItemCount());
 
-                        packet.writeInt(buffer, item.getItemId());
-                        packet.writeInt(buffer, item.getObjectId());
-                        packet.writeInt(buffer, 0);// 0;
-                        packet.writeInt(buffer, player.getObjectId());
-                        packet.writeInt(buffer, player.getSubId());
-                        packet.writeInt(buffer, i + 20);
-                        packet.writeInt(buffer, 0);
-                        packet.writeLong(buffer, item.getItemCount());
+						packet.writeInt(buffer, 0);
+						packet.writeByte(buffer, item.getBoundType() == BindType.NONE || item.isBinded()? 1 : 0);// This is Showing as 1E in real server this needs to be looked at to return the right values
 
-                        packet.writeInt(buffer, 0);
-                        packet.writeByte(buffer, item.getBoundType() == BindType.NONE || item.isBinded()? 1 : 0);// можно одевать или нет?
+						// получаем кристалы итема
+						CrystalList crystals = item.getCrystals();
 
-                        // получаем кристалы итема
-                        CrystalList crystals = item.getCrystals();
+						// если их нет
+						if(crystals == null || crystals.isEmpty())
+						{
+							packet.writeInt(buffer, 0); // 1 ячейка итема
+							packet.writeInt(buffer, 0); // 2 ячейка итема
+							packet.writeInt(buffer, 0); // 3 ячейка итема
+							packet.writeInt(buffer, 0); // 4 ячейка итема
+						}
+						else
+						{
+							int diff = 4 - crystals.size();
 
-                        // если их нет
-                        if(crystals == null || crystals.isEmpty())
-                        {
-                            packet.writeInt(buffer, 0); // 1 ячейка итема
-                            packet.writeInt(buffer, 0); // 2 ячейка итема
-                            packet.writeInt(buffer, 0); // 3 ячейка итема
-                            packet.writeInt(buffer, 0); // 4 ячейка итема
-                        }
-                        else
-                        {
-                            int diff = 4 - crystals.size();
+							CrystalInstance[] array = crystals.getArray();
 
-                            CrystalInstance[] array = crystals.getArray();
+							for(int g = 0, length = crystals.size(); g < length; g++)
+								packet.writeInt(buffer, array[g].getItemId());
 
-                            for(int g = 0, length = crystals.size(); g < length; g++)
-                                packet.writeInt(buffer, array[g].getItemId());
+							if(diff > 0)
+								for(int g = 0; g < diff; g++)
+									packet.writeInt(buffer, 0);
+						}
 
-                            if(diff > 0)
-                                for(int g = 0; g < diff; g++)
-                                    packet.writeInt(buffer, 0);
-                        }
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);
+						packet.writeLong(buffer, 0);
+						packet.writeLong(buffer, 0);
+						packet.writeByte(buffer, item.getMasterworked());
+						packet.writeInt(buffer, 0);//enigma
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, item.getItemLevel());
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, player.getObjectId());
+						packet.writeByte(buffer, 0);
 
-                        packet.writeInt(buffer, 0);
-                        packet.writeByte(buffer, 0);
-
-                        packet.writeLong(buffer, 0);
-                        packet.writeLong(buffer, 0);
-                        packet.writeLong(buffer, 0);
-                        packet.writeLong(buffer, 0);
-                        packet.writeLong(buffer, 0);
-                        packet.writeLong(buffer, 0);
-                        packet.writeLong(buffer, 0);
-                        packet.writeLong(buffer, 0);
-                        packet.writeLong(buffer, 0);
-                        packet.writeLong(buffer, 0);
-                        packet.writeLong(buffer, item.getItemLevel());
-                    }*/
+						//packet.writeByte(buffer, 0);
+						packet.writeShort(buffer, 0);
+						packet.writeShort(buffer, 0);
+						packet.writeShort(buffer, 0); // need to have Combat item type added like 3 etc...
+						packet.writeInt(buffer, 0);
+						packet.writeShort(buffer, 0);
+						packet.writeInt(buffer, 0xFFFFFFFF);
+						packet.writeInt(buffer, 0);
+						packet.writeShort(buffer, 0);
+					}
 				}
 				finally
 				{
