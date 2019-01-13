@@ -24,7 +24,11 @@ public class S_Inven extends ServerPacket
 {
 	private static final ServerPacket instance = new S_Inven();
 
-	public static S_Inven getInstance(Player player)
+	public static S_Inven getInstance(Player player) {
+		return getInstance(player, false);
+	}
+
+	public static S_Inven getInstance(Player player, boolean first)
 	{
 		S_Inven packet = (S_Inven) instance.newInstance();
 
@@ -60,7 +64,12 @@ public class S_Inven extends ServerPacket
 					packet.writeInt(buffer, player.getSubId());
 					packet.writeLong(buffer, inventory.getMoney());
 					packet.writeByte(buffer, 1);// show
-					packet.writeByte(buffer, 1);
+
+					if(first)
+						packet.writeByte(buffer, 1);//first
+					else
+						packet.writeByte(buffer, 0);
+
 					packet.writeByte(buffer, 0);
 					packet.writeInt(buffer, inventorySize); // equipmentSize
 					packet.writeInt(buffer, 0);//itemlevelInventory
@@ -188,7 +197,7 @@ public class S_Inven extends ServerPacket
 						packet.writeInt(buffer, 0);// 0;
 						packet.writeInt(buffer, player.getObjectId());
 						packet.writeInt(buffer, player.getSubId());
-						packet.writeInt(buffer, i + 39);
+						packet.writeInt(buffer, i + 40);
 						packet.writeInt(buffer, 0);
 						packet.writeLong(buffer, item.getItemCount());
 
