@@ -480,6 +480,7 @@ public final class PlayerManager
 		player.sendPacket(S_Load_Topo.getInstance(player), true);
 		player.sendPacket(S_Load_Hint.getInstance(), false);
 		player.sendPacket(S_Account_Benefit_List.getInstance(), false);
+		player.sendPacket(S_Fatigability_Point.getInstance(player.getAccount().getFatigability()), false);
 
 		player.sendPacket(S_Update_Friend_Info.getInstance(player), true);
 

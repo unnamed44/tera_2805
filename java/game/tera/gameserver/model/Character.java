@@ -161,6 +161,7 @@ public abstract class Character extends TObject implements Synchronized {
 	/** обработчики регена */
 	protected final Regen regenHp;
 	protected final Regen regenMp;
+	protected final Regen regenFatigability;
 
 	/** обработчик авто эмоций */
 	protected final EmotionTask emotionTask;
@@ -233,6 +234,7 @@ public abstract class Character extends TObject implements Synchronized {
 		// создаем обработчики регена
 		this.regenHp = newRegenHp();
 		this.regenMp = newRegenMp();
+		this.regenFatigability = newRegenFatigability();
 
 		// создаем массив калкуляторов
 		this.calcs = new Calculator[StatType.SIZE];
@@ -706,11 +708,7 @@ public abstract class Character extends TObject implements Synchronized {
 		broadcastPacketToOthers(packet);
 	}
 
-	/**
-	 * Отправить пакет только окружающим.
-	 * 
-	 * @param packets отправляемый пакет.
-	 */
+
 	public final void broadcastPacketToOthers(ServerPacket packet) {
 		// получаем текущий регион
 		WorldRegion region = getCurrentRegion();
@@ -3115,6 +3113,10 @@ public abstract class Character extends TObject implements Synchronized {
 		throw new IllegalArgumentException("unsupported method.");
 	}
 
+	protected Regen newRegenFatigability() {
+		throw new IllegalArgumentException("unsupportedMethod.");
+	}
+
 	/**
 	 * @return ид следующего каста скила.
 	 */
@@ -3230,11 +3232,6 @@ public abstract class Character extends TObject implements Synchronized {
 		effectList.removeEffect(effect);
 	}
 
-	/**
-	 * Удаляет из агр листа персонажа для указаного нпс.
-	 * 
-	 * @param hated персонаж, имеющий хейт на этого персонажа.
-	 */
 	public final void removeHate(Npc npc) {
 		if(npc == null || hateList.isEmpty())
 			return;
@@ -3909,6 +3906,8 @@ public abstract class Character extends TObject implements Synchronized {
 	 */
 	public void updateMp() {
 	}
+
+	public void updateFatigability() {}
 
 	/**
 	 * Обновление отображения отката скила.

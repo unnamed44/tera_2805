@@ -132,7 +132,7 @@ public final class AccountManager
 	{
 		// удаляем аккаунт из активных
 		removeAccount(account);
-
+		DataBaseManager.getInstance().updateFatigability(account);
 		// уведомляем о выходе игрока
 		log.info("close " + account.getName());
 	}

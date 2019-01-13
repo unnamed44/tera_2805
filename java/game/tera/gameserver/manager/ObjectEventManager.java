@@ -699,6 +699,10 @@ public final class ObjectEventManager
 		owner.updateHp();
 	}
 
+	public final void notifyFatigabilityChanged(Character owner) {
+		owner.updateFatigability();
+	}
+
 	/**
 	 * Уведомление о добавлении итема в инвентарь.
 	 *

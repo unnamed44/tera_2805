@@ -873,6 +873,11 @@ public abstract class Npc extends Character implements Foldable {
 		return new NpcRegenMp(this);
 	}
 
+	@Override
+	protected Regen newRegenFatigability() {
+		return null;
+	}
+
 	/**
 	 * Развернуть нпс до указанного направления.
 	 * 

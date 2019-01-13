@@ -24,7 +24,8 @@ public class S_Artisan_Recipe_List extends ServerPacket {
 
         writeOpcode();
         writeInt(0);
-        writeShort(0x0100);
+        writeByte(buffer, 0);
+        writeByte(buffer, 1);
 
     }
 }

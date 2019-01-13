@@ -6,6 +6,8 @@ import rlib.util.pools.FoldablePool;
 import rlib.util.pools.Pools;
 import tera.gameserver.network.model.UserClient;
 
+import java.util.Date;
+
 /**
  * Модель аккаунта для Tera-Online
  *
@@ -56,7 +58,7 @@ public final class Account implements Foldable
 	 * @param accessLevel уровень прав аккаунта.
 	 * @return аккаунт.
 	 */
-	public static final Account valueOf(String name, String password, String email, String lastIP, String allowIPs, String comments, long endBlock, long endPay, int accessLevel)
+	public static final Account valueOf(String name, int accountId, String password, String email, String lastIP, String allowIPs, String comments, long endBlock, long endPay, int accessLevel, int fatigability)
 	{
 		Account account = pool.take();
 
@@ -64,9 +66,10 @@ public final class Account implements Foldable
 			allowIPs = Account.EMPTY_ALLOW_IPS;
 
 		if(account == null)
-			account = new Account(name, password, email, lastIP, allowIPs, comments, endBlock, endPay, accessLevel);
+			account = new Account(name, accountId, password, email, lastIP, allowIPs, comments, endBlock, endPay, accessLevel,fatigability);
 		else
 		{
+			account.id = accountId;
 			account.name = name;
 			account.password = password;
 			account.email = email;
@@ -76,6 +79,8 @@ public final class Account implements Foldable
 			account.endBlock = endBlock;
 			account.endPay = endPay;
 			account.accessLevel = accessLevel;
+			account.fatigability = fatigability;
+			account.lastFatigabilityCheck = new Date();
 		}
 
 		return account;
@@ -84,6 +89,7 @@ public final class Account implements Foldable
 	/** клиент */
 	private UserClient client;
 
+	private int id;
 	/** имя аккаунта */
 	private String name;
 	/** имя в едином регистре */
@@ -108,6 +114,10 @@ public final class Account implements Foldable
 	private int	accessLevel;
 	/** ид банка */
 	private int bankId;
+
+	private int fatigability;
+
+	private Date lastFatigabilityCheck;
 
 	/**
 	 * @param name имя аккаунта.
@@ -140,8 +150,9 @@ public final class Account implements Foldable
 	 * @param endPay время окончания проплаты.
 	 * @param accessLevel уровень прав аккаунта.
 	 */
-	public Account(String name, String password, String email, String lastIP, String allowIPs, String comments, long endBlock, long endPay, int accessLevel)
+	public Account(String name, int accountId, String password, String email, String lastIP, String allowIPs, String comments, long endBlock, long endPay, int accessLevel, int fatigability)
 	{
+		this.id = accountId;
 		this.name = name;
 		this.lowerName = name == Strings.EMPTY || name.isEmpty()? Strings.EMPTY : name.toLowerCase();
 		this.password = password;
@@ -157,6 +168,8 @@ public final class Account implements Foldable
 		this.endBlock = endBlock;
 		this.endPay = endPay;
 		this.accessLevel = accessLevel;
+		this.fatigability = fatigability;
+		this.lastFatigabilityCheck = new Date();
 	}
 
 	@Override
@@ -205,6 +218,14 @@ public final class Account implements Foldable
 	public final int getBankId()
 	{
 		return bankId;
+	}
+
+	public final int getFatigability() {
+		return fatigability;
+	}
+
+	public final Date getLastFatigabilityCheck() {
+		return lastFatigabilityCheck;
 	}
 
 	/**
@@ -279,6 +300,10 @@ public final class Account implements Foldable
 		return name;
 	}
 
+	public final int getAccountId() {
+		return id;
+	}
+
 	/**
 	 * @return пароль аккаунта.
 	 */
@@ -317,6 +342,15 @@ public final class Account implements Foldable
 		this.bankId = bankId;
 	}
 
+	public final void setFatigability(int fatigability) {
+		if(fatigability > 4000)
+			fatigability = 4000;
+		this.fatigability = fatigability;
+	}
+
+	public final void setLastFatigabilityCheck(Date date) {
+		this.lastFatigabilityCheck = date;
+	}
 	/**
 	 * @param client клиент игры.
 	 */

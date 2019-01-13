@@ -55,10 +55,7 @@ import tera.gameserver.model.npc.summons.Summon;
 import tera.gameserver.model.quests.QuestList;
 import tera.gameserver.model.quests.QuestPanelState;
 import tera.gameserver.model.quests.QuestState;
-import tera.gameserver.model.regenerations.PlayerNegativeRegenMp;
-import tera.gameserver.model.regenerations.PlayerPositiveRegenMp;
-import tera.gameserver.model.regenerations.PlayerRegenHp;
-import tera.gameserver.model.regenerations.Regen;
+import tera.gameserver.model.regenerations.*;
 import tera.gameserver.model.resourse.ResourseInstance;
 import tera.gameserver.model.skillengine.Effect;
 import tera.gameserver.model.skillengine.EffectType;
@@ -1602,6 +1599,11 @@ public final class Player extends Playable implements Nameable, Identified {
 	}
 
 	@Override
+	protected Regen newRegenFatigability() {
+		return new PlayerRegenFatigability(this);
+	}
+
+	@Override
 	protected Regen newRegenMp() {
 
 		if(getClassId() == 2 || getClassId() == 3) {
@@ -2518,6 +2520,11 @@ public final class Player extends Playable implements Nameable, Identified {
 		}
 	}
 
+	@Override
+	public void updateFatigability() {
+		sendPacket(S_Fatigability_Point.getInstance(getAccount().getFatigability()), false);
+	}
+
 	/**
 	 * Обновление отображения для окружающих.
 	 */
@@ -2775,6 +2782,13 @@ public final class Player extends Playable implements Nameable, Identified {
 			player.updateColor();
 			player.sendPacket(NameColor.getInstance(player.getColor(), player), true);
 		}
+	}
+
+	@Override
+	public void doRegen() {
+		if(regenFatigability.checkCondition())
+			regenFatigability.doRegen();
+		super.doRegen();
 	}
 
 	/**

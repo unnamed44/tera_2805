@@ -90,6 +90,7 @@ public final class DataBaseManager {
 
 	private static final String INSERT_ACCOUNT_BANK = "INSERT INTO `account_bank` (account_name) VALUES (?)";
 	private static final String RESTORE_ACCOUNT_BANK = "SELECT * FROM `account_bank` WHERE `account_name` = ? LIMIT 1";
+	private static final String UPDATE_ACCOUNT_FATIGABILITY = "UPDATE `accounts` SET `fatigability` = ? WHERE `AccountId` = ? LIMIT 1";
 
 	private static final String CREATE_SKILL = "INSERT INTO `character_skills` (object_id, class_id, skill_id) VALUES (?,?,?)";
 	private static final String DELETE_SKILL = "DELETE FROM `character_skills` WHERE `object_id`=? AND `class_id`=? AND `skill_id`=? LIMIT 1";
@@ -175,7 +176,7 @@ public final class DataBaseManager {
 	private static final String UPDATE_PLAYER_CLASS = "UPDATE `characters` SET `class_id` = ? WHERE `object_id`= ? LIMIT 1";
 	private static final String UPDATE_PLAYER_RACE = "UPDATE `characters` SET `race_id` = ?, `sex` = ? WHERE `object_id`= ? LIMIT 1";
 
-	private static final String SELECT_ACCOUNT = "SELECT password, email, last_ip, allow_ips, comments, end_block, end_pay, access_level FROM `accounts` WHERE `login`= ? LIMIT 1";
+	private static final String SELECT_ACCOUNT = "SELECT AccountId, password, email, last_ip, allow_ips, comments, end_block, end_pay, access_level, fatigability FROM `accounts` WHERE `login`= ? LIMIT 1";
 	private static final String INSERT_ACCOUNT = "INSERT INTO `accounts` (login, password, email, access_level, end_pay, end_block, last_ip, allow_ips, comments) VALUES (?,?,?,?,?,?,?,?,?)";
 
 	private static final String INSERT_PLAYER_APPEARANCE = "INSERT INTO `character_appearances` (object_id, face_color, face_skin, adorments_skin, features_skin, features_color, voice, bone_structure_brow, "
@@ -1530,10 +1531,10 @@ public final class DataBaseManager {
 	}
 
 	// new section for Char_presets_2
+
 	/**
-	 * Created By Evestu
 	 *
-	 * @param Insert appearance details2.
+	 * @param detailsappearance
 	 */
 	public final void insertPlayerPresets2(PlayerDetails2 detailsappearance) {
 		PreparedStatement statement = null;
@@ -2355,10 +2356,10 @@ public final class DataBaseManager {
 	}
 
 	/**
-	 * Обновление строки в БД гильдии игрока.
-	 * 
-	 * @param member обновляемый игрок.
-	 * @return успешно ли обновлен.
+	 *
+	 * @param guild
+	 * @param rank
+	 * @return
 	 */
 	public final boolean removeGuildRank(Guild guild, GuildRank rank) {
 		if(guild == null || rank == null)
@@ -2385,11 +2386,13 @@ public final class DataBaseManager {
 		return false;
 	}
 
+
 	/**
-	 * Обновление строки в БД гильдии игрока.
-	 * 
-	 * @param member обновляемый игрок.
-	 * @return успешно ли обновлен.
+	 *
+	 * @param guild
+	 * @param def
+	 * @param rank
+	 * @return
 	 */
 	public final boolean removeGuildRankForPlayer(Guild guild, GuildRank def, GuildRank rank) {
 		if(guild == null || rank == null || def == null)
@@ -2513,7 +2516,7 @@ public final class DataBaseManager {
 			rset = statement.executeQuery();
 
 			if(rset.next())
-				account = Account.valueOf(accountName, rset.getString(1), rset.getString(2), rset.getString(3), rset.getString(4), rset.getString(5), rset.getLong(6), rset.getLong(7), rset.getInt(8));
+				account = Account.valueOf(accountName, rset.getInt(1), rset.getString(2), rset.getString(3), rset.getString(4), rset.getString(5), rset.getString(6), rset.getLong(7), rset.getLong(8), rset.getInt(9), rset.getInt(10));
 		} catch(Exception e) {
 			LOGGER.warning(e);
 		} finally {
@@ -3239,10 +3242,8 @@ public final class DataBaseManager {
 	}
 
 	/**
-	 * Обновление аккаунта
-	 * 
+	 *
 	 * @param account
-	 * @param address
 	 */
 	public final void updateFullAccount(Account account) {
 		PreparedStatement statement = null;
@@ -3959,5 +3960,30 @@ public final class DataBaseManager {
 		}
 
 		return 0;
+	}
+
+	public final boolean updateFatigability(Account account) {
+		if(account == null)
+			return false;
+
+		Connection con = null;
+		PreparedStatement statement = null;
+
+		try {
+			con = connectFactory.getConnection();
+
+			statement = con.prepareStatement(UPDATE_ACCOUNT_FATIGABILITY);
+			statement.setInt(1, account.getFatigability());
+			statement.setInt(2, account.getAccountId());
+			statement.execute();
+
+			return true;
+		} catch(SQLException e) {
+			LOGGER.warning(e);
+		} finally {
+			DBUtils.closeDatabaseCS(con, statement);
+		}
+
+		return false;
 	}
 }

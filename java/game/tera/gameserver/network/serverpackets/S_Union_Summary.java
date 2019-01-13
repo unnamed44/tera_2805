@@ -42,10 +42,10 @@ public class S_Union_Summary extends ServerPacket {
         bonuses[1] = 62;
         bonuses[2] = 27;
 
-        int[] unk3 = new int[3];
-        unk3[0] = 2;
-        unk3[1] = 11;
-        unk3[2] = 7;
+        int[] strength = new int[3];
+        strength[0] = 2;
+        strength[1] = 11;
+        strength[2] = 7;
 
         writeOpcode(buffer);
         writeShort(buffer, 3);//nbr of union
@@ -65,8 +65,8 @@ public class S_Union_Summary extends ServerPacket {
             writeShort(buffer, namePos);
             writeShort(buffer, namePos + Strings.length(names[1]));
             writeInt(buffer, i+1);
-            writeInt(buffer, unk3[i]);
-            writeInt(buffer, 7);//%
+            writeInt(buffer, strength[i]);
+            writeInt(buffer, 7);//tax rate
             if(i == 2)
                 writeByte(buffer, 1);//vault access
             else
