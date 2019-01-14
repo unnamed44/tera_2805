@@ -449,7 +449,7 @@ public final class PlayerManager
 		if(player.isGM()){
 			player.sendPacket(S_Qa_Set_Admin_Level.getInstance(),false);
 		}
-		player.sendPacket(S_Inven.getInstance(player), true);
+		player.sendPacket(S_Inven.getInstance(player, true), true);
 		player.sendPacket(S_Skill_List.getInstance(player), true);
 		player.sendPacket(S_Available_Social_List.getInstance(), false);
 		player.sendPacket(S_Clear_Quest_Info.getInstance(), false);
