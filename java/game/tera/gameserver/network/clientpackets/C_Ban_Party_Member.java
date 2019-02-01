@@ -8,7 +8,7 @@ import tera.gameserver.model.playable.Player;
  *
  * @author Ronn
  */
-public class RequestPartyKick extends ClientPacket
+public class C_Ban_Party_Member extends ClientPacket
 {
 	/** лидер группы */
 	private Player player;

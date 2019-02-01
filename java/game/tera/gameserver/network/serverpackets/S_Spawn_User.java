@@ -17,13 +17,13 @@ import tera.gameserver.network.ServerPacketType;
  *
  * @author Ronn
  */
-public class PlayerInfo extends ServerPacket
+public class S_Spawn_User extends ServerPacket
 {
-	private static final ServerPacket instance = new PlayerInfo();
+	private static final ServerPacket instance = new S_Spawn_User();
 
-	public static PlayerInfo getInstance(Player newPlayer, Player player)
+	public static S_Spawn_User getInstance(Player newPlayer, Player player)
 	{
-		PlayerInfo packet = (PlayerInfo) instance.newInstance();
+		S_Spawn_User packet = (S_Spawn_User) instance.newInstance();
 
 		ByteBuffer buffer = packet.getPrepare();
 
@@ -209,7 +209,7 @@ public class PlayerInfo extends ServerPacket
 	/** подготавливаемый буффер */
 	private final ByteBuffer prepare;
 
-	public PlayerInfo()
+	public S_Spawn_User()
 	{
 		this.prepare = ByteBuffer.allocate(1024).order(ByteOrder.LITTLE_ENDIAN);
 	}

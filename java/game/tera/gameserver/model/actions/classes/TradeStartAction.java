@@ -9,8 +9,8 @@ import tera.gameserver.model.actions.dialogs.ActionDialog;
 import tera.gameserver.model.actions.dialogs.ActionDialogType;
 import tera.gameserver.model.actions.dialogs.TradeDialog;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.ActionDoned;
-import tera.gameserver.network.serverpackets.AppledAction;
+import tera.gameserver.network.serverpackets.S_Cancel_Contract;
+import tera.gameserver.network.serverpackets.S_Request_Contract;
 import tera.gameserver.network.serverpackets.S_Sytem_Message;
 
 /**
@@ -40,8 +40,8 @@ public class TradeStartAction extends PlayerAction
 		ActionType type = getType();
 
 		// рассылаем пакеты
-		actor.sendPacket(ActionDoned.getInstance(actor.getObjectId(), actor.getSubId(), target.getObjectId(), target.getSubId(), type.ordinal(), objectId), true);
-		target.sendPacket(ActionDoned.getInstance(actor.getObjectId(), actor.getSubId(), target.getObjectId(), target.getSubId(), type.ordinal(), objectId), true);
+		actor.sendPacket(S_Cancel_Contract.getInstance(actor.getObjectId(), actor.getSubId(), target.getObjectId(), target.getSubId(), type.ordinal(), objectId), true);
+		target.sendPacket(S_Cancel_Contract.getInstance(actor.getObjectId(), actor.getSubId(), target.getObjectId(), target.getSubId(), type.ordinal(), objectId), true);
 
 		// создаем диалог трейда
 		TradeDialog dialog = TradeDialog.newInstance(actor, target);
@@ -88,8 +88,8 @@ public class TradeStartAction extends PlayerAction
 			}
 
 			// отправляем соответствующие пакеты
-			actor.sendPacket(ActionDoned.getInstance(actor.getObjectId(), actor.getSubId(), target.getObjectId(), target.getSubId(), type.ordinal(), objectId), true);
-			target.sendPacket(ActionDoned.getInstance(actor.getObjectId(), actor.getSubId(), target.getObjectId(), target.getSubId(), type.ordinal(), objectId), true);
+			actor.sendPacket(S_Cancel_Contract.getInstance(actor.getObjectId(), actor.getSubId(), target.getObjectId(), target.getSubId(), type.ordinal(), objectId), true);
+			target.sendPacket(S_Cancel_Contract.getInstance(actor.getObjectId(), actor.getSubId(), target.getObjectId(), target.getSubId(), type.ordinal(), objectId), true);
 		}
 
 		super.cancel(player);
@@ -145,8 +145,8 @@ public class TradeStartAction extends PlayerAction
 		ActionType type = getType();
 
 		// отправляем соответствующие пакеты
-		actor.sendPacket(AppledAction.newInstance(actor, target, type.ordinal(), objectId), true);
-		target.sendPacket(AppledAction.newInstance(actor, target, type.ordinal(), objectId), true);
+		actor.sendPacket(S_Request_Contract.newInstance(actor, target, type.ordinal(), objectId), true);
+		target.sendPacket(S_Request_Contract.newInstance(actor, target, type.ordinal(), objectId), true);
 
 		// получаем исполнительного менеджера
 		ExecutorManager executor = ExecutorManager.getInstance();

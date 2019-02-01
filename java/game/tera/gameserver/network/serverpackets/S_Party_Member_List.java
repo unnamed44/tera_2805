@@ -15,32 +15,33 @@ import tera.gameserver.network.ServerPacketType;
  * @author Ronn
  * @created 07.03.2012
  */
-public class PartyInfo extends ServerPacket
+public class S_Party_Member_List extends ServerPacket
 {
-	private static final ServerPacket instance = new PartyInfo();
+	private static final ServerPacket instance = new S_Party_Member_List();
 
-	public static PartyInfo getInstance(Party party)
+	public static S_Party_Member_List getInstance(Party party)
 	{
-		PartyInfo packet = (PartyInfo) instance.newInstance();
+		S_Party_Member_List packet = (S_Party_Member_List) instance.newInstance();
 
 		ByteBuffer buffer = packet.getPrepare();
 
-		packet.writeShort(buffer, 2);// 02 00
-		packet.writeShort(buffer, 48);// 30 00
-		packet.writeShort(buffer, 48);// 30 00
-		packet.writeShort(buffer, 0);// 00 00
-		packet.writeByte(buffer, 0);// 00
-		packet.writeInt(buffer, party.getObjectId());// 06 17 00 00
-		packet.writeShort(buffer, 9);// 09 00
-		packet.writeShort(buffer, 0);// 0D 00 SERVER ID
-		packet.writeInt(buffer, 0);// 0D 00 00 00  SERVER ID
-		packet.writeInt(buffer, party.getLeaderId());// DE 2C 0B 00
-		packet.writeInt(buffer, party.isRoundLoot()? 1 : 0);// 01 00 00 00 // режим лута 0 кто поднял и того, 1 - всякие условия
-		packet.writeInt(buffer, 0); // 03 00 00 00 грейд рола итемов
-		packet.writeShort(buffer, 0);// 00 00 апплед то геар онли
-		packet.writeInt(buffer, 0);// 01 00 00 00 // режим рола
-		packet.writeInt(buffer, 0);// 01 00 00 00 // ноу сулбоунд итемс
-		packet.writeByte(buffer, party.isLootInCombat()? 0 : 1);// 00 модно ли в бою поднимать
+		packet.writeShort(buffer, party.getMembers().size());// 02 00
+		packet.writeShort(buffer, 49);// 30 00
+		packet.writeByte(buffer, 0);//instance matching
+		packet.writeByte(buffer, 0);// raid
+		packet.writeInt(buffer, 5);
+		packet.writeInt(buffer, party.getObjectId());
+		packet.writeShort(buffer, 4);
+		packet.writeShort(buffer,12);
+		packet.writeInt(buffer,12);
+		packet.writeInt(buffer, party.getLeaderId());
+		packet.writeInt(buffer, party.isRoundLoot()? 1 : 0);
+		packet.writeInt(buffer, 1);//?
+		packet.writeByte(buffer, 0);
+		packet.writeInt(buffer,1);
+		packet.writeByte(buffer, 0);
+		packet.writeInt(buffer,1);
+		packet.writeByte(buffer, party.isLootInCombat()? 0 : 1);
 
 		// получаем членов группы
 		Array<Player> members = party.getMembers();
@@ -48,7 +49,7 @@ public class PartyInfo extends ServerPacket
 		members.readLock();
 		try
 		{
-			int byets = 48;
+			int bytes = 49;
 
 			// получаем список членов группы
 			Player[] array = members.array();
@@ -59,29 +60,28 @@ public class PartyInfo extends ServerPacket
 				// получаем члена группы
 				Player member = array[i];
 
-				packet.writeShort(buffer, byets);// 48 первый байт начало описания
+				packet.writeShort(buffer, bytes);// 48 первый байт начало описания
 
 				// расчитываем длинну имени
 				int nameLength = Strings.length(member.getName());
 
-				byets += (35 + nameLength); // получаем последний байт
+				bytes += (36 + nameLength); // получаем последний байт
 
 				if(i < length)
-					packet.writeShort(buffer, byets);// 99 последний байт
+					packet.writeShort(buffer, bytes);// 99 последний байт
 				else
 					packet.writeShort(buffer, 0);
 
-				packet.writeShort(buffer, byets - nameLength);// 83 байт начала ника
-				packet.writeInt(buffer, 0);// 0D 00 00 00  SERVER ID
+				packet.writeShort(buffer, bytes - nameLength);// namepos
+				packet.writeInt(buffer, 12);//player server ID
 				packet.writeInt(buffer, member.getObjectId());// 64 44 00 00 //айди
 				packet.writeInt(buffer, member.getLevel());// 2A 00 00 00//уровень
 				packet.writeInt(buffer, member.getClassId());// 06 00 00 00//код профы
-				packet.writeByte(buffer, 1);// 01
+				packet.writeByte(buffer, 1);// online
 				packet.writeInt(buffer, member.getObjectId());// 32 17 B2 03 ид игрока
 				packet.writeInt(buffer, member.getSubId()); // 00 80 00 13 саб ид игрока
-				packet.writeShort(buffer, 0); // 00 00
-				packet.writeByte(buffer, 0);
-				packet.writeByte(buffer, 0);
+				packet.writeInt(buffer, i); // position
+				packet.writeByte(buffer, 0);//can invite
 				packet.writeString(buffer, member.getName()); // 00 61 00 73 00 64 00 61 00 00 00 //имя первого
 			}
 		}
@@ -98,7 +98,7 @@ public class PartyInfo extends ServerPacket
 	/** пати */
 	private final ByteBuffer prepare;
 
-	public PartyInfo()
+	public S_Party_Member_List()
 	{
 		this.prepare = ByteBuffer.allocate(1024).order(ByteOrder.LITTLE_ENDIAN);
 	}
@@ -112,7 +112,7 @@ public class PartyInfo extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.PARTY_INFO;
+		return ServerPacketType.S_PARTY_MEMBER_LIST;
 	}
 
 	@Override

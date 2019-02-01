@@ -10,7 +10,7 @@ import tera.gameserver.network.ServerPacketType;
  *
  * @author Ronn
  */
-public class NameColor extends ServerPacket
+public class S_Change_Relation extends ServerPacket
 {
 	/** обычный */
 	public static final int COLOR_NORMAL = 1;
@@ -34,11 +34,11 @@ public class NameColor extends ServerPacket
 		// 15 - красноватый, 16 - темно красный, 19 - ярко салатовый
 		//
 
-	private static final ServerPacket instance = new NameColor();
+	private static final ServerPacket instance = new S_Change_Relation();
 
-	public static NameColor getInstance(int color, Character character)
+	public static S_Change_Relation getInstance(int color, Character character)
 	{
-		NameColor packet = (NameColor) instance.newInstance();
+		S_Change_Relation packet = (S_Change_Relation) instance.newInstance();
 
 		packet.color = color;
 		packet.objectId = character.getObjectId();
@@ -57,7 +57,7 @@ public class NameColor extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.NAME_COLOR;
+		return ServerPacketType.S_CHANGE_RELATION;
 	}
 
 	@Override

@@ -3,7 +3,7 @@ package tera.gameserver.model.actions.classes;
 import tera.gameserver.model.actions.ActionType;
 import tera.gameserver.model.actions.dialogs.EnchantItemDialog;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.AppledAction;
+import tera.gameserver.network.serverpackets.S_Request_Contract;
 
 /**
  * Модель действия по открытию диалога зачоравания вещей.
@@ -68,7 +68,7 @@ public final class EnchantItemAction extends AbstractAction<Void>
 
 		ActionType type = getType();
 
-		actor.sendPacket(AppledAction.newInstance(actor, null, type.ordinal(), objectId), true);
+		actor.sendPacket(S_Request_Contract.newInstance(actor, null, type.ordinal(), objectId), true);
 
 		assent(actor);
 	}

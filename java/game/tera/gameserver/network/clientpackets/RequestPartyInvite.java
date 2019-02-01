@@ -2,7 +2,7 @@ package tera.gameserver.network.clientpackets;
 
 import tera.gameserver.model.actions.ActionType;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.ActionStart;
+import tera.gameserver.network.serverpackets.S_Reply_Request_Contract;
 
 /**
  * Клиентский пакет с приглашением в пати
@@ -32,13 +32,13 @@ public class RequestPartyInvite extends ClientPacket
 		player = owner.getOwner();
 
 		//87 82
-		readInt();//1A 00 24 00
-		readShort();//00 00
-		actionId = readByte();//04
-		readLong();//00 00 00 00 00 00 00 00
-		readInt();//00 00 00 00
-		readShort();//00
-		readByte();
+		readShort();
+		readShort();
+		readShort();
+		actionId = readInt();//04
+		readInt();
+		readInt();
+		readInt();
 		name = readString();//00 61 00 73 00 64 00 61 00 00 00   //
 	}
 
@@ -50,7 +50,7 @@ public class RequestPartyInvite extends ClientPacket
 
 		ActionType type = ActionType.valueOf(actionId);
 
-		player.sendPacket(ActionStart.getInstance(type), true);
+		player.sendPacket(S_Reply_Request_Contract.getInstance(type), true);
 
 		if(!type.isImplemented() || player.hasLastAction())
 			return;

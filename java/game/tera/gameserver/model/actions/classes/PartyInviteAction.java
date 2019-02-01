@@ -6,9 +6,9 @@ import tera.gameserver.model.Party;
 import tera.gameserver.model.World;
 import tera.gameserver.model.actions.ActionType;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.ActionDoned;
-import tera.gameserver.network.serverpackets.ActionInvite;
-import tera.gameserver.network.serverpackets.AppledAction;
+import tera.gameserver.network.serverpackets.S_Begin_Through_Arbiter_Contract;
+import tera.gameserver.network.serverpackets.S_Cancel_Contract;
+import tera.gameserver.network.serverpackets.S_Request_Contract;
 import tera.gameserver.network.serverpackets.S_Sytem_Message;
 
 /**
@@ -35,8 +35,8 @@ public class PartyInviteAction extends PlayerAction
 		ActionType type = getType();
 
 		// отправляем необходимые пакеты
-		actor.sendPacket(ActionDoned.getInstance(actor.getObjectId(), actor.getSubId(), target.getObjectId(), target.getSubId(), type.ordinal(), objectId), true);
-		target.sendPacket(ActionDoned.getInstance(actor.getObjectId(), actor.getSubId(), target.getObjectId(), target.getSubId(), type.ordinal(), objectId), true);
+		actor.sendPacket(S_Cancel_Contract.getInstance(actor.getObjectId(), actor.getSubId(), target.getObjectId(), target.getSubId(), type.ordinal(), objectId), true);
+		target.sendPacket(S_Cancel_Contract.getInstance(actor.getObjectId(), actor.getSubId(), target.getObjectId(), target.getSubId(), type.ordinal(), objectId), true);
 
 		// получаем пати инициатора
 		Party party = actor.getParty();
@@ -64,8 +64,8 @@ public class PartyInviteAction extends PlayerAction
 			ActionType type = getType();
 
 			// отправляем небоходимый пакет
-			actor.sendPacket(ActionDoned.getInstance(actor.getObjectId(), actor.getSubId(), target.getObjectId(), target.getSubId(), type.ordinal(), objectId), true);
-			target.sendPacket(ActionDoned.getInstance(actor.getObjectId(), actor.getSubId(), target.getObjectId(), target.getSubId(), type.ordinal(), objectId), true);
+			actor.sendPacket(S_Cancel_Contract.getInstance(actor.getObjectId(), actor.getSubId(), target.getObjectId(), target.getSubId(), type.ordinal(), objectId), true);
+			target.sendPacket(S_Cancel_Contract.getInstance(actor.getObjectId(), actor.getSubId(), target.getObjectId(), target.getSubId(), type.ordinal(), objectId), true);
 		}
 
 		super.cancel(player);
@@ -111,8 +111,9 @@ public class PartyInviteAction extends PlayerAction
 		ActionType type = getType();
 
 		// отправляем соответсвующие пакеты
-		actor.sendPacket(AppledAction.newInstance(actor, target, type.ordinal(), objectId), true);
-		target.sendPacket(ActionInvite.getInstance(actor.getName(), target.getName(), type.ordinal(), objectId), true);
+		actor.sendPacket(S_Request_Contract.newInstance(actor, target, type.ordinal(), objectId), true);
+		//pas sûr
+		target.sendPacket(S_Begin_Through_Arbiter_Contract.getInstance(actor.getName(), target.getName(), type.ordinal(), objectId), true);
 
 		// получаем исполнительного менеджера
 		ExecutorManager executor = ExecutorManager.getInstance();

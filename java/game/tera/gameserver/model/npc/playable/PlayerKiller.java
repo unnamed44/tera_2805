@@ -1,7 +1,7 @@
 package tera.gameserver.model.npc.playable;
 
 import tera.gameserver.model.Character;
-import tera.gameserver.network.serverpackets.NameColor;
+import tera.gameserver.network.serverpackets.S_Change_Relation;
 import tera.gameserver.templates.NpcTemplate;
 
 /**
@@ -26,6 +26,6 @@ public class PlayerKiller extends PlayableNpc
 	@Override
 	public int getNameColor()
 	{
-		return NameColor.COLOR_RED_PVP;
+		return S_Change_Relation.COLOR_RED_PVP;
 	}
 }

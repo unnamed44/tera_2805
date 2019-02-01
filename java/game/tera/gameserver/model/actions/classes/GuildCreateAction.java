@@ -8,8 +8,8 @@ import tera.gameserver.model.actions.ActionType;
 import tera.gameserver.model.inventory.Inventory;
 import tera.gameserver.model.npc.interaction.dialogs.Dialog;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.ActionDoned;
-import tera.gameserver.network.serverpackets.ActionInvite;
+import tera.gameserver.network.serverpackets.S_Cancel_Contract;
+import tera.gameserver.network.serverpackets.S_Begin_Through_Arbiter_Contract;
 
 /**
  * Модель запуска акшена дуэли.
@@ -35,7 +35,7 @@ public class GuildCreateAction extends AbstractAction<String>
 			return;
 
 		// отправляем пакет
-		actor.sendPacket(ActionDoned.getInstance(actor.getObjectId(), actor.getSubId(), actor.getObjectId(), actor.getSubId(), type.ordinal(), objectId), true);
+		actor.sendPacket(S_Cancel_Contract.getInstance(actor.getObjectId(), actor.getSubId(), actor.getObjectId(), actor.getSubId(), type.ordinal(), objectId), true);
 
 		// получаем группу игрока
 		Party party = player.getParty();
@@ -74,7 +74,7 @@ public class GuildCreateAction extends AbstractAction<String>
 		// если есть инициатор
 		if(actor != null)
 			// отправляем ему пакет
-			actor.sendPacket(ActionDoned.getInstance(actor.getObjectId(), actor.getSubId(), actor.getObjectId(), actor.getSubId(), type.ordinal(), objectId), true);
+			actor.sendPacket(S_Cancel_Contract.getInstance(actor.getObjectId(), actor.getSubId(), actor.getObjectId(), actor.getSubId(), type.ordinal(), objectId), true);
 
 		super.cancel(player);
 	}
@@ -111,7 +111,7 @@ public class GuildCreateAction extends AbstractAction<String>
 		// запоминаем акшен
 		actor.setLastAction(this);
 		// отправляем пакет акшена
-		actor.sendPacket(ActionInvite.getInstance(actor.getName(), target, type.ordinal(), objectId), true);
+		actor.sendPacket(S_Begin_Through_Arbiter_Contract.getInstance(actor.getName(), target, type.ordinal(), objectId), true);
 
 		// получаем исполнительного менеджера
 		ExecutorManager executor = ExecutorManager.getInstance();

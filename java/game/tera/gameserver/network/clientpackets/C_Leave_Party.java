@@ -8,7 +8,7 @@ import tera.gameserver.model.playable.Player;
  *
  * @author Ronn
  */
-public class RequestPartyLeave extends ClientPacket
+public class C_Leave_Party extends ClientPacket
 {
 	/** ливающий игрок */
 	private Player player;

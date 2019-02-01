@@ -21,11 +21,11 @@ import tera.gameserver.model.playable.Player;
 import tera.gameserver.network.serverpackets.S_Loot_Dropitem;
 import tera.gameserver.network.serverpackets.S_Chat;
 import tera.gameserver.network.serverpackets.MessageAddedItem;
-import tera.gameserver.network.serverpackets.PartyInfo;
-import tera.gameserver.network.serverpackets.PartyLeave;
-import tera.gameserver.network.serverpackets.PartyMemberCoords;
-import tera.gameserver.network.serverpackets.PartyMemberEffectList;
-import tera.gameserver.network.serverpackets.PartyMemberInfo;
+import tera.gameserver.network.serverpackets.S_Party_Member_List;
+import tera.gameserver.network.serverpackets.S_Leave_Party_Member;
+import tera.gameserver.network.serverpackets.S_Party_Member_Interval_Pos_Update;
+import tera.gameserver.network.serverpackets.S_Party_Member_Buff_Update;
+import tera.gameserver.network.serverpackets.S_Party_Member_Stat_Update;
 import tera.gameserver.network.serverpackets.ServerPacket;
 import tera.gameserver.network.serverpackets.S_Sytem_Message;
 import tera.util.LocalObjects;
@@ -269,7 +269,7 @@ public final class Party implements Foldable
 		try
 		{
 			// пакет исключения из пати
-			ServerPacket packet = PartyLeave.getInstance();
+			ServerPacket packet = S_Leave_Party_Member.getInstance();
 
 			// получаем список членов группы
 			Player[] array = members.array();
@@ -324,7 +324,7 @@ public final class Party implements Foldable
 				return;
 
 			// пакет исключения из пати
-			ServerPacket packet = PartyLeave.getInstance();
+			ServerPacket packet = S_Leave_Party_Member.getInstance();
 			ServerPacket message = S_Sytem_Message.getInstance(MessageType.YOUR_PARTY_HAS_DISBANDED);
 
 			// получаем список членов группы
@@ -897,7 +897,7 @@ public final class Party implements Foldable
 				updatePartyColorName(oldMember);
 
 				// отправляем пакет лива с пати
-				oldMember.sendPacket(PartyLeave.getInstance(), true);
+				oldMember.sendPacket(S_Leave_Party_Member.getInstance(), true);
 
 				// если остается меньше 2х мемберов
 				if(members.size() < 2)
@@ -909,7 +909,7 @@ public final class Party implements Foldable
 					last.setParty(null);
 
 					// и ему отправялем пакет лива с пати
-					last.sendPacket(PartyLeave.getInstance(), true);
+					last.sendPacket(S_Leave_Party_Member.getInstance(), true);
 
 					// ложим пати в пул
 					pool.put(this);
@@ -1102,7 +1102,7 @@ public final class Party implements Foldable
 		Array<Player> members = getMembers();
 
 		// создаем пакет с координатами мембера
-		ServerPacket packet = PartyMemberCoords.getInstance(player);
+		ServerPacket packet = S_Party_Member_Interval_Pos_Update.getInstance(player);
 
 		members.readLock();
 		try
@@ -1159,7 +1159,7 @@ public final class Party implements Foldable
 		}
 
 		// создаем пакет с списком эффектов члена группы
-		PartyMemberEffectList packet = PartyMemberEffectList.getInstance(player);
+		S_Party_Member_Buff_Update packet = S_Party_Member_Buff_Update.getInstance(player);
 
 		// получаем членов группы
 		Array<Player> members = getMembers();
@@ -1213,7 +1213,7 @@ public final class Party implements Foldable
 		Array<Player> members = getMembers();
 
 		// пакет со составом группы
-		ServerPacket packet = PartyInfo.getInstance(this);
+		ServerPacket packet = S_Party_Member_List.getInstance(this);
 
 		members.readLock();
 		try
@@ -1246,11 +1246,11 @@ public final class Party implements Foldable
 		Array<Player> members = getMembers();
 
 		// создаем пакет со статами члена группы
-		ServerPacket stats = PartyMemberInfo.getInstance(player);
+		ServerPacket stats = S_Party_Member_Stat_Update.getInstance(player);
 		// создаем пакет с позицией члена группы
-		ServerPacket coords = PartyMemberCoords.getInstance(player);
+		ServerPacket coords = S_Party_Member_Interval_Pos_Update.getInstance(player);
 		// создаем пакет с эффект листом члена группы
-		ServerPacket effects = PartyMemberEffectList.getInstance(player);
+		ServerPacket effects = S_Party_Member_Buff_Update.getInstance(player);
 
 		members.readLock();
 		try
@@ -1370,7 +1370,7 @@ public final class Party implements Foldable
 		Array<Player> members = getMembers();
 
 		// создаем пакет с информацией о члене группы
-		ServerPacket packet = PartyMemberInfo.getInstance(player);
+		ServerPacket packet = S_Party_Member_Stat_Update.getInstance(player);
 
 		members.readLock();
 		try

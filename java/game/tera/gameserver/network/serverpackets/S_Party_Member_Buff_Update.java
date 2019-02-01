@@ -14,13 +14,13 @@ import tera.gameserver.network.ServerPacketType;
  *
  * @author Ronn
  */
-public class PartyMemberEffectList extends ServerPacket
+public class S_Party_Member_Buff_Update extends ServerPacket
 {
-	private static final ServerPacket instance = new PartyMemberEffectList();
+	private static final ServerPacket instance = new S_Party_Member_Buff_Update();
 
-	public static PartyMemberEffectList getInstance(Character character)
+	public static S_Party_Member_Buff_Update getInstance(Character character)
 	{
-		PartyMemberEffectList packet = (PartyMemberEffectList) instance.newInstance();
+		S_Party_Member_Buff_Update packet = (S_Party_Member_Buff_Update) instance.newInstance();
 
 		// получаем эффект лист игрока
 		EffectList effectList = character.getEffectList();
@@ -36,13 +36,13 @@ public class PartyMemberEffectList extends ServerPacket
 		{
 			int bytes = 20;
 
-			int lenght = ((effectList.size() - 1) * 16 + bytes);
+			int lenght = (effectList.size() * 20 + bytes);
 
-			packet.writeShort(buffer, 5);
+			packet.writeShort(buffer, effectList.size());
 			packet.writeShort(buffer, bytes);
-			packet.writeShort(buffer, 1);
+			packet.writeShort(buffer, 0);
 			packet.writeShort(buffer, lenght);
-			packet.writeInt(buffer, 0); // SERVER ID
+			packet.writeInt(buffer, 12); // SERVER ID
 			packet.writeInt(buffer, character.getObjectId());
 
 			// получаем список эффектов
@@ -63,7 +63,7 @@ public class PartyMemberEffectList extends ServerPacket
 
 				packet.writeShort(buffer, bytes);
 
-				bytes += 16;
+				bytes += 20;
 
 				if(lenght < bytes)
 					bytes = 0;
@@ -71,8 +71,11 @@ public class PartyMemberEffectList extends ServerPacket
 				packet.writeShort(buffer, bytes);
 				packet.writeInt(buffer, effect.getEffectId());
 				packet.writeInt(buffer, effect.getTimeEnd() * 1000);
-				packet.writeInt(buffer, 1);
+				packet.writeInt(buffer,0);
+				packet.writeInt(buffer, effect.getCount());
 			}
+
+			packet.writeShort(buffer, 0);
 		}
 		finally
 		{
@@ -87,7 +90,7 @@ public class PartyMemberEffectList extends ServerPacket
 	/** подготовленный буффер */
 	private final ByteBuffer prepare;
 
-	public PartyMemberEffectList()
+	public S_Party_Member_Buff_Update()
 	{
 		this.prepare = ByteBuffer.allocate(1024).order(ByteOrder.LITTLE_ENDIAN);
 	}
@@ -101,7 +104,7 @@ public class PartyMemberEffectList extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.PARTY_MEMBER_EFFECT;
+		return ServerPacketType.S_PARTY_MEMBER_BUFF_UPDATE;
 	}
 
 	@Override

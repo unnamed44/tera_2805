@@ -19,7 +19,7 @@ import tera.gameserver.model.actions.Action;
 import tera.gameserver.model.actions.ActionType;
 import tera.gameserver.model.inventory.Inventory;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.ActionInvite;
+import tera.gameserver.network.serverpackets.S_Begin_Through_Arbiter_Contract;
 import tera.gameserver.network.serverpackets.GuildCheckName;
 import tera.gameserver.network.serverpackets.GuildInfo;
 import tera.gameserver.network.serverpackets.GuildMembers;
@@ -312,7 +312,7 @@ public class JoinGuildAction extends SafeTask implements Action, Foldable
 			return;
 		}
 
-		ActionInvite action = ActionInvite.getInstance(actor.getName(), guildName, ActionType.CREATE_GUILD.ordinal(), objectId);
+		S_Begin_Through_Arbiter_Contract action = S_Begin_Through_Arbiter_Contract.getInstance(actor.getName(), guildName, ActionType.CREATE_GUILD.ordinal(), objectId);
 
 		actor.setLastAction(this);
 

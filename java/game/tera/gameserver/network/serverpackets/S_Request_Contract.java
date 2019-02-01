@@ -10,10 +10,10 @@ import tera.gameserver.network.ServerPacketType;
  * @author Ronn
  * @created 07.03.2012
  */
-public class AppledAction extends ServerPacket
+public class S_Request_Contract extends ServerPacket
 {
-	private static final ServerPacket instance = new AppledAction();
-	
+	private static final ServerPacket instance = new S_Request_Contract();
+
 	/**
 	 * @param player игрок.
 	 * @param enemy опонент.
@@ -21,9 +21,9 @@ public class AppledAction extends ServerPacket
 	 * @param objectId обджект ид акшена.
 	 * @return новый пакет.
 	 */
-	public static AppledAction newInstance(Player player, Player enemy, int type, int objectId)
+	public static S_Request_Contract newInstance(Player player, Player enemy, int type, int objectId)
 	{
-		AppledAction packet = (AppledAction) instance.newInstance();
+		S_Request_Contract packet = (S_Request_Contract) instance.newInstance();
 		
 		packet.player = player.getName();
 		packet.enemy = enemy == null? Strings.EMPTY : enemy.getName();
@@ -66,32 +66,34 @@ public class AppledAction extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.PLAYER_WAITING_ACTION;
+		return ServerPacketType.S_REQUEST_CONTRACT;
 	}
 
 	@Override
 	protected void writeImpl()
 	{
 		writeOpcode();
-		
 		int n = 44;
-		
-		writeShort(n);   // 2C 00 44
-		writeShort(n += Strings.length(player));  // 3A 00 56
-		writeShort(n);   // 58
-		writeShort(Strings.length(enemy));
+		writeShort(n);// senderName
+		writeShort(n += Strings.length(player));//data
+		writeShort(n+2);//target name
+		if(this.enemy == null)
+			writeShort(0);
+		else
+			writeShort(Strings.length(enemy) + 2);//data count
 		writeInt(actorId);
 		writeInt(actorSubId);
 		writeInt(enemyId);
 		writeInt(enemySubId);
-		writeInt(type);//
+		writeInt(type);
 		writeInt(objectId);
 		writeInt(0);
-		writeByte(48);
-		writeShort(165);
-		writeByte(0);
+		writeInt(0);
 		writeString(player);
+		writeShort(0);
 		writeString(enemy);
-		writeByte(0);
+
+		writeShort(0);
+		//write data*/
 	}
 }

@@ -9,9 +9,9 @@ import tera.gameserver.network.ServerPacketType;
  * @author Ronn
  * @created 26.04.2012
  */
-public class ActionInvite extends ServerPacket
+public class S_Begin_Through_Arbiter_Contract extends ServerPacket
 {
-	private static final ServerPacket instance = new ActionInvite();
+	private static final ServerPacket instance = new S_Begin_Through_Arbiter_Contract();
 	
 	/**
 	 * @param actorName имя инициатора.
@@ -20,9 +20,9 @@ public class ActionInvite extends ServerPacket
 	 * @param objectId уникальный ид акшена.
 	 * @return новый пакет.
 	 */
-	public static ActionInvite getInstance(String actorName, String enemyName, int id, int objectId)
+	public static S_Begin_Through_Arbiter_Contract getInstance(String actorName, String enemyName, int id, int objectId)
 	{
-		ActionInvite packet = (ActionInvite) instance.newInstance();
+		S_Begin_Through_Arbiter_Contract packet = (S_Begin_Through_Arbiter_Contract) instance.newInstance();
 		
 		packet.actorName = actorName;
 		packet.enemyName = enemyName;
@@ -52,23 +52,21 @@ public class ActionInvite extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.PLAYER_ACTION_INVITE;
+		return ServerPacketType.S_BEGIN_THROUGH_ARBITER_CONTRACT;
 	}
 
 	@Override
 	protected void writeImpl()
 	{
 		writeOpcode();
-		writeShort(22);//начало первого ника
-		writeShort(22 + Strings.length(actorName));  //начало 2го ника
+		writeShort(22);//senderName
+		writeShort(22 + Strings.length(actorName));//targetName
 		writeShort(Strings.length(actorName));  //длинна первого ника +2
 		writeInt(id);
 		writeInt(objectId);
-		writeByte(0x26);
-		writeShort(0x46);
-		writeByte(0);
+		writeInt(13583);
 		writeString(actorName);
 		writeString(enemyName);
-		writeByte(0);
+		writeShort(0);
 	}
 }

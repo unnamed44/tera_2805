@@ -10,13 +10,13 @@ import tera.gameserver.network.ServerPacketType;
  *
  * @author Ronn
  */
-public class PartyMemberCoords extends ServerPacket
+public class S_Party_Member_Interval_Pos_Update extends ServerPacket
 {
-	private static final ServerPacket instance = new PartyMemberCoords();
+	private static final ServerPacket instance = new S_Party_Member_Interval_Pos_Update();
 
-	public static PartyMemberCoords getInstance(Playable member)
+	public static S_Party_Member_Interval_Pos_Update getInstance(Playable member)
 	{
-		PartyMemberCoords packet = (PartyMemberCoords) instance.newInstance();
+		S_Party_Member_Interval_Pos_Update packet = (S_Party_Member_Interval_Pos_Update) instance.newInstance();
 
 		packet.objectId = member.getObjectId();
 		packet.zoneId = member.getZoneId();
@@ -40,7 +40,7 @@ public class PartyMemberCoords extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.PARTY_MEMBER_COORDS;
+		return ServerPacketType.S_PARTY_MEMBER_INTERVAL_POS_UPDATE;
 	}
 
 	@Override
@@ -53,7 +53,7 @@ public class PartyMemberCoords extends ServerPacket
 	protected void writeImpl(ByteBuffer buffer)
 	{
 		writeOpcode(buffer);
-		writeInt(buffer, 0);// 0D 00 00 00
+		writeInt(buffer, 12);// SERVER ID
 		writeInt(buffer, objectId);// 5F 78 00 00
 		writeFloat(buffer, x);// 66 3D B0 47
 		writeFloat(buffer, y);// 86 8B AD C7

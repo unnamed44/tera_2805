@@ -68,6 +68,12 @@ public enum ClientPacketType
 	C_START_SKILL(0x7FC6, new C_START_SKILL()),
 	C_START_INSTANCE_SKILL(0x729C, new C_Start_Instance_Skill()),
 	C_START_COMBO_INSTANT_SKILL(0x72B9, new C_Start_Combo_Instant_Skill()),
+	C_REQUEST_CONTRACT(0xA179, new C_Request_Contract()),
+	C_REPLY_THROUGH_ARBITER_CONTRACT(0xAB63, new C_Reply_Through_Arbiter_Contract()),
+	C_BAN_PARTY_MEMBER(0xA95D, new C_Ban_Party_Member()),
+	C_LEAVE_PARTY(0x7741, new C_Leave_Party()),
+
+
 
 	/** запрос ид зоны клиентом, верия 172 */
 	REQUEST_WORLD_ZONE(0x5E43, new RequestWorldZone()),
@@ -203,20 +209,18 @@ public enum ClientPacketType
 	/** запрос на приглашение игрока в акшен, версия 172 */
 	REQUEST_ACTION_INVITE(0xADE2, new RequestActionInvite()),
 	/** согласие на участие в акшене, версия 172 */
-	REQUEST_ACTION_AGREE(0xA05D, new RequestActionAgree()),
+	REQUEST_ACTION_AGREE(0xA05D, new C_Reply_Through_Arbiter_Contract()),
 	/** отмена акшена игроком, версия 172 */
-	REQUEST_ACTION_CANCEL(0xE58F, new RequestActionCancel()),
 
 	/** запрос на приглашение человека в пати, версия 172 */
 	REQUEST_PARTY_INVITE(0x0111, new RequestPartyInvite()),
 	/** запрос на выход из пати, версия 172 */
-	REQUEST_PARTY_LEAVE(0x8002, new RequestPartyLeave()),
 	/** запрос на изменение группе */
 	REQUEST_PARTY_CHANGE(0x784F, new RequestPartyChange()),
 	/** запрос на смену лидера в группе */
 	REQUEST_PARTY_MAKE_LEADER(0xB14B, new RequestPartyMakeLeader()),
 	/** запрос на кик из группы */
-	REQUEST_PARTY_KICK(0xFD15, new RequestPartyKick()),
+	REQUEST_PARTY_KICK(0xFD15, new C_Ban_Party_Member()),
 	/** запрос на расформирование группы */
 	REQUEST_PARTY_DISBAND(0xC041, new RequestPartyDisband()),
 

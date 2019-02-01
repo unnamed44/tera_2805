@@ -8,9 +8,9 @@ import tera.gameserver.network.ServerPacketType;
  * @author Ronn
  * @created 07.03.2012
  */
-public class ActionDoned extends ServerPacket
+public class S_Cancel_Contract extends ServerPacket
 {
-	private static final ServerPacket instance = new ActionDoned();
+	private static final ServerPacket instance = new S_Cancel_Contract();
 	
 	/**
 	 * @param actorId ид инициатора.
@@ -21,9 +21,9 @@ public class ActionDoned extends ServerPacket
 	 * @param objectId уникальный ид акшена.
 	 * @return новый пакет.
 	 */
-	public static ActionDoned getInstance(int actorId, int actorSubId, int enemyId, int enemySubId, int id, int objectId)
+	public static S_Cancel_Contract getInstance(int actorId, int actorSubId, int enemyId, int enemySubId, int id, int objectId)
 	{
-		ActionDoned packet = (ActionDoned) instance.newInstance();
+		S_Cancel_Contract packet = (S_Cancel_Contract) instance.newInstance();
 		
 		packet.actorId = actorId;
 		packet.actorSubId = actorSubId;
@@ -49,7 +49,7 @@ public class ActionDoned extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.PLAYER_ACTION_DONED;
+		return ServerPacketType.S_CANCEL_CONTRACT;
 	}
 
 	@Override

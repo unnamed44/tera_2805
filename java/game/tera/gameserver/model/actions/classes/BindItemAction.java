@@ -9,7 +9,7 @@ import tera.gameserver.model.actions.ActionType;
 import tera.gameserver.model.inventory.Inventory;
 import tera.gameserver.model.items.ItemInstance;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.AppledAction;
+import tera.gameserver.network.serverpackets.S_Request_Contract;
 import tera.gameserver.templates.ItemTemplate;
 
 /**
@@ -129,7 +129,7 @@ public class BindItemAction extends AbstractAction<ItemInstance>
 		ActionType type = getType();
 
 		// отправляем соответсвующие пакеты
-		actor.sendPacket(AppledAction.newInstance(actor, null, type.ordinal(), objectId), true);
+		actor.sendPacket(S_Request_Contract.newInstance(actor, null, type.ordinal(), objectId), true);
 
 		// показываем эмоцию
 		PacketManager.showEmotion(actor, EmotionType.CAST);

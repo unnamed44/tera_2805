@@ -320,10 +320,10 @@ public final class PlayerManager
 		}
 
 		//if(player.isPK())
-		//	player.sendPacket(NameColor.getInstance(NameColor.COLOR_ORANGE, player), true);
+		//	player.sendPacket(S_Change_Relation.getInstance(S_Change_Relation.COLOR_ORANGE, player), true);
 		//else 
 		if(player.isPvPMode())
-			player.sendPacket(NameColor.getInstance(NameColor.COLOR_RED, player), true);
+			player.sendPacket(S_Change_Relation.getInstance(S_Change_Relation.COLOR_RED, player), true);
 	}
 
 	/**

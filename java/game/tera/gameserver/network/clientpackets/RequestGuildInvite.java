@@ -2,7 +2,7 @@ package tera.gameserver.network.clientpackets;
 
 import tera.gameserver.model.actions.ActionType;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.ActionStart;
+import tera.gameserver.network.serverpackets.S_Reply_Request_Contract;
 
 /**
  * Приглашение игрока в пати.
@@ -42,7 +42,7 @@ public class RequestGuildInvite extends ClientPacket
 	{
 		ActionType actionType = ActionType.INVITE_GUILD;
 
-		actor.sendPacket(ActionStart.getInstance(actionType), true);
+		actor.sendPacket(S_Reply_Request_Contract.getInstance(actionType), true);
 
 		actor.getAI().startAction(actionType.newInstance(actor, name));
 	}

@@ -7,8 +7,8 @@ import tera.gameserver.model.MessageType;
 import tera.gameserver.model.World;
 import tera.gameserver.model.actions.ActionType;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.ActionDoned;
-import tera.gameserver.network.serverpackets.ActionInvite;
+import tera.gameserver.network.serverpackets.S_Cancel_Contract;
+import tera.gameserver.network.serverpackets.S_Begin_Through_Arbiter_Contract;
 
 /**
  * Модель акшена для взятия игрока в гильдию
@@ -37,8 +37,8 @@ public class GuildInviteAction extends PlayerAction
 		Guild guild = actor.getGuild();
 
 		// отправляем нужные пакеты
-		actor.sendPacket(ActionDoned.getInstance(actor.getObjectId(), actor.getSubId(), player.getObjectId(), player.getSubId(), type.ordinal(), objectId), true);
-		player.sendPacket(ActionDoned.getInstance(actor.getObjectId(), actor.getSubId(), player.getObjectId(), player.getSubId(), type.ordinal(), objectId), true);
+		actor.sendPacket(S_Cancel_Contract.getInstance(actor.getObjectId(), actor.getSubId(), player.getObjectId(), player.getSubId(), type.ordinal(), objectId), true);
+		player.sendPacket(S_Cancel_Contract.getInstance(actor.getObjectId(), actor.getSubId(), player.getObjectId(), player.getSubId(), type.ordinal(), objectId), true);
 
 		// добавляем в гильдию игрока
 		guild.joinMember(player);
@@ -64,8 +64,8 @@ public class GuildInviteAction extends PlayerAction
 			ActionType type = getType();
 
 			// рассылаем пакеты
-			actor.sendPacket(ActionDoned.getInstance(actor.getObjectId(), actor.getSubId(), target.getObjectId(), target.getSubId(), type.ordinal(), objectId), true);
-			target.sendPacket(ActionDoned.getInstance(actor.getObjectId(), actor.getSubId(), target.getObjectId(), target.getSubId(), type.ordinal(), objectId), true);
+			actor.sendPacket(S_Cancel_Contract.getInstance(actor.getObjectId(), actor.getSubId(), target.getObjectId(), target.getSubId(), type.ordinal(), objectId), true);
+			target.sendPacket(S_Cancel_Contract.getInstance(actor.getObjectId(), actor.getSubId(), target.getObjectId(), target.getSubId(), type.ordinal(), objectId), true);
 		}
 
 		super.cancel(player);
@@ -121,7 +121,7 @@ public class GuildInviteAction extends PlayerAction
 		ActionType type = getType();
 
 		// отправляем пакет
-		target.sendPacket(ActionInvite.getInstance(actor.getName(), target.getName(), type.ordinal(), objectId), true);
+		target.sendPacket(S_Begin_Through_Arbiter_Contract.getInstance(actor.getName(), target.getName(), type.ordinal(), objectId), true);
 
 		// получаем исполнительного менеджера
 		ExecutorManager executor = ExecutorManager.getInstance();

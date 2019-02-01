@@ -1,6 +1,6 @@
 package tera.gameserver.model.npc.summons;
 
-import tera.gameserver.network.serverpackets.NameColor;
+import tera.gameserver.network.serverpackets.S_Change_Relation;
 import tera.gameserver.templates.NpcTemplate;
 
 /**
@@ -18,6 +18,6 @@ public class PlayerSummon extends PlayableSummon
 	@Override
 	public int getNameColor()
 	{
-		return NameColor.COLOR_LIGHT_BLUE;
+		return S_Change_Relation.COLOR_LIGHT_BLUE;
 	}
 }

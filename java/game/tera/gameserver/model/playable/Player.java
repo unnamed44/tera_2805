@@ -349,7 +349,7 @@ public final class Player extends Playable implements Nameable, Identified {
 	public void addMe(Player player) {
 
 		try {
-			player.sendPacket(PlayerInfo.getInstance(this, player), true);
+			player.sendPacket(S_Spawn_User.getInstance(this, player), true);
 
 			super.addMe(player);
 
@@ -950,15 +950,15 @@ public final class Player extends Playable implements Nameable, Identified {
 	 */
 	public int getColor(Player target) {
 		if(fractionId != 0)
-			return fractionId != target.getFractionId() ? NameColor.COLOR_RED_PVP : NameColor.COLOR_NORMAL;
+			return fractionId != target.getFractionId() ? S_Change_Relation.COLOR_RED_PVP : S_Change_Relation.COLOR_NORMAL;
 		else if(duel != null && duel == target.duel)
-			return NameColor.COLOR_RED_PVP;
+			return S_Change_Relation.COLOR_RED_PVP;
 		else if(party != null && party == target.party)
-			return NameColor.COLOR_BLUE;
+			return S_Change_Relation.COLOR_BLUE;
 		else if(guild != null && guild == target.getGuild())
-			return NameColor.COLOR_GREEN;
+			return S_Change_Relation.COLOR_GREEN;
 
-		return isPvPMode() || isPK() || target.isPK() || target.isPvPMode() ? NameColor.COLOR_RED_PVP : NameColor.COLOR_NORMAL;
+		return isPvPMode() || isPK() || target.isPK() || target.isPvPMode() ? S_Change_Relation.COLOR_RED_PVP : S_Change_Relation.COLOR_NORMAL;
 	}
 
 	/**
@@ -967,9 +967,9 @@ public final class Player extends Playable implements Nameable, Identified {
 	public int getColor() {
 
 		if(isPvPMode() || isPK()) {
-			return NameColor.COLOR_RED;
+			return S_Change_Relation.COLOR_RED;
 		} else {
-			return NameColor.COLOR_NORMAL;
+			return S_Change_Relation.COLOR_NORMAL;
 		}
 	}
 
@@ -1226,7 +1226,7 @@ public final class Player extends Playable implements Nameable, Identified {
 
 	@Override
 	public ServerPacket getMovePacket(float x, float y, float z, int heading, MoveType type, float targetX, float targetY, float targetZ) {
-		return S_Npc_Location.getInstance(this, type, x, y, z, heading, targetX, targetY, targetZ);
+		return S_User_Location.getInstance(this, type, x, y, z, heading, targetX, targetY, targetZ);
 	}
 
 	@Override
@@ -2144,7 +2144,7 @@ public final class Player extends Playable implements Nameable, Identified {
 			}
 
 			sendPacket(pvp, true);
-			sendPacket(NameColor.getInstance(getColor(), this), true);
+			sendPacket(S_Change_Relation.getInstance(getColor(), this), true);
 
 			updateColor(players);
 
@@ -2429,8 +2429,8 @@ public final class Player extends Playable implements Nameable, Identified {
 	 * @param target целевой игрок.
 	 */
 	public void updateColor(Player target) {
-		sendPacket(NameColor.getInstance(getColor(target), target), true);
-		target.sendPacket(NameColor.getInstance(target.getColor(this), this), true);
+		sendPacket(S_Change_Relation.getInstance(getColor(target), target), true);
+		target.sendPacket(S_Change_Relation.getInstance(target.getColor(this), this), true);
 	}
 
 	@Override
@@ -2780,7 +2780,7 @@ public final class Player extends Playable implements Nameable, Identified {
 
 		if(updateColor) {
 			player.updateColor();
-			player.sendPacket(NameColor.getInstance(player.getColor(), player), true);
+			player.sendPacket(S_Change_Relation.getInstance(player.getColor(), player), true);
 		}
 	}
 
@@ -2941,7 +2941,7 @@ public final class Player extends Playable implements Nameable, Identified {
 
 		if(!isPK()) {
 			updateColor();
-			sendPacket(NameColor.getInstance(getColor(), this), true);
+			sendPacket(S_Change_Relation.getInstance(getColor(), this), true);
 		}
 	}
 

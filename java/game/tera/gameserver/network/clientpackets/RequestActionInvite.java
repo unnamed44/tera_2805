@@ -3,7 +3,7 @@ package tera.gameserver.network.clientpackets;
 import tera.gameserver.model.actions.ActionType;
 import tera.gameserver.model.playable.Player;
 import tera.gameserver.network.model.UserClient;
-import tera.gameserver.network.serverpackets.ActionStart;
+import tera.gameserver.network.serverpackets.S_Reply_Request_Contract;
 
 /**
  * Приглашение на участие в акшене.
@@ -73,7 +73,7 @@ public class RequestActionInvite extends ClientPacket
 
 		ActionType actionType = getActionType();
 
-		actor.sendPacket(ActionStart.getInstance(actionType), true);
+		actor.sendPacket(S_Reply_Request_Contract.getInstance(actionType), true);
 
 		if (!actionType.isImplemented() || actor.hasLastAction())
 			return;

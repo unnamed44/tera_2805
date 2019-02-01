@@ -9,7 +9,7 @@ import tera.gameserver.model.playable.Player;
  * @author Ronn
  * @created 07.03.2012
  */
-public class RequestActionAgree extends ClientPacket
+public class C_Reply_Through_Arbiter_Contract extends ClientPacket
 {
 	/** потвердивший игрок */
 	private Player player;
@@ -34,12 +34,11 @@ public class RequestActionAgree extends ClientPacket
 		player = owner.getOwner();
 
 		readShort();
-		readByte();// player.sendMessage("id action: " + readC());//04 00 00 00 ид акшена
-		readShort();
-		readByte();
-		objectId = readInt();// player.sendMessage("objectId action: " + readD());//52 55 0A 00 обжект ид экшена
 		readInt();
-		answer = readByte();
+		objectId = readInt();
+		readInt();
+		answer = readInt();
+		readString();
 	}
 
 	@Override

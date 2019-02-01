@@ -7,19 +7,19 @@ import tera.gameserver.network.ServerPacketType;
  * 
  * @author Ronn
  */
-public class PartyLeave extends ServerPacket
+public class S_Leave_Party_Member extends ServerPacket
 {
-	private static final ServerPacket instance = new PartyLeave();
+	private static final ServerPacket instance = new S_Leave_Party_Member();
 	
-	public static PartyLeave getInstance()
+	public static S_Leave_Party_Member getInstance()
 	{
-		return (PartyLeave) instance.newInstance();
+		return (S_Leave_Party_Member) instance.newInstance();
 	}
 	
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.PARTY_LEAVE;
+		return ServerPacketType.S_LEAVE_PARTY_MEMBER;
 	}
 
 	@Override

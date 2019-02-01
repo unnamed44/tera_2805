@@ -11,13 +11,14 @@ import tera.gameserver.network.ServerPacketType;
  * @author Ronn
  * @created 26.04.2012
  */
-public class PartyMemberInfo extends ServerPacket
+public class S_Party_Member_Stat_Update extends ServerPacket
 {
-	private static final ServerPacket instance = new PartyMemberInfo();
+	private static final ServerPacket instance = new S_Party_Member_Stat_Update();
 
-	public static PartyMemberInfo getInstance(Player member)
+	public static S_Party_Member_Stat_Update getInstance(Player member)
 	{
-		PartyMemberInfo packet = (PartyMemberInfo) instance.newInstance();
+		member.stopBattleStance();
+		S_Party_Member_Stat_Update packet = (S_Party_Member_Stat_Update) instance.newInstance();
 
 		packet.objectId = member.getObjectId();
 		packet.currentHp = member.getCurrentHp();
@@ -27,6 +28,8 @@ public class PartyMemberInfo extends ServerPacket
 		packet.level = member.getLevel();
 		packet.stamina = member.getStamina();
 		packet.dead = member.isDead() ? 0 : 1;
+		packet.inBattle = member.isBattleStanced() ? 0 : 1;
+		packet.vitality = packet.stamina/30;
 
 		return packet;
 	}
@@ -48,10 +51,14 @@ public class PartyMemberInfo extends ServerPacket
 	/** мертв ли */
 	private int dead;
 
+	private int inBattle;
+
+	private int vitality;
+
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.PARTY_MEMBER_INFO;
+		return ServerPacketType.S_PARTY_MEMBER_STAT_UPDATE;
 	}
 
 	@Override
@@ -64,17 +71,19 @@ public class PartyMemberInfo extends ServerPacket
 	protected void writeImpl(ByteBuffer buffer)
 	{
 		writeOpcode(buffer);
-		writeInt(buffer, 0); // SERVER ID
+		writeInt(buffer, 12); // SERVER ID
 		writeInt(buffer, objectId);//DE 2C 0B 00 //айди используемого в пати
 		writeInt(buffer, currentHp);//2D 08 00 00 //хп сколько было
 		writeInt(buffer, currentMp);//3C 05 00 00 /мп сколько было
 		writeInt(buffer, maxHp);//2D 08 00 00 //хп сколько всего
 		writeInt(buffer, maxMp);//3C 05 00 00 /мп сколько всего
-		writeInt(buffer, level);//02 00 //уровень
-		writeShort(buffer, 2);//04 00 лвл стамины
+		writeShort(buffer, level);//02 00 //уровень
+		writeShort(buffer, inBattle);//02 00 //уровень
+		writeShort(buffer, vitality);//04 00 лвл стамины
 		writeByte(buffer, dead);//01
 		writeInt(buffer, stamina);//78 00 00 00
-		writeLong(buffer, 0);
+		writeInt(buffer, 0);//current RE
+		writeInt(buffer, 0);//Max RE
 		writeInt(buffer, 0);
 	}
 }

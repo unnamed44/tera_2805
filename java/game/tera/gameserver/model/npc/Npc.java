@@ -42,12 +42,7 @@ import tera.gameserver.model.skillengine.Formulas;
 import tera.gameserver.model.skillengine.Skill;
 import tera.gameserver.model.skillengine.SkillGroup;
 import tera.gameserver.model.skillengine.StatType;
-import tera.gameserver.network.serverpackets.S_Despawn_Npc;
-import tera.gameserver.network.serverpackets.NameColor;
-import tera.gameserver.network.serverpackets.S_Spawn_Npc;
-import tera.gameserver.network.serverpackets.NpcNotice;
-import tera.gameserver.network.serverpackets.S_Quest_Villager_Info;
-import tera.gameserver.network.serverpackets.S_Show_Hp;
+import tera.gameserver.network.serverpackets.*;
 import tera.gameserver.tables.SkillTable;
 import tera.gameserver.taskmanager.RegenTaskManager;
 import tera.gameserver.tasks.EmotionTask;
@@ -1178,7 +1173,7 @@ public abstract class Npc extends Character implements Foldable {
 	 * @return цвет имени НПС.
 	 */
 	public int getNameColor() {
-		return NameColor.COLOR_NORMAL;
+		return S_Change_Relation.COLOR_NORMAL;
 	}
 
 	/**
