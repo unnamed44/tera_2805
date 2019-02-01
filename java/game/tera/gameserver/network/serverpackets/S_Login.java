@@ -35,7 +35,7 @@ public class S_Login extends ServerPacket
 
 		try
 		{
-			int n = 294;
+			int n = 273;
 			packet.writeShort(buffer, n);//Write name position
 			packet.writeShort(buffer, n + Strings.length(player.getName()));
 			packet.writeShort(buffer, 32);
@@ -52,7 +52,7 @@ public class S_Login extends ServerPacket
 			packet.writeInt(buffer, 0);
 			packet.writeByte(buffer, player.isDead() ? 0 : 1);// живой или мёртвый
 			packet.writeInt(buffer, 0);//status
-			packet.writeInt(buffer, 0);//walk speed ?
+			packet.writeInt(buffer, 70);//walk speed ?
 			packet.writeInt(buffer, player.getRunSpeed());//movement speed
 
 			packet.writeByte(buffer, 101);// temp[9]
@@ -90,6 +90,7 @@ public class S_Login extends ServerPacket
 			packet.writeInt(buffer, 0);//rested max
 			packet.writeFloat(buffer, 1);
 			packet.writeFloat(buffer, 1);
+			//packet.writeInt(buffer, 0);
 
 			ItemInstance weapon = equipment.getItem(SlotType.SLOT_WEAPON);
 
@@ -120,9 +121,9 @@ public class S_Login extends ServerPacket
 			packet.writeInt(buffer, 0);// 00 00 00 00 // new
 			packet.writeInt(buffer, 0);// 00 00 00 00 // new
 			packet.writeInt(buffer, 0);// 00 00 00 00 // new
-			packet.writeInt(buffer, 0);// 00 00 00 00
-			packet.writeInt(buffer, 0);// 00 00 00 00
-			packet.writeInt(buffer, 0);// 00 00 00 00
+			//packet.writeInt(buffer, 0);// 00 00 00 00
+			//packet.writeInt(buffer, 0);// 00 00 00 00
+			//packet.writeInt(buffer, 0);// 00 00 00 00
 			packet.writeInt(buffer, 0);// 00 00 00 00
 			packet.writeInt(buffer, 0);// 00 00 00 00
 			packet.writeInt(buffer, 0);// 00 00 00 00
@@ -130,11 +131,11 @@ public class S_Login extends ServerPacket
 			packet.writeInt(buffer, weapon == null ? 0 : weapon.getEnchantLevel());// точка
 
 			packet.writeByte(buffer, 0);// 00
-
+// byte + 12 int + 1
 			packet.writeInt(buffer, player.getKarma());// 78 00 00 00 .//карма
 			packet.writeInt(buffer, 1);// 01 00 00 00
 
-			packet.writeInt(buffer, 0);// 00 00 00 00//00 00 00 00
+			/*packet.writeInt(buffer, 0);// 00 00 00 00//00 00 00 00
 
 			packet.writeInt(buffer, 0);// 00 00 00 00
 			packet.writeInt(buffer, 0);// 00 00 00 00
@@ -152,8 +153,19 @@ public class S_Login extends ServerPacket
 			packet.writeInt(buffer, 0x3F800000);// 0000803F // new
 			packet.writeByte(buffer, 1);// 00 // new
 			packet.writeInt(buffer, 1);// 00000000 // new
-			packet.writeInt(buffer, 1);// 00000000 // new
+			packet.writeInt(buffer, 1);// 00000000 // new*/
 
+			packet.writeByte(buffer, 0);
+			packet.writeLong(buffer,0);
+			packet.writeLong(buffer,0);
+			packet.writeInt(buffer, 0);
+			packet.writeInt(buffer, 2);//alliance
+			packet.writeLong(buffer,0);
+			packet.writeByte(buffer, 1);
+			packet.writeLong(buffer, 0);
+			packet.writeInt(buffer, 100);
+			packet.writeShort(buffer, 0);
+			packet.writeShort(buffer, 16256);
 			packet.writeString(buffer, player.getName());
 
 			packet.writeByte(buffer, appearance.getBoneStructureBrow());

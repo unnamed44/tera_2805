@@ -41,6 +41,7 @@ public class S_Check_Version extends ServerPacket
 				owner.sendPacket(S_Loading_Screen_Control_Info.getInstance(), true);
 				owner.sendPacket(S_Remain_Play_Time.getInstance(), true);
 				owner.sendPacket(S_Login_Arbiter.getInstance(), true);
+				owner.sendPacket(S_Login_Account_Info.getInstance(),true);
 
 				break;
 			}

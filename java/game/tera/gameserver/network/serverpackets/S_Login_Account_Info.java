@@ -26,12 +26,9 @@ public class S_Login_Account_Info extends ServerPacket
 		
 		writeOpcode();
 		writeShort(0x0E00);
-		writeLong(0x00000000005A9A4DL);
-		writeLong(0x006E0061006C0050L);
-		writeShort(0x0065);
-		writeShort(0x0074);
-		writeShort(0x0041);
-		writeShort(0x0056);
-		writeShort(0);
+		writeShort(3672);
+		writeShort(29449);
+		writeInt(0);
+		writeString("GameDB");
 	}
 }

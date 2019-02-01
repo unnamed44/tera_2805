@@ -25,10 +25,11 @@ public class S_Current_Election_State extends ServerPacket {
     {
         writeOpcode();
         writeInt(0);
-        writeInt(11); // sometimes 19
+        writeInt(0); // sometimes 19
         writeInt(0);
-        writeInt(0x3CFF0000); // random
-        writeInt(0x000051E4); // random
+        writeShort(0);
+        writeShort(51228);
+        writeShort(23651);
         writeShort(0);
     }
 }

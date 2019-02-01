@@ -2116,6 +2116,7 @@ public final class DataBaseManager {
 				item.setOwnerId(rset.getInt("owner_id"));
 				item.setItemCount(rset.getLong("item_count"));
 				item.setMasterworked(rset.getInt("masterworked"));
+				item.setEnigma(rset.getInt("enigma"));
 				item.setEnchantLevel(rset.getShort("enchant_level"));
 				item.setBonusId(rset.getInt("bonus_id"));
 				item.setAutor(rset.getString("autor"));

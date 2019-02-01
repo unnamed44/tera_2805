@@ -44,6 +44,8 @@ public abstract class ItemInstance extends TObject implements Foldable
 
 	protected int masterworked;
 
+	protected int enigma;
+
 	/** отспавненное время */
 	protected long spawnTime;
 
@@ -98,6 +100,7 @@ public abstract class ItemInstance extends TObject implements Foldable
 		this.ownerId = 0;
 		this.itemCount = 1;
 		this.masterworked = 0;
+		this.enigma = 0;
 		this.bonusId = 0;
 		this.enchantLevel = 0;
 		this.index = 0;
@@ -247,6 +250,7 @@ public abstract class ItemInstance extends TObject implements Foldable
 		enchantLevel = 0;
 		itemCount = 1;
 		masterworked = 0;
+		enigma = 0;
 		ownerId = 0;
 		objectId = 0;
 		index = 0;
@@ -417,6 +421,14 @@ public abstract class ItemInstance extends TObject implements Foldable
 	 * @return masterworked value
 	 */
 	public final int getMasterworked() { return this.masterworked; }
+
+	/**
+	 *
+	 * @return enigma value
+	 */
+	public final int isEnigma() {
+		return this.enigma;
+	}
 
 	/**
 	 * @return ид темплейта итема.
@@ -942,6 +954,13 @@ public abstract class ItemInstance extends TObject implements Foldable
 	 */
 	public final void setMasterworked(int masterworked){
 		this.masterworked = masterworked;
+	}
+
+	/**
+	 * @param enigma enigma value
+	 */
+	public final void setEnigma(int enigma){
+		this.enigma = enigma;
 	}
 
 	/**

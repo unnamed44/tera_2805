@@ -59,7 +59,7 @@ public class S_Inven extends ServerPacket
 					int inventorySize = inventory.getMaxCells();
 
 					packet.writeShort(buffer, total);
-					packet.writeShort(buffer, 39);
+					packet.writeShort(buffer, 51);
 					packet.writeInt(buffer, player.getObjectId());
 					packet.writeInt(buffer, player.getSubId());
 					packet.writeLong(buffer, inventory.getMoney());
@@ -74,12 +74,15 @@ public class S_Inven extends ServerPacket
 					packet.writeInt(buffer, inventorySize); // equipmentSize
 					packet.writeInt(buffer, 0);//itemlevelInventory
 					packet.writeInt(buffer, 0);//itemLevel
+					packet.writeInt(buffer,0);
+					packet.writeInt(buffer,0);
+					packet.writeInt(buffer, 1);
 
 					Cell[] cells = inventory.getCells();
 
 					Slot[] slots = equipment.getSlots();
 
-					int n = 39;
+					int n = 51;
 
 					for(int i = 0; i < equipmentSize; i++)
 					{
@@ -92,7 +95,7 @@ public class S_Inven extends ServerPacket
 
 						packet.writeShort(buffer, n);
 
-						n += 155;
+						n += 138;
 
 						packet.writeShort(buffer, n);
 
@@ -107,8 +110,7 @@ public class S_Inven extends ServerPacket
 						packet.writeInt(buffer, i + 1);
 						packet.writeInt(buffer, 0);
 						packet.writeLong(buffer, item.getItemCount());
-						packet.writeInt(buffer, 0);
-						packet.writeByte(buffer, 0x1E);// !!!
+						packet.writeShort(buffer, 30);// !!!
 
 						// получаем кристалы итема
 						CrystalList crystals = item.getCrystals();
@@ -137,12 +139,29 @@ public class S_Inven extends ServerPacket
 								for(int g = 0; g < diff; g++)
 									packet.writeInt(buffer, 0);
 						}
-
+//5 long 1 int
 						packet.writeInt(buffer, 0);
 						packet.writeInt(buffer, 0);
 						packet.writeInt(buffer, 0);
 						packet.writeInt(buffer, 0);
-						packet.writeLong(buffer, 0);
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);
+						packet.writeShort(buffer, 0);
+						packet.writeByte(buffer, 0);
+						packet.writeByte(buffer, item.getMasterworked());
+						packet.writeInt(buffer, item.isEnigma());//enigma
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer,item.getItemLevel());
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);
+						packet.writeShort(buffer,0);
+						/*packet.writeLong(buffer, 0);
 						packet.writeLong(buffer, 0);
 						packet.writeByte(buffer, item.getMasterworked());
 						packet.writeInt(buffer, 0);//enigma
@@ -153,16 +172,16 @@ public class S_Inven extends ServerPacket
 						packet.writeInt(buffer, 0);
 						packet.writeInt(buffer, 0);
 						packet.writeInt(buffer, player.getObjectId());
-						packet.writeByte(buffer, 0);
+						//packet.writeByte(buffer, 0);
 
 						packet.writeShort(buffer, 0);
 						packet.writeShort(buffer, 0);
-						packet.writeShort(buffer, 0); // need to have Combat item type added like 3 etc...
+						packet.writeShort(buffer, 3); // need to have Combat item type added like 3 etc...
 						packet.writeInt(buffer, 0);
 						packet.writeShort(buffer, 0);
 						packet.writeInt(buffer, 0xFFFFFFFF);
 						packet.writeInt(buffer, 0);
-						packet.writeShort(buffer, 0);
+						packet.writeShort(buffer, 0);*/
 
 					}
 
@@ -181,7 +200,7 @@ public class S_Inven extends ServerPacket
 
 						packet.writeShort(buffer, n);
 
-						n += 155;
+						n += 138;
 
 						if(last == i)
 							n = 0;
@@ -194,20 +213,18 @@ public class S_Inven extends ServerPacket
 							packet.writeShort(buffer,0);
 						packet.writeInt(buffer, item.getItemId());
 						packet.writeInt(buffer, item.getObjectId());
-						packet.writeInt(buffer, 0);// 0;
+						packet.writeInt(buffer, 0);
 						packet.writeInt(buffer, player.getObjectId());
 						packet.writeInt(buffer, player.getSubId());
 						packet.writeInt(buffer, i + 40);
 						packet.writeInt(buffer, 0);
 						packet.writeLong(buffer, item.getItemCount());
-
-						packet.writeInt(buffer, 0);
-						packet.writeByte(buffer, item.getBoundType() == BindType.NONE || item.isBinded()? 1 : 0);// This is Showing as 1E in real server this needs to be looked at to return the right values
+						packet.writeShort(buffer, 30);// !!!
 
 						// получаем кристалы итема
 						CrystalList crystals = item.getCrystals();
 
-						// если их нет
+						// если кристалов нет
 						if(crystals == null || crystals.isEmpty())
 						{
 							packet.writeInt(buffer, 0); // 1 ячейка итема
@@ -221,40 +238,38 @@ public class S_Inven extends ServerPacket
 
 							CrystalInstance[] array = crystals.getArray();
 
+							// вносим вставленные кристалы
 							for(int g = 0, length = crystals.size(); g < length; g++)
 								packet.writeInt(buffer, array[g].getItemId());
 
+							// если есть пустые слоты
 							if(diff > 0)
+								// указываем кол-во пустых слотов
 								for(int g = 0; g < diff; g++)
 									packet.writeInt(buffer, 0);
 						}
-
+//5 long 1 int
 						packet.writeInt(buffer, 0);
 						packet.writeInt(buffer, 0);
 						packet.writeInt(buffer, 0);
 						packet.writeInt(buffer, 0);
-						packet.writeLong(buffer, 0);
-						packet.writeLong(buffer, 0);
-						packet.writeByte(buffer, item.getMasterworked());
-						packet.writeInt(buffer, 0);//enigma
-						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, item.getItemLevel());
 						packet.writeInt(buffer, 0);
 						packet.writeInt(buffer, 0);
 						packet.writeInt(buffer, 0);
 						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, player.getObjectId());
+						packet.writeShort(buffer, 0);
 						packet.writeByte(buffer, 0);
-
-						//packet.writeByte(buffer, 0);
-						packet.writeShort(buffer, 0);
-						packet.writeShort(buffer, 0);
-						packet.writeShort(buffer, 0); // need to have Combat item type added like 3 etc...
+						packet.writeByte(buffer, item.getMasterworked());
+						packet.writeInt(buffer, item.isEnigma());//enigma
 						packet.writeInt(buffer, 0);
-						packet.writeShort(buffer, 0);
-						packet.writeInt(buffer, 0xFFFFFFFF);
+						packet.writeInt(buffer,item.getItemLevel());
 						packet.writeInt(buffer, 0);
-						packet.writeShort(buffer, 0);
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);
+						packet.writeShort(buffer,0);
 					}
 				}
 				finally
