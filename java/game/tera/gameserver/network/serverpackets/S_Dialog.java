@@ -30,10 +30,10 @@ public class S_Dialog extends ServerPacket
 			// получаем шаблон НПС
 			NpcTemplate template = npc == null? null : npc.getTemplate();
 
-			int startLink = 64;
+			int startLink = 66;
 			int startNameLink = 0;
 
-			packet.writeShort(buffer, 2);
+			packet.writeShort(buffer, links.size());//nbr answer
 			packet.writeShort(buffer, startLink);
 			packet.writeInt(buffer, 0);
 			packet.writeInt(buffer, npc == null? 0 : npc.getObjectId()); // Обжэект ид нпц
@@ -43,16 +43,16 @@ public class S_Dialog extends ServerPacket
 			packet.writeInt(buffer, npc == null? 0 : template.getIconId());// 66 00 00 00 нпц темплейт ид
 			packet.writeInt(buffer, npc == null? 0 : npc.getTemplateType());// 0D 00 класс моба
 			packet.writeInt(buffer, 0);// 00 00 00 00
-			packet.writeInt(buffer, 1);// 01 00 00 00
+			packet.writeInt(buffer, 2);// 01 00 00 00
 
-			packet.writeInt(buffer, 0xBCB8A17B); // 0xBCB8A17B
-			packet.writeInt(buffer, 0); // 00 00 00 00
+			packet.writeInt(buffer, 0x31C9479E); // 0xBCB8A17B
+			packet.writeByte(buffer, 1);
+			packet.writeInt(buffer, 1);
+			packet.writeInt(buffer, 1);
+			packet.writeInt(buffer, 0);
+			packet.writeInt(buffer, 0);
+			packet.writeInt(buffer, -1);
 			packet.writeByte(buffer, 0);// 00
-			packet.writeInt(buffer, 1);// 01 00 00 00
-			packet.writeInt(buffer, 0);// 00 00 00 00
-			packet.writeShort(buffer, 0);// 00 00
-			packet.writeByte(buffer, 0);// 00
-			packet.writeInt(buffer, 0xFFFFFFFF);
 
 			// если ссылки есть
 			if(links != null && !links.isEmpty())
@@ -79,7 +79,7 @@ public class S_Dialog extends ServerPacket
 
 					String name = link.getName();
 
-					startLink += (name.length() * 2 + 17);
+					startLink += (name.length() * 2 + 16);
 
 					if(link == last)
 						packet.writeShort(buffer, 0);
@@ -87,12 +87,9 @@ public class S_Dialog extends ServerPacket
 						packet.writeShort(buffer, startLink);
 
 					packet.writeShort(buffer, startNameLink); // (первый байт описания данной ссылки в пакете) + 8
-					packet.writeInt(buffer, i + 1);// номер ссылки
-					packet.writeShort(buffer, link.getIconId()); // 19 квест взять, 9 квест след этап или окончание, 26 трейд, 28 магазины,
-					packet.writeByte(buffer, 0);
-					packet.writeByte(buffer, 0);
+					packet.writeInt(buffer, link.getIconId());// номер ссылки
+					packet.writeInt(buffer, i + 1); // 19 квест взять, 9 квест след этап или окончание, 26 трейд, 28 магазины,
 					packet.writeString(buffer, name);
-					packet.writeByte(buffer, 0);
 				}
 			}
 
