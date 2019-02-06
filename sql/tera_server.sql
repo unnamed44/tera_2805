@@ -24,6 +24,7 @@ CREATE TABLE `accounts` (
   `Ip` varchar(64) NOT NULL,
   `Membership` int(1) NOT NULL DEFAULT '0',
   `isGM` int(1) NOT NULL DEFAULT '0',
+  `fatigability` int(1) NOT NULL DEFAULT '2500',
   PRIMARY KEY (`AccountId`),
   KEY `access_level` (`access_level`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -376,6 +377,7 @@ CREATE TABLE `guilds` (
   `icon` blob COMMENT 'ðÿð║ð¥ð¢ð║ð░ ð║ð╗ð░ð¢ð░.',
   `icon_name` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL COMMENT 'ðØð░ðÀð▓ð░ð¢ð©ðÁ ð©ð║ð¥ð¢ð║ð© ð│ð©ð╗Ðîð┤ð©ð©.',
   `message` varchar(255) NOT NULL DEFAULT '' COMMENT 'ðáÔÇóðá┬Âðá┬ÁðáÊæðáðàðáðåðáðàðáÐòðá┬Á ðíðâðáÐòðáÐòðá┬▒ðíÔÇ░ðá┬ÁðáðàðáÐæðá┬Á ðáÐûðáÐæðá┬╗ðíðèðáÊæðáÐæðáÐæ.',
+  `praise` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='ðóð░ð▒ð╗ð©Ðåð░ ð║ð╗ð░ð¢ð¥ð▓';
 
@@ -398,6 +400,7 @@ CREATE TABLE `items` (
   `item_id` int(10) unsigned NOT NULL DEFAULT '0',
   `item_count` bigint(20) unsigned NOT NULL DEFAULT '0',
   `masterworked` int(11) NOT NULL DEFAULT '0',
+  `enigma` int(11) NOT NULL DEFAULT '0',
   `enchant_level` smallint(5) NOT NULL DEFAULT '0',
   `bonus_id` int(10) NOT NULL DEFAULT '0',
   `autor` varchar(255) NOT NULL DEFAULT '',
@@ -417,11 +420,6 @@ CREATE TABLE `region_status` (
   PRIMARY KEY (`region_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='ðóð░ð▒ð╗ð©Ðåð░ ÐüÐéð░ÐéÐâÐüð¥ð▓ ÐÇðÁð│ð©ð¥ð¢ð¥ð▓.';
 
-INSERT INTO `region_status` (`region_id`, `owner_id`, `state`) VALUES
-(400,	0,	0),
-(401,	0,	0),
-(402,	0,	2),
-(403,	0,	2);
 
 DROP TABLE IF EXISTS `region_war_register`;
 CREATE TABLE `region_war_register` (
@@ -450,6 +448,16 @@ CREATE TABLE `skill_learns` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 
+DROP TABLE IF EXISTS `wait_guild_apply`;
+CREATE TABLE `wait_guild_apply` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `guild_id` int(11) NOT NULL,
+  `character_id` int(11) NOT NULL,
+  `message` varchar(255) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+
 DROP TABLE IF EXISTS `wait_items`;
 CREATE TABLE `wait_items` (
   `order` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ðá┬áðíÐÜðá┬áðíÔÇóðá┬áðí┬ÿðá┬áðÆ┬ÁðáðÄðáÔÇÜ ðá┬áðáÔÇáðáðÄð▓ðéÔäûðá┬áðóÔÇÿðá┬áðÆ┬░ðáðÄð▓ðéðÄðá┬áðíÔÇÿ.',
@@ -475,4 +483,4 @@ CREATE TABLE `wait_skills` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='ðóð░ð▒ð╗ð©Ðåð░ ð¥ðÂð©ð┤ð░ÐÄÐëð©Ðà ð▓Ðïð┤ð░Ðçð© Ðüð║ð©ð╗ð¥ð▓.';
 
 
--- 2018-12-16 12:58:09
+-- 2019-02-06 21:23:53
