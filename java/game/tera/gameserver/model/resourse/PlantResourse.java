@@ -3,7 +3,7 @@ package tera.gameserver.model.resourse;
 import tera.Config;
 import tera.gameserver.model.playable.Player;
 import tera.gameserver.model.skillengine.Formulas;
-import tera.gameserver.network.serverpackets.ResourseIncreaseLevel;
+import tera.gameserver.network.serverpackets.S_Player_Change_Prof;
 import tera.gameserver.templates.ResourseTemplate;
 
 /**
@@ -38,7 +38,7 @@ public class PlantResourse extends ResourseInstance
 		player.setPlantLevel(player.getPlantLevel() + 1);
 
 		// отправляю сообщение
-		player.sendPacket(ResourseIncreaseLevel.getInstance(getTemplate().getType(), player.getPlantLevel()), true);
+		player.sendPacket(S_Player_Change_Prof.getInstance(getTemplate().getType(), player.getPlantLevel()), true);
 
 		// обновляю статы
 		player.updateInfo();

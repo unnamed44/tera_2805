@@ -14,7 +14,7 @@ import tera.gameserver.model.ai.CharacterAI;
 import tera.gameserver.model.ai.npc.ConfigAI;
 import tera.gameserver.model.ai.npc.NpcAI;
 import tera.gameserver.model.npc.Npc;
-import tera.gameserver.network.serverpackets.NotifyCharacter.NotifyType;
+import tera.gameserver.network.serverpackets.S_User_Status.NotifyType;
 import tera.util.LocalObjects;
 import tera.util.Location;
 

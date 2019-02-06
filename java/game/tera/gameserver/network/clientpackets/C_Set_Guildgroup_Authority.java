@@ -2,24 +2,32 @@ package tera.gameserver.network.clientpackets;
 
 import tera.gameserver.model.Guild;
 import tera.gameserver.model.GuildRank;
+import tera.gameserver.model.GuildRankLaw;
 import tera.gameserver.model.playable.Player;
 
 /**
  * @author Ronn
  */
-public class RequestGuildRemoveRank extends ClientPacket
+public class C_Set_Guildgroup_Authority extends ClientPacket
 {
 	/** игрок */
 	private Player player;
 
-	/** ид удаляемого ранка */
-	private int rankId;
+	/** набор прав */
+	private GuildRankLaw law;
+
+	/** название ранга */
+	private String name;
+
+	/** номер ранга */
+	private int index;
 
 	@Override
 	public void finalyze()
 	{
 		player = null;
-		rankId = 0;
+		law = null;
+		index = 0;
 	}
 
 	@Override
@@ -33,7 +41,10 @@ public class RequestGuildRemoveRank extends ClientPacket
 	{
 		player = owner.getOwner();
 
-		rankId = readInt();//03 00 00 00
+		readShort();//0E 00
+		index = readInt();//03 00 00 00
+		law = GuildRankLaw.valueOf(readInt());//17 00 00 00
+		name = readString();//4D 00 65 00 6D 00 62 00 65 00 72 00 00 00
 	}
 
 	@Override
@@ -52,6 +63,6 @@ public class RequestGuildRemoveRank extends ClientPacket
 		if(rank == null || !rank.isGuildMaster())
 			return;
 
-		guild.removeRank(player, rankId);
+		guild.changeRank(player, index, name, law);
 	}
 }

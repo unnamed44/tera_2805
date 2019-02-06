@@ -21,8 +21,8 @@ import tera.gameserver.model.inventory.Inventory;
 import tera.gameserver.model.playable.Player;
 import tera.gameserver.network.serverpackets.S_Begin_Through_Arbiter_Contract;
 import tera.gameserver.network.serverpackets.GuildCheckName;
-import tera.gameserver.network.serverpackets.GuildInfo;
-import tera.gameserver.network.serverpackets.GuildMembers;
+import tera.gameserver.network.serverpackets.S_Guild_Info;
+import tera.gameserver.network.serverpackets.S_Guild_Member_List;
 
 /**
  * Модель акшена для просьбы взять игрока в пати.
@@ -197,8 +197,8 @@ public class JoinGuildAction extends SafeTask implements Action, Foldable
 					{
 						Player mem = array[i];
 
-						mem.sendPacket(GuildInfo.getInstance(mem), true);
-						mem.sendPacket(GuildMembers.getInstance(mem), true);
+						mem.sendPacket(S_Guild_Info.getInstance(mem), true);
+						mem.sendPacket(S_Guild_Member_List.getInstance(mem), true);
 					}
 				}
 				finally

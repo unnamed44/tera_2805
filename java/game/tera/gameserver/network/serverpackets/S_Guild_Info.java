@@ -18,13 +18,13 @@ import tera.gameserver.network.ServerPacketType;
  *
  * @author Ronn
  */
-public class GuildInfo extends ServerPacket
+public class S_Guild_Info extends ServerPacket
 {
-	private static final ServerPacket instance = new GuildInfo();
+	private static final ServerPacket instance = new S_Guild_Info();
 
-	public static GuildInfo getInstance(Player player)
+	public static S_Guild_Info getInstance(Player player)
 	{
-		GuildInfo packet = (GuildInfo) instance.newInstance();
+		S_Guild_Info packet = (S_Guild_Info) instance.newInstance();
 
 		// получаем гильдию игрока
 		Guild guild = player.getGuild();
@@ -42,6 +42,7 @@ public class GuildInfo extends ServerPacket
 				return packet;
 
 			GuildRank myrank = player.getGuildRank();
+			Table<IntKey, GuildRank> ranks = guild.getRanks();
 			String advertisment = ""; // обьявление для гильдии
 
 			int guildNameLength = Strings.length(guild.getName());
@@ -51,19 +52,19 @@ public class GuildInfo extends ServerPacket
 			int advertismentLength = Strings.length(advertisment);
 			int myRankLenght = Strings.length(myrank.getName());
 
-			int fb = 79;
+			int fb = 107;
 			int n = fb + guildNameLength + guildTitleLength + leaderNameLength + leaderTitleLength + myRankLenght + advertismentLength;
 
-			packet.writeShort(buffer, 3);// 03 00
-			packet.writeShort(buffer, n);// 82 00 Байт начала выдачи рангов
-			packet.writeShort(buffer, fb);// 3E 00 байт названия гильды статик
-			packet.writeShort(buffer, fb + guildNameLength);// 54 00 Начала титула гильды
-			packet.writeShort(buffer, fb + guildNameLength + guildTitleLength);// 5C 00
-			packet.writeShort(buffer, fb + guildNameLength + guildTitleLength + leaderNameLength);// 6E 00
-			packet.writeShort(buffer, fb + guildNameLength + guildTitleLength + leaderNameLength + 2);// 70 00
-			packet.writeShort(buffer, fb + guildNameLength + guildTitleLength + leaderNameLength + 2 + myRankLenght);// 7A 00
+			packet.writeShort(buffer, ranks.size());// 03 00
+			packet.writeShort(buffer, n);//rank pos
+			packet.writeShort(buffer, fb);// guildname
+			packet.writeShort(buffer, fb + guildNameLength);//guildTitle
+			packet.writeShort(buffer, fb + guildNameLength + guildTitleLength);//GuildMasterName
+			packet.writeShort(buffer, fb + guildNameLength + guildTitleLength + leaderNameLength);// MOTD
+			packet.writeShort(buffer, fb + guildNameLength + guildTitleLength + leaderNameLength + 2);// MyRank
+			packet.writeShort(buffer, fb + guildNameLength + guildTitleLength + leaderNameLength + 2 + myRankLenght);// adv
 
-			packet.writeInt(buffer, 2127); // B2 00 00 00
+			packet.writeInt(buffer, guild.getObjectId()); // B2 00 00 00
 			packet.writeInt(buffer, 0); // 00 00 00 00
 			packet.writeInt(buffer, 0); // 00 00 00 00
 			packet.writeInt(buffer, leader.getObjectId()); // 1D 34 00 00 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -72,8 +73,8 @@ public class GuildInfo extends ServerPacket
 			packet.writeInt(buffer, guild.getLevel()); // 01 00 00 00
 
 			packet.writeInt(buffer, 0); // 00 00 00 00 Level duration
-			packet.writeInt(buffer, 0); // 05 00 00 00 Praise
-			packet.writeInt(buffer, 0);// FF FF FF FF Polyci Points
+			packet.writeInt(buffer, guild.getPraiseNumber()); // 05 00 00 00 Praise
+			packet.writeInt(buffer, -1);// FF FF FF FF Polyci Points
 
 			packet.writeByte(buffer, 1);// 01
 			packet.writeByte(buffer, 0);
@@ -81,34 +82,27 @@ public class GuildInfo extends ServerPacket
 			 * 01 0F ........ÿÿÿÿ.... 0E 00 00 00 00 00 00
 			 */
 
-			packet.writeByte(buffer, 1);// 01
-			packet.writeByte(buffer, 15);// 0F
-			packet.writeInt(buffer, 14); // 0E 00 00 00
-
-			packet.writeShort(buffer, 0); // 00 00
-			packet.writeByte(buffer, 0); // 00
-
-			packet.writeInt(buffer, -1); // FF FF FF FF
-			packet.writeInt(buffer, -1); // FF FF FF FF
+			packet.writeInt(buffer, 0);
+			packet.writeInt(buffer, 0);
+			packet.writeInt(buffer, 1);
+			packet.writeLong(buffer, 341);//?
+			packet.writeLong(buffer, 341);//?
+			packet.writeByte(buffer, 1);
+			packet.writeInt(buffer, 32399);
+			packet.writeInt(buffer, 0);
+			packet.writeInt(buffer, 0);
+			packet.writeInt(buffer, 0);
 
 			packet.writeString(buffer, guild.getName());
-
-			// 00 53 00 77 00 65 00 65 00
-			// 74 00 20 00 50 00 61 00 69 00 6E 00 00 00 ........yyyy..S.w.e.e.t...P.a.i.
 			packet.writeString(buffer, guild.getTitle());
-			packet.writeString(buffer, leader.getName());// 55 00 72 00 61 00 6D 00 65 00 73 00 68 00 69 00 00 00 U.r.a.m.e.s.h.i.....
-			packet.writeString(buffer, guild.getMessage());// 00 00 чтото нада вертеть, оставим пока пробел
-
-			// packet.writeH(0);//packet.writeSS(guild.getTitle());// 4E 00 6F 00 6F 00 62 00 00 00 5E 00 5F 00 5E 00 00 00 N.o.o.b...^._.^
+			packet.writeString(buffer, leader.getName());
+			packet.writeString(buffer, guild.getMessage());
 			packet.writeString(buffer, myrank.getName());
 			packet.writeString(buffer, advertisment);
-
-			Table<IntKey, GuildRank> ranks = guild.getRanks();
 
 			synchronized(guild)
 			{
 				int k = 0;
-
 				for(Iterator<GuildRank> iterator = ranks.iterator(); iterator.hasNext();)
 				{
 					GuildRank rank = iterator.next();
@@ -143,7 +137,7 @@ public class GuildInfo extends ServerPacket
 	/** подготовленный буффер для отправки данных */
 	private ByteBuffer prepare;
 
-	public GuildInfo()
+	public S_Guild_Info()
 	{
 		this.prepare = ByteBuffer.allocate(204800).order(ByteOrder.LITTLE_ENDIAN);
 	}
@@ -157,7 +151,7 @@ public class GuildInfo extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.GUILD_INFO;
+		return ServerPacketType.S_GUILD_INFO;
 	}
 
 	@Override

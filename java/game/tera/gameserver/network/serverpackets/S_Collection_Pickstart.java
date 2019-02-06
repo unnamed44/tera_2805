@@ -12,13 +12,13 @@ import tera.gameserver.network.ServerPacketType;
  * 
  * @author Ronn
  */
-public class ResourseStartCollect extends ServerPacket
+public class S_Collection_Pickstart extends ServerPacket
 {
-	private static final ServerPacket instance = new ResourseStartCollect();
+	private static final ServerPacket instance = new S_Collection_Pickstart();
 	
-	public static ResourseStartCollect getInstance(Character collector, ResourseInstance resourse)
+	public static S_Collection_Pickstart getInstance(Character collector, ResourseInstance resourse)
 	{
-		ResourseStartCollect packet = (ResourseStartCollect) instance.newInstance();
+		S_Collection_Pickstart packet = (S_Collection_Pickstart) instance.newInstance();
 		
 		packet.collectorId = collector.getObjectId();
 		packet.collectorSubId = collector.getSubId();
@@ -40,7 +40,7 @@ public class ResourseStartCollect extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.RESOURSE_START_COLLECT;
+		return ServerPacketType.S_COLLECTION_PICKSTART;
 	}
 	
 	@Override
@@ -57,5 +57,6 @@ public class ResourseStartCollect extends ServerPacket
 		writeInt(buffer, collectorSubId);//00 80 00 01 //саб ид того кто собирает
 		writeInt(buffer, resourseId);//3B 95 07 00 //обжект ид растения
 		writeInt(buffer, resourseSubId);//00 80 04 00 //саб ид растение
+		writeLong(buffer, 0);
 	}
 }

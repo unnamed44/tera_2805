@@ -9,15 +9,15 @@ import tera.gameserver.network.ServerPacketType;
  *
  * @author Ronn
  */
-public class MessageAddedItem extends ServerPacket
+public class S_Sytem_Message_Loot_Item extends ServerPacket
 {
-	private static final MessageAddedItem instance = new MessageAddedItem();
+	private static final S_Sytem_Message_Loot_Item instance = new S_Sytem_Message_Loot_Item();
 
 	private static final char split = 0x0B;
 
-	public static MessageAddedItem getInstance(String name, int itemId, int itemCount)
+	public static S_Sytem_Message_Loot_Item getInstance(String name, int itemId, int itemCount)
 	{
-		MessageAddedItem packet = (MessageAddedItem) instance.newInstance();
+		S_Sytem_Message_Loot_Item packet = (S_Sytem_Message_Loot_Item) instance.newInstance();
 
 		StringBuilder builder = new StringBuilder();
 
@@ -50,7 +50,7 @@ public class MessageAddedItem extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.MESSAGE_ADD_ITEM;
+		return ServerPacketType.S_SYSTEM_MESSAGE_LOOT_ITEM;
 	}
 
 	@Override

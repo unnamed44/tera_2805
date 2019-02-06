@@ -1,6 +1,7 @@
 package tera.gameserver.network.clientpackets;
 
 import tera.gameserver.model.Guild;
+import tera.gameserver.model.GuildRank;
 import tera.gameserver.model.playable.Player;
 
 /**
@@ -9,7 +10,7 @@ import tera.gameserver.model.playable.Player;
  * @author Ronn
  * @created 26.04.2012
  */
-public class RequestGuildMakeLeader extends ClientPacket
+public class C_Change_Guild_Chief extends ClientPacket
 {
 	/** имя передоваемого */
 	private String name;
@@ -30,18 +31,22 @@ public class RequestGuildMakeLeader extends ClientPacket
 
 		readShort();
 
-		name = readString();//61 00 75 00 73 00 74 00 00 00   ..AO..F.a.u.s.t.
+		name = readString();
 	}
 
 	@Override
 	protected void runImpl()
 	{
-		if(player == null)
-			return;
-
 		Guild guild = player.getGuild();
 
-		if(guild != null)
-			guild.makeGuildMaster(player, name);
+		if(guild == null)
+			return;
+
+		GuildRank rank = player.getGuildRank();
+
+		if(rank == null || !rank.isGuildMaster())
+			return;
+
+		guild.makeGuildMaster(player, name);
 	}
 }

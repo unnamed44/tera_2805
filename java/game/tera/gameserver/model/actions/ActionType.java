@@ -36,7 +36,7 @@ public enum ActionType
 	NONE13(null),
 	NONE14(null),
 	NONE15(null),
-	NONE16(null),
+	TELEPORT(null),
 	NONE17(null),
 	NONE18(null),
 	NONE19(null),

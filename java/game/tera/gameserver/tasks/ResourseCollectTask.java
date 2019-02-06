@@ -9,9 +9,9 @@ import tera.gameserver.model.EmotionType;
 import tera.gameserver.model.playable.Player;
 import tera.gameserver.model.resourse.ResourseInstance;
 import tera.gameserver.network.serverpackets.S_SOCIAL;
-import tera.gameserver.network.serverpackets.ResourseCollectProgress;
-import tera.gameserver.network.serverpackets.ResourseEndCollect;
-import tera.gameserver.network.serverpackets.ResourseStartCollect;
+import tera.gameserver.network.serverpackets.S_Collection_Progress;
+import tera.gameserver.network.serverpackets.S_Collection_Pickend;
+import tera.gameserver.network.serverpackets.S_Collection_Pickstart;
 
 /**
  * Модель обработки сбора ресурсов.
@@ -72,11 +72,11 @@ public final class ResourseCollectTask extends SafeTask
 			// если отмена формирована
 			if(force)
 				// отправляем пакет остановки сбора
-				collector.broadcastPacket(ResourseEndCollect.getInstance(collector, resourse, ResourseEndCollect.INTERRUPTED));
+				collector.broadcastPacket(S_Collection_Pickend.getInstance(collector, resourse, S_Collection_Pickend.INTERRUPTED));
 			// иначе это фейл
 			else
 				// отправляем пакет остановки сбора
-				collector.broadcastPacket(ResourseEndCollect.getInstance(collector, resourse, ResourseEndCollect.FAILED));
+				collector.broadcastPacket(S_Collection_Pickend.getInstance(collector, resourse, S_Collection_Pickend.FAILED));
 
 			// выполняем отмену сбора
 			resourse.onCollected(collector, true);
@@ -124,14 +124,15 @@ public final class ResourseCollectTask extends SafeTask
 		}
 
 		// отсылаем пакет со стартом анимации
-		collector.broadcastPacket(ResourseStartCollect.getInstance(collector, resourse));
+		collector.broadcastPacket(S_Collection_Pickstart.getInstance(collector, resourse));
 	}
 
 	@Override
 	protected void runImpl()
 	{
+		collector.getAccount().setFatigability(collector.getAccount().getFatigability() - 10);
 		// отправляем пакет с погрессом
-		collector.sendPacket(ResourseCollectProgress.getInstance((100 - 25 * counter)), true);
+		collector.sendPacket(S_Collection_Progress.getInstance((100 - 25 * counter)), true);
 
 		ResourseInstance resourse = null;
 
@@ -184,7 +185,7 @@ public final class ResourseCollectTask extends SafeTask
 		else if(resourse != null)
 		{
 			// отправляем пакет остановки сбора
-			collector.broadcastPacket(ResourseEndCollect.getInstance(collector, resourse, ResourseEndCollect.SUCCESSFUL));
+			collector.broadcastPacket(S_Collection_Pickend.getInstance(collector, resourse, S_Collection_Pickend.SUCCESSFUL));
 
 			// завершаем сбор
 			resourse.onCollected(collector, false);

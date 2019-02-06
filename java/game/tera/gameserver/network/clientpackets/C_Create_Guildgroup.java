@@ -7,22 +7,19 @@ import tera.gameserver.model.playable.Player;
 /**
  * @author Ronn
  */
-public class RequestGuildUpdateRank extends ClientPacket
+public class C_Create_Guildgroup extends ClientPacket
 {
 	/** игрок */
 	private Player player;
 
-	/** ид игрока, которому меняем ранг */
-	private int objectId;
-	/** ид нового ранга */
-	private int rankId;
+	/** название ранка */
+	private String rankName;
 
 	@Override
 	public void finalyze()
 	{
 		player = null;
-		objectId = 0;
-		rankId = 0;
+		rankName = null;
 	}
 
 	@Override
@@ -36,8 +33,8 @@ public class RequestGuildUpdateRank extends ClientPacket
 	{
 		player = owner.getOwner();
 
-		objectId = readInt();//04 00 00 10  Обжект ид педа
-		rankId = readInt();//03 00 00 00  код ранга для нашей гильды
+		readShort();
+		rankName = readString();//66 00 66 00 66 00 66 00 66 00 00 00   ......f.f.f.f.f.
 	}
 
 	@Override
@@ -56,6 +53,6 @@ public class RequestGuildUpdateRank extends ClientPacket
 		if(rank == null || !rank.isGuildMaster())
 			return;
 
-		guild.updateRank(player, objectId, rankId);
+		guild.createRank(player, rankName);
 	}
 }

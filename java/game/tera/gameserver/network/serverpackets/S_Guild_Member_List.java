@@ -15,30 +15,29 @@ import tera.gameserver.network.ServerPacketType;
  *
  * @author Ronn
  */
-public class GuildMembers extends ServerPacket
+public class S_Guild_Member_List extends ServerPacket
 {
-	private static final ServerPacket instance = new GuildMembers();
+	private static final ServerPacket instance = new S_Guild_Member_List();
 
-	public static GuildMembers getInstance(Player player)
+	public static S_Guild_Member_List getInstance(Player player)
 	{
-		GuildMembers packet = (GuildMembers) instance.newInstance();
+		S_Guild_Member_List packet = (S_Guild_Member_List) instance.newInstance();
 
 		Guild guild = player.getGuild();
+		Array<GuildMember> members = guild.getMembers();
 
 		if(guild == null)
 			return packet;
 
 		ByteBuffer buffer = packet.getPrepare();
 
-		packet.writeShort(buffer, 2);// 04 00
+		packet.writeShort(buffer, members.size());// 04 00
 		packet.writeShort(buffer, 11);// 0B 00
 		packet.writeByte(buffer, 1);// 01
 		packet.writeByte(buffer, 1);// 01
 		packet.writeByte(buffer, 1);// 01
 
 		int byets = 11;
-
-		Array<GuildMember> members = guild.getMembers();
 
 		members.readLock();
 		try
@@ -66,8 +65,8 @@ public class GuildMembers extends ServerPacket
 
 				packet.writeInt(buffer, member.getObjectId()); // 1A 38 00 00 //ид локации
 				packet.writeInt(buffer, 1); // 01 00 00 00 //статик
-				packet.writeInt(buffer, 1); // 06 00 00 00 //вроде континент
-				packet.writeInt(buffer, 1); // 38 00 00 00 //типа области
+				packet.writeInt(buffer, 3); // 06 00 00 00 //вроде континент
+				packet.writeInt(buffer, 12); // 38 00 00 00 //типа области
 				packet.writeInt(buffer, member.getRankId()); // 03 00 00 00 //Лидер 01, простой чмо 03
 				packet.writeInt(buffer, member.getLevel()); // 2F 00 00 00 //лвл
 				packet.writeInt(buffer, member.getRaceId()); // 00 00 00 00 //Код рассы
@@ -94,7 +93,7 @@ public class GuildMembers extends ServerPacket
 	/** подготовленный буффер для отправки данных */
 	private ByteBuffer prepare;
 
-	public GuildMembers()
+	public S_Guild_Member_List()
 	{
 		this.prepare = ByteBuffer.allocate(204800).order(ByteOrder.LITTLE_ENDIAN);
 	}
@@ -108,7 +107,7 @@ public class GuildMembers extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.GUILD_MEMBERS;
+		return ServerPacketType.S_GUILD_MEMBER_LIST;
 	}
 
 	@Override

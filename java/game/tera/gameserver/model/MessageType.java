@@ -205,6 +205,10 @@ public enum MessageType
 	//@1101 - paid {amount@money}
 	YOU_CANT_USE_FIREWOOD_RIGHT_NOW("@1110"),
 
+	YOU_PRAISED_GUILD("@1370"),
+
+	YOU_APPLIED_TO_GUILD("@1604"),
+
 	;
 
 	private String name;

@@ -1,10 +1,15 @@
 package tera.gameserver.manager;
 
+import java.util.Comparator;
 import java.util.Iterator;
 
+import engine.util.collections.ArrayIterator;
+import engine.util.collections.Search;
 import rlib.logging.Logger;
 import rlib.logging.Loggers;
 import rlib.util.Strings;
+import rlib.util.array.Array;
+import rlib.util.array.Arrays;
 import rlib.util.table.IntKey;
 import rlib.util.table.Table;
 import rlib.util.table.Tables;
@@ -68,6 +73,8 @@ public final class GuildManager
 			// загружаем ранги гильдии
 			dbManager.restoreGuildRanks(guild);
 
+			dbManager.restoreGuildApply(guild);
+
 			// загружаем итемы в банке гильдии
 			dbManager.restoreGuildBankItems(guild);
 
@@ -119,7 +126,7 @@ public final class GuildManager
 		IdFactory idFactory = IdFactory.getInstance();
 
 		// созадем новую гильдию
-		Guild guild = new Guild(name, Strings.EMPTY, Strings.EMPTY, idFactory.getNextGuildId(), 1, new GuildIcon(Strings.EMPTY, new byte[0]));
+		Guild guild = new Guild(name, Strings.EMPTY, Strings.EMPTY, idFactory.getNextGuildId(), 1, new GuildIcon(Strings.EMPTY, new byte[0]), 0);
 
 		// создаем ранг ГМ
 		GuildRank rank = GuildRank.newInstance("GuildMaster", GuildRankLaw.GUILD_MASTER, GuildRank.GUILD_MASTER);
@@ -202,5 +209,22 @@ public final class GuildManager
 	{
 		if(icon.hasIcon())
 			icons.put(icon.getName(), icon);
+	}
+
+	public Array<Guild> getGuilds() {
+		Array<Guild> guildArray = Arrays.toArray(Guild.class);
+		return this.guilds.values(guildArray);
+	}
+
+	public Guild getGuildByName(String guildName) {
+		Array<Guild> guildArray = Arrays.toArray(Guild.class);
+		guildArray = this.guilds.values(guildArray);
+
+		for(Guild guild : guildArray) {
+			if(guild.getName().equals(guildName))
+				return guild;
+		}
+
+		return null;
 	}
 }

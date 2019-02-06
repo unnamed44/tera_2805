@@ -24,7 +24,7 @@ import tera.gameserver.network.serverpackets.S_Loot_Dropitem;
 import tera.gameserver.network.serverpackets.S_Despawn_Npc;
 import tera.gameserver.network.serverpackets.DeleteItem;
 import tera.gameserver.network.serverpackets.S_Spawn_Dropitem;
-import tera.gameserver.network.serverpackets.MessageAddedItem;
+import tera.gameserver.network.serverpackets.S_Sytem_Message_Loot_Item;
 import tera.gameserver.network.serverpackets.ServerPacket;
 import tera.gameserver.network.serverpackets.S_Sytem_Message;
 import tera.gameserver.templates.ItemTemplate;
@@ -800,7 +800,7 @@ public abstract class ItemInstance extends TObject implements Foldable
 
 						// если это деньги
 						if (template.getItemId() != Inventory.MONEY_ITEM_ID)
-							packet = MessageAddedItem.getInstance(character.getName(), template.getItemId(), (int) itemCount);
+							packet = S_Sytem_Message_Loot_Item.getInstance(character.getName(), template.getItemId(), (int) itemCount);
 						else
 						{
 							packet = S_Sytem_Message.getInstance(MessageType.ADD_MONEY).addMoney(character.getName(), (int) itemCount);

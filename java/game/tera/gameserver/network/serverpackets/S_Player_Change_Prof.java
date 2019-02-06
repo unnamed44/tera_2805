@@ -11,13 +11,13 @@ import tera.gameserver.network.ServerPacketType;
  * 
  * @author Ronn
  */
-public class ResourseIncreaseLevel extends ServerPacket
+public class S_Player_Change_Prof extends ServerPacket
 {
-	private static final ServerPacket instance = new ResourseIncreaseLevel();
+	private static final ServerPacket instance = new S_Player_Change_Prof();
 	
-	public static ResourseIncreaseLevel getInstance(ResourseType type, int level)
+	public static S_Player_Change_Prof getInstance(ResourseType type, int level)
 	{
-		ResourseIncreaseLevel packet = (ResourseIncreaseLevel) instance.newInstance();
+		S_Player_Change_Prof packet = (S_Player_Change_Prof) instance.newInstance();
 		
 		packet.level = level;
 		packet.type = type;
@@ -34,7 +34,7 @@ public class ResourseIncreaseLevel extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.RESOURSE_INCREASE_LEVEL;
+		return ServerPacketType.S_PLAYER_CHANGE_PROF;
 	}
 	
 	@Override

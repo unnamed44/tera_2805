@@ -11,7 +11,7 @@ import tera.gameserver.network.ServerPacketType;
  * 
  * @author Ronn
  */
-public class DeleteResourse extends ServerPacket
+public class S_Despawn_Collection extends ServerPacket
 {
 	/** гибель */
 	public static final int DEAD = 5;
@@ -20,11 +20,11 @@ public class DeleteResourse extends ServerPacket
 	/** просто исчезает */
 	public static final int DISAPPEARS = 1;
 	
-	private static final ServerPacket instance = new DeleteResourse();
+	private static final ServerPacket instance = new S_Despawn_Collection();
 	
-	public static DeleteResourse getInstance(ResourseInstance resourse, int type)
+	public static S_Despawn_Collection getInstance(ResourseInstance resourse, int type)
 	{
-		DeleteResourse packet = (DeleteResourse) instance.newInstance();
+		S_Despawn_Collection packet = (S_Despawn_Collection) instance.newInstance();
 		
 		packet.type = type;
 		packet.objectId = resourse.getObjectId();
@@ -43,7 +43,7 @@ public class DeleteResourse extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.RESOURSE_REMOVE;
+		return ServerPacketType.S_DESPAWN_COLLECTION;
 	}
 
 	@Override

@@ -22,17 +22,8 @@ import rlib.util.wraps.Wraps;
 import tera.Config;
 import tera.gameserver.events.global.regionwars.Region;
 import tera.gameserver.events.global.regionwars.RegionState;
-import tera.gameserver.model.Account;
+import tera.gameserver.model.*;
 import tera.gameserver.model.Character;
-import tera.gameserver.model.EffectList;
-import tera.gameserver.model.FriendInfo;
-import tera.gameserver.model.FriendList;
-import tera.gameserver.model.Guild;
-import tera.gameserver.model.GuildIcon;
-import tera.gameserver.model.GuildMember;
-import tera.gameserver.model.GuildRank;
-import tera.gameserver.model.GuildRankLaw;
-import tera.gameserver.model.ReuseSkill;
 import tera.gameserver.model.base.PlayerClass;
 import tera.gameserver.model.base.Race;
 import tera.gameserver.model.base.Sex;
@@ -118,6 +109,9 @@ public final class DataBaseManager {
 	private static final String UPDATE_GUILD_RANK = "UPDATE `guild_ranks` SET `rank_name` = ?, law = ? WHERE `order` = ? AND `guild_id` = ? LIMIT 1";
 	private static final String UPDATE_GUILD_TITLE = "UPDATE `guilds` SET `title` = ? WHERE `id` = ? LIMIT 1";
 	private static final String UPDATE_GUILD_MESSAGE = "UPDATE `guilds` SET `message` = ? WHERE `id` = ? LIMIT 1";
+	private static final String UPDATE_GUILD_PRAISE = "UPDATE `guilds` SET `praise` = ? WHERE `id` = ? LIMIT 1";
+	private static final String CREATE_GUILD_APPLY = "INSERT INTO `wait_guild_apply` (guild_id, character_id, message) VALUES (?,?,?)";
+
 
 	private static final String REMOVE_WAIT_ITEM = "DELETE FROM `wait_items` WHERE `order` = ? LIMIT 1";
 	private static final String REMOVE_WAIT_SKILL = "DELETE FROM `wait_skills` WHERE `order` = ? LIMIT 1";
@@ -156,6 +150,9 @@ public final class DataBaseManager {
 	private static final String SELECT_GUILDS = "SELECT * FROM `guilds`";
 	private static final String SELECT_GUILD_NAME = "SELECT id FROM `guilds` WHERE `name`= ?";
 	private static final String SELECT_GUILD_RANKS = "SELECT * FROM `guild_ranks` WHERE `guild_id` = ?";
+	private static final String SELECT_GUILD_APPLY = "SELECT * FROM `wait_guild_apply` g LEFT JOIN `characters` c ON (c.`object_id` = g.`character_id`) where g.`guild_id` = ?";
+	private static final String DELETE_GUILD_APPLY = "DELETE FROM `wait_guild_apply` WHERE `player_id` = ? AND `guild_id` = ?";
+	private static final String DELETE_ALL_GUILD_APPLY = "DELETE FROM `wait_guild_apply` WHERE `character_id` = ?";
 	private static final String SELECT_GUILD_BANK_ITEMS = "SELECT * FROM `items` WHERE `owner_id` = ? AND `location` = '" + ItemLocation.GUILD_BANK.ordinal() + "' LIMIT "
 			+ (Config.WORLD_GUILD_BANK_MAX_SIZE + 1);
 	private static final String SELECT_GUILD_MEMBERS = "SELECT class_id, level, char_name, guild_note, zone_id, object_id, race_id, guild_rank, sex, last_online FROM `characters` WHERE `guild_id` = ?";
@@ -168,6 +165,7 @@ public final class DataBaseManager {
 	private static final String SELECT_PLAYER_OJECT_ID = "SELECT object_id FROM `characters` WHERE `char_name`= ? LIMIT 1";
 	private static final String SELECT_PLAYER_FACE = "SELECT * FROM `character_faces` WHERE `objectId`= ? LIMIT 1";
 	private static final String SELECT_PLAYER_PREVIEW = "SELECT * FROM `characters` WHERE `object_id`= ? LIMIT 1";
+	private static final String SELECT_PLAYER_PREVIEW_WITH_NAME = "SELECT * FROM `characters` WHERE `char_name`= ? LIMIT 1";
 	private static final String SELECT_PLAYER_ACCOUNT = "SELECT `char_name` FROM `characters` WHERE `account_name`= ? LIMIT 8";
 	private static final String DELETE_PLAYER = "DELETE FROM `characters` WHERE `object_id` = ? AND `account_name` = ? LIMIT 1";
 	private static final String SELECT_PLAYER_CHECK_NAME = "SELECT object_id FROM `characters` WHERE `char_name` = ? LIMIT 1";
@@ -2334,6 +2332,41 @@ public final class DataBaseManager {
 		}
 	}
 
+	public final void removeAllGuildApply(GuildApply apply) {
+		Connection con = null;
+		PreparedStatement statement = null;
+
+		try {
+			con = connectFactory.getConnection();
+
+			statement = con.prepareStatement(DELETE_ALL_GUILD_APPLY);
+			statement.setInt(1, apply.getPlayerId());
+			statement.execute();
+		} catch(SQLException e) {
+			LOGGER.warning(e);
+		} finally {
+			DBUtils.closeDatabaseCS(con, statement);
+		}
+	}
+
+	public final void removeGuildApply(GuildApply apply, Guild guild) {
+		Connection con = null;
+		PreparedStatement statement = null;
+
+		try {
+			con = connectFactory.getConnection();
+
+			statement = con.prepareStatement(DELETE_GUILD_APPLY);
+			statement.setInt(1, apply.getPlayerId());
+			statement.setInt(2, guild.getId());
+			statement.execute();
+		} catch(SQLException e) {
+			LOGGER.warning(e);
+		} finally {
+			DBUtils.closeDatabaseCS(con, statement);
+		}
+	}
+
 	/**
 	 * Удаление всех членов гильдии из БД.
 	 * 
@@ -2744,6 +2777,30 @@ public final class DataBaseManager {
 		}
 	}
 
+	public final void restoreGuildApply(Guild guild) {
+		Connection con = null;
+		PreparedStatement statement = null;
+		ResultSet rset = null;
+
+		try {
+			con = connectFactory.getConnection();
+
+			statement = con.prepareStatement(SELECT_GUILD_APPLY);
+			statement.setInt(1, guild.getObjectId());
+
+			// делаем выборку по всем гильдиям
+			rset = statement.executeQuery();
+
+			// загружаем ранги
+			while(rset.next())
+				guild.addApply(GuildApply.newInstance(rset.getInt("character_id"), rset.getInt("class_id"), rset.getInt("level"), rset.getString("char_name"),rset.getString("message")));
+		} catch(SQLException e) {
+			LOGGER.warning(e);
+		} finally {
+			DBUtils.closeDatabaseCSR(con, statement, rset);
+		}
+	}
+
 	/**
 	 * Загрузка всех гильдий из БД.
 	 * 
@@ -2767,7 +2824,7 @@ public final class DataBaseManager {
 				guilds.put(
 						rset.getInt("id"),
 						new Guild(rset.getString("name"), rset.getString("title"), rset.getString("message"), rset.getInt("id"), rset.getInt("level"), new GuildIcon(rset.getString("icon_name"), rset
-								.getBytes("icon"))));
+								.getBytes("icon")), rset.getInt("praise")));
 		} catch(SQLException e) {
 			LOGGER.warning(e);
 		} finally {
@@ -2841,6 +2898,51 @@ public final class DataBaseManager {
 		} finally {
 			DBUtils.closeDatabaseCSR(con, statement, rset);
 		}
+	}
+
+	public final PlayerPreview getPreviewWithObjectName(String name) {
+		Connection con = null;
+		PreparedStatement statement = null;
+		ResultSet rset = null;
+
+		try {
+			con = connectFactory.getConnection();
+
+			statement = con.prepareStatement(SELECT_PLAYER_PREVIEW_WITH_NAME);
+			statement.setString(1, name);
+
+			rset = statement.executeQuery();
+
+			// если не нашли персонажа
+			if (!rset.next()) {
+				LOGGER.warning("not found player for name " + name);
+				return null;
+			}
+
+			PlayerPreview playerPreview = PlayerPreview.newInstance(rset.getInt("object_id"));
+
+			playerPreview.setSex(rset.getByte("sex"));
+			playerPreview.setRaceId(rset.getByte("race_id"));
+			playerPreview.setClassId(rset.getByte("class_id"));
+			playerPreview.setLevel(rset.getByte("level"));
+			playerPreview.setOnlineTime(rset.getLong("online_time"));
+			playerPreview.setName(rset.getString("char_name"));
+			playerPreview.setHp(rset.getInt("hp"));
+			playerPreview.setMp(rset.getInt("mp"));
+			playerPreview.setPosX(rset.getInt("x"));
+			playerPreview.setPosY(rset.getInt("y"));
+			playerPreview.setPosZ(rset.getInt("z"));
+			playerPreview.setZoneId(rset.getInt("zone_id"));
+			playerPreview.setZoneId(rset.getInt("continent_id"));
+
+			return playerPreview;
+		} catch(SQLException e) {
+			LOGGER.warning(e);
+		} finally {
+			DBUtils.closeDatabaseCSR(con, statement, rset);
+		}
+
+		return null;
 	}
 
 	/**
@@ -3338,6 +3440,31 @@ public final class DataBaseManager {
 		return false;
 	}
 
+	public final boolean updateGuildPraise(Guild guild) {
+		if(guild == null)
+			return false;
+
+		Connection con = null;
+		PreparedStatement statement = null;
+
+		try {
+			con = connectFactory.getConnection();
+
+			statement = con.prepareStatement(UPDATE_GUILD_PRAISE);
+			statement.setInt(1, guild.getPraiseNumber());
+			statement.setInt(2, guild.getId());
+			statement.execute();
+
+			return true;
+		} catch(SQLException e) {
+			LOGGER.warning(e);
+		} finally {
+			DBUtils.closeDatabaseCS(con, statement);
+		}
+
+		return false;
+	}
+
 	/**
 	 * Обновление ранга для гильдии.
 	 * 
@@ -3567,16 +3694,7 @@ public final class DataBaseManager {
 		return false;
 	}
 
-	/**
-	 * Обновление строки в БД гильдии игрока.
-	 * 
-	 * @param player обновляемый игрок.
-	 * @return успешно ли обновлен.
-	 */
-	public final boolean updatePlayerGuild(Player player) {
-		if(player == null)
-			return false;
-
+	public final boolean updatePlayerGuild(int guildId, int guildRank, int playerId) {
 		Connection con = null;
 		PreparedStatement statement = null;
 
@@ -3584,9 +3702,9 @@ public final class DataBaseManager {
 			con = connectFactory.getConnection();
 
 			statement = con.prepareStatement(UPDATE_PLAYER_GUILD);
-			statement.setInt(1, player.getGuildId());
-			statement.setInt(2, player.getGuildRankId());
-			statement.setInt(3, player.getObjectId());
+			statement.setInt(1, guildId);
+			statement.setInt(2, guildRank);
+			statement.setInt(3, playerId);
 			statement.execute();
 
 			return true;
@@ -3600,8 +3718,20 @@ public final class DataBaseManager {
 	}
 
 	/**
-	 * Обновление гилд пометки игрок в БД
+	 * Обновление строки в БД гильдии игрока.
 	 * 
+	 * @param player обновляемый игрок.
+	 * @return успешно ли обновлен.
+	 */
+	public final boolean updatePlayerGuild(Player player) {
+		if(player == null)
+			return false;
+		return updatePlayerGuild(player.getGuildId(), player.getGuildRankId(), player.getObjectId());
+	}
+
+	/**
+	 * Обновление гилд пометки игрок в БД
+	 *
 	 * @param player обновляемый игрок.
 	 * @return успешно ли обновлен.
 	 */
@@ -3976,6 +4106,32 @@ public final class DataBaseManager {
 			statement = con.prepareStatement(UPDATE_ACCOUNT_FATIGABILITY);
 			statement.setInt(1, account.getFatigability());
 			statement.setInt(2, account.getAccountId());
+			statement.execute();
+
+			return true;
+		} catch(SQLException e) {
+			LOGGER.warning(e);
+		} finally {
+			DBUtils.closeDatabaseCS(con, statement);
+		}
+
+		return false;
+	}
+
+	public final boolean createGuildApply(GuildApply apply, int guildId) {
+		if(apply == null)
+			return false;
+
+		Connection con = null;
+		PreparedStatement statement = null;
+
+		try {
+			con = connectFactory.getConnection();
+
+			statement = con.prepareStatement(CREATE_GUILD_APPLY);
+			statement.setInt(1, guildId);
+			statement.setInt(2, apply.getPlayerId());
+			statement.setString(3, apply.getMessage());
 			statement.execute();
 
 			return true;

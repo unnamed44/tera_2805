@@ -9,7 +9,7 @@ import tera.gameserver.model.inventory.Inventory;
 import tera.gameserver.model.npc.Npc;
 import tera.gameserver.model.npc.interaction.Link;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.MessageAddedItem;
+import tera.gameserver.network.serverpackets.S_Sytem_Message_Loot_Item;
 import tera.gameserver.tables.ItemTable;
 import tera.gameserver.templates.ItemTemplate;
 
@@ -107,7 +107,7 @@ public class ReplyEventReward extends AbstractReply
 					player.sendMessage("You spend " + price + " Fame point(s).");
 
 					// отображаем выдачу награды
-					player.sendPacket(MessageAddedItem.getInstance(player.getName(), template.getItemId(), 1), true);
+					player.sendPacket(S_Sytem_Message_Loot_Item.getInstance(player.getName(), template.getItemId(), 1), true);
 
 					// получаем менеджера событий
 					ObjectEventManager eventManager = ObjectEventManager.getInstance();

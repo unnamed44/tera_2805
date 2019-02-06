@@ -28,12 +28,17 @@ public final class ResourseTemplate
 	/** получаемый опыт */
 	private int exp;
 
+	private int isExtractor;
+	private int isDisabled;
+
 	public ResourseTemplate(VarTable vars)
 	{
 		this.id = vars.getInteger("id");
 		this.level = vars.getInteger("level");
 		this.req = vars.getInteger("req");
 		this.exp = vars.getInteger("exp", 0);
+		this.isExtractor = vars.getInteger("extractor");
+		this.isDisabled = 0;
 
 		this.type = vars.getEnum("type", ResourseType.class);
 	}
@@ -76,6 +81,14 @@ public final class ResourseTemplate
 	public final int getReq()
 	{
 		return req;
+	}
+
+	public final int isDisabled() {
+		return isDisabled;
+	}
+
+	public final int isExtractor() {
+		return isExtractor;
 	}
 
 	/**

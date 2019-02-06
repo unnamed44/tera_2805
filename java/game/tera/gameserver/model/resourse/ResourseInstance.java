@@ -14,9 +14,9 @@ import tera.gameserver.model.drop.ResourseDrop;
 import tera.gameserver.model.inventory.Inventory;
 import tera.gameserver.model.items.ItemInstance;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.DeleteResourse;
-import tera.gameserver.network.serverpackets.MessageAddedItem;
-import tera.gameserver.network.serverpackets.ResourseInfo;
+import tera.gameserver.network.serverpackets.S_Despawn_Collection;
+import tera.gameserver.network.serverpackets.S_Sytem_Message_Loot_Item;
+import tera.gameserver.network.serverpackets.S_Spawn_Collection;
 import tera.gameserver.templates.ResourseTemplate;
 import tera.util.LocalObjects;
 
@@ -54,7 +54,7 @@ public abstract class ResourseInstance extends TObject
 	@Override
 	public void addMe(Player player)
 	{
-		player.sendPacket(ResourseInfo.getInstance(this), true);
+		player.sendPacket(S_Spawn_Collection.getInstance(this), true);
 	}
 
 	/**
@@ -332,7 +332,7 @@ public abstract class ResourseInstance extends TObject
 							else
 							{
 								// отправляем пакет о том, что итем положился
-								collector.sendPacket(MessageAddedItem.getInstance(collector.getName(), item.getItemId(), (int) item.getItemCount()), true);
+								collector.sendPacket(S_Sytem_Message_Loot_Item.getInstance(collector.getName(), item.getItemId(), (int) item.getItemCount()), true);
 
 								// если итем без владельца
 								if(!item.hasOwner())
@@ -365,7 +365,7 @@ public abstract class ResourseInstance extends TObject
 	@Override
 	public void removeMe(Player player, int type)
 	{
-		player.sendPacket(DeleteResourse.getInstance(this, type), true);
+		player.sendPacket(S_Despawn_Collection.getInstance(this, type), true);
 	}
 
 	/**

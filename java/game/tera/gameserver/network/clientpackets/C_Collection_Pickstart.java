@@ -9,7 +9,7 @@ import tera.gameserver.model.resourse.ResourseInstance;
  *
  * @author Ronn
  */
-public class RequestCollectResourse extends ClientPacket
+public class C_Collection_Pickstart extends ClientPacket
 {
 	/** обджект ид ресурса */
 	private int objectId;

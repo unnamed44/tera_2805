@@ -2,32 +2,27 @@ package tera.gameserver.network.clientpackets;
 
 import tera.gameserver.model.Guild;
 import tera.gameserver.model.GuildRank;
-import tera.gameserver.model.GuildRankLaw;
 import tera.gameserver.model.playable.Player;
 
 /**
  * @author Ronn
  */
-public class RequestGuildChangeRank extends ClientPacket
+public class C_Change_Guildgroup extends ClientPacket
 {
 	/** игрок */
 	private Player player;
 
-	/** набор прав */
-	private GuildRankLaw law;
-
-	/** название ранга */
-	private String name;
-
-	/** номер ранга */
-	private int index;
+	/** ид игрока, которому меняем ранг */
+	private int objectId;
+	/** ид нового ранга */
+	private int rankId;
 
 	@Override
 	public void finalyze()
 	{
 		player = null;
-		law = null;
-		index = 0;
+		objectId = 0;
+		rankId = 0;
 	}
 
 	@Override
@@ -41,10 +36,8 @@ public class RequestGuildChangeRank extends ClientPacket
 	{
 		player = owner.getOwner();
 
-		readShort();//0E 00
-		index = readInt();//03 00 00 00
-		law = GuildRankLaw.valueOf(readInt());//17 00 00 00
-		name = readString();//4D 00 65 00 6D 00 62 00 65 00 72 00 00 00
+		objectId = readInt();//04 00 00 10  Обжект ид педа
+		rankId = readInt();//03 00 00 00  код ранга для нашей гильды
 	}
 
 	@Override
@@ -63,6 +56,6 @@ public class RequestGuildChangeRank extends ClientPacket
 		if(rank == null || !rank.isGuildMaster())
 			return;
 
-		guild.changeRank(player, index, name, law);
+		guild.updateRank(player, objectId, rankId);
 	}
 }

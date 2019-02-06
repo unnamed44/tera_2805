@@ -23,7 +23,9 @@ public enum ResourseType
 	/** какой-то буг хутинг */
 	UNKNOWN(QuestResourse.class),
 	/** кристалы */
-	ENERGY(EnergyResourse.class);
+	ENERGY(EnergyResourse.class),
+
+	EXTRACTOR(ExtractorResourse.class);
 	
 	/** конструктор инстансов */
 	private Constructor<? extends ResourseInstance> constructor;

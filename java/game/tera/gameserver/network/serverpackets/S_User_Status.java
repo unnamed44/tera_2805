@@ -8,7 +8,7 @@ import tera.gameserver.network.ServerPacketType;
  *
  * @author Ronn
  */
-public class NotifyCharacter extends ServerPacket
+public class S_User_Status extends ServerPacket
 {
 	public static enum NotifyType
 	{
@@ -46,11 +46,11 @@ public class NotifyCharacter extends ServerPacket
 		NONE17; // 17
 	}
 
-	private static final ServerPacket instance = new NotifyCharacter();
+	private static final ServerPacket instance = new S_User_Status();
 
-	public static NotifyCharacter getInstance(Character character, NotifyType type)
+	public static S_User_Status getInstance(Character character, NotifyType type)
 	{
-		NotifyCharacter packet = (NotifyCharacter) instance.newInstance();
+		S_User_Status packet = (S_User_Status) instance.newInstance();
 
 		packet.objectId = character.getObjectId();
 		packet.subId = character.getSubId();
@@ -70,7 +70,7 @@ public class NotifyCharacter extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.NOTIFY_CHARACTER;
+		return ServerPacketType.S_USER_STATUS;
 	}
 
 	@Override

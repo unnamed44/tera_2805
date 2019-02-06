@@ -5,7 +5,7 @@ import tera.gameserver.model.MessageType;
 import tera.gameserver.model.inventory.Inventory;
 import tera.gameserver.model.items.ItemInstance;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.MessageAddedItem;
+import tera.gameserver.network.serverpackets.S_Sytem_Message_Loot_Item;
 import tera.gameserver.network.serverpackets.S_Sytem_Message;
 
 /**
@@ -77,6 +77,6 @@ public class BarbecueItem extends AbstractItemExecutor
 		// отправляем пакет о использовании рецепта
 		player.sendPacket(S_Sytem_Message.getInstance(MessageType.ITEM_USE).addItem(RECEPT_ID, 1), true);
 		// отпправляем пакет о выдачи
-		player.sendPacket(MessageAddedItem.getInstance(player.getName(), RESULT_ID, 1), true);
+		player.sendPacket(S_Sytem_Message_Loot_Item.getInstance(player.getName(), RESULT_ID, 1), true);
 	}
 }

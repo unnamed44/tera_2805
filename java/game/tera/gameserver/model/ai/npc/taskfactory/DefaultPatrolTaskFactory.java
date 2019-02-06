@@ -13,7 +13,7 @@ import tera.gameserver.model.ai.npc.NpcAI;
 import tera.gameserver.model.npc.Npc;
 import tera.gameserver.model.skillengine.Skill;
 import tera.gameserver.model.skillengine.SkillGroup;
-import tera.gameserver.network.serverpackets.NotifyCharacter.NotifyType;
+import tera.gameserver.network.serverpackets.S_User_Status.NotifyType;
 import tera.util.LocalObjects;
 import tera.util.Location;
 

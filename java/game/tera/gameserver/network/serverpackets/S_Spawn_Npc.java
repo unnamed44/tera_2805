@@ -93,6 +93,7 @@ public class S_Spawn_Npc extends ServerPacket
 		writeShort(buffer, 0);//status
 		writeShort(buffer, 0);//mode
 		writeShort(buffer, 5);//hp level
+		writeShort(buffer, 0);//questinfo
 		writeByte(buffer, 1);//visible
 		writeByte(buffer, isFriend);//is villager
 		writeInt(buffer, spawned);

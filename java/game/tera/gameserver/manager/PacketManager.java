@@ -21,8 +21,8 @@ import tera.gameserver.network.serverpackets.S_Creature_Rotate;
 import tera.gameserver.network.serverpackets.S_Each_Skill_Result;
 import tera.gameserver.network.serverpackets.S_SOCIAL;
 import tera.gameserver.network.serverpackets.GuildBank;
-import tera.gameserver.network.serverpackets.NotifyCharacter;
-import tera.gameserver.network.serverpackets.NotifyCharacter.NotifyType;
+import tera.gameserver.network.serverpackets.S_User_Status;
+import tera.gameserver.network.serverpackets.S_User_Status.NotifyType;
 import tera.gameserver.network.serverpackets.NpcNotice;
 import tera.gameserver.network.serverpackets.PlayerBank;
 import tera.gameserver.network.serverpackets.PlayerEquipment;
@@ -248,7 +248,7 @@ public final class PacketManager
 	 */
 	public static void showNotifyIcon(Character sender, NotifyType type)
 	{
-		sender.broadcastPacket(NotifyCharacter.getInstance(sender, type));
+		sender.broadcastPacket(S_User_Status.getInstance(sender, type));
 	}
 
 	/**

@@ -72,6 +72,24 @@ public enum ClientPacketType
 	C_REPLY_THROUGH_ARBITER_CONTRACT(0xAB63, new C_Reply_Through_Arbiter_Contract()),
 	C_BAN_PARTY_MEMBER(0xA95D, new C_Ban_Party_Member()),
 	C_LEAVE_PARTY(0x7741, new C_Leave_Party()),
+	C_REQUEST_REFRESH_GUILD_DATA(0xF8C2, new C_Request_Refresh_Guild_Data()),
+	C_GET_GUILD_HISTORY(0xB6E8, new C_Get_Guild_History()),
+	C_GUILD_APPLY_LIST(0xF988, new C_Guild_Apply_List()),
+	C_VIEW_MY_GUILD_WAR(0x9D4F, new C_View_My_Guild_War()),
+	C_REQUEST_GUILD_LIST(0xAB20, new C_Request_Guild_List()),
+	C_RECOMMEND_GUILD(0xB4A6, new C_Recommend_Guild()),
+	C_REQUEST_GUILD_INFO_BEFORE_APPLY_GUILD(0xFB56, new C_Request_Guild_Info_Before_Apply_Guild()),
+	C_APPLY_GUILD(0x8252, new C_Apply_Guild()),
+	C_ACCEPT_GUILD_APPLY(0xF02A, new C_Accept_Guild_Apply()),
+	C_COLLECTION_PICKSTART(0x8AA0, new C_Collection_Pickstart()),
+	C_CREATE_GUILDGROUP(0x7E7E, new C_Create_Guildgroup()),
+	C_REMOVE_GUILDGROUP(0xC881, new C_Remove_Guildgroup()),
+	C_CHANGE_GUILDGROUP(0xFC2B, new C_Change_Guildgroup()),
+	C_ASK_INTERACTIVE(0xBDA1, new C_Ask_Interactive()),
+	C_CHANGE_GUILD_CHIEF(0x9E4B, new C_Change_Guild_Chief()),
+	C_SET_GUILDGROUP_AUTHORITY(0x9102, new C_Set_Guildgroup_Authority()),
+
+
 
 
 
@@ -106,25 +124,19 @@ public enum ClientPacketType
 	/** запрос на запуск эмоции, версия 172 */
 
 	/** запрос инфы о клане, версия 172 */
-	REQUEST_GUILD_INFO(0x81A4, new RequestGuildInfo()),
 	/** запрос выхода из клана, версия 172 */
 	REQUEST_GUILD_LEAVE(0x9EBD, new RequestGuildLeave()),
 	/** апрос на исключение участника гильдии */
 	REQUEST_GUILD_EXLUDE(0x8EB7, new RequestGuildExclude()),
 	/** запрос на изменение ранга участника гильдии */
-	REQUEST_GUILD_UPDATE_RANK(0xFF13, new RequestGuildUpdateRank()),
+	REQUEST_GUILD_UPDATE_RANK(0xFF13, new C_Change_Guildgroup()),
 	/** запрос на удаление ранга гильдии */
-	REQUEST_GUILD_REMOVE_RANK(0x81BD, new RequestGuildRemoveRank()),
 	/** запрос на изменение прав у ранга */
-	REQUEST_GUILD_CHANGE_RANK(0xD3D0, new RequestGuildChangeRank()),
 	/** запрос на создание низкоправного ранга */
-	REQUEST_GUILD_CREATE_RANK(0x7A56, new RequestGuildCreateRank()),
-	/** запрос на загрузку иконки */
 	REQUEST_GUIL_LOAD_ICON(0xF883, new RequestGuildLoadIcon()),
 	/** запрос на иконку гильдии */
 	REQUEST_GUILD_ICON_INFO(0xAC93, new RequestGuildIcon()),
 	/** запрос на передачу мастера гильдии */
-	REQUEST_GUILD_MAKE_LEADER(0xAD5E, new RequestGuildMakeLeader()),
 	/** запрос на обновление титула гильдии */
 	REQUEST_GUILD_UPDATE_TITLE(0xBACE, new RequestGuildUpdateTitle()),
 	/** запрос на обновление титула гильдии */
@@ -225,7 +237,6 @@ public enum ClientPacketType
 	REQUEST_PARTY_DISBAND(0xC041, new RequestPartyDisband()),
 
 	/** клиентский запрос на сбор ресурса */
-	REQUEST_COLLECT_RESOURSE(0x94FD, new RequestCollectResourse()),
 
 	/** запрос на список друзей */
 

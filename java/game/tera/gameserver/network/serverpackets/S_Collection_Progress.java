@@ -10,13 +10,13 @@ import tera.gameserver.network.ServerPacketType;
  * 
  * @author Ronn
  */
-public class ResourseCollectProgress extends ServerPacket
+public class S_Collection_Progress extends ServerPacket
 {
-	private static final ServerPacket instance = new ResourseCollectProgress();
+	private static final ServerPacket instance = new S_Collection_Progress();
 	
-	public static ResourseCollectProgress getInstance(int progress)
+	public static S_Collection_Progress getInstance(int progress)
 	{
-		ResourseCollectProgress packet = (ResourseCollectProgress) instance.newInstance();
+		S_Collection_Progress packet = (S_Collection_Progress) instance.newInstance();
 		
 		packet.progress = progress;
 		
@@ -29,7 +29,7 @@ public class ResourseCollectProgress extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.RESOURSE_COLLECT_PROGRESS;
+		return ServerPacketType.S_COLLECTION_PROGRESS;
 	}
 	
 	@Override
@@ -43,5 +43,6 @@ public class ResourseCollectProgress extends ServerPacket
 	{
 		writeOpcode(buffer);
 		writeInt(buffer, progress);//18 00 00 00 ПРогресс сбора в процентах
+		writeLong(buffer,0);
 	}
 }

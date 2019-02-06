@@ -7,19 +7,19 @@ import tera.gameserver.model.playable.Player;
 /**
  * @author Ronn
  */
-public class RequestGuildCreateRank extends ClientPacket
+public class C_Remove_Guildgroup extends ClientPacket
 {
 	/** игрок */
 	private Player player;
 
-	/** название ранка */
-	private String rankName;
+	/** ид удаляемого ранка */
+	private int rankId;
 
 	@Override
 	public void finalyze()
 	{
 		player = null;
-		rankName = null;
+		rankId = 0;
 	}
 
 	@Override
@@ -33,8 +33,7 @@ public class RequestGuildCreateRank extends ClientPacket
 	{
 		player = owner.getOwner();
 
-		readShort();
-		rankName = readString();//66 00 66 00 66 00 66 00 66 00 00 00   ......f.f.f.f.f.
+		rankId = readInt();//03 00 00 00
 	}
 
 	@Override
@@ -53,6 +52,6 @@ public class RequestGuildCreateRank extends ClientPacket
 		if(rank == null || !rank.isGuildMaster())
 			return;
 
-		guild.createRank(player, rankName);
+		guild.removeRank(player, rankId);
 	}
 }

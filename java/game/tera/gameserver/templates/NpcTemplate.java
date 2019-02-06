@@ -16,6 +16,7 @@ import tera.gameserver.model.quests.Quest;
 import tera.gameserver.model.quests.QuestData;
 import tera.gameserver.model.skillengine.SkillGroup;
 import tera.gameserver.model.skillengine.funcs.Func;
+import tera.gameserver.tables.AbnormalityTable;
 import tera.gameserver.tables.NpcTable;
 import tera.gameserver.tables.SkillTable;
 
@@ -47,6 +48,8 @@ public final class NpcTemplate extends CharTemplate
 
 	/** таблица всех скилов нпс */
 	protected SkillTemplate[][] skills;
+
+	protected AbnormalityTemplate[] abnormalities;
 
 	/** ширина модели нпс */
 	protected float geomRadius;
@@ -453,6 +456,14 @@ public final class NpcTemplate extends CharTemplate
 	public final void setMinions(MinionData minions)
 	{
 		this.minions = minions;
+	}
+
+	public final void setAbnormalities(Array<AbnormalityTemplate> abnormalities) {
+		this.abnormalities = abnormalities.toArray(this.abnormalities);
+	}
+
+	public AbnormalityTemplate[] getAbnormalities() {
+		return abnormalities;
 	}
 
 	/**

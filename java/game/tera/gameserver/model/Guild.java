@@ -14,9 +14,11 @@ import tera.gameserver.manager.GuildManager;
 import tera.gameserver.model.inventory.Bank;
 import tera.gameserver.model.inventory.GuildBank;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.S_Chat;
-import tera.gameserver.network.serverpackets.ServerPacket;
+import tera.gameserver.model.playable.PlayerPreview;
+import tera.gameserver.network.serverpackets.*;
 import tera.util.Identified;
+
+import java.util.Iterator;
 
 /**
  * Модель клана в Тера
@@ -29,6 +31,8 @@ public final class Guild implements Nameable, Identified
 
 	 /** таблица рангов */
 	 private final Table<IntKey, GuildRank> ranks;
+
+	private final Table<IntKey, GuildApply> applies;
 
 	 /** список всех участников клана */
 	 private final Array<GuildMember> members;
@@ -58,6 +62,8 @@ public final class Guild implements Nameable, Identified
 	 /** уровень клана */
 	 private int level;
 
+	 private int praiseNumber;
+
 	 /**
 	  * @param name название клана.
 	  * @param title титул гильдии.
@@ -66,7 +72,7 @@ public final class Guild implements Nameable, Identified
 	  * @param level уровень клана.
 	  * @param icon иконка клана.
 	  */
-	public Guild(String name, String title, String message, int id, int level, GuildIcon icon)
+	public Guild(String name, String title, String message, int id, int level, GuildIcon icon, int praiseNumber)
 	{
 		this.name = name;
 		this.title = title;
@@ -79,7 +85,9 @@ public final class Guild implements Nameable, Identified
 		this.online = Arrays.toConcurrentArray(Player.class);
 		this.logs = Arrays.toConcurrentArray(GuildLog.class);
 		this.ranks = Tables.newIntegerTable();
+		this.applies = Tables.newIntegerTable();
 		this.bank = GuildBank.newInstance(this);
+		this.praiseNumber = praiseNumber;
 	}
 
 	/**
@@ -253,6 +261,7 @@ public final class Guild implements Nameable, Identified
 
 		// сообщаем о создании ранга
 		player.sendMessage("Вы создали новый ранг, переоткройте окно гильдии.");
+		player.sendPacket(S_Add_Guild_Group.getInstance(rank),true);
 	}
 
 	/**
@@ -632,6 +641,19 @@ public final class Guild implements Nameable, Identified
 		return ranks;
 	}
 
+	public Table<IntKey, GuildApply> getApplies() {
+		return applies;
+	}
+
+	public GuildApply getApplyByPlayerId(int playerId) {
+		for(Iterator<GuildApply> iterator = applies.iterator(); iterator.hasNext();) {
+			GuildApply apply = iterator.next();
+			if(apply.getPlayerId() == playerId)
+				return apply;
+		}
+		return null;
+	}
+
 	/**
 	 * @return титул гильдии.
 	 */
@@ -802,6 +824,8 @@ public final class Guild implements Nameable, Identified
 			// обновляем окно ГИ
 			target.updateGuild();
 		}
+
+		player.sendPacket(S_Change_Guild_Chief.getInstance(targetMember.getObjectId()), true);
 	}
 
 	/**
@@ -890,6 +914,8 @@ public final class Guild implements Nameable, Identified
 		{
 			online.readUnlock();
 		}
+
+		player.sendPacket(S_Remove_Guild_Group.getInstance(rankId), true);
 	}
 
 	/**
@@ -1106,5 +1132,51 @@ public final class Guild implements Nameable, Identified
 	public String toString()
 	{
 		return name;
+	}
+
+	public void setPraiseNumber(int number) {
+		this.praiseNumber = number;
+	}
+
+	public int getPraiseNumber() {
+		return this.praiseNumber;
+	}
+
+	public void addPraise() {
+		this.praiseNumber++;
+
+		DataBaseManager dbManager = DataBaseManager.getInstance();
+
+		// обновляем сообщение ГИ в БД
+		dbManager.updateGuildPraise(this);
+	}
+
+	public void addApply(GuildApply apply) {
+		addApply(apply, false);
+
+	}
+
+	public void addApply(GuildApply apply, boolean save) {
+		Table<IntKey, GuildApply> applies = getApplies();
+
+		// проверяем на дублирование
+		if(applies.containsKey(apply.getPlayerId()))
+		{
+			log.warning("found duplicate " + apply + " for guild " + name);
+			return;
+		}
+
+		// вносим новый ранг
+		applies.put(apply.getPlayerId(), apply);
+		if(save) {
+			DataBaseManager dataBaseManager = DataBaseManager.getInstance();
+			dataBaseManager.createGuildApply(apply, this.getObjectId());
+		}
+	}
+
+	public void resetMembers() {
+		this.members.clear();
+		DataBaseManager dataBaseManager = DataBaseManager.getInstance();
+		dataBaseManager.restoreGuildMembers(this);
 	}
 }

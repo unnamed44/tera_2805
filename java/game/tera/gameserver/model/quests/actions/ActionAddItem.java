@@ -13,7 +13,7 @@ import tera.gameserver.model.playable.Player;
 import tera.gameserver.model.quests.Quest;
 import tera.gameserver.model.quests.QuestActionType;
 import tera.gameserver.model.quests.QuestEvent;
-import tera.gameserver.network.serverpackets.MessageAddedItem;
+import tera.gameserver.network.serverpackets.S_Sytem_Message_Loot_Item;
 import tera.gameserver.tables.ItemTable;
 import tera.gameserver.templates.ItemTemplate;
 
@@ -110,7 +110,7 @@ public class ActionAddItem extends AbstractQuestAction
 		// если это не деньги
 		if(itemId != Inventory.MONEY_ITEM_ID)
 			// отправляем пакет о выдачи итема
-			player.sendPacket(MessageAddedItem.getInstance(player.getName(), itemId, itemCount), true);
+			player.sendPacket(S_Sytem_Message_Loot_Item.getInstance(player.getName(), itemId, itemCount), true);
 		else
 			PacketManager.showAddGold(player, itemCount);
 

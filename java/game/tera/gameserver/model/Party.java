@@ -20,7 +20,7 @@ import tera.gameserver.model.npc.Npc;
 import tera.gameserver.model.playable.Player;
 import tera.gameserver.network.serverpackets.S_Loot_Dropitem;
 import tera.gameserver.network.serverpackets.S_Chat;
-import tera.gameserver.network.serverpackets.MessageAddedItem;
+import tera.gameserver.network.serverpackets.S_Sytem_Message_Loot_Item;
 import tera.gameserver.network.serverpackets.S_Party_Member_List;
 import tera.gameserver.network.serverpackets.S_Leave_Party_Member;
 import tera.gameserver.network.serverpackets.S_Party_Member_Interval_Pos_Update;
@@ -701,7 +701,7 @@ public final class Party implements Foldable
 			eventManager.notifyPickUpItem(owner, item);
 
 			// ссылка на пакет сообщения
-			ServerPacket packet = MessageAddedItem.getInstance(owner.getName(), item.getItemId(), (int) itemCount);
+			ServerPacket packet = S_Sytem_Message_Loot_Item.getInstance(owner.getName(), item.getItemId(), (int) itemCount);
 
 			// отправляем сообщение
 			owner.sendPacket(packet, true);
@@ -834,7 +834,7 @@ public final class Party implements Foldable
 				eventManager.notifyPickUpItem(target, item);
 
 				// ссылка на пакет сообщения
-				ServerPacket packet = MessageAddedItem.getInstance(target.getName(), item.getItemId(), (int) itemCount);
+				ServerPacket packet = S_Sytem_Message_Loot_Item.getInstance(target.getName(), item.getItemId(), (int) itemCount);
 
 				// отправляем сообщение
 				target.sendPacket(packet, true);

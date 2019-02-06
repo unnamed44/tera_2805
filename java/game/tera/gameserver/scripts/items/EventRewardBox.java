@@ -7,7 +7,7 @@ import tera.gameserver.model.MessageType;
 import tera.gameserver.model.inventory.Inventory;
 import tera.gameserver.model.items.ItemInstance;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.MessageAddedItem;
+import tera.gameserver.network.serverpackets.S_Sytem_Message_Loot_Item;
 import tera.gameserver.network.serverpackets.S_Sytem_Message;
 
 /**
@@ -317,7 +317,7 @@ public class EventRewardBox extends AbstractItemExecutor
 			// добавляем итем в инвентарь
 			if(inventory.addItem(reward.getItemId(), count, "EventRewardBox"))
 				// отпправляем пакет о выдачи
-				player.sendPacket(MessageAddedItem.getInstance(player.getName(), reward.getItemId(), count), true);
+				player.sendPacket(S_Sytem_Message_Loot_Item.getInstance(player.getName(), reward.getItemId(), count), true);
 		}
 
 		// получаем менеджера событий

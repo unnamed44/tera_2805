@@ -3,7 +3,7 @@ package tera.gameserver.model.resourse;
 import tera.Config;
 import tera.gameserver.model.playable.Player;
 import tera.gameserver.model.skillengine.Formulas;
-import tera.gameserver.network.serverpackets.ResourseIncreaseLevel;
+import tera.gameserver.network.serverpackets.S_Player_Change_Prof;
 import tera.gameserver.templates.ResourseTemplate;
 
 /**
@@ -38,7 +38,7 @@ public class MiningResourse extends ResourseInstance
 		player.setMiningLevel(player.getMiningLevel() + 1);
 
 		// отправляю сообщение
-		player.sendPacket(ResourseIncreaseLevel.getInstance(getTemplate().getType(), player.getMiningLevel()), true);
+		player.sendPacket(S_Player_Change_Prof.getInstance(getTemplate().getType(), player.getMiningLevel()), true);
 
 		// обновляю статы
 		player.updateInfo();

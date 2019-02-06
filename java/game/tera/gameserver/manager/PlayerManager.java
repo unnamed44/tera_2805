@@ -301,7 +301,12 @@ public final class PlayerManager
 
 		//player.sendPacket(Test30.getInstance(), false);
 		//player.sendPacket(Test27.getInstance(), false);
-
+		if(player.hasGuild()) {
+			player.updateGuild();
+			player.sendPacket(S_Guild_Name.getInstance(player), true);
+			player.sendPacket(S_Total_Guild_War_Data.getInstance(),true);
+			player.sendPacket(S_Union_State_Info.getInstance(), true);
+		}
 		player.sendPacket(S_Spawn_Me.getInstance(player), true);
 
 		player.spawnMe();
@@ -489,6 +494,8 @@ public final class PlayerManager
 
 		if(player.hasHotKey())
 			player.sendPacket(HotKey.getInstance(player), true);
+
+		player.sendPacket(S_Union_State_Info.getInstance(), true);
 
 		// получаем менеджера событий
 		ObjectEventManager eventManager = ObjectEventManager.getInstance();

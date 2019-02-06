@@ -2,6 +2,7 @@ package tera.gameserver.network.serverpackets;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.util.Date;
 
 import rlib.util.Strings;
 import tera.gameserver.model.base.Experience;
@@ -63,17 +64,16 @@ public class S_Login extends ServerPacket
 			packet.writeByte(buffer, appearance.getFeaturesColor());
 			packet.writeByte(buffer, appearance.getVoice());
 			packet.writeByte(buffer, 0); // temp[14]
-			packet.writeByte(buffer, 1);
-			packet.writeByte(buffer, 0);
+			packet.writeByte(buffer, 1);//visible
+			packet.writeByte(buffer, 0);//is second character
 			packet.writeShort(buffer, player.getLevel());// уровень игрока
 
-			packet.writeShort(buffer, player.getEnergyLevel());
+			packet.writeShort(buffer, player.getMiningLevel());
 			packet.writeShort(buffer, 0);
 			packet.writeShort(buffer, player.getPlantLevel());
-			packet.writeShort(buffer, player.getMiningLevel());
-			packet.writeInt(buffer, 1);
-			packet.writeShort(buffer, 0);
-
+			packet.writeShort(buffer, player.getEnergyLevel());
+			packet.writeShort(buffer, 0);//prof pet
+			packet.writeInt(buffer, 0);//pk declare count
 			packet.writeInt(buffer, 0);//playerkills
 
 			if (player.getExp() != 0) {
@@ -88,8 +88,8 @@ public class S_Login extends ServerPacket
 
 			packet.writeInt(buffer, 0);//rested current
 			packet.writeInt(buffer, 0);//rested max
-			packet.writeFloat(buffer, 1);
-			packet.writeFloat(buffer, 1);
+			packet.writeFloat(buffer, 1);//xp bonus percent
+			packet.writeFloat(buffer, 1);//drop bonus percent
 			//packet.writeInt(buffer, 0);
 
 			ItemInstance weapon = equipment.getItem(SlotType.SLOT_WEAPON);
@@ -100,72 +100,45 @@ public class S_Login extends ServerPacket
 				packet.writeInt(buffer, equipment.getItemId(SlotType.SLOT_ARMOR));
 				packet.writeInt(buffer, equipment.getItemId(SlotType.SLOT_BOOTS));
 				packet.writeInt(buffer, equipment.getItemId(SlotType.SLOT_GLOVES));
+				packet.writeInt(buffer, 0);//underwear
 				packet.writeInt(buffer, equipment.getItemId(SlotType.SLOT_MASK));
 				packet.writeInt(buffer, equipment.getItemId(SlotType.SLOT_HAT));
 			} finally {
 				equipment.unlock();
 			}
 
-			packet.writeInt(buffer, 0);// бан чата // player.getObjectId());
+			packet.writeLong(buffer, new Date().getTime());//server time
+			packet.writeByte(buffer, 0);//is PvP server
 
+			packet.writeLong(buffer, 0);//ban chat until
+			packet.writeInt(buffer, 0);//title
+			packet.writeInt(buffer,0);//weapon model
+			packet.writeInt(buffer,0);//body model
+			packet.writeInt(buffer,0);//hand model
+			packet.writeInt(buffer,0);//feet model
+			packet.writeInt(buffer,0);//weapon dye
+			packet.writeInt(buffer,0);//body dye
+			packet.writeInt(buffer,0);//hand dye
+			packet.writeInt(buffer,0);//feet dye
+			packet.writeInt(buffer,0);//unk
+			packet.writeInt(buffer, weapon == null ? 0 : weapon.getEnchantLevel());
+			packet.writeByte(buffer,0);//world event target
+			packet.writeInt(buffer, player.getKarma());
+			packet.writeByte(buffer, 1);//show face
+			packet.writeInt(buffer, 0);//style head
+			packet.writeInt(buffer, 0);//style face
+			packet.writeInt(buffer, 0);//style back
+			packet.writeInt(buffer, 0);//style weapon
+			packet.writeInt(buffer, 0);//style body
+			packet.writeInt(buffer, 0);//style body dye
 
-			packet.writeInt(buffer, 0x0FB39ADB); // new
-			packet.writeInt(buffer, 0);// new
-
-			packet.writeLong(buffer, 1);
-			packet.writeByte(buffer, 0);
-			packet.writeInt(buffer, 0);// 03 00 00 00 если 3, то надпись "Ангел смерти"
-			packet.writeInt(buffer, 0);// 00 00 00 00
-
-			packet.writeInt(buffer, 0);// 00 00 00 00 // new
-			packet.writeInt(buffer, 0);// 00 00 00 00 // new
-			packet.writeInt(buffer, 0);// 00 00 00 00 // new
-			packet.writeInt(buffer, 0);// 00 00 00 00 // new
-			//packet.writeInt(buffer, 0);// 00 00 00 00
-			//packet.writeInt(buffer, 0);// 00 00 00 00
-			//packet.writeInt(buffer, 0);// 00 00 00 00
-			packet.writeInt(buffer, 0);// 00 00 00 00
-			packet.writeInt(buffer, 0);// 00 00 00 00
-			packet.writeInt(buffer, 0);// 00 00 00 00
-			packet.writeInt(buffer, 0);// 00 00 00 00
-			packet.writeInt(buffer, weapon == null ? 0 : weapon.getEnchantLevel());// точка
-
-			packet.writeByte(buffer, 0);// 00
-// byte + 12 int + 1
-			packet.writeInt(buffer, player.getKarma());// 78 00 00 00 .//карма
-			packet.writeInt(buffer, 1);// 01 00 00 00
-
-			/*packet.writeInt(buffer, 0);// 00 00 00 00//00 00 00 00
-
-			packet.writeInt(buffer, 0);// 00 00 00 00
-			packet.writeInt(buffer, 0);// 00 00 00 00
-
-			packet.writeInt(buffer, 0);// 00 00 00 00 // new
-			packet.writeInt(buffer, 0);// 00 00 00 00 // new
-			packet.writeInt(buffer, 0);// 00 00 00 00 // new
-			packet.writeInt(buffer, 0);// 00 00 00 00 // new
-			packet.writeInt(buffer, 0);// 00 00 00 00 // new
-			packet.writeByte(buffer, 0);// 00
-			packet.writeInt(buffer, 1);// 01 00 00 00 // new
-			packet.writeInt(buffer, 0);// 00 00 00 00 // new
-			packet.writeByte(buffer, 1);// 00 // new
-			packet.writeInt(buffer, 0x00000064);// 64000000 // new
-			packet.writeInt(buffer, 0x3F800000);// 0000803F // new
-			packet.writeByte(buffer, 1);// 00 // new
-			packet.writeInt(buffer, 1);// 00000000 // new
-			packet.writeInt(buffer, 1);// 00000000 // new*/
-
-			packet.writeByte(buffer, 0);
-			packet.writeLong(buffer,0);
-			packet.writeLong(buffer,0);
-			packet.writeInt(buffer, 0);
-			packet.writeInt(buffer, 2);//alliance
-			packet.writeLong(buffer,0);
-			packet.writeByte(buffer, 1);
-			packet.writeLong(buffer, 0);
-			packet.writeInt(buffer, 100);
-			packet.writeShort(buffer, 0);
-			packet.writeShort(buffer, 16256);
+			packet.writeInt(buffer, 0);//union ID
+			packet.writeInt(buffer, 0);//union class
+			packet.writeInt(buffer, 0);//union echelon
+			packet.writeByte(buffer,1);//show style
+			packet.writeLong(buffer, 0);//title count
+			packet.writeInt(buffer, 100);// appearance2
+			packet.writeFloat(buffer,1);
 			packet.writeString(buffer, player.getName());
 
 			packet.writeByte(buffer, appearance.getBoneStructureBrow());

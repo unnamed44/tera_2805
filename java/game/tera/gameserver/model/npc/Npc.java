@@ -108,7 +108,6 @@ public abstract class Npc extends Character implements Foldable {
 	 * @param character центральный объект.
 	 * @param items список объектов, которые нужно отспавнить.
 	 * @param length кол-во объектов.
-	 * @param radius радиус, в котором нужно отспавнить объекты.
 	 */
 	public static void spawnDropItems(Character character, ItemInstance[] items, int length) {
 
