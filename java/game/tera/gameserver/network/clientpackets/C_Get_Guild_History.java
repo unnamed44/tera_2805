@@ -1,5 +1,7 @@
 package tera.gameserver.network.clientpackets;
 
+import tera.gameserver.network.serverpackets.S_Guild_History;
+
 public class C_Get_Guild_History extends ClientPacket {
     private int page;
     @Override
@@ -9,6 +11,6 @@ public class C_Get_Guild_History extends ClientPacket {
 
     @Override
     protected void runImpl() {
-        //todo: impl
+        owner.getOwner().sendPacket(S_Guild_History.getInstance(owner.getOwner()), true);
     }
 }

@@ -147,6 +147,11 @@ public final class DataBaseManager {
 	private static final String UPDATE_REGION_STATE = "UPDATE `region_status` SET `state`= ? WHERE `region_id`= ? LIMIT 1";
 	private static final String UPDATE_REGION_OWNER = "UPDATE `region_status` SET `owner_id`= ? WHERE `region_id`= ? LIMIT 1";
 
+	private static final String SELECT_ALLIANCE = "SELECT u.*, c.`char_name`, g.`name` FROM `union` u LEFT JOIN `characters` c ON (c.`object_id` = u.`leader_id`) LEFT JOIN `guilds` g ON (g.`id` = c.`guild_id`)";
+	private static final String SELECT_ALLIANCE_GUILDS = "SELECT id FROM `guilds` WHERE alliance = ?;";
+	private static final String UPDATE_ALLIANCE_TAXRATE = "UPDATE `union` SET `tax_rate` = ? WHERE `union_id` = ?";
+	private static final String UPDATE_ALLIANCE_MESSAGE = "UPDATE `union` SET `message` = ? WHERE `union_id` = ?";
+
 	private static final String SELECT_GUILDS = "SELECT * FROM `guilds`";
 	private static final String SELECT_GUILD_NAME = "SELECT id FROM `guilds` WHERE `name`= ?";
 	private static final String SELECT_GUILD_RANKS = "SELECT * FROM `guild_ranks` WHERE `guild_id` = ?";
@@ -878,6 +883,7 @@ public final class DataBaseManager {
 				player.setEnergyLevel(rset.getInt("collect_energy"));
 				player.setMiningLevel(rset.getInt("collect_mining"));
 				player.setPlantLevel(rset.getInt("collect_plant"));
+				player.setAllianceClass(rset.getInt("union_level"));
 
 				heart = rset.getInt("heart");
 				hp = rset.getInt("hp");
@@ -2389,6 +2395,42 @@ public final class DataBaseManager {
 		}
 	}
 
+	public final void saveUnionTax(int allianceId, int tax) {
+		Connection con = null;
+		PreparedStatement statement = null;
+
+		try {
+			con = connectFactory.getConnection();
+
+			statement = con.prepareStatement(UPDATE_ALLIANCE_TAXRATE);
+			statement.setInt(1, tax);
+			statement.setInt(2, allianceId);
+			statement.execute();
+		} catch(SQLException e) {
+			LOGGER.warning(e);
+		} finally {
+			DBUtils.closeDatabaseCS(con, statement);
+		}
+	}
+
+	public final void saveUnionMessage(int allianceId, String message) {
+		Connection con = null;
+		PreparedStatement statement = null;
+
+		try {
+			con = connectFactory.getConnection();
+
+			statement = con.prepareStatement(UPDATE_ALLIANCE_MESSAGE);
+			statement.setString(1, message);
+			statement.setInt(2, allianceId);
+			statement.execute();
+		} catch(SQLException e) {
+			LOGGER.warning(e);
+		} finally {
+			DBUtils.closeDatabaseCS(con, statement);
+		}
+	}
+
 	/**
 	 *
 	 * @param guild
@@ -2801,6 +2843,56 @@ public final class DataBaseManager {
 		}
 	}
 
+	public final void restoreAlliance(Table<IntKey, Alliance> alliances) {
+		Connection con = null;
+		PreparedStatement statement = null;
+		ResultSet rset = null;
+
+		try {
+			con = connectFactory.getConnection();
+
+			statement = con.prepareStatement(SELECT_ALLIANCE);
+
+			// делаем выборку по всем гильдиям
+			rset = statement.executeQuery();
+
+			// загружаем гильдии
+			while(rset.next())
+				alliances.put(rset.getInt("union_id"),
+						new Alliance(rset.getInt("union_id"), rset.getInt("leader_id"), rset.getString("char_name"), rset.getString("name"), rset.getInt("tax_rate"), rset.getInt("strength"), rset.getInt("bonus"), rset.getString("message")));
+		} catch(SQLException e) {
+			LOGGER.warning(e);
+		} finally {
+			DBUtils.closeDatabaseCSR(con, statement, rset);
+		}
+	}
+
+	public final void restoreAllianceGuilds(Alliance alliance) {
+		Connection con = null;
+		PreparedStatement statement = null;
+		ResultSet rset = null;
+
+		try {
+			con = connectFactory.getConnection();
+
+			statement = con.prepareStatement(SELECT_ALLIANCE_GUILDS);
+			statement.setInt(1, alliance.getAllianceId());
+
+			// делаем выборку по всем гильдиям
+			rset = statement.executeQuery();
+
+			// загружаем гильдии
+			while(rset.next()) {
+				Guild guild = GuildManager.getInstance().getGuild(rset.getInt("id"));
+				alliance.addGuild(guild);
+			}
+		} catch(SQLException e) {
+			LOGGER.warning(e);
+		} finally {
+			DBUtils.closeDatabaseCSR(con, statement, rset);
+		}
+	}
+
 	/**
 	 * Загрузка всех гильдий из БД.
 	 * 
@@ -2824,7 +2916,7 @@ public final class DataBaseManager {
 				guilds.put(
 						rset.getInt("id"),
 						new Guild(rset.getString("name"), rset.getString("title"), rset.getString("message"), rset.getInt("id"), rset.getInt("level"), new GuildIcon(rset.getString("icon_name"), rset
-								.getBytes("icon")), rset.getInt("praise")));
+								.getBytes("icon")), rset.getInt("praise"), rset.getInt("alliance")));
 		} catch(SQLException e) {
 			LOGGER.warning(e);
 		} finally {

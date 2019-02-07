@@ -14,13 +14,13 @@ import tera.gameserver.network.ServerPacketType;
  *
  * @author Ronn
  */
-public class GuildLogs extends ServerPacket
+public class S_Guild_History extends ServerPacket
 {
-	private static final ServerPacket instance = new GuildLogs();
+	private static final ServerPacket instance = new S_Guild_History();
 
-	public static GuildLogs getInstance(Player player)
+	public static S_Guild_History getInstance(Player player)
 	{
-		GuildLogs packet = (GuildLogs) instance.newInstance();
+		S_Guild_History packet = (S_Guild_History) instance.newInstance();
 
 		Guild guild = player.getGuild();
 
@@ -52,7 +52,7 @@ public class GuildLogs extends ServerPacket
 	/** подготовленный буффер для отправки данных */
 	private ByteBuffer prepare;
 
-	public GuildLogs()
+	public S_Guild_History()
 	{
 		this.prepare = ByteBuffer.allocate(204800).order(ByteOrder.LITTLE_ENDIAN);
 	}
@@ -66,7 +66,7 @@ public class GuildLogs extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.GUILD_LOGS;
+		return ServerPacketType.S_GUILD_HISTORY;
 	}
 
 	@Override

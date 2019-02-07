@@ -126,7 +126,7 @@ public final class GuildManager
 		IdFactory idFactory = IdFactory.getInstance();
 
 		// созадем новую гильдию
-		Guild guild = new Guild(name, Strings.EMPTY, Strings.EMPTY, idFactory.getNextGuildId(), 1, new GuildIcon(Strings.EMPTY, new byte[0]), 0);
+		Guild guild = new Guild(name, Strings.EMPTY, Strings.EMPTY, idFactory.getNextGuildId(), 1, new GuildIcon(Strings.EMPTY, new byte[0]), 0, 0);
 
 		// создаем ранг ГМ
 		GuildRank rank = GuildRank.newInstance("GuildMaster", GuildRankLaw.GUILD_MASTER, GuildRank.GUILD_MASTER);

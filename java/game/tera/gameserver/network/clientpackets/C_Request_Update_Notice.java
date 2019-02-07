@@ -10,10 +10,10 @@ import tera.gameserver.model.playable.Player;
  * @author Ronn
  * @created 26.04.2012
  */
-public class RequestGuildUpdateTitle extends ClientPacket
+public class C_Request_Update_Notice extends ClientPacket
 {
 	/** имя передоваемого */
-	private String title;
+	private String message;
 	/** мастер гильдии */
 	private Player player;
 
@@ -21,7 +21,7 @@ public class RequestGuildUpdateTitle extends ClientPacket
 	public void finalyze()
 	{
 		player = null;
-		title = null;
+		message = null;
 	}
 
 	@Override
@@ -31,7 +31,7 @@ public class RequestGuildUpdateTitle extends ClientPacket
 
 		readShort();
 
-		title = readString();//61 00 75 00 73 00 74 00 00 00   ..AO..F.a.u.s.t.
+		message = readString();//61 00 75 00 73 00 74 00 00 00   ..AO..F.a.u.s.t.
 	}
 
 	@Override
@@ -39,7 +39,7 @@ public class RequestGuildUpdateTitle extends ClientPacket
 	{
 		try
 		{
-			if(player == null || title.length() > 44)
+			if(player == null || message.length() > 254)
 				return;
 
 			GuildRank rank = player.getGuildRank();
@@ -50,7 +50,7 @@ public class RequestGuildUpdateTitle extends ClientPacket
 			Guild guild = player.getGuild();
 
 			if(guild != null)
-				guild.setTitle(title);
+				guild.setMessage(message);
 		}
 		finally
 		{

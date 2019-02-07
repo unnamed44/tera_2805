@@ -76,14 +76,14 @@ public class S_Guild_Info extends ServerPacket
 			packet.writeInt(buffer, guild.getPraiseNumber()); // 05 00 00 00 Praise
 			packet.writeInt(buffer, -1);// FF FF FF FF Polyci Points
 
-			packet.writeByte(buffer, 1);// 01
-			packet.writeByte(buffer, 0);
+			packet.writeShort(buffer, 1);// 01
+			packet.writeShort(buffer, guild.getAllianceId());//alliance
 			/*
 			 * 01 0F ........ÿÿÿÿ.... 0E 00 00 00 00 00 00
 			 */
 
 			packet.writeInt(buffer, 0);
-			packet.writeInt(buffer, 0);
+			packet.writeShort(buffer, 0);
 			packet.writeInt(buffer, 1);
 			packet.writeLong(buffer, 341);//?
 			packet.writeLong(buffer, 341);//?

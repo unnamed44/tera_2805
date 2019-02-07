@@ -208,6 +208,8 @@ public final class Player extends Playable implements Nameable, Identified {
 	/** можно ли воскресится самому */
 	private boolean resurrected;
 
+	private int allianceClass;
+
 	/**
 	 * @param objectId уникальный ид игрока.
 	 * @param template темплейт игрока.
@@ -1203,6 +1205,10 @@ public final class Player extends Playable implements Nameable, Identified {
 		return miningLevel;
 	}
 
+	public int getAllianceClass() {
+		return allianceClass;
+	}
+
 	/**
 	 * @return минимальный уровень усталости.
 	 */
@@ -2048,6 +2054,10 @@ public final class Player extends Playable implements Nameable, Identified {
 		this.miningLevel = Math.min(miningLevel, 300);
 	}
 
+	public void setAllianceClass(int allianceClass) {
+		this.allianceClass = allianceClass;
+	}
+
 	/**
 	 * @param mountId ид активного маунта.
 	 */
@@ -2474,7 +2484,7 @@ public final class Player extends Playable implements Nameable, Identified {
 			return;
 		}
 
-		//sendPacket(GuildLogs.getInstance(this), true);
+		//sendPacket(S_Guild_History.getInstance(this), true);
 		sendPacket(S_Guild_Member_List.getInstance(this), true);
 	}
 

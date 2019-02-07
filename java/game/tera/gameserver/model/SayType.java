@@ -45,7 +45,13 @@ public enum SayType
 	/** системный чат */
 	SYSTEM_CHAT,
 
-	SIMPLE_SYSTEM_CHAT;
+	SIMPLE_SYSTEM_CHAT,//25
+
+	UNKNOW_3,
+	GENERAL_CHAT,
+	UNION_CHAT_1,
+	UNION_CHAT_2,
+	EXARCH_CHAT;
 
 	public static final SayType[] VALUES = values();
 

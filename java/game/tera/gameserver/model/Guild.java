@@ -32,7 +32,7 @@ public final class Guild implements Nameable, Identified
 	 /** таблица рангов */
 	 private final Table<IntKey, GuildRank> ranks;
 
-	private final Table<IntKey, GuildApply> applies;
+	 private final Table<IntKey, GuildApply> applies;
 
 	 /** список всех участников клана */
 	 private final Array<GuildMember> members;
@@ -64,6 +64,8 @@ public final class Guild implements Nameable, Identified
 
 	 private int praiseNumber;
 
+	 private int allianceId;
+
 	 /**
 	  * @param name название клана.
 	  * @param title титул гильдии.
@@ -72,7 +74,7 @@ public final class Guild implements Nameable, Identified
 	  * @param level уровень клана.
 	  * @param icon иконка клана.
 	  */
-	public Guild(String name, String title, String message, int id, int level, GuildIcon icon, int praiseNumber)
+	public Guild(String name, String title, String message, int id, int level, GuildIcon icon, int praiseNumber, int allianceId)
 	{
 		this.name = name;
 		this.title = title;
@@ -88,6 +90,7 @@ public final class Guild implements Nameable, Identified
 		this.applies = Tables.newIntegerTable();
 		this.bank = GuildBank.newInstance(this);
 		this.praiseNumber = praiseNumber;
+		this.allianceId = allianceId;
 	}
 
 	/**
@@ -1138,8 +1141,16 @@ public final class Guild implements Nameable, Identified
 		this.praiseNumber = number;
 	}
 
+	public void setAllianceId(int allianceId) {
+		this.allianceId = allianceId;
+	}
+
 	public int getPraiseNumber() {
 		return this.praiseNumber;
+	}
+
+	public int getAllianceId() {
+		return allianceId;
 	}
 
 	public void addPraise() {

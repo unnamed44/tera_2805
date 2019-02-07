@@ -147,7 +147,10 @@ public class S_Spawn_User extends ServerPacket
 		packet.writeLong(buffer, 0);
 		packet.writeLong(buffer, 0);
 		packet.writeInt(buffer, 0);
-		packet.writeInt(buffer, 1);//alliance
+		if(newPlayer.hasGuild())
+			packet.writeInt(buffer, newPlayer.getGuild().getAllianceId());//alliance
+		else
+			packet.writeInt(0);
 		packet.writeLong(buffer, 0);
 
 		packet.writeByte(buffer, 1);

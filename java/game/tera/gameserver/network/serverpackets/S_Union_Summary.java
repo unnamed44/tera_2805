@@ -1,6 +1,8 @@
 package tera.gameserver.network.serverpackets;
 
 import rlib.util.Strings;
+import tera.gameserver.manager.AllianceManager;
+import tera.gameserver.model.Alliance;
 import tera.gameserver.network.ServerPacketType;
 
 import java.nio.ByteBuffer;
@@ -53,34 +55,35 @@ public class S_Union_Summary extends ServerPacket {
         writeInt(buffer, 0);
         int pos = 12;
         for(int i = 0; i < 3; i++) {
+            Alliance alliance = AllianceManager.getInstance().getAlliance(i+1);
             int namePos = pos + 53;
             writeShort(buffer, pos);//current pos
-            pos = 67 * (i+1) + Strings.length(names[i]);
+            pos = 67 * (i+1) + Strings.length(alliance.getLeaderName());
             if(i == 1)
-                pos += 4;
+                pos += 2;
             if(i == 2)
                 writeShort(buffer, 0);
             else
                 writeShort(buffer, pos);//next
             writeShort(buffer, namePos);
-            writeShort(buffer, namePos + Strings.length(names[1]));
+            writeShort(buffer, namePos + Strings.length(alliance.getLeaderName()));
             writeInt(buffer, i+1);
-            writeInt(buffer, strength[i]);
-            writeInt(buffer, 7);//tax rate
+            writeInt(buffer, alliance.getStrength());
+            writeInt(buffer, alliance.getTaxRate());//tax rate
             if(i == 2)
                 writeByte(buffer, 1);//vault access
             else
                 writeByte(buffer, 0);
-            writeInt(buffer, bonuses[i]);
+            writeInt(buffer, alliance.getBonus());
             writeInt(buffer, 0);//bonuses activation time
             writeInt(buffer, unk1[i]);//E1 04
-            writeInt(buffer, 1);//previous exarch number
+            writeInt(buffer, 0);//previous exarch number
             writeLong(buffer, 0);
             writeByte(buffer, 0);
             writeInt(buffer, 168750);// 2E 93 02 00
             writeShort(buffer, 0);
             writeByte(buffer,0);
-            writeString(buffer, names[i]);
+            writeString(buffer, alliance.getLeaderName());
             writeShort(buffer, 0);
         }
     }

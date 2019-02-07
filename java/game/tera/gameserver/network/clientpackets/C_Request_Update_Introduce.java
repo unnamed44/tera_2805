@@ -9,7 +9,7 @@ import tera.gameserver.model.playable.Player;
  * @author Ronn
  * @created 26.04.2012
  */
-public class RequestGuildUpdateNote extends ClientPacket
+public class C_Request_Update_Introduce extends ClientPacket
 {
 	/** новая замтека */
 	private String note;

@@ -132,9 +132,18 @@ public class S_Login extends ServerPacket
 			packet.writeInt(buffer, 0);//style body
 			packet.writeInt(buffer, 0);//style body dye
 
-			packet.writeInt(buffer, 0);//union ID
-			packet.writeInt(buffer, 0);//union class
-			packet.writeInt(buffer, 0);//union echelon
+			if(player.hasGuild()) {
+				packet.writeInt(buffer, player.getGuild().getAllianceId());
+				if(player.getGuild().getAllianceId() != 0){
+					packet.writeInt(buffer, player.getAllianceClass());//union class 100-301-302-303-400
+					packet.writeInt(buffer, 0);//union echelon
+				}
+			}
+			else {
+				packet.writeInt(buffer, 0);
+				packet.writeInt(buffer, 0);
+				packet.writeInt(buffer, 0);
+			}
 			packet.writeByte(buffer,1);//show style
 			packet.writeLong(buffer, 0);//title count
 			packet.writeInt(buffer, 100);// appearance2

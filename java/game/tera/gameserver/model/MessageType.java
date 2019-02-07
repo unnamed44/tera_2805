@@ -209,6 +209,8 @@ public enum MessageType
 
 	YOU_APPLIED_TO_GUILD("@1604"),
 
+	UNION_CHANGE_TAX_RATE("@2434"),
+
 	;
 
 	private String name;

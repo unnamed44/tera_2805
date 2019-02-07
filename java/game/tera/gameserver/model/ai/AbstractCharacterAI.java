@@ -381,6 +381,7 @@ public abstract class AbstractCharacterAI<E extends Character> extends AbstractA
 				break;
 			case TRADE_CHAT:
 			case LOOKING_FOR_GROUP:
+			case GENERAL_CHAT:
 			{
 				// создаем сообщение
 				S_Chat say = S_Chat.getInstance(actor.getName(), text, type, actor.getObjectId(), actor.getSubId(), actor.isGM());
@@ -401,6 +402,37 @@ public abstract class AbstractCharacterAI<E extends Character> extends AbstractA
 					// отправляем пакеты
 					for(int i = 0, length = players.size(); i < length; i++)
 						array[i].sendPacket(say, false);
+				}
+				finally
+				{
+					players.readUnlock();
+				}
+
+				break;
+			}
+			case UNION_CHAT_1:
+			case UNION_CHAT_2://change later
+			case EXARCH_CHAT:
+			{
+				S_Chat say = S_Chat.getInstance(actor.getName(), text, type, actor.getObjectId(), actor.getSubId(), actor.isGM());
+
+				Array<Player> players = World.getPlayers();
+
+				players.readLock();
+
+				try
+				{
+					Player[] array = players.array();
+
+					for(int i = 0, length = players.size(); i < length; i++) {
+						//if same alliance
+						if(array[i].hasGuild() && array[i].getGuild().getAllianceId() == actor.getGuild().getAllianceId())
+							say.increaseSends();
+					}
+
+					for(int i = 0, length = players.size(); i < length; i++)
+						if(array[i].hasGuild() && array[i].getGuild().getAllianceId() == actor.getGuild().getAllianceId())
+							array[i].sendPacket(say, false);
 				}
 				finally
 				{
