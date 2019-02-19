@@ -2899,6 +2899,7 @@ public final class DataBaseManager {
 				item.setEnchantLevel(rset.getShort("enchant_level"));
 				item.setBonusId(rset.getInt("bonus_id"));
 				item.setAutor(rset.getString("autor"));
+				item.setOwnerName(rset.getString("owner_name"));
 				return item;
 			}
 			// делаем выборку по всем гильдиям
