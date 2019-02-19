@@ -20,7 +20,12 @@ public class C_Request_Contract extends ClientPacket {
         readInt();
         readInt();
         readInt();
-        name = readString();//00 61 00 73 00 64 00 61 00 00 00   //
+        if(actionType == ActionType.BIND_ITEM) {
+            readShort();
+            name = String.valueOf(readInt());
+        }
+        else
+            name = readString();//00 61 00 73 00 64 00 61 00 00 00   //
     }
 
     @Override
@@ -33,6 +38,11 @@ public class C_Request_Contract extends ClientPacket {
             }
             case BIND_ITEM:
             {
+                player.sendPacket(S_Reply_Request_Contract.getInstance(actionType), true);
+                if(!actionType.isImplemented() || player.hasLastAction())
+                    return;
+
+                player.getAI().startAction(actionType.newInstance(player, name));
                 break;
             }
             case PARTY: {

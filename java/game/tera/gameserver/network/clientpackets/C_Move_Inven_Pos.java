@@ -6,6 +6,7 @@ import tera.gameserver.model.inventory.Cell;
 import tera.gameserver.model.inventory.Inventory;
 import tera.gameserver.model.items.ItemInstance;
 import tera.gameserver.model.playable.Player;
+import tera.gameserver.network.serverpackets.S_Inven_Changedslot;
 
 /**
  * Клиентский пакет, указывающий какой итем хотим переместить в инвенторе
@@ -44,8 +45,8 @@ public class C_Move_Inven_Pos extends ClientPacket
 		readInt();
 		readInt();
 
-		oldcell = readInt() - 20;
-		newcell = readInt() - 20;
+		oldcell = readInt() - 40;
+		newcell = readInt() - 40;
 	}
 
 	@Override
@@ -88,5 +89,6 @@ public class C_Move_Inven_Pos extends ClientPacket
 		}
 
 		eventManager.notifyInventoryChanged(player);
+		player.sendPacket(S_Inven_Changedslot.getInstance(2, oldcell, newcell), true);
 	}
 }

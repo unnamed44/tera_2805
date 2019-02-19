@@ -103,7 +103,7 @@ public enum ClientPacketType
 
 	REQUEST_WORLD_ZONE(0x5E43, new RequestWorldZone()),
 	REQUEST_STATE(0xAB5E, new RequestState()),
-	REQUEST_TAKING_ITEM(0xB983, new C_Equip_Item()),
+	//REQUEST_TAKING_ITEM(0xB983, new C_Equip_Item()),
 	REQUEST_BANK_MOVING_ITEM(0xEFC9, new RequestBankMovingItem()),
 	REQUEST_BANK_CHANGE_TAB(0xDBB0, new RequestBankChangeTab()),
 	REQUEST_INVENTORY_ITEM_INFO(0xBC87, new RequestInventoryInfoItem()), // 28 00 F4 C4 1E 00 13 00 00 00 C4 71 00 00 00 00

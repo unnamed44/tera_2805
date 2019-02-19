@@ -42,7 +42,7 @@ public class C_Equip_Item extends ClientPacket
 		//номер слота
 		slot = readInt();
 
-		if(slot < 20 && buffer.remaining() > 7)
+		if(slot < 40 && buffer.remaining() > 7)
 		{
 			readInt();
 			itemId = readInt();

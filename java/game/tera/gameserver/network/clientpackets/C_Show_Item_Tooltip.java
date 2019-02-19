@@ -1,7 +1,6 @@
 package tera.gameserver.network.clientpackets;
 
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.ItemTemplateInfo;
 import tera.gameserver.tables.ItemTable;
 import tera.gameserver.templates.ItemTemplate;
 

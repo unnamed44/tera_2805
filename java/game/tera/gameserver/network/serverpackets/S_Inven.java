@@ -109,8 +109,10 @@ public class S_Inven extends ServerPacket
 						packet.writeInt(buffer, player.getSubId());
 						packet.writeInt(buffer, i + 1);
 						packet.writeInt(buffer, 0);
-						packet.writeLong(buffer, item.getItemCount());
-						packet.writeShort(buffer, 30);// !!!
+						packet.writeInt(buffer, (int)item.getItemCount());
+						packet.writeInt(buffer, item.getEnchantLevel());
+						packet.writeInt(buffer,0);
+						packet.writeByte(buffer, (item.isBinded()) ? 1 : 0);//soulbind
 
 						// получаем кристалы итема
 						CrystalList crystals = item.getCrystals();
@@ -140,26 +142,26 @@ public class S_Inven extends ServerPacket
 									packet.writeInt(buffer, 0);
 						}
 //5 long 1 int
-						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, 0);
-						packet.writeShort(buffer, 0);
-						packet.writeByte(buffer, 0);
+						packet.writeInt(buffer, 0);//crystal5
+						packet.writeInt(buffer, 0);//remodel
+						packet.writeInt(buffer, 0);//dye
+						packet.writeInt(buffer, 0);//dye sec remaining
+						packet.writeLong(buffer, 0);//dye date
+						packet.writeLong(buffer, 0);//dye expiry date
 						packet.writeByte(buffer, item.getMasterworked());
 						packet.writeInt(buffer, item.isEnigma());//enigma
-						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);//masterwork bonus
 						packet.writeInt(buffer,item.getItemLevel());
-						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);//times brokered
+						packet.writeInt(buffer, 0);//enchant advantage
+						packet.writeInt(buffer, 0);//enchant bonus
+						packet.writeInt(buffer, 0);//enchant bonus max plus
+						if(item.isBinded()) {
+							packet.writeInt(buffer, player.getObjectId());
+							packet.writeInt(buffer, player.getSubId());
+						}
+						else
+							packet.writeLong(buffer, 0);
 						packet.writeShort(buffer,0);
 						/*packet.writeLong(buffer, 0);
 						packet.writeLong(buffer, 0);
@@ -218,8 +220,10 @@ public class S_Inven extends ServerPacket
 						packet.writeInt(buffer, player.getSubId());
 						packet.writeInt(buffer, i + 40);
 						packet.writeInt(buffer, 0);
-						packet.writeLong(buffer, item.getItemCount());
-						packet.writeShort(buffer, 30);// !!!
+						packet.writeInt(buffer, (int)item.getItemCount());
+						packet.writeInt(buffer, item.getEnchantLevel());
+						packet.writeInt(buffer,0);
+						packet.writeByte(buffer, (item.isBinded()) ? 1 : 0);//soulbind
 
 						// получаем кристалы итема
 						CrystalList crystals = item.getCrystals();
@@ -249,26 +253,26 @@ public class S_Inven extends ServerPacket
 									packet.writeInt(buffer, 0);
 						}
 //5 long 1 int
-						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, 0);
-						packet.writeShort(buffer, 0);
-						packet.writeByte(buffer, 0);
+						packet.writeInt(buffer, 0);//crystal5
+						packet.writeInt(buffer, 0);//remodel
+						packet.writeInt(buffer, 0);//dye
+						packet.writeInt(buffer, 0);//dye sec remaining
+						packet.writeLong(buffer, 0);//dye date
+						packet.writeLong(buffer, 0);//dye expiry date
 						packet.writeByte(buffer, item.getMasterworked());
 						packet.writeInt(buffer, item.isEnigma());//enigma
-						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);//masterwork bonus
 						packet.writeInt(buffer,item.getItemLevel());
-						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, 0);
-						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, 0);//times brokered
+						packet.writeInt(buffer, 0);//enchant advantage
+						packet.writeInt(buffer, 0);//enchant bonus
+						packet.writeInt(buffer, 0);//enchant bonus max plus
+						if(item.isBinded()) {
+							packet.writeInt(buffer, player.getObjectId());
+							packet.writeInt(buffer, player.getSubId());
+						}
+						else
+							packet.writeLong(buffer, 0);
 						packet.writeShort(buffer,0);
 					}
 				}

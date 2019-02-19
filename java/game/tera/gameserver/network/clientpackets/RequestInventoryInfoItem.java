@@ -101,7 +101,7 @@ public class RequestInventoryInfoItem extends ClientPacket
 			if(slot != null)
 			{
 				// отправляем пакет и выходимм
-				player.sendPacket(S_Show_Item_Tooltip.getInstance(slot.getIndex(), slot.getItem()), true);
+				//player.sendPacket(S_Show_Item_Tooltip.getInstance(slot.getIndex(), slot.getItem()), true);
 				return;
 			}
 		}
@@ -126,7 +126,7 @@ public class RequestInventoryInfoItem extends ClientPacket
 			if(cell != null)
 			{
 				// отправляем пакет и выходим
-				player.sendPacket(S_Show_Item_Tooltip.getInstance(cell.getIndex(), cell.getItem()), true);
+				//player.sendPacket(S_Show_Item_Tooltip.getInstance(cell.getIndex(), cell.getItem()), true);
 				return;
 			}
 		}
@@ -148,7 +148,7 @@ public class RequestInventoryInfoItem extends ClientPacket
 			if(item != null)
 			{
 				// отправляем пакет и выходим
-				player.sendPacket(S_Show_Item_Tooltip.getInstance(0, item), true);
+				//player.sendPacket(S_Show_Item_Tooltip.getInstance(0, item), true);
 				return;
 			}
 		}
@@ -175,7 +175,7 @@ public class RequestInventoryInfoItem extends ClientPacket
 			if(item != null)
 			{
 				// отправляем пакет и выходим
-				player.sendPacket(S_Show_Item_Tooltip.getInstance(0, item), true);
+				//player.sendPacket(S_Show_Item_Tooltip.getInstance(0, item), true);
 				return;
 			}
 		}

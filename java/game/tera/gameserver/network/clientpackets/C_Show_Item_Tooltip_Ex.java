@@ -4,11 +4,7 @@ import tera.gameserver.manager.DataBaseManager;
 import tera.gameserver.model.items.ItemInstance;
 import tera.gameserver.model.playable.Player;
 import tera.gameserver.network.serverpackets.ItemTemplateInfo;
-import tera.gameserver.network.serverpackets.S_Inven;
-import tera.gameserver.tables.ItemTable;
-import tera.gameserver.templates.ItemTemplate;
-
-import javax.xml.crypto.Data;
+import tera.gameserver.network.serverpackets.S_Show_Item_Tooltip;
 
 /**
  * Клиентский пакет, запрасывающий пакет инвенторя.
@@ -67,6 +63,6 @@ public class C_Show_Item_Tooltip_Ex extends ClientPacket
 
         //player.sendMessage("itemId = " + itemId + ", itemLevel " + template.getItemLevel());
 
-        player.sendPacket(ItemTemplateInfo.getInstance(itemInstance, type), true);
+        player.sendPacket(S_Show_Item_Tooltip.getInstance(itemInstance, type), true);
     }
 }
