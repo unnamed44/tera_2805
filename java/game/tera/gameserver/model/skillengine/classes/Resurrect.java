@@ -3,7 +3,7 @@ package tera.gameserver.model.skillengine.classes;
 import rlib.util.array.Array;
 import tera.gameserver.model.Character;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.CharDead;
+import tera.gameserver.network.serverpackets.S_Creature_Life;
 import tera.gameserver.templates.SkillTemplate;
 import tera.util.LocalObjects;
 
@@ -63,7 +63,7 @@ public class Resurrect extends AbstractSkill
     		player.updateHp();
 
     		// отправляем
-    		player.broadcastPacket(CharDead.getInstance(target, false));
+    		player.broadcastPacket(S_Creature_Life.getInstance(target, false));
     	}
 	}
 }

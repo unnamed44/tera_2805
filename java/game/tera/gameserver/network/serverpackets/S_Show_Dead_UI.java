@@ -9,11 +9,11 @@ import tera.gameserver.network.ServerPacketType;
  *
  * @author Ronn
  */
-public class PlayerDeadWindow extends ServerConstPacket
+public class S_Show_Dead_UI extends ServerConstPacket
 {
-	private static final PlayerDeadWindow instance = new PlayerDeadWindow();
+	private static final S_Show_Dead_UI instance = new S_Show_Dead_UI();
 
-	public static PlayerDeadWindow getInstance()
+	public static S_Show_Dead_UI getInstance()
 	{
 		return instance;
 	}
@@ -21,15 +21,17 @@ public class PlayerDeadWindow extends ServerConstPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.PLAYER_DEAD_WINDOW;
+		return ServerPacketType.S_SHOW_DEAD_UI;
 	}
 
 	@Override
 	protected void writeImpl(ByteBuffer buffer)
 	{
 		writeOpcode(buffer);
-		writeInt(buffer, 0x0000001E);
-	    writeInt(buffer, 0x000032E6);
+		writeInt(buffer, 30);
+		writeInt(buffer,78001);
+		writeInt(buffer, 0);
         writeShort(buffer, 0);
+        writeByte(buffer, 0);
 	}
 }

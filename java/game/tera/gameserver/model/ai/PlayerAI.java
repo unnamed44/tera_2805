@@ -34,6 +34,7 @@ public class PlayerAI extends AbstractCharacterAI<Player>
 	 */
 	private static boolean checkStartSkill(Player actor, Skill skill)
 	{
+	    //todo here for unmount with different mount skill
 		// если сейчас нельзя скатить скил
 		if(actor.isOnMount() && skill != actor.getMountSkill() || actor.isAttackBlocking() || (actor.isRooted() && skill.getMoveDistance() != 0) || (actor.isOwerturned() && skill.getSkillType() != SkillType.OWERTURNED_STRIKE))
 		{

@@ -11,16 +11,16 @@ import tera.gameserver.network.ServerPacketType;
  *
  * @author Ronn
  */
-public class CharDead extends ServerPacket
+public class S_Creature_Life extends ServerPacket
 {
-	private static final ServerPacket instance = new CharDead();
+	private static final ServerPacket instance = new S_Creature_Life();
 
 	/**
 	 * @return новый экземпляр пакета.
 	 */
-	public static CharDead getInstance(Character character, boolean dead)
+	public static S_Creature_Life getInstance(Character character, boolean dead)
 	{
-		CharDead packet = (CharDead) instance.newInstance();
+		S_Creature_Life packet = (S_Creature_Life) instance.newInstance();
 
 		packet.objectId = character.getObjectId();
 		packet.subId = character.getSubId();
@@ -50,7 +50,7 @@ public class CharDead extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.CHAR_DEAD;
+		return ServerPacketType.S_CREATURE_LIFE;
 	}
 
 	@Override
@@ -68,6 +68,8 @@ public class CharDead extends ServerPacket
         writeFloat(buffer, x);
         writeFloat(buffer, y);
         writeFloat(buffer, z);
-        writeShort(buffer, state);
+        writeByte(buffer, state);
+        writeByte(buffer,0);
+        writeByte(buffer, 0);
 	}
 }

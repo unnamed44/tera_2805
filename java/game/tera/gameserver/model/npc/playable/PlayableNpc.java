@@ -8,7 +8,7 @@ import tera.gameserver.manager.ExecutorManager;
 import tera.gameserver.model.Character;
 import tera.gameserver.model.npc.Npc;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.CharDead;
+import tera.gameserver.network.serverpackets.S_Creature_Life;
 import tera.gameserver.network.serverpackets.S_Despawn_Npc;
 import tera.gameserver.network.serverpackets.NpcPlayableInfo;
 import tera.gameserver.network.serverpackets.PlayerBattleStance;
@@ -116,7 +116,7 @@ public class PlayableNpc extends Npc
 		super.doDie(attacker);
 
 		// отправляем пакет о смерти
-		broadcastPacket(CharDead.getInstance(this, true));
+		broadcastPacket(S_Creature_Life.getInstance(this, true));
 
 		// запускаем задание по удалению
 		ExecutorManager.getInstance().scheduleGeneral(deleteTask, 10000);

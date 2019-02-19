@@ -28,7 +28,7 @@ import tera.gameserver.model.npc.spawn.Spawn;
 import tera.gameserver.model.playable.Player;
 import tera.gameserver.network.serverpackets.S_Abnormality_Begin;
 import tera.gameserver.network.serverpackets.S_Abnormality_End;
-import tera.gameserver.network.serverpackets.CharDead;
+import tera.gameserver.network.serverpackets.S_Creature_Life;
 import tera.gameserver.tables.WorldZoneTable;
 import tera.util.Location;
 
@@ -297,7 +297,7 @@ public final class TeamDeathMatch extends AbstractAutoEvent {
 					killed.updateHp();
 					killed.updateMp();
 					killed.updateStamina();
-					killed.broadcastPacket(CharDead.getInstance(killed, false));
+					killed.broadcastPacket(S_Creature_Life.getInstance(killed, false));
 					killed.setXYZ(location.getX(), location.getY(), location.getZ());
 					killed.broadcastMove(killed.getX(), killed.getY(), killed.getZ(), killed.getHeading(), MoveType.STOP, killed.getX(), killed.getY(), killed.getZ(), true);
 

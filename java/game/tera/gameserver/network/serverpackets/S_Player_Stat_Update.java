@@ -54,36 +54,30 @@ public class S_Player_Stat_Update extends ServerPacket
             packet.writeInt(buffer, template.getPowerFactor());
             packet.writeInt(buffer, template.getDefenseFactor());
 
-            packet.writeShort(buffer, template.getImpactFactor());
-            packet.writeShort(buffer,0);//0000 // new
-            packet.writeShort(buffer, template.getBalanceFactor());
-            packet.writeShort(buffer,0);//0000 // new
+            packet.writeInt(buffer, template.getImpactFactor());
+            packet.writeInt(buffer, template.getBalanceFactor());
             packet.writeShort(buffer, template.getRunSpd()); // базовая скорость бега
-            packet.writeShort(buffer,40);//2800 another speed ?? // new
+            packet.writeShort(buffer,40);//walk speed
             packet.writeShort(buffer, template.getAtkSpd());
 
             packet.writeFloat(buffer, template.getCritRate()); // шанс крита
             packet.writeFloat(buffer, template.getCritRcpt()); // защита от крита (пока не ясно кд или шанс режет)
-            packet.writeFloat(buffer, 2); // крит дамаг
+            packet.writeFloat(buffer, 2); //crit power
             packet.writeInt(buffer, baseAttack); // базовая атака мин
             packet.writeInt(buffer, baseAttack); // базовая атака макс
             packet.writeInt(buffer, baseDefense);
-            packet.writeShort(buffer, baseImpact);
-            packet.writeShort(buffer,0);//0000 // new
-            packet.writeShort(buffer, baseBalance);
-            packet.writeShort(buffer,0);//0000 // new
+            packet.writeInt(buffer, baseImpact);
+            packet.writeInt(buffer, baseBalance);
             packet.writeFloat(buffer, weakResist);// (Hex)Сопротивление к Ядам 38
             packet.writeFloat(buffer, dmgResist);// (Hex)Сопротивление к повреждениям 38
             packet.writeFloat(buffer, stunResist);// (Hex)Сопротивление к обиздвиживанию 38
             packet.writeInt(buffer, player.getPowerFactor() - template.getPowerFactor()); // бонус к повер фактору
             packet.writeInt(buffer, player.getDefenseFactor() - template.getDefenseFactor()); // бонус к дефенс фактору
 
-            packet.writeShort(buffer, player.getImpactFactor() - template.getImpactFactor()); // бонус к импакт фактору
-            packet.writeShort(buffer,0);//0000 // new
-            packet.writeShort(buffer, player.getBalanceFactor() - template.getBalanceFactor()); // бонус к баланс фактору
-            packet.writeShort(buffer,0);//0000 // new
+            packet.writeInt(buffer, player.getImpactFactor() - template.getImpactFactor()); // бонус к импакт фактору
+            packet.writeInt(buffer, player.getBalanceFactor() - template.getBalanceFactor()); // бонус к баланс фактору
             packet.writeShort(buffer, player.getRunSpeed() - template.getRunSpd()); // Бонус к скорости бега...
-            packet.writeShort(buffer,0);//0000 // new
+            packet.writeShort(buffer,0);//walk speed bonus
             packet.writeShort(buffer, player.getAtkSpd() - template.getAtkSpd()); // бонус к атак спиду
 
             packet.writeFloat(buffer, player.getCritRate(null, null) - template.getCritRate()); // крит рейт бонус
@@ -92,33 +86,29 @@ public class S_Player_Stat_Update extends ServerPacket
             packet.writeInt(buffer, attack - baseAttack); // бонус к атаке мин
             packet.writeInt(buffer, attack - baseAttack); // бонус к атаке макс
             packet.writeInt(buffer, defense - baseDefense); // бонус к защите
-            packet.writeShort(buffer, impact - baseImpact); // бонус к импакту
-            packet.writeShort(buffer, balance - baseBalance); // бонус к балансу
+            packet.writeInt(buffer, impact - baseImpact); // бонус к импакту
+            packet.writeInt(buffer, balance - baseBalance); // бонус к балансу
 
             packet.writeFloat(buffer, player.calcStat(StatType.WEAK_RECEPTIVE, 0, null, null) - weakResist);
             packet.writeFloat(buffer, player.calcStat(StatType.DAMAGE_RECEPTIVE, 0, null, null) - dmgResist);
             packet.writeFloat(buffer, player.calcStat(StatType.STUN_RECEPTIVE, 0, null, null) - stunResist);
-            packet.writeShort(buffer,0);//0000 // new
-            packet.writeShort(buffer,0);//0000 // new
             packet.writeShort(buffer, player.getLevel());
-            packet.writeShort(buffer, player.isBattleStanced() ? 1 : 0);
-            packet.writeShort(buffer, 4);
-            packet.writeByte(buffer, 1);
+            packet.writeByte(buffer, player.isBattleStanced() ? 1 : 0);
+            packet.writeInt(buffer, 4);
             packet.writeInt(buffer, player.getMaxHp() - player.getBaseMaxHp());
             packet.writeInt(buffer, player.getMaxMp() - player.getBaseMaxMp());
             packet.writeInt(buffer, player.getStamina());
             packet.writeInt(buffer, player.getMaxStamina());
-            packet.writeInt(buffer, 0);
-            packet.writeInt(buffer, 0);
-            packet.writeInt(buffer, 0);
-            packet.writeInt(buffer, 0);// карма
+            packet.writeInt(buffer, 0);//re
+            packet.writeInt(buffer, 0);//re max
+            packet.writeInt(buffer, 0);//re bonus
+            packet.writeInt(buffer, player.getKarma());
 
             packet.writeInt(buffer, 0);// Уровень брони
             packet.writeInt(buffer, 0);// Уровень брони
             packet.writeLong(buffer, 0);
             packet.writeInt(buffer, 8000);
-            packet.writeInt(buffer,0x00000003);//03000000
-            packet.writeInt(buffer, 1);
+            packet.writeInt(buffer, 3);//03000000
 
             return packet;
         }

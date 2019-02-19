@@ -55,6 +55,13 @@ public class C_Request_Contract extends ClientPacket {
 
                 player.getAI().startAction(actionType.newInstance(player, name));
             }
+            case ENCHANT_ITEM:
+                player.sendPacket(S_Reply_Request_Contract.getInstance(actionType), true);
+                if(!actionType.isImplemented() || player.hasLastAction())
+                    return;
+
+                player.getAI().startAction(actionType.newInstance(player, ""));
+                break;
             default:
                 break;
         }

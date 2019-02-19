@@ -9,7 +9,7 @@ import tera.gameserver.model.Character;
 import tera.gameserver.model.EmotionType;
 import tera.gameserver.model.npc.playable.NpcAppearance;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.CharDead;
+import tera.gameserver.network.serverpackets.S_Creature_Life;
 import tera.gameserver.network.serverpackets.S_Despawn_Npc;
 import tera.gameserver.network.serverpackets.NpcPlayableInfo;
 import tera.gameserver.network.serverpackets.PlayerBattleStance;
@@ -132,7 +132,7 @@ public class PlayableSummon extends Summon
 	{
 		super.doDie(attacker);
 
-		broadcastPacket(CharDead.getInstance(this, true));
+		broadcastPacket(S_Creature_Life.getInstance(this, true));
 
 		ExecutorManager executorManager = ExecutorManager.getInstance();
 		setSchedule(executorManager.scheduleGeneral(deleteTask, DEAD_TIME));

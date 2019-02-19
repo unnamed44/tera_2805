@@ -796,8 +796,10 @@ public final class Player extends Playable implements Nameable, Identified {
 			dropItems();
 		}
 
-		broadcastPacket(CharDead.getInstance(this, true));
-		sendPacket(PlayerDeadWindow.getInstance(), true);
+		broadcastPacket(S_Creature_Life.getInstance(this, true));
+		sendPacket(S_Show_Dead_UI.getInstance(), true);
+		sendPacket(S_Hide_HP.getInstance(this), true);
+		sendPacket(S_Sytem_Message.getInstance(MessageType.USER_NAME_IS_DEAD).addUserName(this.getName()), true);
 
 		super.doDie(attacker);
 	}
@@ -2528,7 +2530,7 @@ public final class Player extends Playable implements Nameable, Identified {
 
 	@Override
 	public void updateInfo() {
-		sendPacket(UserInfo.getInstance(this), true);
+		sendPacket(S_Player_Stat_Update.getInstance(this), true);
 	}
 
 	@Override
@@ -2574,7 +2576,6 @@ public final class Player extends Playable implements Nameable, Identified {
 	 * обновление квеста на панели.
 	 * 
 	 * @param quest обновляемый квест.
-	 * @param panel новое запраиваемое состояние.
 	 */
 	public void updateQuestInPanel(QuestState quest, QuestPanelState panelState) {
 

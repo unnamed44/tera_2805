@@ -10,6 +10,8 @@ public enum MoveType
 	/** бег */
 	RUN,
 
+	WALK,
+
 	/** падение после бега */
 	RUN_FALL(true, false),
 

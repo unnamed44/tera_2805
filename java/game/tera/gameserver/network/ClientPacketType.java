@@ -96,6 +96,7 @@ public enum ClientPacketType
 	C_REQUEST_UPDATE_NOTICE(0xF27A, new C_Request_Update_Notice()),
 	C_UPDATE_GUILD_TITLE(0xEB8E, new C_Update_Guild_Title()),
 	C_REQUEST_UPDATE_INTRODUCE(0xC9AC, new C_Request_Update_Introduce()),
+	C_REVIVE_NOW(0x8EBE, new RequestRessurect()), // 0C 00 20 E0 00 00 00 00 FF FF FF FF
 
 
 
@@ -125,7 +126,6 @@ public enum ClientPacketType
 	REQUEST_LOCK_ON_TARGET(0xD1F2, new RequestLockOnTarget()),
 	REQUEST_SKILL_ACTION(0xA6B8, new RequestSkillAction()),
 	UPDATE_HOT_KEY(0xB6BA, new UpdateHotKey()),
-	REQUEST_RESSURECT(0x50D1, new RequestRessurect()), // 0C 00 20 E0 00 00 00 00 FF FF FF FF
 	REQUEST_CONFIRM_SERVER(0x9FCA, new RequestConfirmServer()),
 	REQUEST_CHECK_SERVER(0xD6C0, new RequestServerCheck()),
 	REQUEST_LOCAL_TELEPORT(0xCADC, new RequestLocalTeleport()),
@@ -144,7 +144,7 @@ public enum ClientPacketType
 
 	// TODO
 	/** клиентский пакет с выбором скила для изучения */
-	CLIENT_SELECT_SKILL_LEARN(0xE7E0, new SelectSkillLearn()),
+	CLIENT_SELECT_SKILL_LEARN(0xBFDD, new SelectSkillLearn()),
 
 	/** запрос на запуск полета на пегасе по указанному маршруту, версия 172 */
 	REQUEST_NPC_START_PEGAS_FLY(0xC762, new RequestNpcStartPegasFly()), // 08 00 62 C7 08 00 00 00

@@ -4,7 +4,7 @@ import tera.gameserver.manager.ExecutorManager;
 import tera.gameserver.model.Character;
 import tera.gameserver.model.EffectList;
 import tera.gameserver.model.listeners.DieListener;
-import tera.gameserver.network.serverpackets.CharDead;
+import tera.gameserver.network.serverpackets.S_Creature_Life;
 import tera.gameserver.templates.EffectTemplate;
 import tera.gameserver.templates.SkillTemplate;
 
@@ -41,7 +41,7 @@ public class Pheonix extends AbstractEffect implements DieListener, Runnable
 			killed.updateHp();
 
     		// отправляем
-			killed.broadcastPacket(CharDead.getInstance(killed, false));
+			killed.broadcastPacket(S_Creature_Life.getInstance(killed, false));
 		}
 		finally
 		{
