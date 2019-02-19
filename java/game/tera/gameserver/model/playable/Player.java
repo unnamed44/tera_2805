@@ -2496,6 +2496,7 @@ public final class Player extends Playable implements Nameable, Identified {
 
 		//sendPacket(S_Guild_History.getInstance(this), true);
 		sendPacket(S_Guild_Member_List.getInstance(this), true);
+		sendPacket(S_Guild_Name.getInstance(this), true);
 	}
 
 	@Override

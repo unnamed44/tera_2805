@@ -100,7 +100,7 @@ public class ItemCommand extends AbstractCommand
 			}
 			case "item_info":
 			{
-				player.sendPacket(ItemTemplateInfo.getInstance(Integer.parseInt(values)), true);
+				//player.sendPacket(ItemTemplateInfo.getInstance(Integer.parseInt(values), 17), true);
 
 				break;
 			}

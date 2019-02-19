@@ -32,8 +32,8 @@ public class S_Guild_Name extends ServerPacket {
         writeShort(n += Strings.length(player.getGuildName()));//offset rank
         writeShort(n += Strings.length(player.getGuildRank().getName()));//offset unk, (title ?)
         writeShort(n + Strings.length(player.getGuildTitle()));//offset guildemblem
-        writeInt(player.getGuildId());
-        writeInt(0);
+        writeInt(player.getObjectId());
+        writeInt(player.getSubId());
         writeString(player.getGuildName());
         writeString(player.getGuildRank().getName());
         writeString(player.getGuildTitle());

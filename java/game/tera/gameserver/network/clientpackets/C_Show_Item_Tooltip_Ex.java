@@ -1,10 +1,14 @@
 package tera.gameserver.network.clientpackets;
 
+import tera.gameserver.manager.DataBaseManager;
+import tera.gameserver.model.items.ItemInstance;
 import tera.gameserver.model.playable.Player;
 import tera.gameserver.network.serverpackets.ItemTemplateInfo;
 import tera.gameserver.network.serverpackets.S_Inven;
 import tera.gameserver.tables.ItemTable;
 import tera.gameserver.templates.ItemTemplate;
+
+import javax.xml.crypto.Data;
 
 /**
  * Клиентский пакет, запрасывающий пакет инвенторя.
@@ -16,6 +20,10 @@ public class C_Show_Item_Tooltip_Ex extends ClientPacket
     /** игрок */
     private Player player;
     private int itemId;
+    private int type;
+    private int serverId;
+    private int playerId;
+    private String ownerName;
 
     @Override
     public void finalyze()
@@ -34,8 +42,15 @@ public class C_Show_Item_Tooltip_Ex extends ClientPacket
     {
         player = owner.getOwner();
         readShort();
-        readInt();
+        type = readInt();
         itemId = readInt();
+        readInt();
+        readInt();
+        readInt();
+        readInt();
+        serverId = readInt();
+        playerId = readInt();
+        ownerName= readString();
     }
 
     @Override
@@ -44,16 +59,14 @@ public class C_Show_Item_Tooltip_Ex extends ClientPacket
         if(player == null)
             return;
 
+        ItemInstance itemInstance = DataBaseManager.getInstance().getItem(itemId);
         // получаем таблицу итемов
-        ItemTable itemTable = ItemTable.getInstance();
 
-        ItemTemplate template = itemTable.getItem(itemId);
-
-        if(template == null)
+        if(itemInstance == null)
             return;
 
         //player.sendMessage("itemId = " + itemId + ", itemLevel " + template.getItemLevel());
 
-        player.sendPacket(ItemTemplateInfo.getInstance(template.getItemId()), true);
+        player.sendPacket(ItemTemplateInfo.getInstance(itemInstance, type), true);
     }
 }

@@ -54,6 +54,6 @@ public class C_Show_Item_Tooltip extends ClientPacket
 
 		//player.sendMessage("itemId = " + itemId + ", itemLevel " + template.getItemLevel());
 
-		player.sendPacket(ItemTemplateInfo.getInstance(template.getItemId()), true);
+		//player.sendPacket(ItemTemplateInfo.getInstance(template.getItemId()), true);
 	}
 }

@@ -75,6 +75,7 @@ public final class DataBaseManager {
 	private static final String UPDATE_DATA_ITEM = "UPDATE `items` SET `item_count`=?, `has_crystal`=?, `autor`=?, `bonus_id`=?, `enchant_level`=?, `owner_name`=?  WHERE `object_id`=? LIMIT 1";
 	private static final String UPDATE_LOCATION_ITEM = "UPDATE `items` SET `owner_id`=?, `location`=?, `index`=? WHERE `object_id`=? LIMIT 1";
 	private static final String CREATE_ITEM = "INSERT INTO `items` (object_id, item_id, item_count, location) VALUES (?,?,?,?)";
+	private static final String SELECT_ITEM = "SELECT * from `items` WHERE `object_id` = ? LIMIT 1";
 
 	private static final String UPDATE_INVENTORY = "UPDATE `character_inventors` SET `owner_id`=? WHERE `owner_id`=? LIMIT 1";
 	private static final String CREATE_INVENTORY = "INSERT INTO `character_inventors` (owner_id, level) VALUES (?,?)";
@@ -2867,6 +2868,46 @@ public final class DataBaseManager {
 		} finally {
 			DBUtils.closeDatabaseCSR(con, statement, rset);
 		}
+	}
+
+	public final ItemInstance getItem(int objectId) {
+		Connection con = null;
+		PreparedStatement statement = null;
+		ResultSet rset = null;
+
+		try {
+			con = connectFactory.getConnection();
+
+			statement = con.prepareStatement(SELECT_ITEM);
+			statement.setInt(1, objectId);
+
+			rset = statement.executeQuery();
+
+			if(rset.next()) {
+				ItemTable itemTable = ItemTable.getInstance();
+				ItemTemplate template = itemTable.getItem(rset.getInt("item_id"));
+
+				if(template == null)
+					return null;
+
+				ItemInstance item = template.newInstance(rset.getInt("object_id"));
+
+				item.setIndex(rset.getInt("index"));
+				item.setLocation(ItemLocation.VALUES[rset.getInt("location")]);
+				item.setOwnerId(objectId);
+				item.setItemCount(rset.getLong("item_count"));
+				item.setEnchantLevel(rset.getShort("enchant_level"));
+				item.setBonusId(rset.getInt("bonus_id"));
+				item.setAutor(rset.getString("autor"));
+				return item;
+			}
+			// делаем выборку по всем гильдиям
+		} catch(SQLException e) {
+			LOGGER.warning(e);
+		} finally {
+			DBUtils.closeDatabaseCSR(con, statement, rset);
+		}
+		return null;
 	}
 
 	public final void restoreAllianceGuilds(Alliance alliance) {
