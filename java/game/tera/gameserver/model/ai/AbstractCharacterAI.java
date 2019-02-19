@@ -2,14 +2,8 @@ package tera.gameserver.model.ai;
 
 import rlib.util.array.Array;
 import tera.Config;
+import tera.gameserver.model.*;
 import tera.gameserver.model.Character;
-import tera.gameserver.model.EmotionType;
-import tera.gameserver.model.Guild;
-import tera.gameserver.model.MoveType;
-import tera.gameserver.model.Party;
-import tera.gameserver.model.SayType;
-import tera.gameserver.model.TObject;
-import tera.gameserver.model.World;
 import tera.gameserver.model.actions.Action;
 import tera.gameserver.model.items.ItemInstance;
 import tera.gameserver.model.npc.Npc;
@@ -18,11 +12,7 @@ import tera.gameserver.model.resourse.ResourseInstance;
 import tera.gameserver.model.skillengine.Effect;
 import tera.gameserver.model.skillengine.Skill;
 import tera.gameserver.model.skillengine.SkillType;
-import tera.gameserver.network.serverpackets.S_Chat;
-import tera.gameserver.network.serverpackets.S_SOCIAL;
-import tera.gameserver.network.serverpackets.S_Dialog;
-import tera.gameserver.network.serverpackets.NpcSpeak;
-import tera.gameserver.network.serverpackets.S_Npc_Menu_Select;
+import tera.gameserver.network.serverpackets.*;
 import tera.util.LocalObjects;
 
 /**
@@ -292,7 +282,7 @@ public abstract class AbstractCharacterAI<E extends Character> extends AbstractA
 		{
 			player.setLastNpc(npc);
 			player.sendPacket(S_Npc_Menu_Select.getInstance(S_Npc_Menu_Select.SUCCEESS), true);
-			player.sendPacket(NpcSpeak.getInstance(player, npc), true);
+			player.sendPacket(S_Dialog_Event.getInstance(player, npc), true);
 			player.sendPacket(S_Dialog.getInstance(npc, player, npc.getLinks(player)), true);
 		}
 	}
@@ -383,6 +373,10 @@ public abstract class AbstractCharacterAI<E extends Character> extends AbstractA
 			case LOOKING_FOR_GROUP:
 			case GENERAL_CHAT:
 			{
+				if(type == SayType.GENERAL_CHAT && actor.getLevel() < 10) {
+					actor.sendPacket(S_Sytem_Message.getInstance(MessageType.CANT_USE_CHAT_UNTIL_LEVEL_10).add("level", "10"),false);
+					return;
+				}
 				// создаем сообщение
 				S_Chat say = S_Chat.getInstance(actor.getName(), text, type, actor.getObjectId(), actor.getSubId(), actor.isGM());
 

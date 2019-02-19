@@ -7,13 +7,13 @@ import tera.gameserver.network.ServerPacketType;
  *
  * @author Ronn
  */
-public class ResultCheckName extends ServerPacket
+public class S_Str_Evaluate_List extends ServerPacket
 {
-	private static final ServerPacket instance = new ResultCheckName();
+	private static final ServerPacket instance = new S_Str_Evaluate_List();
 
-	public static ResultCheckName getInstance(String name, int type)
+	public static S_Str_Evaluate_List getInstance(String name, int type)
 	{
-		ResultCheckName packet = (ResultCheckName) instance.newInstance();
+		S_Str_Evaluate_List packet = (S_Str_Evaluate_List) instance.newInstance();
 
 		packet.name = name;
 		packet.type = type;
@@ -36,7 +36,7 @@ public class ResultCheckName extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.RESULT_CHECK_NAME;
+		return ServerPacketType.S_STR_EVALUATE_LIST;
 	}
 
 	@Override
@@ -50,6 +50,5 @@ public class ResultCheckName extends ServerPacket
 		writeInt(type);//индекс
 		writeInt(0); //18
 		writeString(name);//текст
-		writeByte(0);
 	}
 }

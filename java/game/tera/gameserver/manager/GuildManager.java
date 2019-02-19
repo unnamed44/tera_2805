@@ -129,7 +129,7 @@ public final class GuildManager
 		Guild guild = new Guild(name, Strings.EMPTY, Strings.EMPTY, idFactory.getNextGuildId(), 1, new GuildIcon(Strings.EMPTY, new byte[0]), 0, 0);
 
 		// создаем ранг ГМ
-		GuildRank rank = GuildRank.newInstance("GuildMaster", GuildRankLaw.GUILD_MASTER, GuildRank.GUILD_MASTER);
+		GuildRank rank = GuildRank.newInstance("Guild master", GuildRankLaw.GUILD_MASTER, GuildRank.GUILD_MASTER);
 
 		// если не удалось создать ранг, выходим
 		if(!dbManager.createGuildRank(guild, rank))
@@ -139,7 +139,7 @@ public final class GuildManager
 		guild.addRank(rank);
 
 		// создаем ранг обычного члена группы
-		rank = GuildRank.newInstance("Member", GuildRankLaw.MEMBER, GuildRank.GUILD_MEMBER);
+		rank = GuildRank.newInstance("Recruit", GuildRankLaw.MEMBER, GuildRank.GUILD_MEMBER);
 
 		// если не удалось его создать, выходим
 		if(!dbManager.createGuildRank(guild, rank))

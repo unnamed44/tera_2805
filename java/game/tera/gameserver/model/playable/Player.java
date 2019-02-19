@@ -210,6 +210,8 @@ public final class Player extends Playable implements Nameable, Identified {
 
 	private int allianceClass;
 
+	private String description;
+
 	/**
 	 * @param objectId уникальный ид игрока.
 	 * @param template темплейт игрока.
@@ -1383,6 +1385,10 @@ public final class Player extends Playable implements Nameable, Identified {
 		return title;
 	}
 
+	public String getDescription() {
+		return description;
+	}
+
 	/**
 	 * Получение значения переменной.
 	 * 
@@ -2056,6 +2062,10 @@ public final class Player extends Playable implements Nameable, Identified {
 
 	public void setAllianceClass(int allianceClass) {
 		this.allianceClass = allianceClass;
+	}
+
+	public final void setDescription(String description) {
+		this.description = description;
 	}
 
 	/**

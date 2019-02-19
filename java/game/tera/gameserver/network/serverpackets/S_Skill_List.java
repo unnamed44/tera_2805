@@ -68,11 +68,12 @@ public final class S_Skill_List extends ServerPacket
 						if(counter == 0)
 							index = 0;
 						else
-							index += 9;
+							index += 10;
 
 						packet.writeShort(buffer, index);
 						packet.writeInt(buffer, skill.getId());
 						packet.writeByte(buffer, skill.isActive()? 1 : 0);
+						packet.writeByte(buffer, 0);//union
 					}
 				}
 			}

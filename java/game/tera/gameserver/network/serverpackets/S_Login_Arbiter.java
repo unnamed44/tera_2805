@@ -5,10 +5,13 @@ import tera.gameserver.network.ServerPacketType;
 public class S_Login_Arbiter extends ServerPacket
 {
     private static final ServerPacket instance = new S_Login_Arbiter();
+    private int language;
 
-    public static ServerPacket getInstance()
+    public static ServerPacket getInstance(int language)
     {
-        return instance.newInstance();
+        S_Login_Arbiter packet = (S_Login_Arbiter) instance.newInstance();
+        packet.language = language;
+        return packet;
     }
 
     @Override
@@ -21,11 +24,15 @@ public class S_Login_Arbiter extends ServerPacket
     protected void writeImpl()
     {
         writeOpcode();
-        writeLong(0x0000001000200010L);
-        writeLong(0x0000000000600000);
+        writeByte(1);//success
         writeByte(0);
-        writeByte(0);
-        writeByte(0);
+        writeShort(2);
+        writeShort(1);
+        writeInt(0);
+        writeInt(language);
+        writeByte(1);//pvp disable
+        writeShort(0);
+        writeShort(0);
     }
 }
 

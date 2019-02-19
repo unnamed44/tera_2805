@@ -91,6 +91,7 @@ public final class DataBaseManager {
 	private static final String UPDATE_PLAYER_CONTINENT_ID = "UPDATE `characters` SET `continent_id`=? WHERE `object_id`=? LIMIT 1";
 	private static final String UPDATE_PLAYER_GUILD = "UPDATE `characters` SET `guild_id`=?, `guild_rank`=? WHERE `object_id`=? LIMIT 1";
 	private static final String UPDATE_PLAYER_TITLE = "UPDATE `characters` SET `title`= ? WHERE `object_id`= ? LIMIT 1";
+	private static final String UPDATE_PLAYER_DESCRIPTION = "UPDATE `characters` SET `description`= ? WHERE `object_id`= ? LIMIT 1";
 	private static final String UPDATE_PLAYER_GUILD_NOTE = "UPDATE `characters` SET `guild_note`= ? WHERE `object_id`= ? LIMIT 1";
 
 	private static final String CREATE_QUEST = "REPLACE INTO `character_quests` (object_id, quest_id, state, date) VALUES (?,?,?,?)";
@@ -156,7 +157,7 @@ public final class DataBaseManager {
 	private static final String SELECT_GUILD_NAME = "SELECT id FROM `guilds` WHERE `name`= ?";
 	private static final String SELECT_GUILD_RANKS = "SELECT * FROM `guild_ranks` WHERE `guild_id` = ?";
 	private static final String SELECT_GUILD_APPLY = "SELECT * FROM `wait_guild_apply` g LEFT JOIN `characters` c ON (c.`object_id` = g.`character_id`) where g.`guild_id` = ?";
-	private static final String DELETE_GUILD_APPLY = "DELETE FROM `wait_guild_apply` WHERE `player_id` = ? AND `guild_id` = ?";
+	private static final String DELETE_GUILD_APPLY = "DELETE FROM `wait_guild_apply` WHERE `character_id` = ? AND `guild_id` = ?";
 	private static final String DELETE_ALL_GUILD_APPLY = "DELETE FROM `wait_guild_apply` WHERE `character_id` = ?";
 	private static final String SELECT_GUILD_BANK_ITEMS = "SELECT * FROM `items` WHERE `owner_id` = ? AND `location` = '" + ItemLocation.GUILD_BANK.ordinal() + "' LIMIT "
 			+ (Config.WORLD_GUILD_BANK_MAX_SIZE + 1);
@@ -884,6 +885,7 @@ public final class DataBaseManager {
 				player.setMiningLevel(rset.getInt("collect_mining"));
 				player.setPlantLevel(rset.getInt("collect_plant"));
 				player.setAllianceClass(rset.getInt("union_level"));
+				player.setDescription(rset.getString("description"));
 
 				heart = rset.getInt("heart");
 				hp = rset.getInt("hp");
@@ -3947,6 +3949,31 @@ public final class DataBaseManager {
 
 			statement = con.prepareStatement(UPDATE_PLAYER_TITLE);
 			statement.setString(1, player.getTitle());
+			statement.setInt(2, player.getObjectId());
+			statement.execute();
+
+			return true;
+		} catch(SQLException e) {
+			LOGGER.warning(e);
+		} finally {
+			DBUtils.closeDatabaseCS(con, statement);
+		}
+
+		return false;
+	}
+
+	public final boolean updatePlayerDescription(Player player) {
+		if(player == null)
+			return false;
+
+		Connection con = null;
+		PreparedStatement statement = null;
+
+		try {
+			con = connectFactory.getConnection();
+
+			statement = con.prepareStatement(UPDATE_PLAYER_DESCRIPTION);
+			statement.setString(1, player.getDescription());
 			statement.setInt(2, player.getObjectId());
 			statement.execute();
 

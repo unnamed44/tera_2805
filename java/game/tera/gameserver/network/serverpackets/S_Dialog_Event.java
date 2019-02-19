@@ -9,13 +9,13 @@ import tera.gameserver.network.ServerPacketType;
  *
  * @author Ronn
  */
-public class NpcSpeak extends ServerPacket
+public class S_Dialog_Event extends ServerPacket
 {
-	private static final ServerPacket instance = new NpcSpeak();
+	private static final ServerPacket instance = new S_Dialog_Event();
 
-	public static NpcSpeak getInstance(Character target, Npc npc)
+	public static S_Dialog_Event getInstance(Character target, Npc npc)
 	{
-		NpcSpeak packet = (NpcSpeak) instance.newInstance();
+		S_Dialog_Event packet = (S_Dialog_Event) instance.newInstance();
 
 		packet.target = target;
 		packet.npc = npc;
@@ -39,7 +39,7 @@ public class NpcSpeak extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.NPC_SPEAK;
+		return ServerPacketType.S_DIALOG_EVENT;
 	}
 
 	@Override

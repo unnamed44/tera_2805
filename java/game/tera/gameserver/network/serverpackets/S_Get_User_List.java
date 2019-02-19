@@ -81,7 +81,7 @@ public class S_Get_User_List extends ServerPacket
 				packet.writeInt(buffer, 0);
 
 				packet.writeShort(buffer, sizeTo += 304); // amount of bytes before char name starts... // same here needs update to
-				packet.writeShort(buffer, sizeTo + Strings.length(current.getName())); //
+				packet.writeShort(buffer, sizeTo + Strings.length(current.getName())); //details1
 				packet.writeShort(buffer, 32); //
 				packet.writeShort(buffer, sizeTo + 32 + Strings.length(current.getName())); // new details2 shif
 				packet.writeShort(buffer, 64); // shift the right amount

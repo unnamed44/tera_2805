@@ -30,22 +30,7 @@ public class S_Check_Version extends ServerPacket
 	@Override
 	protected void writeImpl()
 	{
-		switch(result)
-		{
-			case SUCCESSFUL:
-			{
-				writeOpcode();
-				writeByte(1);
-
-				owner.sendPacket(S_Auth_Successful.getInstance(), true);
-				owner.sendPacket(S_Loading_Screen_Control_Info.getInstance(), true);
-				owner.sendPacket(S_Remain_Play_Time.getInstance(), true);
-				owner.sendPacket(S_Login_Arbiter.getInstance(), true);
-				owner.sendPacket(S_Login_Account_Info.getInstance(),true);
-
-				break;
-			}
-			case INCORRECT:	owner.sendPacket(S_Auth_Failed.getInstance(), true);
-		}
+		writeOpcode();
+		writeByte((result == SUCCESSFUL) ? 1 : 0);
 	}
 }

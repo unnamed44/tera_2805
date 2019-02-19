@@ -1,5 +1,6 @@
 package tera.gameserver.network.serverpackets;
 
+import tera.gameserver.model.playable.Player;
 import tera.gameserver.network.ServerPacketType;
 import tera.gameserver.network.serverpackets.ServerConstPacket;
 
@@ -12,10 +13,15 @@ public class S_My_Description extends ServerConstPacket
 {
     private static final S_My_Description instance = new S_My_Description();
 
-    public static S_My_Description getInstance()
+    public static S_My_Description getInstance(Player player)
     {
-        return instance;
+        S_My_Description packet = (S_My_Description) instance.newInstance();
+        packet.player = player;
+
+        return packet;
     }
+
+    private Player player;
 
     @Override
     public ServerPacketType getPacketType()
@@ -27,7 +33,7 @@ public class S_My_Description extends ServerConstPacket
     protected void writeImpl(ByteBuffer buffer)
     {
         writeOpcode(buffer);
-        writeInt(buffer, 0x00000006);
-
+        writeShort(buffer,6);
+        writeString(buffer, player.getDescription());//description
     }
 }

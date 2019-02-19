@@ -211,6 +211,8 @@ public enum MessageType
 
 	UNION_CHANGE_TAX_RATE("@2434"),
 
+	CANT_USE_CHAT_UNTIL_LEVEL_10("@1946"),
+
 	;
 
 	private String name;

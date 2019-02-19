@@ -21,7 +21,11 @@ public class S_Remain_Play_Time extends ServerPacket
     protected void writeImpl()
     {
         writeOpcode();
-        writeLong(0x000668AD00000000L);
+        writeInt(6);//account type
+        //1 = P2P (active subscription), 2 = P2P (no active subscription)
+        //3 = F2P (free-play event), 4 = F2P (legacy restriction)
+        //5 = Premium, 6 = Basic
+        writeInt(0);//minutes left
     }
 }
 

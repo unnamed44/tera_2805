@@ -9,7 +9,7 @@ import rlib.util.array.Arrays;
 import tera.Config;
 import tera.gameserver.model.Account;
 import tera.gameserver.network.model.UserClient;
-import tera.gameserver.network.serverpackets.S_Check_Version;
+import tera.gameserver.network.serverpackets.*;
 
 /**
  * Менеджер работы с аккаунтами.
@@ -188,7 +188,7 @@ public final class AccountManager
 	 * @param password пароль аккаунта.
 	 * @param client клиент, который пробует войти на сервер.
 	 */
-	public final void login(String accountName, String password, UserClient client)
+	public final void login(String accountName, String password, UserClient client, int language)
 	{
 		// если некорректные данные то выходим
 		if(accountName == null || password == null || password.length() < 6 || password.length() > 45 || accountName.length() < 4 || accountName.length() > 14)
@@ -315,6 +315,11 @@ public final class AccountManager
 
 		// отправляем клиенту про успешную авторизаци.
 		client.sendPacket(S_Check_Version.getInstance(S_Check_Version.SUCCESSFUL), true);
+		client.sendPacket(S_Auth_Successful.getInstance(), true);
+		client.sendPacket(S_Loading_Screen_Control_Info.getInstance(), true);
+		client.sendPacket(S_Remain_Play_Time.getInstance(), true);
+		client.sendPacket(S_Login_Arbiter.getInstance(language), true);
+		client.sendPacket(S_Login_Account_Info.getInstance(),true);
 	}
 
 	/**

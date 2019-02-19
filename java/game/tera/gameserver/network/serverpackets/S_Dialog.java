@@ -43,11 +43,11 @@ public class S_Dialog extends ServerPacket
 			packet.writeInt(buffer, npc == null? 0 : template.getIconId());// 66 00 00 00 нпц темплейт ид
 			packet.writeInt(buffer, npc == null? 0 : npc.getTemplateType());// 0D 00 класс моба
 			packet.writeInt(buffer, 0);// 00 00 00 00
-			packet.writeInt(buffer, 2);// 01 00 00 00
+			packet.writeInt(buffer, 1);// 01 00 00 00
 
 			packet.writeInt(buffer, 0x31C9479E); // 0xBCB8A17B
-			packet.writeByte(buffer, 1);
-			packet.writeInt(buffer, 1);
+			packet.writeByte(buffer, 0);
+			packet.writeInt(buffer, 0);
 			packet.writeInt(buffer, 1);
 			packet.writeInt(buffer, 0);
 			packet.writeInt(buffer, 0);
@@ -87,8 +87,8 @@ public class S_Dialog extends ServerPacket
 						packet.writeShort(buffer, startLink);
 
 					packet.writeShort(buffer, startNameLink); // (первый байт описания данной ссылки в пакете) + 8
-					packet.writeInt(buffer, link.getIconId());// номер ссылки
 					packet.writeInt(buffer, i + 1); // 19 квест взять, 9 квест след этап или окончание, 26 трейд, 28 магазины,
+					packet.writeInt(buffer, link.getIconId());// номер ссылки
 					packet.writeString(buffer, name);
 				}
 			}

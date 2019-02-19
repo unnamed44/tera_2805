@@ -1,5 +1,6 @@
 package tera.gameserver.network.clientpackets;
 
+import tera.gameserver.model.playable.Player;
 import tera.gameserver.network.serverpackets.S_Guild_History;
 
 public class C_Get_Guild_History extends ClientPacket {
@@ -11,6 +12,8 @@ public class C_Get_Guild_History extends ClientPacket {
 
     @Override
     protected void runImpl() {
-        owner.getOwner().sendPacket(S_Guild_History.getInstance(owner.getOwner()), true);
+        Player player = owner.getOwner();
+        if(player.hasGuild())
+            player.sendPacket(S_Guild_History.getInstance(player), true);
     }
 }

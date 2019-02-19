@@ -1,7 +1,7 @@
 package tera.gameserver.network.clientpackets;
 
 import tera.Config;
-import tera.gameserver.network.serverpackets.ResultCheckName;
+import tera.gameserver.network.serverpackets.S_Str_Evaluate_List;
 
 /**
  * Запрос клиента на проверку корректности имени.
@@ -58,6 +58,6 @@ public class C_Str_Evaluate_List extends ClientPacket
         }
 
         // ложим на отправку
-        owner.sendPacket(ResultCheckName.getInstance(name, type), true);
+        owner.sendPacket(S_Str_Evaluate_List.getInstance(name, type), true);
     }
 }

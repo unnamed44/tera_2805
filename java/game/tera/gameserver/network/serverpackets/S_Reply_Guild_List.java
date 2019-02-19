@@ -57,7 +57,7 @@ public class S_Reply_Guild_List extends ServerPacket {
             writeInt(0);
             writeInt(guild.getPraiseNumber());//praise
             writeByte(1);//can be praised
-            writeInt(3);
+            writeInt(guild.getAllianceId());//alliance
             writeByte(0);
             writeString(guild.getName());
             writeString(guild.getLeader().getName());

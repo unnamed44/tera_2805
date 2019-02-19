@@ -84,14 +84,14 @@ public class S_Guild_Info extends ServerPacket
 
 			packet.writeInt(buffer, 0);
 			packet.writeShort(buffer, 0);
-			packet.writeInt(buffer, 1);
-			packet.writeLong(buffer, 341);//?
-			packet.writeLong(buffer, 341);//?
-			packet.writeByte(buffer, 1);
-			packet.writeInt(buffer, 32399);
+			packet.writeInt(buffer, 3);//1/3 ?
+			packet.writeLong(buffer, 0);//?
+			packet.writeLong(buffer, 0);//?
+			packet.writeByte(buffer, 1);//0
+			packet.writeInt(buffer, 3599);//32399?
 			packet.writeInt(buffer, 0);
-			packet.writeInt(buffer, 0);
-			packet.writeInt(buffer, 0);
+			packet.writeInt(buffer, -1);
+			packet.writeInt(buffer, -1);
 
 			packet.writeString(buffer, guild.getName());
 			packet.writeString(buffer, guild.getTitle());

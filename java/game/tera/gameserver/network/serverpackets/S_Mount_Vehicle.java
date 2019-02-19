@@ -47,5 +47,6 @@ public class S_Mount_Vehicle extends ServerPacket
         writeInt(subId);//00 80 00 13 саб ид наш
         writeInt(mountId);//ид петомца 1 простая лошадь, 29 лев
         writeInt(skillId);//07 B2 01 00 ид скила
+		writeByte(0);
 	}
 }

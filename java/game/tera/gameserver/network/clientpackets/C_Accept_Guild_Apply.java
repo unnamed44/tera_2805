@@ -34,6 +34,7 @@ public class C_Accept_Guild_Apply extends ClientPacket {
 
     @Override
     protected void runImpl() {
+        //todo: remove apply
         for(GuildApply apply : applies) {
             DataBaseManager dataBaseManager = DataBaseManager.getInstance();
             if(accept == 1){

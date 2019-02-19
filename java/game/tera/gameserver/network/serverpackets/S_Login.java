@@ -138,6 +138,8 @@ public class S_Login extends ServerPacket
 					packet.writeInt(buffer, player.getAllianceClass());//union class 100-301-302-303-400
 					packet.writeInt(buffer, 0);//union echelon
 				}
+				else
+					packet.writeLong(buffer,0);
 			}
 			else {
 				packet.writeInt(buffer, 0);

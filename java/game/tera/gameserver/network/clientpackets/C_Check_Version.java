@@ -12,15 +12,18 @@ import tera.gameserver.network.serverpackets.S_Check_Version;
 public class C_Check_Version extends ClientPacket
 {
 	/** логин */
-	private String accountName;
+	private int code1;
 	/** парль */
-	private String password;
+	private int code2;
+
+	private static final int server_code1 = 343341;
+	private static final int server_code2 = 265949;
 
 	@Override
 	public void finalyze()
 	{
-		accountName = null;
-		password = null;
+		code1 = -1;
+		code2 = -1;
 	}
 
 	@Override
@@ -33,15 +36,10 @@ public class C_Check_Version extends ClientPacket
 	public void readImpl()
 	{
 		readLong();
-		readLong();
-		readLong();
-		readLong();
-		readLong();
 		readInt();
-		readShort();
-		accountName = readS();
-		readByte();
-		password = readPassword();
+		code1 = readInt();
+		readLong();
+		code2 = readInt();
     }
 
 	@Override

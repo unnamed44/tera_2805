@@ -473,7 +473,7 @@ public final class PlayerManager
 		player.sendPacket(S_Pet_Info_Clear.getInstance(), false);
 		player.sendPacket(S_Virtual_Latency.getInstance(), false);
 		player.sendPacket(S_Move_Distance_Delta.getInstance(), false);
-		player.sendPacket(S_My_Description.getInstance(), false);
+		player.sendPacket(S_My_Description.getInstance(player), false);
 		player.sendPacket(S_Masstige_Status.getInstance(), false);
 		player.sendPacket(S_Festival_List.getInstance(), false);
 

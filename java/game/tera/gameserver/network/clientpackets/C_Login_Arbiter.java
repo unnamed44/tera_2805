@@ -14,10 +14,12 @@ public class C_Login_Arbiter extends ClientPacket
     private String accountName;
     /** парль */
     private String password;
+    private int language;
 
     @Override
     public void finalyze()
     {
+        language = 0;
         accountName = null;
         password = null;
     }
@@ -32,10 +34,10 @@ public class C_Login_Arbiter extends ClientPacket
     public void readImpl()
     {
         readLong();
-        readInt();
         readShort();
-        accountName = readS();
         readByte();
+        language = readInt();
+        accountName = readString();
         password = readPassword();
     }
 
@@ -45,6 +47,6 @@ public class C_Login_Arbiter extends ClientPacket
         // получаем менеджера аккаунтов
         AccountManager accountManager = AccountManager.getInstance();
 
-        accountManager.login(accountName, password, owner);
+        accountManager.login(accountName, password, owner, language);
     }
 }
