@@ -54,7 +54,7 @@ public enum ActionType
 	NONE31(null),
 	BIND_ITEM(BindItemAction.class),
 	NONE32(null),
-	ENCHANT_ITEM(EnchantItemAction.class), ;
+	ENCHANT_ITEM(EnchantItemAction.class) ;
 
 	/** массив типов */
 	public static final ActionType[] ELEMENTS = values();

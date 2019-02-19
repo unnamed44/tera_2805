@@ -158,11 +158,11 @@ public class PlayerAI extends AbstractCharacterAI<Player>
 			return;
 
 		// если индекс меньше 20, значит это снятие итема
-		if(index < 20)
+		if(index < 40)
 			equipment.shootItem(inventory, index - 1, itemId);
 		// иначе это одевание итема из инвенторя
 		else
-			equipment.dressItem(inventory, inventory.getCell(index - 20));
+			equipment.dressItem(inventory, inventory.getCell(index - 40));
 	}
 
 	@Override

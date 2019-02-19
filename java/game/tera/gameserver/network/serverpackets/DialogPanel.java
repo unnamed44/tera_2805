@@ -57,7 +57,7 @@ public class DialogPanel extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.NPC_DIALOG_SKILL_LEARN_PANEL;
+		return ServerPacketType.S_REQUEST_CONTRACT;
 	}
 
 	@Override
