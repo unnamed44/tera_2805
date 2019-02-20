@@ -9,13 +9,13 @@ import tera.gameserver.network.ServerPacketType;
  * 
  * @author Ronn
  */
-public class PegasFly extends ServerPacket
+public class S_Sync_Pegasus_Time extends ServerPacket
 {
-	private static final ServerPacket instance = new PegasFly();
+	private static final ServerPacket instance = new S_Sync_Pegasus_Time();
 	
-	public static PegasFly getInstance(Character actor, Route route, int value)
+	public static S_Sync_Pegasus_Time getInstance(Character actor, Route route, int value)
 	{
-		PegasFly packet = (PegasFly) instance.newInstance();
+		S_Sync_Pegasus_Time packet = (S_Sync_Pegasus_Time) instance.newInstance();
 		
 		packet.actor = actor;
 		packet.route = route;
@@ -42,7 +42,7 @@ public class PegasFly extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.FLY_PEGAS;
+		return ServerPacketType.S_SYNC_PEGASUS_TIME;
 	}
 
 	@Override

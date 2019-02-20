@@ -11,7 +11,7 @@ import tera.gameserver.model.playable.Player;
  * @author Ronn
  * @created 26.02.2012
  */
-public class RequestNpcStartPegasFly extends ClientPacket
+public class C_Ride_Pegasus extends ClientPacket
 {
 	/** игрок */
 	private Player player;

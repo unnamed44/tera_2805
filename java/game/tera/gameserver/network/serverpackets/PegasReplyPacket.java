@@ -34,21 +34,20 @@ public class PegasReplyPacket extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.FLY_PEGAS_REPLY_PACKET;
+		return ServerPacketType.S_REQUEST_CONTRACT;
 	}
 
 	@Override
 	protected void writeImpl()
 	{
-		//writeOpcode();
-		writeShort(ServerPacketType.PLAYER_WAITING_ACTION.getOpcode());
-		writeShort(0x2c);
-		writeShort(0x3e);	
-		writeInt(0x40);
+		writeOpcode();
+		writeShort(44);
+		writeShort(58);
+		writeInt(60);
 		writeInt(player.getObjectId());
 		writeInt(player.getSubId());
 		writeLong(0);//00 00 00 00  00 00 00 00
-		writeInt(0x0F);
+		writeInt(15);
 		writeInt(0x989b0300);
 		writeLong(0);//00 00 00 00  00 00 00 00
 		writeS(player.getName());

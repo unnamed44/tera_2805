@@ -9,13 +9,13 @@ import tera.gameserver.network.ServerPacketType;
  * @author Ronn
  *
  */
-public class GetOffPegas extends ServerPacket
+public class S_End_Pegasus extends ServerPacket
 {
-	private static final ServerPacket instance = new GetOffPegas();
+	private static final ServerPacket instance = new S_End_Pegasus();
 	
-	public static GetOffPegas getInstance(Character actor)
+	public static S_End_Pegasus getInstance(Character actor)
 	{
-		GetOffPegas packet = (GetOffPegas) instance.newInstance();
+		S_End_Pegasus packet = (S_End_Pegasus) instance.newInstance();
 		
 		packet.actor = actor;
 		
@@ -34,7 +34,7 @@ public class GetOffPegas extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.GET_OFF_PEGAS;
+		return ServerPacketType.S_END_PEGASUS;
 	}
 
 	@Override

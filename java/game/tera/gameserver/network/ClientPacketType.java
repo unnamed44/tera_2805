@@ -99,6 +99,9 @@ public enum ClientPacketType
 	C_REVIVE_NOW(0x8EBE, new C_Revive_Now()), // 0C 00 20 E0 00 00 00 00 FF FF FF FF
     C_REQUEST_USER_PAPERDOLL_INFO_WITH_GAMEID(0xAB81, new C_Request_User_Paperdoll_Info_With_Gameid()),
 	C_UNEQUIP_ITEM(0xD491, new C_Equip_Item()),
+	C_END_MOVIE(0x7BC6, new C_End_Movie()),
+	C_RIDE_PEGASUS(0x96B3, new C_Ride_Pegasus()), // 08 00 62 C7 08 00 00 00
+
 
 
 
@@ -149,7 +152,6 @@ public enum ClientPacketType
 	CLIENT_SELECT_SKILL_LEARN(0xBFDD, new SelectSkillLearn()),
 
 	/** запрос на запуск полета на пегасе по указанному маршруту, версия 172 */
-	REQUEST_NPC_START_PEGAS_FLY(0xC762, new RequestNpcStartPegasFly()), // 08 00 62 C7 08 00 00 00
 
 	/** запрос на закрытие диалогов, версия 172 */
 	REQUEST_DIALOG_CANCEL(0xBFB9, new RequestDialogCancel()), // 0C 00 31 C5 09 00 00 00 65 B1 B6 48
@@ -162,8 +164,6 @@ public enum ClientPacketType
 	ASSENT_TRADE(0x65A6, new AssentTrade()), // A6 65 03 00
 	/** отмена трейда, версия 172 0x72D6 */
 	CANCEL_TRADE(0x72D6, new CancelTrade()), // D6 72 03 00 00 00 00 00 00 00
-
-	QUEST_MOVIE_ENDED(0x920B, new QuestMovieEnded()),
 
 	/** запрос на приглашение игрока в акшен, версия 172 */
 	REQUEST_ACTION_INVITE(0xADE2, new RequestActionInvite()),

@@ -8,7 +8,7 @@ import tera.gameserver.model.playable.Player;
  *
  * @author Ronn
  */
-public class QuestMovieEnded extends ClientPacket
+public class C_End_Movie extends ClientPacket
 {
 	/** игрок */
 	private Player player;

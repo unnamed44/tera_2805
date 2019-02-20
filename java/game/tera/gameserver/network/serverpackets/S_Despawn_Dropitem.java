@@ -8,13 +8,13 @@ import tera.gameserver.network.ServerPacketType;
  * 
  * @author Ronn
  */
-public class DeleteItem extends ServerPacket
+public class S_Despawn_Dropitem extends ServerPacket
 {
-	private static final ServerPacket instance = new DeleteItem();
+	private static final ServerPacket instance = new S_Despawn_Dropitem();
 	
-	public static DeleteItem getInstance(ItemInstance item)
+	public static S_Despawn_Dropitem getInstance(ItemInstance item)
 	{
-		DeleteItem packet = (DeleteItem) instance.newInstance();
+		S_Despawn_Dropitem packet = (S_Despawn_Dropitem) instance.newInstance();
 		
 		packet.objectId = item.getObjectId();
 		packet.subId = item.getSubId();
@@ -30,7 +30,7 @@ public class DeleteItem extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.ITEM_DELETE;
+		return ServerPacketType.S_DESPAWN_DROPITEM;
 	}
 
 	@Override

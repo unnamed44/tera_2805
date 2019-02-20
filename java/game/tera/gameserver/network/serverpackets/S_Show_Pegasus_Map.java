@@ -15,13 +15,13 @@ import tera.gameserver.network.ServerPacketType;
  * @author Ronn
  * @created 26.02.2012
  */
-public class PegasRouts extends ServerPacket
+public class S_Show_Pegasus_Map extends ServerPacket
 {
-	private static final ServerPacket instance = new PegasRouts();
+	private static final ServerPacket instance = new S_Show_Pegasus_Map();
 
-	public static PegasRouts getInstance(Table<IntKey, Route> routs, int townId)
+	public static S_Show_Pegasus_Map getInstance(Table<IntKey, Route> routs, int townId)
 	{
-		PegasRouts packet = (PegasRouts) instance.newInstance();
+		S_Show_Pegasus_Map packet = (S_Show_Pegasus_Map) instance.newInstance();
 
 		packet.routs = routs;
 		packet.townId = townId;
@@ -38,7 +38,7 @@ public class PegasRouts extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.ROUTE_PEGAS;
+		return ServerPacketType.S_SHOW_PEGASUS_MAP;
 	}
 
 	@Override

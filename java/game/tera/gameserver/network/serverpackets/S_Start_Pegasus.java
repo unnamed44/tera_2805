@@ -8,13 +8,13 @@ import tera.gameserver.network.ServerPacketType;
  *
  * @author Ronn
  */
-public class PutAnPegas extends ServerPacket
+public class S_Start_Pegasus extends ServerPacket
 {
-	private static final ServerPacket instance = new PutAnPegas();
+	private static final ServerPacket instance = new S_Start_Pegasus();
 
-	public static PutAnPegas getInstance(Character actor)
+	public static S_Start_Pegasus getInstance(Character actor)
 	{
-		PutAnPegas packet = (PutAnPegas) instance.newInstance();
+		S_Start_Pegasus packet = (S_Start_Pegasus) instance.newInstance();
 
 		packet.actor = actor;
 
@@ -33,7 +33,7 @@ public class PutAnPegas extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.PUT_AN_PEGAS;
+		return ServerPacketType.S_START_PEGASUS;
 	}
 
 	@Override
