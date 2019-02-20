@@ -17,6 +17,9 @@ import tera.gameserver.model.resourse.ResourseInstance;
 import tera.gameserver.model.skillengine.Effect;
 import tera.gameserver.model.skillengine.Skill;
 import tera.gameserver.model.skillengine.SkillType;
+import tera.gameserver.network.serverpackets.S_Equip_Item;
+import tera.gameserver.network.serverpackets.S_Inven_Changedslot;
+import tera.gameserver.network.serverpackets.S_Unequip_Item;
 
 /**
  * Модель АИ игрока.
@@ -159,11 +162,13 @@ public class PlayerAI extends AbstractCharacterAI<Player>
 			return;
 
 		// если индекс меньше 20, значит это снятие итема
-		if(index < 40)
-			equipment.shootItem(inventory, index - 1, itemId);
+		if(index < 40){
+            equipment.shootItem(inventory, index - 1, itemId);
+        }
 		// иначе это одевание итема из инвенторя
-		else
-			equipment.dressItem(inventory, inventory.getCell(index - 40));
+		else{
+            equipment.dressItem(inventory, inventory.getCell(index - 40));
+        }
 
 	}
 

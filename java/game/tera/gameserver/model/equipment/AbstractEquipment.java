@@ -14,6 +14,9 @@ import tera.gameserver.model.items.CrystalInstance;
 import tera.gameserver.model.items.CrystalList;
 import tera.gameserver.model.items.ItemInstance;
 import tera.gameserver.model.items.ItemLocation;
+import tera.gameserver.model.playable.Player;
+import tera.gameserver.network.serverpackets.S_Equip_Item;
+import tera.gameserver.network.serverpackets.S_Inven_Changedslot;
 
 /**
  * Фундаментальная модель экиперовки.
@@ -194,6 +197,8 @@ public abstract class AbstractEquipment implements Equipment
 
 					// обновляем статы
 					eventManager.notifyStatChanged(owner);
+					owner.sendPacket(S_Equip_Item.getInstance((Player )owner, item.getItemId()),true);
+					owner.sendPacket(S_Inven_Changedslot.getInstance(1, empty.getIndex(), 0),true);
 
 					return true;
 				}

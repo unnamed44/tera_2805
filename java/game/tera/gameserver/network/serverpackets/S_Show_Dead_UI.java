@@ -32,7 +32,7 @@ public class S_Show_Dead_UI extends ServerConstPacket
 	{
 		writeOpcode(buffer);
 		writeInt(buffer, 30);
-		writeInt(buffer,78001);//zone
+		writeInt(buffer,zone);//zone
 		writeInt(buffer, 0);
         writeShort(buffer, 0);
         writeByte(buffer, 0);

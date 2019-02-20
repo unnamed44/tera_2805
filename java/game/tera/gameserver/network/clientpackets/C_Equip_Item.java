@@ -1,6 +1,7 @@
 package tera.gameserver.network.clientpackets;
 
 import tera.gameserver.model.playable.Player;
+import tera.gameserver.network.serverpackets.S_Inven_Changedslot;
 import tera.gameserver.network.serverpackets.S_User_External_Change;
 
 /**

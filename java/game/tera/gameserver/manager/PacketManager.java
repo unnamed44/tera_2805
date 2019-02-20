@@ -345,7 +345,7 @@ public final class PacketManager
 	 */
 	public static void updateInventory(Player player)
 	{
-		player.sendPacket(S_Inven.getInstance(player), true);
+		player.sendPacket(S_Inven.getInstance(player, true, true), false );
 	}
 
 	/**

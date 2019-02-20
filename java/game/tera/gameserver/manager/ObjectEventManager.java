@@ -638,7 +638,7 @@ public final class ObjectEventManager
 		if(owner.isPlayer())
 		{
 			// обновляем его экиперовку
-			PacketManager.updateEquip(owner);
+			//PacketManager.updateEquip(owner);
 
 			// обновляем инвентарь
 			PacketManager.updateInventory(owner.getPlayer());

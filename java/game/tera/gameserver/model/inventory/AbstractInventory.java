@@ -14,6 +14,9 @@ import tera.gameserver.manager.ObjectEventManager;
 import tera.gameserver.model.Character;
 import tera.gameserver.model.items.ItemInstance;
 import tera.gameserver.model.items.ItemLocation;
+import tera.gameserver.model.playable.Player;
+import tera.gameserver.network.serverpackets.S_Inven_Changedslot;
+import tera.gameserver.network.serverpackets.S_Unequip_Item;
 import tera.gameserver.tables.ItemTable;
 import tera.gameserver.templates.ItemTemplate;
 import tera.util.LocalObjects;
@@ -834,6 +837,8 @@ public abstract class AbstractInventory implements Inventory
 
 				// обновляем в базе итем
 				dbManager.updateLocationItem(item);
+				owner.sendPacket(S_Unequip_Item.getInstance((Player) owner, item.getItemId()),true);
+				owner.sendPacket(S_Inven_Changedslot.getInstance(1, empty.getIndex(), 0),true);
 
 				return true;
 			}
