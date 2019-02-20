@@ -8,13 +8,13 @@ import tera.gameserver.network.ServerPacketType;
  *
  * @author Ronn
  */
-public class IncreaseLevel extends ServerPacket
+public class S_User_Levelup extends ServerPacket
 {
-	private static final ServerPacket instance = new IncreaseLevel();
+	private static final ServerPacket instance = new S_User_Levelup();
 
-	public static IncreaseLevel getInstance(Player player)
+	public static S_User_Levelup getInstance(Player player)
 	{
-		IncreaseLevel packet = (IncreaseLevel) instance.newInstance();
+		S_User_Levelup packet = (S_User_Levelup) instance.newInstance();
 
 		packet.objectId = player.getObjectId();
 		packet.subId = player.getSubId();
@@ -33,7 +33,7 @@ public class IncreaseLevel extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.PLAYER_INCREASE_LEVEL;
+		return ServerPacketType.S_USER_LEVELUP;
 	}
 
 	@Override

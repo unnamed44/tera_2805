@@ -797,7 +797,7 @@ public final class Player extends Playable implements Nameable, Identified {
 		}
 
 		broadcastPacket(S_Creature_Life.getInstance(this, true));
-		sendPacket(S_Show_Dead_UI.getInstance(), true);
+		sendPacket(S_Show_Dead_UI.getInstance(World.getRegion(this).getZoneId(this)), true);
 		sendPacket(S_Hide_HP.getInstance(this), true);
 		sendPacket(S_Sytem_Message.getInstance(MessageType.USER_NAME_IS_DEAD).addUserName(this.getName()), true);
 
@@ -1510,7 +1510,7 @@ public final class Player extends Playable implements Nameable, Identified {
 
 		setCurrentHp(getMaxHp());
 		setCurrentMp(getMaxMp());
-		broadcastPacket(IncreaseLevel.getInstance(this));
+		broadcastPacket(S_User_Levelup.getInstance(this));
 
 		ObjectEventManager eventManager = ObjectEventManager.getInstance();
 		eventManager.notifyChangedLevel(this);

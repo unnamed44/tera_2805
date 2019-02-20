@@ -96,8 +96,9 @@ public enum ClientPacketType
 	C_REQUEST_UPDATE_NOTICE(0xF27A, new C_Request_Update_Notice()),
 	C_UPDATE_GUILD_TITLE(0xEB8E, new C_Update_Guild_Title()),
 	C_REQUEST_UPDATE_INTRODUCE(0xC9AC, new C_Request_Update_Introduce()),
-	C_REVIVE_NOW(0x8EBE, new RequestRessurect()), // 0C 00 20 E0 00 00 00 00 FF FF FF FF
+	C_REVIVE_NOW(0x8EBE, new C_Revive_Now()), // 0C 00 20 E0 00 00 00 00 FF FF FF FF
     C_REQUEST_USER_PAPERDOLL_INFO_WITH_GAMEID(0xAB81, new C_Request_User_Paperdoll_Info_With_Gameid()),
+	C_UNEQUIP_ITEM(0xD491, new C_Equip_Item()),
 
 
 

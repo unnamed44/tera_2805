@@ -19,7 +19,7 @@ public final class PlayerEquipment extends AbstractEquipment
 	private static final SlotType[] STRUCTURE =
 	{
 		SlotType.SLOT_WEAPON,
-		SlotType.SLOT_SHIRT,
+		SlotType.NONE,
 		SlotType.SLOT_ARMOR,
 		SlotType.SLOT_GLOVES,
 		SlotType.SLOT_BOOTS,
@@ -30,8 +30,15 @@ public final class PlayerEquipment extends AbstractEquipment
 		SlotType.SLOT_RING,
 		SlotType.SLOT_NECKLACE,
 		SlotType.SLOT_SHIRT,
-		SlotType.SLOT_HAT,
-		SlotType.SLOT_MASK,
+		SlotType.SLOT_HAT,//head
+		SlotType.SLOT_MASK,//face
+		SlotType.SLOT_COSTUME_HEAD,
+		SlotType.SLOT_COSTUME_FACE,
+		SlotType.SLOT_COSTUME_WEAPON,
+		SlotType.SLOT_COSTUME_BODY,
+		SlotType.SLOT_COSTUME_BACK,
+		SlotType.SLOT_BELT,
+		SlotType.SLOT_BROOCH,
 	};
 
 	/**

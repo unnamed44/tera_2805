@@ -989,7 +989,7 @@ public abstract class Npc extends Character implements Foldable {
 	@Override
 	public void stopBattleStance() {
 		setBattleStanced(false);
-		broadcastPacketToOthers(NpcNotice.getInstance(this, 0, 0));
+		broadcastPacketToOthers(S_Npc_Status.getInstance(this, 0, 0));
 	}
 
 	/**

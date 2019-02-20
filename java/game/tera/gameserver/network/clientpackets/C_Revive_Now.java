@@ -15,7 +15,7 @@ import tera.util.Location;
  *
  * @author Ronn
  */
-public class RequestRessurect extends ClientPacket
+public class C_Revive_Now extends ClientPacket
 {
 	/** игрок */
 	private Player player;

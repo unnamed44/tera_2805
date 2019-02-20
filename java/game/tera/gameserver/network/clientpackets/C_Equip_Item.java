@@ -1,6 +1,7 @@
 package tera.gameserver.network.clientpackets;
 
 import tera.gameserver.model.playable.Player;
+import tera.gameserver.network.serverpackets.S_User_External_Change;
 
 /**
  * Запрос на одевание предмета.
@@ -52,7 +53,9 @@ public class C_Equip_Item extends ClientPacket
 	@Override
 	public void runImpl()
 	{
-		if(player != null)
+		if(player != null){
 			player.getAI().startDressItem(slot, itemId);
+			player.broadcastPacket(S_User_External_Change.getInstance(player));
+		}
 	}
 }

@@ -28,8 +28,16 @@ public enum ArmorType
 	/** шапочке */
 	HAT("hat", SlotType.SLOT_HAT),
 	/** ремодел брони */
-	REMODEL("remodel", SlotType.SLOT_ARMOR_REMODEL);
-	
+	REMODEL("remodel", SlotType.SLOT_ARMOR_REMODEL),
+
+	BELT("belt", SlotType.SLOT_BELT),
+	BROOCH("brooch", SlotType.SLOT_BROOCH),
+	COSTUME_HEAD("costume_head", SlotType.SLOT_COSTUME_HEAD),
+	COSTUME_FACE("costume_face", SlotType.SLOT_COSTUME_FACE),
+	COSTUME_WEAPON("costume_weapon", SlotType.SLOT_COSTUME_WEAPON),
+	COSTUME_BODY("costume_body", SlotType.SLOT_COSTUME_BODY),
+	COSTUME_BACK("costume_back", SlotType.SLOT_COSTUME_BACK);
+
 	/**
 	 * Получение нужного армор типа по названию в xml.
 	 * 

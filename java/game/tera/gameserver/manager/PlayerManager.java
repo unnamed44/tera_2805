@@ -321,7 +321,7 @@ public final class PlayerManager
 		if(player.isDead())
 		{
 			player.broadcastPacket(S_Creature_Life.getInstance(player, true));
-			player.sendPacket(S_Show_Dead_UI.getInstance(), true);
+			player.sendPacket(S_Show_Dead_UI.getInstance(World.getRegion(player).getZoneId(player)), true);
 			player.sendPacket(S_Hide_HP.getInstance(player), true);
 		}
 

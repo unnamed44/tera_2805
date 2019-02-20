@@ -131,11 +131,11 @@ public class S_Spawn_User extends ServerPacket
 		packet.writeInt(buffer, newPlayer.getLevel());
 		packet.writeLong(buffer, 0);
 		packet.writeByte(buffer, 1);
-		packet.writeInt(buffer, 0);// stylehead
-		packet.writeInt(buffer, 0);
-		packet.writeInt(buffer, 0);
-		packet.writeInt(buffer, 0);
-		packet.writeInt(buffer, 0);
+		packet.writeInt(buffer, equipment.getItemId(SlotType.SLOT_COSTUME_HEAD));// stylehead
+		packet.writeInt(buffer, equipment.getItemId(SlotType.SLOT_COSTUME_FACE));
+		packet.writeInt(buffer, equipment.getItemId(SlotType.SLOT_COSTUME_BACK));
+		packet.writeInt(buffer, equipment.getItemId(SlotType.SLOT_COSTUME_WEAPON));
+		packet.writeInt(buffer, equipment.getItemId(SlotType.SLOT_COSTUME_BODY));
 		packet.writeInt(buffer, 0);// style body die
 		packet.writeInt(buffer,0);
 		packet.writeInt(buffer,0);

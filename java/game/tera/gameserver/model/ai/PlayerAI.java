@@ -164,6 +164,7 @@ public class PlayerAI extends AbstractCharacterAI<Player>
 		// иначе это одевание итема из инвенторя
 		else
 			equipment.dressItem(inventory, inventory.getCell(index - 40));
+
 	}
 
 	@Override

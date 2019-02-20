@@ -23,7 +23,7 @@ import tera.gameserver.network.serverpackets.S_SOCIAL;
 import tera.gameserver.network.serverpackets.GuildBank;
 import tera.gameserver.network.serverpackets.S_User_Status;
 import tera.gameserver.network.serverpackets.S_User_Status.NotifyType;
-import tera.gameserver.network.serverpackets.NpcNotice;
+import tera.gameserver.network.serverpackets.S_Npc_Status;
 import tera.gameserver.network.serverpackets.PlayerBank;
 import tera.gameserver.network.serverpackets.PlayerEquipment;
 import tera.gameserver.network.serverpackets.S_Inven;
@@ -138,7 +138,7 @@ public final class PacketManager
 	 */
 	public static void showBattleStance(Npc npc, TObject enemy)
 	{
-		npc.broadcastPacketToOthers(NpcNotice.getInstance(npc, enemy == null? 0 : enemy.getObjectId(), enemy == null? 0 : enemy.getSubId()));
+		npc.broadcastPacketToOthers(S_Npc_Status.getInstance(npc, enemy == null? 0 : enemy.getObjectId(), enemy == null? 0 : enemy.getSubId()));
 	}
 
 	/**
@@ -150,7 +150,7 @@ public final class PacketManager
 	 */
 	public static void showBattleStance(Player player, Npc npc, TObject enemy)
 	{
-		player.sendPacket(NpcNotice.getInstance(npc, enemy == null? 0 : enemy.getObjectId(), enemy == null? 0 : enemy.getSubId()), true);
+		player.sendPacket(S_Npc_Status.getInstance(npc, enemy == null? 0 : enemy.getObjectId(), enemy == null? 0 : enemy.getSubId()), true);
 	}
 
 	/**

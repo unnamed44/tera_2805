@@ -56,8 +56,8 @@ public class S_Player_Change_Exp extends ServerPacket
         writeInt(0);
         writeInt(0);
         writeInt(0);
-        writeInt(0x0000210B);
-        writeInt(0x3F800000);
+        writeInt(0);
+        writeFloat(1);
         writeInt(0);
 	}
 }

@@ -32,7 +32,15 @@ public enum SlotType
 	/** слот для ремодел пушки */
 	SLOT_REMODELABLE_WEAPON,
 	/** слот для ремодел брони */
-	SLOT_ARMOR_REMODEL;
+	SLOT_ARMOR_REMODEL,
+	SLOT_COSTUME_HEAD,
+	SLOT_COSTUME_FACE,
+	SLOT_COSTUME_WEAPON,
+	SLOT_COSTUME_BODY,
+	SLOT_COSTUME_BACK,
+	SLOT_BELT,
+	SLOT_BROOCH;
+
 
 	public static final int SIZE = values().length;
 }

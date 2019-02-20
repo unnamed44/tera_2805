@@ -127,11 +127,11 @@ public class S_Login extends ServerPacket
 			packet.writeByte(buffer,0);//world event target
 			packet.writeInt(buffer, player.getKarma());
 			packet.writeByte(buffer, 1);//show face
-			packet.writeInt(buffer, 0);//style head
-			packet.writeInt(buffer, 0);//style face
-			packet.writeInt(buffer, 0);//style back
-			packet.writeInt(buffer, 0);//style weapon
-			packet.writeInt(buffer, 0);//style body
+			packet.writeInt(buffer, equipment.getItemId(SlotType.SLOT_COSTUME_HEAD));//style head
+			packet.writeInt(buffer, equipment.getItemId(SlotType.SLOT_COSTUME_FACE));//style face
+			packet.writeInt(buffer, equipment.getItemId(SlotType.SLOT_COSTUME_BACK));//style back
+			packet.writeInt(buffer, equipment.getItemId(SlotType.SLOT_COSTUME_WEAPON));//style weapon
+			packet.writeInt(buffer, equipment.getItemId(SlotType.SLOT_COSTUME_BODY));//style body
 			packet.writeInt(buffer, 0);//style body dye
 
 			if(player.hasGuild()) {
