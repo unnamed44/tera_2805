@@ -4,6 +4,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
 import rlib.util.array.Array;
+import tera.gameserver.config.MissingConfig;
 import tera.gameserver.model.Character;
 import tera.gameserver.model.EffectList;
 import tera.gameserver.model.skillengine.Effect;
@@ -42,7 +43,7 @@ public class S_Party_Member_Buff_Update extends ServerPacket
 			packet.writeShort(buffer, bytes);
 			packet.writeShort(buffer, 0);
 			packet.writeShort(buffer, lenght);
-			packet.writeInt(buffer, 12); // SERVER ID
+			packet.writeInt(buffer, MissingConfig.SERVER_ID); // SERVER ID
 			packet.writeInt(buffer, character.getObjectId());
 
 			// получаем список эффектов

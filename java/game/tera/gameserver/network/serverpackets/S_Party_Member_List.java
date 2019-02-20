@@ -5,6 +5,7 @@ import java.nio.ByteOrder;
 
 import rlib.util.Strings;
 import rlib.util.array.Array;
+import tera.gameserver.config.MissingConfig;
 import tera.gameserver.model.Party;
 import tera.gameserver.model.playable.Player;
 import tera.gameserver.network.ServerPacketType;
@@ -73,7 +74,7 @@ public class S_Party_Member_List extends ServerPacket
 					packet.writeShort(buffer, 0);
 
 				packet.writeShort(buffer, bytes - nameLength);// namepos
-				packet.writeInt(buffer, 12);//player server ID
+				packet.writeInt(buffer, MissingConfig.SERVER_ID);//player server ID
 				packet.writeInt(buffer, member.getObjectId());// 64 44 00 00 //айди
 				packet.writeInt(buffer, member.getLevel());// 2A 00 00 00//уровень
 				packet.writeInt(buffer, member.getClassId());// 06 00 00 00//код профы

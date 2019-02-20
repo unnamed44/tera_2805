@@ -4,6 +4,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
 import rlib.util.Strings;
+import tera.gameserver.config.MissingConfig;
 import tera.gameserver.model.equipment.Equipment;
 import tera.gameserver.model.equipment.SlotType;
 import tera.gameserver.model.items.ItemInstance;
@@ -55,7 +56,7 @@ public class S_Spawn_User extends ServerPacket
 		packet.writeShort(buffer, n += Strings.length(guildTitle));//details2 pos
 		packet.writeShort(buffer, 64);
 
-		packet.writeInt(buffer, 12);//server id
+		packet.writeInt(buffer, MissingConfig.SERVER_ID);//server id
 		packet.writeInt(buffer, newPlayer.getObjectId());
 		packet.writeInt(buffer, newPlayer.getObjectId());// game id
 		packet.writeInt(buffer, newPlayer.getSubId());

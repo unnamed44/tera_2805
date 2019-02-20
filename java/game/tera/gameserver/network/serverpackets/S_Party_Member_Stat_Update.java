@@ -2,6 +2,7 @@ package tera.gameserver.network.serverpackets;
 
 import java.nio.ByteBuffer;
 
+import tera.gameserver.config.MissingConfig;
 import tera.gameserver.model.playable.Player;
 import tera.gameserver.network.ServerPacketType;
 
@@ -71,7 +72,7 @@ public class S_Party_Member_Stat_Update extends ServerPacket
 	protected void writeImpl(ByteBuffer buffer)
 	{
 		writeOpcode(buffer);
-		writeInt(buffer, 12); // SERVER ID
+		writeInt(buffer, MissingConfig.SERVER_ID); // SERVER ID
 		writeInt(buffer, objectId);//DE 2C 0B 00 //айди используемого в пати
 		writeInt(buffer, currentHp);//2D 08 00 00 //хп сколько было
 		writeInt(buffer, currentMp);//3C 05 00 00 /мп сколько было

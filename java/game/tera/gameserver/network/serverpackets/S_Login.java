@@ -5,6 +5,7 @@ import java.nio.ByteOrder;
 import java.util.Date;
 
 import rlib.util.Strings;
+import tera.gameserver.config.MissingConfig;
 import tera.gameserver.model.base.Experience;
 import tera.gameserver.model.equipment.Equipment;
 import tera.gameserver.model.equipment.SlotType;
@@ -47,7 +48,7 @@ public class S_Login extends ServerPacket
 			packet.writeInt(buffer, player.getObjectId());
 			packet.writeInt(buffer, player.getSubId());
 
-			packet.writeInt(buffer, 12);//server id
+			packet.writeInt(buffer, MissingConfig.SERVER_ID);//server id
 			packet.writeInt(buffer, player.getObjectId());
 
 			packet.writeInt(buffer, 0);

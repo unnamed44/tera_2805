@@ -1,5 +1,6 @@
 package tera.gameserver.network.serverpackets;
 
+import tera.gameserver.config.MissingConfig;
 import tera.gameserver.manager.DataBaseManager;
 import tera.gameserver.model.playable.PlayerPreview;
 import tera.gameserver.network.ServerPacketType;
@@ -38,7 +39,7 @@ public class S_Answer_Interactive extends ServerPacket {
         writeInt(playerPreview.getLevel());
         writeByte(0);//has party
         writeByte(0);//has guild
-        writeInt(12);//SERVER ID
+        writeInt(MissingConfig.SERVER_ID);//SERVER ID
         writeString(name);
     }
 }
