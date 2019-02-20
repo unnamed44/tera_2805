@@ -9,6 +9,11 @@ import rlib.util.table.Tables;
 public class Alliance {
     private static final Logger log = Loggers.getLogger(Alliance.class);
 
+    public static final int EXARCH_RANK_ID = 400;
+    public static final int DEFENSE_COMMANDER_ID = 303;
+    public static final int ASSAULT_COMMANDER_ID = 302;
+    public static final int ADJUNCT_COMMANDER_ID = 301;
+    public static final int ECHELON_ID = 301;
 
     private int allianceId;
     private int leaderId;

@@ -5,6 +5,7 @@ import java.nio.ByteOrder;
 
 import rlib.util.Strings;
 import tera.gameserver.config.MissingConfig;
+import tera.gameserver.model.Alliance;
 import tera.gameserver.model.equipment.Equipment;
 import tera.gameserver.model.equipment.SlotType;
 import tera.gameserver.model.items.ItemInstance;
@@ -32,7 +33,7 @@ public class S_Spawn_User extends ServerPacket
 
 		String name = newPlayer.getName();
 		String guildName = newPlayer.getGuildName();
-		String title = newPlayer.getTitle();
+		String guildRankName = (newPlayer.hasGuild()) ? newPlayer.getGuildRank().getName() : Strings.EMPTY;
 		String guildTitle = newPlayer.getGuildTitle();
 		String iconName = newPlayer.getGuildIconName();
 
@@ -48,12 +49,12 @@ public class S_Spawn_User extends ServerPacket
 		packet.writeShort(buffer, n); // name pos
 		packet.writeShort(buffer, n += Strings.length(name)); //guild name pos
 		packet.writeShort(buffer, n += Strings.length(guildName));//title pos
-		packet.writeShort(buffer, n += Strings.length(title));// details 1 pos
+		packet.writeShort(buffer, n += Strings.length(guildRankName));// details 1 pos -- write guildrank name
 
 		packet.writeShort(buffer, 32);// number of bytes to describe appearence
-		packet.writeShort(buffer, (n += Strings.length(guildName)) + 30);//title pos
-		packet.writeShort(buffer, n += 32);// Guild title description
-		packet.writeShort(buffer, n += Strings.length(guildTitle));//details2 pos
+		packet.writeShort(buffer, n += 32);//guild title pos
+		packet.writeShort(buffer, n += Strings.length(guildTitle));// Guild logo description
+		packet.writeShort(buffer, n += 2);//details2 pos
 		packet.writeShort(buffer, 64);
 
 		packet.writeInt(buffer, MissingConfig.SERVER_ID);//server id
@@ -109,14 +110,18 @@ public class S_Spawn_User extends ServerPacket
 		packet.writeInt(buffer, 0);//pose see C_PLAYER_LOCATION
 		packet.writeInt(buffer, 0);//title
 		packet.writeLong(buffer, 0);//shuttleID
-		packet.writeLong(buffer, 0);
-		packet.writeLong(buffer, 0);
-		packet.writeLong(buffer, 0);
-		packet.writeLong(buffer, 0);
-		packet.writeInt(buffer, 0);
-
-		packet.writeShort(buffer, 0);
-		packet.writeByte(buffer, 0);
+		packet.writeInt(buffer,0);
+		packet.writeByte(buffer, (newPlayer.hasGuild() && player.getAllianceClass() == Alliance.EXARCH_RANK_ID) ? 1 : 0);//exarch
+		packet.writeByte(buffer, newPlayer.isGM() ? 1 : 0);//gm
+		packet.writeByte(buffer, 0);//gm invisible
+		packet.writeInt(buffer,0);
+		packet.writeInt(buffer,0);
+		packet.writeInt(buffer,0);
+		packet.writeInt(buffer,0);
+		packet.writeInt(buffer,0);
+		packet.writeInt(buffer,0);
+		packet.writeInt(buffer,0);
+		packet.writeInt(buffer,0);
 
 		packet.writeInt(buffer, weapon == null ? 0 : weapon.getEnchantLevel()); // Weapon enchant
 
@@ -124,45 +129,40 @@ public class S_Spawn_User extends ServerPacket
 		packet.writeByte(buffer, newPlayer.isPvPMode() ? 1 : 0); // включен ли пвп режим
 
 		packet.writeInt(buffer, newPlayer.getLevel());
+		packet.writeLong(buffer, 0);
+		packet.writeByte(buffer, 1);
+		packet.writeInt(buffer, 0);// stylehead
 		packet.writeInt(buffer, 0);
-
-		packet.writeInt(buffer, 0);// что-то тоже нательное
+		packet.writeInt(buffer, 0);
+		packet.writeInt(buffer, 0);
+		packet.writeInt(buffer, 0);
+		packet.writeInt(buffer, 0);// style body die
+		packet.writeInt(buffer,0);
+		packet.writeInt(buffer,0);
+		packet.writeByte(buffer, 0);//raid
+		if(newPlayer.hasGuild()) {
+			packet.writeInt(buffer, newPlayer.getGuild().getAllianceId());
+			if(newPlayer.getGuild().getAllianceId() != 0){
+				int allianceClass = player.getAllianceClass();
+				packet.writeInt(buffer, allianceClass < Alliance.ADJUNCT_COMMANDER_ID ? Alliance.ECHELON_ID : allianceClass);//union class 100-200-301-302-303-400
+				packet.writeInt(buffer, allianceClass < Alliance.ADJUNCT_COMMANDER_ID ? allianceClass : 0);//union echelon
+			}
+			else
+				packet.writeLong(buffer,0);
+		}
+		else{
+			packet.writeInt(buffer,0);
+			packet.writeLong(buffer,0);
+		}
 
 		packet.writeByte(buffer, 1);
-
-		packet.writeInt(buffer, 0);// лифчики
-		packet.writeInt(buffer, 0);
-		packet.writeInt(buffer, 0);
-		//packet.writeInt(buffer, 0);
-		//packet.writeInt(buffer, 0);
-		//packet.writeInt(buffer, 0);
-		//packet.writeInt(buffer, 0);
-		//packet.writeInt(buffer, 0);
-
-		//packet.writeInt(buffer, 0);
-		//packet.writeInt(buffer, 0);
-		//packet.writeInt(buffer, 0);
-
-		packet.writeByte(buffer, 0);
-
 		packet.writeLong(buffer, 0);
-		packet.writeLong(buffer, 0);
-		packet.writeInt(buffer, 0);
-		if(newPlayer.hasGuild())
-			packet.writeInt(buffer, newPlayer.getGuild().getAllianceId());//alliance
-		else
-			packet.writeInt(buffer, 0);
-		packet.writeLong(buffer, 0);
-
-		packet.writeByte(buffer, 1);
-		packet.writeInt(buffer, 0);
-		packet.writeInt(buffer, 0);
 		packet.writeInt(buffer, 100);
 		packet.writeFloat(buffer, 1);
 
 		packet.writeString(buffer, name);// имя
 		packet.writeString(buffer, guildName);// название клана
-		packet.writeString(buffer, title); // титул
+		packet.writeString(buffer, guildRankName); // титул
 
 		packet.writeByte(buffer, appearance.getBoneStructureBrow());
 		packet.writeByte(buffer, appearance.getBoneStructureCheekbones());
@@ -197,8 +197,8 @@ public class S_Spawn_User extends ServerPacket
 		packet.writeByte(buffer, appearance.getBoneStructureJawWidth());
 		packet.writeByte(buffer, appearance.getMothGape());
 
-		packet.writeString(buffer, guildName);
 		packet.writeString(buffer, guildTitle);
+		packet.writeString(buffer, Strings.EMPTY);//guild logo
 
 		int[] jp = details2.getDetails2();
 		for (int r = 0; r < 64; ++r) {

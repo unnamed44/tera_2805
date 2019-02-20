@@ -141,6 +141,7 @@ public enum ServerPacketType
 	S_CREATURE_LIFE(0xA66D),
 	S_SHOW_DEAD_UI(0xC920),
 	S_HIDE_HP(0x62A4),
+	S_USER_PAPERDOLL_INFO(0x5089),
 
 
 

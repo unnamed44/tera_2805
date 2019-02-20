@@ -31,9 +31,9 @@ public class S_Union_State_Info extends ServerPacket {
         writeInt(0);
         writeInt(0x5C4AD404);
         writeInt(0);
-        writeInt(0x5C51531D);
+        writeInt(0x5C51531D);//exarch start date
         writeInt(0);
-        writeInt(0x5C5B58E0);
+        writeInt(0x5C5B58E0);//exarch end date
         writeInt(0);
         writeInt(0x5C59A4F0);
         writeInt(0);
@@ -41,9 +41,9 @@ public class S_Union_State_Info extends ServerPacket {
         writeInt(0);
         writeLong(0);
         writeShort(1);
-        writeInt(0x5C601240);
+        writeInt(0x5C601240);//alliance conflit start time
         writeInt(0);
-        writeInt(0x5C602E60);
+        writeInt(0x5C602E60);//alliance conflit end time
         writeInt(0);
         writeInt(0xFFFFFDE4);
         writeInt(0);

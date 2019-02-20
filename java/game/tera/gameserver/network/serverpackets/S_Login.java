@@ -6,6 +6,7 @@ import java.util.Date;
 
 import rlib.util.Strings;
 import tera.gameserver.config.MissingConfig;
+import tera.gameserver.model.Alliance;
 import tera.gameserver.model.base.Experience;
 import tera.gameserver.model.equipment.Equipment;
 import tera.gameserver.model.equipment.SlotType;
@@ -136,8 +137,9 @@ public class S_Login extends ServerPacket
 			if(player.hasGuild()) {
 				packet.writeInt(buffer, player.getGuild().getAllianceId());
 				if(player.getGuild().getAllianceId() != 0){
-					packet.writeInt(buffer, player.getAllianceClass());//union class 100-301-302-303-400
-					packet.writeInt(buffer, 0);//union echelon
+					int allianceClass = player.getAllianceClass();
+					packet.writeInt(buffer, allianceClass < Alliance.ADJUNCT_COMMANDER_ID ? Alliance.ECHELON_ID : allianceClass);//union class 100-200-301-302-303-400
+					packet.writeInt(buffer, allianceClass < Alliance.ADJUNCT_COMMANDER_ID ? allianceClass : 0);//union echelon
 				}
 				else
 					packet.writeLong(buffer,0);

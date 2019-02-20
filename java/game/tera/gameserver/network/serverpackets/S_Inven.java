@@ -104,7 +104,7 @@ public class S_Inven extends ServerPacket
 
 						packet.writeInt(buffer, item.getItemId());
 						packet.writeInt(buffer, item.getObjectId());
-						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, item.getSubId());
 						packet.writeInt(buffer, player.getObjectId());
 						packet.writeInt(buffer, player.getSubId());
 						packet.writeInt(buffer, i + 1);
@@ -215,7 +215,7 @@ public class S_Inven extends ServerPacket
 							packet.writeShort(buffer,0);
 						packet.writeInt(buffer, item.getItemId());
 						packet.writeInt(buffer, item.getObjectId());
-						packet.writeInt(buffer, 0);
+						packet.writeInt(buffer, item.getSubId());
 						packet.writeInt(buffer, player.getObjectId());
 						packet.writeInt(buffer, player.getSubId());
 						packet.writeInt(buffer, i + 40);
