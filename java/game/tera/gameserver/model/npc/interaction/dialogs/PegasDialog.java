@@ -118,10 +118,10 @@ public class PegasDialog extends AbstractDialog implements Runnable
 				player.setInvul(true);
 
 				// посылаем пакет посадки на пегаса
-				player.broadcastPacket(PutAnPegas.getInstance(player));
+				player.broadcastPacket(S_Start_Pegasus.getInstance(player));
 				// посылаем пакет полета на пегасе
-				player.broadcastPacket(PegasFly.getInstance(player, route, 0));
-				player.broadcastPacket(PegasFly.getInstance(player, route, 3000));
+				player.broadcastPacket(S_Sync_Pegasus_Time.getInstance(player, route, 0));
+				player.broadcastPacket(S_Sync_Pegasus_Time.getInstance(player, route, 3000));
 
 				// если перелет локальный
 				if(route.isLocal())
@@ -177,6 +177,8 @@ public class PegasDialog extends AbstractDialog implements Runnable
 				player.setZoneId(target.getZone());
 				// отправляем пакет новой зоны
 				player.sendPacket(S_Load_Topo.getInstance(player, target.getZone()), true);
+				player.sendPacket(S_Load_Hint.getInstance(), false);
+				player.sendPacket(S_Inven.getInstance(player, false, false), true);
 
 				// ставим стадию посадки
 				setState(State.LANDING);
@@ -206,7 +208,7 @@ public class PegasDialog extends AbstractDialog implements Runnable
 				player.teleToLocation(target.getLanding());
 
 				// отправляем пакет завершения полета
-				player.broadcastPacket(GetOffPegas.getInstance(player));
+				player.broadcastPacket(S_End_Pegasus.getInstance(player));
 
 				// убираем флаг полета
 				player.setFlyingPegas(false);
@@ -333,7 +335,7 @@ public class PegasDialog extends AbstractDialog implements Runnable
 		}
 
 		// отправляем пакеты окна выбора маршрута
-		player.sendPacket(PegasRouts.getInstance(routes, town.getId()), true);
+		player.sendPacket(S_Show_Pegasus_Map.getInstance(routes, town.getId()), true);
 		player.sendPacket(PegasReplyPacket.getInstance(player), true);
 
 		return true;

@@ -22,7 +22,7 @@ import tera.gameserver.model.playable.Player;
 import tera.gameserver.model.skillengine.Skill;
 import tera.gameserver.network.serverpackets.S_Loot_Dropitem;
 import tera.gameserver.network.serverpackets.S_Despawn_Npc;
-import tera.gameserver.network.serverpackets.DeleteItem;
+import tera.gameserver.network.serverpackets.S_Despawn_Dropitem;
 import tera.gameserver.network.serverpackets.S_Spawn_Dropitem;
 import tera.gameserver.network.serverpackets.S_Sytem_Message_Loot_Item;
 import tera.gameserver.network.serverpackets.ServerPacket;
@@ -898,7 +898,7 @@ public abstract class ItemInstance extends TObject implements Foldable
 	@Override
 	public void removeMe(Player player, int type)
 	{
-		player.sendPacket(DeleteItem.getInstance(this), true);
+		player.sendPacket(S_Despawn_Dropitem.getInstance(this), true);
 	}
 
 	/**
