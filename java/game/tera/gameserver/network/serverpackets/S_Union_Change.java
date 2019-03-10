@@ -1,21 +1,20 @@
 package tera.gameserver.network.serverpackets;
 
+import tera.gameserver.model.playable.Player;
 import tera.gameserver.network.ServerPacketType;
 
 public class S_Union_Change extends ServerPacket {
     private static final ServerPacket instance = new S_Union_Change();
 
-    public static S_Union_Change getInstance()
+    public static S_Union_Change getInstance(Player player)
     {
         S_Union_Change packet = (S_Union_Change) instance.newInstance();
-        packet.value = 1;
-        packet.alliance = 2;
+        packet.player = player;
         return packet;
     }
 
     /** кол-во ожидания секунд */
-    private int value;
-    private int alliance;
+    private Player player;
 
     @Override
     public ServerPacketType getPacketType()
@@ -27,10 +26,10 @@ public class S_Union_Change extends ServerPacket {
     protected final void writeImpl()
     {
         writeOpcode();
-        writeInt(464877);//playerid
-        writeInt(0);//subid
-        writeInt(alliance);
-        writeLong(400);
-        writeByte(value);
+        writeInt(player.getObjectId());
+        writeInt(player.getSubId());
+        writeInt(player.getGuild().getAllianceId());
+        writeLong(player.getAllianceClass());
+        writeByte(1);
     }
 }

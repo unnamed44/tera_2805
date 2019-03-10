@@ -1,5 +1,6 @@
 package tera.gameserver.network.serverpackets;
 
+import tera.gameserver.config.MissingConfig;
 import tera.gameserver.network.ServerPacketType;
 
 public class S_Daily_Quest_Complete_Count extends ServerPacket {
@@ -22,7 +23,7 @@ public class S_Daily_Quest_Complete_Count extends ServerPacket {
     {
         writeOpcode();
         writeShort(0);//total did
-        writeShort(10);//total
+        writeShort(MissingConfig.DAILY_QUEST_MAX_COUNT);//total
         writeByte(0);
     }
 }

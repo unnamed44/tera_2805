@@ -1204,7 +1204,7 @@ public final class Guild implements Nameable, Identified
 			array[i].sendPacket(S_Inven.getInstance(array[i], false, false), false);
 			array[i].sendPacket(S_Player_Stat_Update.getInstance(array[i]), false);
 			//add item alliance to parcel post then send s_parcel_read_recv_status
-			//union change
+			array[i].broadcastPacket(S_Union_Change.getInstance(array[i]));
 		}
 	}
 }
