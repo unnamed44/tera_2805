@@ -10,7 +10,7 @@ import tera.gameserver.model.quests.QuestActionType;
 import tera.gameserver.model.quests.QuestEvent;
 import tera.gameserver.model.quests.QuestList;
 import tera.gameserver.model.quests.QuestState;
-import tera.gameserver.network.serverpackets.QuestStarted;
+import tera.gameserver.network.serverpackets.S_Quest_Info;
 
 /**
  * Акшен отображения стадии.
@@ -80,7 +80,7 @@ public class ActionStateQuest extends AbstractQuestAction
 		// если состояние есть
 		if(state != null)
 			// отправляем пакет
-			player.sendPacket(QuestStarted.getInstance(state, npcType, npcId, x, y, z), true);
+			player.sendPacket(S_Quest_Info.getInstance(state, npcType, npcId, x, y, z), true);
 	}
 
 	@Override

@@ -27,10 +27,8 @@ public class S_Union_Change extends ServerPacket {
     protected final void writeImpl()
     {
         writeOpcode();
-        writeInt(464877);
-        writeByte(0);
-        writeShort(128);
-        writeByte(0);
+        writeInt(464877);//playerid
+        writeInt(0);//subid
         writeInt(alliance);
         writeLong(400);
         writeByte(value);

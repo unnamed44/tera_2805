@@ -32,7 +32,10 @@ public class S_User_External_Change extends ServerPacket {
         writeOpcode();
         writeInt(player.getObjectId());
         writeInt(player.getSubId());
+
         Equipment equipment = player.getEquipment();
+        int enchantLevel = (equipment.getItem(SlotType.SLOT_WEAPON) == null) ? 0 : equipment.getItem(SlotType.SLOT_WEAPON).getEnchantLevel();
+
 
         writeInt(equipment.getItemId(SlotType.SLOT_WEAPON));
         writeInt(equipment.getItemId(SlotType.SLOT_ARMOR));
@@ -50,7 +53,7 @@ public class S_User_External_Change extends ServerPacket {
         writeInt(0);
         writeInt(0);
         writeInt(0);
-        writeInt(equipment.getItem(SlotType.SLOT_WEAPON).getEnchantLevel());
+        writeInt(enchantLevel);
         writeInt(equipment.getItemId(SlotType.SLOT_COSTUME_HEAD));
         writeInt(equipment.getItemId(SlotType.SLOT_COSTUME_FACE));
         writeInt(equipment.getItemId(SlotType.SLOT_COSTUME_BACK));

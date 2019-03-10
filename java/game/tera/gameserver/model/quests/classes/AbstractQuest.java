@@ -29,7 +29,9 @@ import tera.gameserver.model.quests.QuestPanelState;
 import tera.gameserver.model.quests.QuestState;
 import tera.gameserver.model.quests.QuestType;
 import tera.gameserver.model.quests.Reward;
-import tera.gameserver.network.serverpackets.QuestCompleted;
+import tera.gameserver.network.serverpackets.S_Clear_World_Quest_Villager_Info;
+import tera.gameserver.network.serverpackets.S_Daily_Quest_Complete_Count;
+import tera.gameserver.network.serverpackets.S_Delete_Quest;
 import tera.gameserver.network.serverpackets.S_Sytem_Message;
 import tera.gameserver.tables.NpcTable;
 import tera.gameserver.templates.NpcTemplate;
@@ -232,7 +234,7 @@ public abstract class AbstractQuest implements Quest
 		QuestState questState = questList.getQuestState(this);
 
 		// удаляем квест из панели и книги
-		player.sendPacket(QuestCompleted.getInstance(questState, true), true);
+		player.sendPacket(S_Delete_Quest.getInstance(questState, true), true);
 
 		// удаляем с панели
 		player.updateQuestInPanel(questState, QuestPanelState.REMOVED);
@@ -241,12 +243,13 @@ public abstract class AbstractQuest implements Quest
 		questList.finishQuest(this, questState, true);
 
 		// если нпс есть
-		if(npc != null)
-			// обновляем его значек над головой
+		if(npc != null){
+			//player.sendPacket(S_Clear_World_Quest_Villager_Info.getInstance(), true);
 			npc.updateQuestInteresting(player, true);
-
+		}
 		// отправляем сообщени об этом
 		player.sendPacket(S_Sytem_Message.getInstance(MessageType.ABANDONED_QUEST_NAME).addQuestName(name), true);
+		player.sendPacket(S_Daily_Quest_Complete_Count.getInstance(),false);
 
 		// получаем логера игровых событий
 		GameLogManager gameLogger = GameLogManager.getInstance();

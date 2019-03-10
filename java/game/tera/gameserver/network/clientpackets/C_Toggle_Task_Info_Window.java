@@ -36,7 +36,7 @@ public class C_Toggle_Task_Info_Window extends ClientPacket
 
         readByte();
 
-        panelState = QuestPanelState.valueOf(readShort());
+        panelState = QuestPanelState.valueOf(readByte());
     }
 
     @Override

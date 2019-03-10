@@ -15,9 +15,9 @@ import rlib.util.table.Tables;
 import tera.gameserver.IdFactory;
 import tera.gameserver.manager.DataBaseManager;
 import tera.gameserver.model.playable.Player;
-import tera.gameserver.network.serverpackets.QuestCompleteList;
-import tera.gameserver.network.serverpackets.QuestSplit;
-import tera.gameserver.network.serverpackets.QuestStarted;
+import tera.gameserver.network.serverpackets.S_Completed_Mission_Info;
+import tera.gameserver.network.serverpackets.S_Clear_Quest_Info;
+import tera.gameserver.network.serverpackets.S_Quest_Info;
 
 /**
  * Модель списка выполненных квестов.
@@ -452,12 +452,12 @@ public final class QuestList implements Foldable
 
 			// отправляем пакеты о том, что эти квесты в процессе
 			for(int i = 0, length = active.size(); i < length; i++)
-				owner.sendPacket(QuestStarted.getInstance(array[i], 0, 0, 0, 0, 0), true);
+				owner.sendPacket(S_Quest_Info.getInstance(array[i], 0, 0, 0, 0, 0), true);
 
-			owner.sendPacket(QuestSplit.getInstance(), true);
+			owner.sendPacket(S_Clear_Quest_Info.getInstance(), true);
 
 			// отправляем список пройденных квестов
-			owner.sendPacket(QuestCompleteList.getInstance(completed), true);
+			owner.sendPacket(S_Completed_Mission_Info.getInstance(completed), true);
 		}
 		finally
 		{

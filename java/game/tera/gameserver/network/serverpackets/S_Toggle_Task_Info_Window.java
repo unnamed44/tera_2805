@@ -6,13 +6,13 @@ import tera.gameserver.network.ServerPacketType;
 /**
  * @author Ronn
  */
-public class QuestMoveToPanel extends ServerPacket
+public class S_Toggle_Task_Info_Window extends ServerPacket
 {
-	private static final ServerPacket instance = new QuestMoveToPanel();
+	private static final ServerPacket instance = new S_Toggle_Task_Info_Window();
 	
-	public static QuestMoveToPanel getInstance(QuestState quest)
+	public static S_Toggle_Task_Info_Window getInstance(QuestState quest)
 	{
-		QuestMoveToPanel packet = (QuestMoveToPanel) instance.newInstance();
+		S_Toggle_Task_Info_Window packet = (S_Toggle_Task_Info_Window) instance.newInstance();
 		
 		packet.questId = quest.getQuestId();
 		packet.objectId = quest.getObjectId();
@@ -31,7 +31,7 @@ public class QuestMoveToPanel extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.QUEST_MOVE_TO_PANEL;
+		return ServerPacketType.S_TOGGLE_TASK_INFO_WINDOW;
 	}
 
 	@Override

@@ -13,12 +13,17 @@ public class S_Dialog_Event extends ServerPacket
 {
 	private static final ServerPacket instance = new S_Dialog_Event();
 
-	public static S_Dialog_Event getInstance(Character target, Npc npc)
+	public static S_Dialog_Event getInstance(Character target, Npc npc) {
+		return getInstance(target, npc, 0);
+	}
+
+	public static S_Dialog_Event getInstance(Character target, Npc npc, int id)
 	{
 		S_Dialog_Event packet = (S_Dialog_Event) instance.newInstance();
 
 		packet.target = target;
 		packet.npc = npc;
+		packet.id = id;
 
 		return packet;
 	}
@@ -29,11 +34,14 @@ public class S_Dialog_Event extends ServerPacket
 	/** нпс который говорит */
 	private Character npc;
 
+	private int id;
+
 	@Override
 	public void finalyze()
 	{
 		target = null;
 		npc = null;
+		id = 0;
 	}
 
 	@Override
@@ -50,8 +58,8 @@ public class S_Dialog_Event extends ServerPacket
 		writeInt(npc.getSubId());
 		writeInt(target != null? target.getObjectId() : 0);
 		writeInt(target != null? target.getSubId() : 0);
-		writeInt(0);
-		writeInt(0x00000001);
+		writeInt(id);
+		writeInt(2);//dialog Id
 		writeInt(0);
 	}
 }

@@ -8,13 +8,13 @@ import tera.gameserver.network.ServerPacketType;
  *
  * @author Ronn
  */
-public class QuestCompleted extends ServerPacket
+public class S_Delete_Quest extends ServerPacket
 {
-	private static final ServerPacket instance = new QuestCompleted();
+	private static final ServerPacket instance = new S_Delete_Quest();
 
-	public static QuestCompleted getInstance(QuestState quest, boolean canceled)
+	public static S_Delete_Quest getInstance(QuestState quest, boolean canceled)
 	{
-		QuestCompleted packet = (QuestCompleted) instance.newInstance();
+		S_Delete_Quest packet = (S_Delete_Quest) instance.newInstance();
 
 		packet.questId = quest.getQuestId();
 		packet.objectId = quest.getObjectId();
@@ -33,7 +33,7 @@ public class QuestCompleted extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.QUEST_REMOVE_TO_PANEL;
+		return ServerPacketType.S_DELETE_QUEST;
 	}
 
 	@Override
@@ -44,5 +44,9 @@ public class QuestCompleted extends ServerPacket
 		writeInt(questId);//16 05 00 00
 		writeInt(objectId);//FE DF 89 00
 		writeShort(canceled);//00 00  0 - выполнен, 1 - отменен
+		writeFloat(1);
+		writeFloat(1);
+		writeInt(-1);
+		writeByte(0);
 	}
 }

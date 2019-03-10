@@ -235,6 +235,14 @@ public class S_Sytem_Message extends ServerPacket
 		return this;
 	}
 
+	public S_Sytem_Message addUnion(int allianceId) {
+		builder.append(split);
+		builder.append("UnionName");
+		builder.append(split);
+		builder.append("@union:" + Integer.toString(allianceId));
+		return this;
+	}
+
 	@Override
 	public ServerPacketType getPacketType()
 	{

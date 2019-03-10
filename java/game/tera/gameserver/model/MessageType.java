@@ -149,7 +149,7 @@ public enum MessageType
 
 	YOU_DONT_HAVE_ENOUGH_GOLD("#@614"),
 
-	NEW_QUEST_QUEST_NAME("@624"),
+	SMT_ACCEPT_QUEST("@624"),
 	CONGRATULATIONS_QUEST_NAME_COMPLETED("@625"),
 	//@625 - Congratulations! "{QuestName}" completed.
 	//@624 - New quest: {QuestName}.
@@ -212,6 +212,10 @@ public enum MessageType
 	UNION_CHANGE_TAX_RATE("@2434"),
 
 	CANT_USE_CHAT_UNTIL_LEVEL_10("@1946"),
+	YOU_JOINED_ALLIANCE("@2358"),
+	SMT_ALREADY_JOIN_UNION("@2432"),
+	SMT_INVEN_NOT_ENOUGH_MONEY("@59"),
+	SMT_NOT_GUILD_MASTER("@2428"),
 
 	;
 

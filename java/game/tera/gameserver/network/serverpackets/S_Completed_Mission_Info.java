@@ -16,13 +16,13 @@ import tera.gameserver.network.ServerPacketType;
  *
  * @author Ronn
  */
-public class QuestCompleteList extends ServerPacket
+public class S_Completed_Mission_Info extends ServerPacket
 {
-	private static final ServerPacket instance = new QuestCompleteList();
+	private static final ServerPacket instance = new S_Completed_Mission_Info();
 
-	public static QuestCompleteList getInstance(Table<IntKey, QuestDate> completeTable)
+	public static S_Completed_Mission_Info getInstance(Table<IntKey, QuestDate> completeTable)
 	{
-		QuestCompleteList packet = (QuestCompleteList) instance.newInstance();
+		S_Completed_Mission_Info packet = (S_Completed_Mission_Info) instance.newInstance();
 
 		ByteBuffer buffer = packet.getPrepare();
 
@@ -73,7 +73,7 @@ public class QuestCompleteList extends ServerPacket
 	/** промежуточный буффер */
 	private ByteBuffer prepare;
 
-	public QuestCompleteList()
+	public S_Completed_Mission_Info()
 	{
 		this.prepare = ByteBuffer.allocate(4096).order(ByteOrder.LITTLE_ENDIAN);
 		this.completed = Arrays.toSortedArray(QuestDate.class);
@@ -89,7 +89,7 @@ public class QuestCompleteList extends ServerPacket
 	@Override
 	public ServerPacketType getPacketType()
 	{
-		return ServerPacketType.QUEST_COMPLETE_LIST;
+		return ServerPacketType.S_COMPLETED_MISSION_INFO;
 	}
 
 	@Override

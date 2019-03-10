@@ -1190,4 +1190,21 @@ public final class Guild implements Nameable, Identified
 		DataBaseManager dataBaseManager = DataBaseManager.getInstance();
 		dataBaseManager.restoreGuildMembers(this);
 	}
+
+	public void joinAlliance(int allianceId) {
+		S_Sytem_Message s_sytem_message = S_Sytem_Message.getInstance(MessageType.YOU_JOINED_ALLIANCE).addUnion(allianceId);
+		S_Union_State_Info s_union_state_info = S_Union_State_Info.getInstance();
+		S_Join_Union s_join_union = S_Join_Union.getInstance(allianceId, 1);
+
+		Player[] array = online.array();
+		for(int i = 0, length = online.size(); i < length; i++){
+			array[i].sendPacket(s_sytem_message, false);
+			array[i].sendPacket(s_union_state_info, false);
+			array[i].sendPacket(s_join_union, false);
+			array[i].sendPacket(S_Inven.getInstance(array[i], false, false), false);
+			array[i].sendPacket(S_Player_Stat_Update.getInstance(array[i]), false);
+			//add item alliance to parcel post then send s_parcel_read_recv_status
+			//union change
+		}
+	}
 }

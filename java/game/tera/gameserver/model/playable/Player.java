@@ -2613,7 +2613,7 @@ public final class Player extends Playable implements Nameable, Identified {
 
 					quest.setPanelState(QuestPanelState.ADDED);
 
-					sendPacket(QuestMoveToPanel.getInstance(quest), true);
+					sendPacket(S_Toggle_Task_Info_Window.getInstance(quest), true);
 
 					dbManager.updateQuest(quest);
 					break;
@@ -2630,7 +2630,8 @@ public final class Player extends Playable implements Nameable, Identified {
 							questInPanel.add(quest);
 						}
 
-						sendPacket(QuestMoveToPanel.getInstance(quest), true);
+						sendPacket(S_Toggle_Task_Info_Window.getInstance(quest), true);
+						sendPacket(S_Sytem_Message.getInstance(MessageType.SMT_ACCEPT_QUEST).addQuestName(quest.getQuestId()),false);
 					}
 
 					dbManager.updateQuest(quest);
@@ -2650,7 +2651,7 @@ public final class Player extends Playable implements Nameable, Identified {
 
 					quest.setPanelState(QuestPanelState.ADDED);
 
-					sendPacket(QuestMoveToPanel.getInstance(quest), true);
+					sendPacket(S_Toggle_Task_Info_Window.getInstance(quest), true);
 
 					dbManager.updateQuest(quest);
 					break;

@@ -1,18 +1,19 @@
 package tera.gameserver.network.serverpackets;
 
-import java.nio.ByteBuffer;
-
 import tera.gameserver.network.ServerPacketType;
 
-public class S_Clear_Quest_Info extends ServerConstPacket
+/**
+ * @author Ronn
+ */
+public class S_Clear_Quest_Info extends ServerPacket
 {
-	private static final S_Clear_Quest_Info instance = new S_Clear_Quest_Info();
-
+	private static final ServerPacket instance = new S_Clear_Quest_Info();
+	
 	public static S_Clear_Quest_Info getInstance()
 	{
-		return instance;
+		return (S_Clear_Quest_Info) instance.newInstance();
 	}
-
+	
 	@Override
 	public ServerPacketType getPacketType()
 	{
@@ -20,8 +21,8 @@ public class S_Clear_Quest_Info extends ServerConstPacket
 	}
 
 	@Override
-	protected void writeImpl(ByteBuffer buffer)
+	protected void writeImpl()
 	{
-		writeOpcode(buffer);
+		writeOpcode();
 	}
 }

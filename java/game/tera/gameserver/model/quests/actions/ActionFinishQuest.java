@@ -9,7 +9,8 @@ import tera.gameserver.model.quests.QuestActionType;
 import tera.gameserver.model.quests.QuestEvent;
 import tera.gameserver.model.quests.QuestList;
 import tera.gameserver.model.quests.QuestState;
-import tera.gameserver.network.serverpackets.QuestCompleted;
+import tera.gameserver.network.serverpackets.S_Daily_Quest_Complete_Count;
+import tera.gameserver.network.serverpackets.S_Delete_Quest;
 
 
 /**
@@ -67,7 +68,8 @@ public class ActionFinishQuest extends AbstractQuestAction
 		}
 
 		// отправляем пакет
-		player.sendPacket(QuestCompleted.getInstance(state, false), true);
+		player.sendPacket(S_Delete_Quest.getInstance(state, false), true);
+		player.sendPacket(S_Daily_Quest_Complete_Count.getInstance(),false);
 	}
 
 	@Override
