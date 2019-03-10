@@ -113,6 +113,7 @@ public final class DataBaseManager {
 	private static final String UPDATE_GUILD_MESSAGE = "UPDATE `guilds` SET `message` = ? WHERE `id` = ? LIMIT 1";
 	private static final String UPDATE_GUILD_PRAISE = "UPDATE `guilds` SET `praise` = ? WHERE `id` = ? LIMIT 1";
 	private static final String CREATE_GUILD_APPLY = "INSERT INTO `wait_guild_apply` (guild_id, character_id, message) VALUES (?,?,?)";
+	private static final String UPDATE_GUILD_ALLIANCE = "UPDATE `guilds` SET `alliance` = ? WHERE `id` = ? LIMIT 1";
 
 
 	private static final String REMOVE_WAIT_ITEM = "DELETE FROM `wait_items` WHERE `order` = ? LIMIT 1";
@@ -3533,6 +3534,36 @@ public final class DataBaseManager {
 			statement.setBytes(1, icon.getIcon());
 			statement.setString(2, icon.getName());
 			statement.setInt(3, guild.getId());
+			statement.execute();
+
+			return true;
+		} catch(SQLException e) {
+			LOGGER.warning(e);
+		} finally {
+			DBUtils.closeDatabaseCS(con, statement);
+		}
+
+		return false;
+	}
+
+	public final boolean updateGuildAlliance(Guild guild, int allianceId) {
+		if(guild == null)
+			return false;
+
+		GuildIcon icon = guild.getIcon();
+
+		if(icon == null || !icon.hasIcon())
+			return false;
+
+		Connection con = null;
+		PreparedStatement statement = null;
+
+		try {
+			con = connectFactory.getConnection();
+
+			statement = con.prepareStatement(UPDATE_GUILD_ALLIANCE);
+			statement.setInt(1, allianceId);
+			statement.setInt(2, guild.getId());
 			statement.execute();
 
 			return true;

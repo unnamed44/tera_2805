@@ -468,6 +468,7 @@ public final class PlayerManager
 		if(questList != null)
 			questList.updateQuestList();
 
+		player.sendPacket(S_Daily_Quest_Complete_Count.getInstance(),false);
 		player.sendPacket(S_Artisan_Skill_List.getInstance(), false);
 		player.sendPacket(S_Artisan_Recipe_List.getInstance(), false);
 		player.sendPacket(S_Npcguild_List.getInstance(), false);
