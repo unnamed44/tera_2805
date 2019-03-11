@@ -65,8 +65,8 @@ public class S_User_Paperdoll_info extends ServerPacket {
         writeOpcode();
         writeShort(equipment.size());//count
         writeShort(m);//pos
-        writeShort(0);//dungeon count
-        writeShort(m + (equipment.size() * 142));//dungeon pos
+        writeShort(0);//Dungeon count
+        writeShort(m + (equipment.size() * 142));//Dungeon pos
         writeShort(0);
         writeShort(0);
         writeShort(n);//name pos (2A 01)

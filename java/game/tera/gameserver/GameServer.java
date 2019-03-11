@@ -21,6 +21,8 @@ import tera.gameserver.config.MissingConfig;
 import tera.gameserver.manager.*;
 import tera.gameserver.model.World;
 import tera.gameserver.model.base.Race;
+import tera.gameserver.model.battlefields.BattlefieldList;
+import tera.gameserver.model.dungeons.DungeonList;
 import tera.gameserver.model.items.ItemLocation;
 import tera.gameserver.model.playable.DeprecatedPlayerFace;
 import tera.gameserver.model.playable.PlayerAppearance;
@@ -47,6 +49,7 @@ import tera.gameserver.tables.TownTable;
 import tera.gameserver.tables.WorldZoneTable;
 import tera.gameserver.taskmanager.EffectTaskManager;
 import tera.gameserver.taskmanager.RegenTaskManager;
+import tera.gameserver.tasks.DungeonTask;
 import tera.remotecontrol.ServerControl;
 import tera.remotecontrol.handlers.ServerConsoleHandler;
 
@@ -196,6 +199,8 @@ public class GameServer extends ServerThread implements DeadLockListener
 			ItemTable.getInstance();
 
 			Race.init();
+			DungeonList.init();
+			BattlefieldList.init();
 
 			PlayerTable.getInstance();
 			DropTable.getInstance();
@@ -230,6 +235,8 @@ public class GameServer extends ServerThread implements DeadLockListener
 			PlayerManager.getInstance();
 
 			Network.getInstance();
+
+			DungeonTask.getInstance();
 
 			log.info("started.");
 		}

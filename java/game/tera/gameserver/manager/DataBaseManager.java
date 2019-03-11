@@ -27,6 +27,7 @@ import tera.gameserver.model.Character;
 import tera.gameserver.model.base.PlayerClass;
 import tera.gameserver.model.base.Race;
 import tera.gameserver.model.base.Sex;
+import tera.gameserver.model.dungeons.PlayerDungeon;
 import tera.gameserver.model.equipment.Equipment;
 import tera.gameserver.model.equipment.PlayerEquipment;
 import tera.gameserver.model.inventory.Bank;
@@ -181,6 +182,9 @@ public final class DataBaseManager {
 	private static final String UPDATE_PLAYER_LOCATION = "UPDATE `characters` SET `x` = ?, `y` = ?, `z` = ?, `heading` = ?, `continent_id` = ?, `zone_id` = ? WHERE `char_name`= ? LIMIT 1";
 	private static final String UPDATE_PLAYER_CLASS = "UPDATE `characters` SET `class_id` = ? WHERE `object_id`= ? LIMIT 1";
 	private static final String UPDATE_PLAYER_RACE = "UPDATE `characters` SET `race_id` = ?, `sex` = ? WHERE `object_id`= ? LIMIT 1";
+
+	private static final String SELECT_PLAYER_DUNGEONS = "SELECT * from `character_dungeons` WHERE `object_id` = ?";
+	private static final String RESET_PLAYER_DUNGEONS = "UPDATE `character_dungeons` set `daily_count` = 0 WHERE 1";
 
 	private static final String SELECT_ACCOUNT = "SELECT AccountId, password, email, last_ip, allow_ips, comments, end_block, end_pay, access_level, fatigability FROM `accounts` WHERE `login`= ? LIMIT 1";
 	private static final String INSERT_ACCOUNT = "INSERT INTO `accounts` (login, password, email, access_level, end_pay, end_block, last_ip, allow_ips, comments) VALUES (?,?,?,?,?,?,?,?,?)";
@@ -3035,6 +3039,49 @@ public final class DataBaseManager {
 		} finally {
 			DBUtils.closeDatabaseCSR(con, statement, rset);
 		}
+	}
+
+	public final void getPlayerDungeons(Player player) {
+        Connection con = null;
+        PreparedStatement statement = null;
+        ResultSet rset = null;
+        try {
+            con = connectFactory.getConnection();
+
+            statement = con.prepareStatement(SELECT_PLAYER_DUNGEONS);
+            statement.setInt(1, player.getObjectId());
+
+            rset = statement.executeQuery();
+
+            // если не нашли персонажа
+            while (rset.next()) {
+                PlayerDungeon dungeon = new PlayerDungeon(rset.getInt("object_id"), rset.getInt("dungeon_id"), rset.getInt("clear_count"), rset.getInt("last_entry"), rset.getInt("daily_count"));
+                player.addDungeon(dungeon);
+            }
+
+        }catch(SQLException e) {
+            LOGGER.warning(e);
+        } finally {
+            DBUtils.closeDatabaseCSR(con, statement, rset);
+        }
+    }
+
+    public boolean resetPlayerDungeons() {
+		PreparedStatement statement = null;
+		Connection con = null;
+
+		try {
+			con = connectFactory.getConnection();
+
+			statement = con.prepareStatement(RESET_PLAYER_DUNGEONS);
+			return statement.executeUpdate() > 0;
+		} catch(SQLException e) {
+			LOGGER.warning(e);
+		} finally {
+			DBUtils.closeDatabaseCS(con, statement);
+		}
+
+		return false;
 	}
 
 	public final PlayerPreview getPreviewWithObjectName(String name) {

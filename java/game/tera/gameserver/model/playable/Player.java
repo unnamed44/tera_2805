@@ -38,6 +38,7 @@ import tera.gameserver.model.base.PlayerClass;
 import tera.gameserver.model.base.PlayerGeomTable;
 import tera.gameserver.model.base.Race;
 import tera.gameserver.model.base.Sex;
+import tera.gameserver.model.dungeons.PlayerDungeon;
 import tera.gameserver.model.equipment.Equipment;
 import tera.gameserver.model.equipment.Slot;
 import tera.gameserver.model.geom.Geom;
@@ -77,6 +78,8 @@ import tera.util.ExtUtils;
 import tera.util.Identified;
 import tera.util.LocalObjects;
 
+import java.util.Iterator;
+
 /**
  * Модель игрока в Tera-Online.
  * 
@@ -94,6 +97,8 @@ public final class Player extends Playable implements Nameable, Identified {
 	private final Array<Character> lockOnTargets;
 	/** список квестов на панели */
 	private final Array<QuestState> questInPanel;
+
+	private final Array<PlayerDungeon> dungeons;
 
 	/** таблица территорий, в которых был игрок */
 	private final Table<IntKey, Territory> storedTerrs;
@@ -233,6 +238,7 @@ public final class Player extends Playable implements Nameable, Identified {
 		this.lastLinks = Arrays.toConcurrentArray(Link.class);
 		this.lockOnTargets = Arrays.toConcurrentArray(Character.class);
 		this.questInPanel = Arrays.toConcurrentArray(QuestState.class);
+		this.dungeons = Arrays.toConcurrentArray(PlayerDungeon.class);
 
 		this.collectTask = new ResourseCollectTask(this);
 
@@ -2966,6 +2972,26 @@ public final class Player extends Playable implements Nameable, Identified {
 			updateColor();
 			sendPacket(S_Change_Relation.getInstance(getColor(), this), true);
 		}
+	}
+
+	public void addDungeon(PlayerDungeon dungeon) {
+		this.dungeons.add(dungeon);
+	}
+
+	public int getDungeonClearCount(int dungeonId) {
+		int clearCount = 0;
+		for(int i = 0; i < dungeons.size(); i++) {
+			if(dungeons.get(i).getDungeonId() == dungeonId) {
+				clearCount = dungeons.get(i).getClearCount();
+				break;
+			}
+		}
+		return clearCount;
+	}
+
+	public void resetDungeons() {
+		this.dungeons.clear();
+		DataBaseManager.getInstance().getPlayerDungeons(this);
 	}
 
 	@Override

@@ -31,6 +31,8 @@ import tera.gameserver.taskmanager.RegenTaskManager;
 import tera.gameserver.templates.PlayerTemplate;
 import tera.util.Location;
 
+import java.sql.DatabaseMetaData;
+
 /**
  * Менеджер игроков.
  *
@@ -437,6 +439,8 @@ public final class PlayerManager
 
 		// добавляем вреген менеджер
 		regenManager.addCharacter(player);
+
+		DataBaseManager.getInstance().getPlayerDungeons(player);
 
 		// добавляем в мир
 		World.addNewPlayer(player);

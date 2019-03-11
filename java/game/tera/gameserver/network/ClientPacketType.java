@@ -101,6 +101,10 @@ public enum ClientPacketType
 	C_UNEQUIP_ITEM(0xD491, new C_Equip_Item()),
 	C_END_MOVIE(0x7BC6, new C_End_Movie()),
 	C_RIDE_PEGASUS(0x96B3, new C_Ride_Pegasus()), // 08 00 62 C7 08 00 00 00
+	C_DUNGEON_CLEAR_COUNT_LIST(0x81BC, new C_Dungeon_Clear_Count_List()),
+	C_VIEW_INTER_PARTY_MATCH_DUNGEON_LIST(0x6DF7, new C_View_Inter_Party_Match_Dungeon_List()),
+	C_DUNGEON_COOL_TIME_LIST(0xAB05, new C_Dungeon_Cool_Time_List()),
+	C_VIEW_BATTLE_FIELD_RESULT(0xCD33, new C_View_Battle_Field_Result()),
 
 
 

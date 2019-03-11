@@ -19,6 +19,8 @@ public final class MissingConfig {
     public static boolean SERVER_FALLING_DAMAGE;
     public static int SERVER_ID;
     public static int DAILY_QUEST_MAX_COUNT;
+    public static int LEVEL_RANGE_DUNGEON;
+    public static int DUNGEON_CLEAR_COUNT_ROOKIE;
 
     public static void init(){
         VarTable vars = VarTable.newInstance();
@@ -33,5 +35,7 @@ public final class MissingConfig {
         SERVER_FALLING_DAMAGE = vars.getBoolean("SERVER_FALLING_DAMAGE");
         SERVER_ID = vars.getInteger("SERVER_ID", 12);
         DAILY_QUEST_MAX_COUNT = vars.getInteger("DAILY_QUEST_MAX_COUNT", 10);
+        LEVEL_RANGE_DUNGEON = vars.getInteger("LEVEL_RANGE_DUNGEON", 5);
+        DUNGEON_CLEAR_COUNT_ROOKIE = vars.getInteger("DUNGEON_CLEAR_COUNT_ROOKIE", 10);
     }
 }
