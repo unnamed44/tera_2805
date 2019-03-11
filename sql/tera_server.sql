@@ -64,6 +64,7 @@ CREATE TABLE `characters` (
   `title` varchar(16) NOT NULL DEFAULT '',
   `guild_id` int(15) NOT NULL DEFAULT '0' COMMENT 'ðÿð┤ ð║ð╗ð░ð¢ð░ ð©ð│ÐÇð¥ð║ð░.',
   `access_level` tinyint(4) NOT NULL DEFAULT '0',
+  `union_level` int(11) NOT NULL DEFAULT '100',
   `level` tinyint(3) NOT NULL DEFAULT '0',
   `exp` bigint(15) NOT NULL DEFAULT '0',
   `hp` int(11) NOT NULL DEFAULT '0',
@@ -82,6 +83,7 @@ CREATE TABLE `characters` (
   `collect_mining` int(10) unsigned NOT NULL DEFAULT '1' COMMENT 'ðáÐ£ðá┬░ðáðåðíÔÇ╣ðáÐö ðíðâðá┬▒ðáÐòðíðéðá┬░ ðáÐöðá┬░ðáÐÿðáðàðá┬ÁðáÔäû.',
   `collect_plant` int(10) unsigned NOT NULL DEFAULT '1' COMMENT 'ðáÐ£ðá┬░ðáðåðíÔÇ╣ðáÐö ðíðâðá┬▒ðáÐòðíðéðá┬░ ðíðéðá┬░ðíðâðíÔÇÜðá┬ÁðáðàðáÐæðáÔäû.',
   `collect_energy` int(10) unsigned NOT NULL DEFAULT '1' COMMENT 'ðáÐ£ðá┬░ðáðåðíÔÇ╣ðíðâðáÐö ðíðâðá┬▒ðáÐòðíðéðá┬░ ðáÐöðíðéðáÐæðíðâðíÔÇÜðá┬░ðá┬╗ðáÐòðáðå.',
+  `description` varchar(255) NOT NULL DEFAULT '',
   `last_online` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'ðÆÐÇðÁð╝ÐÅ ð┐ð¥Ðüð╗ðÁð┤ð¢ðÁð│ð¥ ð¥ð¢ð╗ð░ð╣ð¢ð░ ð©ð│ÐÇð¥ð║ð░.',
   `continent_id` smallint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'ðÿð┤ ð║ð¥ð¢Ðéð©ð¢ðÁð¢Ðéð░, ð¢ð░ ð║ð¥Ðéð¥ÐÇð¥ð╝ ð¢ð░Ðàð¥ð┤ð©ÐéÐüÐÅ ð©ð│ÐÇð¥ð║.',
   PRIMARY KEY (`object_id`),
@@ -132,6 +134,18 @@ CREATE TABLE `character_appearances` (
   `mouth_gape` tinyint(3) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`object_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='ðóð░ð▒ð╗ð©Ðåð░ ð▓ð¢ðÁÐêð¢ð¥ÐüÐéð© ð©ð│ÐÇð¥ð║ð¥ð▓.';
+
+
+DROP TABLE IF EXISTS `character_dungeons`;
+CREATE TABLE `character_dungeons` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `object_id` int(11) NOT NULL,
+  `dungeon_id` int(11) NOT NULL,
+  `clear_count` int(11) NOT NULL,
+  `last_entry` int(11) NOT NULL,
+  `daily_count` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 
 DROP TABLE IF EXISTS `character_faces`;
@@ -378,6 +392,7 @@ CREATE TABLE `guilds` (
   `icon_name` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL COMMENT 'ðØð░ðÀð▓ð░ð¢ð©ðÁ ð©ð║ð¥ð¢ð║ð© ð│ð©ð╗Ðîð┤ð©ð©.',
   `message` varchar(255) NOT NULL DEFAULT '' COMMENT 'ðáÔÇóðá┬Âðá┬ÁðáÊæðáðàðáðåðáðàðáÐòðá┬Á ðíðâðáÐòðáÐòðá┬▒ðíÔÇ░ðá┬ÁðáðàðáÐæðá┬Á ðáÐûðáÐæðá┬╗ðíðèðáÊæðáÐæðáÐæ.',
   `praise` int(11) NOT NULL DEFAULT '0',
+  `alliance` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='ðóð░ð▒ð╗ð©Ðåð░ ð║ð╗ð░ð¢ð¥ð▓';
 
@@ -420,6 +435,11 @@ CREATE TABLE `region_status` (
   PRIMARY KEY (`region_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='ðóð░ð▒ð╗ð©Ðåð░ ÐüÐéð░ÐéÐâÐüð¥ð▓ ÐÇðÁð│ð©ð¥ð¢ð¥ð▓.';
 
+INSERT INTO `region_status` (`region_id`, `owner_id`, `state`) VALUES
+(400,	0,	0),
+(401,	0,	0),
+(402,	0,	0),
+(403,	0,	0);
 
 DROP TABLE IF EXISTS `region_war_register`;
 CREATE TABLE `region_war_register` (
@@ -447,6 +467,23 @@ CREATE TABLE `skill_learns` (
   PRIMARY KEY (`classId`,`skillId`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+
+DROP TABLE IF EXISTS `union`;
+CREATE TABLE `union` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `union_id` int(11) DEFAULT NULL,
+  `leader_id` int(11) NOT NULL,
+  `tax_rate` int(11) NOT NULL DEFAULT '0',
+  `strength` int(11) NOT NULL DEFAULT '0',
+  `bonus` int(11) NOT NULL DEFAULT '0',
+  `message` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+INSERT INTO `union` (`id`, `union_id`, `leader_id`, `tax_rate`, `strength`, `bonus`, `message`) VALUES
+(1,	1,	0,	7,	1,	0,	''),
+(2,	2,	0,	4,	2,	0,	''),
+(3,	3,	0,	4,	3,	0,	'');
 
 DROP TABLE IF EXISTS `wait_guild_apply`;
 CREATE TABLE `wait_guild_apply` (
@@ -483,4 +520,4 @@ CREATE TABLE `wait_skills` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='ðóð░ð▒ð╗ð©Ðåð░ ð¥ðÂð©ð┤ð░ÐÄÐëð©Ðà ð▓Ðïð┤ð░Ðçð© Ðüð║ð©ð╗ð¥ð▓.';
 
 
--- 2019-02-06 21:23:53
+-- 2019-03-11 01:26:02
